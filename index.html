@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body {
+        html, body {
             margin: 0;
             padding: 0;
             background-color: black;
-            height: 100vh;
+            min-height: 100vh;
+            height: 100%;
+            font-family: 'Courier New', monospace;
+        }
+        
+        body {
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            align-items: flex-end;
-            font-family: 'Courier New', monospace;
         }
         
         .text-container {
             padding: 2rem;
             text-align: right;
+            width: 100%;
+            box-sizing: border-box;
+            position: fixed;
+            bottom: 0;
+            right: 0;
         }
         
         .linkedin-link {
@@ -39,6 +48,34 @@
 
         .linkedin-link:hover {
             background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .company-name {
+                font-size: 20px;
+            }
+            
+            .tagline {
+                font-size: 14px;
+            }
+
+            .text-container {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .company-name {
+                font-size: 18px;
+            }
+            
+            .tagline {
+                font-size: 12px;
+            }
+
+            .text-container {
+                padding: 1rem;
+            }
         }
     </style>
 </head>
