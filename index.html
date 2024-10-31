@@ -1,1 +1,53 @@
-test
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .text-container {
+            padding: 2rem;
+            text-align: right;
+        }
+        
+        .linkedin-link {
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .company-name {
+            color: white;
+            font-size: 24px;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+        
+        .tagline {
+            color: white;
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .linkedin-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="text-container">
+        <a href="https://www.linkedin.com/in/ilya-pavlenkov-72a01b49/" class="linkedin-link" target="_blank">
+            <div class="company-name">PROMETHEUS ROBOTICS</div>
+            <div class="tagline">We develop humanoid robots for automotive manufacturing plants</div>
+        </a>
+    </div>
+</body>
+</html>
