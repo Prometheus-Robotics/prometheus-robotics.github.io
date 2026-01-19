@@ -1,90 +1,643 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prometheus Robotics — Humanoid Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Urbanist:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            background-color: black;
-            min-height: 100vh;
-            height: 100%;
-            font-family: 'Courier New', monospace;
-        }
-        
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-        }
-        
-        .text-container {
-            padding: 2rem;
-            text-align: right;
-            width: 100%;
-            box-sizing: border-box;
-            position: fixed;
-            bottom: 0;
-            right: 0;
-        }
-        
-        .linkedin-link {
-            text-decoration: none;
-            display: inline-block;
-        }
-        
-        .company-name {
-            color: white;
-            font-size: 24px;
-            margin-bottom: 8px;
-            letter-spacing: 2px;
-        }
-        
-        .tagline {
-            color: white;
-            font-size: 16px;
-            letter-spacing: 1px;
+        :root {
+            --color-bg: #0a0a0a;
+            --color-text: #ffffff;
+            --color-text-secondary: #a0a0a0;
+            --color-accent: #3b82f6;
+            --color-border: #1f1f1f;
+            --font-display: 'Plus Jakarta Sans', sans-serif;
+            --font-body: 'Urbanist', sans-serif;
         }
 
-        .linkedin-link:hover {
-            background-color: rgba(255, 255, 255, 0.1);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--color-border);
+            animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-text);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--color-accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .eu-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+        }
+
+        .eu-flag {
+            width: 20px;
+            height: 14px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 3rem 3rem;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(90deg, #0a0a0a 0%, #0a0a0a 40%, #2a2a2a 70%, #404040 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 15%;
+            right: 8%;
+            width: 350px;
+            height: 350px;
+            background-image: url('/mnt/user-data/uploads/pngegg.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            pointer-events: none;
+            opacity: 0.3;
+            transform: scale(1.3);
+        }
+
+        .hero-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .hero-content {
+            opacity: 0;
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-eyebrow {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            opacity: 0;
+            animation: fadeIn 0.8s ease 0.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: 5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            max-width: 500px;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.2rem 2.5rem;
+            background: var(--color-accent);
+            color: white;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.4);
+        }
+
+        .cta-button svg {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* Robot Image Section */
+        .hero-image {
+            position: relative;
+            opacity: 0;
+            animation: fadeInScale 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .robot-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .robot-glow {
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+            filter: blur(60px);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0.5;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.8;
+                transform: scale(1.1);
+            }
+        }
+
+        .robot-image img {
+            position: relative;
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 40px 80px rgba(0, 0, 0, 0.5));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(1deg);
+            }
+        }
+
+        /* Features Section */
+        .features {
+            padding: 8rem 3rem;
+            background: linear-gradient(180deg, var(--color-bg) 0%, #0f0f0f 100%);
+            border-top: 1px solid var(--color-border);
+        }
+
+        .features-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--color-text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            padding: 3rem 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--color-border);
+            border-radius: 20px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-accent), #8b5cf6);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(-8px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .feature-card p {
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        /* Full Video Button */
+        .full-video-btn {
+            position: fixed;
+            bottom: 3rem;
+            right: 3rem;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            color: white;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .full-video-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .full-video-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+
+            .hero-title {
+                font-size: 4rem;
+            }
+
+            nav {
+                padding: 1.5rem 2rem;
+            }
+
+            .hero {
+                padding: 7rem 2rem 3rem;
+            }
         }
 
         @media (max-width: 768px) {
-            .company-name {
-                font-size: 20px;
-            }
-            
-            .tagline {
-                font-size: 14px;
+            .nav-links {
+                display: none;
             }
 
-            .text-container {
-                padding: 1.5rem;
-            }
-        }
-
-        @media (max-width: 320px) {
-            .company-name {
-                font-size: 18px;
-            }
-            
-            .tagline {
-                font-size: 12px;
+            .hero-title {
+                font-size: 3rem;
             }
 
-            .text-container {
-                padding: 1rem;
+            .hero-description {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .features {
+                padding: 5rem 2rem;
+            }
+
+            .full-video-btn {
+                bottom: 2rem;
+                right: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="text-container">
-        <a href="https://www.linkedin.com/company/meet-prometheus-robotics/" class="linkedin-link" target="_blank">
-            <div class="company-name">PROMETHEUS ROBOTICS</div>
-            <div class="tagline">We develop humanoid robots for automotive manufacturing plants</div>
-        </a>
-    </div>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <img src="/logo.png" alt="Prometheus Logo" style="height: 32px; width: auto;">
+            PROMETHEUS ROBOTICS
+        </div>
+        <ul class="nav-links">
+            <li><a href="/">Prometheus Robotics</a></li>
+            <li><a href="https://www.linkedin.com/company/meet-prometheus-robotics/" target="_blank">News</a></li>
+            <li><a href="https://www.linkedin.com/company/meet-prometheus-robotics/" target="_blank">LinkedIn</a></li>
+        </ul>
+        <div class="eu-badge">
+            <svg class="eu-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810 540">
+                <rect width="810" height="540" fill="#003399"/>
+                <g fill="#FFCC00">
+                    <circle cx="405" cy="105" r="15"/>
+                    <circle cx="505" cy="140" r="15"/>
+                    <circle cx="560" cy="220" r="15"/>
+                    <circle cx="560" cy="320" r="15"/>
+                    <circle cx="505" cy="400" r="15"/>
+                    <circle cx="405" cy="435" r="15"/>
+                    <circle cx="305" cy="400" r="15"/>
+                    <circle cx="250" cy="320" r="15"/>
+                    <circle cx="250" cy="220" r="15"/>
+                    <circle cx="305" cy="140" r="15"/>
+                    <circle cx="405" cy="175" r="15"/>
+                    <circle cx="405" cy="365" r="15"/>
+                </g>
+            </svg>
+            Made in EU
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-eyebrow">Prometheus Robotics</span>
+                <h1 class="hero-title">Humanoid Robotics platform</h1>
+                <p class="hero-description">
+                    A general purpose humanoid robot platform. Advanced robotics platform for Automation Suppliers, Research Labs, Start-ups, and DIY-enthusiasts.
+                </p>
+                <a href="https://forms.gle/Dg9jZUbszt8APyDs8" target="_blank" class="cta-button">
+                    Buy Humanoid Robots or DIY Kits
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="hero-image">
+                <div class="robot-container">
+                    <div class="robot-glow"></div>
+                    <img src="/mnt/user-data/uploads/Robot_Rotated.png" alt="Prometheus Humanoid Robot">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-container">
+            <h2 class="section-title">Built for Tomorrow</h2>
+            <p class="section-subtitle">Advanced technology meets practical application in every component</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">🔧</span>
+                    <h3>Modular Architecture</h3>
+                    <p>Fully customizable platform with interchangeable components. Upgrade and modify to suit your exact specifications.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">🎓</span>
+                    <h3>Research Ready</h3>
+                    <p>Open platform designed for academic and commercial R&D. Complete SDK and documentation included.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">✨</span>
+                    <h3>Custom Solutions</h3>
+                    <p>We offer bespoke customizations tailored to your specific needs. From hardware modifications to software integration.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">🛠️</span>
+                    <h3>DIY Friendly</h3>
+                    <p>Complete kits with step-by-step assembly guides. From hobbyist to professional developer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA Section -->
+    <section style="padding: 6rem 3rem; text-align: center; background: linear-gradient(180deg, #0f0f0f 0%, var(--color-bg) 100%); border-top: 1px solid var(--color-border);">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.01em;">Ready to Get Started?</h2>
+            <p style="color: var(--color-text-secondary); font-size: 1.2rem; margin-bottom: 3rem; line-height: 1.7;">Join the future of robotics. Order your humanoid robot or DIY kit today.</p>
+            <a href="https://forms.gle/Dg9jZUbszt8APyDs8" target="_blank" class="cta-button" style="display: inline-flex;">
+                Buy Humanoid Robot
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Our LinkedIn Button -->
+    <a href="https://www.linkedin.com/company/meet-prometheus-robotics/" target="_blank" class="full-video-btn">
+        Our LinkedIn
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+        </svg>
+    </a>
 </body>
 </html>
