@@ -104,14 +104,6 @@
             color: var(--color-text);
         }
 
-        .eu_stars {
-            position: absolute;
-            width: 400px;
-            top: 0;
-            right: 200px;
-            z-index: 1;
-        }
-
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -178,6 +170,14 @@
             grid-template-columns: 1fr 1fr;
             gap: 6rem;
             align-items: center;
+        }
+        
+        .hero-content {
+            order: 1;
+        }
+        
+        .hero-image {
+            order: 2;
         }
 
         .hero-content {
@@ -310,7 +310,19 @@
         }
 
         .robot-img {
-            z-index: 9999;
+            position: relative;
+            z-index: 2;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .eu_stars {
+            position: absolute;
+            width: 60%;
+            max-width: 400px;
+            top: 0;
+            right: 10%;
+            z-index: 1;
         }
 
         .robot-glow {
@@ -320,6 +332,7 @@
             background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
             filter: blur(60px);
             animation: pulse 4s ease-in-out infinite;
+            z-index: 0;
         }
 
         @keyframes pulse {
@@ -333,10 +346,7 @@
             }
         }
 
-        .robot-image img {
-            position: relative;
-            max-width: 100%;
-            height: auto;
+        .robot-image img.robot-img {
             filter: drop-shadow(0 40px 80px rgba(0, 0, 0, 0.5));
             animation: float 6s ease-in-out infinite;
         }
@@ -478,7 +488,17 @@
         @media (max-width: 1200px) {
             .hero-container {
                 grid-template-columns: 1fr;
-                gap: 4rem;
+                gap: 3rem;
+            }
+            
+            .hero-image {
+                order: 0;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            
+            .hero-content {
+                order: 1;
             }
 
             .hero-title {
@@ -492,32 +512,119 @@
             .hero {
                 padding: 7rem 2rem 3rem;
             }
+            
+            .eu_stars {
+                right: 5%;
+                width: 70%;
+            }
         }
 
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
+            
+            .logo {
+                font-size: 0.9rem;
+            }
+            
+            .logo img {
+                height: 24px !important;
+            }
+            
+            .eu-badge {
+                font-size: 0.65rem;
+                padding: 0.3rem 0.7rem;
+            }
+
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .hero {
+                padding: 6rem 1.5rem 2rem;
+                min-height: auto;
+            }
+
+            .hero-container {
+                gap: 2rem;
+            }
 
             .hero-title {
-                font-size: 3rem;
+                font-size: 2.5rem;
             }
 
             .hero-description {
                 font-size: 1.1rem;
+                margin-bottom: 2rem;
+            }
+            
+            .hero-image {
+                max-width: 100%;
+                margin-bottom: 1rem;
+            }
+            
+            .robot-img {
+                max-width: 90%;
+                margin: 0 auto;
+                display: block;
+            }
+            
+            .eu_stars {
+                width: 55%;
+                right: 8%;
+                top: -5%;
+            }
+
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 0.9rem;
+                width: 100%;
+                justify-content: center;
             }
 
             .section-title {
-                font-size: 2.5rem;
+                font-size: 2rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1rem;
+                margin-bottom: 3rem;
             }
 
             .features {
-                padding: 5rem 2rem;
+                padding: 4rem 1.5rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .feature-card {
+                padding: 2rem 1.5rem;
             }
 
             .full-video-btn {
-                bottom: 2rem;
-                right: 2rem;
+                bottom: 1.5rem;
+                right: 1.5rem;
+                padding: 0.8rem 1.5rem;
+                font-size: 0.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-description {
+                font-size: 1rem;
+            }
+            
+            .eu_stars {
+                width: 50%;
+                right: 10%;
             }
         }
     </style>
@@ -559,6 +666,14 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
+            <div class="hero-image">
+                <div class="robot-container">
+                    <div class="robot-glow"></div>
+                    <img src="/robot.png" alt="Prometheus Humanoid Robot" class="robot-img">
+                    <img src="/eu_stars.png" alt="EU" class="eu_stars">
+                </div>
+            </div>
+            
             <div class="hero-content">
                 <span class="hero-eyebrow">Prometheus Robotics</span>
                 <h1 class="hero-title">Humanoid Robotics platform</h1>
@@ -571,14 +686,6 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                     </svg>
                 </a>
-            </div>
-
-            <div class="hero-image">
-                <div class="robot-container">
-                    <div class="robot-glow"></div>
-                    <img src="/robot.png" alt="Prometheus Humanoid Robot" class="robot-img">
-                    <img src="/eu_stars.png" alt="EU" class="eu_stars">
-                </div>
             </div>
         </div>
     </section>
