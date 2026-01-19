@@ -360,6 +360,11 @@
             }
         }
 
+        /* CTA Button Container - скрыта на десктопе */
+        .cta-button-container {
+            display: none;
+        }
+
         /* Features Section */
         .features {
             padding: 8rem 3rem;
@@ -554,9 +559,27 @@
                 order: 1;
             }
             
+            /* Скрываем кнопку в hero-content на мобилке */
+            .hero-content .cta-button {
+                display: none;
+            }
+            
             .hero-image {
                 order: 2;
                 max-width: 100%;
+            }
+            
+            /* Показываем контейнер с кнопкой под роботом */
+            .cta-button-container {
+                display: block;
+                order: 3;
+                width: 100%;
+                margin-top: 2rem;
+            }
+            
+            .cta-button-container .cta-button {
+                width: 100%;
+                justify-content: center;
             }
 
             .hero-title {
@@ -582,8 +605,6 @@
             .cta-button {
                 padding: 1rem 2rem;
                 font-size: 0.9rem;
-                width: 100%;
-                justify-content: center;
             }
 
             .section-title {
@@ -689,6 +710,16 @@
                     <img src="/robot.png" alt="Prometheus Humanoid Robot" class="robot-img">
                     <img src="/eu_stars.png" alt="EU" class="eu_stars">
                 </div>
+            </div>
+            
+            <!-- Кнопка для мобильной версии -->
+            <div class="cta-button-container">
+                <a href="https://forms.gle/Dg9jZUbszt8APyDs8" target="_blank" class="cta-button">
+                    Buy Humanoid or DIY Kits
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                    </svg>
+                </a>
             </div>
         </div>
     </section>
