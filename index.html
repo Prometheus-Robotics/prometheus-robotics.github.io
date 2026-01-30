@@ -389,6 +389,106 @@
             border-top: 1px solid var(--color-border);
         }
 
+        /* Manipulators Section */
+        .manipulators {
+            padding: 8rem 3rem;
+            background: var(--color-bg);
+            border-top: 1px solid var(--color-border);
+        }
+
+        .manipulators-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .manipulators-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .manipulator-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--color-border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .manipulator-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-accent), #8b5cf6);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .manipulator-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .manipulator-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(-8px);
+        }
+
+        .manipulator-image {
+            width: 100%;
+            height: 300px;
+            background: #000000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .manipulator-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.4s ease;
+        }
+
+        .manipulator-card:hover .manipulator-image img {
+            transform: scale(1.05);
+        }
+
+        .manipulator-content {
+            padding: 2rem;
+        }
+
+        .manipulator-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .manipulator-content h4 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .manipulator-content p {
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
         .specs-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -986,6 +1086,35 @@
                 padding: 4rem 1.5rem;
             }
 
+            .manipulators {
+                padding: 4rem 1.5rem;
+            }
+
+            .manipulators-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .manipulator-image {
+                height: 250px;
+            }
+
+            .manipulator-content {
+                padding: 1.5rem;
+            }
+
+            .manipulator-content h3 {
+                font-size: 1.5rem;
+            }
+
+            .manipulator-content h4 {
+                font-size: 1.1rem;
+            }
+
+            .manipulator-content p {
+                font-size: 0.95rem;
+            }
+
             .specs-content {
                 grid-template-columns: 1fr;
                 gap: 3rem;
@@ -1259,6 +1388,49 @@
             </div>
         </section>
 
+        <!-- Manipulators Section -->
+        <section class="manipulators">
+            <div class="manipulators-container">
+                <h2 class="section-title">Manipulator Options</h2>
+                <p class="section-subtitle">Choose the right end-effector for your application</p>
+                
+                <div class="manipulators-grid">
+                    <div class="manipulator-card">
+                        <div class="manipulator-image">
+                            <img src="/clawe.png" alt="Type A - 2-finger gripper">
+                        </div>
+                        <div class="manipulator-content">
+                            <h3>Type A</h3>
+                            <h4>2-finger gripper</h4>
+                            <p>Simple pinch / precise closing. Ideal for delicate operations and precise manipulation tasks.</p>
+                        </div>
+                    </div>
+
+                    <div class="manipulator-card">
+                        <div class="manipulator-image">
+                            <img src="/for_totes.png" alt="Type B - 4-finger claw">
+                        </div>
+                        <div class="manipulator-content">
+                            <h3>Type B</h3>
+                            <h4>4-finger "claw" (paired fingers)</h4>
+                            <p>For robust gripping of crates and tote boxes. Designed for warehouse and logistics applications.</p>
+                        </div>
+                    </div>
+
+                    <div class="manipulator-card">
+                        <div class="manipulator-image">
+                            <img src="/hand.png" alt="Type X - Advanced manipulator">
+                        </div>
+                        <div class="manipulator-content">
+                            <h3>Type X</h3>
+                            <h4>Advanced manipulators</h4>
+                            <p>Available at additional cost. Options include wrist camera, 5-finger hands, and other custom variants.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Features Section -->
         <section class="features">
             <div class="features-container">
@@ -1345,7 +1517,7 @@
             <div class="footer-section">
                 <h4>Get Started</h4>
                 <ul class="footer-links">
-                    <li><a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank">Buy Robot</a></li>
+                    <li><a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank">Join Waitlist</a></li>
                 </ul>
             </div>
         </div>
