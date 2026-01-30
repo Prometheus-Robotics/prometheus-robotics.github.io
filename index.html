@@ -233,10 +233,7 @@
             line-height: 1.1;
             letter-spacing: -0.01em;
             margin-bottom: 2rem;
-            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #ffffff;
         }
 
         .hero-description {
@@ -383,6 +380,139 @@
             padding: 8rem 3rem;
             background: linear-gradient(180deg, var(--color-bg) 0%, #0f0f0f 100%);
             border-top: 1px solid var(--color-border);
+        }
+
+        /* Specifications Section */
+        .specifications {
+            padding: 8rem 3rem;
+            background: linear-gradient(180deg, #0f0f0f 0%, var(--color-bg) 100%);
+            border-top: 1px solid var(--color-border);
+        }
+
+        .specs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .specs-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .specs-table-wrapper {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--color-border);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .specs-table tbody tr {
+            border-bottom: 1px solid var(--color-border);
+            transition: background 0.3s ease;
+        }
+
+        .specs-table tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        .specs-table tbody tr:hover {
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        .specs-table td {
+            padding: 1.5rem 2rem;
+        }
+
+        .spec-label {
+            font-weight: 600;
+            color: var(--color-text);
+            font-size: 1rem;
+            width: 45%;
+        }
+
+        .spec-value {
+            color: var(--color-text-secondary);
+            font-size: 1rem;
+            width: 55%;
+        }
+
+        .modules-section {
+            position: sticky;
+            top: 120px;
+        }
+
+        .modules-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            letter-spacing: -0.01em;
+        }
+
+        .modules-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .module-card {
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .module-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-accent), #8b5cf6);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .module-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .module-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateX(8px);
+        }
+
+        .module-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .module-card h4 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.01em;
+        }
+
+        .module-card p {
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            font-size: 0.95rem;
         }
 
         .features-container {
@@ -851,6 +981,44 @@
             .features {
                 padding: 4rem 1.5rem;
             }
+
+            .specifications {
+                padding: 4rem 1.5rem;
+            }
+
+            .specs-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .modules-section {
+                position: static;
+            }
+
+            .specs-table td {
+                padding: 1.2rem 1.5rem;
+            }
+
+            .spec-label,
+            .spec-value {
+                font-size: 0.95rem;
+            }
+
+            .modules-title {
+                font-size: 1.5rem;
+            }
+
+            .module-card {
+                padding: 1.5rem;
+            }
+
+            .module-card h4 {
+                font-size: 1.2rem;
+            }
+
+            .module-card p {
+                font-size: 0.9rem;
+            }
             
             .features-grid {
                 grid-template-columns: 1fr;
@@ -910,6 +1078,22 @@
             .contact-info p {
                 font-size: 1rem;
             }
+
+            .specs-table td {
+                padding: 1rem 1.2rem;
+            }
+
+            .spec-label {
+                font-size: 0.9rem;
+            }
+
+            .spec-value {
+                font-size: 0.85rem;
+            }
+
+            .module-icon {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
@@ -923,7 +1107,7 @@
         <ul class="nav-links">
             <li><a onclick="showPage('home')">Prometheus Robotics</a></li>
             <li><a onclick="showPage('contacts')">Contacts</a></li>
-            <li><a href="https://www.linkedin.com/company/meet-prometheus-robotics/" target="_blank">LinkedIn</a></li>
+            <li><a href="https://www.linkedin.com/in/ilya-pavlenkov/recent-activity/all/" target="_blank">LinkedIn</a></li>
         </ul>
         <div class="eu-badge">
             <svg class="eu-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810 540">
@@ -959,7 +1143,7 @@
                         A general purpose humanoid robot platform. Advanced robotics platform (and Dev Kits) for Automation Suppliers, Research Labs, Start-ups, and DIY-enthusiasts.
                     </p>
                     <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
-                        Join Waitlist
+                        Buy Humanoid Robot
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                         </svg>
@@ -976,7 +1160,97 @@
                 
                 <div class="cta-button-container">
                     <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
-                        Join Waitlist
+                        Buy Humanoid Robot
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specifications Section -->
+        <section class="specifications">
+            <div class="specs-container">
+                <h2 class="section-title">Technical Specifications</h2>
+                <p class="section-subtitle">Upper Body on tripod — suitable for bench-top work</p>
+                
+                <div class="specs-content">
+                    <div class="specs-table-wrapper">
+                        <table class="specs-table">
+                            <tbody>
+                                <tr>
+                                    <td class="spec-label">Maximum Joint Torque</td>
+                                    <td class="spec-value">120Nm</td>
+                                </tr>
+                                <tr>
+                                    <td class="spec-label">Height</td>
+                                    <td class="spec-value">160cm on tripod (172cm on legs/wheels)</td>
+                                </tr>
+                                <tr>
+                                    <td class="spec-label">Width</td>
+                                    <td class="spec-value">50cm (tripod bottom 85cm)</td>
+                                </tr>
+                                <tr>
+                                    <td class="spec-label">Battery Life</td>
+                                    <td class="spec-value">About 4h</td>
+                                </tr>
+                                <tr>
+                                    <td class="spec-label">Degrees of Freedom</td>
+                                    <td class="spec-value">19 (29 with legs; 43 with hands; 53 with legs and hands)</td>
+                                </tr>
+                                <tr>
+                                    <td class="spec-label">Cameras</td>
+                                    <td class="spec-value">Stereo cameras mounted in head</td>
+                                </tr>
+                                <tr>
+                                    <td class="spec-label">Microphones</td>
+                                    <td class="spec-value">2 microphones on the ears level</td>
+                                </tr>
+                                <tr>
+                                    <td class="spec-label">Speaker</td>
+                                    <td class="spec-value">Speaker on the mouth level</td>
+                                </tr>
+                                <tr>
+                                    <td class="spec-label">Power Supply</td>
+                                    <td class="spec-value">13 cells in series</td>
+                                </tr>
+                                <tr>
+                                    <td class="spec-label">Charger</td>
+                                    <td class="spec-value">54V 5A</td>
+                                </tr>
+                                <tr>
+                                    <td class="spec-label">Compute</td>
+                                    <td class="spec-value">Raspberry Pi 5 / NVIDIA Jetson</td>
+                                </tr>
+                                <tr>
+                                    <td class="spec-label">Manual Controller</td>
+                                    <td class="spec-value">Optional</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="modules-section">
+                        <h3 class="modules-title">Available Modules</h3>
+                        <div class="modules-grid">
+                            <div class="module-card">
+                                <div class="module-icon">🦿</div>
+                                <h4>Legs Module</h4>
+                                <p>Bipedal locomotion system for enhanced mobility and human-like movement capabilities.</p>
+                            </div>
+                            <div class="module-card">
+                                <div class="module-icon">🛞</div>
+                                <h4>Wheels Module</h4>
+                                <p>Wheeled base for efficient navigation and stable platform for various applications.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 4rem;">
+                    <a onclick="showPage('contacts')" class="cta-button" style="display: inline-flex; cursor: pointer;">
+                        Contact Sales
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                         </svg>
@@ -1025,7 +1299,7 @@
                 <h2 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.01em;">Ready to Get Started?</h2>
                 <p style="color: var(--color-text-secondary); font-size: 1.2rem; margin-bottom: 3rem; line-height: 1.7;">Join the future of robotics. Order your humanoid robot or DIY kit today.</p>
                 <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button" style="display: inline-flex;">
-                    Join Humanoid Waitlist
+                    Buy Modular Platform
                     <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                     </svg>
@@ -1048,6 +1322,7 @@
                 <p><strong>VAT ID:</strong> 32719367-2-13</p>
                 <p><strong>Phone:</strong> <a class="contact-link" onclick="openModal('phone')">Click to reveal</a></p>
                 <p><strong>Email:</strong> <a class="contact-link" onclick="openModal('email')">Click to reveal</a></p>
+                <p><strong>LinkedIn:</strong> <a class="contact-link" href="https://www.linkedin.com/in/ilya-pavlenkov/" target="_blank">linkedin.com/in/ilya-pavlenkov</a></p>
             </div>
         </section>
     </div>
@@ -1064,13 +1339,13 @@
                 <ul class="footer-links">
                     <li><a onclick="showPage('home')">Home</a></li>
                     <li><a onclick="showPage('contacts')">Contacts</a></li>
-                    <li><a href="https://www.linkedin.com/company/meet-prometheus-robotics/" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://www.linkedin.com/in/ilya-pavlenkov/recent-activity/all/" target="_blank">LinkedIn</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h4>Get Started</h4>
                 <ul class="footer-links">
-                    <li><a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank">Join Waitlist</a></li>
+                    <li><a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank">Buy Robot</a></li>
                 </ul>
             </div>
         </div>
@@ -1080,7 +1355,7 @@
     </footer>
 
     <!-- Our LinkedIn Button -->
-    <a href="https://www.linkedin.com/company/meet-prometheus-robotics/" target="_blank" class="full-video-btn">
+    <a href="https://www.linkedin.com/in/ilya-pavlenkov/recent-activity/all/" target="_blank" class="full-video-btn">
         Our LinkedIn
         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
