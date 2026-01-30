@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Urbanist:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <style>
         :root {
             --color-bg: #0a0a0a;
@@ -70,6 +71,7 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            cursor: pointer;
         }
 
         .logo-icon {
@@ -98,6 +100,7 @@
             text-transform: uppercase;
             transition: color 0.3s ease;
             position: relative;
+            cursor: pointer;
         }
 
         .nav-links a:hover {
@@ -137,6 +140,17 @@
         .eu-flag {
             width: 20px;
             height: 14px;
+        }
+
+        /* Page Container */
+        .page {
+            display: none;
+            min-height: 100vh;
+            padding-top: 100px;
+        }
+
+        .page.active {
+            display: block;
         }
 
         /* Hero Section */
@@ -454,6 +468,222 @@
             font-size: 1rem;
         }
 
+        /* Contacts Page */
+        .contacts-section {
+            padding: 8rem 3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            min-height: calc(100vh - 200px);
+        }
+
+        .contacts-title {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            letter-spacing: -0.01em;
+            text-align: center;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--color-border);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-info h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--color-accent);
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            line-height: 2;
+            color: var(--color-text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info strong {
+            color: var(--color-text);
+            font-weight: 600;
+        }
+
+        .contact-link {
+            color: var(--color-accent);
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        .contact-link:hover {
+            border-bottom: 1px solid var(--color-accent);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid var(--color-border);
+            padding: 3rem 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .footer-section p {
+            color: var(--color-text-secondary);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+            color: var(--color-text-secondary);
+            font-size: 0.85rem;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--color-text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            line-height: 1;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            color: var(--color-text);
+        }
+
+        .modal-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            letter-spacing: -0.01em;
+        }
+
+        .recaptcha-container {
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .contact-details {
+            display: none;
+            padding: 2rem;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .contact-details.active {
+            display: block;
+        }
+
+        .contact-details p {
+            font-size: 1.2rem;
+            color: var(--color-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-details small {
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+        }
+
         /* Full Video Button */
         .full-video-btn {
             position: fixed;
@@ -520,6 +750,11 @@
             .eu_stars {
                 right: 5%;
                 width: 70%;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
         }
 
@@ -626,6 +861,30 @@
                 padding: 2rem 1.5rem;
             }
 
+            .contacts-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .contacts-title {
+                font-size: 2rem;
+            }
+
+            .contact-info {
+                padding: 2rem 1.5rem;
+            }
+
+            .contact-info h3 {
+                font-size: 1.4rem;
+            }
+
+            .modal-content {
+                padding: 2rem 1.5rem;
+            }
+
+            footer {
+                padding: 2rem 1.5rem 1.5rem;
+            }
+
             .full-video-btn {
                 bottom: 1.5rem;
                 right: 1.5rem;
@@ -647,19 +906,23 @@
                 width: 50%;
                 right: 10%;
             }
+
+            .contact-info p {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav>
-        <div class="logo">
+        <div class="logo" onclick="showPage('home')">
             <img src="/logo.png" alt="Prometheus Logo" style="height: 32px; width: auto;">
             PROMETHEUS&nbsp;&nbsp;ROBOTICS
         </div>
         <ul class="nav-links">
-            <li><a href="/">Prometheus Robotics</a></li>
-            <li><a href="https://www.linkedin.com/company/meet-prometheus-robotics/" target="_blank">News</a></li>
+            <li><a onclick="showPage('home')">Prometheus Robotics</a></li>
+            <li><a onclick="showPage('contacts')">Contacts</a></li>
             <li><a href="https://www.linkedin.com/company/meet-prometheus-robotics/" target="_blank">LinkedIn</a></li>
         </ul>
         <div class="eu-badge">
@@ -684,89 +947,137 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <span class="hero-eyebrow">Prometheus Robotics</span>
-                <h1 class="hero-title">Humanoid Robotics platform</h1>
-                <p class="hero-description">
-                    A general purpose humanoid robot platform. Advanced robotics platform (and Dev Kits) for Automation Suppliers, Research Labs, Start-ups, and DIY-enthusiasts.
-                </p>
-                <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
-                    Join Waitlist
+    <!-- Home Page -->
+    <div id="home-page" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <span class="hero-eyebrow">Prometheus Robotics</span>
+                    <h1 class="hero-title">Humanoid Robotics platform</h1>
+                    <p class="hero-description">
+                        A general purpose humanoid robot platform. Advanced robotics platform (and Dev Kits) for Automation Suppliers, Research Labs, Start-ups, and DIY-enthusiasts.
+                    </p>
+                    <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
+                        Join Waitlist
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="hero-image">
+                    <div class="robot-container">
+                        <div class="robot-glow"></div>
+                        <img src="/robot.png" alt="Prometheus Humanoid Robot" class="robot-img">
+                        <img src="/eu_stars.png" alt="EU" class="eu_stars">
+                    </div>
+                </div>
+                
+                <div class="cta-button-container">
+                    <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
+                        Join Waitlist
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="features-container">
+                <h2 class="section-title">Built for Tomorrow</h2>
+                <p class="section-subtitle">Advanced technology meets practical application in every component</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <span class="feature-icon">🔧</span>
+                        <h3>Modular Architecture</h3>
+                        <p>Fully customizable platform with interchangeable components. Upgrade and modify to suit your exact specifications.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">🎓</span>
+                        <h3>Research Ready</h3>
+                        <p>Open platform designed for academic and commercial R&D. Complete SDK and documentation included.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">✨</span>
+                        <h3>Custom Solutions</h3>
+                        <p>We offer bespoke customizations tailored to your specific needs. From hardware modifications to software integration.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <span class="feature-icon">🛠️</span>
+                        <h3>DIY Friendly</h3>
+                        <p>Complete kits with step-by-step assembly guides. From hobbyist to professional developer.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom CTA Section -->
+        <section style="padding: 6rem 3rem; text-align: center; background: linear-gradient(180deg, #0f0f0f 0%, var(--color-bg) 100%); border-top: 1px solid var(--color-border);">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h2 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.01em;">Ready to Get Started?</h2>
+                <p style="color: var(--color-text-secondary); font-size: 1.2rem; margin-bottom: 3rem; line-height: 1.7;">Join the future of robotics. Order your humanoid robot or DIY kit today.</p>
+                <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button" style="display: inline-flex;">
+                    Join Humanoid Waitlist
                     <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                     </svg>
                 </a>
             </div>
+        </section>
+    </div>
+
+    <!-- Contacts Page -->
+    <div id="contacts-page" class="page">
+        <section class="contacts-section">
+            <h1 class="contacts-title">Contacts</h1>
             
-            <div class="hero-image">
-                <div class="robot-container">
-                    <div class="robot-glow"></div>
-                    <img src="/robot.png" alt="Prometheus Humanoid Robot" class="robot-img">
-                    <img src="/eu_stars.png" alt="EU" class="eu_stars">
-                </div>
+            <div class="contact-info">
+                <h3>Company Information</h3>
+                <p><strong>Prometheus Engineering Kft.</strong></p>
+                <p>Fő utca 1.</p>
+                <p>2073 Tök</p>
+                <p>Hungary</p>
+                <p><strong>VAT ID:</strong> 32719367-2-13</p>
+                <p><strong>Phone:</strong> <a class="contact-link" onclick="openModal('phone')">Click to reveal</a></p>
+                <p><strong>Email:</strong> <a class="contact-link" onclick="openModal('email')">Click to reveal</a></p>
             </div>
-            
-            <div class="cta-button-container">
-                <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
-                    Join Waitlist
-                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                    </svg>
-                </a>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Prometheus Robotics</h4>
+                <p>Building the future of humanoid robotics with advanced platforms for automation, research, and innovation.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features">
-        <div class="features-container">
-            <h2 class="section-title">Built for Tomorrow</h2>
-            <p class="section-subtitle">Advanced technology meets practical application in every component</p>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <span class="feature-icon">🔧</span>
-                    <h3>Modular Architecture</h3>
-                    <p>Fully customizable platform with interchangeable components. Upgrade and modify to suit your exact specifications.</p>
-                </div>
-
-                <div class="feature-card">
-                    <span class="feature-icon">🎓</span>
-                    <h3>Research Ready</h3>
-                    <p>Open platform designed for academic and commercial R&D. Complete SDK and documentation included.</p>
-                </div>
-
-                <div class="feature-card">
-                    <span class="feature-icon">✨</span>
-                    <h3>Custom Solutions</h3>
-                    <p>We offer bespoke customizations tailored to your specific needs. From hardware modifications to software integration.</p>
-                </div>
-
-                <div class="feature-card">
-                    <span class="feature-icon">🛠️</span>
-                    <h3>DIY Friendly</h3>
-                    <p>Complete kits with step-by-step assembly guides. From hobbyist to professional developer.</p>
-                </div>
+            <div class="footer-section">
+                <h4>Navigation</h4>
+                <ul class="footer-links">
+                    <li><a onclick="showPage('home')">Home</a></li>
+                    <li><a onclick="showPage('contacts')">Contacts</a></li>
+                    <li><a href="https://www.linkedin.com/company/meet-prometheus-robotics/" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Get Started</h4>
+                <ul class="footer-links">
+                    <li><a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank">Join Waitlist</a></li>
+                </ul>
             </div>
         </div>
-    </section>
-
-    <!-- Bottom CTA Section -->
-    <section style="padding: 6rem 3rem; text-align: center; background: linear-gradient(180deg, #0f0f0f 0%, var(--color-bg) 100%); border-top: 1px solid var(--color-border);">
-        <div style="max-width: 800px; margin: 0 auto;">
-            <h2 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.01em;">Ready to Get Started?</h2>
-            <p style="color: var(--color-text-secondary); font-size: 1.2rem; margin-bottom: 3rem; line-height: 1.7;">Join the future of robotics. Order your humanoid robot or DIY kit today.</p>
-            <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button" style="display: inline-flex;">
-                Join Humanoid Waitlist
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                </svg>
-            </a>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Prometheus Engineering Kft. All rights reserved. Made in EU 🇪🇺</p>
         </div>
-    </section>
+    </footer>
 
     <!-- Our LinkedIn Button -->
     <a href="https://www.linkedin.com/company/meet-prometheus-robotics/" target="_blank" class="full-video-btn">
@@ -775,5 +1086,98 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
         </svg>
     </a>
+
+    <!-- Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h2 class="modal-title" id="modalTitle">Verify you're human</h2>
+            
+            <div class="recaptcha-container" id="recaptchaContainer">
+                <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-callback="onRecaptchaSuccess"></div>
+            </div>
+            
+            <div class="contact-details" id="contactDetails">
+                <p id="contactValue"></p>
+                <small id="contactNote"></small>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentContactType = '';
+
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            const targetPage = document.getElementById(pageId + '-page');
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function openModal(type) {
+            currentContactType = type;
+            const modal = document.getElementById('contactModal');
+            const recaptchaContainer = document.getElementById('recaptchaContainer');
+            const contactDetails = document.getElementById('contactDetails');
+            
+            // Reset modal
+            recaptchaContainer.style.display = 'flex';
+            contactDetails.classList.remove('active');
+            
+            // Reset reCAPTCHA
+            if (typeof grecaptcha !== 'undefined') {
+                grecaptcha.reset();
+            }
+            
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('contactModal');
+            modal.classList.remove('active');
+        }
+
+        function onRecaptchaSuccess() {
+            const recaptchaContainer = document.getElementById('recaptchaContainer');
+            const contactDetails = document.getElementById('contactDetails');
+            const contactValue = document.getElementById('contactValue');
+            const contactNote = document.getElementById('contactNote');
+            
+            // Hide reCAPTCHA
+            recaptchaContainer.style.display = 'none';
+            
+            // Show contact details
+            if (currentContactType === 'phone') {
+                contactValue.textContent = '+36 70 591 9395';
+                contactNote.textContent = 'CET timezone';
+            } else if (currentContactType === 'email') {
+                contactValue.textContent = 'ilya@meetprometheus.com';
+                contactNote.textContent = '';
+            }
+            
+            contactDetails.classList.add('active');
+        }
+
+        // Close modal on outside click
+        window.onclick = function(event) {
+            const modal = document.getElementById('contactModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 </html>
