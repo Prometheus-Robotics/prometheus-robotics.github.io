@@ -46,9 +46,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(10, 10, 10, 0.8);
+            background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--color-border);
             animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -146,7 +145,6 @@
         .page {
             display: none;
             min-height: 100vh;
-            padding-top: 100px;
         }
 
         .page.active {
@@ -1474,7 +1472,7 @@
                     Buy Modular Platform
                     <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                    </svg>
+                        </svg>
                 </a>
             </div>
         </section>
@@ -1541,7 +1539,11 @@
             <h2 class="modal-title" id="modalTitle">Verify you're human</h2>
             
             <div class="recaptcha-container" id="recaptchaContainer">
-                <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-callback="onRecaptchaSuccess"></div>
+                <!-- =====================================
+                     INSERT YOUR RECAPTCHA SITE KEY BELOW
+                     Get keys at: https://www.google.com/recaptcha/admin
+                     ===================================== -->
+                <div class="g-recaptcha" data-sitekey="6LcOOl4sAAAAAKuEELfpH8_meztvMp5irpmPAjIr" data-callback="onRecaptchaSuccess"></div>
             </div>
             
             <div class="contact-details" id="contactDetails">
@@ -1553,6 +1555,12 @@
 
     <script>
         let currentContactType = '';
+        
+        // =====================================
+        // INSERT YOUR CLOUDFLARE WORKER URL HERE
+        // Example: 'https://your-worker.your-subdomain.workers.dev'
+        // ===================================== 
+        const WORKER_URL = 'https://flat-flower-f90e.prometheusroboticsco.workers.dev/';
 
         function showPage(pageId) {
             const pages = document.querySelectorAll('.page');
@@ -1563,7 +1571,6 @@
                 targetPage.classList.add('active');
             }
 
-            // Scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
@@ -1573,11 +1580,9 @@
             const recaptchaContainer = document.getElementById('recaptchaContainer');
             const contactDetails = document.getElementById('contactDetails');
             
-            // Reset modal
             recaptchaContainer.style.display = 'flex';
             contactDetails.classList.remove('active');
             
-            // Reset reCAPTCHA
             if (typeof grecaptcha !== 'undefined') {
                 grecaptcha.reset();
             }
@@ -1590,28 +1595,68 @@
             modal.classList.remove('active');
         }
 
-        function onRecaptchaSuccess() {
+        async function onRecaptchaSuccess(token) {
             const recaptchaContainer = document.getElementById('recaptchaContainer');
             const contactDetails = document.getElementById('contactDetails');
             const contactValue = document.getElementById('contactValue');
             const contactNote = document.getElementById('contactNote');
             
-            // Hide reCAPTCHA
+            // Show loading indicator
+            contactValue.textContent = 'Loading...';
+            contactNote.textContent = '';
             recaptchaContainer.style.display = 'none';
-            
-            // Show contact details
-            if (currentContactType === 'phone') {
-                contactValue.textContent = '+36 70 591 9395';
-                contactNote.textContent = 'CET timezone';
-            } else if (currentContactType === 'email') {
-                contactValue.textContent = 'ilya@meetprometheus.com';
-                contactNote.textContent = '';
-            }
-            
             contactDetails.classList.add('active');
+            
+            try {
+                // Send request to Cloudflare Worker
+                const response = await fetch(WORKER_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        recaptchaToken: token,
+                        contactType: currentContactType
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    // Show decrypted contact
+                    contactValue.textContent = data.contact;
+                    contactNote.textContent = data.note || '';
+                } else {
+                    // Show error
+                    contactValue.textContent = 'Verification failed';
+                    contactNote.textContent = 'Please try again';
+                    console.error('Worker error:', data.error);
+                    
+                    // Restore reCAPTCHA after 2 seconds
+                    setTimeout(() => {
+                        recaptchaContainer.style.display = 'flex';
+                        contactDetails.classList.remove('active');
+                        if (typeof grecaptcha !== 'undefined') {
+                            grecaptcha.reset();
+                        }
+                    }, 2000);
+                }
+            } catch (error) {
+                console.error('Network error:', error);
+                contactValue.textContent = 'Connection error';
+                contactNote.textContent = 'Please check your internet connection';
+                
+                // Restore reCAPTCHA after 2 seconds
+                setTimeout(() => {
+                    recaptchaContainer.style.display = 'flex';
+                    contactDetails.classList.remove('active');
+                    if (typeof grecaptcha !== 'undefined') {
+                        grecaptcha.reset();
+                    }
+                }, 2000);
+            }
         }
 
-        // Close modal on outside click
         window.onclick = function(event) {
             const modal = document.getElementById('contactModal');
             if (event.target === modal) {
@@ -1619,7 +1664,6 @@
             }
         }
 
-        // Close modal on Escape key
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 closeModal();
