@@ -293,6 +293,26 @@
             transform: translateX(4px);
         }
 
+        .cta-button.secondary {
+            background: transparent;
+            color: var(--color-text);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: none;
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: none;
+        }
+
+        .cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+
         /* Robot Image Section */
         .hero-image {
             position: relative;
@@ -1031,12 +1051,14 @@
             }
             
             .cta-button-container {
-                display: block;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
                 order: 3;
                 width: 100%;
                 margin: 0 1rem 2rem 0;
             }
-            
+
             .cta-button-container .cta-button {
                 width: 100%;
                 justify-content: center;
@@ -1269,14 +1291,22 @@
                     <p class="hero-description">
                         A general purpose humanoid robot platform. Advanced robotics platform (and Dev Kits) for Automation Suppliers, Research Labs, Start-ups, and DIY-enthusiasts.
                     </p>
-                    <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
-                        Buy Humanoid Robot
-                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                        </svg>
-                    </a>
+                    <div class="cta-group">
+                        <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
+                            Buy Humanoid Robot
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            </svg>
+                        </a>
+                        <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
+                            Book Call
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-                
+
                 <div class="hero-image">
                     <div class="robot-container">
                         <div class="robot-glow"></div>
@@ -1290,6 +1320,12 @@
                         Buy Humanoid Robot
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
+                    </a>
+                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
+                        Book Call
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                         </svg>
                     </a>
                 </div>
@@ -1468,12 +1504,20 @@
             <div style="max-width: 800px; margin: 0 auto;">
                 <h2 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.01em;">Ready to Get Started?</h2>
                 <p style="color: var(--color-text-secondary); font-size: 1.2rem; margin-bottom: 3rem; line-height: 1.7;">Join the future of robotics. Order your humanoid robot or DIY kit today.</p>
-                <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button" style="display: inline-flex;">
-                    Buy Modular Platform
-                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                <div class="cta-group" style="justify-content: center;">
+                    <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
+                        Buy Modular Platform
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                         </svg>
-                </a>
+                    </a>
+                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
+                        Book Call
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </section>
     </div>
@@ -1516,6 +1560,7 @@
                 <h4>Get Started</h4>
                 <ul class="footer-links">
                     <li><a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank">Buy Robot</a></li>
+                    <li><a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer">Book Call</a></li>
                 </ul>
             </div>
         </div>
