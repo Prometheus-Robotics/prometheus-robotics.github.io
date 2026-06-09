@@ -183,8 +183,14 @@ def main():
             html = set_lang_attr(html, m.CODE)
             write("%s/%sindex.html" % (m.CODE, TAB_PATH[tab]), html)
 
-    # sitemap
+    # sitemap (tab/language pages + blog)
     urls = [url_for(lang, tab) for lang in ["en"] + codes for tab in TAB_IDS]
+    blog_dir = os.path.join(ROOT, "blog")
+    if os.path.isfile(os.path.join(blog_dir, "index.html")):
+        urls.append(BASE + "/blog/")
+        for d in sorted(glob.glob(os.path.join(blog_dir, "*", "index.html"))):
+            slug = os.path.basename(os.path.dirname(d))
+            urls.append(BASE + "/blog/" + slug + "/")
     items = "\n".join("  <url><loc>%s</loc></url>" % u for u in urls)
     sitemap = ('<?xml version="1.0" encoding="UTF-8"?>\n'
                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
