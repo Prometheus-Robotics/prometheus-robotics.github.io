@@ -5,24 +5,26 @@
 index.html is the English Research-Labs master (served at /). This script
 produces, with correct <title>/description/canonical/hreflang and the right tab
 pre-selected:
-  /manufacturing/  /entertainment/                      (English tabs)
+  /manufacturing/  /entertainment/                          (English tabs)
   /<lang>/  /<lang>/manufacturing/  /<lang>/entertainment/   (translated)
 
-It also updates index.html's hreflang block in place and writes sitemap.xml.
+Languages live one-per-file in translations/<code>.py, each defining
+CODE, LANG, LOCALE, LABEL, CC, SEO (per-tab title/desc) and T (English->translation).
 
-Re-run after editing index.html OR i18n_data.py:  python3 build_site.py
-Add a language: add it to LANGS in index.html's <script>, add SEO + every TRANS
-key in i18n_data.py, then re-run.
+It also rewrites index.html's hreflang block and the JS LANGS array in place, and
+writes sitemap.xml.
+
+Re-run after editing index.html OR any translations/*.py:  python3 build_site.py
+Add a language: drop a new translations/<code>.py, then re-run.
 """
+import glob
+import importlib.util
 import os
 import re
-
-from i18n_data import LANG_META, SEO, TRANS
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 BASE = "https://meetprometheus.com"
 
-# tab id -> url path segment (relative to a language root)
 TAB_PATH = {"research": "", "manufacturing": "manufacturing/", "entertainment": "entertainment/"}
 TAB_IDS = ["research", "manufacturing", "entertainment"]
 
@@ -41,16 +43,26 @@ EN_SEO = {
     ),
 }
 
-LANGS = list(LANG_META.keys())  # e.g. ["de", "fr"]
+
+def load_languages():
+    """Load every translations/*.py module, sorted by code."""
+    mods = []
+    for path in sorted(glob.glob(os.path.join(ROOT, "translations", "*.py"))):
+        name = os.path.splitext(os.path.basename(path))[0]
+        if name.startswith("_"):
+            continue
+        spec = importlib.util.spec_from_file_location("tr_" + name, path)
+        m = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(m)
+        mods.append(m)
+    return mods
 
 
 def esc(s):
-    """Minimal HTML-attribute escaping for SEO text (source uses raw &)."""
     return s.replace("&", "&amp;")
 
 
 def replace_region(html, start, end, new_block):
-    """Replace start..end (inclusive) with new_block."""
     i = html.index(start)
     j = html.index(end, i) + len(end)
     return html[:i] + new_block + html[j:]
@@ -78,35 +90,35 @@ def url_for(lang, tab):
     return BASE + (base + "/" + TAB_PATH[tab] or "/")
 
 
-def set_hreflang(html, tab):
+def set_hreflang(html, tab, codes):
     path = TAB_PATH[tab]
     lines = ['<link rel="alternate" hreflang="x-default" href="%s">' % (BASE + "/" + path)]
-    for lang in ["en"] + LANGS:
-        href = url_for(lang, tab)
-        lines.append('<link rel="alternate" hreflang="%s" href="%s">' % (lang, href))
+    for lang in ["en"] + codes:
+        lines.append('<link rel="alternate" hreflang="%s" href="%s">' % (lang, url_for(lang, tab)))
     block = "<!-- HREFLANG:START -->\n    " + "\n    ".join(lines) + "\n    <!-- HREFLANG:END -->"
     return replace_region(html, "<!-- HREFLANG:START -->", "<!-- HREFLANG:END -->", block)
+
+
+def set_langs(html, mods):
+    # English stays hardcoded in index.html with a trailing comma; we emit the
+    # rest between the markers (no leading comma -> no array hole).
+    entries = ["            { code: '%s', cc: '%s', label: '%s' }" % (m.CODE, m.CC, m.LABEL) for m in mods]
+    block = "/* LANGS:START */\n" + ",\n".join(entries) + "\n            /* LANGS:END */"
+    return replace_region(html, "/* LANGS:START */", "/* LANGS:END */", block)
 
 
 def set_active(html, active_id):
     for tid in TAB_IDS:
         pcls = "use-case-panel active" if tid == active_id else "use-case-panel"
-        html = re.sub(
-            r'<div class="use-case-panel(?: active)?" id="usecase-%s">' % tid,
-            '<div class="%s" id="usecase-%s">' % (pcls, tid),
-            html,
-        )
+        html = re.sub(r'<div class="use-case-panel(?: active)?" id="usecase-%s">' % tid,
+                      '<div class="%s" id="usecase-%s">' % (pcls, tid), html)
         tcls = "use-case-tab active" if tid == active_id else "use-case-tab"
-        html = re.sub(
-            r'<a class="use-case-tab(?: active)?" data-tab="%s"' % tid,
-            '<a class="%s" data-tab="%s"' % (tcls, tid),
-            html,
-        )
+        html = re.sub(r'<a class="use-case-tab(?: active)?" data-tab="%s"' % tid,
+                      '<a class="%s" data-tab="%s"' % (tcls, tid), html)
     return html
 
 
 def set_tab_hrefs(html, lang):
-    """Prefix the three tab anchor hrefs with /<lang> for non-English pages."""
     if lang == "en":
         return html
     for tid in TAB_IDS:
@@ -122,9 +134,9 @@ def set_lang_attr(html, lang):
     return html.replace('<html lang="en">', '<html lang="%s" data-site-lang="%s">' % (lang, lang))
 
 
-def translate(html, lang):
-    for en in sorted(TRANS.keys(), key=len, reverse=True):
-        tr = TRANS[en].get(lang)
+def translate(html, table):
+    for en in sorted(table.keys(), key=len, reverse=True):
+        tr = table.get(en)
         if tr:
             html = html.replace(en, tr)
     return html
@@ -132,46 +144,47 @@ def translate(html, lang):
 
 def write(rel_path, html):
     out = os.path.join(ROOT, rel_path)
-    os.makedirs(os.path.dirname(out), exist_ok=True)
+    os.makedirs(os.path.dirname(out) or ".", exist_ok=True)
     with open(out, "w", encoding="utf-8") as f:
         f.write(html)
     print("wrote", rel_path)
 
 
 def main():
+    mods = load_languages()
+    codes = [m.CODE for m in mods]
+    print("languages:", ", ".join(codes) if codes else "(none)")
+
     with open(os.path.join(ROOT, "index.html"), encoding="utf-8") as f:
         master = f.read()
+    master = set_langs(master, mods)  # keep the switcher list in sync
 
-    # English research = index.html: refresh its SEO + hreflang in place.
+    # English research = index.html itself: refresh SEO, hreflang, LANGS in place.
     idx = set_seo(master, EN_SEO["research"][0], EN_SEO["research"][1], url_for("en", "research"), "en_US")
-    idx = set_hreflang(idx, "research")
+    idx = set_hreflang(idx, "research", codes)
     write("index.html", idx)
 
     # English manufacturing / entertainment
     for tab in ["manufacturing", "entertainment"]:
         html = set_active(master, tab)
         html = set_seo(html, EN_SEO[tab][0], EN_SEO[tab][1], url_for("en", tab), "en_US")
-        html = set_hreflang(html, tab)
+        html = set_hreflang(html, tab, codes)
         write(TAB_PATH[tab] + "index.html", html)
 
     # Each language × each tab
-    for lang in LANGS:
-        html_lang_attr, locale, _label = LANG_META[lang]
+    for m in mods:
         for tab in TAB_IDS:
-            html = translate(master, lang)
+            html = translate(master, m.T)
             html = set_active(html, tab)
-            title, desc = SEO[lang][tab]
-            html = set_seo(html, title, desc, url_for(lang, tab), locale)
-            html = set_hreflang(html, tab)
-            html = set_tab_hrefs(html, lang)
-            html = set_lang_attr(html, lang)
-            write("%s/%sindex.html" % (lang, TAB_PATH[tab]), html)
+            title, desc = m.SEO[tab]
+            html = set_seo(html, title, desc, url_for(m.CODE, tab), m.LOCALE)
+            html = set_hreflang(html, tab, codes)
+            html = set_tab_hrefs(html, m.CODE)
+            html = set_lang_attr(html, m.CODE)
+            write("%s/%sindex.html" % (m.CODE, TAB_PATH[tab]), html)
 
     # sitemap
-    urls = []
-    for lang in ["en"] + LANGS:
-        for tab in TAB_IDS:
-            urls.append(url_for(lang, tab))
+    urls = [url_for(lang, tab) for lang in ["en"] + codes for tab in TAB_IDS]
     items = "\n".join("  <url><loc>%s</loc></url>" % u for u in urls)
     sitemap = ('<?xml version="1.0" encoding="UTF-8"?>\n'
                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
