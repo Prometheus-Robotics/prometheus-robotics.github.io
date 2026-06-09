@@ -98,7 +98,8 @@ POSTS = [
     },
 ]
 
-ANALYTICS = '<script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>'
+ANALYTICS = ('<script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>\n'
+             '    <!-- Cloudflare Web Analytics --><script defer src=\'https://static.cloudflareinsights.com/beacon.min.js\' data-cf-beacon=\'{"token": "75f868369d9e4374b5f00b5183380a1e"}\'></script><!-- End Cloudflare Web Analytics -->')
 
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
          '    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
