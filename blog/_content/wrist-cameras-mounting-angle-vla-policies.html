@@ -1,0 +1,68 @@
+<p>Ask anyone who has trained a manipulation policy what mattered most, and surprisingly often the answer is not the model — it is the camera. For vision-language-action (VLA) policies in particular, the <strong>wrist camera and the angle it is mounted at</strong> quietly decide whether the policy ever learns to grasp reliably. It is one of the cheapest things to get right and one of the most expensive things to get wrong, because a bad angle poisons every demonstration you collect.</p>
+
+<p>This guide explains why the wrist view is so important for VLAs, how to choose the mounting angle in practice, and the lens, calibration, and consistency details that make the difference — using the <a href="/">Prometheus humanoid</a>, whose wrist-camera angle is adjustable precisely for this reason.</p>
+
+<h2>Why VLAs lean on the wrist camera</h2>
+<p>Manipulation policies use two complementary viewpoints:</p>
+<ul>
+    <li><strong>Eye-to-hand</strong> — a fixed, scene-level view (Prometheus’ head-mounted stereo pair). It gives context: where objects are, how the scene is laid out, what the instruction refers to.</li>
+    <li><strong>Eye-in-hand</strong> — the wrist camera that travels with the gripper. It gives the close-in detail that decides a grasp: the exact gap between fingertips and object, contact, alignment.</li>
+</ul>
+<p>The reason the wrist view matters so much for VLAs is the <em>last few centimetres</em>. As the hand approaches an object, a scene camera’s view of the contact point gets blocked by the arm and gripper. The wrist camera, moving with the hand, keeps the target in frame exactly when precision matters most. Policies trained with a good eye-in-hand view are markedly more robust to object position, because they can servo to what they see rather than memorizing absolute coordinates from a fixed camera.</p>
+
+<div class="callout">
+    <p><strong>The head camera tells the policy <em>what</em> and <em>where</em>; the wrist camera tells it <em>how</em> to close the last gap.</strong> VLAs use both — but it’s the wrist view that usually separates a 40% success rate from a 90% one on contact-rich tasks.</p>
+</div>
+
+<h2>Choosing the mounting angle</h2>
+<p>The mounting angle is the tilt of the wrist camera relative to the gripper’s approach axis. There is no single correct number — it depends on your tasks — but the trade-off is consistent:</p>
+<ul>
+    <li><strong>Too shallow</strong> (camera looking straight ahead, parallel to the fingers): you see far down range but lose sight of the fingertips and the grasp point as you close in. The policy is blind at the moment of contact.</li>
+    <li><strong>Too steep</strong> (camera looking sharply down at the gripper): you see the fingertips beautifully but lose the target until the hand is almost on top of it, so the approach is under-informed.</li>
+    <li><strong>The sweet spot</strong> keeps <em>both</em> the fingertips and the target object in frame through the entire approach-and-grasp, with the contact point near the centre of the image at the moment of grasp.</li>
+</ul>
+
+<h3>A practical method to pick it</h3>
+<ol>
+    <li>Pick the hardest grasp in your task set (small object, tight clearance).</li>
+    <li>Teleoperate that grasp slowly while watching the live wrist feed. Adjust the Prometheus wrist angle until the fingertips and the object stay visible from the start of the approach all the way to contact.</li>
+    <li>Check your <em>other</em> tasks at that angle — a tabletop pick and a shelf reach frame very differently. Find the angle that serves the whole task set, not just one grasp.</li>
+    <li>Lock it, write it down, and don’t touch it again.</li>
+</ol>
+
+<div class="callout">
+    <p><strong>Consistency beats perfection.</strong> A slightly suboptimal angle used for <em>every</em> demonstration trains a fine policy. A great angle that drifts between demos trains nothing — to the model, a changed wrist angle is a different camera, and the dataset becomes inconsistent. This is the single most common way teams quietly ruin a dataset. Fix the angle before episode one and keep it identical through collection, evaluation, and deployment.</p>
+</div>
+
+<h2>Lens, field of view, and image quality</h2>
+<ul>
+    <li><strong>Field of view.</strong> A moderately wide FOV is forgiving — it keeps the target in frame even when your approach isn’t perfectly aligned. Too wide and you add distortion and shrink the object in pixels; too narrow and small motions throw the target out of frame.</li>
+    <li><strong>Resolution.</strong> Higher isn’t automatically better — most VLAs downsample to a fixed input size, and bigger images cost VRAM during fine-tuning. Match what your policy expects rather than maxing out the sensor.</li>
+    <li><strong>Exposure and motion blur.</strong> The wrist camera moves fast, so prioritize a high enough frame rate and shutter to avoid motion blur during the approach. Blurry contact frames are exactly the frames the policy needs sharp.</li>
+    <li><strong>Latency and sync.</strong> The wrist image must be timestamped and aligned with the joint states and head camera. Lag between “what the wrist saw” and “what the arm did” corrupts the action labels — the same synchronization discipline covered in the data-collection guides.</li>
+</ul>
+
+<h2>Calibration and what the policy sees</h2>
+<p>For most imitation-learning setups you feed the wrist image directly and let the policy learn the geometry implicitly — you don’t need perfect extrinsics for a VLA to work. But it pays to know the camera’s pose relative to the gripper, for two reasons: it lets you reproduce the exact framing if hardware is swapped, and it lets you replay or augment data correctly. Record the mounting angle and extrinsics alongside the dataset so the setup is reproducible months later.</p>
+
+<h2>One wrist camera or two?</h2>
+<p>A single wrist camera on the working hand covers most single-arm manipulation. For bimanual tasks — handovers, two-handed assembly — give <em>each</em> arm its own wrist camera so both grasps are observed; a VLA trained on both views coordinates the hands far better than one fed a single viewpoint. On Prometheus this maps onto the Type&nbsp;X manipulator options, which support wrist cameras (and five-finger hands) per arm.</p>
+
+<h2>How Prometheus is set up for this</h2>
+<p>The platform was built with this exact problem in mind:</p>
+<ul>
+    <li><strong>Adjustable wrist-camera angle</strong>, designed so you can dial in the eye-in-hand view that VLA models like Pi0.5 and π0.7 rely on — then lock it for the whole dataset.</li>
+    <li><strong>Head-mounted stereo</strong> for the scene-level context that complements the wrist view.</li>
+    <li><strong>Synchronized capture</strong> through the SDK, so wrist frames, head frames, and joint states share timestamps out of the box.</li>
+</ul>
+
+<h2>Common mistakes</h2>
+<ul>
+    <li><strong>Changing the angle mid-dataset</strong> — the number-one silent killer. Lock it first.</li>
+    <li><strong>An angle that loses the fingertips at contact</strong> — the policy goes blind exactly when it needs to see.</li>
+    <li><strong>Motion blur on the approach</strong> — raise frame rate / shutter.</li>
+    <li><strong>Mismatched framing between training and deployment</strong> — deploy with the identical wrist setup you trained on.</li>
+</ul>
+
+<h2>Where this fits</h2>
+<p>Camera placement is upstream of everything else: it shapes the data you collect, which shapes whatever policy you train on it. Once your wrist view is dialed in and locked, you’re ready to collect demonstrations and train — whether that’s <a href="/blog/collecting-teleoperation-data-imitation-learning-act/">ACT from scratch</a> or a <a href="/blog/collecting-teleoperation-data-imitation-learning-pi07/">fine-tuned π0.7</a>. Get the angle right first, and both work far better.</p>

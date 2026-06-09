@@ -36,6 +36,16 @@ POSTS = [
         "date": "2026-06-09",
         "date_human": "June 9, 2026",
     },
+    {
+        "slug": "wrist-cameras-mounting-angle-vla-policies",
+        "title": "Choosing Wrist Cameras &amp; Mounting Angle for VLA Policies",
+        "h1": "Choosing Wrist Cameras and the Mounting Angle for VLA Policies",
+        "crumb": "Wrist cameras for VLA",
+        "eyebrow": "Guide · Hardware · VLA",
+        "description": "Why the wrist camera and its mounting angle make or break a vision-language-action policy — how to choose the angle, lens, and setup on the Prometheus humanoid, and keep it consistent across your dataset.",
+        "date": "2026-06-09",
+        "date_human": "June 9, 2026",
+    },
 ]
 
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
