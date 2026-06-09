@@ -59,8 +59,10 @@ CTA = (
     '<div class="article-cta">\n'
     '    <h3>Run this on a real humanoid</h3>\n'
     '    <p>Prometheus ships with the teleoperation pipeline, stereo + wrist cameras, URDF, simulator, and SDK you need to start collecting data on day one.</p>\n'
-    '    <a class="btn" href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" rel="noopener">Buy Humanoid Robot</a>\n'
-    '    <a class="btn secondary" href="/">Explore the platform</a>\n'
+    '    <div class="btn-row">\n'
+    '        <a class="btn" href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" rel="noopener">Buy Humanoid Robot</a>\n'
+    '        <a class="btn secondary" href="/">Explore the platform</a>\n'
+    '    </div>\n'
     '</div>'
 )
 

@@ -1,33 +1,35 @@
 <p>Teleoperation data is the fuel of modern robot learning — but what you burn it in matters. Train a policy <em>from scratch</em> and it only ever knows the exact task you demonstrated. Fine-tune a <strong>pretrained vision-language-action (VLA) model</strong> on the same data and you inherit a generalist that already understands objects, scenes, and language — then specialize it to your robot in an afternoon.</p>
 
-<p><strong>π0.7</strong> is the latest in the π (“pi”) series of VLA models from Physical Intelligence, and it is built for exactly this workflow: collect demonstrations, fine-tune, deploy. This guide covers collecting that data on the <a href="/">Prometheus humanoid</a> and fine-tuning π0.7 on a single consumer GPU.</p>
+<p><strong>π0.7</strong> is the latest in the π (“pi”) series of VLA models from Physical Intelligence, and it is built for exactly this workflow: collect demonstrations, fine-tune, deploy. This guide covers the full pipeline — collecting language-annotated data on the <a href="/">Prometheus humanoid</a>, fine-tuning π0.7 on a single consumer GPU, evaluating it, and deploying it back on hardware.</p>
 
 <div class="callout">
-    <p><strong>New to imitation learning?</strong> Start with the companion guide, <a href="/blog/collecting-teleoperation-data-imitation-learning-act/">collecting teleoperation data for ACT</a>. It covers the data-collection basics from scratch — and the dataset you record there feeds π0.7 directly.</p>
+    <p><strong>New to imitation learning?</strong> Start with the companion guide, <a href="/blog/collecting-teleoperation-data-imitation-learning-act/">collecting teleoperation data for ACT</a>. It covers the data-collection fundamentals — observation/action spaces, sampling rate, dataset design — and the dataset you record there feeds π0.7 directly.</p>
 </div>
 
 <h2>What π0.7 is</h2>
-<p>The π series pairs a vision-language model (VLM) backbone with an <em>action expert</em> that generates continuous, high-frequency action chunks via flow matching. The model is pretrained on a large, diverse corpus of robot interaction data, so out of the box it already maps images and a natural-language instruction to plausible motion across many embodiments.</p>
-<p>Each release sharpened that recipe: π0 established the flow-matching VLA, π0.5 pushed open-world generalization to unseen environments, and π0.7 is the current checkpoint in that lineage. For your purposes the key property is the same throughout: <strong>you don’t train it from zero — you fine-tune a capable generalist on a few hours of your own demonstrations.</strong></p>
+<p>The π series pairs a <strong>vision-language model (VLM) backbone</strong> with an <strong>action expert</strong> that generates continuous, high-frequency action chunks via <strong>flow matching</strong>. In plain terms: the VLM reads the camera images and a natural-language instruction and forms a rich understanding of the scene; the action expert turns that understanding into smooth motor commands. Flow matching — rather than discretizing actions into tokens — is what lets the policy output precise, continuous trajectories at control rate.</p>
+<p>Crucially, the model is <strong>pretrained on a large, diverse corpus of robot interaction data</strong> spanning many embodiments and tasks. Out of the box it already maps “pick up the cup” to plausible reaching and grasping. Each release sharpened that recipe: π0 established the flow-matching VLA, π0.5 pushed open-world generalization to environments it had never seen, and π0.7 is the current checkpoint in that lineage. For your purposes the defining property is constant throughout the series: <strong>you do not train it from zero — you fine-tune a capable generalist on a few hours of your own demonstrations.</strong></p>
 
 <h2>Why fine-tune a VLA instead of training ACT?</h2>
 <ul>
-    <li><strong>Generalization.</strong> Because π0.7 starts from broad pretraining, it transfers to new object positions, lighting, and even novel objects far better than a policy trained only on your 50 demos.</li>
-    <li><strong>Language conditioning.</strong> You can tell it <em>what</em> to do (“put the blue cube in the bin”), and a single model can cover several related tasks.</li>
-    <li><strong>Fewer demos per task.</strong> Pretraining does the heavy lifting, so each new skill needs less data than learning from scratch.</li>
+    <li><strong>Generalization.</strong> Because π0.7 starts from broad pretraining, it transfers to new object positions, lighting, and even objects it never saw in your demos — far beyond what a from-scratch policy trained on 50 demonstrations can do.</li>
+    <li><strong>Language conditioning.</strong> You can tell it <em>what</em> to do — “put the blue cube in the bin”, “wipe the table” — and a single checkpoint can cover a family of related tasks instead of one frozen behaviour.</li>
+    <li><strong>Fewer demos per skill.</strong> Pretraining does the heavy lifting, so each new task needs fewer demonstrations to reach a useful success rate.</li>
+    <li><strong>A path to dexterity.</strong> With five-finger hands (Prometheus Type&nbsp;X manipulators), the richer action space benefits more from a pretrained generalist than from learning everything from scratch.</li>
 </ul>
-<p>The trade-off is size: π0.7 is a large model, so fine-tuning costs more than ACT. The practical workaround is <strong>parameter-efficient fine-tuning (LoRA)</strong>, which brings the memory footprint down to roughly what a single 24&nbsp;GB consumer GPU (an RTX&nbsp;4090, say) provides.</p>
+<p>The trade-off is size: π0.7 is a large model, so fine-tuning costs more than ACT. The practical answer is parameter-efficient fine-tuning, covered below — which is what keeps this on a single consumer GPU.</p>
 
 <h2>Collecting the data on Prometheus</h2>
-<p>The collection loop is the same one described in the <a href="/blog/collecting-teleoperation-data-imitation-learning-act/">ACT guide</a> — Prometheus ships with the teleoperation pipeline ready, so you record without integration work:</p>
+<p>The collection loop is the same one described in the <a href="/blog/collecting-teleoperation-data-imitation-learning-act/">ACT guide</a>. Prometheus ships with the teleoperation pipeline ready, so you record without integration work:</p>
 <ul>
     <li><strong>VR teleop</strong> with a Meta&nbsp;Quest&nbsp;3S, or the leader–follower / manual controller for precise trajectories.</li>
-    <li><strong>Observations:</strong> the head-mounted stereo pair plus wrist cameras. The adjustable wrist-camera angle was designed with VLA models like the π series in mind — set it once and keep it fixed across demos.</li>
-    <li><strong>Proprioception and actions:</strong> joint states and the target commands you teleoperate, recorded in the <strong>LeRobot dataset format</strong>.</li>
+    <li><strong>Observations:</strong> the head-mounted stereo pair plus the wrist cameras. The adjustable wrist-camera angle was designed with VLA models like the π series in mind — set it once, keep it fixed across the dataset.</li>
+    <li><strong>Proprioception and actions:</strong> joint states and the target commands you teleoperate, recorded at a fixed rate in the <strong>LeRobot dataset format</strong>.</li>
 </ul>
 
+<h3>The one thing ACT doesn’t need: language</h3>
 <div class="callout">
-    <p><strong>Annotate with language.</strong> The one thing a VLA needs that ACT does not is an instruction per episode. Label each demonstration with the natural-language task it shows (“pick up the cup and place it on the saucer”). Consistent, descriptive labels are what unlock π0.7’s language conditioning at run time.</p>
+    <p><strong>Annotate every episode with an instruction.</strong> A VLA learns to <em>condition on language</em>, so each demonstration needs the natural-language task it shows (“pick up the cup and place it on the saucer”). Write instructions the way a user actually would, keep phrasing consistent for the same skill, and vary it slightly across skills so the model learns the mapping rather than memorizing one string. Good annotations are what unlock π0.7’s instruction-following at run time.</p>
 </div>
 
 <pre><code># Illustrative — record language-annotated teleop episodes
@@ -39,8 +41,15 @@ python -m lerobot.record \
     --dataset.num_episodes=40 \
     --dataset.fps=30</code></pre>
 
+<h3>How much data, and how to mix it</h3>
+<p>Because of pretraining, you often need fewer demos per task than ACT — but coverage still matters. For a multi-task policy, record each skill as its own labelled set (30–50 episodes is a reasonable start) and fine-tune on the mixture. Spread object positions and lighting deliberately; that variation is what the pretrained backbone amplifies into real generalization.</p>
+
 <h2>Fine-tuning π0.7 on a single GPU</h2>
-<p>With demonstrations in hand, fine-tuning is a LoRA run against the released π0.7 checkpoint. Convert (or point at) your LeRobot dataset, then launch:</p>
+<p>With language-annotated demonstrations in hand, fine-tuning runs against the released π0.7 checkpoint. The key decision is full fine-tuning versus <strong>LoRA</strong> (low-rank adaptation):</p>
+<ul>
+    <li><strong>LoRA</strong> freezes the base weights and trains small adapter matrices plus the action expert. It cuts trainable parameters and optimizer state dramatically, bringing the memory footprint down to roughly what a single <strong>24&nbsp;GB consumer GPU</strong> (an RTX&nbsp;4090, say) provides. This is the path for most labs validating a task.</li>
+    <li><strong>Full fine-tuning</strong> updates all weights — higher ceiling, but the optimizer state pushes you onto a rented A100/H100. Reach for it only when LoRA plateaus.</li>
+</ul>
 
 <pre><code># Illustrative — LoRA fine-tune of pi0.7 on your dataset
 python -m openpi.train pi07_lora \
@@ -50,18 +59,43 @@ python -m openpi.train pi07_lora \
     --num_steps=30000 \
     --output_dir=outputs/pi07_kitchen</code></pre>
 
-<p>LoRA keeps the trainable parameters and optimizer state small enough to fit on one 24&nbsp;GB card; full fine-tuning is heavier and is where a rented A100/H100 still helps. For most labs validating a task, the consumer-GPU LoRA path is enough to get a working, language-conditioned policy.</p>
+<p>A few practical notes:</p>
+<ul>
+    <li><strong>Watch VRAM, not just parameter count.</strong> Activations and image encoders dominate; if you are tight on a 24&nbsp;GB card, reduce batch size and gradient-accumulate, or trim image resolution before giving up on LoRA.</li>
+    <li><strong>Guard against forgetting.</strong> Aggressive fine-tuning on a narrow dataset can erode the very generalization you fine-tuned to keep. Co-training with a slice of broader data, or simply keeping the run short with LoRA, helps preserve the pretrained prior.</li>
+    <li><strong>Normalization.</strong> As with any policy, the action/state statistics must match your robot. Recompute them for the Prometheus action space rather than reusing another embodiment’s.</li>
+</ul>
 
-<h2>Deploying π0.7 back on the robot</h2>
-<p>At inference the policy takes the live camera streams, the robot state, and a text instruction, and emits action chunks. Run it on a tethered workstation GPU and stream commands to Prometheus through the SDK’s REST API, or distil/quantize for the onboard Jetson. Because you can validate against the bundled simulator and the included URDF first, you catch issues before they touch hardware.</p>
+<h2>Evaluating π0.7</h2>
+<p>Validate in the bundled simulator against the URDF first, then on hardware. Beyond raw success rate, test the things a VLA is supposed to buy you:</p>
+<ul>
+    <li><strong>Spatial generalization:</strong> object positions you never demonstrated.</li>
+    <li><strong>Object generalization:</strong> a mug you never showed it, given the same instruction.</li>
+    <li><strong>Language generalization:</strong> paraphrased instructions (“drop the cube in the container”).</li>
+</ul>
+<p>If spatial generalization is weak, you usually need more position variation in the data; if language generalization is weak, diversify your instruction phrasing.</p>
+
+<h2>Deploying π0.7 on the robot</h2>
+<p>At inference the policy consumes the live camera streams, the robot state, and a text instruction, and emits action chunks via flow matching. Two deployment shapes are common on Prometheus:</p>
+<ul>
+    <li><strong>Tethered GPU.</strong> Run the policy on a workstation GPU and stream commands to the robot over the SDK’s REST API. Simplest, and fine for development and many production cells.</li>
+    <li><strong>Onboard.</strong> Distil or quantize for the NVIDIA&nbsp;Jetson when you need the robot untethered.</li>
+</ul>
+<p>Because the model predicts chunks, you get smooth motion without re-querying every step, and you can overlap inference with execution to hide latency — the same real-time-chunking idea that keeps action-chunked policies responsive.</p>
+
+<h2>ACT or π0.7 — which to use</h2>
+<ul>
+    <li><strong>Reach for <a href="/blog/collecting-teleoperation-data-imitation-learning-act/">ACT</a></strong> when you have one well-defined task, want the cheapest possible training, and don’t need language or generalization. It is the fastest way to a working policy.</li>
+    <li><strong>Reach for π0.7</strong> when you need instruction-following, generalization to new objects/positions, or one model covering several related skills — and you can afford a LoRA fine-tune on a 24&nbsp;GB GPU.</li>
+</ul>
+<p>The best part: the decision isn’t upfront. Collect demonstrations once, in LeRobot format, on Prometheus — the same dataset trains ACT today and fine-tunes π0.7 tomorrow.</p>
 
 <h2>The practical recipe</h2>
 <ol>
-    <li>Record 30–50 language-annotated teleop demos per task on Prometheus (VR or leader–follower).</li>
-    <li>Store them in LeRobot format — the same dataset works for ACT and π0.7.</li>
-    <li>LoRA fine-tune π0.7 on a single 24&nbsp;GB GPU.</li>
-    <li>Validate in sim, then deploy via the SDK.</li>
+    <li>Record 30–50 <strong>language-annotated</strong> teleop demos per task on Prometheus (VR or leader–follower).</li>
+    <li>Store them in LeRobot format with correct normalization stats.</li>
+    <li>LoRA fine-tune π0.7 on a single 24&nbsp;GB GPU; keep runs short to preserve the pretrained prior.</li>
+    <li>Evaluate spatial / object / language generalization in sim, then deploy via the SDK.</li>
 </ol>
-<p>Start with <a href="/blog/collecting-teleoperation-data-imitation-learning-act/">ACT</a> to get a feel for the data, then move to π0.7 when you need a policy that generalizes and listens to instructions. Same robot, same demonstrations — a far more capable result.</p>
 
-<p style="color:#777;font-size:0.9rem;margin-top:1.5rem;">Model names and capabilities follow Physical Intelligence’s π-series releases; check the current openpi documentation for exact checkpoints, commands, and hardware requirements.</p>
+<p style="color:#777;font-size:0.9rem;margin-top:1.5rem;">Model names, capabilities, and commands follow Physical Intelligence’s π-series and the openpi project; check the current openpi documentation for exact checkpoints, training scripts, and hardware requirements before you rely on specific figures.</p>

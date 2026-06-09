@@ -1,30 +1,39 @@
-<p>Imitation learning turns human demonstrations into robot policies. You teleoperate the robot through a task a few dozen times, record what it saw and what it did, and train a model to reproduce the behaviour. The appealing part for most labs: with the right policy, the whole loop — collection <em>and</em> training — fits on a single consumer GPU.</p>
+<p>Imitation learning turns human demonstrations into robot policies. You teleoperate the robot through a task a few dozen times, record what it saw and what it did, and train a model to reproduce the behaviour. The appealing part for most labs: with the right policy, the whole loop — collection <em>and</em> training — fits on a single consumer GPU, no cluster required.</p>
 
-<p><strong>ACT</strong> (Action Chunking with Transformers) is the policy that made this practical. It is small, sample-efficient, and trains comfortably on a 24&nbsp;GB card. This guide walks through collecting clean teleoperation data on the <a href="/">Prometheus humanoid</a> and training an ACT policy end-to-end, without a cluster.</p>
+<p><strong>ACT</strong> (Action Chunking with Transformers) is the policy that made this practical. It is small, sample-efficient, and trains comfortably on a 24&nbsp;GB card. This guide is a complete walkthrough: what to record, how to collect clean teleoperation data on the <a href="/">Prometheus humanoid</a>, how to structure the dataset, the hyperparameters that matter, how to evaluate, and how to deploy — all on a single workstation.</p>
 
-<h2>Why ACT is a great consumer-GPU baseline</h2>
-<p>ACT was introduced with the ALOHA project (Zhao et&nbsp;al., 2023) to learn fine-grained manipulation from cheap hardware. Two ideas make it efficient:</p>
+<h2>Why ACT is the right consumer-GPU baseline</h2>
+<p>ACT was introduced with the ALOHA project (Zhao et&nbsp;al., 2023) to learn fine-grained bimanual manipulation from low-cost hardware. Three design choices make it both stable and cheap to train:</p>
 <ul>
-    <li><strong>Action chunking.</strong> Instead of predicting one action at a time, ACT predicts a <em>chunk</em> of the next k actions (often k≈100). This shortens the effective horizon and fights compounding error.</li>
-    <li><strong>Temporal ensembling.</strong> At inference, overlapping chunks are averaged, producing smooth, stable motion.</li>
+    <li><strong>Action chunking.</strong> Instead of predicting one action at a time, ACT predicts a <em>chunk</em> of the next <code>k</code> actions (commonly <code>k</code>≈100, i.e. ~2–3&nbsp;seconds at 30–50&nbsp;Hz). Predicting open-loop chunks shortens the effective decision horizon and is the single biggest reason ACT resists the compounding error that wrecks naive behaviour cloning.</li>
+    <li><strong>Temporal ensembling.</strong> At inference, the policy is queried every step, producing overlapping chunks. Their predictions for the same timestep are averaged with an exponential weight, yielding smooth, jitter-free motion without sacrificing reactivity.</li>
+    <li><strong>A conditional VAE.</strong> Human demonstrations are multimodal — there are many valid ways to grasp a cup. ACT models that with a CVAE: a latent “style” variable absorbs the variation so the Transformer decoder isn’t forced to average conflicting demos into a mushy mean.</li>
 </ul>
-<p>The model itself is a compact CVAE with a Transformer encoder–decoder — on the order of tens of millions of parameters. In practice you can train a task on a single RTX&nbsp;3090/4090 in a few hours from roughly 50 demonstrations. That is the whole reason ACT remains the first thing to try before reaching for a large vision-language-action model.</p>
+<p>The model is a compact Transformer encoder–decoder on the order of tens of millions of parameters. In practice you can train one task on a single RTX&nbsp;3090/4090 in a few hours from roughly 50 demonstrations. That sample efficiency is exactly why ACT remains the first thing to try before reaching for a large vision-language-action model.</p>
 
 <h2>What you actually record</h2>
-<p>An imitation-learning episode is a synchronized stream of <strong>observations</strong> and <strong>actions</strong> sampled at a fixed rate (30–50&nbsp;Hz works well). On Prometheus that maps cleanly onto the onboard sensing:</p>
+<p>An imitation-learning episode is a synchronized stream of <strong>observations</strong> and <strong>actions</strong> sampled at a fixed rate. On Prometheus that maps cleanly onto the onboard sensing and control interface.</p>
+
+<h3>Observation space</h3>
 <ul>
-    <li><strong>Vision:</strong> the head-mounted stereo pair for full-scene context plus the wrist cameras for close-in manipulation. The wrist mounting angle is adjustable, which matters — keep it consistent across every demo.</li>
-    <li><strong>Proprioception:</strong> joint positions for the arms, grippers, and any active modules (the platform exposes 19 DoF on the upper body, more with hands and legs).</li>
-    <li><strong>Actions:</strong> the target joint commands you send while teleoperating — what the policy learns to output.</li>
+    <li><strong>Vision.</strong> The head-mounted stereo pair for full-scene context, plus the wrist cameras for close-in manipulation detail. The wrist mounting angle is adjustable — pick an angle that keeps the gripper and target in frame, and then never change it during a dataset.</li>
+    <li><strong>Proprioception.</strong> Joint positions for the arms, grippers, and any active modules. The upper body exposes 19 DoF, rising to 43 with five-finger hands and up to 53 with legs — record every joint the policy is allowed to move.</li>
 </ul>
 
-<h2>Teleoperating Prometheus to collect demos</h2>
-<p>Prometheus ships with the teleoperation pipeline out of the box, so there is nothing to integrate before you can record:</p>
+<h3>Action space</h3>
+<p>The cleanest, most transferable choice is <strong>target joint positions</strong> (absolute or delta) at the control rate — the same commands you send while teleoperating. Position targets are forgiving: the onboard controllers handle the low-level tracking, and the policy only has to decide <em>where</em> to go, not how to drive each motor.</p>
+
+<div class="callout">
+    <p><strong>Sample rate and sync are not optional details.</strong> Pick a fixed rate (30&nbsp;Hz is a good default; 50&nbsp;Hz for fast, contact-rich tasks) and make sure every camera frame and joint reading shares a timestamp. Misaligned images and actions are the most common silent cause of a policy that “almost works” but never quite grasps.</p>
+</div>
+
+<h2>Setting up teleoperation on Prometheus</h2>
+<p>Prometheus ships with the teleoperation pipeline out of the box, so there is nothing to build before you can record:</p>
 <ul>
-    <li><strong>VR teleop</strong> with a Meta&nbsp;Quest&nbsp;3S — intuitive for full-arm reaching and grasping, and the most natural way to demonstrate manipulation.</li>
-    <li><strong>Leader–follower / manual controller</strong> for precise, repeatable trajectories.</li>
+    <li><strong>VR teleop</strong> with a Meta&nbsp;Quest&nbsp;3S — the most intuitive option for full-arm reaching and grasping, and the most natural way to demonstrate manipulation with human-like motion.</li>
+    <li><strong>Leader–follower or the manual controller</strong> for precise, repeatable trajectories where you want tight control over the path.</li>
 </ul>
-<p>Each recorded run becomes one episode. Store them in the <strong>LeRobot dataset format</strong> — the de-facto standard for ACT and most open imitation-learning stacks — so the same data feeds any policy later.</p>
+<p>Each recorded run becomes one episode. Store episodes in the <strong>LeRobot dataset format</strong> — the de-facto standard for ACT and most open imitation-learning stacks — so the same data feeds any policy you try later, including a VLA.</p>
 
 <pre><code># Illustrative — record teleop episodes into a LeRobot dataset
 python -m lerobot.record \
@@ -34,26 +43,56 @@ python -m lerobot.record \
     --dataset.num_episodes=50 \
     --dataset.fps=30</code></pre>
 
-<div class="callout">
-    <p><strong>Data quality beats data quantity.</strong> 50 clean, consistent demonstrations train a better policy than 200 sloppy ones. Vary object position and lighting on purpose, keep the camera framing fixed, and — importantly — include recoveries: let the gripper miss and then correct, so the policy learns to get back on track instead of freezing.</p>
-</div>
+<h2>Designing a dataset that actually trains</h2>
+<p>This is where most projects succeed or fail, long before any GPU is involved.</p>
+<ul>
+    <li><strong>~50 demos per task</strong> is a sensible starting point for ACT. Add more only if evaluation says you need it.</li>
+    <li><strong>Vary what should generalize.</strong> Deliberately spread object positions, orientations, and lighting across the demos. If every cube starts in the same spot, the policy memorizes the spot, not the task.</li>
+    <li><strong>Keep fixed what should not change.</strong> Camera framing, wrist angle, table height, and frame rate stay identical across the whole dataset.</li>
+    <li><strong>Include recoveries.</strong> Let the gripper miss and then correct, on purpose, in a fraction of the demos. A policy that has only seen flawless runs freezes the moment it drifts off the demonstrated trajectory; one that has seen recoveries knows how to get back on track.</li>
+    <li><strong>One skill per dataset.</strong> Keep tasks separable. “Pick and place a cube” and “open a drawer” are two datasets, not one blurry mixture.</li>
+</ul>
+<p>Quality beats quantity, decisively: 50 clean, varied demonstrations train a better ACT policy than 200 sloppy, near-identical ones.</p>
+
+<h2>How the dataset is structured</h2>
+<p>A LeRobot dataset is a set of episodes, each a table of synchronized frames: image tensors per camera, a state vector (joint positions), an action vector (target joints), plus timestamps and episode boundaries. Alongside it, the format stores <strong>normalization statistics</strong> — per-dimension mean/std for states and actions. ACT relies on these stats to whiten inputs and outputs; if they are wrong (for example computed over a different robot), training silently underperforms. Recompute them whenever your action space changes.</p>
 
 <h2>Training ACT on one GPU</h2>
-<p>Once the dataset exists, training is a single command. ACT reads the multi-camera images and joint states, and learns to output action chunks:</p>
+<p>Once the dataset exists, training is a single command. ACT reads the multi-camera images and the state vector, and learns to output action chunks:</p>
 
 <pre><code># Illustrative — train ACT from the recorded dataset
 python -m lerobot.train \
     --policy.type=act \
     --dataset.repo_id=yourlab/pick_place_cube \
+    --policy.chunk_size=100 \
+    --policy.n_action_steps=100 \
     --batch_size=8 \
     --steps=100000 \
     --output_dir=outputs/act_pick_place</code></pre>
 
-<p>On a 24&nbsp;GB consumer card this runs in a few hours; 12&nbsp;GB is enough if you trim batch size and image resolution. No multi-node setup, no rented A100s — which is exactly what makes ACT the right starting point for a single workstation.</p>
+<p>The hyperparameters worth understanding:</p>
+<ul>
+    <li><strong>Chunk size (<code>k</code>).</strong> Longer chunks give smoother, more committed motion but react more slowly to surprises. 100 at 30&nbsp;Hz is a strong default; shorten it for tasks that need fast corrections.</li>
+    <li><strong>KL weight.</strong> Balances the CVAE latent against reconstruction. Too high and the policy ignores the latent and averages demos; too low and it overfits demonstrator quirks.</li>
+    <li><strong>Image resolution and batch size.</strong> The two main VRAM knobs. On 24&nbsp;GB you can run comfortably; on 12&nbsp;GB, drop resolution and batch size and train a bit longer.</li>
+    <li><strong>Steps.</strong> ~100k is typical for a single task; watch the validation loss rather than fixing a number.</li>
+</ul>
+<p>On a 24&nbsp;GB consumer card this finishes in a few hours. No multi-node setup, no rented A100s — which is the whole point.</p>
 
-<h2>Deploying the policy back on the robot</h2>
-<p>Inference is light: ACT runs in real time on the onboard compute (Raspberry&nbsp;Pi&nbsp;5 / NVIDIA&nbsp;Jetson) or a tethered laptop, streaming action chunks to the robot through the Prometheus SDK and its simple REST API. Because you validated everything against the bundled simulator and URDF first, the sim-to-real gap is small.</p>
+<h2>Evaluate in simulation first</h2>
+<p>Before touching hardware, load the policy against the bundled simulator and the included URDF. Run dozens of rollouts with randomized object placement and measure a real <strong>success rate</strong>, not just training loss — a low loss with a 10% success rate usually means a data problem (insufficient variation, misaligned timestamps, or wrong normalization). This is also where you tune temporal ensembling: more aggressive averaging for smoothness, less for reactivity.</p>
+
+<h2>Deploying the policy on the robot</h2>
+<p>Inference is light. ACT runs in real time on the onboard compute (Raspberry&nbsp;Pi&nbsp;5 / NVIDIA&nbsp;Jetson) or a tethered laptop, streaming action chunks to the robot through the Prometheus SDK and its simple REST API. Because you validated against the simulator and URDF first, the sim-to-real gap stays small and the first hardware rollout is rarely a surprise.</p>
+
+<h2>Common failure modes — and the fix</h2>
+<ul>
+    <li><strong>The policy freezes or idles.</strong> Almost always missing recovery data, or a distribution shift from a changed camera angle. Add recoveries; restore the exact framing.</li>
+    <li><strong>Jittery motion.</strong> Increase temporal ensembling, or revisit whether your action rate matches what you trained on.</li>
+    <li><strong>Works in sim, fails on hardware.</strong> Check lighting and camera exposure differences and confirm the control rate is identical to data collection.</li>
+    <li><strong>Grasps the right spot but at the wrong height.</strong> Usually stale or mismatched normalization statistics — recompute them.</li>
+</ul>
 
 <h2>When to graduate to a VLA</h2>
-<p>ACT is excellent at a <em>specific</em> task it has seen. The moment you need a policy that generalizes across objects, instructions, and scenes it has never been demonstrated on, you want a pretrained vision-language-action model that you fine-tune on the same teleoperation data. The good news: the dataset you collected here transfers directly.</p>
-<p>That is the subject of the companion guide — same robot, same data pipeline, a far more capable policy.</p>
+<p>ACT is excellent at a <em>specific</em> task it has been shown. The moment you need a policy that follows language instructions, or generalizes across objects and scenes it never saw demonstrated, you want a pretrained vision-language-action model that you fine-tune on this same teleoperation data. The dataset you collected here transfers directly — same robot, same format, a far more capable result.</p>
+<p>That is the subject of the companion guide on fine-tuning π0.7.</p>
