@@ -334,21 +334,20 @@
             to { opacity: 1; transform: scale(1); }
         }
 
-        .robot-showcase {
-            padding: 5rem 3rem 7rem;
-            background: linear-gradient(180deg, var(--color-bg) 0%, #0f0f0f 100%);
+        .specs-robot {
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden;
+            margin-bottom: 3rem;
         }
 
-        .robot-showcase .robot-container {
-            width: 100%;
-            max-width: 560px;
+        .specs-robot .robot-img {
+            position: relative;
+            z-index: 2;
+            max-width: 92%;
+            height: auto;
         }
-
-        .robot-showcase .robot-img { max-width: 100%; }
 
         .robot-container {
             position: relative;
@@ -1159,7 +1158,7 @@
     <!-- Navigation -->
     <nav>
         <div class="logo" onclick="showPage('home')">
-            <img src="/logo.png" alt="Prometheus Logo" style="height: 32px; width: auto;">
+            <img src="/logo.svg" alt="Prometheus Logo" style="height: 32px; width: auto;">
             PROMETHEUS&nbsp;&nbsp;ROBOTICS
         </div>
         <ul class="nav-links">
@@ -1240,15 +1239,6 @@
                         </svg>
                     </a>
                 </div>
-            </div>
-        </section>
-
-        <!-- Robot Showcase -->
-        <section class="robot-showcase">
-            <div class="robot-container">
-                <div class="robot-glow"></div>
-                <img src="/robot.png" alt="Prometheus Humanoid Robot" class="robot-img">
-                <img src="/eu_stars.png" alt="EU" class="eu_stars">
             </div>
         </section>
 
@@ -1518,6 +1508,11 @@
                     </div>
 
                     <div class="modules-section">
+                        <div class="specs-robot">
+                            <div class="robot-glow"></div>
+                            <img src="/robot.png" alt="Prometheus Humanoid Robot" class="robot-img">
+                            <img src="/eu_stars.png" alt="EU" class="eu_stars">
+                        </div>
                         <h3 class="modules-title">Available Modules</h3>
                         <div class="modules-grid">
                             <div class="module-card">
