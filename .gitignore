@@ -5,3 +5,4 @@ __pycache__/
 *.pyc
 translations/_raw/
 translations/_source.json
+translations/_raw_faq/

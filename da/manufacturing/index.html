@@ -1395,7 +1395,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which AI models does the robot support?", "acceptedAnswer": {"@type": "Answer", "text": "Out of the box it supports modern vision-language-action and imitation-learning policies, including Pi0, Pi0.5, ACT, and SmolVLA. Collect teleoperation data, fine-tune on a consumer GPU, and deploy through the SDK."}}, {"@type": "Question", "name": "What is included with the robot?", "acceptedAnswer": {"@type": "Answer", "text": "Every unit ships with the full SDK and a simple REST API, a URDF model, a bundled simulator, head-mounted stereo plus wrist cameras, grippers, and direct engineering support. The teleoperation pipeline works on day one."}}, {"@type": "Question", "name": "Can I collect teleoperation data and train policies myself?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Teleoperate via VR with a Meta Quest 3S or a leader-follower controller, record demonstrations in the standard dataset format, and train ACT or fine-tune a vision-language-action model on a single consumer GPU."}}, {"@type": "Question", "name": "What compute does the robot run on?", "acceptedAnswer": {"@type": "Answer", "text": "Onboard compute is a Raspberry Pi 5 or an NVIDIA Jetson. Lightweight policies run on-device, while heavier vision-language-action models can run on a tethered workstation GPU and stream commands over the REST API."}}, {"@type": "Question", "name": "Is the robot modular?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You can swap arms, grippers (2-finger, 4-finger, or advanced five-finger hands), and base modules such as legs or wheels, and adapt the platform to your task rather than the other way around."}}, {"@type": "Question", "name": "Where is the robot made?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus is designed and manufactured in the European Union, which matters for European research labs and companies that care about supply-chain provenance, support, and data sovereignty."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Hvilke AI-modeller understøtter robotten?", "acceptedAnswer": {"@type": "Answer", "text": "Lige ud af kassen understøtter den moderne vision-language-action- og imitationslæringspolitikker, herunder Pi0, Pi0.5, ACT og SmolVLA. Indsaml teleoperationsdata, finjuster på en forbruger-GPU, og udrul via SDK."}}, {"@type": "Question", "name": "Hvad er inkluderet med robotten?", "acceptedAnswer": {"@type": "Answer", "text": "Hver enhed leveres med det fulde SDK og et enkelt REST API, en URDF-model, en medfølgende simulator, hovedmonterede stereokameraer plus håndledskameraer, gribere og direkte teknisk support. Teleoperationspipelinen fungerer fra første dag."}}, {"@type": "Question", "name": "Kan jeg selv indsamle teleoperationsdata og træne politikker?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Teleoperer via VR med en Meta Quest 3S eller en leder-følger-controller, optag demonstrationer i standarddatasætformatet, og træn ACT eller finjuster en vision-language-action-model på en enkelt forbruger-GPU."}}, {"@type": "Question", "name": "Hvilken beregningskraft kører robotten på?", "acceptedAnswer": {"@type": "Answer", "text": "Den indbyggede beregningskraft er en Raspberry Pi 5 eller en NVIDIA Jetson. Lette politikker kører på enheden, mens tungere vision-language-action-modeller kan køre på en tilsluttet arbejdsstations-GPU og streame kommandoer via REST API."}}, {"@type": "Question", "name": "Er robotten modulær?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Du kan udskifte arme, gribere (2-finger, 4-finger eller avancerede femfingrede hænder) og basismoduler såsom ben eller hjul, og tilpasse platformen til din opgave i stedet for omvendt."}}, {"@type": "Question", "name": "Hvor er robotten fremstillet?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus er designet og fremstillet i Den Europæiske Union, hvilket har betydning for europæiske forskningslaboratorier og virksomheder, der lægger vægt på forsyningskædens oprindelse, support og datasuverænitet."}}]}</script>
     <!-- FAQ-LD:END -->
 </head>
 <body>
@@ -1903,28 +1903,28 @@
                 <p class="section-subtitle">Everything you need to know before getting started</p>
                 <div class="faq-list">
                     <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Which AI models does the robot support?</button>
-                        <div class="faq-a"><p>Out of the box it supports modern vision-language-action and imitation-learning policies, including Pi0, Pi0.5, ACT, and SmolVLA. Collect teleoperation data, fine-tune on a consumer GPU, and deploy through the SDK.</p></div>
+                        <button class="faq-q" onclick="toggleFaq(this)">Hvilke AI-modeller understøtter robotten?</button>
+                        <div class="faq-a"><p>Lige ud af kassen understøtter den moderne vision-language-action- og imitationslæringspolitikker, herunder Pi0, Pi0.5, ACT og SmolVLA. Indsaml teleoperationsdata, finjuster på en forbruger-GPU, og udrul via SDK.</p></div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">What is included with the robot?</button>
-                        <div class="faq-a"><p>Every unit ships with the full SDK and a simple REST API, a URDF model, a bundled simulator, head-mounted stereo plus wrist cameras, grippers, and direct engineering support. The teleoperation pipeline works on day one.</p></div>
+                        <button class="faq-q" onclick="toggleFaq(this)">Hvad er inkluderet med robotten?</button>
+                        <div class="faq-a"><p>Hver enhed leveres med det fulde SDK og et enkelt REST API, en URDF-model, en medfølgende simulator, hovedmonterede stereokameraer plus håndledskameraer, gribere og direkte teknisk support. Teleoperationspipelinen fungerer fra første dag.</p></div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Can I collect teleoperation data and train policies myself?</button>
-                        <div class="faq-a"><p>Yes. Teleoperate via VR with a Meta Quest 3S or a leader-follower controller, record demonstrations in the standard dataset format, and train ACT or fine-tune a vision-language-action model on a single consumer GPU.</p></div>
+                        <button class="faq-q" onclick="toggleFaq(this)">Kan jeg selv indsamle teleoperationsdata og træne politikker?</button>
+                        <div class="faq-a"><p>Ja. Teleoperer via VR med en Meta Quest 3S eller en leder-følger-controller, optag demonstrationer i standarddatasætformatet, og træn ACT eller finjuster en vision-language-action-model på en enkelt forbruger-GPU.</p></div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">What compute does the robot run on?</button>
-                        <div class="faq-a"><p>Onboard compute is a Raspberry Pi 5 or an NVIDIA Jetson. Lightweight policies run on-device, while heavier vision-language-action models can run on a tethered workstation GPU and stream commands over the REST API.</p></div>
+                        <button class="faq-q" onclick="toggleFaq(this)">Hvilken beregningskraft kører robotten på?</button>
+                        <div class="faq-a"><p>Den indbyggede beregningskraft er en Raspberry Pi 5 eller en NVIDIA Jetson. Lette politikker kører på enheden, mens tungere vision-language-action-modeller kan køre på en tilsluttet arbejdsstations-GPU og streame kommandoer via REST API.</p></div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Is the robot modular?</button>
-                        <div class="faq-a"><p>Yes. You can swap arms, grippers (2-finger, 4-finger, or advanced five-finger hands), and base modules such as legs or wheels, and adapt the platform to your task rather than the other way around.</p></div>
+                        <button class="faq-q" onclick="toggleFaq(this)">Er robotten modulær?</button>
+                        <div class="faq-a"><p>Ja. Du kan udskifte arme, gribere (2-finger, 4-finger eller avancerede femfingrede hænder) og basismoduler såsom ben eller hjul, og tilpasse platformen til din opgave i stedet for omvendt.</p></div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Where is the robot made?</button>
-                        <div class="faq-a"><p>Prometheus is designed and manufactured in the European Union, which matters for European research labs and companies that care about supply-chain provenance, support, and data sovereignty.</p></div>
+                        <button class="faq-q" onclick="toggleFaq(this)">Hvor er robotten fremstillet?</button>
+                        <div class="faq-a"><p>Prometheus er designet og fremstillet i Den Europæiske Union, hvilket har betydning for europæiske forskningslaboratorier og virksomheder, der lægger vægt på forsyningskædens oprindelse, support og datasuverænitet.</p></div>
                     </div>
                 </div>
             </div>
