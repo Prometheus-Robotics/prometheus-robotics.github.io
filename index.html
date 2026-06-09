@@ -46,9 +46,15 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background: transparent;
+            backdrop-filter: none;
+            transition: background 0.4s ease, backdrop-filter 0.4s ease;
+            animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        nav.scrolled {
             background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(20px);
-            animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         @keyframes slideDown {
@@ -206,20 +212,20 @@
 
         .hero-title {
             font-family: var(--font-display);
-            font-size: 5rem;
+            font-size: 3.75rem;
             font-weight: 800;
             line-height: 1.1;
             letter-spacing: -0.01em;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             color: #ffffff;
         }
 
         .hero-description {
-            font-size: 1.25rem;
+            font-size: 1.05rem;
             color: var(--color-text-secondary);
-            margin-bottom: 3rem;
-            line-height: 1.8;
-            max-width: 540px;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            max-width: 440px;
             font-weight: 300;
         }
 
@@ -329,6 +335,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            transform: translateX(15%);
         }
 
         .robot-img {
@@ -991,6 +998,7 @@
             .hero-container { grid-template-columns: 1fr; gap: 3rem; }
             .hero-content { order: 1; }
             .hero-image { order: 2; max-width: 500px; margin: 0 auto; }
+            .robot-container { transform: none; }
             .hero-title { font-size: 4rem; }
             nav { padding: 1.5rem 2rem; }
             .hero { padding: 7rem 2rem 3rem; }
@@ -1627,6 +1635,19 @@
                 closeModal();
             }
         });
+
+        (function () {
+            const navEl = document.querySelector('nav');
+            const onScroll = () => {
+                if (window.scrollY > 40) {
+                    navEl.classList.add('scrolled');
+                } else {
+                    navEl.classList.remove('scrolled');
+                }
+            };
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+        })();
     </script>
 </body>
 </html>
