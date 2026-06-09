@@ -90,3 +90,9 @@ After editing a fragment or `POSTS`: `python3 build_blog.py` then `python3 build
   (cache-bust with a random query param; WebFetch caches 15 min).
 - `unzip`/`file`/`pip`/`PIL`/`cairosvg` are NOT available here; use `python3` (stdlib) for
   zip extraction etc.
+
+## Analytics
+
+Umami (cloud, cookieless) is loaded via a `<script>` in `index.html` head (propagates to
+all language pages) and via the `ANALYTICS` constant in `build_blog.py` (blog pages).
+No cookie banner needed.

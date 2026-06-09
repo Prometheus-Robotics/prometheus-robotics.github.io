@@ -98,6 +98,8 @@ POSTS = [
     },
 ]
 
+ANALYTICS = '<script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>'
+
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
          '    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
          '    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Urbanist:wght@300;400;500;600&display=swap" rel="stylesheet">')
@@ -180,6 +182,7 @@ def page(post, body):
         '    <meta name="twitter:image" content="https://meetprometheus.com/robot.png">\n'
         '    %s\n'
         '    <link rel="stylesheet" href="/blog/blog.css">\n'
+        '    ' + ANALYTICS + '\n'
         '    <link rel="icon" href="/favicon.ico" type="image/x-icon">\n'
         '    <script type="application/ld+json">%s</script>\n'
         '</head>\n<body>\n%s\n'
@@ -197,22 +200,47 @@ def page(post, body):
          post["date_human"], body, related_block(post), CTA, FOOTER)
 
 
+def post_category(p):
+    return "buyer" if p["eyebrow"].startswith("Buyer") else "technical"
+
+
+DEFAULT_CATEGORY = "buyer"
+
+
 def index_page():
     cards = []
     for p in sorted(POSTS, key=lambda x: x["date"], reverse=True):
+        cat = post_category(p)
+        hidden = "" if cat == DEFAULT_CATEGORY else " hidden"
         cards.append(
-            '    <a class="post-card" href="%s">\n'
+            '    <a class="post-card%s" data-category="%s" href="%s">\n'
             '        <div class="pc-eyebrow">%s</div>\n'
             '        <h2>%s</h2>\n'
             '        <p>%s</p>\n'
             '        <div class="pc-meta">%s</div>\n'
-            '    </a>' % (url_for(p["slug"]), p["eyebrow"], p["h1"], p["description"], p["date_human"])
+            '    </a>' % (hidden, cat, url_for(p["slug"]), p["eyebrow"], p["h1"], p["description"], p["date_human"])
         )
+    filters = (
+        '    <div class="blog-filter">\n'
+        '        <button class="blog-filter-btn active" data-cat="buyer" onclick="filterPosts(\'buyer\', this)">Buyer\'s Guide</button>\n'
+        '        <button class="blog-filter-btn" data-cat="technical" onclick="filterPosts(\'technical\', this)">Technical</button>\n'
+        '    </div>'
+    )
     body = (
         '<main class="blog-list">\n'
         '    <h1>Blog</h1>\n'
-        '    <p class="intro">Engineering notes on building, teleoperating, and training the Prometheus humanoid — imitation learning, vision-language-action models, simulation, and deployment.</p>\n'
-        + "\n".join(cards) + "\n</main>"
+        '    <p class="intro">Engineering notes and buyer guides for the Prometheus humanoid — imitation learning, vision-language-action models, simulation, deployment, and choosing the right platform.</p>\n'
+        + filters + "\n"
+        + "\n".join(cards) + "\n</main>\n"
+        '<script>\n'
+        '    function filterPosts(cat, btn) {\n'
+        '        document.querySelectorAll(".blog-filter-btn").forEach(function (b) { b.classList.remove("active"); });\n'
+        '        btn.classList.add("active");\n'
+        '        document.querySelectorAll(".post-card").forEach(function (c) {\n'
+        '            c.classList.toggle("hidden", c.getAttribute("data-category") !== cat);\n'
+        '        });\n'
+        '    }\n'
+        '</script>'
     )
     return (
         '<!DOCTYPE html>\n<html lang="en">\n<head>\n'
@@ -230,6 +258,7 @@ def index_page():
         '    <meta property="og:site_name" content="Prometheus Robotics">\n'
         '    %s\n'
         '    <link rel="stylesheet" href="/blog/blog.css">\n'
+        '    ' + ANALYTICS + '\n'
         '    <link rel="icon" href="/favicon.ico" type="image/x-icon">\n'
         '</head>\n<body>\n%s\n%s\n%s\n</body>\n</html>\n'
     ) % (BASE, BASE, FONTS, HEADER, body, FOOTER)
