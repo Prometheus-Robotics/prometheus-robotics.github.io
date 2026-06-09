@@ -142,13 +142,29 @@
             background: linear-gradient(90deg, #0a0a0a 0%, #0a0a0a 40%, #2a2a2a 70%, #404040 100%);
         }
 
+        .hero-video {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            pointer-events: none;
+        }
+
         .hero::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+            background: linear-gradient(90deg, rgba(10, 10, 10, 0.85) 0%, rgba(10, 10, 10, 0.65) 45%, rgba(10, 10, 10, 0.4) 100%),
+                        radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
                         radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
+            z-index: 1;
             pointer-events: none;
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 2;
         }
 
         .hero-container {
@@ -1104,6 +1120,9 @@
     <div id="home-page" class="page active">
         <!-- Hero Section -->
         <section class="hero">
+            <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="/robot.png">
+                <source src="/hero.mp4" type="video/mp4">
+            </video>
             <div class="hero-container">
                 <div class="hero-content">
                     <span class="hero-eyebrow">For Research Labs &amp; Technical Universities</span>
