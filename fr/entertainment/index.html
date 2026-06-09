@@ -100,9 +100,15 @@
         }
 
         html, body {
-            overflow-x: hidden;
+            overflow-x: clip;
             width: 100%;
         }
+
+        html { scrollbar-width: thin; scrollbar-color: #2a2a2a #0a0a0a; }
+        ::-webkit-scrollbar { width: 10px; height: 10px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 8px; border: 2px solid #0a0a0a; }
+        ::-webkit-scrollbar-thumb:hover { background: #3a3a3a; }
 
         body {
             font-family: var(--font-body);
@@ -341,6 +347,31 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        .hero-eu {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.85rem 0.35rem 0.5rem;
+            margin-bottom: 1.25rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(6px);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            color: var(--color-text-secondary);
+            opacity: 0;
+            animation: fadeIn 0.8s ease 0.35s forwards;
+        }
+
+        .hero-eu svg {
+            width: 22px;
+            height: 15px;
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
+
         .hero-eyebrow {
             font-size: 0.85rem;
             font-weight: 600;
@@ -348,7 +379,7 @@
             text-transform: uppercase;
             color: var(--color-accent);
             margin-bottom: 1.5rem;
-            display: inline-block;
+            display: block;
             opacity: 0;
             animation: fadeIn 0.8s ease 0.5s forwards;
         }
@@ -1337,26 +1368,6 @@
             <li><a onclick="showPage('contacts')">Contact</a></li>
             <li><a href="https://www.linkedin.com/in/ilya-pavlenkov/recent-activity/all/" target="_blank">LinkedIn</a></li>
         </ul>
-        <div class="eu-badge">
-            <svg class="eu-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810 540">
-                <rect width="810" height="540" fill="#003399"/>
-                <g fill="#FFCC00">
-                    <circle cx="405" cy="105" r="15"/>
-                    <circle cx="505" cy="140" r="15"/>
-                    <circle cx="560" cy="220" r="15"/>
-                    <circle cx="560" cy="320" r="15"/>
-                    <circle cx="505" cy="400" r="15"/>
-                    <circle cx="405" cy="435" r="15"/>
-                    <circle cx="305" cy="400" r="15"/>
-                    <circle cx="250" cy="320" r="15"/>
-                    <circle cx="250" cy="220" r="15"/>
-                    <circle cx="305" cy="140" r="15"/>
-                    <circle cx="405" cy="175" r="15"/>
-                    <circle cx="405" cy="365" r="15"/>
-                </g>
-            </svg>
-            Made in EU
-        </div>
         <div class="lang-switcher">
             <button class="lang-toggle" id="langToggle" aria-haspopup="true" aria-expanded="false" aria-label="Change language">
                 <span class="fi fi-gb" id="langCurrentFlag"></span>
@@ -1376,6 +1387,10 @@
             </video>
             <div class="hero-container">
                 <div class="hero-content">
+                    <span class="hero-eu">
+                        <svg viewBox="0 0 810 540" aria-hidden="true"><rect width="810" height="540" fill="#003399"/><g fill="#FFCC00"><circle cx="405" cy="105" r="15"/><circle cx="505" cy="140" r="15"/><circle cx="560" cy="220" r="15"/><circle cx="560" cy="320" r="15"/><circle cx="505" cy="400" r="15"/><circle cx="405" cy="435" r="15"/><circle cx="305" cy="400" r="15"/><circle cx="250" cy="320" r="15"/><circle cx="250" cy="220" r="15"/><circle cx="305" cy="140" r="15"/><circle cx="405" cy="175" r="15"/><circle cx="405" cy="365" r="15"/></g></svg>
+                        Designed &amp; made in the EU
+                    </span>
                     <span class="hero-eyebrow">Pour les laboratoires de recherche &amp; universités techniques</span>
                     <h1 class="hero-title">Plateforme humanoïde pour la recherche en robotique</h1>
                     <p class="hero-description">
