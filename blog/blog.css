@@ -58,6 +58,7 @@ a:hover { text-decoration: underline; }
     color: #fff !important;
     border-radius: 50px;
     font-weight: 600;
+    white-space: nowrap;
 }
 .blog-cta:hover { text-decoration: none !important; opacity: 0.92; }
 
@@ -215,9 +216,12 @@ a:hover { text-decoration: underline; }
 .blog-footer a { color: var(--color-text-secondary); }
 
 @media (max-width: 768px) {
-    .blog-nav { padding: 1rem 1.2rem; }
+    .blog-nav { padding: 0.9rem 1.1rem; }
+    .blog-nav .logo { font-size: 1rem; }
+    .blog-nav .logo img { height: 24px; }
     .blog-nav .nav-right { gap: 0.9rem; }
     .blog-nav .nav-right .hide-sm { display: none; }
+    .blog-cta { padding: 0.5rem 1.05rem; font-size: 0.85rem; }
     .article h1 { font-size: 2rem; }
     .blog-list h1 { font-size: 2rem; }
     .article h2 { font-size: 1.4rem; }
