@@ -122,16 +122,21 @@
             align-items: center;
             gap: 0.5rem;
             padding: 0.4rem 1rem;
-            background: rgba(10, 10, 10, 0.22);
-            border: 1px solid rgba(96, 165, 250, 0.5);
+            background: transparent;
+            border: 1px solid transparent;
             border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 600;
             letter-spacing: 0.05em;
             text-transform: uppercase;
             color: #ffffff;
-            backdrop-filter: blur(6px);
+            transition: border-color 0.4s ease, background 0.4s ease;
             opacity: 0.9;
+        }
+
+        nav.scrolled .eu-badge {
+            background: rgba(10, 10, 10, 0.22);
+            border-color: rgba(96, 165, 250, 0.5);
         }
 
         .eu-flag { width: 20px; height: 14px; }
@@ -340,12 +345,13 @@
             justify-content: center;
             align-items: center;
             margin-bottom: 3rem;
+            overflow: visible;
         }
 
         .specs-robot .robot-img {
             position: relative;
             z-index: 2;
-            max-width: 92%;
+            max-width: 140%;
             height: auto;
         }
 
@@ -450,6 +456,24 @@
         .use-case-panel.active {
             display: block;
             animation: tabFade 0.4s ease;
+        }
+
+        .panel-why-title {
+            font-family: var(--font-display);
+            font-size: 1.9rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            text-align: center;
+            margin: 4.5rem 0 0.6rem;
+        }
+
+        .panel-why-subtitle {
+            text-align: center;
+            color: var(--color-text-secondary);
+            font-size: 1.05rem;
+            max-width: 720px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.6;
         }
 
         @keyframes tabFade {
@@ -1205,6 +1229,8 @@
                     <div class="hero-audience">
                         <span class="audience-tag primary">Research Labs</span>
                         <span class="audience-tag primary">Technical Universities</span>
+                        <span class="audience-tag primary">Manufacturing</span>
+                        <span class="audience-tag primary">Entertainment</span>
                         <span class="audience-tag">Automation Suppliers</span>
                         <span class="audience-tag">Startups</span>
                         <span class="audience-tag">DIY Developers</span>
@@ -1323,6 +1349,31 @@
                         <p>Direct line to our team — from unboxing through deployment, experiments, and publication.</p>
                     </div>
                 </div>
+
+                <h3 class="panel-why-title">Why labs choose Prometheus</h3>
+                <p class="panel-why-subtitle">There's no off-the-shelf humanoid built for research. Teams burn months gluing together hardware, cameras, sim, and ML tooling before they can run a single experiment. Prometheus ships that whole stack ready to go.</p>
+                <div class="research-grid">
+                    <div class="research-card featured">
+                        <span class="research-icon">🎓</span>
+                        <h3>Research-first, not a demo unit</h3>
+                        <p>Open architecture, full SDK, URDF, and bundled simulator — designed around how robotics research actually works.</p>
+                    </div>
+                    <div class="research-card featured">
+                        <span class="research-icon">⏱️</span>
+                        <h3>Skip months of integration</h3>
+                        <p>Cameras, teleop, and ML pipelines are pre-configured. Start collecting demonstrations and training policies on day one.</p>
+                    </div>
+                    <div class="research-card featured">
+                        <span class="research-icon">🧩</span>
+                        <h3>Hackable &amp; modular</h3>
+                        <p>Swap arms, grippers, and base modules, write your own controllers, extend the SDK. Adapt the platform to your work.</p>
+                    </div>
+                    <div class="research-card featured">
+                        <span class="research-icon">✨</span>
+                        <h3>Custom builds</h3>
+                        <p>Bespoke sensor packages, alternative grippers, custom kinematics, and software integrations for specialized lab work.</p>
+                    </div>
+                </div>
                 </div>
 
                 <div class="use-case-panel" id="usecase-manufacturing">
@@ -1349,9 +1400,9 @@
                         </div>
 
                         <div class="research-card">
-                            <span class="research-icon">🎮</span>
-                            <h3>Teach by Demonstration</h3>
-                            <p>Record a task once by teleoperation, then replay it on the line. No complex programming required.</p>
+                            <span class="research-icon">🧠</span>
+                            <h3>Learns the Task</h3>
+                            <p>Powered by Pi0 — an easily trainable VLA model. Show it the task and it generalizes, adapting to variation instead of breaking on it. No rigid scripting.</p>
                         </div>
 
                         <div class="research-card">
@@ -1375,7 +1426,32 @@
                         <div class="research-card">
                             <span class="research-icon">🔌</span>
                             <h3>Easy Integration</h3>
-                            <p>Python-first SDK plugs into your existing line control and workflows — no proprietary lock-in.</p>
+                            <p>A simple REST API plugs into your existing line control and workflows — no proprietary lock-in.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="panel-why-title">Why manufacturers choose Prometheus</h3>
+                    <p class="panel-why-subtitle">The dull, repetitive line jobs are the hardest to staff and keep staffed — but traditional automation is expensive to design, locked to one task, and slow to change. A trainable humanoid fills the gap.</p>
+                    <div class="research-grid">
+                        <div class="research-card featured">
+                            <span class="research-icon">👷</span>
+                            <h3>Fills hard-to-staff jobs</h3>
+                            <p>Cover the repetitive, high-turnover tasks people don't want — without scaling headcount or fighting churn.</p>
+                        </div>
+                        <div class="research-card featured">
+                            <span class="research-icon">💸</span>
+                            <h3>Cheaper than a custom cell</h3>
+                            <p>One flexible humanoid replaces bespoke fixed automation that's costly to design, build, and maintain.</p>
+                        </div>
+                        <div class="research-card featured">
+                            <span class="research-icon">♻️</span>
+                            <h3>Reconfigures in minutes</h3>
+                            <p>A new product or task no longer means weeks of re-tooling. Retrain and repurpose the same robot across the line.</p>
+                        </div>
+                        <div class="research-card featured">
+                            <span class="research-icon">📈</span>
+                            <h3>Scales with demand</h3>
+                            <p>Add units as volume grows and move them to the bottleneck. No fixed infrastructure to rip out and rebuild.</p>
                         </div>
                     </div>
                 </div>
@@ -1431,6 +1507,31 @@
                             <span class="research-icon">🤖</span>
                             <h3>Always On Brand</h3>
                             <p>Consistent, repeatable performances every time — your signature character, delivered reliably.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="panel-why-title">Why venues choose Prometheus</h3>
+                    <p class="panel-why-subtitle">Attractions live or die on the wow factor. Guests have seen screens and animatronics — a real, interactive humanoid is what they photograph, post, and come back for. It's a statement that your venue is the most advanced one out there.</p>
+                    <div class="research-grid">
+                        <div class="research-card featured">
+                            <span class="research-icon">⭐</span>
+                            <h3>A crowd magnet</h3>
+                            <p>A real humanoid pulls crowds, photos, and social buzz that a screen or animatronic simply can't match.</p>
+                        </div>
+                        <div class="research-card featured">
+                            <span class="research-icon">🏆</span>
+                            <h3>Instant prestige</h3>
+                            <p>Show everyone you run the most advanced, future-facing venue in the market — and make sure they all see it.</p>
+                        </div>
+                        <div class="research-card featured">
+                            <span class="research-icon">🎭</span>
+                            <h3>One performer, every show</h3>
+                            <p>Record routines once and replay them flawlessly all day — no breaks, no scheduling, no staffing the role.</p>
+                        </div>
+                        <div class="research-card featured">
+                            <span class="research-icon">🌍</span>
+                            <h3>Operate from anywhere</h3>
+                            <p>Drive it live in VR with a Meta Quest 3S to greet and interact with guests in real time — even remotely.</p>
                         </div>
                     </div>
                 </div>
@@ -1511,7 +1612,6 @@
                         <div class="specs-robot">
                             <div class="robot-glow"></div>
                             <img src="/robot.png" alt="Prometheus Humanoid Robot" class="robot-img">
-                            <img src="/eu_stars.png" alt="EU" class="eu_stars">
                         </div>
                         <h3 class="modules-title">Available Modules</h3>
                         <div class="modules-grid">
@@ -1584,44 +1684,11 @@
         </section>
 
         <!-- Features Section -->
-        <section class="features">
-            <div class="features-container">
-                <h2 class="section-title">Why Research Labs Choose Prometheus</h2>
-                <p class="section-subtitle">A hackable platform designed around how robotics research actually works</p>
-                
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <span class="feature-icon">🎓</span>
-                        <h3>Built for Research</h3>
-                        <p>Designed for technical universities and robotics labs. Open architecture, full SDK, URDF, simulator, and direct engineering support included.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <span class="feature-icon">🧠</span>
-                        <h3>VLA &amp; ML Ready</h3>
-                        <p>Train and deploy ACT, SmolVLA, Pi0.5 and other modern policies. Wrist cameras, stereo perception, and teleoperation demos all configured.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <span class="feature-icon">🔧</span>
-                        <h3>Modular &amp; Hackable</h3>
-                        <p>Swap arms, grippers, and base modules. Modify hardware, write your own controllers, extend the SDK. Adapt the platform to your research.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <span class="feature-icon">✨</span>
-                        <h3>Custom Builds</h3>
-                        <p>Bespoke configurations for specialized lab work — sensor packages, alternative grippers, custom kinematics, and software integrations.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Bottom CTA Section -->
         <section style="padding: 6rem 3rem; text-align: center; background: linear-gradient(180deg, #0f0f0f 0%, var(--color-bg) 100%); border-top: 1px solid var(--color-border);">
             <div style="max-width: 800px; margin: 0 auto;">
-                <h2 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.01em;">Ready to Equip Your Lab?</h2>
-                <p style="color: var(--color-text-secondary); font-size: 1.2rem; margin-bottom: 3rem; line-height: 1.7;">Order a unit for your research group, or book a call to discuss custom configurations.</p>
+                <h2 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.01em;">Ready to Put Prometheus to Work?</h2>
+                <p style="color: var(--color-text-secondary); font-size: 1.2rem; margin-bottom: 3rem; line-height: 1.7;">Whether it's a research lab, a production line, or a venue floor — order a unit or book a call to discuss your configuration.</p>
                 <div class="cta-group" style="justify-content: center;">
                     <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
                         Buy Modular Platform
