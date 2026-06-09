@@ -19,8 +19,11 @@ Add a language: drop a new translations/<code>.py, then re-run.
 """
 import glob
 import importlib.util
+import json
 import os
 import re
+
+from faq_data import FAQ, FAQ_T
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 BASE = "https://meetprometheus.com"
@@ -107,6 +110,21 @@ def set_langs(html, mods):
     return replace_region(html, "/* LANGS:START */", "/* LANGS:END */", block)
 
 
+def faq_jsonld(pairs):
+    items = [{"@type": "Question", "name": q,
+              "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in pairs]
+    data = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": items}
+    return '<script type="application/ld+json">' + json.dumps(data, ensure_ascii=False) + "</script>"
+
+
+def set_faq(html, pairs):
+    # Localize the visible accordion (no-op for English), then emit FAQPage JSON-LD.
+    for (qen, aen), (q, a) in zip(FAQ, pairs):
+        html = html.replace(qen, q).replace(aen, a)
+    block = "<!-- FAQ-LD:START -->\n    " + faq_jsonld(pairs) + "\n    <!-- FAQ-LD:END -->"
+    return replace_region(html, "<!-- FAQ-LD:START -->", "<!-- FAQ-LD:END -->", block)
+
+
 def set_active(html, active_id):
     for tid in TAB_IDS:
         pcls = "use-case-panel active" if tid == active_id else "use-case-panel"
@@ -162,6 +180,7 @@ def main():
     # English research = index.html itself: refresh SEO, hreflang, LANGS in place.
     idx = set_seo(master, EN_SEO["research"][0], EN_SEO["research"][1], url_for("en", "research"), "en_US")
     idx = set_hreflang(idx, "research", codes)
+    idx = set_faq(idx, FAQ)
     write("index.html", idx)
 
     # English manufacturing / entertainment
@@ -169,6 +188,7 @@ def main():
         html = set_active(master, tab)
         html = set_seo(html, EN_SEO[tab][0], EN_SEO[tab][1], url_for("en", tab), "en_US")
         html = set_hreflang(html, tab, codes)
+        html = set_faq(html, FAQ)
         write(TAB_PATH[tab] + "index.html", html)
 
     # Each language × each tab
@@ -181,6 +201,7 @@ def main():
             html = set_hreflang(html, tab, codes)
             html = set_tab_hrefs(html, m.CODE)
             html = set_lang_attr(html, m.CODE)
+            html = set_faq(html, FAQ_T.get(m.CODE, FAQ))
             write("%s/%sindex.html" % (m.CODE, TAB_PATH[tab]), html)
 
     # sitemap (tab/language pages + blog)

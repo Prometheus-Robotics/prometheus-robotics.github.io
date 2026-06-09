@@ -1352,8 +1352,51 @@
             .spec-label { font-size: 0.9rem; }
             .spec-value { font-size: 0.85rem; }
             .module-icon { font-size: 1.8rem; }
+            .faq { padding: 4rem 1.5rem; }
+            .faq-q { font-size: 1rem; padding-right: 2rem; }
         }
+
+        .faq {
+            padding: 7rem 3rem;
+            background: var(--color-bg);
+            border-top: 1px solid var(--color-border);
+        }
+        .faq-container { max-width: 820px; margin: 0 auto; }
+        .faq .section-title, .faq .section-subtitle { text-align: center; }
+        .faq-list { margin-top: 3rem; }
+        .faq-item { border-bottom: 1px solid var(--color-border); }
+        .faq-q {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 600;
+            padding: 1.5rem 2.5rem 1.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+        .faq-q::after {
+            content: '+';
+            font-size: 1.6rem;
+            line-height: 1;
+            color: var(--color-accent);
+            font-weight: 400;
+            flex-shrink: 0;
+        }
+        .faq-item.open .faq-q::after { content: '\2212'; }
+        .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+        .faq-item.open .faq-a { max-height: 600px; }
+        .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
+    <!-- FAQ-LD:START -->
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Welche KI-Modelle unterstützt der Roboter?", "acceptedAnswer": {"@type": "Answer", "text": "Ab Werk unterstützt er moderne Vision-Language-Action- und Imitation-Learning-Policies, darunter Pi0, Pi0.5, ACT und SmolVLA. Sammeln Sie Teleoperationsdaten, feintunen Sie auf einer Consumer-GPU und deployen Sie über das SDK."}}, {"@type": "Question", "name": "Was ist im Lieferumfang des Roboters enthalten?", "acceptedAnswer": {"@type": "Answer", "text": "Jede Einheit wird mit dem vollständigen SDK und einer einfachen REST-API, einem URDF-Modell, einem mitgelieferten Simulator, kopfmontierter Stereokamera plus Handgelenkkameras, Greifern und direktem Engineering-Support geliefert. Die Teleoperation funktioniert ab dem ersten Tag."}}, {"@type": "Question", "name": "Kann ich selbst Teleoperationsdaten sammeln und Policies trainieren?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Teleoperieren Sie per VR mit einer Meta Quest 3S oder einem Leader-Follower-Controller, zeichnen Sie Demonstrationen im Standard-Datensatzformat auf und trainieren Sie ACT oder feintunen Sie ein Vision-Language-Action-Modell auf einer einzigen Consumer-GPU."}}, {"@type": "Question", "name": "Auf welcher Recheneinheit läuft der Roboter?", "acceptedAnswer": {"@type": "Answer", "text": "Die Onboard-Recheneinheit ist ein Raspberry Pi 5 oder ein NVIDIA Jetson. Leichte Policies laufen auf dem Gerät, während größere Vision-Language-Action-Modelle auf einer angebundenen Workstation-GPU laufen und Befehle über die REST-API streamen können."}}, {"@type": "Question", "name": "Ist der Roboter modular?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Sie können Arme, Greifer (2-Finger, 4-Finger oder fortschrittliche Fünf-Finger-Hände) und Basismodule wie Beine oder Räder austauschen und die Plattform an Ihre Aufgabe anpassen statt umgekehrt."}}, {"@type": "Question", "name": "Wo wird der Roboter hergestellt?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus wird in der Europäischen Union entworfen und gefertigt, was für europäische Forschungslabore und Unternehmen wichtig ist, denen Lieferketten-Herkunft, Support und Datensouveränität am Herzen liegen."}}]}</script>
+    <!-- FAQ-LD:END -->
 </head>
 <body>
     <!-- Navigation -->
@@ -1853,7 +1896,40 @@
             </div>
         </section>
 
-        <!-- Features Section -->
+        <!-- FAQ Section -->
+        <section class="faq">
+            <div class="faq-container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Everything you need to know before getting started</p>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-q" onclick="toggleFaq(this)">Welche KI-Modelle unterstützt der Roboter?</button>
+                        <div class="faq-a"><p>Ab Werk unterstützt er moderne Vision-Language-Action- und Imitation-Learning-Policies, darunter Pi0, Pi0.5, ACT und SmolVLA. Sammeln Sie Teleoperationsdaten, feintunen Sie auf einer Consumer-GPU und deployen Sie über das SDK.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q" onclick="toggleFaq(this)">Was ist im Lieferumfang des Roboters enthalten?</button>
+                        <div class="faq-a"><p>Jede Einheit wird mit dem vollständigen SDK und einer einfachen REST-API, einem URDF-Modell, einem mitgelieferten Simulator, kopfmontierter Stereokamera plus Handgelenkkameras, Greifern und direktem Engineering-Support geliefert. Die Teleoperation funktioniert ab dem ersten Tag.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q" onclick="toggleFaq(this)">Kann ich selbst Teleoperationsdaten sammeln und Policies trainieren?</button>
+                        <div class="faq-a"><p>Ja. Teleoperieren Sie per VR mit einer Meta Quest 3S oder einem Leader-Follower-Controller, zeichnen Sie Demonstrationen im Standard-Datensatzformat auf und trainieren Sie ACT oder feintunen Sie ein Vision-Language-Action-Modell auf einer einzigen Consumer-GPU.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q" onclick="toggleFaq(this)">Auf welcher Recheneinheit läuft der Roboter?</button>
+                        <div class="faq-a"><p>Die Onboard-Recheneinheit ist ein Raspberry Pi 5 oder ein NVIDIA Jetson. Leichte Policies laufen auf dem Gerät, während größere Vision-Language-Action-Modelle auf einer angebundenen Workstation-GPU laufen und Befehle über die REST-API streamen können.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q" onclick="toggleFaq(this)">Ist der Roboter modular?</button>
+                        <div class="faq-a"><p>Ja. Sie können Arme, Greifer (2-Finger, 4-Finger oder fortschrittliche Fünf-Finger-Hände) und Basismodule wie Beine oder Räder austauschen und die Plattform an Ihre Aufgabe anpassen statt umgekehrt.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q" onclick="toggleFaq(this)">Wo wird der Roboter hergestellt?</button>
+                        <div class="faq-a"><p>Prometheus wird in der Europäischen Union entworfen und gefertigt, was für europäische Forschungslabore und Unternehmen wichtig ist, denen Lieferketten-Herkunft, Support und Datensouveränität am Herzen liegen.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Bottom CTA Section -->
         <section style="padding: 6rem 3rem; text-align: center; background: linear-gradient(180deg, #0f0f0f 0%, var(--color-bg) 100%); border-top: 1px solid var(--color-border);">
             <div style="max-width: 800px; margin: 0 auto;">
@@ -2145,6 +2221,10 @@
                 history.pushState({ tab: id }, '', useCaseUrl(id));
             }
             return false;
+        }
+
+        function toggleFaq(btn) {
+            btn.parentElement.classList.toggle('open');
         }
 
         window.addEventListener('popstate', function () {

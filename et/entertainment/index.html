@@ -1352,8 +1352,51 @@
             .spec-label { font-size: 0.9rem; }
             .spec-value { font-size: 0.85rem; }
             .module-icon { font-size: 1.8rem; }
+            .faq { padding: 4rem 1.5rem; }
+            .faq-q { font-size: 1rem; padding-right: 2rem; }
         }
+
+        .faq {
+            padding: 7rem 3rem;
+            background: var(--color-bg);
+            border-top: 1px solid var(--color-border);
+        }
+        .faq-container { max-width: 820px; margin: 0 auto; }
+        .faq .section-title, .faq .section-subtitle { text-align: center; }
+        .faq-list { margin-top: 3rem; }
+        .faq-item { border-bottom: 1px solid var(--color-border); }
+        .faq-q {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-weight: 600;
+            padding: 1.5rem 2.5rem 1.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+        .faq-q::after {
+            content: '+';
+            font-size: 1.6rem;
+            line-height: 1;
+            color: var(--color-accent);
+            font-weight: 400;
+            flex-shrink: 0;
+        }
+        .faq-item.open .faq-q::after { content: '\2212'; }
+        .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+        .faq-item.open .faq-a { max-height: 600px; }
+        .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
+    <!-- FAQ-LD:START -->
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which AI models does the robot support?", "acceptedAnswer": {"@type": "Answer", "text": "Out of the box it supports modern vision-language-action and imitation-learning policies, including Pi0, Pi0.5, ACT, and SmolVLA. Collect teleoperation data, fine-tune on a consumer GPU, and deploy through the SDK."}}, {"@type": "Question", "name": "What is included with the robot?", "acceptedAnswer": {"@type": "Answer", "text": "Every unit ships with the full SDK and a simple REST API, a URDF model, a bundled simulator, head-mounted stereo plus wrist cameras, grippers, and direct engineering support. The teleoperation pipeline works on day one."}}, {"@type": "Question", "name": "Can I collect teleoperation data and train policies myself?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Teleoperate via VR with a Meta Quest 3S or a leader-follower controller, record demonstrations in the standard dataset format, and train ACT or fine-tune a vision-language-action model on a single consumer GPU."}}, {"@type": "Question", "name": "What compute does the robot run on?", "acceptedAnswer": {"@type": "Answer", "text": "Onboard compute is a Raspberry Pi 5 or an NVIDIA Jetson. Lightweight policies run on-device, while heavier vision-language-action models can run on a tethered workstation GPU and stream commands over the REST API."}}, {"@type": "Question", "name": "Is the robot modular?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You can swap arms, grippers (2-finger, 4-finger, or advanced five-finger hands), and base modules such as legs or wheels, and adapt the platform to your task rather than the other way around."}}, {"@type": "Question", "name": "Where is the robot made?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus is designed and manufactured in the European Union, which matters for European research labs and companies that care about supply-chain provenance, support, and data sovereignty."}}]}</script>
+    <!-- FAQ-LD:END -->
 </head>
 <body>
     <!-- Navigeerimine -->
@@ -1853,7 +1896,40 @@
             </div>
         </section>
 
-        <!-- Features Section -->
+        <!-- FAQ Section -->
+        <section class="faq">
+            <div class="faq-container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Everything you need to know before getting started</p>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-q" onclick="toggleFaq(this)">Which AI models does the robot support?</button>
+                        <div class="faq-a"><p>Out of the box it supports modern vision-language-action and imitation-learning policies, including Pi0, Pi0.5, ACT, and SmolVLA. Collect teleoperation data, fine-tune on a consumer GPU, and deploy through the SDK.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q" onclick="toggleFaq(this)">What is included with the robot?</button>
+                        <div class="faq-a"><p>Every unit ships with the full SDK and a simple REST API, a URDF model, a bundled simulator, head-mounted stereo plus wrist cameras, grippers, and direct engineering support. The teleoperation pipeline works on day one.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q" onclick="toggleFaq(this)">Can I collect teleoperation data and train policies myself?</button>
+                        <div class="faq-a"><p>Yes. Teleoperate via VR with a Meta Quest 3S or a leader-follower controller, record demonstrations in the standard dataset format, and train ACT or fine-tune a vision-language-action model on a single consumer GPU.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q" onclick="toggleFaq(this)">What compute does the robot run on?</button>
+                        <div class="faq-a"><p>Onboard compute is a Raspberry Pi 5 or an NVIDIA Jetson. Lightweight policies run on-device, while heavier vision-language-action models can run on a tethered workstation GPU and stream commands over the REST API.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q" onclick="toggleFaq(this)">Is the robot modular?</button>
+                        <div class="faq-a"><p>Yes. You can swap arms, grippers (2-finger, 4-finger, or advanced five-finger hands), and base modules such as legs or wheels, and adapt the platform to your task rather than the other way around.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-q" onclick="toggleFaq(this)">Where is the robot made?</button>
+                        <div class="faq-a"><p>Prometheus is designed and manufactured in the European Union, which matters for European research labs and companies that care about supply-chain provenance, support, and data sovereignty.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Bottom CTA Section -->
         <section style="padding: 6rem 3rem; text-align: center; background: linear-gradient(180deg, #0f0f0f 0%, var(--color-bg) 100%); border-top: 1px solid var(--color-border);">
             <div style="max-width: 800px; margin: 0 auto;">
@@ -2145,6 +2221,10 @@
                 history.pushState({ tab: id }, '', useCaseUrl(id));
             }
             return false;
+        }
+
+        function toggleFaq(btn) {
+            btn.parentElement.classList.toggle('open');
         }
 
         window.addEventListener('popstate', function () {
