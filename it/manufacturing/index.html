@@ -1,0 +1,2155 @@
+<!DOCTYPE html>
+<html lang="it" data-site-lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO:START -->
+    <title>Prometheus Robotics — Robot umanoidi per la produzione</title>
+    <meta name="description" content="Un umanoide addestrabile per la fabbrica: test di fine linea, pick-and-place e attività ripetitive di linea. Si riconfigura in pochi minuti e costa meno di una cella di automazione su misura.">
+    <link rel="canonical" href="https://meetprometheus.com/it/manufacturing/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://meetprometheus.com/it/manufacturing/">
+    <meta property="og:title" content="Prometheus Robotics — Robot umanoidi per la produzione">
+    <meta property="og:description" content="Un umanoide addestrabile per la fabbrica: test di fine linea, pick-and-place e attività ripetitive di linea. Si riconfigura in pochi minuti e costa meno di una cella di automazione su misura.">
+    <meta property="og:locale" content="it_IT">
+    <!-- SEO:END -->
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="robots" content="index, follow">
+    <meta property="og:site_name" content="Prometheus Robotics">
+    <meta property="og:image" content="https://meetprometheus.com/robot.png">
+    <meta property="og:image:alt" content="Prometheus humanoid robot">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://meetprometheus.com/robot.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://meetprometheus.com/#organization",
+          "name": "Prometheus Robotics",
+          "legalName": "Prometheus Engineering Kft.",
+          "url": "https://meetprometheus.com/",
+          "logo": "https://meetprometheus.com/logo.png",
+          "sameAs": ["https://www.linkedin.com/in/ilya-pavlenkov/"],
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Magdolna utca 6/B",
+            "postalCode": "1086",
+            "addressLocality": "Budapest",
+            "addressCountry": "HU"
+          }
+        },
+        {
+          "@type": "Product",
+          "name": "Prometheus Humanoid Robot",
+          "image": "https://meetprometheus.com/robot.png",
+          "description": "A modular humanoid robot platform for research, manufacturing, and entertainment — full SDK, stereo and wrist cameras, URDF, bundled simulator, and support for VLA models like Pi0.",
+          "brand": { "@type": "Brand", "name": "Prometheus Robotics" },
+          "manufacturer": { "@id": "https://meetprometheus.com/#organization" }
+        }
+      ]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Urbanist:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css">
+    <!-- HREFLANG:START -->
+    <link rel="alternate" hreflang="x-default" href="https://meetprometheus.com/manufacturing/">
+    <link rel="alternate" hreflang="en" href="https://meetprometheus.com/manufacturing/">
+    <link rel="alternate" hreflang="bg" href="https://meetprometheus.com/bg/manufacturing/">
+    <link rel="alternate" hreflang="cs" href="https://meetprometheus.com/cs/manufacturing/">
+    <link rel="alternate" hreflang="da" href="https://meetprometheus.com/da/manufacturing/">
+    <link rel="alternate" hreflang="de" href="https://meetprometheus.com/de/manufacturing/">
+    <link rel="alternate" hreflang="es" href="https://meetprometheus.com/es/manufacturing/">
+    <link rel="alternate" hreflang="et" href="https://meetprometheus.com/et/manufacturing/">
+    <link rel="alternate" hreflang="fi" href="https://meetprometheus.com/fi/manufacturing/">
+    <link rel="alternate" hreflang="fr" href="https://meetprometheus.com/fr/manufacturing/">
+    <link rel="alternate" hreflang="hr" href="https://meetprometheus.com/hr/manufacturing/">
+    <link rel="alternate" hreflang="hu" href="https://meetprometheus.com/hu/manufacturing/">
+    <link rel="alternate" hreflang="it" href="https://meetprometheus.com/it/manufacturing/">
+    <link rel="alternate" hreflang="lt" href="https://meetprometheus.com/lt/manufacturing/">
+    <link rel="alternate" hreflang="lv" href="https://meetprometheus.com/lv/manufacturing/">
+    <link rel="alternate" hreflang="nl" href="https://meetprometheus.com/nl/manufacturing/">
+    <link rel="alternate" hreflang="no" href="https://meetprometheus.com/no/manufacturing/">
+    <link rel="alternate" hreflang="pl" href="https://meetprometheus.com/pl/manufacturing/">
+    <link rel="alternate" hreflang="ro" href="https://meetprometheus.com/ro/manufacturing/">
+    <link rel="alternate" hreflang="sk" href="https://meetprometheus.com/sk/manufacturing/">
+    <link rel="alternate" hreflang="sl" href="https://meetprometheus.com/sl/manufacturing/">
+    <link rel="alternate" hreflang="sv" href="https://meetprometheus.com/sv/manufacturing/">
+    <!-- HREFLANG:END -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+        :root {
+            --color-bg: #0a0a0a;
+            --color-text: #ffffff;
+            --color-text-secondary: #a0a0a0;
+            --color-accent: #3b82f6;
+            --color-border: #1f1f1f;
+            --font-display: 'Plus Jakarta Sans', sans-serif;
+            --font-body: 'Urbanist', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        /* Navigazione */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: transparent;
+            backdrop-filter: none;
+            transition: background 0.4s ease, backdrop-filter 0.4s ease;
+            animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        nav.scrolled {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-100%); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover { color: var(--color-text); }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--color-accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after { width: 100%; }
+
+        .lang-switcher { position: relative; }
+
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.45rem 0.8rem;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            color: var(--color-text);
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lang-toggle:hover { border-color: rgba(59, 130, 246, 0.5); }
+        .lang-toggle .fi { border-radius: 2px; }
+
+        .lang-menu {
+            position: absolute;
+            top: calc(100% + 0.6rem);
+            right: 0;
+            min-width: 200px;
+            max-height: 60vh;
+            overflow-y: auto;
+            background: rgba(15, 15, 15, 0.98);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--color-border);
+            border-radius: 14px;
+            padding: 0.5rem;
+            display: none;
+            flex-direction: column;
+            gap: 0.1rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            z-index: 1100;
+        }
+
+        .lang-menu.open { display: flex; }
+
+        .lang-option {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 0.55rem 0.8rem;
+            border-radius: 8px;
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.2s ease, color 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .lang-option:hover { background: rgba(255, 255, 255, 0.06); color: var(--color-text); }
+        .lang-option.active { color: var(--color-accent); background: rgba(59, 130, 246, 0.1); }
+        .lang-option .fi { border-radius: 2px; flex-shrink: 0; }
+
+        .eu-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            background: transparent;
+            border: 1px solid transparent;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #ffffff;
+            transition: border-color 0.4s ease, background 0.4s ease;
+            opacity: 0.9;
+        }
+
+        nav.scrolled .eu-badge {
+            background: rgba(10, 10, 10, 0.22);
+            border-color: rgba(96, 165, 250, 0.5);
+        }
+
+        .eu-flag { width: 20px; height: 14px; }
+
+        .page { display: none; min-height: 100vh; }
+        .page.active { display: block; }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 3rem 3rem;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(90deg, #0a0a0a 0%, #0a0a0a 40%, #2a2a2a 70%, #404040 100%);
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(90deg, rgba(10, 10, 10, 0.85) 0%, rgba(10, 10, 10, 0.65) 45%, rgba(10, 10, 10, 0.4) 100%),
+                        radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .hero-content { max-width: 680px; }
+
+        .hero-content { order: 1; }
+        .hero-image { order: 2; }
+
+        .hero-content {
+            opacity: 0;
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-eyebrow {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            opacity: 0;
+            animation: fadeIn 0.8s ease 0.5s forwards;
+        }
+
+        @keyframes fadeIn { to { opacity: 1; } }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: 3.75rem;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+        }
+
+        .hero-description {
+            font-size: 1.05rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            max-width: 440px;
+            font-weight: 300;
+        }
+
+        .hero-audience {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2.5rem;
+            max-width: 540px;
+        }
+
+        .audience-tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--color-text-secondary);
+            padding: 0.4rem 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .audience-tag.primary {
+            color: var(--color-accent);
+            border-color: rgba(59, 130, 246, 0.4);
+            background: rgba(59, 130, 246, 0.08);
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.2rem 2.5rem;
+            background: var(--color-accent);
+            color: white;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s;
+        }
+
+        .cta-button:hover::before { left: 100%; }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.4);
+        }
+
+        .cta-button svg {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover svg { transform: translateX(4px); }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: var(--color-text);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: none;
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: none;
+        }
+
+        .cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .hero-image {
+            position: relative;
+            opacity: 0;
+            animation: fadeInScale 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+        }
+
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .specs-robot {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 3rem;
+            overflow: visible;
+        }
+
+        .specs-robot .robot-img {
+            position: relative;
+            z-index: 2;
+            max-width: 140%;
+            height: auto;
+        }
+
+        .robot-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .robot-img {
+            position: relative;
+            z-index: 2;
+            max-width: 127%;
+            height: auto;
+        }
+
+        .eu_stars {
+            position: absolute;
+            width: 60%;
+            max-width: 400px;
+            top: 0;
+            right: 10%;
+            z-index: 1;
+        }
+
+        .robot-glow {
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
+            filter: blur(60px);
+            animation: pulse 4s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+        }
+
+        .robot-image img.robot-img {
+            filter: drop-shadow(0 40px 80px rgba(0, 0, 0, 0.5));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(1deg); }
+        }
+
+        .cta-button-container { display: none; }
+
+        /* Research Ready Section */
+        .research-ready {
+            padding: 8rem 3rem;
+            background: linear-gradient(180deg, var(--color-bg) 0%, #0f0f0f 100%);
+            border-top: 1px solid var(--color-border);
+        }
+
+        .research-ready-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .use-case-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .use-case-tab {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            color: var(--color-text-secondary);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--color-border);
+            border-radius: 50px;
+            padding: 0.85rem 1.9rem;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .use-case-tab:hover {
+            color: var(--color-text);
+            border-color: rgba(59, 130, 246, 0.4);
+        }
+
+        .use-case-tab.active {
+            color: #ffffff;
+            background: var(--color-accent);
+            border-color: var(--color-accent);
+            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3);
+        }
+
+        .use-case-panel { display: none; }
+
+        .use-case-panel.active {
+            display: block;
+            animation: tabFade 0.4s ease;
+        }
+
+        .panel-why-title {
+            font-family: var(--font-display);
+            font-size: 1.9rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            text-align: center;
+            margin: 4.5rem 0 0.6rem;
+        }
+
+        .panel-why-subtitle {
+            text-align: center;
+            color: var(--color-text-secondary);
+            font-size: 1.05rem;
+            max-width: 720px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.6;
+        }
+
+        @keyframes tabFade {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .research-card {
+            padding: 2rem 1.75rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .research-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-accent), #8b5cf6);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .research-card:hover::before { transform: scaleX(1); }
+
+        .research-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(-6px);
+        }
+
+        .research-card.featured {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(139, 92, 246, 0.05) 100%);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .research-card.featured::before {
+            transform: scaleX(1);
+        }
+
+        .research-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .research-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.7rem;
+            letter-spacing: -0.01em;
+        }
+
+        .research-card p {
+            color: var(--color-text-secondary);
+            line-height: 1.65;
+            font-size: 0.93rem;
+        }
+
+        .research-card .vla-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            background: rgba(59, 130, 246, 0.12);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            margin-top: 0.8rem;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 8rem 3rem;
+            background: linear-gradient(180deg, var(--color-bg) 0%, #0f0f0f 100%);
+            border-top: 1px solid var(--color-border);
+        }
+
+        /* Specifications Section */
+        .specifications {
+            padding: 8rem 3rem;
+            background: linear-gradient(180deg, #0f0f0f 0%, var(--color-bg) 100%);
+            border-top: 1px solid var(--color-border);
+        }
+
+        /* Manipulators Section */
+        .manipulators {
+            padding: 8rem 3rem;
+            background: var(--color-bg);
+            border-top: 1px solid var(--color-border);
+        }
+
+        .manipulators-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .manipulators-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .manipulator-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--color-border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .manipulator-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-accent), #8b5cf6);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .manipulator-card:hover::before { transform: scaleX(1); }
+
+        .manipulator-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(-8px);
+        }
+
+        .manipulator-image {
+            width: 100%;
+            height: 300px;
+            background: #000000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .manipulator-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.4s ease;
+        }
+
+        .manipulator-card:hover .manipulator-image img { transform: scale(1.05); }
+
+        .manipulator-content { padding: 2rem; }
+
+        .manipulator-content h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .manipulator-content h4 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .manipulator-content p {
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .specs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .specs-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .specs-table-wrapper {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--color-border);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .specs-table { width: 100%; border-collapse: collapse; }
+
+        .specs-table tbody tr {
+            border-bottom: 1px solid var(--color-border);
+            transition: background 0.3s ease;
+        }
+
+        .specs-table tbody tr:last-child { border-bottom: none; }
+        .specs-table tbody tr:hover { background: rgba(59, 130, 246, 0.05); }
+        .specs-table td { padding: 1.5rem 2rem; }
+
+        .spec-label {
+            font-weight: 600;
+            color: var(--color-text);
+            font-size: 1rem;
+            width: 45%;
+        }
+
+        .spec-value {
+            color: var(--color-text-secondary);
+            font-size: 1rem;
+            width: 55%;
+        }
+
+        .modules-section {
+            position: sticky;
+            top: 120px;
+        }
+
+        .modules-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            letter-spacing: -0.01em;
+        }
+
+        .modules-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .module-card {
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--color-border);
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .module-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-accent), #8b5cf6);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .module-card:hover::before { transform: scaleX(1); }
+
+        .module-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateX(8px);
+        }
+
+        .module-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .module-card h4 {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.01em;
+        }
+
+        .module-card p {
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .features-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--color-text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            padding: 3rem 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--color-border);
+            border-radius: 20px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-accent), #8b5cf6);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .feature-card:hover::before { transform: scaleX(1); }
+
+        .feature-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(-8px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .feature-card p {
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        /* Contatti Page */
+        .contacts-section {
+            padding: 8rem 3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            min-height: calc(100vh - 200px);
+        }
+
+        .contacts-title {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            letter-spacing: -0.01em;
+            text-align: center;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--color-border);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-info h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--color-accent);
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            line-height: 2;
+            color: var(--color-text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info strong {
+            color: var(--color-text);
+            font-weight: 600;
+        }
+
+        .contact-link {
+            color: var(--color-accent);
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        .contact-link:hover { border-bottom: 1px solid var(--color-accent); }
+
+        /* Footer */
+        footer {
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid var(--color-border);
+            padding: 3rem 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        .footer-section p {
+            color: var(--color-text-secondary);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 0.8rem; }
+
+        .footer-links a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        .footer-links a:hover { color: var(--color-accent); }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+            color: var(--color-text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .eu-flag-inline {
+            width: 18px;
+            height: 12px;
+            border-radius: 2px;
+            vertical-align: -1px;
+            margin-left: 0.15rem;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active { display: flex; opacity: 1; }
+
+        .modal-content {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .modal.active .modal-content { transform: scale(1); }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--color-text-secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            line-height: 1;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover { color: var(--color-text); }
+
+        .modal-title {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            letter-spacing: -0.01em;
+        }
+
+        .recaptcha-container {
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .contact-details {
+            display: none;
+            padding: 2rem;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .contact-details.active { display: block; }
+
+        .contact-details p {
+            font-size: 1.2rem;
+            color: var(--color-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-details small {
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .full-video-btn {
+            position: fixed;
+            bottom: 3rem;
+            right: 3rem;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            color: white;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .full-video-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .full-video-btn svg { width: 16px; height: 16px; }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero-container { grid-template-columns: 1fr; gap: 3rem; }
+            .hero-content { order: 1; }
+            .hero-image { order: 2; max-width: 500px; margin: 0 auto; }
+            .robot-container { transform: none; }
+            .hero-title { font-size: 4rem; }
+            nav { padding: 1.5rem 2rem; }
+            .hero { padding: 7rem 2rem 3rem; }
+            .eu_stars { right: 5%; width: 70%; }
+            .footer-content { grid-template-columns: 1fr; gap: 2rem; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .logo { font-size: 0.7rem; }
+            .logo img { height: 24px !important; }
+            .eu-badge { font-size: 0.5rem; padding: 0.3rem 0.7rem; }
+            .lang-toggle { padding: 0.4rem 0.6rem; font-size: 0.8rem; gap: 0.35rem; }
+            nav { padding: 1rem 0.9rem; gap: 0.5rem; }
+            .hero { padding: 6rem 1.5rem 2rem; min-height: auto; }
+            .hero-container { gap: 2rem; }
+            .hero-content { order: 1; }
+            .hero-content .cta-button { display: none; }
+            .hero-image { order: 2; max-width: 100%; }
+
+            .cta-button-container {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                order: 3;
+                width: 100%;
+                margin: 0 0 2rem 0;
+            }
+
+            .cta-button-container .cta-button { width: 100%; justify-content: center; }
+            .hero-title { font-size: 2.5rem; }
+            .hero-description { font-size: 1.1rem; margin-bottom: 1.5rem; }
+            .hero-audience { margin-bottom: 2rem; }
+            .audience-tag { font-size: 0.7rem; padding: 0.35rem 0.7rem; }
+            .specs-robot .robot-img { max-width: 78%; margin: 0 auto; display: block; }
+            .cta-button { padding: 1rem 2rem; font-size: 0.9rem; }
+            .section-title { font-size: 2rem; }
+            .section-subtitle { font-size: 1rem; margin-bottom: 3rem; }
+
+            .research-ready { padding: 4rem 1.5rem; }
+            .research-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .research-card { padding: 1.75rem 1.5rem; }
+            .research-card h3 { font-size: 1.1rem; }
+            .research-card p { font-size: 0.9rem; }
+
+            .features { padding: 4rem 1.5rem; }
+            .specifications { padding: 4rem 1.5rem; }
+            .manipulators { padding: 4rem 1.5rem; }
+            .manipulators-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .manipulator-image { height: 250px; }
+            .manipulator-content { padding: 1.5rem; }
+            .manipulator-content h3 { font-size: 1.5rem; }
+            .manipulator-content h4 { font-size: 1.1rem; }
+            .manipulator-content p { font-size: 0.95rem; }
+            .specs-content { grid-template-columns: 1fr; gap: 3rem; }
+            .modules-section { position: static; }
+            .specs-table td { padding: 1.2rem 1.5rem; }
+            .spec-label, .spec-value { font-size: 0.95rem; }
+            .modules-title { font-size: 1.5rem; }
+            .module-card { padding: 1.5rem; }
+            .module-card h4 { font-size: 1.2rem; }
+            .module-card p { font-size: 0.9rem; }
+            .features-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .feature-card { padding: 2rem 1.5rem; }
+            .contacts-section { padding: 4rem 1.5rem; }
+            .contacts-title { font-size: 2rem; }
+            .contact-info { padding: 2rem 1.5rem; }
+            .contact-info h3 { font-size: 1.4rem; }
+            .modal-content { padding: 2rem 1.5rem; }
+            footer { padding: 2rem 1.5rem 1.5rem; }
+
+            .full-video-btn {
+                bottom: 1.5rem;
+                right: 1.5rem;
+                padding: 0.8rem 1.5rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title { font-size: 2rem; }
+            .hero-description { font-size: 1rem; }
+            .eu-badge { display: none; }
+            .contact-info p { font-size: 1rem; }
+            .specs-table td { padding: 1rem 1.2rem; }
+            .spec-label { font-size: 0.9rem; }
+            .spec-value { font-size: 0.85rem; }
+            .module-icon { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigazione -->
+    <nav>
+        <div class="logo" onclick="showPage('home')">
+            <img src="/logo.svg" alt="Prometheus Robotics logo" style="height: 32px; width: auto;">
+            PROMETHEUS&nbsp;&nbsp;ROBOTICS
+        </div>
+        <ul class="nav-links">
+            <li><a onclick="showPage('home')">Prometheus Robotics</a></li>
+            <li><a onclick="showPage('contacts')">Contatti</a></li>
+            <li><a href="https://www.linkedin.com/in/ilya-pavlenkov/recent-activity/all/" target="_blank">LinkedIn</a></li>
+        </ul>
+        <div class="eu-badge">
+            <svg class="eu-flag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810 540">
+                <rect width="810" height="540" fill="#003399"/>
+                <g fill="#FFCC00">
+                    <circle cx="405" cy="105" r="15"/>
+                    <circle cx="505" cy="140" r="15"/>
+                    <circle cx="560" cy="220" r="15"/>
+                    <circle cx="560" cy="320" r="15"/>
+                    <circle cx="505" cy="400" r="15"/>
+                    <circle cx="405" cy="435" r="15"/>
+                    <circle cx="305" cy="400" r="15"/>
+                    <circle cx="250" cy="320" r="15"/>
+                    <circle cx="250" cy="220" r="15"/>
+                    <circle cx="305" cy="140" r="15"/>
+                    <circle cx="405" cy="175" r="15"/>
+                    <circle cx="405" cy="365" r="15"/>
+                </g>
+            </svg>
+            Made in EU
+        </div>
+        <div class="lang-switcher">
+            <button class="lang-toggle" id="langToggle" aria-haspopup="true" aria-expanded="false" aria-label="Change language">
+                <span class="fi fi-gb" id="langCurrentFlag"></span>
+                <span id="langCurrentLabel">EN</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="lang-menu" id="langMenu" role="menu"></div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home-page" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="/robot.png">
+                <source src="/hero.mp4" type="video/mp4">
+            </video>
+            <div class="hero-container">
+                <div class="hero-content">
+                    <span class="hero-eyebrow">Per laboratori di ricerca &amp; università tecniche</span>
+                    <h1 class="hero-title">Piattaforma umanoide per la ricerca robotica</h1>
+                    <p class="hero-description">
+                        Un robot umanoide modulare appositamente progettato per la ricerca. Addestrate policy VLA, raccogliete dati di teleoperazione, validate in simulazione, distribuite sull'hardware — tutto pronto all'uso.
+                    </p>
+                    <div class="hero-audience">
+                        <span class="audience-tag primary">Laboratori di ricerca</span>
+                        <span class="audience-tag primary">Università tecniche</span>
+                        <span class="audience-tag primary">Produzione</span>
+                        <span class="audience-tag primary">Intrattenimento</span>
+                        <span class="audience-tag">Fornitori di automazione</span>
+                        <span class="audience-tag">Startup</span>
+                        <span class="audience-tag">Sviluppatori DIY</span>
+                    </div>
+                    <div class="cta-group">
+                        <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
+                            Acquista robot umanoide
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            </svg>
+                        </a>
+                        <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
+                            Prenota una call
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="cta-button-container">
+                    <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
+                        Acquista robot umanoide
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
+                    </a>
+                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
+                        Prenota una call
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Costruito per la ricerca robotica moderna -->
+        <section class="research-ready">
+            <div class="research-ready-container">
+                <div class="use-case-tabs">
+                    <a class="use-case-tab" data-tab="research" href="/it/" onclick="return showUseCase('research', this, event)">🔬 Laboratori di ricerca</a>
+                    <a class="use-case-tab active" data-tab="manufacturing" href="/it/manufacturing/" onclick="return showUseCase('manufacturing', this, event)">🏭 Produzione</a>
+                    <a class="use-case-tab" data-tab="entertainment" href="/it/entertainment/" onclick="return showUseCase('entertainment', this, event)">🎉 Intrattenimento</a>
+                </div>
+
+                <div class="use-case-panel" id="usecase-research">
+                <h2 class="section-title">Costruito per la ricerca robotica moderna</h2>
+                <p class="section-subtitle">Tutto ciò di cui il vostro laboratorio ha bisogno per iniziare a raccogliere dati, addestrare policy e condurre esperimenti — fornito con il robot.</p>
+
+                <div class="research-grid">
+                    <div class="research-card featured">
+                        <span class="research-icon">📷</span>
+                        <h3>Visione ottimizzata per VLA</h3>
+                        <p>Telecamere da polso con angolo di montaggio personalizzabile — ideali per Pi0.5 e altri modelli VLA. In più, stereo montata sulla testa per la percezione dell'intera scena.</p>
+                        <span class="vla-tag">Pi0.5 · SmolVLA · ACT</span>
+                    </div>
+
+                    <div class="research-card featured">
+                        <span class="research-icon">🧠</span>
+                        <h3>Pronto per essere addestrato</h3>
+                        <p>Preconfigurato per le moderne pipeline ML. Iniziate a raccogliere dimostrazioni e ad addestrare policy fin dal primo giorno — nessun lavoro di integrazione richiesto.</p>
+                    </div>
+
+                    <div class="research-card featured">
+                        <span class="research-icon">🎮</span>
+                        <h3>Pipeline di teleoperazione</h3>
+                        <p>Supporto alla teleoperazione pronto all'uso per la registrazione di dimostrazioni e il controllo remoto. Integratelo immediatamente nel vostro flusso di imitation learning.</p>
+                    </div>
+
+                    <div class="research-card featured">
+                        <span class="research-icon">📐</span>
+                        <h3>URDF per simulatori</h3>
+                        <p>Modello robot URDF completo incluso. Compatibilità immediata con MuJoCo, Isaac Sim, PyBullet, Gazebo e il resto dello stack di simulazione standard.</p>
+                    </div>
+
+                    <div class="research-card">
+                        <span class="research-icon">🖥️</span>
+                        <h3>Simulatore incluso</h3>
+                        <p>Il simulatore viene fornito con ogni robot. Sviluppate e validate in simulazione prima di toccare l'hardware.</p>
+                    </div>
+
+                    <div class="research-card">
+                        <span class="research-icon">💻</span>
+                        <h3>SDK</h3>
+                        <p>SDK completo per controllo, percezione e integrazione. Python-first e ben documentato.</p>
+                    </div>
+
+                    <div class="research-card">
+                        <span class="research-icon">🦾</span>
+                        <h3>Pinze incluse</h3>
+                        <p>I manipolatori vengono forniti con la piattaforma. Non è necessario procurarsi gli end-effector separatamente.</p>
+                    </div>
+
+                    <div class="research-card">
+                        <span class="research-icon">🤖</span>
+                        <h3>Hardware modulare</h3>
+                        <p>Sostituite bracci, pinze e moduli base. Adattate la piattaforma alla vostra ricerca, non il contrario.</p>
+                    </div>
+
+                    <div class="research-card">
+                        <span class="research-icon">📼</span>
+                        <h3>Scenari di esempio</h3>
+                        <p>Movimenti preregistrati e scenari di esecuzione di esempio. Validate lo stack sul vostro banco in pochi minuti.</p>
+                    </div>
+
+                    <div class="research-card">
+                        <span class="research-icon">📚</span>
+                        <h3>Documentazione dettagliata</h3>
+                        <p>Documentazione completa per hardware, software, calibrazione e flussi di integrazione.</p>
+                    </div>
+
+                    <div class="research-card">
+                        <span class="research-icon">💬</span>
+                        <h3>Supporto ingegneristico diretto</h3>
+                        <p>Linea diretta con il nostro team — dall'unboxing fino al deployment, agli esperimenti e alla pubblicazione.</p>
+                    </div>
+                </div>
+
+                <h3 class="panel-why-title">Perché i laboratori scelgono Prometheus</h3>
+                <p class="panel-why-subtitle">Non esiste un umanoide pronto all'uso pensato per la ricerca. I team bruciano mesi ad assemblare hardware, telecamere, simulazione e strumenti ML prima di poter condurre un singolo esperimento. Prometheus fornisce l'intero stack pronto all'uso.</p>
+                <div class="research-grid">
+                    <div class="research-card featured">
+                        <span class="research-icon">🎓</span>
+                        <h3>Pensato per la ricerca, non un'unità da demo</h3>
+                        <p>Architettura aperta, SDK completo, URDF e simulatore incluso — progettato attorno al funzionamento reale della ricerca robotica.</p>
+                    </div>
+                    <div class="research-card featured">
+                        <span class="research-icon">⏱️</span>
+                        <h3>Saltate mesi di integrazione</h3>
+                        <p>Telecamere, teleoperazione e pipeline ML sono preconfigurate. Iniziate a raccogliere dimostrazioni e ad addestrare policy fin dal primo giorno.</p>
+                    </div>
+                    <div class="research-card featured">
+                        <span class="research-icon">🧩</span>
+                        <h3>Personalizzabile &amp; modulare</h3>
+                        <p>Sostituite bracci, pinze e moduli base, scrivete i vostri controller, estendete l'SDK. Adattate la piattaforma al vostro lavoro.</p>
+                    </div>
+                    <div class="research-card featured">
+                        <span class="research-icon">✨</span>
+                        <h3>Configurazioni su misura</h3>
+                        <p>Pacchetti di sensori dedicati, pinze alternative, cinematiche personalizzate e integrazioni software per attività di laboratorio specializzate.</p>
+                    </div>
+                </div>
+                </div>
+
+                <div class="use-case-panel active" id="usecase-manufacturing">
+                    <h2 class="section-title">Mettete un umanoide sulla vostra linea</h2>
+                    <p class="section-subtitle">Test di fine linea, pick-and-place e le attività ripetitive di linea che preferireste non assegnare al personale — gestite da un umanoide flessibile che si ridistribuisce in pochi minuti.</p>
+
+                    <div class="research-grid">
+                        <div class="research-card featured">
+                            <span class="research-icon">🔧</span>
+                            <h3>Test di fine linea</h3>
+                            <p>Eseguite controlli funzionali e di qualità al termine della vostra linea di produzione — coerenti, ripetibili e instancabili in ogni turno.</p>
+                        </div>
+
+                        <div class="research-card featured">
+                            <span class="research-icon">📦</span>
+                            <h3>Pick &amp; Place</h3>
+                            <p>Pick-and-place affidabile per parti, imballaggi e kitting. Gestite oggetti diversi con le pinze incluse.</p>
+                        </div>
+
+                        <div class="research-card featured">
+                            <span class="research-icon">🔁</span>
+                            <h3>Attività ripetitive di linea</h3>
+                            <p>Affidategli i lavori monotoni e ripetitivi — asservimento macchine, smistamento, supporto all'assemblaggio — e liberate le persone per attività a maggior valore.</p>
+                        </div>
+
+                        <div class="research-card">
+                            <span class="research-icon">🧠</span>
+                            <h3>Impara il compito</h3>
+                            <p>Alimentato da Pi0 — un modello VLA facilmente addestrabile. Mostrategli il compito e lo generalizza, adattandosi alle variazioni invece di bloccarsi. Nessuno scripting rigido.</p>
+                        </div>
+
+                        <div class="research-card">
+                            <span class="research-icon">🛠️</span>
+                            <h3>Cambio rapido</h3>
+                            <p>Riconfiguratelo per un nuovo compito o cambio prodotto in pochi minuti, non settimane. Un robot, molti lavori.</p>
+                        </div>
+
+                        <div class="research-card">
+                            <span class="research-icon">👁️</span>
+                            <h3>Guidato dalla visione</h3>
+                            <p>Telecamere stereo e da polso per il rilevamento delle parti, l'allineamento e l'ispezione visiva proprio dove avviene il lavoro.</p>
+                        </div>
+
+                        <div class="research-card">
+                            <span class="research-icon">🦾</span>
+                            <h3>Pinze modulari</h3>
+                            <p>Sostituite gli end-effector in base alla parte. I manipolatori vengono forniti con la piattaforma, pronti per la vostra linea.</p>
+                        </div>
+
+                        <div class="research-card">
+                            <span class="research-icon">🔌</span>
+                            <h3>Integrazione semplice</h3>
+                            <p>Una semplice REST API si integra nel vostro controllo di linea e nei flussi esistenti — nessun lock-in proprietario.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="panel-why-title">Perché i produttori scelgono Prometheus</h3>
+                    <p class="panel-why-subtitle">I lavori di linea monotoni e ripetitivi sono i più difficili da coprire e mantenere coperti — ma i robot dedicati a compiti specifici vi costringono a ricostruire la linea attorno a loro. Prometheus si integra invece perfettamente nel vostro processo esistente, lavora tre turni al giorno e non si dà mai malato.</p>
+                    <div class="research-grid">
+                        <div class="research-card featured">
+                            <span class="research-icon">👷</span>
+                            <h3>Copre i lavori difficili da assegnare</h3>
+                            <p>Coprite le attività ripetitive e ad alto turnover che le persone non vogliono — senza aumentare l'organico o combattere il ricambio.</p>
+                        </div>
+                        <div class="research-card featured">
+                            <span class="research-icon">💸</span>
+                            <h3>Più economico di una cella su misura</h3>
+                            <p>Un umanoide flessibile sostituisce l'automazione fissa su misura, costosa da progettare, costruire e mantenere.</p>
+                        </div>
+                        <div class="research-card featured">
+                            <span class="research-icon">♻️</span>
+                            <h3>Si riconfigura in pochi minuti</h3>
+                            <p>Un nuovo prodotto o compito non significa più settimane di riattrezzaggio. Riaddestrate e riutilizzate lo stesso robot lungo la linea.</p>
+                        </div>
+                        <div class="research-card featured">
+                            <span class="research-icon">📈</span>
+                            <h3>Scala con la domanda</h3>
+                            <p>Aggiungete unità man mano che i volumi crescono e spostatele sul collo di bottiglia. Nessuna infrastruttura fissa da smantellare e ricostruire.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="use-case-panel" id="usecase-entertainment">
+                    <h2 class="section-title">Un umanoide che ruba la scena</h2>
+                    <p class="section-subtitle">Per parchi a tema, hotel, musei ed eventi — vestitelo, guidatelo dalla VR, riproducete le routine e lasciate che accolga, presenti e spieghi.</p>
+
+                    <div class="research-grid">
+                        <div class="research-card featured">
+                            <span class="research-icon">👗</span>
+                            <h3>Vestitelo</h3>
+                            <p>Equipaggiate il robot con costumi personalizzati e abbigliamento brandizzato per adattarlo alla vostra location, mascotte o tema dell'evento.</p>
+                        </div>
+
+                        <div class="research-card featured">
+                            <span class="research-icon">🥽</span>
+                            <h3>Teleoperazione VR</h3>
+                            <p>Controllate il robot dal vivo dalla VR con un Meta Quest 3S — salutate, gesticolate e interagite con gli ospiti in tempo reale.</p>
+                        </div>
+
+                        <div class="research-card featured">
+                            <span class="research-icon">🎬</span>
+                            <h3>Registra &amp; riproduci</h3>
+                            <p>Catturate una performance una volta e riproducetela su richiesta — saluti, balli e routine scriptate, spettacolo dopo spettacolo.</p>
+                        </div>
+
+                        <div class="research-card">
+                            <span class="research-icon">🗣️</span>
+                            <h3>Presenta &amp; spiega</h3>
+                            <p>Fategli condurre e spiegare — visite guidate, demo di prodotto ed esposizioni che accompagnano i visitatori nell'esperienza.</p>
+                        </div>
+
+                        <div class="research-card">
+                            <span class="research-icon">👋</span>
+                            <h3>Accogli gli ospiti</h3>
+                            <p>Un caloroso benvenuto umanoide per gli ingressi dei parchi, le hall degli hotel e gli show floor.</p>
+                        </div>
+
+                        <div class="research-card">
+                            <span class="research-icon">📡</span>
+                            <h3>Operazione remota</h3>
+                            <p>Guidatelo da remoto ovunque vi troviate — gestite interazioni e performance senza personale in sala.</p>
+                        </div>
+
+                        <div class="research-card">
+                            <span class="research-icon">🏨</span>
+                            <h3>Costruito per le location</h3>
+                            <p>Parchi a tema, hotel, musei ed eventi — un'attrazione che cattura lo sguardo e tiene il pubblico coinvolto.</p>
+                        </div>
+
+                        <div class="research-card">
+                            <span class="research-icon">🤖</span>
+                            <h3>Sempre in linea con il brand</h3>
+                            <p>Performance coerenti e ripetibili ogni volta — il vostro personaggio distintivo, presentato in modo affidabile.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="panel-why-title">Perché le location scelgono Prometheus</h3>
+                    <p class="panel-why-subtitle">Le attrazioni vivono o muoiono sul fattore wow. Gli ospiti hanno già visto schermi e animatronics — un umanoide reale e interattivo è ciò che fotografano, postano e per cui tornano. È una dichiarazione che la vostra location è la più avanzata sul mercato.</p>
+                    <div class="research-grid">
+                        <div class="research-card featured">
+                            <span class="research-icon">⭐</span>
+                            <h3>Una calamita per il pubblico</h3>
+                            <p>Un umanoide reale attira pubblico, foto e buzz sui social che uno schermo o un animatronic semplicemente non possono eguagliare.</p>
+                        </div>
+                        <div class="research-card featured">
+                            <span class="research-icon">🏆</span>
+                            <h3>Prestigio immediato</h3>
+                            <p>Mostrate a tutti che gestite la location più avanzata e orientata al futuro del mercato — e assicuratevi che tutti lo vedano.</p>
+                        </div>
+                        <div class="research-card featured">
+                            <span class="research-icon">🎭</span>
+                            <h3>Un solo performer, ogni spettacolo</h3>
+                            <p>Registrate le routine una volta e riproducetele perfettamente tutto il giorno — nessuna pausa, nessuna pianificazione, nessun personale per il ruolo.</p>
+                        </div>
+                        <div class="research-card featured">
+                            <span class="research-icon">🌍</span>
+                            <h3>Operate da qualsiasi luogo</h3>
+                            <p>Guidatelo dal vivo in VR con un Meta Quest 3S per accogliere e interagire con gli ospiti in tempo reale — anche da remoto.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specifications Section -->
+        <section class="specifications">
+            <div class="specs-container">
+                <h2 class="section-title">Specifiche tecniche</h2>
+                <p class="section-subtitle">Parte superiore del corpo su treppiede — adatta alla ricerca da banco</p>
+                
+                <div class="specs-content">
+                    <div class="specs-table-wrapper">
+                        <table class="specs-table">
+                            <tbody>
+                                <tr>
+                                    <td class="spec-label">Coppia massima ai giunti</td>
+                                    <td class="spec-value">120Nm</td>
+                                </tr>
+                                <tr>
+                                    <td class="spec-label">Altezza</td>
+                                    <td class="spec-value">160cm on tripod (172cm on legs/wheels)</td>
+                                </tr>
+                                <tr>
+                                    <td class="spec-label">Larghezza</td>
+                                    <td class="spec-value">50cm (tripod bottom 85cm)</td>
+                                </tr>
+                                <tr>
+                                    <td class="spec-label">Durata della batteria</td>
+                                    <td class="spec-value">Circa 4h</td>
+                                </tr>
+                                <tr>
+                                    <td class="spec-label">Gradi di libertà</td>
+                                    <td class="spec-value">19 (29 with legs; 43 with hands; 53 with legs and hands)</td>
+                                </tr>
+                                <tr>
+                                    <td class="spec-label">Telecamere</td>
+                                    <td class="spec-value">Head-mounted stereo + wrist cameras with customizable angle (ideal for Pi0.5 and other VLA models)</td>
+                                </tr>
+                                <tr>
+                                    <td class="spec-label">Microfoni</td>
+                                    <td class="spec-value">2 microphones on the ears level</td>
+                                </tr>
+                                <tr>
+                                    <td class="spec-label">Altoparlante</td>
+                                    <td class="spec-value">Altoparlante all'altezza della bocca</td>
+                                </tr>
+                                <tr>
+                                    <td class="spec-label">Alimentazione</td>
+                                    <td class="spec-value">13 cells in series</td>
+                                </tr>
+                                <tr>
+                                    <td class="spec-label">Caricabatterie</td>
+                                    <td class="spec-value">54V 5A</td>
+                                </tr>
+                                <tr>
+                                    <td class="spec-label">Calcolo</td>
+                                    <td class="spec-value">Raspberry Pi 5 / NVIDIA Jetson</td>
+                                </tr>
+                                <tr>
+                                    <td class="spec-label">Modello robot</td>
+                                    <td class="spec-value">URDF included (MuJoCo, Isaac Sim, PyBullet, Gazebo)</td>
+                                </tr>
+                                <tr>
+                                    <td class="spec-label">Software</td>
+                                    <td class="spec-value">SDK + bundled simulator</td>
+                                </tr>
+                                <tr>
+                                    <td class="spec-label">Controller manuale</td>
+                                    <td class="spec-value">Opzionale</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="modules-section">
+                        <div class="specs-robot">
+                            <div class="robot-glow"></div>
+                            <img src="/robot.png" alt="Prometheus Humanoid Robot" class="robot-img">
+                        </div>
+                        <h3 class="modules-title">Moduli disponibili</h3>
+                        <div class="modules-grid">
+                            <div class="module-card">
+                                <div class="module-icon">🦿</div>
+                                <h4>Modulo gambe</h4>
+                                <p>Sistema di locomozione bipede per una mobilità migliorata e capacità di movimento simili a quelle umane.</p>
+                            </div>
+                            <div class="module-card">
+                                <div class="module-icon">🛞</div>
+                                <h4>Modulo ruote</h4>
+                                <p>Base su ruote per una navigazione efficiente e una piattaforma stabile per diverse applicazioni.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 4rem;">
+                    <a onclick="showPage('contacts')" class="cta-button" style="display: inline-flex; cursor: pointer;">
+                        Contatta il commerciale
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Manipulators Section -->
+        <section class="manipulators">
+            <div class="manipulators-container">
+                <h2 class="section-title">Opzioni di manipolatore</h2>
+                <p class="section-subtitle">Scegliete l'end-effector giusto per la vostra ricerca</p>
+                
+                <div class="manipulators-grid">
+                    <div class="manipulator-card">
+                        <div class="manipulator-image">
+                            <img src="/claw.png" alt="Type A - Pinza a 2 dita">
+                        </div>
+                        <div class="manipulator-content">
+                            <h3>Type A</h3>
+                            <h4>Pinza a 2 dita</h4>
+                            <p>Presa semplice / chiusura precisa. Ideale per operazioni delicate e attività di manipolazione precise.</p>
+                        </div>
+                    </div>
+
+                    <div class="manipulator-card">
+                        <div class="manipulator-image">
+                            <img src="/for_totes.png" alt="Type B - 4-finger claw">
+                        </div>
+                        <div class="manipulator-content">
+                            <h3>Type B</h3>
+                            <h4>"Artiglio" a 4 dita (dita accoppiate)</h4>
+                            <p>Per una presa robusta di casse e contenitori. Progettato per applicazioni di magazzino e logistica.</p>
+                        </div>
+                    </div>
+
+                    <div class="manipulator-card">
+                        <div class="manipulator-image">
+                            <img src="/hand.png" alt="Type X - Advanced manipulator">
+                        </div>
+                        <div class="manipulator-content">
+                            <h3>Type X</h3>
+                            <h4>Manipolatori avanzati</h4>
+                            <p>Le opzioni includono telecamere da polso con angolo di montaggio personalizzabile (ottimizzate per Pi0.5 e altri modelli VLA), mani a 5 dita e altre varianti personalizzate.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <!-- Bottom CTA Section -->
+        <section style="padding: 6rem 3rem; text-align: center; background: linear-gradient(180deg, #0f0f0f 0%, var(--color-bg) 100%); border-top: 1px solid var(--color-border);">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h2 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.01em;">Pronti a mettere Prometheus al lavoro?</h2>
+                <p style="color: var(--color-text-secondary); font-size: 1.2rem; margin-bottom: 3rem; line-height: 1.7;">Che si tratti di un laboratorio di ricerca, di una linea di produzione o di una sala — ordinate un'unità o prenotate una call per discutere la vostra configurazione.</p>
+                <div class="cta-group" style="justify-content: center;">
+                    <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
+                        Acquista piattaforma modulare
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                        </svg>
+                    </a>
+                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
+                        Prenota una call
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contatti Page -->
+    <div id="contacts-page" class="page">
+        <section class="contacts-section">
+            <h1 class="contacts-title">Contatti</h1>
+            
+            <div class="contact-info">
+                <h3>Informazioni aziendali</h3>
+                <p><strong>Prometheus Engineering Kft.</strong></p>
+                <p>Magdolna utca 6/B</p>
+                <p>1086 Budapest</p>
+                <p>Hungary</p>
+                <p><strong>VAT ID:</strong> 32719367-2-42</p>
+                <p><strong>LinkedIn:</strong> <a class="contact-link" href="https://www.linkedin.com/in/ilya-pavlenkov/" target="_blank">linkedin.com/in/ilya-pavlenkov</a></p>
+                <p><strong>Email:</strong> <a class="contact-link" onclick="openModal('email')">Clicca per rivelare</a></p>
+                <p><strong>Telefono:</strong> <a class="contact-link" onclick="openModal('phone')">Clicca per rivelare</a></p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Prometheus Robotics</h4>
+                <p>Una piattaforma umanoide modulare per la ricerca, l'industria e l'intrattenimento. Costruita per i laboratori, le fabbriche e le location che plasmano la prossima generazione di robot intelligenti.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Navigazione</h4>
+                <ul class="footer-links">
+                    <li><a onclick="showPage('home')">Home</a></li>
+                    <li><a onclick="showPage('contacts')">Contatti</a></li>
+                    <li><a href="https://www.linkedin.com/in/ilya-pavlenkov/recent-activity/all/" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Inizia</h4>
+                <ul class="footer-links">
+                    <li><a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank">Acquista robot</a></li>
+                    <li><a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer">Prenota una call</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Prometheus Engineering Kft. Tutti i diritti riservati. Made in EU <svg class="eu-flag-inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810 540" role="img" aria-label="European Union flag"><rect width="810" height="540" fill="#003399"/><g fill="#FFCC00"><circle cx="405" cy="105" r="15"/><circle cx="505" cy="140" r="15"/><circle cx="560" cy="220" r="15"/><circle cx="560" cy="320" r="15"/><circle cx="505" cy="400" r="15"/><circle cx="405" cy="435" r="15"/><circle cx="305" cy="400" r="15"/><circle cx="250" cy="320" r="15"/><circle cx="250" cy="220" r="15"/><circle cx="305" cy="140" r="15"/><circle cx="405" cy="175" r="15"/><circle cx="405" cy="365" r="15"/></g></svg></p>
+        </div>
+    </footer>
+
+    <a href="https://www.linkedin.com/in/ilya-pavlenkov/recent-activity/all/" target="_blank" class="full-video-btn">
+        Il nostro LinkedIn
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+        </svg>
+    </a>
+
+    <!-- Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h2 class="modal-title" id="modalTitle">Verifica di essere umano</h2>
+            
+            <div class="recaptcha-container" id="recaptchaContainer">
+                <div class="g-recaptcha" data-sitekey="6LcOOl4sAAAAAKuEELfpH8_meztvMp5irpmPAjIr" data-callback="onRecaptchaSuccess"></div>
+            </div>
+            
+            <div class="contact-details" id="contactDetails">
+                <p id="contactValue"></p>
+                <small id="contactNote"></small>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentContactType = '';
+        const WORKER_URL = 'https://flat-flower-f90e.prometheusroboticsco.workers.dev/';
+
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            const targetPage = document.getElementById(pageId + '-page');
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function openModal(type) {
+            currentContactType = type;
+            const modal = document.getElementById('contactModal');
+            const recaptchaContainer = document.getElementById('recaptchaContainer');
+            const contactDetails = document.getElementById('contactDetails');
+            
+            recaptchaContainer.style.display = 'flex';
+            contactDetails.classList.remove('active');
+            
+            if (typeof grecaptcha !== 'undefined') {
+                grecaptcha.reset();
+            }
+            
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('contactModal');
+            modal.classList.remove('active');
+        }
+
+        async function onRecaptchaSuccess(token) {
+            const recaptchaContainer = document.getElementById('recaptchaContainer');
+            const contactDetails = document.getElementById('contactDetails');
+            const contactValue = document.getElementById('contactValue');
+            const contactNote = document.getElementById('contactNote');
+            
+            contactValue.textContent = 'Loading...';
+            contactNote.textContent = '';
+            recaptchaContainer.style.display = 'none';
+            contactDetails.classList.add('active');
+            
+            try {
+                const response = await fetch(WORKER_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        recaptchaToken: token,
+                        contactType: currentContactType
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    contactValue.textContent = data.contact;
+                    contactNote.textContent = data.note || '';
+                } else {
+                    contactValue.textContent = 'Verification failed';
+                    contactNote.textContent = 'Please try again';
+                    console.error('Worker error:', data.error);
+                    
+                    setTimeout(() => {
+                        recaptchaContainer.style.display = 'flex';
+                        contactDetails.classList.remove('active');
+                        if (typeof grecaptcha !== 'undefined') {
+                            grecaptcha.reset();
+                        }
+                    }, 2000);
+                }
+            } catch (error) {
+                console.error('Network error:', error);
+                contactValue.textContent = 'Connection error';
+                contactNote.textContent = 'Please check your internet connection';
+                
+                setTimeout(() => {
+                    recaptchaContainer.style.display = 'flex';
+                    contactDetails.classList.remove('active');
+                    if (typeof grecaptcha !== 'undefined') {
+                        grecaptcha.reset();
+                    }
+                }, 2000);
+            }
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('contactModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        window.SITE_LANG = document.documentElement.getAttribute('data-site-lang') || 'en';
+        window.LANG_BASE = window.SITE_LANG === 'en' ? '' : '/' + window.SITE_LANG;
+
+        // Languages that have generated pages. Add entries here as new language
+        // batches are generated, then re-run build_site.py.
+        const LANGS = [
+            { code: 'en', cc: 'gb', label: 'English' },
+            /* LANGS:START */
+            { code: 'bg', cc: 'bg', label: 'Български' },
+            { code: 'cs', cc: 'cz', label: 'Čeština' },
+            { code: 'da', cc: 'dk', label: 'Dansk' },
+            { code: 'de', cc: 'de', label: 'Deutsch' },
+            { code: 'es', cc: 'es', label: 'Español' },
+            { code: 'et', cc: 'ee', label: 'Eesti' },
+            { code: 'fi', cc: 'fi', label: 'Suomi' },
+            { code: 'fr', cc: 'fr', label: 'Français' },
+            { code: 'hr', cc: 'hr', label: 'Hrvatski' },
+            { code: 'hu', cc: 'hu', label: 'Magyar' },
+            { code: 'it', cc: 'it', label: 'Italiano' },
+            { code: 'lt', cc: 'lt', label: 'Lietuvių' },
+            { code: 'lv', cc: 'lv', label: 'Latviešu' },
+            { code: 'nl', cc: 'nl', label: 'Nederlands' },
+            { code: 'no', cc: 'no', label: 'Norsk' },
+            { code: 'pl', cc: 'pl', label: 'Polski' },
+            { code: 'ro', cc: 'ro', label: 'Română' },
+            { code: 'sk', cc: 'sk', label: 'Slovenčina' },
+            { code: 'sl', cc: 'si', label: 'Slovenščina' },
+            { code: 'sv', cc: 'se', label: 'Svenska' }
+            /* LANGS:END */
+        ];
+
+        function currentTabPath() {
+            const p = location.pathname;
+            if (p.indexOf('manufacturing') !== -1) return 'manufacturing/';
+            if (p.indexOf('entertainment') !== -1) return 'entertainment/';
+            return '';
+        }
+
+        function langHref(code) {
+            const base = code === 'en' ? '' : '/' + code;
+            return (base + '/' + currentTabPath()) || '/';
+        }
+
+        function initLangSwitcher() {
+            const cur = LANGS.find(l => l.code === window.SITE_LANG) || LANGS[0];
+            const flag = document.getElementById('langCurrentFlag');
+            const label = document.getElementById('langCurrentLabel');
+            if (flag) flag.className = 'fi fi-' + cur.cc;
+            if (label) label.textContent = cur.code.toUpperCase();
+
+            const menu = document.getElementById('langMenu');
+            if (menu) {
+                menu.innerHTML = LANGS.map(l =>
+                    '<a class="lang-option' + (l.code === window.SITE_LANG ? ' active' : '') +
+                    '" role="menuitem" href="' + langHref(l.code) + '">' +
+                    '<span class="fi fi-' + l.cc + '"></span>' + l.label + '</a>'
+                ).join('');
+            }
+
+            const toggle = document.getElementById('langToggle');
+            if (toggle && menu) {
+                toggle.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    const open = menu.classList.toggle('open');
+                    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+                });
+                document.addEventListener('click', function (e) {
+                    if (!menu.contains(e.target) && e.target !== toggle) {
+                        menu.classList.remove('open');
+                        toggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        }
+        initLangSwitcher();
+
+        function useCaseUrl(id) {
+            return window.LANG_BASE + (id === 'research' ? '/' : '/' + id + '/');
+        }
+
+        function showUseCase(id, btn, event) {
+            if (event) event.preventDefault();
+            document.querySelectorAll('.use-case-panel').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.use-case-tab').forEach(t => t.classList.remove('active'));
+            const panel = document.getElementById('usecase-' + id);
+            if (panel) panel.classList.add('active');
+            if (!btn) btn = document.querySelector('.use-case-tab[data-tab="' + id + '"]');
+            if (btn) btn.classList.add('active');
+            if (event && window.history && history.pushState) {
+                history.pushState({ tab: id }, '', useCaseUrl(id));
+            }
+            return false;
+        }
+
+        window.addEventListener('popstate', function () {
+            const path = location.pathname;
+            let id = 'research';
+            if (path.indexOf('manufacturing') !== -1) id = 'manufacturing';
+            else if (path.indexOf('entertainment') !== -1) id = 'entertainment';
+            showUseCase(id, null, null);
+        });
+
+        (function () {
+            const navEl = document.querySelector('nav');
+            const onScroll = () => {
+                if (window.scrollY > 40) {
+                    navEl.classList.add('scrolled');
+                } else {
+                    navEl.classList.remove('scrolled');
+                }
+            };
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+        })();
+    </script>
+</body>
+</html>

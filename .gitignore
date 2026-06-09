@@ -1,2 +1,7 @@
 __pycache__/
 *.pyc
+
+__pycache__/
+*.pyc
+translations/_raw/
+translations/_source.json

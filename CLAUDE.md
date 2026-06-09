@@ -37,7 +37,7 @@ Each tab has its own **real URL** for sharing + SEO:
 
 English master = `index.html` (served at `/`). Other languages get their own real
 pages with hreflang, e.g. `/de/`, `/de/manufacturing/`, `/fr/entertainment/`.
-Currently generated: **en, de, fr** (more added in batches).
+Currently generated: **21 languages** — en, de, fr, es, it, nl, pl, hu, sv, no, fi, cs, da, ro, bg, lt, lv, et, sk, sl, hr.
 
 - All non-English pages + the English sub-tab pages are **GENERATED** by `build_site.py`.
   Do NOT edit generated files by hand — edit `index.html` / `i18n_data.py` and regenerate.
