@@ -1,0 +1,67 @@
+<p>Buying a research humanoid is a multi-year commitment, and the specs that sell a robot are rarely the ones that decide whether your lab gets results. Use this checklist before you sign anything. For each item we explain what to ask, why it matters, and what a good answer looks like — so you can compare any platform, including <a href="/">Prometheus</a>, on what actually counts.</p>
+
+<h2>The buyer's checklist</h2>
+
+<h3>1. An open SDK and API</h3>
+<p><strong>Ask:</strong> can I command every joint and read every sensor from code? <strong>Why:</strong> a locked app is a demo, not a research tool. You need programmatic, low-level access to run your own controllers and experiments. A simple REST API and a well-documented SDK are the green flags.</p>
+
+<h3>2. A URDF model and a simulator</h3>
+<p><strong>Ask:</strong> does a robot model and a simulator ship with it? <strong>Why:</strong> they let you develop and validate in sim before risking hardware, and they shrink the sim-to-real gap. If they are missing, building them becomes your project.</p>
+
+<h3>3. The right cameras</h3>
+<p><strong>Ask:</strong> is there stereo for the scene and wrist cameras for manipulation, and can the wrist angle be set? <strong>Why:</strong> modern vision-language-action policies lean heavily on the wrist view. The wrong sensor suite quietly caps what you can train.</p>
+
+<h3>4. A teleoperation and data pipeline</h3>
+<p><strong>Ask:</strong> can I record demonstrations out of the box (VR, leader-follower)? <strong>Why:</strong> imitation learning is only as good as your data, and if collecting it is not built in, you have a side project before you have a dataset.</p>
+
+<h3>5. VLA and ML readiness</h3>
+<p><strong>Ask:</strong> does it support modern policies like Pi0 and ACT, in a standard dataset format? <strong>Why:</strong> you want to plug into the open training ecosystem, not a proprietary island. Bonus if you can train on a single consumer GPU.</p>
+
+<h3>6. Modularity</h3>
+<p><strong>Ask:</strong> can I swap arms, grippers, and base modules? <strong>Why:</strong> research questions change. One platform that reconfigures beats buying a new robot every time your scope shifts.</p>
+
+<h3>7. Compute options</h3>
+<p><strong>Ask:</strong> what runs on-board, and can heavier models run on a tethered GPU? <strong>Why:</strong> you want light policies on-device and the option to stream a large VLA from a workstation. Flexibility here saves you from a compute dead end.</p>
+
+<h3>8. Engineering support</h3>
+<p><strong>Ask:</strong> do I get direct access to the engineers, or a ticket queue? <strong>Why:</strong> when a robot blocks a publication deadline, support quality is the difference between a one-day fix and a one-month stall.</p>
+
+<h3>9. Provenance and supply chain</h3>
+<p><strong>Ask:</strong> where is it made, and how are parts and support sourced? <strong>Why:</strong> for many labs and companies, supply-chain provenance, local support, and data sovereignty are real requirements, not nice-to-haves.</p>
+
+<div class="callout">
+    <p><strong>Turn this into a scorecard.</strong> Rate every candidate 0–2 on each of the nine items. The platform with the best demo video often is not the one with the highest total — and the total is what you will live with.</p>
+</div>
+
+<h2>How to run the evaluation</h2>
+<p>The checklist only helps if you use it consistently:</p>
+<ol>
+    <li><strong>Weight the items for your lab.</strong> A manipulation lab weights cameras, teleoperation, and VLA support heavily; a locomotion lab weights other things. Decide before you score, not after.</li>
+    <li><strong>Score every candidate 0–2</strong> on each item and total them. Numbers beat vibes from a demo video.</li>
+    <li><strong>Demand evidence, not adjectives.</strong> "Open SDK" should come with docs you can read today; "simulator included" should come with a URDF you can load now.</li>
+    <li><strong>Talk to an actual user</strong> if you can — the gap between the brochure and the bench is where surprises live.</li>
+</ol>
+
+<h2>Questions for the sales call</h2>
+<ul>
+    <li>Can you send the SDK docs and a URDF before I buy?</li>
+    <li>Show me recording a teleoperation demo and training a policy on it.</li>
+    <li>What ships in the box versus what is an add-on?</li>
+    <li>What is the lead time, warranty, and spare-parts process?</li>
+    <li>Who answers when something breaks, and how fast?</li>
+</ul>
+
+<h2>How Prometheus answers the checklist</h2>
+<ul>
+    <li><strong>SDK + REST API</strong> for full programmatic control. ✔</li>
+    <li><strong>URDF + bundled simulator</strong> for sim-to-real. ✔</li>
+    <li><strong>Stereo + adjustable-angle wrist cameras</strong> tuned for VLA. ✔</li>
+    <li><strong>Teleoperation pipeline</strong> (VR via Meta Quest 3S) on day one. ✔</li>
+    <li><strong>Pi0 / ACT support</strong>, standard dataset format, <strong>train on one consumer GPU</strong>. ✔</li>
+    <li><strong>Modular</strong> arms, grippers, legs, and wheels. ✔</li>
+    <li><strong>On-device (Raspberry Pi 5 / Jetson) plus tethered-GPU</strong> options. ✔</li>
+    <li><strong>Direct engineering support</strong>, <strong>designed and made in the EU</strong>. ✔</li>
+</ul>
+
+<h2>Keep reading</h2>
+<p>Once you have scored your options, the next questions are usually budget and form factor: see <a href="/blog/how-much-does-a-humanoid-robot-cost/">how much a humanoid robot costs</a>, <a href="/blog/humanoid-robot-vs-robotic-arm-which-to-buy/">humanoid vs robotic arm</a>, and <a href="/blog/build-vs-buy-a-research-humanoid-cost-and-time/">build vs buy</a>.</p>

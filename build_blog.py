@@ -46,6 +46,56 @@ POSTS = [
         "date": "2026-06-09",
         "date_human": "June 9, 2026",
     },
+    {
+        "slug": "how-much-does-a-humanoid-robot-cost",
+        "title": "How Much Does a Humanoid Robot Cost?",
+        "h1": "How Much Does a Humanoid Robot Cost?",
+        "crumb": "Humanoid robot cost",
+        "eyebrow": "Buyer's Guide",
+        "description": "What a research-grade humanoid robot really costs — the factors that drive the price, the total cost of ownership that is not on the sticker, and how to budget for your lab.",
+        "date": "2026-06-05",
+        "date_human": "June 5, 2026",
+    },
+    {
+        "slug": "best-humanoid-robots-for-research-labs-2026",
+        "title": "Best Humanoid Robots for Research Labs (2026)",
+        "h1": "Best Humanoid Robots for Research Labs (2026)",
+        "crumb": "Best research humanoids",
+        "eyebrow": "Buyer's Guide",
+        "description": "The criteria that separate a research-grade humanoid from a demo unit — an eight-point rubric to evaluate any platform for your lab, with the 2026 landscape by category.",
+        "date": "2026-06-06",
+        "date_human": "June 6, 2026",
+    },
+    {
+        "slug": "humanoid-robot-vs-robotic-arm-which-to-buy",
+        "title": "Humanoid Robot vs Robotic Arm: Which to Buy",
+        "h1": "Humanoid Robot vs Robotic Arm: Which to Buy",
+        "crumb": "Humanoid vs robotic arm",
+        "eyebrow": "Buyer's Guide",
+        "description": "When a robotic arm is the smarter buy, when a humanoid earns its cost, and how a modular platform lets you start small and scale up without buying twice.",
+        "date": "2026-06-07",
+        "date_human": "June 7, 2026",
+    },
+    {
+        "slug": "build-vs-buy-a-research-humanoid-cost-and-time",
+        "title": "Build vs Buy a Research Humanoid: Cost &amp; Time",
+        "h1": "Build vs Buy a Research Humanoid: Cost and Time",
+        "crumb": "Build vs buy",
+        "eyebrow": "Buyer's Guide",
+        "description": "The real cost and timeline of building a humanoid in-house versus buying one — person-years, opportunity cost, and when each path actually makes sense.",
+        "date": "2026-06-08",
+        "date_human": "June 8, 2026",
+    },
+    {
+        "slug": "what-to-look-for-when-buying-a-humanoid-for-research",
+        "title": "What to Look for When Buying a Humanoid for Research",
+        "h1": "What to Look for When Buying a Humanoid for Research",
+        "crumb": "Buying checklist",
+        "eyebrow": "Buyer's Guide · Checklist",
+        "description": "A nine-point checklist for buying a research humanoid — SDK, URDF, cameras, teleoperation, VLA support, modularity, compute, support, and provenance — with what to ask and why it matters.",
+        "date": "2026-06-09",
+        "date_human": "June 9, 2026",
+    },
 ]
 
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
@@ -95,6 +145,7 @@ def json_ld(post):
 
 def related_block(current):
     others = [p for p in POSTS if p["slug"] != current["slug"]]
+    others = sorted(others, key=lambda p: p["date"], reverse=True)[:3]
     if not others:
         return ""
     cards = []
@@ -148,7 +199,7 @@ def page(post, body):
 
 def index_page():
     cards = []
-    for p in POSTS:
+    for p in sorted(POSTS, key=lambda x: x["date"], reverse=True):
         cards.append(
             '    <a class="post-card" href="%s">\n'
             '        <div class="pc-eyebrow">%s</div>\n'

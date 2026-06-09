@@ -1,0 +1,42 @@
+<p>Before buying a humanoid, many labs ask a fair question: would a robotic arm do the job for a fraction of the price? Sometimes yes. This guide lays out exactly when an arm is the smarter buy, when a <a href="/">humanoid</a> earns its cost, and how a modular platform lets you avoid choosing too early.</p>
+
+<h2>What a robotic arm gives you</h2>
+<p>A single fixed-base arm is the workhorse of manipulation research for good reasons:</p>
+<ul>
+    <li><strong>Lower cost and complexity.</strong> Fewer joints, no balance, no whole-body control.</li>
+    <li><strong>Excellent for fixed, tabletop tasks</strong> — pick-and-place, insertion, tool use within a known workspace.</li>
+    <li><strong>Mature tooling.</strong> Imitation-learning stacks like ACT grew up on arm setups.</li>
+</ul>
+<p>If your research lives on a bench within arm's reach of one manipulator, an arm may be all you need.</p>
+
+<h2>What a humanoid adds</h2>
+<p>A humanoid is not just "more arms." The form factor itself unlocks research an arm cannot reach:</p>
+<ul>
+    <li><strong>Two arms and a torso</strong> — bimanual tasks, handovers, and a reachable workspace closer to a human's.</li>
+    <li><strong>Human-like embodiment.</strong> For vision-language-action models pretrained on human and humanoid data, a human-shaped robot transfers better, and teleoperation in VR feels natural.</li>
+    <li><strong>Operates in human environments.</strong> With legs or a wheeled base, it works where people work, not just at a fixed station.</li>
+    <li><strong>Whole-body behaviour</strong> — research into coordination, mobility, and manipulation together.</li>
+</ul>
+
+<h2>A simple decision guide</h2>
+<p><strong>Choose a robotic arm if:</strong> your tasks are fixed-location and tabletop, budget is the hard constraint, and you do not need mobility, bimanual coordination, or a human form factor.</p>
+<p><strong>Choose a humanoid if:</strong> you need two coordinated arms, a human-scale workspace, mobility, natural VR teleoperation, or you are working with VLA policies where embodiment matters — or you simply want one platform that grows with your research.</p>
+
+<div class="callout">
+    <p><strong>It is not always either/or.</strong> Many labs outgrow a single arm within a year as their questions get more ambitious. Buying twice is expensive. A platform that can start small and scale up avoids that trap.</p>
+</div>
+
+<h2>Cost and complexity, compared</h2>
+<p>An arm wins the headline price and the setup time — fewer joints, no balance, a smaller footprint. A humanoid costs more and asks more of you, but it buys capability an arm structurally cannot provide: a second arm, a torso, reach, and a path to mobility. The honest framing is not "which is cheaper" but "what is the cheapest thing that can answer my research questions for the next few years." An arm that you outgrow in twelve months was not actually the cheap option.</p>
+
+<h2>What about ALOHA-style dual arms?</h2>
+<p>A popular middle option is a pair of arms in an ALOHA-style rig — genuinely excellent and affordable for tabletop bimanual imitation learning. If your work is firmly tabletop and you never need reach, a torso, mobility, or a human form factor for VLA transfer, it is a strong choice. Its ceiling is exactly those things: it is two arms on a bench, not an embodiment that moves through and acts in human spaces.</p>
+
+<h2>The modular middle path</h2>
+<p>The hardest part of this decision is committing before you know where your research will go. Prometheus is built to remove that risk:</p>
+<ul>
+    <li><strong>Start as a bench-top manipulator.</strong> The upper body on a tripod gives you arm-like simplicity for tabletop imitation learning — close to the cost and footprint of an arm setup.</li>
+    <li><strong>Add capability when you need it.</strong> Bring in legs or a wheeled base for mobility, or dexterous hands for fine manipulation, without buying a new robot.</li>
+    <li><strong>Bimanual and VLA-ready from the start</strong> — two arms, stereo plus wrist cameras, teleoperation, URDF, and a simulator included.</li>
+</ul>
+<p>In other words, you get the low-commitment entry of an arm with a clear upgrade path to a full humanoid. If cost is your main worry, see <a href="/blog/how-much-does-a-humanoid-robot-cost/">how much a humanoid robot costs</a>; if you are tempted to build instead, read <a href="/blog/build-vs-buy-a-research-humanoid-cost-and-time/">build vs buy</a>.</p>

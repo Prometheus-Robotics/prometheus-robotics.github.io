@@ -1,0 +1,69 @@
+<p>It is the first question almost everyone asks, and the honest answer is: it depends — but not in a hand-wavy way. Humanoid robot prices span three orders of magnitude, from a few thousand for an educational toy to several hundred thousand for a flagship industrial humanoid. What you actually pay comes down to a handful of concrete factors. This guide breaks them down so you can estimate a realistic budget for a <a href="/">research-grade humanoid</a> and avoid the costs that do not show up on the sticker.</p>
+
+<h2>Why there is no single price</h2>
+<p>"Humanoid robot" covers wildly different machines:</p>
+<ul>
+    <li><strong>Educational / hobby humanoids</strong> — small servos, limited payload, no research software. Low thousands.</li>
+    <li><strong>Research humanoids</strong> — capable arms, real sensors, an open SDK, URDF, and a simulator. This is the category that matters for labs, and where most serious work happens.</li>
+    <li><strong>Flagship industrial humanoids</strong> — full bipedal locomotion, dexterous hands, premium pricing, often not openly available.</li>
+</ul>
+<p>A research humanoid typically lands in the tens of thousands to low hundreds of thousands, depending on configuration. The spread inside that band is what the rest of this article explains.</p>
+
+<h2>What actually drives the price</h2>
+<ul>
+    <li><strong>Degrees of freedom.</strong> Every actuated joint adds motors, controllers, and cost. An upper body is cheaper than a full body with legs and five-finger hands.</li>
+    <li><strong>Hands and grippers.</strong> A simple 2-finger gripper is inexpensive; dexterous multi-finger hands are one of the most expensive subsystems on any humanoid.</li>
+    <li><strong>Sensing.</strong> Stereo head cameras, wrist cameras, microphones, and the compute to run them.</li>
+    <li><strong>Software.</strong> This is the hidden swing factor. A robot with a full SDK, REST API, URDF model, and a bundled simulator is worth far more than identical hardware with no software, because the software is what lets you actually do research.</li>
+    <li><strong>Support.</strong> Direct engineering support shortens time-to-result; its absence is a cost you pay in your own hours.</li>
+</ul>
+
+<h2>The number that is not on the sticker: total cost of ownership</h2>
+<p>The purchase price is only part of the story. A "cheap" humanoid with no software stack can be the most expensive option once you add up:</p>
+<ul>
+    <li><strong>Integration time</strong> — weeks or months wiring up cameras, teleoperation, and ML pipelines before your first experiment. Researcher time is not free.</li>
+    <li><strong>Software you have to build</strong> — if no URDF or simulator ships with the robot, you build or buy them.</li>
+    <li><strong>Spare parts and maintenance</strong> — modular platforms are cheaper to keep running than monolithic ones.</li>
+    <li><strong>Data collection tooling</strong> — if teleoperation is not included, that is another project.</li>
+</ul>
+
+<div class="callout">
+    <p><strong>The cheapest robot to buy is often the most expensive to use.</strong> Two platforms with the same price tag can differ by months of engineering time once you factor in software, teleoperation, and support. Compare total cost of ownership, not just the quote.</p>
+</div>
+
+<h2>How to think about your budget</h2>
+<ol>
+    <li><strong>Start from the task.</strong> Bench-top manipulation needs an upper body and a gripper, not legs and dexterous hands. Buy the configuration your research actually requires.</li>
+    <li><strong>Count the software in.</strong> Credit platforms that include the SDK, URDF, simulator, and teleoperation — that is budget you would otherwise spend building it.</li>
+    <li><strong>Value support and modularity.</strong> They lower the real cost over the life of the robot.</li>
+</ol>
+
+<h2>A worked example: budgeting an imitation-learning lab</h2>
+<p>Say your goal is to collect teleoperation data and train manipulation policies. Walk the budget through end to end, not just the robot:</p>
+<ul>
+    <li><strong>The platform</strong> — an upper-body humanoid with two arms, stereo plus wrist cameras, and a gripper. This is your headline number.</li>
+    <li><strong>Manipulation</strong> — the gripper or hand that matches your tasks. A 2-finger gripper is cheap; dexterous hands are a meaningful add.</li>
+    <li><strong>Compute</strong> — on-board for inference, plus a single consumer GPU workstation if you train or run a large VLA. A 24&nbsp;GB card is enough for ACT and LoRA fine-tuning.</li>
+    <li><strong>Software</strong> — zero <em>if</em> the SDK, URDF, and simulator are included; otherwise budget engineering time to build them.</li>
+    <li><strong>People-time</strong> — the largest hidden line. Weeks of integration on a bare platform can dwarf a software-complete one.</li>
+</ul>
+<p>The lesson: two quotes that look identical can differ by a researcher-quarter once software and integration are counted. That delta is the real comparison.</p>
+
+<h2>Questions to ask before you get a quote</h2>
+<ol>
+    <li>What is included in the base price — software, simulator, support?</li>
+    <li>What does each module (hands, legs, wheels, extra cameras) add?</li>
+    <li>Is teleoperation and a dataset pipeline built in, or extra?</li>
+    <li>What is the lead time, warranty, and spare-parts story?</li>
+    <li>Can I train on a single consumer GPU, or do I need a cluster?</li>
+</ol>
+
+<h2>Where Prometheus fits</h2>
+<p>Prometheus is built to keep total cost of ownership low rather than to win a sticker-price race:</p>
+<ul>
+    <li><strong>Modular</strong> — start with the upper body on a tripod for bench-top work and add legs, wheels, or dexterous hands later. You pay for what your research needs.</li>
+    <li><strong>Software included</strong> — full SDK and REST API, URDF, and a bundled simulator ship with every unit, so there is no integration tax.</li>
+    <li><strong>Data pipeline out of the box</strong> — teleoperation works on day one, and you can train policies on a single consumer GPU.</li>
+    <li><strong>Direct engineering support, designed and made in the EU.</strong></li>
+</ul>
+<p>Because configuration drives the price, the most useful next step is a quick conversation about what your lab needs — then a precise quote rather than a guess.</p>
