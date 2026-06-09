@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SEO:START -->
-    <title>Prometheus Robotics — Humanoid Robots for Entertainment & Venues</title>
+    <title>Prometheus Robotics — Humanoid Robots for Entertainment &amp; Venues</title>
     <meta name="description" content="A real interactive humanoid for theme parks, hotels, and events. Dress it up, drive it live from VR (Meta Quest 3S), record and replay routines, and let it greet and present to guests.">
     <link rel="canonical" href="https://meetprometheus.com/entertainment/">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://meetprometheus.com/entertainment/">
-    <meta property="og:title" content="Prometheus Robotics — Humanoid Robots for Entertainment & Venues">
+    <meta property="og:title" content="Prometheus Robotics — Humanoid Robots for Entertainment &amp; Venues">
     <meta property="og:description" content="A real interactive humanoid for theme parks, hotels, and events. Dress it up, drive it live from VR (Meta Quest 3S), record and replay routines, and let it greet and present to guests.">
+    <meta property="og:locale" content="en_US">
     <!-- SEO:END -->
     <meta name="theme-color" content="#0a0a0a">
     <meta name="robots" content="index, follow">
@@ -53,6 +54,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Urbanist:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css">
+    <!-- HREFLANG:START -->
+    <link rel="alternate" hreflang="x-default" href="https://meetprometheus.com/entertainment/">
+    <link rel="alternate" hreflang="en" href="https://meetprometheus.com/entertainment/">
+    <link rel="alternate" hreflang="de" href="https://meetprometheus.com/de/entertainment/">
+    <link rel="alternate" hreflang="fr" href="https://meetprometheus.com/fr/entertainment/">
+    <!-- HREFLANG:END -->
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -162,6 +170,66 @@
         }
 
         .nav-links a:hover::after { width: 100%; }
+
+        .lang-switcher { position: relative; }
+
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.45rem 0.8rem;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            color: var(--color-text);
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .lang-toggle:hover { border-color: rgba(59, 130, 246, 0.5); }
+        .lang-toggle .fi { border-radius: 2px; }
+
+        .lang-menu {
+            position: absolute;
+            top: calc(100% + 0.6rem);
+            right: 0;
+            min-width: 200px;
+            max-height: 60vh;
+            overflow-y: auto;
+            background: rgba(15, 15, 15, 0.98);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--color-border);
+            border-radius: 14px;
+            padding: 0.5rem;
+            display: none;
+            flex-direction: column;
+            gap: 0.1rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            z-index: 1100;
+        }
+
+        .lang-menu.open { display: flex; }
+
+        .lang-option {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            padding: 0.55rem 0.8rem;
+            border-radius: 8px;
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.2s ease, color 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .lang-option:hover { background: rgba(255, 255, 255, 0.06); color: var(--color-text); }
+        .lang-option.active { color: var(--color-accent); background: rgba(59, 130, 246, 0.1); }
+        .lang-option .fi { border-radius: 2px; flex-shrink: 0; }
 
         .eu-badge {
             display: flex;
@@ -1266,6 +1334,14 @@
             </svg>
             Made in EU
         </div>
+        <div class="lang-switcher">
+            <button class="lang-toggle" id="langToggle" aria-haspopup="true" aria-expanded="false" aria-label="Change language">
+                <span class="fi fi-gb" id="langCurrentFlag"></span>
+                <span id="langCurrentLabel">EN</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="lang-menu" id="langMenu" role="menu"></div>
+        </div>
     </nav>
 
     <!-- Home Page -->
@@ -1938,8 +2014,64 @@
             }
         });
 
+        window.SITE_LANG = document.documentElement.getAttribute('data-site-lang') || 'en';
+        window.LANG_BASE = window.SITE_LANG === 'en' ? '' : '/' + window.SITE_LANG;
+
+        // Languages that have generated pages. Add entries here as new language
+        // batches are generated, then re-run build_site.py.
+        const LANGS = [
+            { code: 'en', cc: 'gb', label: 'English' },
+            { code: 'de', cc: 'de', label: 'Deutsch' },
+            { code: 'fr', cc: 'fr', label: 'Français' }
+        ];
+
+        function currentTabPath() {
+            const p = location.pathname;
+            if (p.indexOf('manufacturing') !== -1) return 'manufacturing/';
+            if (p.indexOf('entertainment') !== -1) return 'entertainment/';
+            return '';
+        }
+
+        function langHref(code) {
+            const base = code === 'en' ? '' : '/' + code;
+            return (base + '/' + currentTabPath()) || '/';
+        }
+
+        function initLangSwitcher() {
+            const cur = LANGS.find(l => l.code === window.SITE_LANG) || LANGS[0];
+            const flag = document.getElementById('langCurrentFlag');
+            const label = document.getElementById('langCurrentLabel');
+            if (flag) flag.className = 'fi fi-' + cur.cc;
+            if (label) label.textContent = cur.code.toUpperCase();
+
+            const menu = document.getElementById('langMenu');
+            if (menu) {
+                menu.innerHTML = LANGS.map(l =>
+                    '<a class="lang-option' + (l.code === window.SITE_LANG ? ' active' : '') +
+                    '" role="menuitem" href="' + langHref(l.code) + '">' +
+                    '<span class="fi fi-' + l.cc + '"></span>' + l.label + '</a>'
+                ).join('');
+            }
+
+            const toggle = document.getElementById('langToggle');
+            if (toggle && menu) {
+                toggle.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    const open = menu.classList.toggle('open');
+                    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+                });
+                document.addEventListener('click', function (e) {
+                    if (!menu.contains(e.target) && e.target !== toggle) {
+                        menu.classList.remove('open');
+                        toggle.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        }
+        initLangSwitcher();
+
         function useCaseUrl(id) {
-            return id === 'research' ? '/' : '/' + id + '/';
+            return window.LANG_BASE + (id === 'research' ? '/' : '/' + id + '/');
         }
 
         function showUseCase(id, btn, event) {

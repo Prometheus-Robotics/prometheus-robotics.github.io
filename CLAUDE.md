@@ -31,22 +31,42 @@ value-prop block.
 
 Each tab has its own **real URL** for sharing + SEO:
 - `/` → research, `/manufacturing/` → manufacturing, `/entertainment/` → entertainment.
-- `/manufacturing/index.html` and `/entertainment/index.html` are **GENERATED COPIES** of
-  `index.html` (matching tab pre-activated + own `<title>`/description/canonical/OG).
 - Clicking a tab toggles client-side AND updates the URL via History API (`showUseCase`).
 
-### ⚠️ After editing `index.html`, regenerate the sub-pages:
+## Languages (i18n)
+
+English master = `index.html` (served at `/`). Other languages get their own real
+pages with hreflang, e.g. `/de/`, `/de/manufacturing/`, `/fr/entertainment/`.
+Currently generated: **en, de, fr** (more added in batches).
+
+- All non-English pages + the English sub-tab pages are **GENERATED** by `build_site.py`.
+  Do NOT edit generated files by hand — edit `index.html` / `i18n_data.py` and regenerate.
+- `i18n_data.py` holds `LANG_META`, per-tab `SEO`, and `TRANS` (English string → per-lang
+  translation). Translation is **longest-first literal string replacement** over the HTML,
+  so a `TRANS` key must be the EXACT English text in `index.html` (incl. `&amp;`). Avoid
+  short ambiguous keys (e.g. `SDK`, `Pi0`, `URDF` are intentionally NOT translated).
+- The nav language switcher is built client-side from the `LANGS` array in `index.html`'s
+  inline `<script>` (flag icons via the `flag-icons` CDN). `window.SITE_LANG` comes from
+  `<html data-site-lang>`. Tab/URL routing is language-aware via `window.LANG_BASE`.
+
+### ⚠️ After editing `index.html` OR `i18n_data.py`, regenerate everything:
 
 ```
-python3 build_tabs.py
+python3 build_site.py
 ```
 
-This rewrites `manufacturing/index.html`, `entertainment/index.html`, and `sitemap.xml`
-from `index.html`. **Forgetting this leaves the sub-pages stale.** Commit the regenerated
-files together with the `index.html` change. Per-page SEO text lives in the `SEO` dict in
-`build_tabs.py`; the head block is delimited by `<!-- SEO:START -->` / `<!-- SEO:END -->`.
+This rewrites the English sub-tab pages, every `/<lang>/...` page, the in-place hreflang
+block of `index.html`, and `sitemap.xml`. **Forgetting this leaves pages stale.** Commit
+the regenerated files together. Per-page SEO blocks are delimited by
+`<!-- SEO:START -->`/`<!-- SEO:END -->`; hreflang by `<!-- HREFLANG:START/END -->`.
 
-`sitemap.xml` (generated) and `robots.txt` exist for indexing.
+### Adding a language
+1. Add `{ code, cc, label }` to `LANGS` in `index.html` (`cc` = flag-icons country code).
+2. Add the code to `LANG_META` + `SEO`, and a translation for EVERY `TRANS` key, in `i18n_data.py`.
+3. Run `python3 build_site.py`, then commit.
+
+`sitemap.xml` (generated), `robots.txt`, OG/Twitter meta and JSON-LD (in `index.html` head,
+outside the SEO block) exist for SEO.
 
 ## Conventions / gotchas
 
