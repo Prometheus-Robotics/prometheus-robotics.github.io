@@ -204,8 +204,10 @@ def main():
             html = set_faq(html, FAQ_T.get(m.CODE, FAQ))
             write("%s/%sindex.html" % (m.CODE, TAB_PATH[tab]), html)
 
-    # sitemap (tab/language pages + blog)
+    # sitemap (tab/language pages + demo + blog)
     urls = [url_for(lang, tab) for lang in ["en"] + codes for tab in TAB_IDS]
+    if os.path.isfile(os.path.join(ROOT, "demo", "index.html")):
+        urls.append(BASE + "/demo/")
     blog_dir = os.path.join(ROOT, "blog")
     if os.path.isfile(os.path.join(blog_dir, "index.html")):
         urls.append(BASE + "/blog/")

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Demo — Prometheus Robotics Humanoid Robot</title>
+    <meta name="description" content="Watch the Prometheus humanoid robot in action: a teleoperated demonstration of the platform. Autonomous operation is trained per task during the pilot.">
+    <link rel="canonical" href="https://meetprometheus.com/demo/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://meetprometheus.com/demo/">
+    <meta property="og:title" content="Live Demo — Prometheus Robotics Humanoid Robot">
+    <meta property="og:description" content="Watch the Prometheus humanoid robot in action: a teleoperated demonstration of the platform.">
+    <meta property="og:site_name" content="Prometheus Robotics">
+    <meta property="og:image" content="https://img.youtube.com/vi/kp_yT9frOoY/maxresdefault.jpg">
+    <meta property="og:image:alt" content="Prometheus humanoid robot demo video">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://img.youtube.com/vi/kp_yT9frOoY/maxresdefault.jpg">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="robots" content="index, follow">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "Prometheus Humanoid Robot — Teleoperated Demonstration",
+      "description": "Teleoperated demonstration of the Prometheus humanoid platform. Autonomous operation is trained per task during the pilot.",
+      "thumbnailUrl": "https://img.youtube.com/vi/kp_yT9frOoY/maxresdefault.jpg",
+      "uploadDate": "2026-07-14",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/kp_yT9frOoY",
+      "publisher": { "@id": "https://meetprometheus.com/#organization" }
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Urbanist:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
+    <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
+    <style>
+        :root {
+            --color-bg: #0a0a0a;
+            --color-text: #ffffff;
+            --color-text-secondary: #a0a0a0;
+            --color-accent: #3b82f6;
+            --color-border: #1f1f1f;
+            --font-display: 'Plus Jakarta Sans', sans-serif;
+            --font-body: 'Urbanist', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html, body { overflow-x: clip; width: 100%; }
+        html { scrollbar-width: thin; scrollbar-color: #2a2a2a #0a0a0a; }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--color-text);
+            text-decoration: none;
+        }
+
+        .nav-links { display: flex; gap: 3rem; list-style: none; }
+
+        .nav-links a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover { color: var(--color-text); }
+
+        main {
+            flex: 1;
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 9rem 2rem 5rem;
+            text-align: center;
+        }
+
+        .demo-eyebrow {
+            display: inline-block;
+            color: var(--color-accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            margin-bottom: 2.5rem;
+        }
+
+        .video-frame {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+            background: #000;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+        }
+
+        .video-frame iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-caption {
+            margin: 1.5rem auto 0;
+            max-width: 720px;
+            color: var(--color-text-secondary);
+            font-size: 1.05rem;
+        }
+
+        .demo-cta {
+            margin-top: 3rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.2rem 2.5rem;
+            background: var(--color-accent);
+            color: white;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s;
+        }
+
+        .cta-button:hover::before { left: 100%; }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 60px rgba(59, 130, 246, 0.4);
+        }
+
+        .cta-button svg { width: 20px; height: 20px; transition: transform 0.3s ease; }
+        .cta-button:hover svg { transform: translateX(4px); }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: var(--color-text);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: none;
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: none;
+        }
+
+        footer {
+            border-top: 1px solid var(--color-border);
+            padding: 2rem 3rem;
+            text-align: center;
+            color: var(--color-text-secondary);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; }
+            .nav-links { gap: 1.5rem; }
+            main { padding: 7rem 1rem 3rem; }
+            .video-frame { border-radius: 10px; }
+            .demo-cta { flex-direction: column; align-items: stretch; }
+            .cta-button { justify-content: center; padding: 1rem 2rem; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a class="logo" href="/">
+            <img src="/logo.svg" alt="Prometheus Robotics logo" style="height: 32px; width: auto;">
+            PROMETHEUS&nbsp;&nbsp;ROBOTICS
+        </a>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="https://www.linkedin.com/in/ilya-pavlenkov/recent-activity/all/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <span class="demo-eyebrow">Live Demo</span>
+        <h1>Prometheus Humanoid in Action</h1>
+
+        <figure>
+            <div class="video-frame">
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed/kp_yT9frOoY"
+                    title="Prometheus humanoid robot — teleoperated demonstration"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+            </div>
+            <figcaption class="video-caption">
+                Teleoperated demonstration — autonomous operation is trained per task during the pilot
+            </figcaption>
+        </figure>
+
+        <div class="demo-cta">
+            <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button">
+                Book a call
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+            </a>
+            <a href="https://www.linkedin.com/in/ilya-pavlenkov/recent-activity/all/" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
+                More demos on LinkedIn
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Prometheus Engineering Kft. All rights reserved.</p>
+    </footer>
+</body>
+</html>
