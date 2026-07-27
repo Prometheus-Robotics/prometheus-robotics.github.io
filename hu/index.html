@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SEO:START -->
-    <title>Prometheus Robotics — Humanoid platform kutatólaboroknak</title>
-    <meta name="description" content="Robotikai kutatásra épített moduláris humanoid robot: teljes SDK, sztereó + csukló kamerák, URDF, mellékelt szimulátor és olyan VLA modellek támogatása, mint a Pi0 és az ACT.">
+    <title>Prometheus Robotics — Kétkarú robotok ipari automatizáláshoz | Sorvégi tesztelés</title>
+    <meta name="description" content="Helyhez kötött kétkarú robot, amely demonstrációból tanulja meg az ipari feladatokat: sorvégi funkcionális tesztelés, kitting és gépkiszolgálás. Az EU-ban tervezve és gyártva.">
     <link rel="canonical" href="https://meetprometheus.com/hu/">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://meetprometheus.com/hu/">
-    <meta property="og:title" content="Prometheus Robotics — Humanoid platform kutatólaboroknak">
-    <meta property="og:description" content="Robotikai kutatásra épített moduláris humanoid robot: teljes SDK, sztereó + csukló kamerák, URDF, mellékelt szimulátor és olyan VLA modellek támogatása, mint a Pi0 és az ACT.">
+    <meta property="og:title" content="Prometheus Robotics — Kétkarú robotok ipari automatizáláshoz | Sorvégi tesztelés">
+    <meta property="og:description" content="Helyhez kötött kétkarú robot, amely demonstrációból tanulja meg az ipari feladatokat: sorvégi funkcionális tesztelés, kitting és gépkiszolgálás. Az EU-ban tervezve és gyártva.">
     <meta property="og:locale" content="hu_HU">
     <!-- SEO:END -->
     <meta name="theme-color" content="#0a0a0a">
@@ -371,6 +371,13 @@
             flex-shrink: 0;
         }
 
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
         .hero-eyebrow {
             font-size: 0.85rem;
             font-weight: 600;
@@ -571,7 +578,7 @@
 
         .cta-button-container { display: none; }
 
-        /* Research Ready Section */
+        /* Kutatás Ready Section */
         .research-ready {
             padding: 8rem 3rem;
             background: linear-gradient(180deg, var(--color-bg) 0%, #0f0f0f 100%);
@@ -583,47 +590,9 @@
             margin: 0 auto;
         }
 
-        .use-case-tabs {
-            display: flex;
+        .traction-grid {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 440px));
             justify-content: center;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-bottom: 3.5rem;
-        }
-
-        .use-case-tab {
-            font-family: var(--font-body);
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 0.01em;
-            color: var(--color-text-secondary);
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--color-border);
-            border-radius: 50px;
-            padding: 0.85rem 1.9rem;
-            cursor: pointer;
-            display: inline-block;
-            text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .use-case-tab:hover {
-            color: var(--color-text);
-            border-color: rgba(59, 130, 246, 0.4);
-        }
-
-        .use-case-tab.active {
-            color: #ffffff;
-            background: var(--color-accent);
-            border-color: var(--color-accent);
-            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3);
-        }
-
-        .use-case-panel { display: none; }
-
-        .use-case-panel.active {
-            display: block;
-            animation: tabFade 0.4s ease;
         }
 
         .panel-why-title {
@@ -642,11 +611,6 @@
             max-width: 720px;
             margin: 0 auto 2.5rem;
             line-height: 1.6;
-        }
-
-        @keyframes tabFade {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         .research-grid {
@@ -1394,7 +1358,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Milyen MI-modelleket támogat a robot?", "acceptedAnswer": {"@type": "Answer", "text": "Alapból támogatja a modern vizuális-nyelvi-cselekvési (vision-language-action) és imitációs tanulási szabályrendszereket, köztük a Pi0, Pi0.5, ACT és SmolVLA modelleket. Gyűjtsön teleoperációs adatokat, finomhangoljon egy fogyasztói GPU segítségével, majd telepítsen az SDK révén."}}, {"@type": "Question", "name": "Mit tartalmaz a robot csomagja?", "acceptedAnswer": {"@type": "Answer", "text": "Minden egység a teljes SDK csomaggal és egy egyszerű REST API felülettel, egy URDF modellel, egy beépített szimulátorral, fejre szerelt sztereó- valamint csuklókamerákkal, megfogókkal és közvetlen mérnöki támogatással érkezik. A teleoperációs munkafolyamat már az első napon működik."}}, {"@type": "Question", "name": "Gyűjthetek-e magam teleoperációs adatokat, valamint betaníthatok-e szabályrendszereket?", "acceptedAnswer": {"@type": "Answer", "text": "Igen. Teleoperáljon VR segítségével egy Meta Quest 3S eszközzel vagy egy vezető-követő (leader-follower) vezérlővel, rögzítsen bemutatókat a szabványos adathalmaz-formátumban, majd tanítsa be az ACT modellt vagy finomhangoljon egy vizuális-nyelvi-cselekvési modellt egyetlen fogyasztói GPU segítségével."}}, {"@type": "Question", "name": "Milyen számítási egységen fut a robot?", "acceptedAnswer": {"@type": "Answer", "text": "A fedélzeti számítási egység egy Raspberry Pi 5 vagy egy NVIDIA Jetson. A könnyűsúlyú szabályrendszerek az eszközön futnak, míg a nagyobb vizuális-nyelvi-cselekvési modellek egy kábellel csatlakoztatott munkaállomás GPU egységén futtathatók, és a parancsokat a REST API felületen keresztül továbbítják."}}, {"@type": "Question", "name": "Moduláris-e a robot?", "acceptedAnswer": {"@type": "Answer", "text": "Igen. Lecserélheti a karokat, a megfogókat (2 ujjas, 4 ujjas vagy fejlett ötujjas kezek), valamint az alapmodulokat, például lábakat vagy kerekeket, így a platformot a feladatához igazíthatja, nem pedig fordítva."}}, {"@type": "Question", "name": "Hol készül a robot?", "acceptedAnswer": {"@type": "Answer", "text": "A Prometheus tervezése valamint gyártása az Európai Unióban történik, ami fontos azon európai kutatólaboratóriumok és vállalatok számára, amelyeknek lényeges az ellátási lánc eredete, a támogatás, valamint az adatszuverenitás."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Biztonságos és tanúsítható-e a robot gyári használatra?", "acceptedAnswer": {"@type": "Answer", "text": "A robotot CE-tanúsításra terveztük az ipari robotokra vonatkozó ISO 10218-1 és ISO 10218-2 szabványok szerint. A telepítés biztonsági konfigurációját — a védőburkolatokat, sebességkorlátokat és reteszeléseket — a pilot előkészítése során, telephelyenként határozzuk meg."}}, {"@type": "Question", "name": "Integrálható-e a meglévő gyártósorunkkal?", "acceptedAnswer": {"@type": "Answer", "text": "Igen. Az állomás a meglévő állomásai és munkafolyamatai mellett dolgozik — az alkatrészek érkeznek a robothoz, így nincs szükség a sor átépítésére. Egy egyszerű REST API kapcsolja össze a sorvezérlésével."}}, {"@type": "Question", "name": "Hogyan tanul meg a robot egy új feladatot?", "acceptedAnswer": {"@type": "Answer", "text": "Az operátorok teleoperálva vezetik végig a robotot a feladaton, és így demonstrációkat rögzítenek, majd ezekből vizuális-nyelvi-cselekvési szabályzókat — például Pi0 és ACT modelleket — tanítunk be. Az autonóm működést a pilot során feladatonként tanítjuk be."}}, {"@type": "Question", "name": "Hol készül a robot?", "acceptedAnswer": {"@type": "Answer", "text": "A Prometheus tervezése valamint gyártása az Európai Unióban történik, ami fontos azon európai kutatólaboratóriumok és vállalatok számára, amelyeknek lényeges az ellátási lánc eredete, a támogatás, valamint az adatszuverenitás."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1407,10 +1371,10 @@
             PROMETHEUS&nbsp;&nbsp;ROBOTICS
         </div>
         <ul class="nav-links">
-            <li><a onclick="showPage('home')">Prometheus Robotics</a></li>
+            <li><a href="/hu/">Kezdőlap</a></li>
+            <li><a href="/hu/research/">Kutatás</a></li>
             <li><a href="/blog/">Blog</a></li>
             <li><a onclick="showPage('contacts')">Kapcsolat</a></li>
-            <li><a href="https://www.linkedin.com/in/ilya-pavlenkov/recent-activity/all/" target="_blank">LinkedIn</a></li>
         </ul>
         <div class="lang-switcher">
             <button class="lang-toggle" id="langToggle" aria-haspopup="true" aria-expanded="false" aria-label="Change language">
@@ -1431,322 +1395,200 @@
             </video>
             <div class="hero-container">
                 <div class="hero-content">
+                    <div class="hero-badges">
                     <span class="hero-eu">
                         <svg viewBox="0 0 810 540" aria-hidden="true"><rect width="810" height="540" fill="#003399"/><g fill="#FFCC00"><circle cx="405" cy="105" r="15"/><circle cx="505" cy="140" r="15"/><circle cx="560" cy="220" r="15"/><circle cx="560" cy="320" r="15"/><circle cx="505" cy="400" r="15"/><circle cx="405" cy="435" r="15"/><circle cx="305" cy="400" r="15"/><circle cx="250" cy="320" r="15"/><circle cx="250" cy="220" r="15"/><circle cx="305" cy="140" r="15"/><circle cx="405" cy="175" r="15"/><circle cx="405" cy="365" r="15"/></g></svg>
                         Designed &amp; made in the EU
                     </span>
-                    <span class="hero-eyebrow">Kutatólaboroknak &amp; műszaki egyetemeknek</span>
-                    <h1 class="hero-title">Humanoid platform robotikai kutatáshoz</h1>
+                    <span class="hero-eu">NVIDIA Inception</span>
+                    <span class="hero-eu">Tier-1 autóipari referencia</span>
+                    </div>
+                    <span class="hero-eyebrow">Gyártóknak &amp; automatizálási beszállítóknak</span>
+                    <h1 class="hero-title">Kétkarú robotok a fix automatizáláshoz túl rugalmas feladatokhoz</h1>
                     <p class="hero-description">
-                        Kutatásra épített moduláris humanoid robot. Tanítson be VLA-szabályozókat, gyűjtsön teleoperációs adatokat, validáljon szimulációban, telepítsen hardverre — minden használatra készen érkezik.
+                        Helyhez kötött kétkarú robot, amely demonstrációból tanulja meg az ipari feladatokat. Első alkalmazása: sorvégi funkcionális tesztelés az autóipari gyártásban.
                     </p>
                     <div class="hero-audience">
-                        <span class="audience-tag primary">Kutatólaborok</span>
-                        <span class="audience-tag primary">Műszaki egyetemek</span>
+                        <span class="audience-tag primary">Autóipar</span>
+                        <span class="audience-tag primary">Elektronika</span>
                         <span class="audience-tag primary">Gyártás</span>
-                        <span class="audience-tag primary">Szórakoztatás</span>
                         <span class="audience-tag">Automatizálási beszállítók</span>
-                        <span class="audience-tag">Startupok</span>
-                        <span class="audience-tag">DIY fejlesztők</span>
+                        <span class="audience-tag">Kutatólaborok</span>
                     </div>
                     <div class="cta-group">
-                        <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
-                            Humanoid robot vásárlása
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                            </svg>
-                        </a>
-                        <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
+                        <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button">
                             Hívás foglalása
                             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </a>
+                        <a href="/hu/research/" class="cta-button secondary">
+                            Kutatólaboroknak
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                             </svg>
                         </a>
                     </div>
                 </div>
 
                 <div class="cta-button-container">
-                    <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
-                        Humanoid robot vásárlása
-                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                        </svg>
-                    </a>
-                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
+                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button">
                         Hívás foglalása
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </a>
+                    <a href="/hu/research/" class="cta-button secondary">
+                        Kutatólaboroknak
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                         </svg>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- A modern robotikai kutatásra építve -->
+        <!-- Traction -->
+        <section class="research-ready traction">
+            <div class="research-ready-container">
+                <h2 class="section-title">Együttműködés az iparral</h2>
+                <p class="section-subtitle">Itt tartunk ma az ipari partnereinkkel.</p>
+
+                <div class="research-grid traction-grid">
+                    <div class="research-card featured">
+                        <span class="research-icon">🤝</span>
+                        <h3>Tier-1 autóipari szándéknyilatkozat (LOI)</h3>
+                        <p>Aláírt szándéknyilatkozat (LOI) egy Tier-1 autóipari beszállítóval, fizetett pilotprojekttel.</p>
+                    </div>
+                    <div class="research-card featured">
+                        <span class="research-icon">🏭</span>
+                        <h3>Folyamatban lévő telepítési projekt</h3>
+                        <p>Sorvégi tesztelési telepítés van folyamatban egy európai üzemben.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem -->
         <section class="research-ready">
             <div class="research-ready-container">
-                <div class="use-case-tabs">
-                    <a class="use-case-tab active" data-tab="research" href="/hu/" onclick="return showUseCase('research', this, event)">🔬 Kutatólaborok</a>
-                    <a class="use-case-tab" data-tab="manufacturing" href="/hu/manufacturing/" onclick="return showUseCase('manufacturing', this, event)">🏭 Gyártás</a>
-                    <a class="use-case-tab" data-tab="entertainment" href="/hu/entertainment/" onclick="return showUseCase('entertainment', this, event)">🎉 Szórakoztatás</a>
-                </div>
+                <h2 class="section-title">A gyártósori pozíciók, amelyeket nem tud betölteni</h2>
+                <p class="section-subtitle">Az európai gyártók nem tudják betölteni az ismétlődő sorpozíciókat — a meglévő alternatívák pedig nem illenek a rugalmas feladatokhoz.</p>
 
-                <div class="use-case-panel active" id="usecase-research">
-                <h2 class="section-title">A modern robotikai kutatásra építve</h2>
-                <p class="section-subtitle">Minden, amire a laborjának szüksége van az adatgyűjtés, a szabályzók betanítása és a kísérletek futtatása megkezdéséhez — a robottal együtt szállítva.</p>
+                <div class="research-grid problem-grid">
+                    <div class="research-card">
+                        <span class="research-icon">👥</span>
+                        <h3>Három műszak, három operátor</h3>
+                        <p>Egy három műszakban futó állomás három operátort jelent — országtól függően évi 70–200 ezer eurós bérköltséget. Ráadásul ezeket a munkaköröket a legnehezebb betölteni és betöltve tartani.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">🔩</span>
+                        <h3>A fix automatizálás nem rugalmas</h3>
+                        <p>Az egyedi cellák költséges átszerszámozás nélkül nem tudják kezelni a termékváltozatosságot. Minden termékváltás mérnöki munkát, állásidőt és beruházást jelent.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">🚶</span>
+                        <h3>Az általános célú humanoidok még nem állnak készen</h3>
+                        <p>A járó, mindenre képes humanoidok évekre vannak és drágák. A rugalmas sorfeladatokhoz olyan megoldás kell, amely már ma működik.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution: A manipulációs állomás -->
+        <section class="research-ready">
+            <div class="research-ready-container">
+                <h2 class="section-title">A manipulációs állomás</h2>
+                <p class="section-subtitle">Kétkarú robot fix alapzaton vagy motoros lineáris tengelyen. Az alkatrészek érkeznek az állomáshoz — nincs láb, nincs navigáció, és ez tudatos döntés: így a robot már ma megfizethető, megbízható és tanúsítható.</p>
 
                 <div class="research-grid">
                     <div class="research-card featured">
-                        <span class="research-icon">📷</span>
-                        <h3>VLA-optimalizált látás</h3>
-                        <p>Csukló kamerák állítható rögzítési szöggel — ideális a Pi0.5-höz és más VLA modellekhez. Plusz fejre szerelt sztereó a teljes jelenet érzékeléséhez.</p>
-                        <span class="vla-tag">Pi0.5 · SmolVLA · ACT</span>
+                        <span class="research-icon">🔧</span>
+                        <h3>Sorvégi tesztelés</h3>
+                        <p>Eszközök behelyezése, fiókok kezelése és teszteredmény szerinti válogatás — funkcionális tesztelés a gyártósor végén.</p>
+                        <span class="vla-tag">Zászlóshajó-alkalmazás</span>
                     </div>
+                    <div class="research-card">
+                        <span class="research-icon">📦</span>
+                        <h3>Kitting &amp; csomagolás</h3>
+                        <p>Állítson össze kiteket és csomagoljon változatos termékeket két összehangolt karral — azokat a feladatokat, amelyekkel az egykarú cellák nehezen boldogulnak.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">⚙️</span>
+                        <h3>Gépkiszolgálás</h3>
+                        <p>Töltsön be és vegyen ki alkatrészeket gépekből, présekből és tesztkészülékekből — egyenletesen, ciklusról ciklusra, műszakról műszakra.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">🗂️</span>
+                        <h3>Válogatás</h3>
+                        <p>Válogasson alkatrészeket és termékeket típus, orientáció vagy ellenőrzési eredmény szerint — gépi látás vezérli, nem befogókészülékek.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="research-card featured">
+        <!-- How It Works -->
+        <section class="research-ready">
+            <div class="research-ready-container">
+                <h2 class="section-title">Demonstrációval betanítva, nem programozva</h2>
+                <p class="section-subtitle">Az autonóm működést a pilot során feladatonként tanítjuk be — adatpipeline-on keresztül, nem hónapokig tartó egyedi programozással.</p>
+
+                <div class="research-grid how-grid">
+                    <div class="research-card">
+                        <span class="research-icon">🥽</span>
+                        <h3>1 · Demonstráció</h3>
+                        <p>Az operátorok VR segítségével teleoperálva vezetik végig a robotot a feladaton — az Ön oldalán nincs szükség robotikai szakértelemre.</p>
+                    </div>
+                    <div class="research-card">
                         <span class="research-icon">🧠</span>
-                        <h3>Betanításra készen</h3>
-                        <p>Előre konfigurálva a modern ML-pipeline-okhoz. Kezdje meg a demonstrációk gyűjtését és a szabályzók betanítását már az első napon — nincs szükség integrációs munkára.</p>
+                        <h3>2 · Betanítás</h3>
+                        <p>A rögzített demonstrációk VLA (vizuális-nyelvi-cselekvési) szabályzókat tanítanak be az adott feladatra és állomásra.</p>
                     </div>
-
-                    <div class="research-card featured">
-                        <span class="research-icon">🎮</span>
-                        <h3>Teleoperációs pipeline</h3>
-                        <p>Beépített tele-op támogatás demonstrációk rögzítéséhez és távvezérléshez. Csatlakozzon azonnal az imitációs tanulási munkafolyamatához.</p>
-                    </div>
-
-                    <div class="research-card featured">
-                        <span class="research-icon">📐</span>
-                        <h3>URDF szimulátorokhoz</h3>
-                        <p>Teljes URDF robotmodell mellékelve. Azonnali kompatibilitás a MuJoCo, Isaac Sim, PyBullet, Gazebo eszközökkel és a szokásos sim-stack többi elemével.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">🖥️</span>
-                        <h3>Szimulátor mellékelve</h3>
-                        <p>Minden robothoz szimulátor jár. Fejlesszen és validáljon szimulációban, mielőtt a hardverhez érne.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">💻</span>
-                        <h3>SDK</h3>
-                        <p>Teljes SDK a vezérléshez, érzékeléshez és integrációhoz. Python-elsődleges és jól dokumentált.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">🦾</span>
-                        <h3>Megfogók mellékelve</h3>
-                        <p>A manipulátorok a platformmal együtt érkeznek. Nem kell külön beszereznie a végrehajtó eszközöket.</p>
-                    </div>
-
                     <div class="research-card">
                         <span class="research-icon">🤖</span>
-                        <h3>Moduláris hardver</h3>
-                        <p>Cseréljen karokat, megfogókat és alapmodulokat. Igazítsa a platformot a kutatásához, ne fordítva.</p>
+                        <h3>3 · Futtatás</h3>
+                        <p>A betanított szabályzó végrehajtja a feladatot az állomáson, és minden telepítéssel tovább javul.</p>
                     </div>
-
                     <div class="research-card">
-                        <span class="research-icon">📼</span>
-                        <h3>Minta-forgatókönyvek</h3>
-                        <p>Előre rögzített mozgások és példa végrehajtási forgatókönyvek. Validálja a stacket a munkapadján percek alatt.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">📚</span>
-                        <h3>Részletes dokumentáció</h3>
-                        <p>Átfogó dokumentáció a hardverhez, szoftverhez, kalibrációhoz és az integrációs munkafolyamatokhoz.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">💬</span>
-                        <h3>Közvetlen mérnöki támogatás</h3>
-                        <p>Közvetlen kapcsolat a csapatunkkal — a kicsomagolástól a telepítésen, kísérleteken és publikáláson át.</p>
+                        <span class="research-icon">📈</span>
+                        <h3>4 · Halmozódás</h3>
+                        <p>Minden telepítés a saját fejlesztésű manipulációs adathalmazunkat gyarapítja — így minden új feladat előrébbről indul.</p>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <h3 class="panel-why-title">Miért a Prometheust választják a laborok</h3>
-                <p class="panel-why-subtitle">Nincs olyan kész humanoid, amelyet kutatásra terveztek volna. A csapatok hónapokat égetnek el a hardver, kamerák, szimuláció és ML-eszközök összeillesztésével, mielőtt egyetlen kísérletet is futtathatnának. A Prometheus ezt a teljes stacket használatra készen szállítja.</p>
+        <!-- Why Prometheus -->
+        <section class="research-ready">
+            <div class="research-ready-container">
+                <h2 class="section-title">Miért a Prometheust választják a gyártók</h2>
+                <p class="section-subtitle">A nehezen betölthető sormunkák lefedve maradnak — anélkül, hogy a sort egy merev cella köré kellene újraépíteni.</p>
+
                 <div class="research-grid">
                     <div class="research-card featured">
-                        <span class="research-icon">🎓</span>
-                        <h3>Kutatás-első, nem demó egység</h3>
-                        <p>Nyílt architektúra, teljes SDK, URDF és mellékelt szimulátor — annak megfelelően tervezve, ahogyan a robotikai kutatás valójában működik.</p>
+                        <span class="research-icon">👷</span>
+                        <h3>Betölti a nehezen betölthető munkákat</h3>
+                        <p>Fedje le az ismétlődő, magas fluktuációjú feladatokat, amelyeket az emberek nem akarnak — létszámbővítés vagy a fluktuáció elleni küzdelem nélkül.</p>
                     </div>
                     <div class="research-card featured">
-                        <span class="research-icon">⏱️</span>
-                        <h3>Spóroljon meg hónapnyi integrációt</h3>
-                        <p>A kamerák, a teleop és az ML-pipeline-ok előre konfiguráltak. Kezdje meg a demonstrációk gyűjtését és a szabályzók betanítását már az első napon.</p>
+                        <span class="research-icon">💸</span>
+                        <h3>Olcsóbb egy egyedi cellánál</h3>
+                        <p>Egyetlen rugalmas humanoid kiváltja a drágán tervezhető, építhető és karbantartható egyedi, fix automatizálást.</p>
                     </div>
                     <div class="research-card featured">
-                        <span class="research-icon">🧩</span>
-                        <h3>Hackelhető &amp; moduláris</h3>
-                        <p>Cseréljen karokat, megfogókat és alapmodulokat, írjon saját vezérlőket, bővítse az SDK-t. Igazítsa a platformot a munkájához.</p>
+                        <span class="research-icon">♻️</span>
+                        <h3>Feladatról feladatra újratanítható</h3>
+                        <p>Egy új termék vagy feladat új demonstrációkat jelent, nem új szerszámozást. Nincs fix szerszámozás, amit újra kellene építeni.</p>
                     </div>
                     <div class="research-card featured">
-                        <span class="research-icon">✨</span>
-                        <h3>Egyedi kivitelek</h3>
-                        <p>Egyedi szenzorcsomagok, alternatív megfogók, egyedi kinematika és szoftverintegrációk speciális labormunkához.</p>
+                        <span class="research-icon">🇪🇺</span>
+                        <h3>EU-bázisú</h3>
+                        <p>A hardver, a mérnöki munka, a támogatás és az adatok Európában maradnak — nincs tengerentúli függőség a gyártósorán.</p>
                     </div>
-                </div>
-                </div>
-
-                <div class="use-case-panel" id="usecase-manufacturing">
-                    <h2 class="section-title">Állítson humanoidot a gyártósorára</h2>
-                    <p class="section-subtitle">Sorvégi tesztelés, pick-and-place és az ismétlődő sorfeladatok, amelyekhez nem szívesen állítana embert — egy rugalmas humanoid kezeli, amely percek alatt átállítható.</p>
-
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">🔧</span>
-                            <h3>Sorvégi tesztelés</h3>
-                            <p>Futtasson funkcionális és minőségi ellenőrzéseket a gyártósor végén — következetesen, megismételhetően és fáradhatatlanul minden műszakban.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">📦</span>
-                            <h3>Pick &amp; Place</h3>
-                            <p>Megbízható pick-and-place alkatrészekhez, csomagoláshoz és kittinghez. Kezeljen változatos tárgyakat a mellékelt megfogókkal.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">🔁</span>
-                            <h3>Ismétlődő sorfeladatok</h3>
-                            <p>Vegye át az unalmas, ismétlődő munkákat — gépkiszolgálás, válogatás, szerelési támogatás —, és szabadítsa fel embereit a magasabb értékű munkára.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🧠</span>
-                            <h3>Megtanulja a feladatot</h3>
-                            <p>A Pi0 hajtja — egy könnyen betanítható VLA modell. Mutassa meg neki a feladatot, és általánosít, alkalmazkodik a változásokhoz ahelyett, hogy elakadna rajtuk. Nincs merev szkriptelés.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🛠️</span>
-                            <h3>Gyors átállás</h3>
-                            <p>Konfigurálja át egy új feladatra vagy termékváltásra percek alatt, nem hetek alatt. Egy robot, sok munka.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">👁️</span>
-                            <h3>Látásvezérelt</h3>
-                            <p>Sztereó és csukló kamerák alkatrész-felismeréshez, igazításhoz és vizuális ellenőrzéshez, pontosan ott, ahol a munka zajlik.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🦾</span>
-                            <h3>Moduláris megfogók</h3>
-                            <p>Cserélje a végrehajtó eszközöket az alkatrészhez. A manipulátorok a platformmal együtt érkeznek, készen a gyártósorára.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🔌</span>
-                            <h3>Egyszerű integráció</h3>
-                            <p>Egy egyszerű REST API csatlakozik a meglévő sorvezérléséhez és munkafolyamataihoz — nincs gyártói bezártság.</p>
-                        </div>
-                    </div>
-
-                    <h3 class="panel-why-title">Miért a Prometheust választják a gyártók</h3>
-                    <p class="panel-why-subtitle">Az unalmas, ismétlődő sormunkákat a legnehezebb betölteni és betöltve tartani — de a feladatspecifikus robotok arra kényszerítik, hogy köréjük építse újra a sort. A Prometheus ezzel szemben zökkenőmentesen illeszkedik a meglévő folyamatába, napi három műszakban dolgozik, és sosem jelent beteget.</p>
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">👷</span>
-                            <h3>Betölti a nehezen betölthető munkákat</h3>
-                            <p>Fedje le az ismétlődő, magas fluktuációjú feladatokat, amelyeket az emberek nem akarnak — létszámbővítés vagy a fluktuáció elleni küzdelem nélkül.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">💸</span>
-                            <h3>Olcsóbb egy egyedi cellánál</h3>
-                            <p>Egyetlen rugalmas humanoid kiváltja a drágán tervezhető, építhető és karbantartható egyedi, fix automatizálást.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">♻️</span>
-                            <h3>Percek alatt átkonfigurálható</h3>
-                            <p>Egy új termék vagy feladat már nem jelent heteknyi átszerszámozást. Tanítsa be újra és állítsa át ugyanazt a robotot a soron.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">📈</span>
-                            <h3>Skálázódik a kereslettel</h3>
-                            <p>Adjon hozzá egységeket, ahogy nő a volumen, és vigye őket a szűk keresztmetszethez. Nincs fix infrastruktúra, amit ki kellene bontani és újraépíteni.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="use-case-panel" id="usecase-entertainment">
-                    <h2 class="section-title">Humanoid, amely ellopja a show-t</h2>
-                    <p class="section-subtitle">Vidámparkoknak, szállodáknak, múzeumoknak és rendezvényeknek — öltöztesse fel, vezérelje VR-ből, játsszon vissza rutinokat, és bízza rá a köszöntést, prezentálást és magyarázatot.</p>
-
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">👗</span>
-                            <h3>Öltöztesse fel</h3>
-                            <p>Öltöztesse a robotot egyedi jelmezekbe és márkázott ruhákba, hogy illeszkedjen a helyszínéhez, kabalafigurájához vagy a rendezvény témájához.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">🥽</span>
-                            <h3>VR teleoperáció</h3>
-                            <p>Vezérelje a robotot élőben VR-ből egy Meta Quest 3S segítségével — integessen, gesztikuláljon és lépjen kapcsolatba a vendégekkel valós időben.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">🎬</span>
-                            <h3>Rögzítés &amp; visszajátszás</h3>
-                            <p>Rögzítsen egy produkciót egyszer, és játssza vissza igény szerint — köszöntések, táncok és szkriptelt rutinok, előadásról előadásra.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🗣️</span>
-                            <h3>Prezentáljon &amp; magyarázzon</h3>
-                            <p>Bízza rá a házigazda szerepét és a magyarázatot — vezetett túrák, termékbemutatók és kiállítások, amelyek végigvezetik a látogatókat az élményen.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">👋</span>
-                            <h3>Köszöntse a vendégeket</h3>
-                            <p>Barátságos humanoid fogadtatás parkbejáratokhoz, szállodai recepciókhoz és show-padlókhoz.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">📡</span>
-                            <h3>Távoli üzemeltetés</h3>
-                            <p>Vezérelje távolról, bárhonnan — futtasson interakciókat és produkciókat anélkül, hogy a helyszínen lenne személyzet.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🏨</span>
-                            <h3>Helyszínekre építve</h3>
-                            <p>Vidámparkok, szállodák, múzeumok és rendezvények — fejeket forgató attrakció, amely leköti a közönséget.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🤖</span>
-                            <h3>Mindig márkahű</h3>
-                            <p>Következetes, megismételhető produkciók minden alkalommal — az Ön egyedi karaktere, megbízhatóan szállítva.</p>
-                        </div>
-                    </div>
-
-                    <h3 class="panel-why-title">Miért a Prometheust választják a helyszínek</h3>
-                    <p class="panel-why-subtitle">Az attrakciók a lenyűgöző hatáson állnak vagy buknak. A vendégek már láttak képernyőket és animatronikákat — egy valódi, interaktív humanoid az, amit lefényképeznek, megosztanak és amiért visszatérnek. Ez egy állásfoglalás arról, hogy az Ön helyszíne a legfejlettebb a piacon.</p>
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">⭐</span>
-                            <h3>Tömegvonzó</h3>
-                            <p>Egy valódi humanoid olyan tömegeket, fotókat és közösségi felhajtást vonz, amivel egy képernyő vagy animatronika egyszerűen nem versenyezhet.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">🏆</span>
-                            <h3>Azonnali presztízs</h3>
-                            <p>Mutassa meg mindenkinek, hogy a piac legfejlettebb, jövőbe tekintő helyszínét üzemelteti — és gondoskodjon róla, hogy mindenki lássa.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">🎭</span>
-                            <h3>Egy előadó, minden show</h3>
-                            <p>Rögzítse a rutinokat egyszer, és játssza vissza hibátlanul egész nap — szünetek, ütemezés és a szerep betöltése nélkül.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">🌍</span>
-                            <h3>Üzemeltesse bárhonnan</h3>
-                            <p>Vezérelje élőben VR-ben egy Meta Quest 3S segítségével, hogy köszöntse a vendégeket és valós időben lépjen kapcsolatba velük — akár távolról is.</p>
-                        </div>
+                    <div class="research-card featured">
+                        <span class="research-icon">🛡️</span>
+                        <h3>Kijelölt tanúsítási út</h3>
+                        <p>CE-tanúsításra tervezve az ipari robotokra vonatkozó ISO 10218-1 és ISO 10218-2 szabványok szerint.</p>
                     </div>
                 </div>
             </div>
@@ -1756,7 +1598,7 @@
         <section class="specifications">
             <div class="specs-container">
                 <h2 class="section-title">Műszaki specifikációk</h2>
-                <p class="section-subtitle">Felsőtest állványon — alkalmas munkapadi kutatáshoz</p>
+                <p class="section-subtitle">Kétkarú felsőtest — a manipulációs állomás konfigurációja</p>
                 
                 <div class="specs-content">
                     <div class="specs-table-wrapper">
@@ -1767,8 +1609,12 @@
                                     <td class="spec-value">120Nm</td>
                                 </tr>
                                 <tr>
+                                    <td class="spec-label">Telepítési lehetőségek</td>
+                                    <td class="spec-value">Fix alapzat / motoros lineáris tengely (sín)</td>
+                                </tr>
+                                <tr>
                                     <td class="spec-label">Magasság</td>
-                                    <td class="spec-value">160cm on tripod (172cm on legs/wheels)</td>
+                                    <td class="spec-value">160 cm állványon</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Szélesség</td>
@@ -1780,7 +1626,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Szabadsági fokok</td>
-                                    <td class="spec-value">19 (29 with legs; 43 with hands; 53 with legs and hands)</td>
+                                    <td class="spec-value">19 (kezekkel együtt 43)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Kamerák</td>
@@ -1827,19 +1673,6 @@
                             <div class="robot-glow"></div>
                             <img src="/robot.png" alt="Prometheus Humanoid Robot" class="robot-img">
                         </div>
-                        <h3 class="modules-title">Elérhető modulok</h3>
-                        <div class="modules-grid">
-                            <div class="module-card">
-                                <div class="module-icon">🦿</div>
-                                <h4>Láb modul</h4>
-                                <p>Kétlábú mozgásrendszer a fokozott mobilitásért és az emberihez hasonló mozgásképességekért.</p>
-                            </div>
-                            <div class="module-card">
-                                <div class="module-icon">🛞</div>
-                                <h4>Kerék modul</h4>
-                                <p>Kerekes alapzat a hatékony navigációhoz és stabil platform a különféle alkalmazásokhoz.</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -1854,49 +1687,6 @@
             </div>
         </section>
 
-        <!-- Manipulators Section -->
-        <section class="manipulators">
-            <div class="manipulators-container">
-                <h2 class="section-title">Manipulátor opciók</h2>
-                <p class="section-subtitle">Válassza ki a kutatásához megfelelő végrehajtó eszközt</p>
-                
-                <div class="manipulators-grid">
-                    <div class="manipulator-card">
-                        <div class="manipulator-image">
-                            <img src="/claw.png" alt="Type A - 2-ujjas megfogó">
-                        </div>
-                        <div class="manipulator-content">
-                            <h3>Type A</h3>
-                            <h4>2-ujjas megfogó</h4>
-                            <p>Egyszerű csípés / precíz zárás. Ideális kényes műveletekhez és precíz manipulációs feladatokhoz.</p>
-                        </div>
-                    </div>
-
-                    <div class="manipulator-card">
-                        <div class="manipulator-image">
-                            <img src="/for_totes.png" alt="Type B - 4-finger claw">
-                        </div>
-                        <div class="manipulator-content">
-                            <h3>Type B</h3>
-                            <h4>4-ujjas "karom" (párosított ujjak)</h4>
-                            <p>Ládák és tárolódobozok robusztus megfogásához. Raktári és logisztikai alkalmazásokhoz tervezve.</p>
-                        </div>
-                    </div>
-
-                    <div class="manipulator-card">
-                        <div class="manipulator-image">
-                            <img src="/hand.png" alt="Type X - Advanced manipulator">
-                        </div>
-                        <div class="manipulator-content">
-                            <h3>Type X</h3>
-                            <h4>Fejlett manipulátorok</h4>
-                            <p>Az opciók közé tartoznak az állítható rögzítési szögű csukló kamerák (a Pi0.5-höz és más VLA modellekhez optimalizálva), 5-ujjas kezek és egyéb egyedi változatok.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- FAQ Section -->
         <section class="faq">
             <div class="faq-container">
@@ -1904,24 +1694,16 @@
                 <p class="section-subtitle">Everything you need to know before getting started</p>
                 <div class="faq-list">
                     <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Milyen MI-modelleket támogat a robot?</button>
-                        <div class="faq-a"><p>Alapból támogatja a modern vizuális-nyelvi-cselekvési (vision-language-action) és imitációs tanulási szabályrendszereket, köztük a Pi0, Pi0.5, ACT és SmolVLA modelleket. Gyűjtsön teleoperációs adatokat, finomhangoljon egy fogyasztói GPU segítségével, majd telepítsen az SDK révén.</p></div>
+                        <button class="faq-q" onclick="toggleFaq(this)">Biztonságos és tanúsítható-e a robot gyári használatra?</button>
+                        <div class="faq-a"><p>A robotot CE-tanúsításra terveztük az ipari robotokra vonatkozó ISO 10218-1 és ISO 10218-2 szabványok szerint. A telepítés biztonsági konfigurációját — a védőburkolatokat, sebességkorlátokat és reteszeléseket — a pilot előkészítése során, telephelyenként határozzuk meg.</p></div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Mit tartalmaz a robot csomagja?</button>
-                        <div class="faq-a"><p>Minden egység a teljes SDK csomaggal és egy egyszerű REST API felülettel, egy URDF modellel, egy beépített szimulátorral, fejre szerelt sztereó- valamint csuklókamerákkal, megfogókkal és közvetlen mérnöki támogatással érkezik. A teleoperációs munkafolyamat már az első napon működik.</p></div>
+                        <button class="faq-q" onclick="toggleFaq(this)">Integrálható-e a meglévő gyártósorunkkal?</button>
+                        <div class="faq-a"><p>Igen. Az állomás a meglévő állomásai és munkafolyamatai mellett dolgozik — az alkatrészek érkeznek a robothoz, így nincs szükség a sor átépítésére. Egy egyszerű REST API kapcsolja össze a sorvezérlésével.</p></div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Gyűjthetek-e magam teleoperációs adatokat, valamint betaníthatok-e szabályrendszereket?</button>
-                        <div class="faq-a"><p>Igen. Teleoperáljon VR segítségével egy Meta Quest 3S eszközzel vagy egy vezető-követő (leader-follower) vezérlővel, rögzítsen bemutatókat a szabványos adathalmaz-formátumban, majd tanítsa be az ACT modellt vagy finomhangoljon egy vizuális-nyelvi-cselekvési modellt egyetlen fogyasztói GPU segítségével.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Milyen számítási egységen fut a robot?</button>
-                        <div class="faq-a"><p>A fedélzeti számítási egység egy Raspberry Pi 5 vagy egy NVIDIA Jetson. A könnyűsúlyú szabályrendszerek az eszközön futnak, míg a nagyobb vizuális-nyelvi-cselekvési modellek egy kábellel csatlakoztatott munkaállomás GPU egységén futtathatók, és a parancsokat a REST API felületen keresztül továbbítják.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Moduláris-e a robot?</button>
-                        <div class="faq-a"><p>Igen. Lecserélheti a karokat, a megfogókat (2 ujjas, 4 ujjas vagy fejlett ötujjas kezek), valamint az alapmodulokat, például lábakat vagy kerekeket, így a platformot a feladatához igazíthatja, nem pedig fordítva.</p></div>
+                        <button class="faq-q" onclick="toggleFaq(this)">Hogyan tanul meg a robot egy új feladatot?</button>
+                        <div class="faq-a"><p>Az operátorok teleoperálva vezetik végig a robotot a feladaton, és így demonstrációkat rögzítenek, majd ezekből vizuális-nyelvi-cselekvési szabályzókat — például Pi0 és ACT modelleket — tanítunk be. Az autonóm működést a pilot során feladatonként tanítjuk be.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Hol készül a robot?</button>
@@ -1934,16 +1716,10 @@
         <!-- Bottom CTA Section -->
         <section style="padding: 6rem 3rem; text-align: center; background: linear-gradient(180deg, #0f0f0f 0%, var(--color-bg) 100%); border-top: 1px solid var(--color-border);">
             <div style="max-width: 800px; margin: 0 auto;">
-                <h2 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.01em;">Készen áll munkára fogni a Prometheust?</h2>
-                <p style="color: var(--color-text-secondary); font-size: 1.2rem; margin-bottom: 3rem; line-height: 1.7;">Legyen szó kutatólaborról, gyártósorról vagy helyszíni padlóról — rendeljen egy egységet, vagy foglaljon hívást a konfigurációja megbeszéléséhez.</p>
+                <h2 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.01em;">Állítsa a Prometheust a gyártósorára</h2>
+                <p style="color: var(--color-text-secondary); font-size: 1.2rem; margin-bottom: 3rem; line-height: 1.7;">Foglaljon hívást egy sorvégi pilot felméréséhez az üzemében — közösen átnézzük az állomásait, feladatait és az integrációs korlátokat.</p>
                 <div class="cta-group" style="justify-content: center;">
-                    <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
-                        Moduláris platform vásárlása
-                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                        </svg>
-                    </a>
-                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
+                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button">
                         Hívás foglalása
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
@@ -1978,12 +1754,13 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h4>Prometheus Robotics</h4>
-                <p>Moduláris humanoid platform kutatáshoz, iparhoz és szórakoztatáshoz. Az intelligens robotok következő generációját formáló laborok, gyártócsarnokok és helyszínek számára készült.</p>
+                <p>Kétkarú robotok ipari automatizáláshoz — sorvégi tesztelés, kitting és gépkiszolgálás —, valamint moduláris humanoid platform robotikai kutatáshoz. Az EU-ban tervezve és gyártva.</p>
             </div>
             <div class="footer-section">
                 <h4>Navigáció</h4>
                 <ul class="footer-links">
-                    <li><a onclick="showPage('home')">Kezdőlap</a></li>
+                    <li><a href="/hu/">Kezdőlap</a></li>
+                    <li><a href="/hu/research/">Kutatás</a></li>
                     <li><a href="/blog/">Blog</a></li>
                     <li><a onclick="showPage('contacts')">Kapcsolat</a></li>
                     <li><a href="https://www.linkedin.com/in/ilya-pavlenkov/recent-activity/all/" target="_blank">LinkedIn</a></li>
@@ -1992,13 +1769,13 @@
             <div class="footer-section">
                 <h4>Kezdje el</h4>
                 <ul class="footer-links">
-                    <li><a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank">Robot vásárlása</a></li>
                     <li><a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer">Hívás foglalása</a></li>
+                    <li><a href="/demo/">Demóvideó</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Prometheus Engineering Kft. Minden jog fenntartva. Made in EU <svg class="eu-flag-inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810 540" role="img" aria-label="European Union flag"><rect width="810" height="540" fill="#003399"/><g fill="#FFCC00"><circle cx="405" cy="105" r="15"/><circle cx="505" cy="140" r="15"/><circle cx="560" cy="220" r="15"/><circle cx="560" cy="320" r="15"/><circle cx="505" cy="400" r="15"/><circle cx="405" cy="435" r="15"/><circle cx="305" cy="400" r="15"/><circle cx="250" cy="320" r="15"/><circle cx="250" cy="220" r="15"/><circle cx="305" cy="140" r="15"/><circle cx="405" cy="175" r="15"/><circle cx="405" cy="365" r="15"/></g></svg></p>
+            <p>&copy; 2026 Prometheus Engineering Kft. Minden jog fenntartva. Made in EU <svg class="eu-flag-inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810 540" role="img" aria-label="European Union flag"><rect width="810" height="540" fill="#003399"/><g fill="#FFCC00"><circle cx="405" cy="105" r="15"/><circle cx="505" cy="140" r="15"/><circle cx="560" cy="220" r="15"/><circle cx="560" cy="320" r="15"/><circle cx="505" cy="400" r="15"/><circle cx="405" cy="435" r="15"/><circle cx="305" cy="400" r="15"/><circle cx="250" cy="320" r="15"/><circle cx="250" cy="220" r="15"/><circle cx="305" cy="140" r="15"/><circle cx="405" cy="175" r="15"/><circle cx="405" cy="365" r="15"/></g></svg></p>
         </div>
     </footer>
 
@@ -2161,16 +1938,10 @@
             /* LANGS:END */
         ];
 
-        function currentTabPath() {
-            const p = location.pathname;
-            if (p.indexOf('manufacturing') !== -1) return 'manufacturing/';
-            if (p.indexOf('entertainment') !== -1) return 'entertainment/';
-            return '';
-        }
-
         function langHref(code) {
             const base = code === 'en' ? '' : '/' + code;
-            return (base + '/' + currentTabPath()) || '/';
+            const page = location.pathname.indexOf('/research') !== -1 ? 'research/' : '';
+            return (base + '/' + page) || '/';
         }
 
         function initLangSwitcher() {
@@ -2206,35 +1977,9 @@
         }
         initLangSwitcher();
 
-        function useCaseUrl(id) {
-            return window.LANG_BASE + (id === 'research' ? '/' : '/' + id + '/');
-        }
-
-        function showUseCase(id, btn, event) {
-            if (event) event.preventDefault();
-            document.querySelectorAll('.use-case-panel').forEach(p => p.classList.remove('active'));
-            document.querySelectorAll('.use-case-tab').forEach(t => t.classList.remove('active'));
-            const panel = document.getElementById('usecase-' + id);
-            if (panel) panel.classList.add('active');
-            if (!btn) btn = document.querySelector('.use-case-tab[data-tab="' + id + '"]');
-            if (btn) btn.classList.add('active');
-            if (event && window.history && history.pushState) {
-                history.pushState({ tab: id }, '', useCaseUrl(id));
-            }
-            return false;
-        }
-
         function toggleFaq(btn) {
             btn.parentElement.classList.toggle('open');
         }
-
-        window.addEventListener('popstate', function () {
-            const path = location.pathname;
-            let id = 'research';
-            if (path.indexOf('manufacturing') !== -1) id = 'manufacturing';
-            else if (path.indexOf('entertainment') !== -1) id = 'entertainment';
-            showUseCase(id, null, null);
-        });
 
         (function () {
             const navEl = document.querySelector('nav');

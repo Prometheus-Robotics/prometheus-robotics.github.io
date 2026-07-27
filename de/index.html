@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SEO:START -->
-    <title>Prometheus Robotics — Humanoide Plattform für Forschungslabore</title>
-    <meta name="description" content="Ein modularer humanoider Roboter für die Robotikforschung: volles SDK, Stereo- und Handgelenkkameras, URDF, mitgelieferter Simulator und Unterstützung für VLA-Modelle wie Pi0 und ACT.">
+    <title>Prometheus Robotics — Zweiarmige Roboter für die Industrieautomatisierung | Endkontrolle</title>
+    <meta name="description" content="Ein stationärer Zweiarm-Roboter, der Industrieaufgaben durch Demonstration lernt: funktionale Endkontrolle, Kommissionierung und Maschinenbedienung. Entwickelt und gefertigt in der EU.">
     <link rel="canonical" href="https://meetprometheus.com/de/">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://meetprometheus.com/de/">
-    <meta property="og:title" content="Prometheus Robotics — Humanoide Plattform für Forschungslabore">
-    <meta property="og:description" content="Ein modularer humanoider Roboter für die Robotikforschung: volles SDK, Stereo- und Handgelenkkameras, URDF, mitgelieferter Simulator und Unterstützung für VLA-Modelle wie Pi0 und ACT.">
+    <meta property="og:title" content="Prometheus Robotics — Zweiarmige Roboter für die Industrieautomatisierung | Endkontrolle">
+    <meta property="og:description" content="Ein stationärer Zweiarm-Roboter, der Industrieaufgaben durch Demonstration lernt: funktionale Endkontrolle, Kommissionierung und Maschinenbedienung. Entwickelt und gefertigt in der EU.">
     <meta property="og:locale" content="de_DE">
     <!-- SEO:END -->
     <meta name="theme-color" content="#0a0a0a">
@@ -371,6 +371,13 @@
             flex-shrink: 0;
         }
 
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
         .hero-eyebrow {
             font-size: 0.85rem;
             font-weight: 600;
@@ -571,7 +578,7 @@
 
         .cta-button-container { display: none; }
 
-        /* Research Ready Section */
+        /* Forschung Ready Section */
         .research-ready {
             padding: 8rem 3rem;
             background: linear-gradient(180deg, var(--color-bg) 0%, #0f0f0f 100%);
@@ -583,47 +590,9 @@
             margin: 0 auto;
         }
 
-        .use-case-tabs {
-            display: flex;
+        .traction-grid {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 440px));
             justify-content: center;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-bottom: 3.5rem;
-        }
-
-        .use-case-tab {
-            font-family: var(--font-body);
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 0.01em;
-            color: var(--color-text-secondary);
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--color-border);
-            border-radius: 50px;
-            padding: 0.85rem 1.9rem;
-            cursor: pointer;
-            display: inline-block;
-            text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .use-case-tab:hover {
-            color: var(--color-text);
-            border-color: rgba(59, 130, 246, 0.4);
-        }
-
-        .use-case-tab.active {
-            color: #ffffff;
-            background: var(--color-accent);
-            border-color: var(--color-accent);
-            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3);
-        }
-
-        .use-case-panel { display: none; }
-
-        .use-case-panel.active {
-            display: block;
-            animation: tabFade 0.4s ease;
         }
 
         .panel-why-title {
@@ -642,11 +611,6 @@
             max-width: 720px;
             margin: 0 auto 2.5rem;
             line-height: 1.6;
-        }
-
-        @keyframes tabFade {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         .research-grid {
@@ -1394,7 +1358,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Welche KI-Modelle unterstützt der Roboter?", "acceptedAnswer": {"@type": "Answer", "text": "Ab Werk unterstützt er moderne Vision-Language-Action- und Imitation-Learning-Policies, darunter Pi0, Pi0.5, ACT und SmolVLA. Sammeln Sie Teleoperationsdaten, feintunen Sie auf einer Consumer-GPU und deployen Sie über das SDK."}}, {"@type": "Question", "name": "Was ist im Lieferumfang des Roboters enthalten?", "acceptedAnswer": {"@type": "Answer", "text": "Jede Einheit wird mit dem vollständigen SDK und einer einfachen REST-API, einem URDF-Modell, einem mitgelieferten Simulator, kopfmontierter Stereokamera plus Handgelenkkameras, Greifern und direktem Engineering-Support geliefert. Die Teleoperation funktioniert ab dem ersten Tag."}}, {"@type": "Question", "name": "Kann ich selbst Teleoperationsdaten sammeln und Policies trainieren?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Teleoperieren Sie per VR mit einer Meta Quest 3S oder einem Leader-Follower-Controller, zeichnen Sie Demonstrationen im Standard-Datensatzformat auf und trainieren Sie ACT oder feintunen Sie ein Vision-Language-Action-Modell auf einer einzigen Consumer-GPU."}}, {"@type": "Question", "name": "Auf welcher Recheneinheit läuft der Roboter?", "acceptedAnswer": {"@type": "Answer", "text": "Die Onboard-Recheneinheit ist ein Raspberry Pi 5 oder ein NVIDIA Jetson. Leichte Policies laufen auf dem Gerät, während größere Vision-Language-Action-Modelle auf einer angebundenen Workstation-GPU laufen und Befehle über die REST-API streamen können."}}, {"@type": "Question", "name": "Ist der Roboter modular?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Sie können Arme, Greifer (2-Finger, 4-Finger oder fortschrittliche Fünf-Finger-Hände) und Basismodule wie Beine oder Räder austauschen und die Plattform an Ihre Aufgabe anpassen statt umgekehrt."}}, {"@type": "Question", "name": "Wo wird der Roboter hergestellt?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus wird in der Europäischen Union entworfen und gefertigt, was für europäische Forschungslabore und Unternehmen wichtig ist, denen Lieferketten-Herkunft, Support und Datensouveränität am Herzen liegen."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ist der Roboter sicher und für den Fabrikeinsatz zertifizierbar?", "acceptedAnswer": {"@type": "Answer", "text": "Er ist auf die CE-Zertifizierung nach ISO 10218-1 und ISO 10218-2 ausgelegt, den Normen für Industrieroboter. Die Sicherheitskonfiguration am Einsatzort — Schutzeinrichtungen, Geschwindigkeitsbegrenzungen und Verriegelungen — wird während der Pilotvorbereitung pro Standort festgelegt."}}, {"@type": "Question", "name": "Lässt er sich in unsere bestehende Linie integrieren?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Die Station arbeitet neben Ihren bestehenden Stationen und Workflows — die Teile kommen zum Roboter, ein Umbau der Linie entfällt. Eine einfache REST-API verbindet sie mit Ihrer Liniensteuerung."}}, {"@type": "Question", "name": "Wie lernt der Roboter eine neue Aufgabe?", "acceptedAnswer": {"@type": "Answer", "text": "Bediener führen den Roboter per Teleoperation durch die Aufgabe, um Demonstrationen aufzuzeichnen; aus diesen Demos werden Vision-Language-Action-Policies wie Pi0 und ACT trainiert. Der autonome Betrieb wird während des Pilotprojekts pro Aufgabe trainiert."}}, {"@type": "Question", "name": "Wo wird der Roboter hergestellt?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus wird in der Europäischen Union entworfen und gefertigt, was für europäische Forschungslabore und Unternehmen wichtig ist, denen Lieferketten-Herkunft, Support und Datensouveränität am Herzen liegen."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1407,10 +1371,10 @@
             PROMETHEUS&nbsp;&nbsp;ROBOTICS
         </div>
         <ul class="nav-links">
-            <li><a onclick="showPage('home')">Prometheus Robotics</a></li>
+            <li><a href="/de/">Startseite</a></li>
+            <li><a href="/de/research/">Forschung</a></li>
             <li><a href="/blog/">Blog</a></li>
             <li><a onclick="showPage('contacts')">Kontakt</a></li>
-            <li><a href="https://www.linkedin.com/in/ilya-pavlenkov/recent-activity/all/" target="_blank">LinkedIn</a></li>
         </ul>
         <div class="lang-switcher">
             <button class="lang-toggle" id="langToggle" aria-haspopup="true" aria-expanded="false" aria-label="Change language">
@@ -1431,322 +1395,200 @@
             </video>
             <div class="hero-container">
                 <div class="hero-content">
+                    <div class="hero-badges">
                     <span class="hero-eu">
                         <svg viewBox="0 0 810 540" aria-hidden="true"><rect width="810" height="540" fill="#003399"/><g fill="#FFCC00"><circle cx="405" cy="105" r="15"/><circle cx="505" cy="140" r="15"/><circle cx="560" cy="220" r="15"/><circle cx="560" cy="320" r="15"/><circle cx="505" cy="400" r="15"/><circle cx="405" cy="435" r="15"/><circle cx="305" cy="400" r="15"/><circle cx="250" cy="320" r="15"/><circle cx="250" cy="220" r="15"/><circle cx="305" cy="140" r="15"/><circle cx="405" cy="175" r="15"/><circle cx="405" cy="365" r="15"/></g></svg>
                         Designed &amp; made in the EU
                     </span>
-                    <span class="hero-eyebrow">Für Forschungslabore &amp; technische Universitäten</span>
-                    <h1 class="hero-title">Humanoide Plattform für die Robotikforschung</h1>
+                    <span class="hero-eu">NVIDIA Inception</span>
+                    <span class="hero-eu">Traktion bei Tier-1-Automobilzulieferern</span>
+                    </div>
+                    <span class="hero-eyebrow">Für Hersteller &amp; Automatisierungsanbieter</span>
+                    <h1 class="hero-title">Zweiarmige Roboter für Aufgaben, die für starre Automatisierung zu flexibel sind</h1>
                     <p class="hero-description">
-                        Ein modularer humanoider Roboter, eigens für die Forschung entwickelt. Trainieren Sie VLA-Policies, sammeln Sie Teleoperationsdaten, validieren Sie in der Simulation und deployen Sie auf der Hardware — alles sofort einsatzbereit.
+                        Ein stationärer Zweiarm-Roboter, der Industrieaufgaben durch Demonstration lernt. Erste Anwendung: funktionale Endkontrolle in der Automobilfertigung.
                     </p>
                     <div class="hero-audience">
-                        <span class="audience-tag primary">Forschungslabore</span>
-                        <span class="audience-tag primary">Technische Universitäten</span>
+                        <span class="audience-tag primary">Automotive</span>
+                        <span class="audience-tag primary">Elektronik</span>
                         <span class="audience-tag primary">Fertigung</span>
-                        <span class="audience-tag primary">Entertainment</span>
                         <span class="audience-tag">Automatisierungsanbieter</span>
-                        <span class="audience-tag">Start-ups</span>
-                        <span class="audience-tag">DIY-Entwickler</span>
+                        <span class="audience-tag">Forschungslabore</span>
                     </div>
                     <div class="cta-group">
-                        <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
-                            Humanoiden Roboter kaufen
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                            </svg>
-                        </a>
-                        <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
+                        <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button">
                             Termin buchen
                             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </a>
+                        <a href="/de/research/" class="cta-button secondary">
+                            Für Forschungslabore
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                             </svg>
                         </a>
                     </div>
                 </div>
 
                 <div class="cta-button-container">
-                    <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
-                        Humanoiden Roboter kaufen
-                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                        </svg>
-                    </a>
-                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
+                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button">
                         Termin buchen
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </a>
+                    <a href="/de/research/" class="cta-button secondary">
+                        Für Forschungslabore
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                         </svg>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Gebaut für moderne Robotikforschung -->
+        <!-- Traction -->
+        <section class="research-ready traction">
+            <div class="research-ready-container">
+                <h2 class="section-title">Zusammenarbeit mit der Industrie</h2>
+                <p class="section-subtitle">Wo wir heute mit unseren Industriepartnern stehen.</p>
+
+                <div class="research-grid traction-grid">
+                    <div class="research-card featured">
+                        <span class="research-icon">🤝</span>
+                        <h3>LOI mit Tier-1-Automobilzulieferer</h3>
+                        <p>Unterzeichnete Absichtserklärung (LOI) mit einem Tier-1-Automobilzulieferer, inklusive eines bezahlten Pilotprojekts.</p>
+                    </div>
+                    <div class="research-card featured">
+                        <span class="research-icon">🏭</span>
+                        <h3>Einführungsprojekt in Umsetzung</h3>
+                        <p>Die Einführung der Endkontrolle läuft derzeit in einem europäischen Werk.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem -->
         <section class="research-ready">
             <div class="research-ready-container">
-                <div class="use-case-tabs">
-                    <a class="use-case-tab active" data-tab="research" href="/de/" onclick="return showUseCase('research', this, event)">🔬 Forschungslabore</a>
-                    <a class="use-case-tab" data-tab="manufacturing" href="/de/manufacturing/" onclick="return showUseCase('manufacturing', this, event)">🏭 Fertigung</a>
-                    <a class="use-case-tab" data-tab="entertainment" href="/de/entertainment/" onclick="return showUseCase('entertainment', this, event)">🎉 Entertainment</a>
-                </div>
+                <h2 class="section-title">Die Linienpositionen, die Sie nicht besetzen können</h2>
+                <p class="section-subtitle">Europäische Hersteller können repetitive Linienpositionen nicht besetzen — und die bestehenden Alternativen passen nicht zu flexiblen Aufgaben.</p>
 
-                <div class="use-case-panel active" id="usecase-research">
-                <h2 class="section-title">Gebaut für moderne Robotikforschung</h2>
-                <p class="section-subtitle">Alles, was Ihr Labor braucht, um Daten zu sammeln, Policies zu trainieren und Experimente durchzuführen — wird mit dem Roboter geliefert.</p>
+                <div class="research-grid problem-grid">
+                    <div class="research-card">
+                        <span class="research-icon">👥</span>
+                        <h3>Drei Schichten, drei Bediener</h3>
+                        <p>Eine Station im Dreischichtbetrieb bedeutet drei Bediener — je nach Land 70.000–200.000 € Personalkosten pro Jahr. Und genau diese Stellen sind am schwersten zu besetzen und besetzt zu halten.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">🔩</span>
+                        <h3>Starre Automatisierung ist nicht flexibel</h3>
+                        <p>Sonderzellen bewältigen Produktvielfalt nicht ohne kostspielige Umrüstung. Jeder Produktwechsel bedeutet Engineering, Stillstand und Investitionen.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">🚶</span>
+                        <h3>Universelle Humanoide sind noch nicht so weit</h3>
+                        <p>Laufende Alleskönner-Humanoide sind noch Jahre entfernt und teuer. Flexible Linienaufgaben brauchen eine Lösung, die heute funktioniert.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution: Die Manipulationsstation -->
+        <section class="research-ready">
+            <div class="research-ready-container">
+                <h2 class="section-title">Die Manipulationsstation</h2>
+                <p class="section-subtitle">Ein Zweiarm-Roboter auf fester Basis oder motorisierter Linearachse. Die Teile kommen zur Station — keine Beine, keine Navigation, ganz bewusst: So bleibt der Roboter schon heute bezahlbar, zuverlässig und zertifizierbar.</p>
 
                 <div class="research-grid">
                     <div class="research-card featured">
-                        <span class="research-icon">📷</span>
-                        <h3>VLA-optimierte Vision</h3>
-                        <p>Handgelenkkameras mit anpassbarem Montagewinkel — ideal für Pi0.5 und andere VLA-Modelle. Dazu kopfmontierte Stereokameras für die Wahrnehmung der gesamten Szene.</p>
-                        <span class="vla-tag">Pi0.5 · SmolVLA · ACT</span>
+                        <span class="research-icon">🔧</span>
+                        <h3>Endkontrolle</h3>
+                        <p>Geräte einlegen, Schubladen bedienen und nach Prüfergebnis sortieren — Funktionsprüfung am Ende der Produktionslinie.</p>
+                        <span class="vla-tag">Leitanwendung</span>
                     </div>
+                    <div class="research-card">
+                        <span class="research-icon">📦</span>
+                        <h3>Kommissionieren &amp; Verpacken</h3>
+                        <p>Stellen Sie Kits zusammen und verpacken Sie unterschiedliche Produkte mit zwei koordinierten Armen — genau die Aufgaben, an denen Einarm-Zellen scheitern.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">⚙️</span>
+                        <h3>Maschinenbedienung</h3>
+                        <p>Be- und entladen Sie Maschinen, Pressen und Prüfvorrichtungen — zuverlässig, Zyklus für Zyklus, Schicht für Schicht.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">🗂️</span>
+                        <h3>Sortieren</h3>
+                        <p>Sortieren Sie Teile und Produkte nach Typ, Ausrichtung oder Prüfergebnis — bildgeführt statt vorrichtungsgebunden.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="research-card featured">
+        <!-- How It Works -->
+        <section class="research-ready">
+            <div class="research-ready-container">
+                <h2 class="section-title">Durch Demonstration trainiert, nicht programmiert</h2>
+                <p class="section-subtitle">Der autonome Betrieb wird während des Pilotprojekts pro Aufgabe trainiert — über eine Daten-Pipeline, nicht durch monatelange Individualprogrammierung.</p>
+
+                <div class="research-grid how-grid">
+                    <div class="research-card">
+                        <span class="research-icon">🥽</span>
+                        <h3>1 · Demonstrieren</h3>
+                        <p>Bediener führen den Roboter per VR-Teleoperation durch die Aufgabe — Robotik-Know-how ist auf Ihrer Seite nicht erforderlich.</p>
+                    </div>
+                    <div class="research-card">
                         <span class="research-icon">🧠</span>
-                        <h3>Bereit zum Trainieren</h3>
-                        <p>Vorkonfiguriert für moderne ML-Pipelines. Sammeln Sie ab dem ersten Tag Demonstrationen und trainieren Sie Policies — ganz ohne Integrationsaufwand.</p>
+                        <h3>2 · Trainieren</h3>
+                        <p>Aufgezeichnete Demonstrationen trainieren VLA-Policies (Vision-Language-Action) für genau diese Aufgabe und Station.</p>
                     </div>
-
-                    <div class="research-card featured">
-                        <span class="research-icon">🎮</span>
-                        <h3>Teleoperations-Pipeline</h3>
-                        <p>Teleoperation ab Werk für die Aufzeichnung von Demonstrationen und die Fernsteuerung. Sofort in Ihren Imitation-Learning-Workflow integrierbar.</p>
-                    </div>
-
-                    <div class="research-card featured">
-                        <span class="research-icon">📐</span>
-                        <h3>URDF für Simulatoren</h3>
-                        <p>Vollständiges URDF-Robotermodell inklusive. Sofort kompatibel mit MuJoCo, Isaac Sim, PyBullet, Gazebo und dem übrigen Standard-Simulationsstack.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">🖥️</span>
-                        <h3>Simulator inklusive</h3>
-                        <p>Jeder Roboter wird mit Simulator geliefert. Entwickeln und validieren Sie in der Simulation, bevor Sie die Hardware anfassen.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">💻</span>
-                        <h3>SDK</h3>
-                        <p>Vollständiges SDK für Steuerung, Wahrnehmung und Integration. Python-first und gut dokumentiert.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">🦾</span>
-                        <h3>Greifer inklusive</h3>
-                        <p>Manipulatoren werden mit der Plattform geliefert. Endeffektoren müssen nicht separat beschafft werden.</p>
-                    </div>
-
                     <div class="research-card">
                         <span class="research-icon">🤖</span>
-                        <h3>Modulare Hardware</h3>
-                        <p>Tauschen Sie Arme, Greifer und Basismodule aus. Passen Sie die Plattform an Ihre Forschung an — nicht umgekehrt.</p>
+                        <h3>3 · Ausführen</h3>
+                        <p>Die trainierte Policy führt die Aufgabe an der Station aus und verbessert sich mit jedem Einsatz.</p>
                     </div>
-
                     <div class="research-card">
-                        <span class="research-icon">📼</span>
-                        <h3>Beispielszenarien</h3>
-                        <p>Vorab aufgezeichnete Bewegungen und beispielhafte Ausführungsszenarien. Validieren Sie den Stack in Minuten auf Ihrem Prüfstand.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">📚</span>
-                        <h3>Ausführliche Dokumentation</h3>
-                        <p>Umfassende Dokumentation für Hardware, Software, Kalibrierung und Integrations-Workflows.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">💬</span>
-                        <h3>Direkter Engineering-Support</h3>
-                        <p>Direkter Draht zu unserem Team — vom Auspacken über das Deployment und die Experimente bis zur Veröffentlichung.</p>
+                        <span class="research-icon">📈</span>
+                        <h3>4 · Kumulieren</h3>
+                        <p>Jeder Einsatz speist einen proprietären Manipulationsdatensatz — jede neue Aufgabe startet weiter vorn.</p>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <h3 class="panel-why-title">Warum Labore sich für Prometheus entscheiden</h3>
-                <p class="panel-why-subtitle">Es gibt keinen humanoiden Roboter von der Stange, der für die Forschung gebaut ist. Teams verbringen Monate damit, Hardware, Kameras, Simulation und ML-Tools zusammenzufügen, bevor sie ein einziges Experiment durchführen können. Prometheus liefert diesen gesamten Stack einsatzbereit.</p>
+        <!-- Why Prometheus -->
+        <section class="research-ready">
+            <div class="research-ready-container">
+                <h2 class="section-title">Warum Hersteller sich für Prometheus entscheiden</h2>
+                <p class="section-subtitle">Die schwer zu besetzenden Linienjobs bleiben abgedeckt — ohne die Linie um eine starre Zelle herum umzubauen.</p>
+
                 <div class="research-grid">
                     <div class="research-card featured">
-                        <span class="research-icon">🎓</span>
-                        <h3>Forschung zuerst, kein Demo-Gerät</h3>
-                        <p>Offene Architektur, vollständiges SDK, URDF und mitgelieferter Simulator — ausgelegt darauf, wie Robotikforschung wirklich funktioniert.</p>
+                        <span class="research-icon">👷</span>
+                        <h3>Besetzt schwer zu besetzende Stellen</h3>
+                        <p>Decken Sie die repetitiven Aufgaben mit hoher Fluktuation ab, die niemand will — ohne Personal aufzustocken oder gegen Fluktuation zu kämpfen.</p>
                     </div>
                     <div class="research-card featured">
-                        <span class="research-icon">⏱️</span>
-                        <h3>Sparen Sie Monate an Integration</h3>
-                        <p>Kameras, Teleoperation und ML-Pipelines sind vorkonfiguriert. Sammeln Sie ab dem ersten Tag Demonstrationen und trainieren Sie Policies.</p>
+                        <span class="research-icon">💸</span>
+                        <h3>Günstiger als eine Sonderzelle</h3>
+                        <p>Ein flexibler Humanoid ersetzt maßgeschneiderte feste Automatisierung, die teuer in Entwurf, Bau und Wartung ist.</p>
                     </div>
                     <div class="research-card featured">
-                        <span class="research-icon">🧩</span>
-                        <h3>Hackbar &amp; modular</h3>
-                        <p>Tauschen Sie Arme, Greifer und Basismodule aus, schreiben Sie eigene Controller und erweitern Sie das SDK. Passen Sie die Plattform an Ihre Arbeit an.</p>
+                        <span class="research-icon">♻️</span>
+                        <h3>Aufgabenübergreifend neu trainierbar</h3>
+                        <p>Ein neues Produkt oder eine neue Aufgabe bedeutet neue Demonstrationen, keine neuen Vorrichtungen. Es gibt keine starren Werkzeuge, die umgebaut werden müssten.</p>
                     </div>
                     <div class="research-card featured">
-                        <span class="research-icon">✨</span>
-                        <h3>Individuelle Konfigurationen</h3>
-                        <p>Maßgeschneiderte Sensorpakete, alternative Greifer, individuelle Kinematik und Software-Integrationen für spezialisierte Laborarbeit.</p>
+                        <span class="research-icon">🇪🇺</span>
+                        <h3>EU-basiert</h3>
+                        <p>Hardware, Engineering, Support und Daten bleiben in Europa — keine Übersee-Abhängigkeit für Ihre Produktionslinie.</p>
                     </div>
-                </div>
-                </div>
-
-                <div class="use-case-panel" id="usecase-manufacturing">
-                    <h2 class="section-title">Stellen Sie einen Humanoiden an Ihre Linie</h2>
-                    <p class="section-subtitle">Endkontrolle, Pick-and-Place und die repetitiven Linienaufgaben, die Sie ungern besetzen — übernommen von einem flexiblen Humanoiden, der sich in Minuten umrüsten lässt.</p>
-
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">🔧</span>
-                            <h3>Endkontrolle</h3>
-                            <p>Führen Sie Funktions- und Qualitätsprüfungen am Ende Ihrer Produktionslinie durch — konstant, wiederholbar und unermüdlich in jeder Schicht.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">📦</span>
-                            <h3>Pick &amp; Place</h3>
-                            <p>Zuverlässiges Pick-and-Place für Teile, Verpackung und Kommissionierung. Handhaben Sie unterschiedliche Objekte mit den mitgelieferten Greifern.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">🔁</span>
-                            <h3>Repetitive Linienaufgaben</h3>
-                            <p>Übernehmen Sie die eintönigen, repetitiven Aufgaben — Maschinenbedienung, Sortieren, Montageunterstützung — und machen Sie Ihre Mitarbeiter für höherwertige Arbeit frei.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🧠</span>
-                            <h3>Lernt die Aufgabe</h3>
-                            <p>Angetrieben von Pi0 — einem leicht trainierbaren VLA-Modell. Zeigen Sie ihm die Aufgabe, und es generalisiert: Es passt sich Abweichungen an, statt an ihnen zu scheitern. Keine starre Programmierung.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🛠️</span>
-                            <h3>Schnelle Umrüstung</h3>
-                            <p>Rüsten Sie für eine neue Aufgabe oder einen Produktwechsel in Minuten um, nicht in Wochen. Ein Roboter, viele Aufgaben.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">👁️</span>
-                            <h3>Bildgeführt</h3>
-                            <p>Stereo- und Handgelenkkameras für Teileerkennung, Ausrichtung und Sichtprüfung direkt am Ort des Geschehens.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🦾</span>
-                            <h3>Modulare Greifer</h3>
-                            <p>Tauschen Sie Endeffektoren passend zum Teil. Manipulatoren werden mit der Plattform geliefert, bereit für Ihre Linie.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🔌</span>
-                            <h3>Einfache Integration</h3>
-                            <p>Eine einfache REST-API lässt sich in Ihre bestehende Liniensteuerung und Workflows einbinden — ohne proprietäre Bindung.</p>
-                        </div>
-                    </div>
-
-                    <h3 class="panel-why-title">Warum Hersteller sich für Prometheus entscheiden</h3>
-                    <p class="panel-why-subtitle">Die eintönigen, repetitiven Linienjobs sind am schwersten zu besetzen und besetzt zu halten — doch aufgabenspezifische Roboter zwingen Sie, die Linie um sie herum umzubauen. Prometheus fügt sich stattdessen nahtlos in Ihren bestehenden Prozess ein, arbeitet drei Schichten am Tag und meldet sich nie krank.</p>
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">👷</span>
-                            <h3>Besetzt schwer zu besetzende Stellen</h3>
-                            <p>Decken Sie die repetitiven Aufgaben mit hoher Fluktuation ab, die niemand will — ohne Personal aufzustocken oder gegen Fluktuation zu kämpfen.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">💸</span>
-                            <h3>Günstiger als eine Sonderzelle</h3>
-                            <p>Ein flexibler Humanoid ersetzt maßgeschneiderte feste Automatisierung, die teuer in Entwurf, Bau und Wartung ist.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">♻️</span>
-                            <h3>Umkonfiguration in Minuten</h3>
-                            <p>Ein neues Produkt oder eine neue Aufgabe bedeutet nicht mehr wochenlange Umrüstung. Trainieren Sie denselben Roboter neu und setzen Sie ihn an der Linie anders ein.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">📈</span>
-                            <h3>Skaliert mit der Nachfrage</h3>
-                            <p>Fügen Sie bei wachsendem Volumen Einheiten hinzu und versetzen Sie sie zum Engpass. Keine feste Infrastruktur, die herausgerissen und neu gebaut werden muss.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="use-case-panel" id="usecase-entertainment">
-                    <h2 class="section-title">Ein Humanoid, der die Show stiehlt</h2>
-                    <p class="section-subtitle">Für Freizeitparks, Hotels, Museen und Events — kostümieren Sie ihn, steuern Sie ihn per VR, spielen Sie Routinen ab und lassen Sie ihn begrüßen, präsentieren und erklären.</p>
-
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">👗</span>
-                            <h3>Kostümieren Sie ihn</h3>
-                            <p>Statten Sie den Roboter mit individuellen Kostümen und Markenkleidung aus, passend zu Ihrem Veranstaltungsort, Maskottchen oder Event-Thema.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">🥽</span>
-                            <h3>VR-Teleoperation</h3>
-                            <p>Steuern Sie den Roboter live per VR mit einer Meta Quest 3S — winken, gestikulieren und interagieren Sie in Echtzeit mit den Gästen.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">🎬</span>
-                            <h3>Aufnehmen &amp; Abspielen</h3>
-                            <p>Nehmen Sie eine Darbietung einmal auf und spielen Sie sie auf Abruf ab — Begrüßungen, Tänze und einstudierte Routinen, Show für Show.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🗣️</span>
-                            <h3>Präsentieren &amp; Erklären</h3>
-                            <p>Lassen Sie ihn moderieren und erklären — Führungen, Produktdemos und Ausstellungen, die Besucher durch das Erlebnis führen.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">👋</span>
-                            <h3>Gäste begrüßen</h3>
-                            <p>Ein freundlicher humanoider Empfang für Parkeingänge, Hotellobbys und Messeflächen.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">📡</span>
-                            <h3>Fernsteuerung</h3>
-                            <p>Steuern Sie ihn von überall aus fern — Interaktionen und Darbietungen ganz ohne Personal vor Ort.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🏨</span>
-                            <h3>Für Veranstaltungsorte gemacht</h3>
-                            <p>Freizeitparks, Hotels, Museen und Events — eine Attraktion, die alle Blicke auf sich zieht und das Publikum fesselt.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🤖</span>
-                            <h3>Immer markenkonform</h3>
-                            <p>Konsistente, wiederholbare Darbietungen jedes Mal — Ihr unverwechselbarer Charakter, zuverlässig geliefert.</p>
-                        </div>
-                    </div>
-
-                    <h3 class="panel-why-title">Warum Veranstaltungsorte sich für Prometheus entscheiden</h3>
-                    <p class="panel-why-subtitle">Attraktionen stehen und fallen mit dem Wow-Faktor. Bildschirme und Animatronics haben Gäste schon gesehen — ein echter, interaktiver Humanoid ist das, was sie fotografieren, posten und weshalb sie wiederkommen. Es ist ein Statement, dass Ihr Veranstaltungsort der fortschrittlichste ist.</p>
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">⭐</span>
-                            <h3>Ein Publikumsmagnet</h3>
-                            <p>Ein echter Humanoid zieht Menschenmengen, Fotos und Social-Media-Aufmerksamkeit an, mit denen ein Bildschirm oder Animatronic einfach nicht mithalten kann.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">🏆</span>
-                            <h3>Sofortiges Prestige</h3>
-                            <p>Zeigen Sie allen, dass Sie den fortschrittlichsten, zukunftsorientiertesten Veranstaltungsort am Markt betreiben — und sorgen Sie dafür, dass es alle sehen.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">🎭</span>
-                            <h3>Ein Darsteller, jede Show</h3>
-                            <p>Nehmen Sie Routinen einmal auf und spielen Sie sie den ganzen Tag fehlerfrei ab — keine Pausen, keine Dienstplanung, keine Besetzung der Rolle.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">🌍</span>
-                            <h3>Von überall steuern</h3>
-                            <p>Steuern Sie ihn live in VR mit einer Meta Quest 3S, um Gäste in Echtzeit zu begrüßen und mit ihnen zu interagieren — auch aus der Ferne.</p>
-                        </div>
+                    <div class="research-card featured">
+                        <span class="research-icon">🛡️</span>
+                        <h3>Zertifizierungspfad definiert</h3>
+                        <p>Ausgelegt auf die CE-Zertifizierung nach ISO 10218-1 und ISO 10218-2, den Normen für Industrieroboter.</p>
                     </div>
                 </div>
             </div>
@@ -1756,7 +1598,7 @@
         <section class="specifications">
             <div class="specs-container">
                 <h2 class="section-title">Technische Daten</h2>
-                <p class="section-subtitle">Oberkörper auf Stativ — geeignet für Tischforschung</p>
+                <p class="section-subtitle">Zweiarmiger Oberkörper — die Konfiguration der Manipulationsstation</p>
                 
                 <div class="specs-content">
                     <div class="specs-table-wrapper">
@@ -1767,8 +1609,12 @@
                                     <td class="spec-value">120Nm</td>
                                 </tr>
                                 <tr>
+                                    <td class="spec-label">Aufstellungsoptionen</td>
+                                    <td class="spec-value">Feste Basis / motorisierte Linearachse (Schiene)</td>
+                                </tr>
+                                <tr>
                                     <td class="spec-label">Höhe</td>
-                                    <td class="spec-value">160cm on tripod (172cm on legs/wheels)</td>
+                                    <td class="spec-value">160 cm auf Stativ</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Breite</td>
@@ -1780,7 +1626,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Freiheitsgrade</td>
-                                    <td class="spec-value">19 (29 with legs; 43 with hands; 53 with legs and hands)</td>
+                                    <td class="spec-value">19 (43 mit Händen)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Kameras</td>
@@ -1827,19 +1673,6 @@
                             <div class="robot-glow"></div>
                             <img src="/robot.png" alt="Prometheus Humanoid Robot" class="robot-img">
                         </div>
-                        <h3 class="modules-title">Verfügbare Module</h3>
-                        <div class="modules-grid">
-                            <div class="module-card">
-                                <div class="module-icon">🦿</div>
-                                <h4>Beinmodul</h4>
-                                <p>Zweibeiniges Fortbewegungssystem für mehr Mobilität und menschenähnliche Bewegungsfähigkeiten.</p>
-                            </div>
-                            <div class="module-card">
-                                <div class="module-icon">🛞</div>
-                                <h4>Radmodul</h4>
-                                <p>Fahrbare Basis für effiziente Navigation und eine stabile Plattform für verschiedenste Anwendungen.</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -1854,49 +1687,6 @@
             </div>
         </section>
 
-        <!-- Manipulators Section -->
-        <section class="manipulators">
-            <div class="manipulators-container">
-                <h2 class="section-title">Greifer-Optionen</h2>
-                <p class="section-subtitle">Wählen Sie den passenden Endeffektor für Ihre Forschung</p>
-                
-                <div class="manipulators-grid">
-                    <div class="manipulator-card">
-                        <div class="manipulator-image">
-                            <img src="/claw.png" alt="Type A - 2-Finger-Greifer">
-                        </div>
-                        <div class="manipulator-content">
-                            <h3>Type A</h3>
-                            <h4>2-Finger-Greifer</h4>
-                            <p>Einfaches Greifen / präzises Schließen. Ideal für empfindliche Vorgänge und präzise Manipulationsaufgaben.</p>
-                        </div>
-                    </div>
-
-                    <div class="manipulator-card">
-                        <div class="manipulator-image">
-                            <img src="/for_totes.png" alt="Type B - 4-finger claw">
-                        </div>
-                        <div class="manipulator-content">
-                            <h3>Type B</h3>
-                            <h4>4-Finger-„Klaue“ (gepaarte Finger)</h4>
-                            <p>Für robustes Greifen von Kisten und Transportboxen. Konzipiert für Lager- und Logistikanwendungen.</p>
-                        </div>
-                    </div>
-
-                    <div class="manipulator-card">
-                        <div class="manipulator-image">
-                            <img src="/hand.png" alt="Type X - Advanced manipulator">
-                        </div>
-                        <div class="manipulator-content">
-                            <h3>Type X</h3>
-                            <h4>Fortschrittliche Manipulatoren</h4>
-                            <p>Zu den Optionen zählen Handgelenkkameras mit anpassbarem Montagewinkel (optimiert für Pi0.5 und andere VLA-Modelle), Fünf-Finger-Hände und weitere individuelle Varianten.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- FAQ Section -->
         <section class="faq">
             <div class="faq-container">
@@ -1904,24 +1694,16 @@
                 <p class="section-subtitle">Everything you need to know before getting started</p>
                 <div class="faq-list">
                     <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Welche KI-Modelle unterstützt der Roboter?</button>
-                        <div class="faq-a"><p>Ab Werk unterstützt er moderne Vision-Language-Action- und Imitation-Learning-Policies, darunter Pi0, Pi0.5, ACT und SmolVLA. Sammeln Sie Teleoperationsdaten, feintunen Sie auf einer Consumer-GPU und deployen Sie über das SDK.</p></div>
+                        <button class="faq-q" onclick="toggleFaq(this)">Ist der Roboter sicher und für den Fabrikeinsatz zertifizierbar?</button>
+                        <div class="faq-a"><p>Er ist auf die CE-Zertifizierung nach ISO 10218-1 und ISO 10218-2 ausgelegt, den Normen für Industrieroboter. Die Sicherheitskonfiguration am Einsatzort — Schutzeinrichtungen, Geschwindigkeitsbegrenzungen und Verriegelungen — wird während der Pilotvorbereitung pro Standort festgelegt.</p></div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Was ist im Lieferumfang des Roboters enthalten?</button>
-                        <div class="faq-a"><p>Jede Einheit wird mit dem vollständigen SDK und einer einfachen REST-API, einem URDF-Modell, einem mitgelieferten Simulator, kopfmontierter Stereokamera plus Handgelenkkameras, Greifern und direktem Engineering-Support geliefert. Die Teleoperation funktioniert ab dem ersten Tag.</p></div>
+                        <button class="faq-q" onclick="toggleFaq(this)">Lässt er sich in unsere bestehende Linie integrieren?</button>
+                        <div class="faq-a"><p>Ja. Die Station arbeitet neben Ihren bestehenden Stationen und Workflows — die Teile kommen zum Roboter, ein Umbau der Linie entfällt. Eine einfache REST-API verbindet sie mit Ihrer Liniensteuerung.</p></div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Kann ich selbst Teleoperationsdaten sammeln und Policies trainieren?</button>
-                        <div class="faq-a"><p>Ja. Teleoperieren Sie per VR mit einer Meta Quest 3S oder einem Leader-Follower-Controller, zeichnen Sie Demonstrationen im Standard-Datensatzformat auf und trainieren Sie ACT oder feintunen Sie ein Vision-Language-Action-Modell auf einer einzigen Consumer-GPU.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Auf welcher Recheneinheit läuft der Roboter?</button>
-                        <div class="faq-a"><p>Die Onboard-Recheneinheit ist ein Raspberry Pi 5 oder ein NVIDIA Jetson. Leichte Policies laufen auf dem Gerät, während größere Vision-Language-Action-Modelle auf einer angebundenen Workstation-GPU laufen und Befehle über die REST-API streamen können.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Ist der Roboter modular?</button>
-                        <div class="faq-a"><p>Ja. Sie können Arme, Greifer (2-Finger, 4-Finger oder fortschrittliche Fünf-Finger-Hände) und Basismodule wie Beine oder Räder austauschen und die Plattform an Ihre Aufgabe anpassen statt umgekehrt.</p></div>
+                        <button class="faq-q" onclick="toggleFaq(this)">Wie lernt der Roboter eine neue Aufgabe?</button>
+                        <div class="faq-a"><p>Bediener führen den Roboter per Teleoperation durch die Aufgabe, um Demonstrationen aufzuzeichnen; aus diesen Demos werden Vision-Language-Action-Policies wie Pi0 und ACT trainiert. Der autonome Betrieb wird während des Pilotprojekts pro Aufgabe trainiert.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Wo wird der Roboter hergestellt?</button>
@@ -1934,16 +1716,10 @@
         <!-- Bottom CTA Section -->
         <section style="padding: 6rem 3rem; text-align: center; background: linear-gradient(180deg, #0f0f0f 0%, var(--color-bg) 100%); border-top: 1px solid var(--color-border);">
             <div style="max-width: 800px; margin: 0 auto;">
-                <h2 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.01em;">Bereit, Prometheus an die Arbeit zu schicken?</h2>
-                <p style="color: var(--color-text-secondary); font-size: 1.2rem; margin-bottom: 3rem; line-height: 1.7;">Ob Forschungslabor, Produktionslinie oder Veranstaltungsfläche — bestellen Sie eine Einheit oder buchen Sie ein Gespräch, um Ihre Konfiguration zu besprechen.</p>
+                <h2 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.01em;">Stellen Sie Prometheus an Ihre Linie</h2>
+                <p style="color: var(--color-text-secondary); font-size: 1.2rem; margin-bottom: 3rem; line-height: 1.7;">Buchen Sie ein Gespräch, um ein Endkontroll-Pilotprojekt für Ihr Werk zu planen — wir gehen gemeinsam Ihre Stationen, Aufgaben und Integrationsanforderungen durch.</p>
                 <div class="cta-group" style="justify-content: center;">
-                    <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
-                        Modulare Plattform kaufen
-                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                        </svg>
-                    </a>
-                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
+                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button">
                         Termin buchen
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
@@ -1978,12 +1754,13 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h4>Prometheus Robotics</h4>
-                <p>Eine modulare humanoide Plattform für Forschung, Industrie und Entertainment. Gebaut für die Labore, Fertigungshallen und Veranstaltungsorte, die die nächste Generation intelligenter Roboter prägen.</p>
+                <p>Zweiarmige Roboter für die Industrieautomatisierung — Endkontrolle, Kommissionierung und Maschinenbedienung — und eine modulare humanoide Plattform für die Robotikforschung. Entwickelt und gefertigt in der EU.</p>
             </div>
             <div class="footer-section">
                 <h4>Navigation</h4>
                 <ul class="footer-links">
-                    <li><a onclick="showPage('home')">Startseite</a></li>
+                    <li><a href="/de/">Startseite</a></li>
+                    <li><a href="/de/research/">Forschung</a></li>
                     <li><a href="/blog/">Blog</a></li>
                     <li><a onclick="showPage('contacts')">Kontakt</a></li>
                     <li><a href="https://www.linkedin.com/in/ilya-pavlenkov/recent-activity/all/" target="_blank">LinkedIn</a></li>
@@ -1992,13 +1769,13 @@
             <div class="footer-section">
                 <h4>Loslegen</h4>
                 <ul class="footer-links">
-                    <li><a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank">Roboter kaufen</a></li>
                     <li><a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer">Termin buchen</a></li>
+                    <li><a href="/demo/">Demo-Video</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Prometheus Engineering Kft. Alle Rechte vorbehalten. Made in EU <svg class="eu-flag-inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810 540" role="img" aria-label="European Union flag"><rect width="810" height="540" fill="#003399"/><g fill="#FFCC00"><circle cx="405" cy="105" r="15"/><circle cx="505" cy="140" r="15"/><circle cx="560" cy="220" r="15"/><circle cx="560" cy="320" r="15"/><circle cx="505" cy="400" r="15"/><circle cx="405" cy="435" r="15"/><circle cx="305" cy="400" r="15"/><circle cx="250" cy="320" r="15"/><circle cx="250" cy="220" r="15"/><circle cx="305" cy="140" r="15"/><circle cx="405" cy="175" r="15"/><circle cx="405" cy="365" r="15"/></g></svg></p>
+            <p>&copy; 2026 Prometheus Engineering Kft. Alle Rechte vorbehalten. Made in EU <svg class="eu-flag-inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810 540" role="img" aria-label="European Union flag"><rect width="810" height="540" fill="#003399"/><g fill="#FFCC00"><circle cx="405" cy="105" r="15"/><circle cx="505" cy="140" r="15"/><circle cx="560" cy="220" r="15"/><circle cx="560" cy="320" r="15"/><circle cx="505" cy="400" r="15"/><circle cx="405" cy="435" r="15"/><circle cx="305" cy="400" r="15"/><circle cx="250" cy="320" r="15"/><circle cx="250" cy="220" r="15"/><circle cx="305" cy="140" r="15"/><circle cx="405" cy="175" r="15"/><circle cx="405" cy="365" r="15"/></g></svg></p>
         </div>
     </footer>
 
@@ -2161,16 +1938,10 @@
             /* LANGS:END */
         ];
 
-        function currentTabPath() {
-            const p = location.pathname;
-            if (p.indexOf('manufacturing') !== -1) return 'manufacturing/';
-            if (p.indexOf('entertainment') !== -1) return 'entertainment/';
-            return '';
-        }
-
         function langHref(code) {
             const base = code === 'en' ? '' : '/' + code;
-            return (base + '/' + currentTabPath()) || '/';
+            const page = location.pathname.indexOf('/research') !== -1 ? 'research/' : '';
+            return (base + '/' + page) || '/';
         }
 
         function initLangSwitcher() {
@@ -2206,35 +1977,9 @@
         }
         initLangSwitcher();
 
-        function useCaseUrl(id) {
-            return window.LANG_BASE + (id === 'research' ? '/' : '/' + id + '/');
-        }
-
-        function showUseCase(id, btn, event) {
-            if (event) event.preventDefault();
-            document.querySelectorAll('.use-case-panel').forEach(p => p.classList.remove('active'));
-            document.querySelectorAll('.use-case-tab').forEach(t => t.classList.remove('active'));
-            const panel = document.getElementById('usecase-' + id);
-            if (panel) panel.classList.add('active');
-            if (!btn) btn = document.querySelector('.use-case-tab[data-tab="' + id + '"]');
-            if (btn) btn.classList.add('active');
-            if (event && window.history && history.pushState) {
-                history.pushState({ tab: id }, '', useCaseUrl(id));
-            }
-            return false;
-        }
-
         function toggleFaq(btn) {
             btn.parentElement.classList.toggle('open');
         }
-
-        window.addEventListener('popstate', function () {
-            const path = location.pathname;
-            let id = 'research';
-            if (path.indexOf('manufacturing') !== -1) id = 'manufacturing';
-            else if (path.indexOf('entertainment') !== -1) id = 'entertainment';
-            showUseCase(id, null, null);
-        });
 
         (function () {
             const navEl = document.querySelector('nav');

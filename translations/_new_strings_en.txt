@@ -1,0 +1,84 @@
+# New English strings to translate for the industrial repositioning.
+# Every line between the ### T_NEW markers is ONE translation key (verbatim,
+# including &amp; entities, em-dashes and · separators). Add each to the T dict.
+
+### T_NEW START
+Tier-1 automotive traction
+For Manufacturers &amp; Automation Suppliers
+Bimanual Robots for Tasks Too Flexible for Fixed Automation
+A stationary dual-arm robot that learns industrial tasks from demonstration. First application: end-of-line functional testing in automotive manufacturing.
+Automotive
+Electronics
+Book a Call
+For Research Labs
+Working with Industry
+Where we are today with industrial partners.
+Tier-1 automotive LOI
+Signed letter of intent with a tier-1 automotive supplier, including a paid pilot.
+Deployment track in progress
+End-of-line testing deployment track in progress at a European plant.
+The Line Positions You Cannot Staff
+European manufacturers cannot staff repetitive line positions — and the existing alternatives do not fit flexible tasks.
+Three shifts, three operators
+One station running three shifts means three operators — €70–200k per year in labor costs depending on the country. And these are the hardest roles to hire and keep staffed.
+Fixed automation does not flex
+Custom cells cannot handle product variety without costly re-tooling. Every product change means engineering, downtime, and capex.
+General-purpose humanoids are not ready
+Walking, do-anything humanoids are years away and expensive. Flexible line tasks need a solution that works today.
+The Manipulation Station
+A dual-arm robot on a fixed base or motorized linear axis. Parts come to the station — no legs, no navigation, by design: it keeps the robot affordable, reliable and certifiable today.
+Device loading, drawer operation, and sorting by test result — functional testing at the end of the production line.
+Flagship application
+Kitting &amp; Packing
+Assemble kits and pack varied products with two coordinated arms — the tasks single-arm cells struggle with.
+Machine Tending
+Load and unload machines, presses, and test fixtures — steady cycle after cycle, shift after shift.
+Sorting
+Sort parts and products by type, orientation, or inspection result — guided by vision, not fixtures.
+Trained by Demonstration, Not Programmed
+Autonomous operation is trained per task during the pilot — through a data pipeline, not months of custom programming.
+1 · Demonstrate
+Operators teleoperate the robot through the task via VR — no robotics expertise required on your side.
+2 · Train
+Recorded demonstrations train VLA (vision-language-action) policies for that specific task and station.
+3 · Run
+The trained policy executes the task on the station and improves with every deployment.
+4 · Compound
+Every deployment feeds a proprietary manipulation dataset — each new task starts further ahead.
+Why Manufacturers Choose Prometheus
+The hard-to-staff line jobs stay covered — without rebuilding the line around a rigid cell.
+Retrainable across tasks
+A new product or task means new demonstrations, not new tooling. There is no fixed tooling to rebuild.
+EU-based
+Hardware, engineering, support, and data stay in Europe — no overseas dependency for your production line.
+Certification path defined
+Designed for CE certification under ISO 10218-1 and ISO 10218-2, the standards for industrial robots.
+Dual-arm upper body — the manipulation station configuration
+Deployment Options
+Fixed base / motorized linear axis (rail)
+160cm on tripod
+19 (43 with hands)
+Put Prometheus on Your Line
+Book a call to scope an end-of-line pilot for your plant — we will walk through your stations, tasks, and integration constraints.
+Home
+Research
+Bimanual robots for industrial automation — end-of-line testing, kitting, and machine tending — and a modular humanoid platform for robotics research. Designed and made in the EU.
+Demo Video
+Future Modules
+Whether you are collecting datasets, training policies, or teaching robotics — order a unit or book a call to discuss your configuration.
+### T_NEW END
+
+### SEO_HOME (translate both; keep the brand name "Prometheus Robotics" as is)
+Title: Prometheus Robotics — Bimanual Robots for Industrial Automation | EOL Testing
+Description: A stationary dual-arm robot that learns industrial tasks from demonstration: end-of-line functional testing, kitting, and machine tending. Designed and made in the EU.
+
+### FAQ_HOME (translate pairs 1-3; pair 4 must be COPIED verbatim from the last
+### pair of the FAQ_RESEARCH list already present in your language file)
+Q1: Is the robot safe and certifiable for factory use?
+A1: It is designed for CE certification under ISO 10218-1 and ISO 10218-2, the standards for industrial robots. The deployment safety configuration — guarding, speed limits, and interlocks — is defined per site during pilot preparation.
+Q2: Does it integrate with our existing line?
+A2: Yes. The station works alongside your existing stations and workflows — parts come to the robot, so there is no line rebuild. A simple REST API connects it to your line control.
+Q3: How does the robot learn a new task?
+A3: Operators teleoperate the robot through the task to record demonstrations, and vision-language-action policies such as Pi0 and ACT are trained from those demos. Autonomous operation is trained per task during the pilot.
+Q4: Where is the robot made?
+A4: Prometheus is designed and manufactured in the European Union, which matters for European research labs and companies that care about supply-chain provenance, support, and data sovereignty.

@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SEO:START -->
-    <title>Prometheus Robotics — humanoidų platforma tyrimų laboratorijoms</title>
-    <meta name="description" content="Modulinis humanoidinis robotas, sukurtas robotikos tyrimams: pilnas SDK, stereo + riešo kameros, URDF, pridedamas simuliatorius ir VLA modelių, tokių kaip Pi0 ir ACT, palaikymas.">
+    <title>Prometheus Robotics — dvirankiai robotai pramonės automatizacijai | Galutinis linijos testavimas</title>
+    <meta name="description" content="Stacionarus dviejų rankų robotas, kuris mokosi pramoninių užduočių iš demonstracijų: funkcinis testavimas gamybos linijos pabaigoje, komplektavimas ir staklių aptarnavimas. Suprojektuota ir pagaminta ES.">
     <link rel="canonical" href="https://meetprometheus.com/lt/">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://meetprometheus.com/lt/">
-    <meta property="og:title" content="Prometheus Robotics — humanoidų platforma tyrimų laboratorijoms">
-    <meta property="og:description" content="Modulinis humanoidinis robotas, sukurtas robotikos tyrimams: pilnas SDK, stereo + riešo kameros, URDF, pridedamas simuliatorius ir VLA modelių, tokių kaip Pi0 ir ACT, palaikymas.">
+    <meta property="og:title" content="Prometheus Robotics — dvirankiai robotai pramonės automatizacijai | Galutinis linijos testavimas">
+    <meta property="og:description" content="Stacionarus dviejų rankų robotas, kuris mokosi pramoninių užduočių iš demonstracijų: funkcinis testavimas gamybos linijos pabaigoje, komplektavimas ir staklių aptarnavimas. Suprojektuota ir pagaminta ES.">
     <meta property="og:locale" content="lt_LT">
     <!-- SEO:END -->
     <meta name="theme-color" content="#0a0a0a">
@@ -371,6 +371,13 @@
             flex-shrink: 0;
         }
 
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
         .hero-eyebrow {
             font-size: 0.85rem;
             font-weight: 600;
@@ -571,7 +578,7 @@
 
         .cta-button-container { display: none; }
 
-        /* Research Ready Section */
+        /* Tyrimai Ready Section */
         .research-ready {
             padding: 8rem 3rem;
             background: linear-gradient(180deg, var(--color-bg) 0%, #0f0f0f 100%);
@@ -583,47 +590,9 @@
             margin: 0 auto;
         }
 
-        .use-case-tabs {
-            display: flex;
+        .traction-grid {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 440px));
             justify-content: center;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-bottom: 3.5rem;
-        }
-
-        .use-case-tab {
-            font-family: var(--font-body);
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 0.01em;
-            color: var(--color-text-secondary);
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--color-border);
-            border-radius: 50px;
-            padding: 0.85rem 1.9rem;
-            cursor: pointer;
-            display: inline-block;
-            text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .use-case-tab:hover {
-            color: var(--color-text);
-            border-color: rgba(59, 130, 246, 0.4);
-        }
-
-        .use-case-tab.active {
-            color: #ffffff;
-            background: var(--color-accent);
-            border-color: var(--color-accent);
-            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3);
-        }
-
-        .use-case-panel { display: none; }
-
-        .use-case-panel.active {
-            display: block;
-            animation: tabFade 0.4s ease;
         }
 
         .panel-why-title {
@@ -642,11 +611,6 @@
             max-width: 720px;
             margin: 0 auto 2.5rem;
             line-height: 1.6;
-        }
-
-        @keyframes tabFade {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         .research-grid {
@@ -1394,7 +1358,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Kokius dirbtinio intelekto modelius palaiko robotas?", "acceptedAnswer": {"@type": "Answer", "text": "Iš karto palaikomi šiuolaikiniai regos kalbos veiksmo ir imitacinio mokymosi metodai, įskaitant Pi0, Pi0.5, ACT ir SmolVLA. Surinkite teleoperavimo duomenis, tiksliai suderinkite modelį naudodami vartotojiško lygio GPU ir įdiekite per SDK."}}, {"@type": "Question", "name": "Kas pridedama prie roboto?", "acceptedAnswer": {"@type": "Answer", "text": "Kiekvienas įrenginys tiekiamas su pilnu SDK ir paprastu REST API, URDF modeliu, integruotu simuliatoriumi, ant galvos tvirtinamomis stereo bei riešo kameromis, griebtuvais ir tiesiogine inžinerine pagalba. Teleoperavimo procesas veikia jau pirmąją dieną."}}, {"@type": "Question", "name": "Ar galiu pats rinkti teleoperavimo duomenis ir mokyti modelius?", "acceptedAnswer": {"@type": "Answer", "text": "Taip. Valdykite teleoperavimą per VR su Meta Quest 3S arba vedlio sekėjo valdikliu, įrašykite demonstracijas standartiniu duomenų rinkinio formatu ir mokykite ACT arba tiksliai suderinkite regos kalbos veiksmo modelį naudodami vieną vartotojiško lygio GPU."}}, {"@type": "Question", "name": "Kokiu skaičiavimo įrenginiu veikia robotas?", "acceptedAnswer": {"@type": "Answer", "text": "Įmontuotas skaičiavimo įrenginys yra Raspberry Pi 5 arba NVIDIA Jetson. Lengvi metodai veikia pačiame įrenginyje, o sudėtingesni regos kalbos veiksmo modeliai gali veikti prijungtos darbo stoties GPU ir perduoti komandas per REST API."}}, {"@type": "Question", "name": "Ar robotas yra modulinis?", "acceptedAnswer": {"@type": "Answer", "text": "Taip. Galite keisti rankas, griebtuvus (su 2 pirštais, 4 pirštais arba pažangias penkių pirštų plaštakas) ir bazinius modulius, tokius kaip kojos ar ratai, bei pritaikyti platformą savo užduočiai, o ne atvirkščiai."}}, {"@type": "Question", "name": "Kur pagamintas robotas?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus yra suprojektuotas ir pagamintas Europos Sąjungoje, o tai svarbu Europos tyrimų laboratorijoms ir įmonėms, kurioms rūpi tiekimo grandinės kilmė, pagalba ir duomenų suverenumas."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ar robotas yra saugus ir sertifikuojamas naudoti gamykloje?", "acceptedAnswer": {"@type": "Answer", "text": "Jis sukurtas CE sertifikavimui pagal ISO 10218-1 ir ISO 10218-2 — pramoninių robotų standartus. Diegimo saugos konfigūracija — apsaugos, greičio ribos ir blokuotės — apibrėžiama kiekvienai vietai atskirai rengiant pilotinį projektą."}}, {"@type": "Question", "name": "Ar jis integruojasi su mūsų esama linija?", "acceptedAnswer": {"@type": "Answer", "text": "Taip. Stotis veikia greta jūsų esamų stočių ir darbo srautų — dalys atkeliauja pas robotą, todėl linijos perstatyti nereikia. Paprasta REST API sujungia ją su jūsų linijos valdymu."}}, {"@type": "Question", "name": "Kaip robotas išmoksta naują užduotį?", "acceptedAnswer": {"@type": "Answer", "text": "Operatoriai teleoperuoja robotą atlikdami užduotį, kad įrašytų demonstracijas, o iš šių demonstracijų apmokomos regos kalbos veiksmo politikos, tokios kaip Pi0 ir ACT. Autonominis veikimas apmokomas kiekvienai užduočiai pilotinio projekto metu."}}, {"@type": "Question", "name": "Kur pagamintas robotas?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus yra suprojektuotas ir pagamintas Europos Sąjungoje, o tai svarbu Europos tyrimų laboratorijoms ir įmonėms, kurioms rūpi tiekimo grandinės kilmė, pagalba ir duomenų suverenumas."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1407,10 +1371,10 @@
             PROMETHEUS&nbsp;&nbsp;ROBOTICS
         </div>
         <ul class="nav-links">
-            <li><a onclick="showPage('home')">Prometheus Robotics</a></li>
+            <li><a href="/lt/">Pradžia</a></li>
+            <li><a href="/lt/research/">Tyrimai</a></li>
             <li><a href="/blog/">Blog</a></li>
             <li><a onclick="showPage('contacts')">Kontaktai</a></li>
-            <li><a href="https://www.linkedin.com/in/ilya-pavlenkov/recent-activity/all/" target="_blank">LinkedIn</a></li>
         </ul>
         <div class="lang-switcher">
             <button class="lang-toggle" id="langToggle" aria-haspopup="true" aria-expanded="false" aria-label="Change language">
@@ -1431,322 +1395,200 @@
             </video>
             <div class="hero-container">
                 <div class="hero-content">
+                    <div class="hero-badges">
                     <span class="hero-eu">
                         <svg viewBox="0 0 810 540" aria-hidden="true"><rect width="810" height="540" fill="#003399"/><g fill="#FFCC00"><circle cx="405" cy="105" r="15"/><circle cx="505" cy="140" r="15"/><circle cx="560" cy="220" r="15"/><circle cx="560" cy="320" r="15"/><circle cx="505" cy="400" r="15"/><circle cx="405" cy="435" r="15"/><circle cx="305" cy="400" r="15"/><circle cx="250" cy="320" r="15"/><circle cx="250" cy="220" r="15"/><circle cx="305" cy="140" r="15"/><circle cx="405" cy="175" r="15"/><circle cx="405" cy="365" r="15"/></g></svg>
                         Designed &amp; made in the EU
                     </span>
-                    <span class="hero-eyebrow">Tyrimų laboratorijoms &amp; technikos universitetams</span>
-                    <h1 class="hero-title">Humanoidų platforma robotikos tyrimams</h1>
+                    <span class="hero-eu">NVIDIA Inception</span>
+                    <span class="hero-eu">Tier-1 automobilių tiekėjo susidomėjimas</span>
+                    </div>
+                    <span class="hero-eyebrow">Gamintojams &amp; automatizavimo tiekėjams</span>
+                    <h1 class="hero-title">Dvirankiai robotai užduotims, kurios per lanksčios fiksuotai automatizacijai</h1>
                     <p class="hero-description">
-                        Modulinis humanoidinis robotas, sukurtas specialiai tyrimams. Apmokykite VLA politikas, rinkite teleoperavimo duomenis, patikrinkite simuliacijoje, įdiekite į aparatinę įrangą — viskas paruošta iškart iš dėžės.
+                        Stacionarus dviejų rankų robotas, kuris mokosi pramoninių užduočių iš demonstracijų. Pirmasis taikymas — funkcinis testavimas gamybos linijos pabaigoje automobilių pramonėje.
                     </p>
                     <div class="hero-audience">
-                        <span class="audience-tag primary">Tyrimų laboratorijos</span>
-                        <span class="audience-tag primary">Technikos universitetai</span>
+                        <span class="audience-tag primary">Automobilių pramonė</span>
+                        <span class="audience-tag primary">Elektronika</span>
                         <span class="audience-tag primary">Gamyba</span>
-                        <span class="audience-tag primary">Pramogos</span>
                         <span class="audience-tag">Automatizavimo tiekėjai</span>
-                        <span class="audience-tag">Startuoliai</span>
-                        <span class="audience-tag">DIY kūrėjai</span>
+                        <span class="audience-tag">Tyrimų laboratorijos</span>
                     </div>
                     <div class="cta-group">
-                        <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
-                            Pirkti humanoidinį robotą
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                            </svg>
-                        </a>
-                        <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
+                        <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button">
                             Užsakyti skambutį
                             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </a>
+                        <a href="/lt/research/" class="cta-button secondary">
+                            Tyrimų laboratorijoms
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                             </svg>
                         </a>
                     </div>
                 </div>
 
                 <div class="cta-button-container">
-                    <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
-                        Pirkti humanoidinį robotą
-                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                        </svg>
-                    </a>
-                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
+                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button">
                         Užsakyti skambutį
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </a>
+                    <a href="/lt/research/" class="cta-button secondary">
+                        Tyrimų laboratorijoms
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                         </svg>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Sukurta šiuolaikiniams robotikos tyrimams -->
+        <!-- Traction -->
+        <section class="research-ready traction">
+            <div class="research-ready-container">
+                <h2 class="section-title">Bendradarbiavimas su pramone</h2>
+                <p class="section-subtitle">Kur šiandien esame su pramonės partneriais.</p>
+
+                <div class="research-grid traction-grid">
+                    <div class="research-card featured">
+                        <span class="research-icon">🤝</span>
+                        <h3>Tier-1 automobilių tiekėjo ketinimų protokolas (LOI)</h3>
+                        <p>Pasirašytas ketinimų protokolas (LOI) su Tier-1 automobilių pramonės tiekėju, įskaitant mokamą pilotinį projektą.</p>
+                    </div>
+                    <div class="research-card featured">
+                        <span class="research-icon">🏭</span>
+                        <h3>Vykdomas diegimo procesas</h3>
+                        <p>Europos gamykloje vykdomas galutinio linijos testavimo diegimo procesas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem -->
         <section class="research-ready">
             <div class="research-ready-container">
-                <div class="use-case-tabs">
-                    <a class="use-case-tab active" data-tab="research" href="/lt/" onclick="return showUseCase('research', this, event)">🔬 Tyrimų laboratorijos</a>
-                    <a class="use-case-tab" data-tab="manufacturing" href="/lt/manufacturing/" onclick="return showUseCase('manufacturing', this, event)">🏭 Gamyba</a>
-                    <a class="use-case-tab" data-tab="entertainment" href="/lt/entertainment/" onclick="return showUseCase('entertainment', this, event)">🎉 Pramogos</a>
-                </div>
+                <h2 class="section-title">Linijos pozicijos, kurioms nerandate darbuotojų</h2>
+                <p class="section-subtitle">Europos gamintojai neranda darbuotojų pasikartojančioms linijos pozicijoms — o esamos alternatyvos netinka lanksčioms užduotims.</p>
 
-                <div class="use-case-panel active" id="usecase-research">
-                <h2 class="section-title">Sukurta šiuolaikiniams robotikos tyrimams</h2>
-                <p class="section-subtitle">Viskas, ko jūsų laboratorijai reikia pradėti rinkti duomenis, apmokyti politikas ir vykdyti eksperimentus — pateikiama kartu su robotu.</p>
+                <div class="research-grid problem-grid">
+                    <div class="research-card">
+                        <span class="research-icon">👥</span>
+                        <h3>Trys pamainos, trys operatoriai</h3>
+                        <p>Viena stotis, dirbanti tris pamainas, reiškia tris operatorius — 70–200 tūkst. € darbo sąnaudų per metus, priklausomai nuo šalies. Ir būtent šioms pozicijoms sunkiausia rasti ir išlaikyti darbuotojus.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">🔩</span>
+                        <h3>Fiksuota automatizacija nėra lanksti</h3>
+                        <p>Individualios ląstelės negali dorotis su produktų įvairove be brangaus perderinimo. Kiekvienas produkto pakeitimas reiškia inžineriją, prastovas ir kapitalo investicijas.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">🚶</span>
+                        <h3>Universalūs humanoidai dar nepasirengę</h3>
+                        <p>Vaikštantys, viską gebantys humanoidai — dar daugelio metų klausimas, be to, jie brangūs. Lanksčioms linijos užduotims reikia sprendimo, kuris veikia jau šiandien.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution: Manipuliavimo stotis -->
+        <section class="research-ready">
+            <div class="research-ready-container">
+                <h2 class="section-title">Manipuliavimo stotis</h2>
+                <p class="section-subtitle">Dviejų rankų robotas ant fiksuotos bazės arba motorizuotos linijinės ašies. Dalys atkeliauja į stotį — be kojų ir be navigacijos, sąmoningai: taip robotas išlieka įperkamas, patikimas ir sertifikuojamas jau šiandien.</p>
 
                 <div class="research-grid">
                     <div class="research-card featured">
-                        <span class="research-icon">📷</span>
-                        <h3>VLA optimizuotas regėjimas</h3>
-                        <p>Riešo kameros su reguliuojamu tvirtinimo kampu — idealiai tinka Pi0.5 ir kitiems VLA modeliams. Be to, ant galvos sumontuotas stereo regėjimas visos scenos suvokimui.</p>
-                        <span class="vla-tag">Pi0.5 · SmolVLA · ACT</span>
+                        <span class="research-icon">🔧</span>
+                        <h3>Galutinis linijos testavimas</h3>
+                        <p>Įrenginių įdėjimas, stalčių valdymas ir rūšiavimas pagal testo rezultatą — funkcinis testavimas gamybos linijos pabaigoje.</p>
+                        <span class="vla-tag">Pagrindinis taikymas</span>
                     </div>
+                    <div class="research-card">
+                        <span class="research-icon">📦</span>
+                        <h3>Komplektavimas &amp; pakavimas</h3>
+                        <p>Rinkite komplektus ir pakuokite įvairius produktus dviem koordinuotomis rankomis — tai užduotys, su kuriomis vienos rankos ląstelės sunkiai susidoroja.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">⚙️</span>
+                        <h3>Staklių aptarnavimas</h3>
+                        <p>Pakraukite ir iškraukite stakles, presus ir testavimo įtaisus — stabiliai, ciklas po ciklo, pamaina po pamainos.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">🗂️</span>
+                        <h3>Rūšiavimas</h3>
+                        <p>Rūšiuokite dalis ir produktus pagal tipą, orientaciją ar patikros rezultatą — vadovaujantis regėjimu, o ne tvirtinimo įtaisais.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="research-card featured">
+        <!-- How It Works -->
+        <section class="research-ready">
+            <div class="research-ready-container">
+                <h2 class="section-title">Apmokomas demonstracijomis, o ne programuojamas</h2>
+                <p class="section-subtitle">Autonominis veikimas apmokomas kiekvienai užduočiai pilotinio projekto metu — per duomenų procesą, o ne mėnesius trunkantį individualų programavimą.</p>
+
+                <div class="research-grid how-grid">
+                    <div class="research-card">
+                        <span class="research-icon">🥽</span>
+                        <h3>1 · Demonstracija</h3>
+                        <p>Operatoriai per VR teleoperuoja robotą per visą užduotį — robotikos žinių iš jūsų pusės nereikia.</p>
+                    </div>
+                    <div class="research-card">
                         <span class="research-icon">🧠</span>
-                        <h3>Paruošta apmokymui</h3>
-                        <p>Iš anksto sukonfigūruota šiuolaikiniams ML procesams. Pradėkite rinkti demonstracijas ir apmokyti politikas jau pirmą dieną — integravimo darbų nereikia.</p>
+                        <h3>2 · Apmokymas</h3>
+                        <p>Įrašytos demonstracijos apmoko VLA (regos kalbos veiksmo) politikas būtent tai užduočiai ir stočiai.</p>
                     </div>
-
-                    <div class="research-card featured">
-                        <span class="research-icon">🎮</span>
-                        <h3>Teleoperavimo procesas</h3>
-                        <p>Teleoperavimo palaikymas iškart iš dėžės demonstracijų įrašymui ir nuotoliniam valdymui. Iškart prijunkite prie savo imitacinio mokymosi darbo srauto.</p>
-                    </div>
-
-                    <div class="research-card featured">
-                        <span class="research-icon">📐</span>
-                        <h3>URDF simuliatoriams</h3>
-                        <p>Pridedamas pilnas URDF roboto modelis. Tiesioginis suderinamumas su MuJoCo, Isaac Sim, PyBullet, Gazebo ir likusiu standartiniu simuliacijų rinkiniu.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">🖥️</span>
-                        <h3>Pridedamas simuliatorius</h3>
-                        <p>Simuliatorius pateikiamas su kiekvienu robotu. Kurkite ir patikrinkite simuliacijoje prieš liesdami aparatinę įrangą.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">💻</span>
-                        <h3>SDK</h3>
-                        <p>Pilnas SDK valdymui, suvokimui ir integravimui. Pirmiausia Python ir gerai dokumentuotas.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">🦾</span>
-                        <h3>Įskaičiuoti griebtuvai</h3>
-                        <p>Manipuliatoriai pateikiami su platforma. Nereikia atskirai ieškoti galinių įrankių.</p>
-                    </div>
-
                     <div class="research-card">
                         <span class="research-icon">🤖</span>
-                        <h3>Modulinė aparatinė įranga</h3>
-                        <p>Keiskite rankas, griebtuvus ir bazės modulius. Pritaikykite platformą savo tyrimams, o ne atvirkščiai.</p>
+                        <h3>3 · Vykdymas</h3>
+                        <p>Apmokyta politika vykdo užduotį stotyje ir tobulėja su kiekvienu diegimu.</p>
                     </div>
-
                     <div class="research-card">
-                        <span class="research-icon">📼</span>
-                        <h3>Pavyzdiniai scenarijai</h3>
-                        <p>Iš anksto įrašyti judesiai ir vykdymo scenarijų pavyzdžiai. Patikrinkite rinkinį ant savo stalo per kelias minutes.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">📚</span>
-                        <h3>Išsami dokumentacija</h3>
-                        <p>Išsami dokumentacija apie aparatinę įrangą, programinę įrangą, kalibravimą ir integravimo procesus.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">💬</span>
-                        <h3>Tiesioginė inžinerinė pagalba</h3>
-                        <p>Tiesioginis ryšys su mūsų komanda — nuo išpakavimo iki įdiegimo, eksperimentų ir publikavimo.</p>
+                        <span class="research-icon">📈</span>
+                        <h3>4 · Kaupimas</h3>
+                        <p>Kiekvienas diegimas papildo nuosavą manipuliavimo duomenų rinkinį — kiekviena nauja užduotis pradedama nuo aukštesnio taško.</p>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <h3 class="panel-why-title">Kodėl laboratorijos renkasi Prometheus</h3>
-                <p class="panel-why-subtitle">Nėra standartinio humanoido, sukurto tyrimams. Komandos sugaišta mėnesius derindamos aparatinę įrangą, kameras, simuliaciją ir ML įrankius, kol gali atlikti bent vieną eksperimentą. Prometheus pateikia visą šį rinkinį paruoštą naudoti.</p>
+        <!-- Why Prometheus -->
+        <section class="research-ready">
+            <div class="research-ready-container">
+                <h2 class="section-title">Kodėl gamintojai renkasi Prometheus</h2>
+                <p class="section-subtitle">Sunkiai užpildomos linijos pozicijos lieka padengtos — neperstatant linijos aplink nelanksčią ląstelę.</p>
+
                 <div class="research-grid">
                     <div class="research-card featured">
-                        <span class="research-icon">🎓</span>
-                        <h3>Pirmiausia tyrimams, o ne demonstracinis vienetas</h3>
-                        <p>Atvira architektūra, pilnas SDK, URDF ir pridedamas simuliatorius — sukurta atsižvelgiant į tai, kaip iš tikrųjų vyksta robotikos tyrimai.</p>
+                        <span class="research-icon">👷</span>
+                        <h3>Užpildo sunkiai užpildomas darbo vietas</h3>
+                        <p>Padenkite pasikartojančias, didelės kaitos užduotis, kurių žmonės nenori — be darbuotojų skaičiaus didinimo ar kovos su kaita.</p>
                     </div>
                     <div class="research-card featured">
-                        <span class="research-icon">⏱️</span>
-                        <h3>Praleiskite mėnesius trunkantį integravimą</h3>
-                        <p>Kameros, teleoperavimas ir ML procesai yra iš anksto sukonfigūruoti. Pradėkite rinkti demonstracijas ir apmokyti politikas jau pirmą dieną.</p>
+                        <span class="research-icon">💸</span>
+                        <h3>Pigiau nei individuali ląstelė</h3>
+                        <p>Vienas lankstus humanoidas pakeičia individualią fiksuotą automatizaciją, kurią brangu projektuoti, statyti ir prižiūrėti.</p>
                     </div>
                     <div class="research-card featured">
-                        <span class="research-icon">🧩</span>
-                        <h3>Pritaikomas &amp; modulinis</h3>
-                        <p>Keiskite rankas, griebtuvus ir bazės modulius, rašykite savo valdiklius, plėskite SDK. Pritaikykite platformą savo darbui.</p>
+                        <span class="research-icon">♻️</span>
+                        <h3>Iš naujo apmokomas įvairioms užduotims</h3>
+                        <p>Naujas produktas ar užduotis reiškia naujas demonstracijas, o ne naują technologinę įrangą. Nėra fiksuotos įrangos, kurią reikėtų perstatyti.</p>
                     </div>
                     <div class="research-card featured">
-                        <span class="research-icon">✨</span>
-                        <h3>Individualūs sprendimai</h3>
-                        <p>Specializuoti jutiklių paketai, alternatyvūs griebtuvai, individuali kinematika ir programinės įrangos integracijos specializuotam laboratorijos darbui.</p>
+                        <span class="research-icon">🇪🇺</span>
+                        <h3>Įsikūrę ES</h3>
+                        <p>Aparatinė įranga, inžinerija, pagalba ir duomenys lieka Europoje — jūsų gamybos linija nepriklauso nuo užjūrio tiekėjų.</p>
                     </div>
-                </div>
-                </div>
-
-                <div class="use-case-panel" id="usecase-manufacturing">
-                    <h2 class="section-title">Pastatykite humanoidą ant savo linijos</h2>
-                    <p class="section-subtitle">Galutinis linijos testavimas, Pick &amp; Place ir pasikartojančios linijos užduotys, kurioms verčiau neskirti darbuotojų — atlieka lankstus humanoidas, kuris perskirstomas per kelias minutes.</p>
-
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">🔧</span>
-                            <h3>Galutinis linijos testavimas</h3>
-                            <p>Atlikite funkcines ir kokybės patikras savo gamybos linijos pabaigoje — nuosekliai, pakartojamai ir nenuilstamai kiekvienoje pamainoje.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">📦</span>
-                            <h3>Pick &amp; Place</h3>
-                            <p>Patikimas pick-and-place dalims, pakuotėms ir komplektavimui. Tvarkykite įvairius objektus naudodami pridedamus griebtuvus.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">🔁</span>
-                            <h3>Pasikartojančios linijos užduotys</h3>
-                            <p>Perimkite nuobodžius, pasikartojančius darbus — staklių aptarnavimą, rūšiavimą, surinkimo pagalbą — ir atlaisvinkite savo žmones vertingesniam darbui.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🧠</span>
-                            <h3>Išmoksta užduotį</h3>
-                            <p>Veikia su Pi0 — lengvai apmokomu VLA modeliu. Parodykite jam užduotį ir jis apibendrina, prisitaikydamas prie variacijų, o ne sustodamas dėl jų. Jokio griežto scenarijaus rašymo.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🛠️</span>
-                            <h3>Greitas perderinimas</h3>
-                            <p>Perkonfigūruokite naujai užduočiai ar produkto pakeitimui per kelias minutes, o ne savaites. Vienas robotas, daug darbų.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">👁️</span>
-                            <h3>Valdoma regėjimu</h3>
-                            <p>Stereo ir riešo kameros dalių aptikimui, sulygiavimui ir vizualiai patikrai būtent ten, kur vyksta darbas.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🦾</span>
-                            <h3>Moduliniai griebtuvai</h3>
-                            <p>Keiskite galinius įrankius pagal dalį. Manipuliatoriai pateikiami su platforma, paruošti jūsų linijai.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🔌</span>
-                            <h3>Lengvas integravimas</h3>
-                            <p>Paprasta REST API prisijungia prie jūsų esamo linijos valdymo ir darbo srautų — jokio nuosavybinio užrakto.</p>
-                        </div>
-                    </div>
-
-                    <h3 class="panel-why-title">Kodėl gamintojai renkasi Prometheus</h3>
-                    <p class="panel-why-subtitle">Nuobodžius, pasikartojančius linijos darbus sunkiausia užpildyti ir išlaikyti darbuotojus — tačiau konkrečioms užduotims skirti robotai verčia perstatyti liniją pagal juos. Prometheus vietoj to sklandžiai integruojasi į jūsų esamą procesą, dirba tris pamainas per dieną ir niekada nesuserga.</p>
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">👷</span>
-                            <h3>Užpildo sunkiai užpildomas darbo vietas</h3>
-                            <p>Padenkite pasikartojančias, didelės kaitos užduotis, kurių žmonės nenori — be darbuotojų skaičiaus didinimo ar kovos su kaita.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">💸</span>
-                            <h3>Pigiau nei individuali ląstelė</h3>
-                            <p>Vienas lankstus humanoidas pakeičia individualią fiksuotą automatizaciją, kurią brangu projektuoti, statyti ir prižiūrėti.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">♻️</span>
-                            <h3>Perkonfigūruojama per kelias minutes</h3>
-                            <p>Naujas produktas ar užduotis nebereiškia savaičių trunkančio perderinimo. Iš naujo apmokykite ir pakartotinai panaudokite tą patį robotą visoje linijoje.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">📈</span>
-                            <h3>Plečiasi pagal paklausą</h3>
-                            <p>Pridėkite vienetų augant apimtims ir perkelkite juos prie kliūties. Jokios fiksuotos infrastruktūros, kurią reikėtų išardyti ir perstatyti.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="use-case-panel" id="usecase-entertainment">
-                    <h2 class="section-title">Humanoidas, kuris pavergia publiką</h2>
-                    <p class="section-subtitle">Pramogų parkams, viešbučiams, muziejams ir renginiams — aprenkite jį, valdykite iš VR, atkurkite scenarijus ir leiskite jam pasitikti, pristatyti ir paaiškinti.</p>
-
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">👗</span>
-                            <h3>Aprenkite jį</h3>
-                            <p>Aprenkite robotą individualiais kostiumais ir prekės ženklo apranga, atitinkančia jūsų erdvę, talismaną ar renginio temą.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">🥽</span>
-                            <h3>VR teleoperavimas</h3>
-                            <p>Valdykite robotą tiesiogiai iš VR su Meta Quest 3S — mojuokite, gestikuliuokite ir bendraukite su svečiais realiu laiku.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">🎬</span>
-                            <h3>Įrašykite &amp; atkurkite</h3>
-                            <p>Užfiksuokite pasirodymą vieną kartą ir atkurkite jį pagal poreikį — pasveikinimus, šokius ir scenarijus, pasirodymas po pasirodymo.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🗣️</span>
-                            <h3>Pristatykite &amp; paaiškinkite</h3>
-                            <p>Leiskite jam vesti renginį ir aiškinti — gidų ekskursijas, produktų demonstracijas ir ekspozicijas, kurios pravesta lankytojus per patirtį.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">👋</span>
-                            <h3>Pasitikite svečius</h3>
-                            <p>Draugiškas humanoidinis pasveikinimas parkų įėjimams, viešbučių fojė ir parodų salėms.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">📡</span>
-                            <h3>Nuotolinis valdymas</h3>
-                            <p>Valdykite jį nuotoliniu būdu iš bet kur — vykdykite sąveikas ir pasirodymus be darbuotojų salėje.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🏨</span>
-                            <h3>Sukurta renginių erdvėms</h3>
-                            <p>Pramogų parkai, viešbučiai, muziejai ir renginiai — dėmesį prikaustanti atrakcija, kuri išlaiko minias susidomėjusias.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🤖</span>
-                            <h3>Visada atitinka prekės ženklą</h3>
-                            <p>Nuoseklūs, pakartojami pasirodymai kiekvieną kartą — jūsų atpažįstamas personažas, patikimai pateikiamas.</p>
-                        </div>
-                    </div>
-
-                    <h3 class="panel-why-title">Kodėl renginių erdvės renkasi Prometheus</h3>
-                    <p class="panel-why-subtitle">Atrakcijos klesti arba žlunga dėl wow efekto. Svečiai jau matė ekranus ir animatronikos figūras — tikras, interaktyvus humanoidas yra tai, ką jie fotografuoja, dalijasi ir dėl ko sugrįžta. Tai pareiškimas, kad jūsų erdvė yra pažangiausia rinkoje.</p>
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">⭐</span>
-                            <h3>Minios magnetas</h3>
-                            <p>Tikras humanoidas pritraukia minias, nuotraukas ir socialinį dėmesį, su kuriuo ekranas ar animatronika tiesiog negali lygintis.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">🏆</span>
-                            <h3>Akimirksniu prestižas</h3>
-                            <p>Parodykite visiems, kad valdote pažangiausią, į ateitį orientuotą erdvę rinkoje — ir pasirūpinkite, kad visi tai pamatytų.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">🎭</span>
-                            <h3>Vienas atlikėjas, kiekvienas pasirodymas</h3>
-                            <p>Įrašykite scenarijus vieną kartą ir nepriekaištingai atkurkite juos visą dieną — be pertraukų, be planavimo, be darbuotojų šiam vaidmeniui.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">🌍</span>
-                            <h3>Valdykite iš bet kur</h3>
-                            <p>Valdykite jį tiesiogiai VR su Meta Quest 3S, kad pasitiktumėte ir bendrautumėte su svečiais realiu laiku — net nuotoliniu būdu.</p>
-                        </div>
+                    <div class="research-card featured">
+                        <span class="research-icon">🛡️</span>
+                        <h3>Apibrėžtas sertifikavimo kelias</h3>
+                        <p>Sukurta CE sertifikavimui pagal ISO 10218-1 ir ISO 10218-2 — pramoninių robotų standartus.</p>
                     </div>
                 </div>
             </div>
@@ -1756,7 +1598,7 @@
         <section class="specifications">
             <div class="specs-container">
                 <h2 class="section-title">Techninės specifikacijos</h2>
-                <p class="section-subtitle">Viršutinė kūno dalis ant trikojo — tinka tyrimams ant stalo</p>
+                <p class="section-subtitle">Dviejų rankų viršutinė kūno dalis — manipuliavimo stoties konfigūracija</p>
                 
                 <div class="specs-content">
                     <div class="specs-table-wrapper">
@@ -1767,8 +1609,12 @@
                                     <td class="spec-value">120Nm</td>
                                 </tr>
                                 <tr>
+                                    <td class="spec-label">Diegimo parinktys</td>
+                                    <td class="spec-value">Fiksuota bazė / motorizuota linijinė ašis (bėgis)</td>
+                                </tr>
+                                <tr>
                                     <td class="spec-label">Aukštis</td>
-                                    <td class="spec-value">160cm on tripod (172cm on legs/wheels)</td>
+                                    <td class="spec-value">160 cm ant trikojo</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Plotis</td>
@@ -1780,7 +1626,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Laisvės laipsniai</td>
-                                    <td class="spec-value">19 (29 with legs; 43 with hands; 53 with legs and hands)</td>
+                                    <td class="spec-value">19 (43 su plaštakomis)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Kameros</td>
@@ -1827,19 +1673,6 @@
                             <div class="robot-glow"></div>
                             <img src="/robot.png" alt="Prometheus Humanoid Robot" class="robot-img">
                         </div>
-                        <h3 class="modules-title">Galimi moduliai</h3>
-                        <div class="modules-grid">
-                            <div class="module-card">
-                                <div class="module-icon">🦿</div>
-                                <h4>Kojų modulis</h4>
-                                <p>Dvikojė judėjimo sistema, užtikrinanti geresnį mobilumą ir į žmogų panašias judėjimo galimybes.</p>
-                            </div>
-                            <div class="module-card">
-                                <div class="module-icon">🛞</div>
-                                <h4>Ratų modulis</h4>
-                                <p>Ratinė bazė efektyviai navigacijai ir stabili platforma įvairioms paskirtims.</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -1854,49 +1687,6 @@
             </div>
         </section>
 
-        <!-- Manipulators Section -->
-        <section class="manipulators">
-            <div class="manipulators-container">
-                <h2 class="section-title">Manipuliatorių parinktys</h2>
-                <p class="section-subtitle">Pasirinkite tinkamą galinį įrankį savo tyrimams</p>
-                
-                <div class="manipulators-grid">
-                    <div class="manipulator-card">
-                        <div class="manipulator-image">
-                            <img src="/claw.png" alt="Type A - 2 pirštų griebtuvas">
-                        </div>
-                        <div class="manipulator-content">
-                            <h3>Type A</h3>
-                            <h4>2 pirštų griebtuvas</h4>
-                            <p>Paprastas suspaudimas / tikslus užsidarymas. Idealiai tinka subtilioms operacijoms ir tikslioms manipuliavimo užduotims.</p>
-                        </div>
-                    </div>
-
-                    <div class="manipulator-card">
-                        <div class="manipulator-image">
-                            <img src="/for_totes.png" alt="Type B - 4-finger claw">
-                        </div>
-                        <div class="manipulator-content">
-                            <h3>Type B</h3>
-                            <h4>4 pirštų „letena“ (poriniai pirštai)</h4>
-                            <p>Patikimam dėžių ir konteinerių griebimui. Sukurta sandėlių ir logistikos taikymams.</p>
-                        </div>
-                    </div>
-
-                    <div class="manipulator-card">
-                        <div class="manipulator-image">
-                            <img src="/hand.png" alt="Type X - Advanced manipulator">
-                        </div>
-                        <div class="manipulator-content">
-                            <h3>Type X</h3>
-                            <h4>Pažangūs manipuliatoriai</h4>
-                            <p>Parinktys apima riešo kameras su reguliuojamu tvirtinimo kampu (optimizuotos Pi0.5 ir kitiems VLA modeliams), 5 pirštų rankas ir kitus individualius variantus.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- FAQ Section -->
         <section class="faq">
             <div class="faq-container">
@@ -1904,24 +1694,16 @@
                 <p class="section-subtitle">Everything you need to know before getting started</p>
                 <div class="faq-list">
                     <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Kokius dirbtinio intelekto modelius palaiko robotas?</button>
-                        <div class="faq-a"><p>Iš karto palaikomi šiuolaikiniai regos kalbos veiksmo ir imitacinio mokymosi metodai, įskaitant Pi0, Pi0.5, ACT ir SmolVLA. Surinkite teleoperavimo duomenis, tiksliai suderinkite modelį naudodami vartotojiško lygio GPU ir įdiekite per SDK.</p></div>
+                        <button class="faq-q" onclick="toggleFaq(this)">Ar robotas yra saugus ir sertifikuojamas naudoti gamykloje?</button>
+                        <div class="faq-a"><p>Jis sukurtas CE sertifikavimui pagal ISO 10218-1 ir ISO 10218-2 — pramoninių robotų standartus. Diegimo saugos konfigūracija — apsaugos, greičio ribos ir blokuotės — apibrėžiama kiekvienai vietai atskirai rengiant pilotinį projektą.</p></div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Kas pridedama prie roboto?</button>
-                        <div class="faq-a"><p>Kiekvienas įrenginys tiekiamas su pilnu SDK ir paprastu REST API, URDF modeliu, integruotu simuliatoriumi, ant galvos tvirtinamomis stereo bei riešo kameromis, griebtuvais ir tiesiogine inžinerine pagalba. Teleoperavimo procesas veikia jau pirmąją dieną.</p></div>
+                        <button class="faq-q" onclick="toggleFaq(this)">Ar jis integruojasi su mūsų esama linija?</button>
+                        <div class="faq-a"><p>Taip. Stotis veikia greta jūsų esamų stočių ir darbo srautų — dalys atkeliauja pas robotą, todėl linijos perstatyti nereikia. Paprasta REST API sujungia ją su jūsų linijos valdymu.</p></div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Ar galiu pats rinkti teleoperavimo duomenis ir mokyti modelius?</button>
-                        <div class="faq-a"><p>Taip. Valdykite teleoperavimą per VR su Meta Quest 3S arba vedlio sekėjo valdikliu, įrašykite demonstracijas standartiniu duomenų rinkinio formatu ir mokykite ACT arba tiksliai suderinkite regos kalbos veiksmo modelį naudodami vieną vartotojiško lygio GPU.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Kokiu skaičiavimo įrenginiu veikia robotas?</button>
-                        <div class="faq-a"><p>Įmontuotas skaičiavimo įrenginys yra Raspberry Pi 5 arba NVIDIA Jetson. Lengvi metodai veikia pačiame įrenginyje, o sudėtingesni regos kalbos veiksmo modeliai gali veikti prijungtos darbo stoties GPU ir perduoti komandas per REST API.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Ar robotas yra modulinis?</button>
-                        <div class="faq-a"><p>Taip. Galite keisti rankas, griebtuvus (su 2 pirštais, 4 pirštais arba pažangias penkių pirštų plaštakas) ir bazinius modulius, tokius kaip kojos ar ratai, bei pritaikyti platformą savo užduočiai, o ne atvirkščiai.</p></div>
+                        <button class="faq-q" onclick="toggleFaq(this)">Kaip robotas išmoksta naują užduotį?</button>
+                        <div class="faq-a"><p>Operatoriai teleoperuoja robotą atlikdami užduotį, kad įrašytų demonstracijas, o iš šių demonstracijų apmokomos regos kalbos veiksmo politikos, tokios kaip Pi0 ir ACT. Autonominis veikimas apmokomas kiekvienai užduočiai pilotinio projekto metu.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Kur pagamintas robotas?</button>
@@ -1934,16 +1716,10 @@
         <!-- Bottom CTA Section -->
         <section style="padding: 6rem 3rem; text-align: center; background: linear-gradient(180deg, #0f0f0f 0%, var(--color-bg) 100%); border-top: 1px solid var(--color-border);">
             <div style="max-width: 800px; margin: 0 auto;">
-                <h2 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.01em;">Pasiruošę leisti Prometheus dirbti?</h2>
-                <p style="color: var(--color-text-secondary); font-size: 1.2rem; margin-bottom: 3rem; line-height: 1.7;">Nesvarbu, ar tai tyrimų laboratorija, gamybos linija, ar renginių erdvė — užsakykite vienetą arba užsisakykite skambutį aptarti savo konfigūraciją.</p>
+                <h2 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.01em;">Pastatykite Prometheus ant savo linijos</h2>
+                <p style="color: var(--color-text-secondary); font-size: 1.2rem; margin-bottom: 3rem; line-height: 1.7;">Užsisakykite skambutį ir apibrėžkime galutinio linijos testavimo pilotinį projektą jūsų gamykloje — kartu peržvelgsime jūsų stotis, užduotis ir integravimo apribojimus.</p>
                 <div class="cta-group" style="justify-content: center;">
-                    <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
-                        Pirkti modulinę platformą
-                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                        </svg>
-                    </a>
-                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
+                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button">
                         Užsakyti skambutį
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
@@ -1978,12 +1754,13 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h4>Prometheus Robotics</h4>
-                <p>Modulinė humanoidų platforma tyrimams, pramonei ir pramogoms. Sukurta laboratorijoms, gamybos cechams ir renginių erdvėms, kurios formuoja naujos kartos intelektualius robotus.</p>
+                <p>Dvirankiai robotai pramonės automatizacijai — galutinis linijos testavimas, komplektavimas ir staklių aptarnavimas — bei modulinė humanoidų platforma robotikos tyrimams. Suprojektuota ir pagaminta ES.</p>
             </div>
             <div class="footer-section">
                 <h4>Navigacija</h4>
                 <ul class="footer-links">
-                    <li><a onclick="showPage('home')">Pradžia</a></li>
+                    <li><a href="/lt/">Pradžia</a></li>
+                    <li><a href="/lt/research/">Tyrimai</a></li>
                     <li><a href="/blog/">Blog</a></li>
                     <li><a onclick="showPage('contacts')">Kontaktai</a></li>
                     <li><a href="https://www.linkedin.com/in/ilya-pavlenkov/recent-activity/all/" target="_blank">LinkedIn</a></li>
@@ -1992,13 +1769,13 @@
             <div class="footer-section">
                 <h4>Pradėti</h4>
                 <ul class="footer-links">
-                    <li><a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank">Pirkti robotą</a></li>
                     <li><a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer">Užsakyti skambutį</a></li>
+                    <li><a href="/demo/">Demonstracinis vaizdo įrašas</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Prometheus Engineering Kft. Visos teisės saugomos. Made in EU <svg class="eu-flag-inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810 540" role="img" aria-label="European Union flag"><rect width="810" height="540" fill="#003399"/><g fill="#FFCC00"><circle cx="405" cy="105" r="15"/><circle cx="505" cy="140" r="15"/><circle cx="560" cy="220" r="15"/><circle cx="560" cy="320" r="15"/><circle cx="505" cy="400" r="15"/><circle cx="405" cy="435" r="15"/><circle cx="305" cy="400" r="15"/><circle cx="250" cy="320" r="15"/><circle cx="250" cy="220" r="15"/><circle cx="305" cy="140" r="15"/><circle cx="405" cy="175" r="15"/><circle cx="405" cy="365" r="15"/></g></svg></p>
+            <p>&copy; 2026 Prometheus Engineering Kft. Visos teisės saugomos. Made in EU <svg class="eu-flag-inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810 540" role="img" aria-label="European Union flag"><rect width="810" height="540" fill="#003399"/><g fill="#FFCC00"><circle cx="405" cy="105" r="15"/><circle cx="505" cy="140" r="15"/><circle cx="560" cy="220" r="15"/><circle cx="560" cy="320" r="15"/><circle cx="505" cy="400" r="15"/><circle cx="405" cy="435" r="15"/><circle cx="305" cy="400" r="15"/><circle cx="250" cy="320" r="15"/><circle cx="250" cy="220" r="15"/><circle cx="305" cy="140" r="15"/><circle cx="405" cy="175" r="15"/><circle cx="405" cy="365" r="15"/></g></svg></p>
         </div>
     </footer>
 
@@ -2161,16 +1938,10 @@
             /* LANGS:END */
         ];
 
-        function currentTabPath() {
-            const p = location.pathname;
-            if (p.indexOf('manufacturing') !== -1) return 'manufacturing/';
-            if (p.indexOf('entertainment') !== -1) return 'entertainment/';
-            return '';
-        }
-
         function langHref(code) {
             const base = code === 'en' ? '' : '/' + code;
-            return (base + '/' + currentTabPath()) || '/';
+            const page = location.pathname.indexOf('/research') !== -1 ? 'research/' : '';
+            return (base + '/' + page) || '/';
         }
 
         function initLangSwitcher() {
@@ -2206,35 +1977,9 @@
         }
         initLangSwitcher();
 
-        function useCaseUrl(id) {
-            return window.LANG_BASE + (id === 'research' ? '/' : '/' + id + '/');
-        }
-
-        function showUseCase(id, btn, event) {
-            if (event) event.preventDefault();
-            document.querySelectorAll('.use-case-panel').forEach(p => p.classList.remove('active'));
-            document.querySelectorAll('.use-case-tab').forEach(t => t.classList.remove('active'));
-            const panel = document.getElementById('usecase-' + id);
-            if (panel) panel.classList.add('active');
-            if (!btn) btn = document.querySelector('.use-case-tab[data-tab="' + id + '"]');
-            if (btn) btn.classList.add('active');
-            if (event && window.history && history.pushState) {
-                history.pushState({ tab: id }, '', useCaseUrl(id));
-            }
-            return false;
-        }
-
         function toggleFaq(btn) {
             btn.parentElement.classList.toggle('open');
         }
-
-        window.addEventListener('popstate', function () {
-            const path = location.pathname;
-            let id = 'research';
-            if (path.indexOf('manufacturing') !== -1) id = 'manufacturing';
-            else if (path.indexOf('entertainment') !== -1) id = 'entertainment';
-            showUseCase(id, null, null);
-        });
 
         (function () {
             const navEl = document.querySelector('nav');

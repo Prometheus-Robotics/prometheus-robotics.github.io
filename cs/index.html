@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SEO:START -->
-    <title>Prometheus Robotics — humanoidní platforma pro výzkumné laboratoře</title>
-    <meta name="description" content="Modulární humanoidní robot vytvořený pro robotický výzkum: kompletní SDK, stereo i zápěstní kamery, URDF, dodávaný simulátor a podpora VLA modelů jako Pi0 a ACT.">
+    <title>Prometheus Robotics — bimanuální roboti pro průmyslovou automatizaci | koncové testování linky</title>
+    <meta name="description" content="Stacionární dvouramenný robot, který se učí průmyslové úkoly z ukázek: koncové funkční testování linky, kitting a obsluha strojů. Navrženo a vyrobeno v EU.">
     <link rel="canonical" href="https://meetprometheus.com/cs/">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://meetprometheus.com/cs/">
-    <meta property="og:title" content="Prometheus Robotics — humanoidní platforma pro výzkumné laboratoře">
-    <meta property="og:description" content="Modulární humanoidní robot vytvořený pro robotický výzkum: kompletní SDK, stereo i zápěstní kamery, URDF, dodávaný simulátor a podpora VLA modelů jako Pi0 a ACT.">
+    <meta property="og:title" content="Prometheus Robotics — bimanuální roboti pro průmyslovou automatizaci | koncové testování linky">
+    <meta property="og:description" content="Stacionární dvouramenný robot, který se učí průmyslové úkoly z ukázek: koncové funkční testování linky, kitting a obsluha strojů. Navrženo a vyrobeno v EU.">
     <meta property="og:locale" content="cs_CZ">
     <!-- SEO:END -->
     <meta name="theme-color" content="#0a0a0a">
@@ -371,6 +371,13 @@
             flex-shrink: 0;
         }
 
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
         .hero-eyebrow {
             font-size: 0.85rem;
             font-weight: 600;
@@ -571,7 +578,7 @@
 
         .cta-button-container { display: none; }
 
-        /* Research Ready Section */
+        /* Výzkum Ready Section */
         .research-ready {
             padding: 8rem 3rem;
             background: linear-gradient(180deg, var(--color-bg) 0%, #0f0f0f 100%);
@@ -583,47 +590,9 @@
             margin: 0 auto;
         }
 
-        .use-case-tabs {
-            display: flex;
+        .traction-grid {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 440px));
             justify-content: center;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-bottom: 3.5rem;
-        }
-
-        .use-case-tab {
-            font-family: var(--font-body);
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 0.01em;
-            color: var(--color-text-secondary);
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--color-border);
-            border-radius: 50px;
-            padding: 0.85rem 1.9rem;
-            cursor: pointer;
-            display: inline-block;
-            text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .use-case-tab:hover {
-            color: var(--color-text);
-            border-color: rgba(59, 130, 246, 0.4);
-        }
-
-        .use-case-tab.active {
-            color: #ffffff;
-            background: var(--color-accent);
-            border-color: var(--color-accent);
-            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3);
-        }
-
-        .use-case-panel { display: none; }
-
-        .use-case-panel.active {
-            display: block;
-            animation: tabFade 0.4s ease;
         }
 
         .panel-why-title {
@@ -642,11 +611,6 @@
             max-width: 720px;
             margin: 0 auto 2.5rem;
             line-height: 1.6;
-        }
-
-        @keyframes tabFade {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         .research-grid {
@@ -1394,7 +1358,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Které modely AI robot podporuje?", "acceptedAnswer": {"@type": "Answer", "text": "Ihned po vybalení podporuje moderní postupy typu vision-language-action a imitační učení, včetně Pi0, Pi0.5, ACT a SmolVLA. Shromážděte data z teleoperace, dolaďte je na běžné spotřebitelské GPU a nasaďte prostřednictvím SDK."}}, {"@type": "Question", "name": "Co je součástí dodávky robota?", "acceptedAnswer": {"@type": "Answer", "text": "Každá jednotka se dodává s kompletním SDK a jednoduchým REST API, modelem URDF, integrovaným simulátorem, stereokamerou umístěnou na hlavě i kamerami na zápěstí, chapadly a přímou inženýrskou podporou. Pipeline pro teleoperaci funguje od prvního dne."}}, {"@type": "Question", "name": "Mohu sám shromažďovat data z teleoperace a trénovat vlastní postupy?", "acceptedAnswer": {"@type": "Answer", "text": "Ano. Ovládejte robota dálkově prostřednictvím VR se zařízením Meta Quest 3S nebo pomocí ovladače typu leader-follower, zaznamenávejte ukázky ve standardním formátu datové sady a trénujte ACT nebo dolaďte model vision-language-action na jediném spotřebitelském GPU."}}, {"@type": "Question", "name": "Na jakém výpočetním hardwaru robot běží?", "acceptedAnswer": {"@type": "Answer", "text": "Palubní výpočetní jednotkou je Raspberry Pi 5 nebo NVIDIA Jetson. Nenáročné postupy běží přímo na zařízení, zatímco náročnější modely vision-language-action mohou běžet na připojené pracovní stanici s GPU a přenášet příkazy přes REST API."}}, {"@type": "Question", "name": "Je robot modulární?", "acceptedAnswer": {"@type": "Answer", "text": "Ano. Můžete vyměnit ramena, chapadla (dvouprstá, čtyřprstá nebo pokročilé pětiprsté ruce) a základní moduly, jako jsou nohy či kola, a přizpůsobit platformu vašemu úkolu, nikoli naopak."}}, {"@type": "Question", "name": "Kde se robot vyrábí?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus je navržen a vyráběn v Evropské unii, což má význam pro evropské výzkumné laboratoře a společnosti, kterým záleží na původu dodavatelského řetězce, podpoře a datové suverenitě."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Je robot bezpečný a certifikovatelný pro provoz v továrně?", "acceptedAnswer": {"@type": "Answer", "text": "Je navržen pro certifikaci CE podle norem ISO 10218-1 a ISO 10218-2, standardů pro průmyslové roboty. Bezpečnostní konfigurace nasazení — ochranné kryty, omezení rychlosti a bezpečnostní blokády — se definuje pro každé pracoviště během přípravy pilotního projektu."}}, {"@type": "Question", "name": "Integruje se s naší stávající linkou?", "acceptedAnswer": {"@type": "Answer", "text": "Ano. Stanice pracuje vedle vašich stávajících stanic a workflow — díly přicházejí k robotu, takže není nutná žádná přestavba linky. Jednoduché REST API ji propojí s vaším řízením linky."}}, {"@type": "Question", "name": "Jak se robot učí nový úkol?", "acceptedAnswer": {"@type": "Answer", "text": "Operátoři provedou robota úkolem teleoperací a zaznamenají ukázky, z nichž se trénují vision-language-action politiky, jako jsou Pi0 a ACT. Autonomní provoz se trénuje pro každý úkol během pilotního projektu."}}, {"@type": "Question", "name": "Kde se robot vyrábí?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus je navržen a vyráběn v Evropské unii, což má význam pro evropské výzkumné laboratoře a společnosti, kterým záleží na původu dodavatelského řetězce, podpoře a datové suverenitě."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1407,10 +1371,10 @@
             PROMETHEUS&nbsp;&nbsp;ROBOTICS
         </div>
         <ul class="nav-links">
-            <li><a onclick="showPage('home')">Prometheus Robotics</a></li>
+            <li><a href="/cs/">Domů</a></li>
+            <li><a href="/cs/research/">Výzkum</a></li>
             <li><a href="/blog/">Blog</a></li>
             <li><a onclick="showPage('contacts')">Kontakty</a></li>
-            <li><a href="https://www.linkedin.com/in/ilya-pavlenkov/recent-activity/all/" target="_blank">LinkedIn</a></li>
         </ul>
         <div class="lang-switcher">
             <button class="lang-toggle" id="langToggle" aria-haspopup="true" aria-expanded="false" aria-label="Change language">
@@ -1431,322 +1395,200 @@
             </video>
             <div class="hero-container">
                 <div class="hero-content">
+                    <div class="hero-badges">
                     <span class="hero-eu">
                         <svg viewBox="0 0 810 540" aria-hidden="true"><rect width="810" height="540" fill="#003399"/><g fill="#FFCC00"><circle cx="405" cy="105" r="15"/><circle cx="505" cy="140" r="15"/><circle cx="560" cy="220" r="15"/><circle cx="560" cy="320" r="15"/><circle cx="505" cy="400" r="15"/><circle cx="405" cy="435" r="15"/><circle cx="305" cy="400" r="15"/><circle cx="250" cy="320" r="15"/><circle cx="250" cy="220" r="15"/><circle cx="305" cy="140" r="15"/><circle cx="405" cy="175" r="15"/><circle cx="405" cy="365" r="15"/></g></svg>
                         Designed &amp; made in the EU
                     </span>
-                    <span class="hero-eyebrow">Pro výzkumné laboratoře &amp; technické univerzity</span>
-                    <h1 class="hero-title">Humanoidní platforma pro robotický výzkum</h1>
+                    <span class="hero-eu">NVIDIA Inception</span>
+                    <span class="hero-eu">Trakce u tier-1 dodavatele z automobilového průmyslu</span>
+                    </div>
+                    <span class="hero-eyebrow">Pro výrobce &amp; dodavatele automatizace</span>
+                    <h1 class="hero-title">Bimanuální roboti pro úkoly příliš flexibilní pro fixní automatizaci</h1>
                     <p class="hero-description">
-                        Modulární humanoidní robot navržený přímo pro výzkum. Trénujte VLA politiky, sbírejte data z teleoperace, ověřujte v simulaci, nasazujte na hardware — vše připravené ihned po vybalení.
+                        Stacionární dvouramenný robot, který se učí průmyslové úkoly z ukázek. První aplikace: koncové funkční testování linky v automobilové výrobě.
                     </p>
                     <div class="hero-audience">
-                        <span class="audience-tag primary">Výzkumné laboratoře</span>
-                        <span class="audience-tag primary">Technické univerzity</span>
+                        <span class="audience-tag primary">Automobilový průmysl</span>
+                        <span class="audience-tag primary">Elektronika</span>
                         <span class="audience-tag primary">Výroba</span>
-                        <span class="audience-tag primary">Zábava</span>
                         <span class="audience-tag">Dodavatelé automatizace</span>
-                        <span class="audience-tag">Startupy</span>
-                        <span class="audience-tag">DIY vývojáři</span>
+                        <span class="audience-tag">Výzkumné laboratoře</span>
                     </div>
                     <div class="cta-group">
-                        <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
-                            Koupit humanoidního robota
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                            </svg>
-                        </a>
-                        <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
+                        <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button">
                             Domluvit hovor
                             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </a>
+                        <a href="/cs/research/" class="cta-button secondary">
+                            Pro výzkumné laboratoře
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                             </svg>
                         </a>
                     </div>
                 </div>
 
                 <div class="cta-button-container">
-                    <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
-                        Koupit humanoidního robota
-                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                        </svg>
-                    </a>
-                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
+                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button">
                         Domluvit hovor
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </a>
+                    <a href="/cs/research/" class="cta-button secondary">
+                        Pro výzkumné laboratoře
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                         </svg>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Vytvořeno pro moderní robotický výzkum -->
+        <!-- Traction -->
+        <section class="research-ready traction">
+            <div class="research-ready-container">
+                <h2 class="section-title">Spolupracujeme s průmyslem</h2>
+                <p class="section-subtitle">Kde dnes stojíme s průmyslovými partnery.</p>
+
+                <div class="research-grid traction-grid">
+                    <div class="research-card featured">
+                        <span class="research-icon">🤝</span>
+                        <h3>Dopis o záměru od tier-1 dodavatele</h3>
+                        <p>Podepsaný dopis o záměru s tier-1 dodavatelem pro automobilový průmysl, jehož součástí je placený pilotní projekt.</p>
+                    </div>
+                    <div class="research-card featured">
+                        <span class="research-icon">🏭</span>
+                        <h3>Probíhá příprava nasazení</h3>
+                        <p>V evropském závodě probíhá příprava nasazení pro koncové testování linky.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem -->
         <section class="research-ready">
             <div class="research-ready-container">
-                <div class="use-case-tabs">
-                    <a class="use-case-tab active" data-tab="research" href="/cs/" onclick="return showUseCase('research', this, event)">🔬 Výzkumné laboratoře</a>
-                    <a class="use-case-tab" data-tab="manufacturing" href="/cs/manufacturing/" onclick="return showUseCase('manufacturing', this, event)">🏭 Výroba</a>
-                    <a class="use-case-tab" data-tab="entertainment" href="/cs/entertainment/" onclick="return showUseCase('entertainment', this, event)">🎉 Zábava</a>
-                </div>
+                <h2 class="section-title">Pozice na lince, které nemáte kým obsadit</h2>
+                <p class="section-subtitle">Evropští výrobci nedokážou obsadit opakující se pozice na lince — a stávající alternativy se pro flexibilní úkoly nehodí.</p>
 
-                <div class="use-case-panel active" id="usecase-research">
-                <h2 class="section-title">Vytvořeno pro moderní robotický výzkum</h2>
-                <p class="section-subtitle">Vše, co vaše laboratoř potřebuje k zahájení sběru dat, trénování politik a provádění experimentů — dodáváno společně s robotem.</p>
+                <div class="research-grid problem-grid">
+                    <div class="research-card">
+                        <span class="research-icon">👥</span>
+                        <h3>Tři směny, tři operátoři</h3>
+                        <p>Jedna stanice běžící na tři směny znamená tři operátory — 70–200 tis. € ročně na mzdových nákladech v závislosti na zemi. A právě tyto role se nejhůře obsazují a udržují obsazené.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">🔩</span>
+                        <h3>Fixní automatizace se nepřizpůsobí</h3>
+                        <p>Zakázkové buňky nezvládnou variabilitu produktů bez nákladného přestrojování. Každá změna produktu znamená inženýrskou práci, prostoje a investiční výdaje.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">🚶</span>
+                        <h3>Univerzální humanoidi ještě nejsou připraveni</h3>
+                        <p>Chodící humanoidi, kteří zvládnou cokoli, jsou roky daleko a drazí. Flexibilní úkoly na lince potřebují řešení, které funguje už dnes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution: Manipulační stanice -->
+        <section class="research-ready">
+            <div class="research-ready-container">
+                <h2 class="section-title">Manipulační stanice</h2>
+                <p class="section-subtitle">Dvouramenný robot na pevné základně nebo motorizované lineární ose. Díly přicházejí ke stanici — žádné nohy, žádná navigace, a to záměrně: robot tak zůstává cenově dostupný, spolehlivý a certifikovatelný už dnes.</p>
 
                 <div class="research-grid">
                     <div class="research-card featured">
-                        <span class="research-icon">📷</span>
-                        <h3>Vidění optimalizované pro VLA</h3>
-                        <p>Zápěstní kamery s nastavitelným úhlem montáže — ideální pro Pi0.5 a další VLA modely. K tomu stereo kamera na hlavě pro vnímání celé scény.</p>
-                        <span class="vla-tag">Pi0.5 · SmolVLA · ACT</span>
+                        <span class="research-icon">🔧</span>
+                        <h3>Koncové testování linky</h3>
+                        <p>Zakládání zařízení, obsluha zásuvek a třídění podle výsledku testu — funkční testování na konci výrobní linky.</p>
+                        <span class="vla-tag">Vlajková aplikace</span>
                     </div>
+                    <div class="research-card">
+                        <span class="research-icon">📦</span>
+                        <h3>Kitting &amp; balení</h3>
+                        <p>Sestavujte kity a balte různorodé produkty dvěma koordinovanými rameny — úkoly, se kterými si jednoramenné buňky neporadí.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">⚙️</span>
+                        <h3>Obsluha strojů</h3>
+                        <p>Zakládejte a vykládejte stroje, lisy a testovací přípravky — spolehlivě cyklus za cyklem, směnu za směnou.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">🗂️</span>
+                        <h3>Třídění</h3>
+                        <p>Třiďte díly a produkty podle typu, orientace nebo výsledku kontroly — vedeno viděním, ne přípravky.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="research-card featured">
+        <!-- How It Works -->
+        <section class="research-ready">
+            <div class="research-ready-container">
+                <h2 class="section-title">Trénováno ukázkami, ne programováním</h2>
+                <p class="section-subtitle">Autonomní provoz se trénuje pro každý úkol během pilotního projektu — pomocí datové pipeline, ne měsíců zakázkového programování.</p>
+
+                <div class="research-grid how-grid">
+                    <div class="research-card">
+                        <span class="research-icon">🥽</span>
+                        <h3>1 · Předveďte</h3>
+                        <p>Operátoři provedou robota úkolem teleoperací přes VR — na vaší straně není potřeba žádná robotická expertiza.</p>
+                    </div>
+                    <div class="research-card">
                         <span class="research-icon">🧠</span>
-                        <h3>Připraveno k trénování</h3>
-                        <p>Předkonfigurováno pro moderní ML pipeline. Začněte sbírat ukázky a trénovat politiky hned první den — bez nutnosti integrace.</p>
+                        <h3>2 · Trénujte</h3>
+                        <p>Zaznamenané ukázky trénují VLA (vision-language-action) politiky pro daný konkrétní úkol a stanici.</p>
                     </div>
-
-                    <div class="research-card featured">
-                        <span class="research-icon">🎮</span>
-                        <h3>Teleoperační pipeline</h3>
-                        <p>Podpora teleoperace ihned po vybalení pro záznam ukázek a dálkové ovládání. Okamžitě se napojte na svůj workflow imitačního učení.</p>
-                    </div>
-
-                    <div class="research-card featured">
-                        <span class="research-icon">📐</span>
-                        <h3>URDF pro simulátory</h3>
-                        <p>Součástí je kompletní URDF model robota. Bezproblémová kompatibilita s MuJoCo, Isaac Sim, PyBullet, Gazebo a zbytkem standardního simulačního stacku.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">🖥️</span>
-                        <h3>Simulátor v balení</h3>
-                        <p>Simulátor je dodáván s každým robotem. Vyvíjejte a ověřujte v simulaci dříve, než se dotknete hardwaru.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">💻</span>
-                        <h3>SDK</h3>
-                        <p>Kompletní SDK pro řízení, vnímání a integraci. Python-first a dobře zdokumentované.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">🦾</span>
-                        <h3>Chapadla v balení</h3>
-                        <p>Manipulátory jsou dodávány s platformou. Není třeba shánět koncové efektory zvlášť.</p>
-                    </div>
-
                     <div class="research-card">
                         <span class="research-icon">🤖</span>
-                        <h3>Modulární hardware</h3>
-                        <p>Vyměňujte ramena, chapadla a základní moduly. Přizpůsobte platformu svému výzkumu, ne naopak.</p>
+                        <h3>3 · Spusťte</h3>
+                        <p>Natrénovaná politika vykonává úkol na stanici a s každým nasazením se zlepšuje.</p>
                     </div>
-
                     <div class="research-card">
-                        <span class="research-icon">📼</span>
-                        <h3>Ukázkové scénáře</h3>
-                        <p>Přednahrané pohyby a příklady spouštěcích scénářů. Ověřte celý stack na svém pracovišti během několika minut.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">📚</span>
-                        <h3>Podrobná dokumentace</h3>
-                        <p>Komplexní dokumentace pro hardware, software, kalibraci a integrační workflow.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">💬</span>
-                        <h3>Přímá inženýrská podpora</h3>
-                        <p>Přímá linka na náš tým — od vybalení přes nasazení, experimenty až po publikaci.</p>
+                        <span class="research-icon">📈</span>
+                        <h3>4 · Akumulujte</h3>
+                        <p>Každé nasazení rozšiřuje proprietární manipulační datovou sadu — každý nový úkol tak startuje z lepší pozice.</p>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <h3 class="panel-why-title">Proč si laboratoře volí Prometheus</h3>
-                <p class="panel-why-subtitle">Neexistuje žádný hotový humanoid vytvořený pro výzkum. Týmy stráví měsíce slepováním hardwaru, kamer, simulace a ML nástrojů, než mohou spustit jediný experiment. Prometheus dodává celý tento stack připravený k použití.</p>
+        <!-- Why Prometheus -->
+        <section class="research-ready">
+            <div class="research-ready-container">
+                <h2 class="section-title">Proč si výrobci volí Prometheus</h2>
+                <p class="section-subtitle">Těžko obsaditelné pozice na lince zůstávají pokryté — bez přestavby linky kolem rigidní buňky.</p>
+
                 <div class="research-grid">
                     <div class="research-card featured">
-                        <span class="research-icon">🎓</span>
-                        <h3>Výzkum na prvním místě, ne demo jednotka</h3>
-                        <p>Otevřená architektura, kompletní SDK, URDF a dodávaný simulátor — navrženo podle toho, jak robotický výzkum skutečně funguje.</p>
+                        <span class="research-icon">👷</span>
+                        <h3>Obsazuje těžko obsaditelná místa</h3>
+                        <p>Pokryjte opakující se úlohy s vysokou fluktuací, které lidé nechtějí dělat — bez navyšování počtu zaměstnanců a boje s odchody.</p>
                     </div>
                     <div class="research-card featured">
-                        <span class="research-icon">⏱️</span>
-                        <h3>Přeskočte měsíce integrace</h3>
-                        <p>Kamery, teleoperace a ML pipeline jsou předkonfigurované. Začněte sbírat ukázky a trénovat politiky hned první den.</p>
+                        <span class="research-icon">💸</span>
+                        <h3>Levnější než zakázková buňka</h3>
+                        <p>Jeden flexibilní humanoid nahradí zakázkovou fixní automatizaci, jejíž návrh, výroba a údržba jsou nákladné.</p>
                     </div>
                     <div class="research-card featured">
-                        <span class="research-icon">🧩</span>
-                        <h3>Přizpůsobitelné &amp; modulární</h3>
-                        <p>Vyměňujte ramena, chapadla a základní moduly, pište vlastní řadiče, rozšiřujte SDK. Přizpůsobte platformu své práci.</p>
+                        <span class="research-icon">♻️</span>
+                        <h3>Přetrénovatelný napříč úkoly</h3>
+                        <p>Nový produkt nebo úkol znamená nové ukázky, ne nové přípravky. Neexistují žádné fixní přípravky, které by bylo třeba přestavovat.</p>
                     </div>
                     <div class="research-card featured">
-                        <span class="research-icon">✨</span>
-                        <h3>Zakázková provedení</h3>
-                        <p>Sady senzorů na míru, alternativní chapadla, vlastní kinematika a softwarové integrace pro specializovanou laboratorní práci.</p>
+                        <span class="research-icon">🇪🇺</span>
+                        <h3>Zázemí v EU</h3>
+                        <p>Hardware, vývoj, podpora i data zůstávají v Evropě — žádná závislost vaší výrobní linky na zámoří.</p>
                     </div>
-                </div>
-                </div>
-
-                <div class="use-case-panel" id="usecase-manufacturing">
-                    <h2 class="section-title">Postavte humanoida na svoji linku</h2>
-                    <p class="section-subtitle">Koncové testování linky, pick-and-place a opakované úkoly na lince, které byste raději neobsazovali — zvládá flexibilní humanoid, který se přemístí během minut.</p>
-
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">🔧</span>
-                            <h3>Koncové testování linky</h3>
-                            <p>Provádějte funkční a kvalitativní kontroly na konci své výrobní linky — konzistentně, opakovatelně a neúnavně po celou každou směnu.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">📦</span>
-                            <h3>Pick &amp; Place</h3>
-                            <p>Spolehlivé pick-and-place pro díly, balení a kitting. Manipulujte s různorodými objekty pomocí dodávaných chapadel.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">🔁</span>
-                            <h3>Opakované úkoly na lince</h3>
-                            <p>Převezměte nudnou, opakující se práci — obsluhu strojů, třídění, podporu montáže — a uvolněte své lidi pro hodnotnější činnost.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🧠</span>
-                            <h3>Naučí se úkol</h3>
-                            <p>Poháněno modelem Pi0 — snadno trénovatelným VLA modelem. Ukažte mu úkol a on jej zobecní, přizpůsobí se variabilitě, místo aby na ní selhal. Žádné rigidní skriptování.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🛠️</span>
-                            <h3>Rychlá přestavba</h3>
-                            <p>Překonfigurujte na nový úkol nebo změnu produktu během minut, ne týdnů. Jeden robot, mnoho úloh.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">👁️</span>
-                            <h3>Vedeno viděním</h3>
-                            <p>Stereo a zápěstní kamery pro detekci dílů, zarovnání a vizuální inspekci přímo tam, kde práce probíhá.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🦾</span>
-                            <h3>Modulární chapadla</h3>
-                            <p>Vyměňte koncové efektory podle dílu. Manipulátory jsou dodávány s platformou, připravené pro vaši linku.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🔌</span>
-                            <h3>Snadná integrace</h3>
-                            <p>Jednoduché REST API se napojí na vaše stávající řízení linky a workflow — bez proprietárního uzamčení.</p>
-                        </div>
-                    </div>
-
-                    <h3 class="panel-why-title">Proč si výrobci volí Prometheus</h3>
-                    <p class="panel-why-subtitle">Nudné, opakující se úlohy na lince se nejhůře obsazují a udržují obsazené — ale úkolově specifičtí roboti vás nutí přestavět linku kolem nich. Prometheus se místo toho bezproblémově začlení do vašeho stávajícího procesu, pracuje na tři směny denně a nikdy se neomluví kvůli nemoci.</p>
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">👷</span>
-                            <h3>Obsazuje těžko obsaditelná místa</h3>
-                            <p>Pokryjte opakující se úlohy s vysokou fluktuací, které lidé nechtějí dělat — bez navyšování počtu zaměstnanců a boje s odchody.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">💸</span>
-                            <h3>Levnější než zakázková buňka</h3>
-                            <p>Jeden flexibilní humanoid nahradí zakázkovou fixní automatizaci, jejíž návrh, výroba a údržba jsou nákladné.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">♻️</span>
-                            <h3>Změna konfigurace během minut</h3>
-                            <p>Nový produkt nebo úkol už neznamená týdny přestrojování. Přetrénujte a znovu využijte stejného robota napříč linkou.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">📈</span>
-                            <h3>Škáluje s poptávkou</h3>
-                            <p>Přidávejte jednotky s rostoucím objemem a přesouvejte je k úzkému místu. Žádná fixní infrastruktura, kterou je třeba vytrhat a přestavět.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="use-case-panel" id="usecase-entertainment">
-                    <h2 class="section-title">Humanoid, který strhne pozornost</h2>
-                    <p class="section-subtitle">Pro zábavní parky, hotely, muzea a akce — oblékněte ho, ovládejte ho z VR, přehrávejte rutiny a nechte ho vítat, prezentovat a vysvětlovat.</p>
-
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">👗</span>
-                            <h3>Oblékněte ho</h3>
-                            <p>Oblečte robota do zakázkových kostýmů a značkového oblečení tak, aby ladil s vaším místem, maskotem nebo tématem akce.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">🥽</span>
-                            <h3>VR teleoperace</h3>
-                            <p>Ovládejte robota živě z VR pomocí Meta Quest 3S — mávejte, gestikulujte a komunikujte s hosty v reálném čase.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">🎬</span>
-                            <h3>Nahrávání &amp; přehrávání</h3>
-                            <p>Zachyťte vystoupení jednou a přehrávejte ho na vyžádání — pozdravy, tance a scénáře, představení za představením.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🗣️</span>
-                            <h3>Prezentujte &amp; vysvětlujte</h3>
-                            <p>Nechte ho moderovat a vysvětlovat — komentované prohlídky, produktové ukázky a expozice, které návštěvníky provedou celým zážitkem.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">👋</span>
-                            <h3>Vítejte hosty</h3>
-                            <p>Přátelské humanoidní přivítání pro vstupy do parků, hotelové lobby a výstavní plochy.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">📡</span>
-                            <h3>Dálkové ovládání</h3>
-                            <p>Ovládejte ho na dálku odkudkoli — realizujte interakce a vystoupení bez personálu na místě.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🏨</span>
-                            <h3>Vytvořeno pro místa konání</h3>
-                            <p>Zábavní parky, hotely, muzea a akce — atrakce, která strhne pozornost a udrží davy v pozornosti.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🤖</span>
-                            <h3>Vždy věrný značce</h3>
-                            <p>Konzistentní, opakovatelná vystoupení pokaždé — vaše charakteristická postava, doručená spolehlivě.</p>
-                        </div>
-                    </div>
-
-                    <h3 class="panel-why-title">Proč si místa konání volí Prometheus</h3>
-                    <p class="panel-why-subtitle">Atrakce stojí a padají s efektem „wow“. Hosté už viděli obrazovky i animatroniky — skutečný interaktivní humanoid je to, co fotí, sdílejí a kvůli čemu se vracejí. Je to prohlášení, že vaše místo je tím nejpokročilejším z dostupných.</p>
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">⭐</span>
-                            <h3>Magnet na davy</h3>
-                            <p>Skutečný humanoid přitahuje davy, fotky a rozruch na sociálních sítích, kterému se obrazovka ani animatronika prostě nevyrovnají.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">🏆</span>
-                            <h3>Okamžitá prestiž</h3>
-                            <p>Ukažte všem, že provozujete nejpokročilejší místo zaměřené na budoucnost na trhu — a postarejte se, aby to všichni viděli.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">🎭</span>
-                            <h3>Jeden performer, každé vystoupení</h3>
-                            <p>Nahrajte rutiny jednou a přehrávejte je bezchybně celý den — žádné přestávky, žádné rozvrhy, žádné obsazování role.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">🌍</span>
-                            <h3>Ovládání odkudkoli</h3>
-                            <p>Ovládejte ho živě ve VR pomocí Meta Quest 3S a vítejte i komunikujte s hosty v reálném čase — i na dálku.</p>
-                        </div>
+                    <div class="research-card featured">
+                        <span class="research-icon">🛡️</span>
+                        <h3>Definovaná cesta k certifikaci</h3>
+                        <p>Navrženo pro certifikaci CE podle norem ISO 10218-1 a ISO 10218-2, standardů pro průmyslové roboty.</p>
                     </div>
                 </div>
             </div>
@@ -1756,7 +1598,7 @@
         <section class="specifications">
             <div class="specs-container">
                 <h2 class="section-title">Technické specifikace</h2>
-                <p class="section-subtitle">Horní část těla na stativu — vhodné pro stolní výzkum</p>
+                <p class="section-subtitle">Dvouramenná horní část těla — konfigurace manipulační stanice</p>
                 
                 <div class="specs-content">
                     <div class="specs-table-wrapper">
@@ -1767,8 +1609,12 @@
                                     <td class="spec-value">120Nm</td>
                                 </tr>
                                 <tr>
+                                    <td class="spec-label">Možnosti nasazení</td>
+                                    <td class="spec-value">Pevná základna / motorizovaná lineární osa (pojezd)</td>
+                                </tr>
+                                <tr>
                                     <td class="spec-label">Výška</td>
-                                    <td class="spec-value">160cm on tripod (172cm on legs/wheels)</td>
+                                    <td class="spec-value">160 cm na stativu</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Šířka</td>
@@ -1780,7 +1626,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Stupně volnosti</td>
-                                    <td class="spec-value">19 (29 with legs; 43 with hands; 53 with legs and hands)</td>
+                                    <td class="spec-value">19 (43 s rukama)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Kamery</td>
@@ -1827,19 +1673,6 @@
                             <div class="robot-glow"></div>
                             <img src="/robot.png" alt="Prometheus Humanoid Robot" class="robot-img">
                         </div>
-                        <h3 class="modules-title">Dostupné moduly</h3>
-                        <div class="modules-grid">
-                            <div class="module-card">
-                                <div class="module-icon">🦿</div>
-                                <h4>Modul nohou</h4>
-                                <p>Bipedální lokomoční systém pro vyšší mobilitu a pohybové schopnosti podobné člověku.</p>
-                            </div>
-                            <div class="module-card">
-                                <div class="module-icon">🛞</div>
-                                <h4>Modul kol</h4>
-                                <p>Kolová základna pro efektivní navigaci a stabilní platformu pro různé aplikace.</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -1854,49 +1687,6 @@
             </div>
         </section>
 
-        <!-- Manipulators Section -->
-        <section class="manipulators">
-            <div class="manipulators-container">
-                <h2 class="section-title">Možnosti manipulátoru</h2>
-                <p class="section-subtitle">Vyberte správný koncový efektor pro svůj výzkum</p>
-                
-                <div class="manipulators-grid">
-                    <div class="manipulator-card">
-                        <div class="manipulator-image">
-                            <img src="/claw.png" alt="Type A - 2prsté chapadlo">
-                        </div>
-                        <div class="manipulator-content">
-                            <h3>Type A</h3>
-                            <h4>2prsté chapadlo</h4>
-                            <p>Jednoduché sevření / přesné zavírání. Ideální pro citlivé operace a přesné manipulační úkoly.</p>
-                        </div>
-                    </div>
-
-                    <div class="manipulator-card">
-                        <div class="manipulator-image">
-                            <img src="/for_totes.png" alt="Type B - 4-finger claw">
-                        </div>
-                        <div class="manipulator-content">
-                            <h3>Type B</h3>
-                            <h4>4prstý „dráp“ (párové prsty)</h4>
-                            <p>Pro robustní uchopení beden a přepravek. Navrženo pro skladové a logistické aplikace.</p>
-                        </div>
-                    </div>
-
-                    <div class="manipulator-card">
-                        <div class="manipulator-image">
-                            <img src="/hand.png" alt="Type X - Advanced manipulator">
-                        </div>
-                        <div class="manipulator-content">
-                            <h3>Type X</h3>
-                            <h4>Pokročilé manipulátory</h4>
-                            <p>Možnosti zahrnují zápěstní kamery s nastavitelným úhlem montáže (optimalizované pro Pi0.5 a další VLA modely), 5prsté ruce a další zakázkové varianty.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- FAQ Section -->
         <section class="faq">
             <div class="faq-container">
@@ -1904,24 +1694,16 @@
                 <p class="section-subtitle">Everything you need to know before getting started</p>
                 <div class="faq-list">
                     <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Které modely AI robot podporuje?</button>
-                        <div class="faq-a"><p>Ihned po vybalení podporuje moderní postupy typu vision-language-action a imitační učení, včetně Pi0, Pi0.5, ACT a SmolVLA. Shromážděte data z teleoperace, dolaďte je na běžné spotřebitelské GPU a nasaďte prostřednictvím SDK.</p></div>
+                        <button class="faq-q" onclick="toggleFaq(this)">Je robot bezpečný a certifikovatelný pro provoz v továrně?</button>
+                        <div class="faq-a"><p>Je navržen pro certifikaci CE podle norem ISO 10218-1 a ISO 10218-2, standardů pro průmyslové roboty. Bezpečnostní konfigurace nasazení — ochranné kryty, omezení rychlosti a bezpečnostní blokády — se definuje pro každé pracoviště během přípravy pilotního projektu.</p></div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Co je součástí dodávky robota?</button>
-                        <div class="faq-a"><p>Každá jednotka se dodává s kompletním SDK a jednoduchým REST API, modelem URDF, integrovaným simulátorem, stereokamerou umístěnou na hlavě i kamerami na zápěstí, chapadly a přímou inženýrskou podporou. Pipeline pro teleoperaci funguje od prvního dne.</p></div>
+                        <button class="faq-q" onclick="toggleFaq(this)">Integruje se s naší stávající linkou?</button>
+                        <div class="faq-a"><p>Ano. Stanice pracuje vedle vašich stávajících stanic a workflow — díly přicházejí k robotu, takže není nutná žádná přestavba linky. Jednoduché REST API ji propojí s vaším řízením linky.</p></div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Mohu sám shromažďovat data z teleoperace a trénovat vlastní postupy?</button>
-                        <div class="faq-a"><p>Ano. Ovládejte robota dálkově prostřednictvím VR se zařízením Meta Quest 3S nebo pomocí ovladače typu leader-follower, zaznamenávejte ukázky ve standardním formátu datové sady a trénujte ACT nebo dolaďte model vision-language-action na jediném spotřebitelském GPU.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Na jakém výpočetním hardwaru robot běží?</button>
-                        <div class="faq-a"><p>Palubní výpočetní jednotkou je Raspberry Pi 5 nebo NVIDIA Jetson. Nenáročné postupy běží přímo na zařízení, zatímco náročnější modely vision-language-action mohou běžet na připojené pracovní stanici s GPU a přenášet příkazy přes REST API.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Je robot modulární?</button>
-                        <div class="faq-a"><p>Ano. Můžete vyměnit ramena, chapadla (dvouprstá, čtyřprstá nebo pokročilé pětiprsté ruce) a základní moduly, jako jsou nohy či kola, a přizpůsobit platformu vašemu úkolu, nikoli naopak.</p></div>
+                        <button class="faq-q" onclick="toggleFaq(this)">Jak se robot učí nový úkol?</button>
+                        <div class="faq-a"><p>Operátoři provedou robota úkolem teleoperací a zaznamenají ukázky, z nichž se trénují vision-language-action politiky, jako jsou Pi0 a ACT. Autonomní provoz se trénuje pro každý úkol během pilotního projektu.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Kde se robot vyrábí?</button>
@@ -1934,16 +1716,10 @@
         <!-- Bottom CTA Section -->
         <section style="padding: 6rem 3rem; text-align: center; background: linear-gradient(180deg, #0f0f0f 0%, var(--color-bg) 100%); border-top: 1px solid var(--color-border);">
             <div style="max-width: 800px; margin: 0 auto;">
-                <h2 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.01em;">Připraveni nasadit Prometheus do práce?</h2>
-                <p style="color: var(--color-text-secondary); font-size: 1.2rem; margin-bottom: 3rem; line-height: 1.7;">Ať už jde o výzkumnou laboratoř, výrobní linku nebo prostor místa konání — objednejte si jednotku nebo si domluvte hovor a proberte svoji konfiguraci.</p>
+                <h2 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.01em;">Postavte Prometheus na svoji linku</h2>
+                <p style="color: var(--color-text-secondary); font-size: 1.2rem; margin-bottom: 3rem; line-height: 1.7;">Domluvte si hovor a nastavme rozsah pilotního projektu koncového testování pro váš závod — společně projdeme vaše stanice, úkoly a integrační omezení.</p>
                 <div class="cta-group" style="justify-content: center;">
-                    <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
-                        Koupit modulární platformu
-                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                        </svg>
-                    </a>
-                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
+                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button">
                         Domluvit hovor
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
@@ -1978,12 +1754,13 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h4>Prometheus Robotics</h4>
-                <p>Modulární humanoidní platforma pro výzkum, průmysl a zábavu. Vytvořeno pro laboratoře, výrobní haly a místa konání utvářející další generaci inteligentních robotů.</p>
+                <p>Bimanuální roboti pro průmyslovou automatizaci — koncové testování linky, kitting a obsluha strojů — a modulární humanoidní platforma pro robotický výzkum. Navrženo a vyrobeno v EU.</p>
             </div>
             <div class="footer-section">
                 <h4>Navigace</h4>
                 <ul class="footer-links">
-                    <li><a onclick="showPage('home')">Domů</a></li>
+                    <li><a href="/cs/">Domů</a></li>
+                    <li><a href="/cs/research/">Výzkum</a></li>
                     <li><a href="/blog/">Blog</a></li>
                     <li><a onclick="showPage('contacts')">Kontakty</a></li>
                     <li><a href="https://www.linkedin.com/in/ilya-pavlenkov/recent-activity/all/" target="_blank">LinkedIn</a></li>
@@ -1992,13 +1769,13 @@
             <div class="footer-section">
                 <h4>Začínáme</h4>
                 <ul class="footer-links">
-                    <li><a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank">Koupit robota</a></li>
                     <li><a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer">Domluvit hovor</a></li>
+                    <li><a href="/demo/">Ukázkové video</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Prometheus Engineering Kft. Všechna práva vyhrazena. Made in EU <svg class="eu-flag-inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810 540" role="img" aria-label="European Union flag"><rect width="810" height="540" fill="#003399"/><g fill="#FFCC00"><circle cx="405" cy="105" r="15"/><circle cx="505" cy="140" r="15"/><circle cx="560" cy="220" r="15"/><circle cx="560" cy="320" r="15"/><circle cx="505" cy="400" r="15"/><circle cx="405" cy="435" r="15"/><circle cx="305" cy="400" r="15"/><circle cx="250" cy="320" r="15"/><circle cx="250" cy="220" r="15"/><circle cx="305" cy="140" r="15"/><circle cx="405" cy="175" r="15"/><circle cx="405" cy="365" r="15"/></g></svg></p>
+            <p>&copy; 2026 Prometheus Engineering Kft. Všechna práva vyhrazena. Made in EU <svg class="eu-flag-inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810 540" role="img" aria-label="European Union flag"><rect width="810" height="540" fill="#003399"/><g fill="#FFCC00"><circle cx="405" cy="105" r="15"/><circle cx="505" cy="140" r="15"/><circle cx="560" cy="220" r="15"/><circle cx="560" cy="320" r="15"/><circle cx="505" cy="400" r="15"/><circle cx="405" cy="435" r="15"/><circle cx="305" cy="400" r="15"/><circle cx="250" cy="320" r="15"/><circle cx="250" cy="220" r="15"/><circle cx="305" cy="140" r="15"/><circle cx="405" cy="175" r="15"/><circle cx="405" cy="365" r="15"/></g></svg></p>
         </div>
     </footer>
 
@@ -2161,16 +1938,10 @@
             /* LANGS:END */
         ];
 
-        function currentTabPath() {
-            const p = location.pathname;
-            if (p.indexOf('manufacturing') !== -1) return 'manufacturing/';
-            if (p.indexOf('entertainment') !== -1) return 'entertainment/';
-            return '';
-        }
-
         function langHref(code) {
             const base = code === 'en' ? '' : '/' + code;
-            return (base + '/' + currentTabPath()) || '/';
+            const page = location.pathname.indexOf('/research') !== -1 ? 'research/' : '';
+            return (base + '/' + page) || '/';
         }
 
         function initLangSwitcher() {
@@ -2206,35 +1977,9 @@
         }
         initLangSwitcher();
 
-        function useCaseUrl(id) {
-            return window.LANG_BASE + (id === 'research' ? '/' : '/' + id + '/');
-        }
-
-        function showUseCase(id, btn, event) {
-            if (event) event.preventDefault();
-            document.querySelectorAll('.use-case-panel').forEach(p => p.classList.remove('active'));
-            document.querySelectorAll('.use-case-tab').forEach(t => t.classList.remove('active'));
-            const panel = document.getElementById('usecase-' + id);
-            if (panel) panel.classList.add('active');
-            if (!btn) btn = document.querySelector('.use-case-tab[data-tab="' + id + '"]');
-            if (btn) btn.classList.add('active');
-            if (event && window.history && history.pushState) {
-                history.pushState({ tab: id }, '', useCaseUrl(id));
-            }
-            return false;
-        }
-
         function toggleFaq(btn) {
             btn.parentElement.classList.toggle('open');
         }
-
-        window.addEventListener('popstate', function () {
-            const path = location.pathname;
-            let id = 'research';
-            if (path.indexOf('manufacturing') !== -1) id = 'manufacturing';
-            else if (path.indexOf('entertainment') !== -1) id = 'entertainment';
-            showUseCase(id, null, null);
-        });
 
         (function () {
             const navEl = document.querySelector('nav');

@@ -1,48 +1,53 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Generate all static pages for the Prometheus site: per-tab + per-language.
+"""Generate all static pages for the Prometheus site: per-page + per-language.
 
-index.html is the English Research-Labs master (served at /). This script
-produces, with correct <title>/description/canonical/hreflang and the right tab
-pre-selected:
-  /manufacturing/  /entertainment/                          (English tabs)
-  /<lang>/  /<lang>/manufacturing/  /<lang>/entertainment/   (translated)
+Two English master pages:
+  index.html          -> industrial homepage, served at /
+  research/index.html -> research-labs page, served at /research/
 
-Languages live one-per-file in translations/<code>.py, each defining
-CODE, LANG, LOCALE, LABEL, CC, SEO (per-tab title/desc) and T (English->translation).
+This script produces, with correct <title>/description/canonical/hreflang and
+localized FAQ (visible accordion + FAQPage JSON-LD):
+  /<lang>/  /<lang>/research/                (translated pages)
+plus noindex redirect stubs for the retired tab URLs:
+  /manufacturing/  /entertainment/  /<lang>/manufacturing/  /<lang>/entertainment/
+(GitHub Pages cannot serve real 301s; the stubs use meta-refresh + canonical +
+JS location.replace, which search engines treat as a permanent redirect.)
 
-It also rewrites index.html's hreflang block and the JS LANGS array in place, and
-writes sitemap.xml.
+Languages live one-per-file in translations/<code>.py, each defining CODE, LANG,
+LOCALE, LABEL, CC, SEO (per-page title/desc, keys "home"/"research"),
+T (English->translation) and FAQ_HOME / FAQ_RESEARCH translated pairs.
 
-Re-run after editing index.html OR any translations/*.py:  python3 build_site.py
+It also rewrites both masters' hreflang blocks and the JS LANGS array in place,
+and writes sitemap.xml.
+
+Re-run after editing a master OR any translations/*.py:  python3 build_site.py
 Add a language: drop a new translations/<code>.py, then re-run.
 """
 import glob
 import importlib.util
 import json
 import os
-import re
 
-from faq_data import FAQ, FAQ_T
+from faq_data import FAQ_HOME, FAQ_RESEARCH
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 BASE = "https://meetprometheus.com"
 
-TAB_PATH = {"research": "", "manufacturing": "manufacturing/", "entertainment": "entertainment/"}
-TAB_IDS = ["research", "manufacturing", "entertainment"]
+PAGE_IDS = ["home", "research"]
+PAGE_PATH = {"home": "", "research": "research/"}
+MASTER = {"home": "index.html", "research": "research/index.html"}
+EN_FAQ = {"home": FAQ_HOME, "research": FAQ_RESEARCH}
+REDIRECT_PATHS = ["manufacturing/", "entertainment/"]
 
 EN_SEO = {
+    "home": (
+        "Prometheus Robotics — Bimanual Robots for Industrial Automation | EOL Testing",
+        "A stationary dual-arm robot that learns industrial tasks from demonstration: end-of-line functional testing, kitting, and machine tending. Designed and made in the EU.",
+    ),
     "research": (
         "Prometheus Robotics — Humanoid Platform for Research Labs",
         "A modular humanoid robot built for robotics research: full SDK, stereo + wrist cameras, URDF, bundled simulator, and support for VLA models like Pi0 and ACT.",
-    ),
-    "manufacturing": (
-        "Prometheus Robotics — Humanoid Robots for Manufacturing",
-        "A trainable humanoid for the factory floor: end-of-line testing, pick-and-place, and repetitive line tasks. Reconfigures in minutes and costs less than a custom automation cell.",
-    ),
-    "entertainment": (
-        "Prometheus Robotics — Humanoid Robots for Entertainment & Venues",
-        "A real interactive humanoid for theme parks, hotels, and events. Dress it up, drive it live from VR (Meta Quest 3S), record and replay routines, and let it greet and present to guests.",
     ),
 }
 
@@ -88,22 +93,22 @@ def set_seo(html, title, desc, url, locale):
     return replace_region(html, "<!-- SEO:START -->", "<!-- SEO:END -->", block)
 
 
-def url_for(lang, tab):
+def url_for(lang, page):
     base = "" if lang == "en" else "/" + lang
-    return BASE + (base + "/" + TAB_PATH[tab] or "/")
+    return BASE + (base + "/" + PAGE_PATH[page] or "/")
 
 
-def set_hreflang(html, tab, codes):
-    path = TAB_PATH[tab]
+def set_hreflang(html, page, codes):
+    path = PAGE_PATH[page]
     lines = ['<link rel="alternate" hreflang="x-default" href="%s">' % (BASE + "/" + path)]
     for lang in ["en"] + codes:
-        lines.append('<link rel="alternate" hreflang="%s" href="%s">' % (lang, url_for(lang, tab)))
+        lines.append('<link rel="alternate" hreflang="%s" href="%s">' % (lang, url_for(lang, page)))
     block = "<!-- HREFLANG:START -->\n    " + "\n    ".join(lines) + "\n    <!-- HREFLANG:END -->"
     return replace_region(html, "<!-- HREFLANG:START -->", "<!-- HREFLANG:END -->", block)
 
 
 def set_langs(html, mods):
-    # English stays hardcoded in index.html with a trailing comma; we emit the
+    # English stays hardcoded in the master with a trailing comma; we emit the
     # rest between the markers (no leading comma -> no array hole).
     entries = ["            { code: '%s', cc: '%s', label: '%s' }" % (m.CODE, m.CC, m.LABEL) for m in mods]
     block = "/* LANGS:START */\n" + ",\n".join(entries) + "\n            /* LANGS:END */"
@@ -117,32 +122,20 @@ def faq_jsonld(pairs):
     return '<script type="application/ld+json">' + json.dumps(data, ensure_ascii=False) + "</script>"
 
 
-def set_faq(html, pairs):
+def set_faq(html, en_pairs, pairs):
     # Localize the visible accordion (no-op for English), then emit FAQPage JSON-LD.
-    for (qen, aen), (q, a) in zip(FAQ, pairs):
+    for (qen, aen), (q, a) in zip(en_pairs, pairs):
         html = html.replace(qen, q).replace(aen, a)
     block = "<!-- FAQ-LD:START -->\n    " + faq_jsonld(pairs) + "\n    <!-- FAQ-LD:END -->"
     return replace_region(html, "<!-- FAQ-LD:START -->", "<!-- FAQ-LD:END -->", block)
 
 
-def set_active(html, active_id):
-    for tid in TAB_IDS:
-        pcls = "use-case-panel active" if tid == active_id else "use-case-panel"
-        html = re.sub(r'<div class="use-case-panel(?: active)?" id="usecase-%s">' % tid,
-                      '<div class="%s" id="usecase-%s">' % (pcls, tid), html)
-        tcls = "use-case-tab active" if tid == active_id else "use-case-tab"
-        html = re.sub(r'<a class="use-case-tab(?: active)?" data-tab="%s"' % tid,
-                      '<a class="%s" data-tab="%s"' % (tcls, tid), html)
-    return html
-
-
-def set_tab_hrefs(html, lang):
+def set_lang_hrefs(html, lang):
+    """Point internal home/research links at the language's own pages."""
     if lang == "en":
         return html
-    for tid in TAB_IDS:
-        old = 'data-tab="%s" href="/%s"' % (tid, TAB_PATH[tid])
-        new = 'data-tab="%s" href="/%s/%s"' % (tid, lang, TAB_PATH[tid])
-        html = html.replace(old, new)
+    html = html.replace('href="/research/"', 'href="/%s/research/"' % lang)
+    html = html.replace('href="/"', 'href="/%s/"' % lang)
     return html
 
 
@@ -168,44 +161,63 @@ def write(rel_path, html):
     print("wrote", rel_path)
 
 
+REDIRECT_TMPL = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Prometheus Robotics</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="%(url)s">
+<meta http-equiv="refresh" content="0;url=%(path)s">
+<script>location.replace('%(path)s');</script>
+</head>
+<body><p>This page has moved: <a href="%(path)s">meetprometheus.com</a></p></body>
+</html>
+"""
+
+
+def write_redirect(rel_dir, target_path):
+    html = REDIRECT_TMPL % {"path": target_path, "url": BASE + target_path}
+    write(rel_dir + "index.html", html)
+
+
 def main():
     mods = load_languages()
     codes = [m.CODE for m in mods]
     print("languages:", ", ".join(codes) if codes else "(none)")
 
-    with open(os.path.join(ROOT, "index.html"), encoding="utf-8") as f:
-        master = f.read()
-    master = set_langs(master, mods)  # keep the switcher list in sync
+    for page in PAGE_IDS:
+        with open(os.path.join(ROOT, MASTER[page]), encoding="utf-8") as f:
+            master = f.read()
+        master = set_langs(master, mods)  # keep the switcher list in sync
 
-    # English research = index.html itself: refresh SEO, hreflang, LANGS in place.
-    idx = set_seo(master, EN_SEO["research"][0], EN_SEO["research"][1], url_for("en", "research"), "en_US")
-    idx = set_hreflang(idx, "research", codes)
-    idx = set_faq(idx, FAQ)
-    write("index.html", idx)
+        # English master: refresh SEO, hreflang, FAQ-LD in place.
+        html = set_seo(master, EN_SEO[page][0], EN_SEO[page][1], url_for("en", page), "en_US")
+        html = set_hreflang(html, page, codes)
+        html = set_faq(html, EN_FAQ[page], EN_FAQ[page])
+        write(MASTER[page], html)
 
-    # English manufacturing / entertainment
-    for tab in ["manufacturing", "entertainment"]:
-        html = set_active(master, tab)
-        html = set_seo(html, EN_SEO[tab][0], EN_SEO[tab][1], url_for("en", tab), "en_US")
-        html = set_hreflang(html, tab, codes)
-        html = set_faq(html, FAQ)
-        write(TAB_PATH[tab] + "index.html", html)
-
-    # Each language × each tab
-    for m in mods:
-        for tab in TAB_IDS:
+        # Each language
+        for m in mods:
+            seo = m.SEO.get(page) or EN_SEO[page]
+            faq_t = getattr(m, "FAQ_HOME" if page == "home" else "FAQ_RESEARCH", None) or EN_FAQ[page]
             html = translate(master, m.T)
-            html = set_active(html, tab)
-            title, desc = m.SEO[tab]
-            html = set_seo(html, title, desc, url_for(m.CODE, tab), m.LOCALE)
-            html = set_hreflang(html, tab, codes)
-            html = set_tab_hrefs(html, m.CODE)
+            html = set_seo(html, seo[0], seo[1], url_for(m.CODE, page), m.LOCALE)
+            html = set_hreflang(html, page, codes)
+            html = set_lang_hrefs(html, m.CODE)
             html = set_lang_attr(html, m.CODE)
-            html = set_faq(html, FAQ_T.get(m.CODE, FAQ))
-            write("%s/%sindex.html" % (m.CODE, TAB_PATH[tab]), html)
+            html = set_faq(html, EN_FAQ[page], faq_t)
+            write("%s/%sindex.html" % (m.CODE, PAGE_PATH[page]), html)
 
-    # sitemap (tab/language pages + demo + blog)
-    urls = [url_for(lang, tab) for lang in ["en"] + codes for tab in TAB_IDS]
+    # Redirect stubs for retired tab URLs (old /manufacturing/, /entertainment/).
+    for lang in ["en"] + codes:
+        base = "" if lang == "en" else lang + "/"
+        target = "/" if lang == "en" else "/%s/" % lang
+        for rp in REDIRECT_PATHS:
+            write_redirect(base + rp, target)
+
+    # sitemap (page/language pages + demo + blog)
+    urls = [url_for(lang, page) for lang in ["en"] + codes for page in PAGE_IDS]
     if os.path.isfile(os.path.join(ROOT, "demo", "index.html")):
         urls.append(BASE + "/demo/")
     blog_dir = os.path.join(ROOT, "blog")

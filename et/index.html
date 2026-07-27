@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SEO:START -->
-    <title>Prometheus Robotics — humanoidplatvorm uurimislaboritele</title>
-    <meta name="description" content="Modulaarne humanoidrobot, mis on loodud robootikauuringuteks: täielik SDK, stereo- ja randmekaamerad, URDF, kaasasolev simulaator ning tugi VLA-mudelitele nagu Pi0 ja ACT.">
+    <title>Prometheus Robotics — kahekäelised robotid tööstusautomaatikale | liini lõpu testimine</title>
+    <meta name="description" content="Statsionaarne kahe käsivarrega robot, mis õpib tööstuslikke ülesandeid demonstratsioonist: liini lõpu funktsionaalne testimine, komplekteerimine ja masinate teenindamine. Projekteeritud ja toodetud EL-is.">
     <link rel="canonical" href="https://meetprometheus.com/et/">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://meetprometheus.com/et/">
-    <meta property="og:title" content="Prometheus Robotics — humanoidplatvorm uurimislaboritele">
-    <meta property="og:description" content="Modulaarne humanoidrobot, mis on loodud robootikauuringuteks: täielik SDK, stereo- ja randmekaamerad, URDF, kaasasolev simulaator ning tugi VLA-mudelitele nagu Pi0 ja ACT.">
+    <meta property="og:title" content="Prometheus Robotics — kahekäelised robotid tööstusautomaatikale | liini lõpu testimine">
+    <meta property="og:description" content="Statsionaarne kahe käsivarrega robot, mis õpib tööstuslikke ülesandeid demonstratsioonist: liini lõpu funktsionaalne testimine, komplekteerimine ja masinate teenindamine. Projekteeritud ja toodetud EL-is.">
     <meta property="og:locale" content="et_EE">
     <!-- SEO:END -->
     <meta name="theme-color" content="#0a0a0a">
@@ -371,6 +371,13 @@
             flex-shrink: 0;
         }
 
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
         .hero-eyebrow {
             font-size: 0.85rem;
             font-weight: 600;
@@ -571,7 +578,7 @@
 
         .cta-button-container { display: none; }
 
-        /* Research Ready Section */
+        /* Uurimistöö Ready Section */
         .research-ready {
             padding: 8rem 3rem;
             background: linear-gradient(180deg, var(--color-bg) 0%, #0f0f0f 100%);
@@ -583,47 +590,9 @@
             margin: 0 auto;
         }
 
-        .use-case-tabs {
-            display: flex;
+        .traction-grid {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 440px));
             justify-content: center;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-bottom: 3.5rem;
-        }
-
-        .use-case-tab {
-            font-family: var(--font-body);
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 0.01em;
-            color: var(--color-text-secondary);
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--color-border);
-            border-radius: 50px;
-            padding: 0.85rem 1.9rem;
-            cursor: pointer;
-            display: inline-block;
-            text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .use-case-tab:hover {
-            color: var(--color-text);
-            border-color: rgba(59, 130, 246, 0.4);
-        }
-
-        .use-case-tab.active {
-            color: #ffffff;
-            background: var(--color-accent);
-            border-color: var(--color-accent);
-            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3);
-        }
-
-        .use-case-panel { display: none; }
-
-        .use-case-panel.active {
-            display: block;
-            animation: tabFade 0.4s ease;
         }
 
         .panel-why-title {
@@ -642,11 +611,6 @@
             max-width: 720px;
             margin: 0 auto 2.5rem;
             line-height: 1.6;
-        }
-
-        @keyframes tabFade {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         .research-grid {
@@ -1394,7 +1358,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Milliseid tehisintellekti mudeleid robot toetab?", "acceptedAnswer": {"@type": "Answer", "text": "Karbist väljas toetab see kaasaegseid nägemis-keele-tegevuse ja imiteerival õppimisel põhinevaid poliitikaid, sealhulgas Pi0, Pi0.5, ACT ja SmolVLA. Koguge teleopereerimise andmeid, peenhäälestage tarbija GPU peal ja juurutage SDK kaudu."}}, {"@type": "Question", "name": "Mis robotiga kaasas on?", "acceptedAnswer": {"@type": "Answer", "text": "Iga seade tarnitakse koos täisvaliku SDK ja lihtsa REST API-ga, URDF-mudeliga, kaasasoleva simulaatoriga, pähe kinnitatava stereokaamera ning rannekaameratega, haaratsitega ja otsese inseneritoega. Teleopereerimise töövoog toimib esimesest päevast alates."}}, {"@type": "Question", "name": "Kas saan teleopereerimise andmeid ise koguda ja poliitikaid treenida?", "acceptedAnswer": {"@type": "Answer", "text": "Jah. Teleopereerige VR kaudu Meta Quest 3S seadme või juht-järgija kontrolleriga, salvestage demonstratsioonid standardses andmestiku vormingus ning treenige ACT või peenhäälestage nägemis-keele-tegevuse mudel ühel tarbija GPU-l."}}, {"@type": "Question", "name": "Millisel arvutusvõimsusel robot töötab?", "acceptedAnswer": {"@type": "Answer", "text": "Pardal olev arvutusvõimsus on Raspberry Pi 5 või NVIDIA Jetson. Kerged poliitikad töötavad seadmes endas, samas kui raskemad nägemis-keele-tegevuse mudelid saavad töötada ühendatud tööjaama GPU-l ja edastada käske REST API kaudu."}}, {"@type": "Question", "name": "Kas robot on moodulpõhine?", "acceptedAnswer": {"@type": "Answer", "text": "Jah. Saate vahetada käsivarsi, haaratseid (2-sõrmelisi, 4-sõrmelisi või täiustatud viiesõrmelisi käsi) ning baasmooduleid nagu jalad või rattad, ning kohandada platvormi oma ülesandele, mitte vastupidi."}}, {"@type": "Question", "name": "Kus robot valmistatakse?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus on projekteeritud ja toodetud Euroopa Liidus, mis on oluline Euroopa uurimislaboritele ja ettevõtetele, kes hoolivad tarneahela päritolust, toest ja andmesuveräänsusest."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Kas robot on tehases kasutamiseks ohutu ja sertifitseeritav?", "acceptedAnswer": {"@type": "Answer", "text": "See on projekteeritud CE-sertifitseerimiseks tööstusrobotite standardite ISO 10218-1 ja ISO 10218-2 järgi. Juurutuse ohutuskonfiguratsioon — piirded, kiiruspiirangud ja blokeeringud — määratletakse iga asukoha jaoks pilootprojekti ettevalmistamise käigus."}}, {"@type": "Question", "name": "Kas see integreerub meie olemasoleva liiniga?", "acceptedAnswer": {"@type": "Answer", "text": "Jah. Jaam töötab teie olemasolevate jaamade ja töövoogude kõrval — osad tulevad roboti juurde, seega pole liini vaja ümber ehitada. Lihtne REST API ühendab selle teie liinijuhtimisega."}}, {"@type": "Question", "name": "Kuidas robot uue ülesande selgeks õpib?", "acceptedAnswer": {"@type": "Answer", "text": "Operaatorid teleopereerivad robotit läbi ülesande, et salvestada demonstratsioone, ning nende demode põhjal treenitakse nägemis-keele-tegevuse poliitikad nagu Pi0 ja ACT. Autonoomne töö treenitakse iga ülesande jaoks pilootprojekti käigus."}}, {"@type": "Question", "name": "Kus robot valmistatakse?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus on projekteeritud ja toodetud Euroopa Liidus, mis on oluline Euroopa uurimislaboritele ja ettevõtetele, kes hoolivad tarneahela päritolust, toest ja andmesuveräänsusest."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1407,10 +1371,10 @@
             PROMETHEUS&nbsp;&nbsp;ROBOTICS
         </div>
         <ul class="nav-links">
-            <li><a onclick="showPage('home')">Prometheus Robotics</a></li>
+            <li><a href="/et/">Avaleht</a></li>
+            <li><a href="/et/research/">Uurimistöö</a></li>
             <li><a href="/blog/">Blog</a></li>
             <li><a onclick="showPage('contacts')">Kontaktid</a></li>
-            <li><a href="https://www.linkedin.com/in/ilya-pavlenkov/recent-activity/all/" target="_blank">LinkedIn</a></li>
         </ul>
         <div class="lang-switcher">
             <button class="lang-toggle" id="langToggle" aria-haspopup="true" aria-expanded="false" aria-label="Change language">
@@ -1431,322 +1395,200 @@
             </video>
             <div class="hero-container">
                 <div class="hero-content">
+                    <div class="hero-badges">
                     <span class="hero-eu">
                         <svg viewBox="0 0 810 540" aria-hidden="true"><rect width="810" height="540" fill="#003399"/><g fill="#FFCC00"><circle cx="405" cy="105" r="15"/><circle cx="505" cy="140" r="15"/><circle cx="560" cy="220" r="15"/><circle cx="560" cy="320" r="15"/><circle cx="505" cy="400" r="15"/><circle cx="405" cy="435" r="15"/><circle cx="305" cy="400" r="15"/><circle cx="250" cy="320" r="15"/><circle cx="250" cy="220" r="15"/><circle cx="305" cy="140" r="15"/><circle cx="405" cy="175" r="15"/><circle cx="405" cy="365" r="15"/></g></svg>
                         Designed &amp; made in the EU
                     </span>
-                    <span class="hero-eyebrow">Uurimislaboritele &amp; tehnikaülikoolidele</span>
-                    <h1 class="hero-title">Humanoidplatvorm robootikauuringuteks</h1>
+                    <span class="hero-eu">NVIDIA Inception</span>
+                    <span class="hero-eu">Tier-1 autotööstuse usaldus</span>
+                    </div>
+                    <span class="hero-eyebrow">Tootjatele &amp; automaatikatarnijatele</span>
+                    <h1 class="hero-title">Kahekäelised robotid ülesanneteks, mis on fikseeritud automaatika jaoks liiga paindlikud</h1>
                     <p class="hero-description">
-                        Modulaarne humanoidrobot, mis on loodud spetsiaalselt uurimistööks. Treenige VLA-poliitikaid, koguge teleoperatsiooni andmeid, valideerige simulatsioonis, juurutage riistvaral — kõik on karbist välja võttes valmis.
+                        Statsionaarne kahe käsivarrega robot, mis õpib tööstuslikke ülesandeid demonstratsioonist. Esimene rakendus: liini lõpu funktsionaalne testimine autotööstuses.
                     </p>
                     <div class="hero-audience">
-                        <span class="audience-tag primary">Uurimislaborid</span>
-                        <span class="audience-tag primary">Tehnikaülikoolid</span>
+                        <span class="audience-tag primary">Autotööstus</span>
+                        <span class="audience-tag primary">Elektroonika</span>
                         <span class="audience-tag primary">Tootmine</span>
-                        <span class="audience-tag primary">Meelelahutus</span>
                         <span class="audience-tag">Automaatikatarnijad</span>
-                        <span class="audience-tag">Idufirmad</span>
-                        <span class="audience-tag">DIY-arendajad</span>
+                        <span class="audience-tag">Uurimislaborid</span>
                     </div>
                     <div class="cta-group">
-                        <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
-                            Osta humanoidrobot
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                            </svg>
-                        </a>
-                        <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
+                        <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button">
                             Broneeri kõne
                             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </a>
+                        <a href="/et/research/" class="cta-button secondary">
+                            Uurimislaboritele
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                             </svg>
                         </a>
                     </div>
                 </div>
 
                 <div class="cta-button-container">
-                    <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
-                        Osta humanoidrobot
-                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                        </svg>
-                    </a>
-                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
+                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button">
                         Broneeri kõne
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </a>
+                    <a href="/et/research/" class="cta-button secondary">
+                        Uurimislaboritele
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                         </svg>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Loodud kaasaegseks robootikauuringuks -->
+        <!-- Traction -->
+        <section class="research-ready traction">
+            <div class="research-ready-container">
+                <h2 class="section-title">Koostöö tööstusega</h2>
+                <p class="section-subtitle">Kus me täna oma tööstuspartneritega oleme.</p>
+
+                <div class="research-grid traction-grid">
+                    <div class="research-card featured">
+                        <span class="research-icon">🤝</span>
+                        <h3>Tier-1 autotööstuse kavatsuste protokoll</h3>
+                        <p>Allkirjastatud kavatsuste protokoll tier-1 autotööstustarnijaga, mis hõlmab tasustatud pilootprojekti.</p>
+                    </div>
+                    <div class="research-card featured">
+                        <span class="research-icon">🏭</span>
+                        <h3>Juurutusprotsess käimas</h3>
+                        <p>Liini lõpu testimise juurutusprotsess on käimas ühes Euroopa tehases.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem -->
         <section class="research-ready">
             <div class="research-ready-container">
-                <div class="use-case-tabs">
-                    <a class="use-case-tab active" data-tab="research" href="/et/" onclick="return showUseCase('research', this, event)">🔬 Uurimislaborid</a>
-                    <a class="use-case-tab" data-tab="manufacturing" href="/et/manufacturing/" onclick="return showUseCase('manufacturing', this, event)">🏭 Tootmine</a>
-                    <a class="use-case-tab" data-tab="entertainment" href="/et/entertainment/" onclick="return showUseCase('entertainment', this, event)">🎉 Meelelahutus</a>
-                </div>
+                <h2 class="section-title">Liinipositsioonid, mida te ei suuda mehitada</h2>
+                <p class="section-subtitle">Euroopa tootjad ei suuda korduvaid liinipositsioone mehitada — ja olemasolevad alternatiivid ei sobi paindlikeks ülesanneteks.</p>
 
-                <div class="use-case-panel active" id="usecase-research">
-                <h2 class="section-title">Loodud kaasaegseks robootikauuringuks</h2>
-                <p class="section-subtitle">Kõik, mida teie labor vajab andmete kogumiseks, poliitikate treenimiseks ja katsete läbiviimiseks — robotiga kaasas.</p>
+                <div class="research-grid problem-grid">
+                    <div class="research-card">
+                        <span class="research-icon">👥</span>
+                        <h3>Kolm vahetust, kolm operaatorit</h3>
+                        <p>Üks kolmes vahetuses töötav jaam tähendab kolme operaatorit — olenevalt riigist €70–200k tööjõukulusid aastas. Ja just neid rolle on kõige raskem täita ja mehitatuna hoida.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">🔩</span>
+                        <h3>Fikseeritud automaatika ei paindu</h3>
+                        <p>Kohandatud rakud ei tule tootevalikuga toime ilma kuluka ümberseadistamiseta. Iga tootemuudatus tähendab inseneritööd, seisakuid ja kapitalikulusid.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">🚶</span>
+                        <h3>Universaalsed humanoidid pole valmis</h3>
+                        <p>Kõndivad, kõigeks võimelised humanoidid on aastate kaugusel ja kallid. Paindlikud liinitööd vajavad lahendust, mis toimib juba täna.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution: Manipulatsioonijaam -->
+        <section class="research-ready">
+            <div class="research-ready-container">
+                <h2 class="section-title">Manipulatsioonijaam</h2>
+                <p class="section-subtitle">Kahe käsivarrega robot fikseeritud alusel või motoriseeritud lineaarteljel. Osad tulevad jaama juurde — ei mingeid jalgu ega navigeerimist, ja seda taotluslikult: nii püsib robot juba täna taskukohane, töökindel ja sertifitseeritav.</p>
 
                 <div class="research-grid">
                     <div class="research-card featured">
-                        <span class="research-icon">📷</span>
-                        <h3>VLA-le optimeeritud nägemine</h3>
-                        <p>Reguleeritava paigaldusnurgaga randmekaamerad — ideaalsed Pi0.5 ja teiste VLA-mudelite jaoks. Lisaks peapaigaldusega stereonägemine kogu stseeni tajumiseks.</p>
-                        <span class="vla-tag">Pi0.5 · SmolVLA · ACT</span>
+                        <span class="research-icon">🔧</span>
+                        <h3>Liini lõpu testimine</h3>
+                        <p>Seadmete laadimine, sahtlite käsitsemine ja testitulemuse järgi sorteerimine — funktsionaalne testimine tootmisliini lõpus.</p>
+                        <span class="vla-tag">Peamine rakendus</span>
                     </div>
+                    <div class="research-card">
+                        <span class="research-icon">📦</span>
+                        <h3>Komplekteerimine &amp; pakkimine</h3>
+                        <p>Pange kokku komplekte ja pakkige erinevaid tooteid kahe koordineeritud käsivarrega — ülesanded, millega ühe käsivarrega rakud hätta jäävad.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">⚙️</span>
+                        <h3>Masinate teenindamine</h3>
+                        <p>Laadige ja tühjendage masinaid, presse ja testrakiseid — stabiilselt tsükkel tsükli järel, vahetus vahetuse järel.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">🗂️</span>
+                        <h3>Sorteerimine</h3>
+                        <p>Sorteerige osi ja tooteid tüübi, asendi või kontrollitulemuse järgi — juhituna masinnägemisest, mitte rakistest.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="research-card featured">
+        <!-- How It Works -->
+        <section class="research-ready">
+            <div class="research-ready-container">
+                <h2 class="section-title">Treenitud demonstratsiooni teel, mitte programmeeritud</h2>
+                <p class="section-subtitle">Autonoomne töö treenitakse iga ülesande jaoks pilootprojekti käigus — andmekonveieri kaudu, mitte kuude pikkuse eriprogrammeerimisega.</p>
+
+                <div class="research-grid how-grid">
+                    <div class="research-card">
+                        <span class="research-icon">🥽</span>
+                        <h3>1 · Demonstreerimine</h3>
+                        <p>Operaatorid teleopereerivad robotit läbi ülesande VR-i abil — teie poolelt pole robootikateadmisi vaja.</p>
+                    </div>
+                    <div class="research-card">
                         <span class="research-icon">🧠</span>
-                        <h3>Treenimiseks valmis</h3>
-                        <p>Eelseadistatud kaasaegsetele ML-konveieritele. Alustage demonstratsioonide kogumist ja poliitikate treenimist juba esimesel päeval — integratsioonitööd pole vaja.</p>
+                        <h3>2 · Treenimine</h3>
+                        <p>Salvestatud demonstratsioonide põhjal treenitakse VLA (nägemis-keele-tegevuse) poliitikad just selle ülesande ja jaama jaoks.</p>
                     </div>
-
-                    <div class="research-card featured">
-                        <span class="research-icon">🎮</span>
-                        <h3>Teleoperatsiooni konveier</h3>
-                        <p>Tele-op tugi karbist välja võttes demonstratsioonide salvestamiseks ja kaugjuhtimiseks. Ühenduge oma imitatsiooniõppe töövoogu kohe.</p>
-                    </div>
-
-                    <div class="research-card featured">
-                        <span class="research-icon">📐</span>
-                        <h3>URDF simulaatoritele</h3>
-                        <p>Kaasas täielik URDF-roboti mudel. Otsene ühilduvus tööriistadega MuJoCo, Isaac Sim, PyBullet, Gazebo ja ülejäänud standardse sim-virnaga.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">🖥️</span>
-                        <h3>Simulaator kaasas</h3>
-                        <p>Iga robotiga tarnitakse simulaator. Arendage ja valideerige simulatsioonis enne riistvara puudutamist.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">💻</span>
-                        <h3>SDK</h3>
-                        <p>Täielik SDK juhtimiseks, tajumiseks ja integratsiooniks. Python-keskne ja hästi dokumenteeritud.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">🦾</span>
-                        <h3>Haaratsid kaasas</h3>
-                        <p>Manipulaatorid tarnitakse koos platvormiga. Lõppefektoreid pole vaja eraldi hankida.</p>
-                    </div>
-
                     <div class="research-card">
                         <span class="research-icon">🤖</span>
-                        <h3>Modulaarne riistvara</h3>
-                        <p>Vahetage käsivarsi, haaratseid ja baasmooduleid. Kohandage platvorm oma uurimistööle, mitte vastupidi.</p>
+                        <h3>3 · Käitamine</h3>
+                        <p>Treenitud poliitika täidab ülesannet jaamas ja paraneb iga juurutusega.</p>
                     </div>
-
                     <div class="research-card">
-                        <span class="research-icon">📼</span>
-                        <h3>Näidisstsenaariumid</h3>
-                        <p>Eelsalvestatud liigutused ja näidisstsenaariumid täitmiseks. Valideerige virn oma töölaual mõne minutiga.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">📚</span>
-                        <h3>Üksikasjalik dokumentatsioon</h3>
-                        <p>Põhjalik dokumentatsioon riistvara, tarkvara, kalibreerimise ja integratsiooni töövoogude kohta.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">💬</span>
-                        <h3>Otsene insenertugi</h3>
-                        <p>Otseliin meie meeskonnaga — lahtipakkimisest kuni juurutamise, katsete ja publikatsioonini.</p>
+                        <span class="research-icon">📈</span>
+                        <h3>4 · Võimendumine</h3>
+                        <p>Iga juurutus täiendab meie enda manipulatsiooniandmestikku — iga uus ülesanne alustab järjest kaugemalt.</p>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <h3 class="panel-why-title">Miks laborid valivad Prometheuse</h3>
-                <p class="panel-why-subtitle">Uurimistööks loodud valmis humanoidroboteid pole olemas. Meeskonnad kulutavad kuid riistvara, kaamerate, simulatsiooni ja ML-tööriistade kokkusobitamiseks, enne kui saavad teha kasvõi ühe katse. Prometheus tarnib kogu selle virna kasutusvalmis kujul.</p>
+        <!-- Why Prometheus -->
+        <section class="research-ready">
+            <div class="research-ready-container">
+                <h2 class="section-title">Miks tootjad valivad Prometheuse</h2>
+                <p class="section-subtitle">Raskesti mehitatavad liinitööd püsivad kaetud — ilma et peaksite liini jäiga raku ümber ümber ehitama.</p>
+
                 <div class="research-grid">
                     <div class="research-card featured">
-                        <span class="research-icon">🎓</span>
-                        <h3>Uurimiskeskne, mitte demoseade</h3>
-                        <p>Avatud arhitektuur, täielik SDK, URDF ja kaasasolev simulaator — kujundatud selle järgi, kuidas robootikauuring tegelikult toimib.</p>
+                        <span class="research-icon">👷</span>
+                        <h3>Täidab raskesti mehitatavad töökohad</h3>
+                        <p>Katke korduvad, suure voolavusega tööd, mida inimesed ei taha — ilma personali suurendamata või voolavusega võitlemata.</p>
                     </div>
                     <div class="research-card featured">
-                        <span class="research-icon">⏱️</span>
-                        <h3>Jätke kuude pikkune integratsioon vahele</h3>
-                        <p>Kaamerad, teleop ja ML-konveierid on eelseadistatud. Alustage demonstratsioonide kogumist ja poliitikate treenimist juba esimesel päeval.</p>
+                        <span class="research-icon">💸</span>
+                        <h3>Odavam kui kohandatud lahendus</h3>
+                        <p>Üks paindlik humanoid asendab eritellimusel valmistatud fikseeritud automaatika, mille projekteerimine, ehitamine ja hooldamine on kulukas.</p>
                     </div>
                     <div class="research-card featured">
-                        <span class="research-icon">🧩</span>
-                        <h3>Häkitav &amp; modulaarne</h3>
-                        <p>Vahetage käsivarsi, haaratseid ja baasmooduleid, kirjutage oma kontrollerid, laiendage SDK-d. Kohandage platvorm oma tööle.</p>
+                        <span class="research-icon">♻️</span>
+                        <h3>Ümbertreenitav eri ülesanneteks</h3>
+                        <p>Uus toode või ülesanne tähendab uusi demonstratsioone, mitte uusi rakiseid. Pole fikseeritud rakiseid, mida ümber ehitada.</p>
                     </div>
                     <div class="research-card featured">
-                        <span class="research-icon">✨</span>
-                        <h3>Eritellimusena valmistatud</h3>
-                        <p>Eritellimusena valmistatud andurikomplektid, alternatiivsed haaratsid, kohandatud kinemaatika ja tarkvaraintegratsioonid spetsiifiliseks laboritööks.</p>
+                        <span class="research-icon">🇪🇺</span>
+                        <h3>EL-is paiknev</h3>
+                        <p>Riistvara, inseneritöö, tugi ja andmed jäävad Euroopasse — teie tootmisliinil pole sõltuvust ülemerest.</p>
                     </div>
-                </div>
-                </div>
-
-                <div class="use-case-panel" id="usecase-manufacturing">
-                    <h2 class="section-title">Pange humanoid oma liinile</h2>
-                    <p class="section-subtitle">Liini lõpu testimine, pick-and-place ja korduvad liinitööd, mida te pigem ei tahaks mehitada — hoolitsetud paindliku humanoidi poolt, mis juurutub ümber mõne minutiga.</p>
-
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">🔧</span>
-                            <h3>Liini lõpu testimine</h3>
-                            <p>Tehke funktsionaalsed ja kvaliteedikontrollid oma tootmisliini lõpus — järjepidevalt, korratavalt ja väsimatult igas vahetuses.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">📦</span>
-                            <h3>Pick &amp; Place</h3>
-                            <p>Usaldusväärne pick-and-place osadele, pakenditele ja komplekteerimisele. Käsitsege erinevaid esemeid kaasasolevate haaratsitega.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">🔁</span>
-                            <h3>Korduvad liinitööd</h3>
-                            <p>Võtke üle igavad, korduvad tööd — masinate teenindamine, sorteerimine, kokkupanekutugi — ja vabastage oma inimesed väärtuslikumaks tööks.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🧠</span>
-                            <h3>Õpib ülesande selgeks</h3>
-                            <p>Töötab Pi0 jõul — kergesti treenitav VLA-mudel. Näidake talle ülesannet ja see üldistab, kohanedes variatsiooniga, mitte ei katke selle peale. Mingit jäika skriptimist.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🛠️</span>
-                            <h3>Kiire ümberseadistamine</h3>
-                            <p>Seadistage ümber uue ülesande või tootevahetuse jaoks mõne minutiga, mitte nädalatega. Üks robot, palju töid.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">👁️</span>
-                            <h3>Nägemisjuhitav</h3>
-                            <p>Stereo- ja randmekaamerad osade tuvastamiseks, joondamiseks ja visuaalseks kontrolliks just seal, kus töö toimub.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🦾</span>
-                            <h3>Modulaarsed haaratsid</h3>
-                            <p>Vahetage lõppefektoreid vastavalt osale. Manipulaatorid tarnitakse koos platvormiga, valmis teie liini jaoks.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🔌</span>
-                            <h3>Lihtne integratsioon</h3>
-                            <p>Lihtne REST API ühendub teie olemasoleva liinijuhtimise ja töövoogudega — ilma omandiõigusliku lukustuseta.</p>
-                        </div>
-                    </div>
-
-                    <h3 class="panel-why-title">Miks tootjad valivad Prometheuse</h3>
-                    <p class="panel-why-subtitle">Igavaid, korduvaid liinitöid on kõige raskem mehitada ja mehitatuna hoida — kuid ülesandespetsiifilised robotid sunnivad teid liini nende ümber ümber ehitama. Prometheus integreerub selle asemel sujuvalt teie olemasolevasse protsessi, töötab kolm vahetust päevas ega jää kunagi haigeks.</p>
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">👷</span>
-                            <h3>Täidab raskesti mehitatavad töökohad</h3>
-                            <p>Katke korduvad, suure voolavusega tööd, mida inimesed ei taha — ilma personali suurendamata või voolavusega võitlemata.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">💸</span>
-                            <h3>Odavam kui kohandatud lahendus</h3>
-                            <p>Üks paindlik humanoid asendab eritellimusel valmistatud fikseeritud automaatika, mille projekteerimine, ehitamine ja hooldamine on kulukas.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">♻️</span>
-                            <h3>Seadistub ümber mõne minutiga</h3>
-                            <p>Uus toode või ülesanne ei tähenda enam nädalaid ümberseadistamist. Treenige sama robot ümber ja kasutage seda kogu liinil uuesti.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">📈</span>
-                            <h3>Skaleerub nõudlusega</h3>
-                            <p>Lisage seadmeid mahu kasvades ja viige need kitsaskohta. Pole fikseeritud taristut, mida välja rebida ja uuesti ehitada.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="use-case-panel" id="usecase-entertainment">
-                    <h2 class="section-title">Humanoid, mis varastab kogu tähelepanu</h2>
-                    <p class="section-subtitle">Lõbustusparkidele, hotellidele, muuseumidele ja üritustele — riietage ta, juhtige VR-ist, taasesitage etteasteid ning laske tal tervitada, tutvustada ja selgitada.</p>
-
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">👗</span>
-                            <h3>Riietage ta</h3>
-                            <p>Riietage robot kohandatud kostüümidesse ja brändiriietusse, mis sobib teie kohaga, maskotiga või ürituse teemaga.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">🥽</span>
-                            <h3>VR-teleoperatsioon</h3>
-                            <p>Juhtige robotit reaalajas VR-ist Meta Quest 3S abil — lehvitage, žestikuleerige ja suhelge külalistega reaalajas.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">🎬</span>
-                            <h3>Salvesta &amp; taasesita</h3>
-                            <p>Salvestage etteaste üks kord ja taasesitage seda nõudmisel — tervitused, tantsud ja skriptitud etteasted, etendus etenduse järel.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🗣️</span>
-                            <h3>Tutvusta &amp; selgita</h3>
-                            <p>Laske tal juhtida ja selgitada — giidituurid, tootedemod ja näitused, mis räägivad külastajatele kogemuse läbi.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">👋</span>
-                            <h3>Tervita külalisi</h3>
-                            <p>Sõbralik humanoidne tervitus pargi sissepääsudele, hotelli fuajeedele ja etendussaalidele.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">📡</span>
-                            <h3>Kaugjuhtimine</h3>
-                            <p>Juhtige seda eemalt ükskõik kust — viige läbi suhtlusi ja etteasteid ilma personalita kohapeal.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🏨</span>
-                            <h3>Loodud kohtadele</h3>
-                            <p>Lõbustuspargid, hotellid, muuseumid ja üritused — pilkupüüdev atraktsioon, mis hoiab rahvahulgad kaasatuna.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🤖</span>
-                            <h3>Alati brändile truu</h3>
-                            <p>Järjepidevad, korratavad etteasted iga kord — teie tunnuslik tegelane, usaldusväärselt esitatud.</p>
-                        </div>
-                    </div>
-
-                    <h3 class="panel-why-title">Miks kohad valivad Prometheuse</h3>
-                    <p class="panel-why-subtitle">Atraktsioonid püsivad või langevad oma vau-efekti najal. Külalised on näinud ekraane ja animatroonikat — päris, interaktiivne humanoid on see, mida nad pildistavad, postitavad ja mille pärast tagasi tulevad. See on avaldus, et teie koht on turul kõige edasijõudnum.</p>
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">⭐</span>
-                            <h3>Rahvamagnet</h3>
-                            <p>Päris humanoid tõmbab ligi rahvahulki, pilte ja sotsiaalmeedia kõlapinda, millega ekraan või animatroonika lihtsalt ei suuda võistelda.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">🏆</span>
-                            <h3>Kohene prestiiž</h3>
-                            <p>Näidake kõigile, et juhite turu kõige edasijõudnumat, tulevikku vaatavat kohta — ja veenduge, et nad kõik seda näevad.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">🎭</span>
-                            <h3>Üks esineja, iga etendus</h3>
-                            <p>Salvestage etteasted üks kord ja taasesitage neid laitmatult terve päeva — ilma pauside, ajakavastamise või rolli mehitamiseta.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">🌍</span>
-                            <h3>Juhtige ükskõik kust</h3>
-                            <p>Juhtige seda reaalajas VR-is Meta Quest 3S abil, et tervitada ja suhelda külalistega reaalajas — isegi eemalt.</p>
-                        </div>
+                    <div class="research-card featured">
+                        <span class="research-icon">🛡️</span>
+                        <h3>Sertifitseerimistee on paigas</h3>
+                        <p>Projekteeritud CE-sertifitseerimiseks tööstusrobotite standardite ISO 10218-1 ja ISO 10218-2 järgi.</p>
                     </div>
                 </div>
             </div>
@@ -1756,7 +1598,7 @@
         <section class="specifications">
             <div class="specs-container">
                 <h2 class="section-title">Tehnilised andmed</h2>
-                <p class="section-subtitle">Ülakeha statiivil — sobib lauapealseks uurimistööks</p>
+                <p class="section-subtitle">Kahe käsivarrega ülakeha — manipulatsioonijaama konfiguratsioon</p>
                 
                 <div class="specs-content">
                     <div class="specs-table-wrapper">
@@ -1767,8 +1609,12 @@
                                     <td class="spec-value">120Nm</td>
                                 </tr>
                                 <tr>
+                                    <td class="spec-label">Paigaldusvalikud</td>
+                                    <td class="spec-value">Fikseeritud alus / motoriseeritud lineaartelg (siin)</td>
+                                </tr>
+                                <tr>
                                     <td class="spec-label">Kõrgus</td>
-                                    <td class="spec-value">160cm on tripod (172cm on legs/wheels)</td>
+                                    <td class="spec-value">160 cm statiivil</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Laius</td>
@@ -1780,7 +1626,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Vabadusastmed</td>
-                                    <td class="spec-value">19 (29 with legs; 43 with hands; 53 with legs and hands)</td>
+                                    <td class="spec-value">19 (43 koos kätega)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Kaamerad</td>
@@ -1827,19 +1673,6 @@
                             <div class="robot-glow"></div>
                             <img src="/robot.png" alt="Prometheus Humanoid Robot" class="robot-img">
                         </div>
-                        <h3 class="modules-title">Saadaolevad moodulid</h3>
-                        <div class="modules-grid">
-                            <div class="module-card">
-                                <div class="module-icon">🦿</div>
-                                <h4>Jalgade moodul</h4>
-                                <p>Kahejalgne liikumissüsteem suurema liikuvuse ja inimlaadsete liikumisvõimete jaoks.</p>
-                            </div>
-                            <div class="module-card">
-                                <div class="module-icon">🛞</div>
-                                <h4>Rataste moodul</h4>
-                                <p>Ratastel baas tõhusaks navigeerimiseks ja stabiilseks platvormiks erinevatele rakendustele.</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -1854,49 +1687,6 @@
             </div>
         </section>
 
-        <!-- Manipulators Section -->
-        <section class="manipulators">
-            <div class="manipulators-container">
-                <h2 class="section-title">Manipulaatori valikud</h2>
-                <p class="section-subtitle">Valige oma uurimistööks õige lõppefektor</p>
-                
-                <div class="manipulators-grid">
-                    <div class="manipulator-card">
-                        <div class="manipulator-image">
-                            <img src="/claw.png" alt="Type A - 2-sõrmeline haarats">
-                        </div>
-                        <div class="manipulator-content">
-                            <h3>Type A</h3>
-                            <h4>2-sõrmeline haarats</h4>
-                            <p>Lihtne näpistamine / täpne sulgemine. Ideaalne õrnadeks toiminguteks ja täpseteks manipuleerimisülesanneteks.</p>
-                        </div>
-                    </div>
-
-                    <div class="manipulator-card">
-                        <div class="manipulator-image">
-                            <img src="/for_totes.png" alt="Type B - 4-finger claw">
-                        </div>
-                        <div class="manipulator-content">
-                            <h3>Type B</h3>
-                            <h4>4-sõrmeline "küünis" (paaris sõrmed)</h4>
-                            <p>Kastide ja toatide tugevaks haaramiseks. Loodud lao- ja logistikarakendusteks.</p>
-                        </div>
-                    </div>
-
-                    <div class="manipulator-card">
-                        <div class="manipulator-image">
-                            <img src="/hand.png" alt="Type X - Advanced manipulator">
-                        </div>
-                        <div class="manipulator-content">
-                            <h3>Type X</h3>
-                            <h4>Täiustatud manipulaatorid</h4>
-                            <p>Valikute hulka kuuluvad reguleeritava paigaldusnurgaga randmekaamerad (optimeeritud Pi0.5 ja teiste VLA-mudelite jaoks), 5-sõrmelised käed ja muud kohandatud variandid.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- FAQ Section -->
         <section class="faq">
             <div class="faq-container">
@@ -1904,24 +1694,16 @@
                 <p class="section-subtitle">Everything you need to know before getting started</p>
                 <div class="faq-list">
                     <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Milliseid tehisintellekti mudeleid robot toetab?</button>
-                        <div class="faq-a"><p>Karbist väljas toetab see kaasaegseid nägemis-keele-tegevuse ja imiteerival õppimisel põhinevaid poliitikaid, sealhulgas Pi0, Pi0.5, ACT ja SmolVLA. Koguge teleopereerimise andmeid, peenhäälestage tarbija GPU peal ja juurutage SDK kaudu.</p></div>
+                        <button class="faq-q" onclick="toggleFaq(this)">Kas robot on tehases kasutamiseks ohutu ja sertifitseeritav?</button>
+                        <div class="faq-a"><p>See on projekteeritud CE-sertifitseerimiseks tööstusrobotite standardite ISO 10218-1 ja ISO 10218-2 järgi. Juurutuse ohutuskonfiguratsioon — piirded, kiiruspiirangud ja blokeeringud — määratletakse iga asukoha jaoks pilootprojekti ettevalmistamise käigus.</p></div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Mis robotiga kaasas on?</button>
-                        <div class="faq-a"><p>Iga seade tarnitakse koos täisvaliku SDK ja lihtsa REST API-ga, URDF-mudeliga, kaasasoleva simulaatoriga, pähe kinnitatava stereokaamera ning rannekaameratega, haaratsitega ja otsese inseneritoega. Teleopereerimise töövoog toimib esimesest päevast alates.</p></div>
+                        <button class="faq-q" onclick="toggleFaq(this)">Kas see integreerub meie olemasoleva liiniga?</button>
+                        <div class="faq-a"><p>Jah. Jaam töötab teie olemasolevate jaamade ja töövoogude kõrval — osad tulevad roboti juurde, seega pole liini vaja ümber ehitada. Lihtne REST API ühendab selle teie liinijuhtimisega.</p></div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Kas saan teleopereerimise andmeid ise koguda ja poliitikaid treenida?</button>
-                        <div class="faq-a"><p>Jah. Teleopereerige VR kaudu Meta Quest 3S seadme või juht-järgija kontrolleriga, salvestage demonstratsioonid standardses andmestiku vormingus ning treenige ACT või peenhäälestage nägemis-keele-tegevuse mudel ühel tarbija GPU-l.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Millisel arvutusvõimsusel robot töötab?</button>
-                        <div class="faq-a"><p>Pardal olev arvutusvõimsus on Raspberry Pi 5 või NVIDIA Jetson. Kerged poliitikad töötavad seadmes endas, samas kui raskemad nägemis-keele-tegevuse mudelid saavad töötada ühendatud tööjaama GPU-l ja edastada käske REST API kaudu.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Kas robot on moodulpõhine?</button>
-                        <div class="faq-a"><p>Jah. Saate vahetada käsivarsi, haaratseid (2-sõrmelisi, 4-sõrmelisi või täiustatud viiesõrmelisi käsi) ning baasmooduleid nagu jalad või rattad, ning kohandada platvormi oma ülesandele, mitte vastupidi.</p></div>
+                        <button class="faq-q" onclick="toggleFaq(this)">Kuidas robot uue ülesande selgeks õpib?</button>
+                        <div class="faq-a"><p>Operaatorid teleopereerivad robotit läbi ülesande, et salvestada demonstratsioone, ning nende demode põhjal treenitakse nägemis-keele-tegevuse poliitikad nagu Pi0 ja ACT. Autonoomne töö treenitakse iga ülesande jaoks pilootprojekti käigus.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Kus robot valmistatakse?</button>
@@ -1934,16 +1716,10 @@
         <!-- Bottom CTA Section -->
         <section style="padding: 6rem 3rem; text-align: center; background: linear-gradient(180deg, #0f0f0f 0%, var(--color-bg) 100%); border-top: 1px solid var(--color-border);">
             <div style="max-width: 800px; margin: 0 auto;">
-                <h2 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.01em;">Valmis Prometheust tööle panema?</h2>
-                <p style="color: var(--color-text-secondary); font-size: 1.2rem; margin-bottom: 3rem; line-height: 1.7;">Olgu selleks uurimislabor, tootmisliin või etenduspaik — tellige seade või broneerige kõne, et arutada oma konfiguratsiooni.</p>
+                <h2 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.01em;">Pange Prometheus oma liinile</h2>
+                <p style="color: var(--color-text-secondary); font-size: 1.2rem; margin-bottom: 3rem; line-height: 1.7;">Broneerige kõne, et kaardistada liini lõpu pilootprojekt teie tehase jaoks — käime koos läbi teie jaamad, ülesanded ja integratsioonipiirangud.</p>
                 <div class="cta-group" style="justify-content: center;">
-                    <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
-                        Osta modulaarne platvorm
-                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                        </svg>
-                    </a>
-                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
+                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button">
                         Broneeri kõne
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
@@ -1978,12 +1754,13 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h4>Prometheus Robotics</h4>
-                <p>Modulaarne humanoidplatvorm uurimistööks, tööstusele ja meelelahutuseks. Loodud laboritele, tehasepõrandatele ja kohtadele, mis kujundavad järgmise põlvkonna intelligentseid roboteid.</p>
+                <p>Kahekäelised robotid tööstusautomaatikale — liini lõpu testimine, komplekteerimine ja masinate teenindamine — ning modulaarne humanoidplatvorm robootikauuringuteks. Projekteeritud ja toodetud EL-is.</p>
             </div>
             <div class="footer-section">
                 <h4>Navigeerimine</h4>
                 <ul class="footer-links">
-                    <li><a onclick="showPage('home')">Avaleht</a></li>
+                    <li><a href="/et/">Avaleht</a></li>
+                    <li><a href="/et/research/">Uurimistöö</a></li>
                     <li><a href="/blog/">Blog</a></li>
                     <li><a onclick="showPage('contacts')">Kontaktid</a></li>
                     <li><a href="https://www.linkedin.com/in/ilya-pavlenkov/recent-activity/all/" target="_blank">LinkedIn</a></li>
@@ -1992,13 +1769,13 @@
             <div class="footer-section">
                 <h4>Alusta</h4>
                 <ul class="footer-links">
-                    <li><a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank">Osta robot</a></li>
                     <li><a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer">Broneeri kõne</a></li>
+                    <li><a href="/demo/">Demovideo</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Prometheus Engineering Kft. Kõik õigused kaitstud. Made in EU <svg class="eu-flag-inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810 540" role="img" aria-label="European Union flag"><rect width="810" height="540" fill="#003399"/><g fill="#FFCC00"><circle cx="405" cy="105" r="15"/><circle cx="505" cy="140" r="15"/><circle cx="560" cy="220" r="15"/><circle cx="560" cy="320" r="15"/><circle cx="505" cy="400" r="15"/><circle cx="405" cy="435" r="15"/><circle cx="305" cy="400" r="15"/><circle cx="250" cy="320" r="15"/><circle cx="250" cy="220" r="15"/><circle cx="305" cy="140" r="15"/><circle cx="405" cy="175" r="15"/><circle cx="405" cy="365" r="15"/></g></svg></p>
+            <p>&copy; 2026 Prometheus Engineering Kft. Kõik õigused kaitstud. Made in EU <svg class="eu-flag-inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810 540" role="img" aria-label="European Union flag"><rect width="810" height="540" fill="#003399"/><g fill="#FFCC00"><circle cx="405" cy="105" r="15"/><circle cx="505" cy="140" r="15"/><circle cx="560" cy="220" r="15"/><circle cx="560" cy="320" r="15"/><circle cx="505" cy="400" r="15"/><circle cx="405" cy="435" r="15"/><circle cx="305" cy="400" r="15"/><circle cx="250" cy="320" r="15"/><circle cx="250" cy="220" r="15"/><circle cx="305" cy="140" r="15"/><circle cx="405" cy="175" r="15"/><circle cx="405" cy="365" r="15"/></g></svg></p>
         </div>
     </footer>
 
@@ -2161,16 +1938,10 @@
             /* LANGS:END */
         ];
 
-        function currentTabPath() {
-            const p = location.pathname;
-            if (p.indexOf('manufacturing') !== -1) return 'manufacturing/';
-            if (p.indexOf('entertainment') !== -1) return 'entertainment/';
-            return '';
-        }
-
         function langHref(code) {
             const base = code === 'en' ? '' : '/' + code;
-            return (base + '/' + currentTabPath()) || '/';
+            const page = location.pathname.indexOf('/research') !== -1 ? 'research/' : '';
+            return (base + '/' + page) || '/';
         }
 
         function initLangSwitcher() {
@@ -2206,35 +1977,9 @@
         }
         initLangSwitcher();
 
-        function useCaseUrl(id) {
-            return window.LANG_BASE + (id === 'research' ? '/' : '/' + id + '/');
-        }
-
-        function showUseCase(id, btn, event) {
-            if (event) event.preventDefault();
-            document.querySelectorAll('.use-case-panel').forEach(p => p.classList.remove('active'));
-            document.querySelectorAll('.use-case-tab').forEach(t => t.classList.remove('active'));
-            const panel = document.getElementById('usecase-' + id);
-            if (panel) panel.classList.add('active');
-            if (!btn) btn = document.querySelector('.use-case-tab[data-tab="' + id + '"]');
-            if (btn) btn.classList.add('active');
-            if (event && window.history && history.pushState) {
-                history.pushState({ tab: id }, '', useCaseUrl(id));
-            }
-            return false;
-        }
-
         function toggleFaq(btn) {
             btn.parentElement.classList.toggle('open');
         }
-
-        window.addEventListener('popstate', function () {
-            const path = location.pathname;
-            let id = 'research';
-            if (path.indexOf('manufacturing') !== -1) id = 'manufacturing';
-            else if (path.indexOf('entertainment') !== -1) id = 'entertainment';
-            showUseCase(id, null, null);
-        });
 
         (function () {
             const navEl = document.querySelector('nav');

@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SEO:START -->
-    <title>Prometheus Robotics — Platformă umanoidă pentru laboratoare de cercetare</title>
-    <meta name="description" content="Un robot umanoid modular construit pentru cercetarea în robotică: SDK complet, camere stereo + de încheietură, URDF, simulator inclus și suport pentru modele VLA precum Pi0 și ACT.">
+    <title>Prometheus Robotics — Roboți bimanuali pentru automatizare industrială | Testare EOL</title>
+    <meta name="description" content="Un robot staționar cu două brațe care învață sarcini industriale din demonstrații: testare funcțională la capătul liniei, kitting și alimentarea mașinilor. Proiectat și fabricat în UE.">
     <link rel="canonical" href="https://meetprometheus.com/ro/">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://meetprometheus.com/ro/">
-    <meta property="og:title" content="Prometheus Robotics — Platformă umanoidă pentru laboratoare de cercetare">
-    <meta property="og:description" content="Un robot umanoid modular construit pentru cercetarea în robotică: SDK complet, camere stereo + de încheietură, URDF, simulator inclus și suport pentru modele VLA precum Pi0 și ACT.">
+    <meta property="og:title" content="Prometheus Robotics — Roboți bimanuali pentru automatizare industrială | Testare EOL">
+    <meta property="og:description" content="Un robot staționar cu două brațe care învață sarcini industriale din demonstrații: testare funcțională la capătul liniei, kitting și alimentarea mașinilor. Proiectat și fabricat în UE.">
     <meta property="og:locale" content="ro_RO">
     <!-- SEO:END -->
     <meta name="theme-color" content="#0a0a0a">
@@ -371,6 +371,13 @@
             flex-shrink: 0;
         }
 
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
         .hero-eyebrow {
             font-size: 0.85rem;
             font-weight: 600;
@@ -571,7 +578,7 @@
 
         .cta-button-container { display: none; }
 
-        /* Research Ready Section */
+        /* Cercetare Ready Section */
         .research-ready {
             padding: 8rem 3rem;
             background: linear-gradient(180deg, var(--color-bg) 0%, #0f0f0f 100%);
@@ -583,47 +590,9 @@
             margin: 0 auto;
         }
 
-        .use-case-tabs {
-            display: flex;
+        .traction-grid {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 440px));
             justify-content: center;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-bottom: 3.5rem;
-        }
-
-        .use-case-tab {
-            font-family: var(--font-body);
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 0.01em;
-            color: var(--color-text-secondary);
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--color-border);
-            border-radius: 50px;
-            padding: 0.85rem 1.9rem;
-            cursor: pointer;
-            display: inline-block;
-            text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .use-case-tab:hover {
-            color: var(--color-text);
-            border-color: rgba(59, 130, 246, 0.4);
-        }
-
-        .use-case-tab.active {
-            color: #ffffff;
-            background: var(--color-accent);
-            border-color: var(--color-accent);
-            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3);
-        }
-
-        .use-case-panel { display: none; }
-
-        .use-case-panel.active {
-            display: block;
-            animation: tabFade 0.4s ease;
         }
 
         .panel-why-title {
@@ -642,11 +611,6 @@
             max-width: 720px;
             margin: 0 auto 2.5rem;
             line-height: 1.6;
-        }
-
-        @keyframes tabFade {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         .research-grid {
@@ -1394,7 +1358,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ce modele de inteligență artificială acceptă robotul?", "acceptedAnswer": {"@type": "Answer", "text": "Din configurația standard acceptă politici moderne de tip vision-language-action și de învățare prin imitație, inclusiv Pi0, Pi0.5, ACT și SmolVLA. Colectați date de teleoperare, efectuați ajustarea fină pe un GPU de consum și implementați prin SDK."}}, {"@type": "Question", "name": "Ce este inclus împreună cu robotul?", "acceptedAnswer": {"@type": "Answer", "text": "Fiecare unitate este livrată cu SDK-ul complet și un REST API simplu, un model URDF, un simulator inclus, camere stereo montate pe cap plus camere pe încheietură, dispozitive de prindere și asistență tehnică directă. Fluxul de teleoperare funcționează din prima zi."}}, {"@type": "Question", "name": "Pot să colectez date de teleoperare și să antrenez eu însumi politici?", "acceptedAnswer": {"@type": "Answer", "text": "Da. Teleoperați prin VR cu un Meta Quest 3S sau un controler de tip lider-urmăritor, înregistrați demonstrații în formatul standard al setului de date și antrenați ACT sau efectuați ajustarea fină a unui model vision-language-action pe un singur GPU de consum."}}, {"@type": "Question", "name": "Pe ce capacitate de calcul rulează robotul?", "acceptedAnswer": {"@type": "Answer", "text": "Capacitatea de calcul de la bord este un Raspberry Pi 5 sau un NVIDIA Jetson. Politicile ușoare rulează direct pe dispozitiv, în timp ce modelele vision-language-action mai solicitante pot rula pe GPU-ul unei stații de lucru conectate și pot transmite comenzi prin REST API."}}, {"@type": "Question", "name": "Robotul este modular?", "acceptedAnswer": {"@type": "Answer", "text": "Da. Puteți schimba brațele, dispozitivele de prindere (cu 2 degete, 4 degete sau mâini avansate cu cinci degete) și modulele de bază, precum picioare sau roți, adaptând platforma la sarcina dumneavoastră, și nu invers."}}, {"@type": "Question", "name": "Unde este fabricat robotul?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus este proiectat și fabricat în Uniunea Europeană, ceea ce contează pentru laboratoarele de cercetare și companiile europene preocupate de proveniența lanțului de aprovizionare, de asistență și de suveranitatea datelor."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Este robotul sigur și certificabil pentru utilizarea în fabrică?", "acceptedAnswer": {"@type": "Answer", "text": "Este proiectat pentru certificarea CE conform ISO 10218-1 și ISO 10218-2, standardele pentru roboții industriali. Configurația de siguranță a implementării — protecții, limite de viteză și interblocări — este definită pentru fiecare locație în timpul pregătirii proiectului-pilot."}}, {"@type": "Question", "name": "Se integrează cu linia noastră existentă?", "acceptedAnswer": {"@type": "Answer", "text": "Da. Stația funcționează alături de stațiile și fluxurile dumneavoastră existente — piesele vin la robot, deci nu este nevoie de reconstruirea liniei. Un REST API simplu o conectează la controlul liniei dumneavoastră."}}, {"@type": "Question", "name": "Cum învață robotul o sarcină nouă?", "acceptedAnswer": {"@type": "Answer", "text": "Operatorii teleoperează robotul prin sarcină pentru a înregistra demonstrații, iar politicile vision-language-action, precum Pi0 și ACT, sunt antrenate pe baza acestor demonstrații. Operarea autonomă este antrenată pentru fiecare sarcină în timpul proiectului-pilot."}}, {"@type": "Question", "name": "Unde este fabricat robotul?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus este proiectat și fabricat în Uniunea Europeană, ceea ce contează pentru laboratoarele de cercetare și companiile europene preocupate de proveniența lanțului de aprovizionare, de asistență și de suveranitatea datelor."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1407,10 +1371,10 @@
             PROMETHEUS&nbsp;&nbsp;ROBOTICS
         </div>
         <ul class="nav-links">
-            <li><a onclick="showPage('home')">Prometheus Robotics</a></li>
+            <li><a href="/ro/">Acasă</a></li>
+            <li><a href="/ro/research/">Cercetare</a></li>
             <li><a href="/blog/">Blog</a></li>
             <li><a onclick="showPage('contacts')">Contacte</a></li>
-            <li><a href="https://www.linkedin.com/in/ilya-pavlenkov/recent-activity/all/" target="_blank">LinkedIn</a></li>
         </ul>
         <div class="lang-switcher">
             <button class="lang-toggle" id="langToggle" aria-haspopup="true" aria-expanded="false" aria-label="Change language">
@@ -1431,322 +1395,200 @@
             </video>
             <div class="hero-container">
                 <div class="hero-content">
+                    <div class="hero-badges">
                     <span class="hero-eu">
                         <svg viewBox="0 0 810 540" aria-hidden="true"><rect width="810" height="540" fill="#003399"/><g fill="#FFCC00"><circle cx="405" cy="105" r="15"/><circle cx="505" cy="140" r="15"/><circle cx="560" cy="220" r="15"/><circle cx="560" cy="320" r="15"/><circle cx="505" cy="400" r="15"/><circle cx="405" cy="435" r="15"/><circle cx="305" cy="400" r="15"/><circle cx="250" cy="320" r="15"/><circle cx="250" cy="220" r="15"/><circle cx="305" cy="140" r="15"/><circle cx="405" cy="175" r="15"/><circle cx="405" cy="365" r="15"/></g></svg>
                         Designed &amp; made in the EU
                     </span>
-                    <span class="hero-eyebrow">Pentru laboratoare de cercetare &amp; universități tehnice</span>
-                    <h1 class="hero-title">Platformă umanoidă pentru cercetarea în robotică</h1>
+                    <span class="hero-eu">NVIDIA Inception</span>
+                    <span class="hero-eu">Tracțiune în industria auto tier-1</span>
+                    </div>
+                    <span class="hero-eyebrow">Pentru producători &amp; furnizori de automatizare</span>
+                    <h1 class="hero-title">Roboți bimanuali pentru sarcini prea flexibile pentru automatizarea fixă</h1>
                     <p class="hero-description">
-                        Un robot umanoid modular conceput special pentru cercetare. Antrenați politici VLA, colectați date de teleoperare, validați în simulare, implementați pe hardware — totul gata de utilizare direct din cutie.
+                        Un robot staționar cu două brațe care învață sarcini industriale din demonstrații. Prima aplicație: testarea funcțională la capătul liniei în producția auto.
                     </p>
                     <div class="hero-audience">
-                        <span class="audience-tag primary">Laboratoare de cercetare</span>
-                        <span class="audience-tag primary">Universități tehnice</span>
+                        <span class="audience-tag primary">Auto</span>
+                        <span class="audience-tag primary">Electronică</span>
                         <span class="audience-tag primary">Producție</span>
-                        <span class="audience-tag primary">Divertisment</span>
                         <span class="audience-tag">Furnizori de automatizare</span>
-                        <span class="audience-tag">Startup-uri</span>
-                        <span class="audience-tag">Dezvoltatori DIY</span>
+                        <span class="audience-tag">Laboratoare de cercetare</span>
                     </div>
                     <div class="cta-group">
-                        <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
-                            Cumpărați robotul umanoid
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                            </svg>
-                        </a>
-                        <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
+                        <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button">
                             Programați un apel
                             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </a>
+                        <a href="/ro/research/" class="cta-button secondary">
+                            Pentru laboratoare de cercetare
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                             </svg>
                         </a>
                     </div>
                 </div>
 
                 <div class="cta-button-container">
-                    <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
-                        Cumpărați robotul umanoid
-                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                        </svg>
-                    </a>
-                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
+                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button">
                         Programați un apel
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </a>
+                    <a href="/ro/research/" class="cta-button secondary">
+                        Pentru laboratoare de cercetare
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                         </svg>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Construit pentru cercetarea modernă în robotică -->
+        <!-- Traction -->
+        <section class="research-ready traction">
+            <div class="research-ready-container">
+                <h2 class="section-title">Colaborarea cu industria</h2>
+                <p class="section-subtitle">Stadiul actual al colaborării noastre cu partenerii industriali.</p>
+
+                <div class="research-grid traction-grid">
+                    <div class="research-card featured">
+                        <span class="research-icon">🤝</span>
+                        <h3>Scrisoare de intenție (LOI) auto tier-1</h3>
+                        <p>Scrisoare de intenție semnată cu un furnizor auto tier-1, care include și un proiect-pilot plătit.</p>
+                    </div>
+                    <div class="research-card featured">
+                        <span class="research-icon">🏭</span>
+                        <h3>Traseu de implementare în derulare</h3>
+                        <p>Traseu de implementare pentru testarea la capătul liniei, în derulare la o fabrică europeană.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem -->
         <section class="research-ready">
             <div class="research-ready-container">
-                <div class="use-case-tabs">
-                    <a class="use-case-tab active" data-tab="research" href="/ro/" onclick="return showUseCase('research', this, event)">🔬 Laboratoare de cercetare</a>
-                    <a class="use-case-tab" data-tab="manufacturing" href="/ro/manufacturing/" onclick="return showUseCase('manufacturing', this, event)">🏭 Producție</a>
-                    <a class="use-case-tab" data-tab="entertainment" href="/ro/entertainment/" onclick="return showUseCase('entertainment', this, event)">🎉 Divertisment</a>
-                </div>
+                <h2 class="section-title">Posturile de pe linie pe care nu le puteți ocupa</h2>
+                <p class="section-subtitle">Producătorii europeni nu reușesc să ocupe posturile repetitive de pe linie — iar alternativele existente nu se potrivesc sarcinilor flexibile.</p>
 
-                <div class="use-case-panel active" id="usecase-research">
-                <h2 class="section-title">Construit pentru cercetarea modernă în robotică</h2>
-                <p class="section-subtitle">Tot ceea ce are nevoie laboratorul dumneavoastră pentru a începe colectarea datelor, antrenarea politicilor și rularea experimentelor — livrat împreună cu robotul.</p>
+                <div class="research-grid problem-grid">
+                    <div class="research-card">
+                        <span class="research-icon">👥</span>
+                        <h3>Trei ture, trei operatori</h3>
+                        <p>O stație care funcționează în trei ture înseamnă trei operatori — costuri cu forța de muncă de €70–200k pe an, în funcție de țară. Iar acestea sunt rolurile cele mai greu de recrutat și de menținut ocupate.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">🔩</span>
+                        <h3>Automatizarea fixă nu este flexibilă</h3>
+                        <p>Celulele personalizate nu pot gestiona varietatea de produse fără o reechipare costisitoare. Fiecare schimbare de produs înseamnă inginerie, timpi de nefuncționare și investiții de capital.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">🚶</span>
+                        <h3>Umanoizii de uz general nu sunt pregătiți</h3>
+                        <p>Umanoizii care merg și fac de toate sunt la ani distanță și sunt costisitori. Sarcinile flexibile de linie au nevoie de o soluție care funcționează astăzi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution: Stația de manipulare -->
+        <section class="research-ready">
+            <div class="research-ready-container">
+                <h2 class="section-title">Stația de manipulare</h2>
+                <p class="section-subtitle">Un robot cu două brațe pe o bază fixă sau pe o axă liniară motorizată. Piesele vin la stație — fără picioare, fără navigație, prin concepție: astfel robotul rămâne accesibil, fiabil și certificabil încă de astăzi.</p>
 
                 <div class="research-grid">
                     <div class="research-card featured">
-                        <span class="research-icon">📷</span>
-                        <h3>Viziune optimizată pentru VLA</h3>
-                        <p>Camere de încheietură cu unghi de montare personalizabil — ideale pentru Pi0.5 și alte modele VLA. În plus, sistem stereo montat pe cap pentru percepția întregii scene.</p>
-                        <span class="vla-tag">Pi0.5 · SmolVLA · ACT</span>
+                        <span class="research-icon">🔧</span>
+                        <h3>Testare la capătul liniei</h3>
+                        <p>Încărcarea dispozitivelor, acționarea sertarelor și sortarea după rezultatul testului — testare funcțională la capătul liniei de producție.</p>
+                        <span class="vla-tag">Aplicație emblematică</span>
                     </div>
+                    <div class="research-card">
+                        <span class="research-icon">📦</span>
+                        <h3>Kitting &amp; ambalare</h3>
+                        <p>Asamblați kituri și ambalați produse variate cu două brațe coordonate — sarcinile cu care celulele cu un singur braț se descurcă greu.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">⚙️</span>
+                        <h3>Alimentarea mașinilor</h3>
+                        <p>Încărcați și descărcați mașini, prese și dispozitive de testare — constant, ciclu după ciclu, tură după tură.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">🗂️</span>
+                        <h3>Sortare</h3>
+                        <p>Sortați piese și produse după tip, orientare sau rezultatul inspecției — ghidat de viziune, nu de dispozitive fixe.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="research-card featured">
+        <!-- How It Works -->
+        <section class="research-ready">
+            <div class="research-ready-container">
+                <h2 class="section-title">Antrenat prin demonstrație, nu programat</h2>
+                <p class="section-subtitle">Operarea autonomă este antrenată pentru fiecare sarcină în timpul proiectului-pilot — printr-un pipeline de date, nu prin luni de programare personalizată.</p>
+
+                <div class="research-grid how-grid">
+                    <div class="research-card">
+                        <span class="research-icon">🥽</span>
+                        <h3>1 · Demonstrare</h3>
+                        <p>Operatorii teleoperează robotul prin sarcină folosind VR — fără a fi nevoie de expertiză în robotică din partea dumneavoastră.</p>
+                    </div>
+                    <div class="research-card">
                         <span class="research-icon">🧠</span>
-                        <h3>Pregătit pentru antrenare</h3>
-                        <p>Preconfigurat pentru pipeline-uri ML moderne. Începeți să colectați demonstrații și să antrenați politici din prima zi — fără muncă de integrare.</p>
+                        <h3>2 · Antrenare</h3>
+                        <p>Demonstrațiile înregistrate antrenează politici VLA (vision-language-action) pentru acea sarcină și stație specifică.</p>
                     </div>
-
-                    <div class="research-card featured">
-                        <span class="research-icon">🎮</span>
-                        <h3>Pipeline de teleoperare</h3>
-                        <p>Suport pentru teleoperare direct din cutie, pentru înregistrarea demonstrațiilor și controlul de la distanță. Conectați-vă imediat la fluxul dumneavoastră de învățare prin imitație.</p>
-                    </div>
-
-                    <div class="research-card featured">
-                        <span class="research-icon">📐</span>
-                        <h3>URDF pentru simulatoare</h3>
-                        <p>Model URDF complet al robotului inclus. Compatibilitate directă cu MuJoCo, Isaac Sim, PyBullet, Gazebo și restul stivei standard de simulare.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">🖥️</span>
-                        <h3>Simulator inclus</h3>
-                        <p>Simulatorul este livrat împreună cu fiecare robot. Dezvoltați și validați în simulare înainte de a atinge hardware-ul.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">💻</span>
-                        <h3>SDK</h3>
-                        <p>SDK complet pentru control, percepție și integrare. Python-first și bine documentat.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">🦾</span>
-                        <h3>Gripere incluse</h3>
-                        <p>Manipulatoarele sunt livrate împreună cu platforma. Nu este nevoie să procurați separat efectoarele terminale.</p>
-                    </div>
-
                     <div class="research-card">
                         <span class="research-icon">🤖</span>
-                        <h3>Hardware modular</h3>
-                        <p>Schimbați brațele, griperele și modulele de bază. Adaptați platforma la cercetarea dumneavoastră, nu invers.</p>
+                        <h3>3 · Rulare</h3>
+                        <p>Politica antrenată execută sarcina pe stație și se îmbunătățește cu fiecare implementare.</p>
                     </div>
-
                     <div class="research-card">
-                        <span class="research-icon">📼</span>
-                        <h3>Scenarii demonstrative</h3>
-                        <p>Mișcări preînregistrate și scenarii de execuție exemplificative. Validați stiva pe bancul dumneavoastră de lucru în câteva minute.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">📚</span>
-                        <h3>Documentație detaliată</h3>
-                        <p>Documentație cuprinzătoare pentru hardware, software, calibrare și fluxuri de integrare.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">💬</span>
-                        <h3>Suport tehnic direct</h3>
-                        <p>Legătură directă cu echipa noastră — de la despachetare până la implementare, experimente și publicare.</p>
+                        <span class="research-icon">📈</span>
+                        <h3>4 · Acumulare</h3>
+                        <p>Fiecare implementare alimentează un set de date proprietar de manipulare — fiecare sarcină nouă pornește dintr-un punct mai avansat.</p>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <h3 class="panel-why-title">De ce aleg laboratoarele Prometheus</h3>
-                <p class="panel-why-subtitle">Nu există un umanoid de serie construit pentru cercetare. Echipele pierd luni întregi îmbinând hardware, camere, simulare și instrumente ML înainte de a putea rula un singur experiment. Prometheus livrează întreaga stivă gata de utilizare.</p>
+        <!-- Why Prometheus -->
+        <section class="research-ready">
+            <div class="research-ready-container">
+                <h2 class="section-title">De ce aleg producătorii Prometheus</h2>
+                <p class="section-subtitle">Posturile de pe linie greu de ocupat rămân acoperite — fără a reconstrui linia în jurul unei celule rigide.</p>
+
                 <div class="research-grid">
                     <div class="research-card featured">
-                        <span class="research-icon">🎓</span>
-                        <h3>Conceput pentru cercetare, nu o unitate demonstrativă</h3>
-                        <p>Arhitectură deschisă, SDK complet, URDF și simulator inclus — proiectate în jurul modului real în care funcționează cercetarea în robotică.</p>
+                        <span class="research-icon">👷</span>
+                        <h3>Acoperă posturile greu de ocupat</h3>
+                        <p>Acoperiți sarcinile repetitive, cu fluctuație ridicată, pe care oamenii nu le doresc — fără a crește numărul de angajați sau a lupta cu fluctuația de personal.</p>
                     </div>
                     <div class="research-card featured">
-                        <span class="research-icon">⏱️</span>
-                        <h3>Săriți peste luni de integrare</h3>
-                        <p>Camerele, teleoperarea și pipeline-urile ML sunt preconfigurate. Începeți să colectați demonstrații și să antrenați politici din prima zi.</p>
+                        <span class="research-icon">💸</span>
+                        <h3>Mai ieftin decât o celulă personalizată</h3>
+                        <p>Un singur umanoid flexibil înlocuiește automatizarea fixă la comandă, costisitor de proiectat, construit și întreținut.</p>
                     </div>
                     <div class="research-card featured">
-                        <span class="research-icon">🧩</span>
-                        <h3>Hackable &amp; modular</h3>
-                        <p>Schimbați brațele, griperele și modulele de bază, scrieți-vă propriile controlere, extindeți SDK-ul. Adaptați platforma la munca dumneavoastră.</p>
+                        <span class="research-icon">♻️</span>
+                        <h3>Reantrenabil pentru sarcini diverse</h3>
+                        <p>Un produs sau o sarcină nouă înseamnă demonstrații noi, nu echipamente noi. Nu există scule fixe de reconstruit.</p>
                     </div>
                     <div class="research-card featured">
-                        <span class="research-icon">✨</span>
-                        <h3>Configurații personalizate</h3>
-                        <p>Pachete de senzori la comandă, gripere alternative, cinematică personalizată și integrări software pentru lucrări de laborator specializate.</p>
+                        <span class="research-icon">🇪🇺</span>
+                        <h3>Cu sediul în UE</h3>
+                        <p>Hardware-ul, ingineria, suportul și datele rămân în Europa — fără dependențe de peste ocean pentru linia dumneavoastră de producție.</p>
                     </div>
-                </div>
-                </div>
-
-                <div class="use-case-panel" id="usecase-manufacturing">
-                    <h2 class="section-title">Aduceți un umanoid pe linia dumneavoastră</h2>
-                    <p class="section-subtitle">Testare la capătul liniei, pick-and-place și sarcinile repetitive de linie pe care ați prefera să nu le acoperiți cu personal — gestionate de un umanoid flexibil care se reconfigurează în câteva minute.</p>
-
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">🔧</span>
-                            <h3>Testare la capătul liniei</h3>
-                            <p>Rulați verificări funcționale și de calitate la capătul liniei dumneavoastră de producție — consecvent, repetabil și neobosit în fiecare tură.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">📦</span>
-                            <h3>Pick &amp; Place</h3>
-                            <p>Pick-and-place fiabil pentru piese, ambalare și kitting. Manipulați obiecte variate cu griperele incluse.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">🔁</span>
-                            <h3>Sarcini repetitive de linie</h3>
-                            <p>Preluați sarcinile plictisitoare și repetitive — alimentarea mașinilor, sortarea, sprijinul la asamblare — și eliberați-vă oamenii pentru muncă de valoare mai mare.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🧠</span>
-                            <h3>Învață sarcina</h3>
-                            <p>Alimentat de Pi0 — un model VLA ușor de antrenat. Arătați-i sarcina, iar el o generalizează, adaptându-se la variație în loc să cedeze în fața ei. Fără scripting rigid.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🛠️</span>
-                            <h3>Schimbare rapidă</h3>
-                            <p>Reconfigurați pentru o sarcină nouă sau o schimbare de produs în câteva minute, nu săptămâni. Un singur robot, multe sarcini.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">👁️</span>
-                            <h3>Ghidat vizual</h3>
-                            <p>Camere stereo și de încheietură pentru detectarea pieselor, aliniere și inspecție vizuală exact acolo unde se desfășoară lucrul.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🦾</span>
-                            <h3>Gripere modulare</h3>
-                            <p>Schimbați efectoarele terminale pentru a se potrivi piesei. Manipulatoarele sunt livrate împreună cu platforma, gata pentru linia dumneavoastră.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🔌</span>
-                            <h3>Integrare ușoară</h3>
-                            <p>Un REST API simplu se conectează la controlul liniei și la fluxurile dumneavoastră existente — fără blocaje proprietare.</p>
-                        </div>
-                    </div>
-
-                    <h3 class="panel-why-title">De ce aleg producătorii Prometheus</h3>
-                    <p class="panel-why-subtitle">Sarcinile plictisitoare și repetitive de pe linie sunt cele mai greu de acoperit și de menținut cu personal — dar roboții dedicați unei singure sarcini vă obligă să reconstruiți linia în jurul lor. Prometheus se integrează în schimb perfect în procesul dumneavoastră existent, lucrează trei ture pe zi și nu lipsește niciodată din cauză de boală.</p>
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">👷</span>
-                            <h3>Acoperă posturile greu de ocupat</h3>
-                            <p>Acoperiți sarcinile repetitive, cu fluctuație ridicată, pe care oamenii nu le doresc — fără a crește numărul de angajați sau a lupta cu fluctuația de personal.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">💸</span>
-                            <h3>Mai ieftin decât o celulă personalizată</h3>
-                            <p>Un singur umanoid flexibil înlocuiește automatizarea fixă la comandă, costisitor de proiectat, construit și întreținut.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">♻️</span>
-                            <h3>Se reconfigurează în câteva minute</h3>
-                            <p>Un produs sau o sarcină nouă nu mai înseamnă săptămâni de reechipare. Reantrenați și refolosiți același robot de-a lungul liniei.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">📈</span>
-                            <h3>Scalează cu cererea</h3>
-                            <p>Adăugați unități pe măsură ce volumul crește și mutați-le la punctul de blocaj. Fără infrastructură fixă de demontat și reconstruit.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="use-case-panel" id="usecase-entertainment">
-                    <h2 class="section-title">Un umanoid care fură spectacolul</h2>
-                    <p class="section-subtitle">Pentru parcuri tematice, hoteluri, muzee și evenimente — îmbrăcați-l, controlați-l din VR, redați rutine și lăsați-l să întâmpine, să prezinte și să explice.</p>
-
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">👗</span>
-                            <h3>Îmbrăcați-l</h3>
-                            <p>Echipați robotul cu costume personalizate și îmbrăcăminte cu însemnele dumneavoastră pentru a se potrivi locației, mascotei sau tematicii evenimentului.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">🥽</span>
-                            <h3>Teleoperare VR</h3>
-                            <p>Operați robotul live din VR cu un Meta Quest 3S — salutați, gesticulați și interacționați cu oaspeții în timp real.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">🎬</span>
-                            <h3>Înregistrare &amp; redare</h3>
-                            <p>Capturați o reprezentație o dată și redați-o la cerere — saluturi, dansuri și rutine scriptate, spectacol după spectacol.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🗣️</span>
-                            <h3>Prezintă &amp; explică</h3>
-                            <p>Lăsați-l să găzduiască și să explice — tururi ghidate, demonstrații de produse și expoziții care ghidează vizitatorii prin experiență.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">👋</span>
-                            <h3>Întâmpină oaspeții</h3>
-                            <p>O întâmpinare umanoidă prietenoasă pentru intrările în parcuri, holurile hotelurilor și sălile de spectacol.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">📡</span>
-                            <h3>Operare la distanță</h3>
-                            <p>Controlați-l de la distanță de oriunde — derulați interacțiuni și reprezentații fără personal prezent la fața locului.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🏨</span>
-                            <h3>Construit pentru locații</h3>
-                            <p>Parcuri tematice, hoteluri, muzee și evenimente — o atracție care întoarce privirile și menține mulțimile captivate.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🤖</span>
-                            <h3>Mereu fidel brandului</h3>
-                            <p>Reprezentații consecvente și repetabile de fiecare dată — personajul dumneavoastră emblematic, livrat cu fiabilitate.</p>
-                        </div>
-                    </div>
-
-                    <h3 class="panel-why-title">De ce aleg locațiile Prometheus</h3>
-                    <p class="panel-why-subtitle">Atracțiile trăiesc sau mor în funcție de factorul „wow”. Oaspeții au văzut deja ecrane și animatronice — un umanoid real și interactiv este ceea ce fotografiază, postează și pentru care revin. Este o declarație că locația dumneavoastră este cea mai avansată de pe piață.</p>
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">⭐</span>
-                            <h3>Un magnet pentru mulțimi</h3>
-                            <p>Un umanoid real atrage mulțimi, fotografii și agitație pe rețelele sociale pe care un ecran sau o animatronică pur și simplu nu le pot egala.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">🏆</span>
-                            <h3>Prestigiu instant</h3>
-                            <p>Arătați tuturor că aveți cea mai avansată locație, orientată spre viitor, de pe piață — și asigurați-vă că o văd toți.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">🎭</span>
-                            <h3>Un singur interpret, fiecare spectacol</h3>
-                            <p>Înregistrați rutinele o dată și redați-le impecabil toată ziua — fără pauze, fără programare, fără a acoperi rolul cu personal.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">🌍</span>
-                            <h3>Operați de oriunde</h3>
-                            <p>Controlați-l live în VR cu un Meta Quest 3S pentru a întâmpina și a interacționa cu oaspeții în timp real — chiar și de la distanță.</p>
-                        </div>
+                    <div class="research-card featured">
+                        <span class="research-icon">🛡️</span>
+                        <h3>Traseu de certificare definit</h3>
+                        <p>Proiectat pentru certificarea CE conform ISO 10218-1 și ISO 10218-2, standardele pentru roboții industriali.</p>
                     </div>
                 </div>
             </div>
@@ -1756,7 +1598,7 @@
         <section class="specifications">
             <div class="specs-container">
                 <h2 class="section-title">Specificații tehnice</h2>
-                <p class="section-subtitle">Partea superioară a corpului pe trepied — potrivită pentru cercetare de banc de lucru</p>
+                <p class="section-subtitle">Partea superioară a corpului cu două brațe — configurația stației de manipulare</p>
                 
                 <div class="specs-content">
                     <div class="specs-table-wrapper">
@@ -1767,8 +1609,12 @@
                                     <td class="spec-value">120Nm</td>
                                 </tr>
                                 <tr>
+                                    <td class="spec-label">Opțiuni de implementare</td>
+                                    <td class="spec-value">Bază fixă / axă liniară motorizată (șină)</td>
+                                </tr>
+                                <tr>
                                     <td class="spec-label">Înălțime</td>
-                                    <td class="spec-value">160cm on tripod (172cm on legs/wheels)</td>
+                                    <td class="spec-value">160cm pe trepied</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Lățime</td>
@@ -1780,7 +1626,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Grade de libertate</td>
-                                    <td class="spec-value">19 (29 with legs; 43 with hands; 53 with legs and hands)</td>
+                                    <td class="spec-value">19 (43 cu mâini)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Camere</td>
@@ -1827,19 +1673,6 @@
                             <div class="robot-glow"></div>
                             <img src="/robot.png" alt="Prometheus Humanoid Robot" class="robot-img">
                         </div>
-                        <h3 class="modules-title">Module disponibile</h3>
-                        <div class="modules-grid">
-                            <div class="module-card">
-                                <div class="module-icon">🦿</div>
-                                <h4>Modul picioare</h4>
-                                <p>Sistem de locomoție bipedă pentru mobilitate sporită și capacități de mișcare asemănătoare omului.</p>
-                            </div>
-                            <div class="module-card">
-                                <div class="module-icon">🛞</div>
-                                <h4>Modul roți</h4>
-                                <p>Bază pe roți pentru navigare eficientă și platformă stabilă pentru diverse aplicații.</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -1854,49 +1687,6 @@
             </div>
         </section>
 
-        <!-- Manipulators Section -->
-        <section class="manipulators">
-            <div class="manipulators-container">
-                <h2 class="section-title">Opțiuni de manipulator</h2>
-                <p class="section-subtitle">Alegeți efectorul terminal potrivit pentru cercetarea dumneavoastră</p>
-                
-                <div class="manipulators-grid">
-                    <div class="manipulator-card">
-                        <div class="manipulator-image">
-                            <img src="/claw.png" alt="Type A - Griper cu 2 degete">
-                        </div>
-                        <div class="manipulator-content">
-                            <h3>Type A</h3>
-                            <h4>Griper cu 2 degete</h4>
-                            <p>Prindere simplă / închidere precisă. Ideal pentru operațiuni delicate și sarcini de manipulare de precizie.</p>
-                        </div>
-                    </div>
-
-                    <div class="manipulator-card">
-                        <div class="manipulator-image">
-                            <img src="/for_totes.png" alt="Type B - 4-finger claw">
-                        </div>
-                        <div class="manipulator-content">
-                            <h3>Type B</h3>
-                            <h4>„Cleștele” cu 4 degete (degete pereche)</h4>
-                            <p>Pentru prinderea robustă a lăzilor și cutiilor de transport. Conceput pentru aplicații de depozitare și logistică.</p>
-                        </div>
-                    </div>
-
-                    <div class="manipulator-card">
-                        <div class="manipulator-image">
-                            <img src="/hand.png" alt="Type X - Advanced manipulator">
-                        </div>
-                        <div class="manipulator-content">
-                            <h3>Type X</h3>
-                            <h4>Manipulatoare avansate</h4>
-                            <p>Opțiunile includ camere de încheietură cu unghi de montare personalizabil (optimizate pentru Pi0.5 și alte modele VLA), mâini cu 5 degete și alte variante personalizate.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- FAQ Section -->
         <section class="faq">
             <div class="faq-container">
@@ -1904,24 +1694,16 @@
                 <p class="section-subtitle">Everything you need to know before getting started</p>
                 <div class="faq-list">
                     <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Ce modele de inteligență artificială acceptă robotul?</button>
-                        <div class="faq-a"><p>Din configurația standard acceptă politici moderne de tip vision-language-action și de învățare prin imitație, inclusiv Pi0, Pi0.5, ACT și SmolVLA. Colectați date de teleoperare, efectuați ajustarea fină pe un GPU de consum și implementați prin SDK.</p></div>
+                        <button class="faq-q" onclick="toggleFaq(this)">Este robotul sigur și certificabil pentru utilizarea în fabrică?</button>
+                        <div class="faq-a"><p>Este proiectat pentru certificarea CE conform ISO 10218-1 și ISO 10218-2, standardele pentru roboții industriali. Configurația de siguranță a implementării — protecții, limite de viteză și interblocări — este definită pentru fiecare locație în timpul pregătirii proiectului-pilot.</p></div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Ce este inclus împreună cu robotul?</button>
-                        <div class="faq-a"><p>Fiecare unitate este livrată cu SDK-ul complet și un REST API simplu, un model URDF, un simulator inclus, camere stereo montate pe cap plus camere pe încheietură, dispozitive de prindere și asistență tehnică directă. Fluxul de teleoperare funcționează din prima zi.</p></div>
+                        <button class="faq-q" onclick="toggleFaq(this)">Se integrează cu linia noastră existentă?</button>
+                        <div class="faq-a"><p>Da. Stația funcționează alături de stațiile și fluxurile dumneavoastră existente — piesele vin la robot, deci nu este nevoie de reconstruirea liniei. Un REST API simplu o conectează la controlul liniei dumneavoastră.</p></div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Pot să colectez date de teleoperare și să antrenez eu însumi politici?</button>
-                        <div class="faq-a"><p>Da. Teleoperați prin VR cu un Meta Quest 3S sau un controler de tip lider-urmăritor, înregistrați demonstrații în formatul standard al setului de date și antrenați ACT sau efectuați ajustarea fină a unui model vision-language-action pe un singur GPU de consum.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Pe ce capacitate de calcul rulează robotul?</button>
-                        <div class="faq-a"><p>Capacitatea de calcul de la bord este un Raspberry Pi 5 sau un NVIDIA Jetson. Politicile ușoare rulează direct pe dispozitiv, în timp ce modelele vision-language-action mai solicitante pot rula pe GPU-ul unei stații de lucru conectate și pot transmite comenzi prin REST API.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Robotul este modular?</button>
-                        <div class="faq-a"><p>Da. Puteți schimba brațele, dispozitivele de prindere (cu 2 degete, 4 degete sau mâini avansate cu cinci degete) și modulele de bază, precum picioare sau roți, adaptând platforma la sarcina dumneavoastră, și nu invers.</p></div>
+                        <button class="faq-q" onclick="toggleFaq(this)">Cum învață robotul o sarcină nouă?</button>
+                        <div class="faq-a"><p>Operatorii teleoperează robotul prin sarcină pentru a înregistra demonstrații, iar politicile vision-language-action, precum Pi0 și ACT, sunt antrenate pe baza acestor demonstrații. Operarea autonomă este antrenată pentru fiecare sarcină în timpul proiectului-pilot.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Unde este fabricat robotul?</button>
@@ -1934,16 +1716,10 @@
         <!-- Bottom CTA Section -->
         <section style="padding: 6rem 3rem; text-align: center; background: linear-gradient(180deg, #0f0f0f 0%, var(--color-bg) 100%); border-top: 1px solid var(--color-border);">
             <div style="max-width: 800px; margin: 0 auto;">
-                <h2 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.01em;">Gata să puneți Prometheus la treabă?</h2>
-                <p style="color: var(--color-text-secondary); font-size: 1.2rem; margin-bottom: 3rem; line-height: 1.7;">Fie că este vorba de un laborator de cercetare, o linie de producție sau o sală de spectacol — comandați o unitate sau programați un apel pentru a discuta configurația dumneavoastră.</p>
+                <h2 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.01em;">Aduceți Prometheus pe linia dumneavoastră</h2>
+                <p style="color: var(--color-text-secondary); font-size: 1.2rem; margin-bottom: 3rem; line-height: 1.7;">Programați un apel pentru a defini un proiect-pilot de testare la capătul liniei pentru fabrica dumneavoastră — vom parcurge împreună stațiile, sarcinile și constrângerile dumneavoastră de integrare.</p>
                 <div class="cta-group" style="justify-content: center;">
-                    <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
-                        Cumpărați platforma modulară
-                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                        </svg>
-                    </a>
-                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
+                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button">
                         Programați un apel
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
@@ -1978,12 +1754,13 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h4>Prometheus Robotics</h4>
-                <p>O platformă umanoidă modulară pentru cercetare, industrie și divertisment. Construită pentru laboratoarele, halele de producție și locațiile care modelează următoarea generație de roboți inteligenți.</p>
+                <p>Roboți bimanuali pentru automatizarea industrială — testare la capătul liniei, kitting și alimentarea mașinilor — și o platformă umanoidă modulară pentru cercetarea în robotică. Proiectați și fabricați în UE.</p>
             </div>
             <div class="footer-section">
                 <h4>Navigare</h4>
                 <ul class="footer-links">
-                    <li><a onclick="showPage('home')">Acasă</a></li>
+                    <li><a href="/ro/">Acasă</a></li>
+                    <li><a href="/ro/research/">Cercetare</a></li>
                     <li><a href="/blog/">Blog</a></li>
                     <li><a onclick="showPage('contacts')">Contacte</a></li>
                     <li><a href="https://www.linkedin.com/in/ilya-pavlenkov/recent-activity/all/" target="_blank">LinkedIn</a></li>
@@ -1992,13 +1769,13 @@
             <div class="footer-section">
                 <h4>Începeți</h4>
                 <ul class="footer-links">
-                    <li><a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank">Cumpărați robotul</a></li>
                     <li><a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer">Programați un apel</a></li>
+                    <li><a href="/demo/">Videoclip demonstrativ</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Prometheus Engineering Kft. Toate drepturile rezervate. Made in EU <svg class="eu-flag-inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810 540" role="img" aria-label="European Union flag"><rect width="810" height="540" fill="#003399"/><g fill="#FFCC00"><circle cx="405" cy="105" r="15"/><circle cx="505" cy="140" r="15"/><circle cx="560" cy="220" r="15"/><circle cx="560" cy="320" r="15"/><circle cx="505" cy="400" r="15"/><circle cx="405" cy="435" r="15"/><circle cx="305" cy="400" r="15"/><circle cx="250" cy="320" r="15"/><circle cx="250" cy="220" r="15"/><circle cx="305" cy="140" r="15"/><circle cx="405" cy="175" r="15"/><circle cx="405" cy="365" r="15"/></g></svg></p>
+            <p>&copy; 2026 Prometheus Engineering Kft. Toate drepturile rezervate. Made in EU <svg class="eu-flag-inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810 540" role="img" aria-label="European Union flag"><rect width="810" height="540" fill="#003399"/><g fill="#FFCC00"><circle cx="405" cy="105" r="15"/><circle cx="505" cy="140" r="15"/><circle cx="560" cy="220" r="15"/><circle cx="560" cy="320" r="15"/><circle cx="505" cy="400" r="15"/><circle cx="405" cy="435" r="15"/><circle cx="305" cy="400" r="15"/><circle cx="250" cy="320" r="15"/><circle cx="250" cy="220" r="15"/><circle cx="305" cy="140" r="15"/><circle cx="405" cy="175" r="15"/><circle cx="405" cy="365" r="15"/></g></svg></p>
         </div>
     </footer>
 
@@ -2161,16 +1938,10 @@
             /* LANGS:END */
         ];
 
-        function currentTabPath() {
-            const p = location.pathname;
-            if (p.indexOf('manufacturing') !== -1) return 'manufacturing/';
-            if (p.indexOf('entertainment') !== -1) return 'entertainment/';
-            return '';
-        }
-
         function langHref(code) {
             const base = code === 'en' ? '' : '/' + code;
-            return (base + '/' + currentTabPath()) || '/';
+            const page = location.pathname.indexOf('/research') !== -1 ? 'research/' : '';
+            return (base + '/' + page) || '/';
         }
 
         function initLangSwitcher() {
@@ -2206,35 +1977,9 @@
         }
         initLangSwitcher();
 
-        function useCaseUrl(id) {
-            return window.LANG_BASE + (id === 'research' ? '/' : '/' + id + '/');
-        }
-
-        function showUseCase(id, btn, event) {
-            if (event) event.preventDefault();
-            document.querySelectorAll('.use-case-panel').forEach(p => p.classList.remove('active'));
-            document.querySelectorAll('.use-case-tab').forEach(t => t.classList.remove('active'));
-            const panel = document.getElementById('usecase-' + id);
-            if (panel) panel.classList.add('active');
-            if (!btn) btn = document.querySelector('.use-case-tab[data-tab="' + id + '"]');
-            if (btn) btn.classList.add('active');
-            if (event && window.history && history.pushState) {
-                history.pushState({ tab: id }, '', useCaseUrl(id));
-            }
-            return false;
-        }
-
         function toggleFaq(btn) {
             btn.parentElement.classList.toggle('open');
         }
-
-        window.addEventListener('popstate', function () {
-            const path = location.pathname;
-            let id = 'research';
-            if (path.indexOf('manufacturing') !== -1) id = 'manufacturing';
-            else if (path.indexOf('entertainment') !== -1) id = 'entertainment';
-            showUseCase(id, null, null);
-        });
 
         (function () {
             const navEl = document.querySelector('nav');

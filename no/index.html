@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SEO:START -->
-    <title>Prometheus Robotics — Humanoid plattform for forskningslaboratorier</title>
-    <meta name="description" content="En modulær humanoid robot bygget for robotikkforskning: komplett SDK, stereo- + håndleddskameraer, URDF, medfølgende simulator og støtte for VLA-modeller som Pi0 og ACT.">
+    <title>Prometheus Robotics — Toarmede roboter for industriell automasjon | Sluttesting</title>
+    <meta name="description" content="En stasjonær toarmet robot som lærer industrielle oppgaver fra demonstrasjon: funksjonell sluttesting på linjen, kitting og maskinbetjening. Designet og produsert i EU.">
     <link rel="canonical" href="https://meetprometheus.com/no/">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://meetprometheus.com/no/">
-    <meta property="og:title" content="Prometheus Robotics — Humanoid plattform for forskningslaboratorier">
-    <meta property="og:description" content="En modulær humanoid robot bygget for robotikkforskning: komplett SDK, stereo- + håndleddskameraer, URDF, medfølgende simulator og støtte for VLA-modeller som Pi0 og ACT.">
+    <meta property="og:title" content="Prometheus Robotics — Toarmede roboter for industriell automasjon | Sluttesting">
+    <meta property="og:description" content="En stasjonær toarmet robot som lærer industrielle oppgaver fra demonstrasjon: funksjonell sluttesting på linjen, kitting og maskinbetjening. Designet og produsert i EU.">
     <meta property="og:locale" content="nb_NO">
     <!-- SEO:END -->
     <meta name="theme-color" content="#0a0a0a">
@@ -371,6 +371,13 @@
             flex-shrink: 0;
         }
 
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
         .hero-eyebrow {
             font-size: 0.85rem;
             font-weight: 600;
@@ -571,7 +578,7 @@
 
         .cta-button-container { display: none; }
 
-        /* Research Ready Section */
+        /* Forskning Ready Section */
         .research-ready {
             padding: 8rem 3rem;
             background: linear-gradient(180deg, var(--color-bg) 0%, #0f0f0f 100%);
@@ -583,47 +590,9 @@
             margin: 0 auto;
         }
 
-        .use-case-tabs {
-            display: flex;
+        .traction-grid {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 440px));
             justify-content: center;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-bottom: 3.5rem;
-        }
-
-        .use-case-tab {
-            font-family: var(--font-body);
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 0.01em;
-            color: var(--color-text-secondary);
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--color-border);
-            border-radius: 50px;
-            padding: 0.85rem 1.9rem;
-            cursor: pointer;
-            display: inline-block;
-            text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .use-case-tab:hover {
-            color: var(--color-text);
-            border-color: rgba(59, 130, 246, 0.4);
-        }
-
-        .use-case-tab.active {
-            color: #ffffff;
-            background: var(--color-accent);
-            border-color: var(--color-accent);
-            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3);
-        }
-
-        .use-case-panel { display: none; }
-
-        .use-case-panel.active {
-            display: block;
-            animation: tabFade 0.4s ease;
         }
 
         .panel-why-title {
@@ -642,11 +611,6 @@
             max-width: 720px;
             margin: 0 auto 2.5rem;
             line-height: 1.6;
-        }
-
-        @keyframes tabFade {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         .research-grid {
@@ -1394,7 +1358,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Hvilke AI-modeller støtter roboten?", "acceptedAnswer": {"@type": "Answer", "text": "Rett ut av esken støtter den moderne policyer for visjon-språk-handling og imitasjonslæring, inkludert Pi0, Pi0.5, ACT og SmolVLA. Samle inn teleoperasjonsdata, finjuster på en GPU for forbrukermarkedet, og distribuer via SDK."}}, {"@type": "Question", "name": "Hva følger med roboten?", "acceptedAnswer": {"@type": "Answer", "text": "Hver enhet leveres med komplett SDK og et enkelt REST API, en URDF-modell, en medfølgende simulator, hodemonterte stereokameraer pluss håndleddskameraer, gripere og direkte ingeniørstøtte. Teleoperasjonsløypen fungerer fra dag én."}}, {"@type": "Question", "name": "Kan jeg samle inn teleoperasjonsdata og trene policyer selv?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Teleoperer via VR med en Meta Quest 3S eller en leder-følger-kontroller, ta opp demonstrasjoner i standard datasettformat, og tren ACT eller finjuster en visjon-språk-handling-modell på én enkelt GPU for forbrukermarkedet."}}, {"@type": "Question", "name": "Hvilken beregningskraft kjører roboten på?", "acceptedAnswer": {"@type": "Answer", "text": "Beregningskraften om bord er en Raspberry Pi 5 eller en NVIDIA Jetson. Lette policyer kjører på enheten, mens tyngre visjon-språk-handling-modeller kan kjøre på en tilkoblet arbeidsstasjons-GPU og strømme kommandoer over REST API."}}, {"@type": "Question", "name": "Er roboten modulær?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Du kan bytte ut armer, gripere (2-finger, 4-finger eller avanserte femfingerhender) og basismoduler som ben eller hjul, og tilpasse plattformen til oppgaven din i stedet for omvendt."}}, {"@type": "Question", "name": "Hvor er roboten produsert?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus er designet og produsert i Den europeiske union, noe som er viktig for europeiske forskningslaboratorier og selskaper som bryr seg om forsyningskjedens opprinnelse, støtte og datasuverenitet."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Er roboten trygg og sertifiserbar for bruk i fabrikk?", "acceptedAnswer": {"@type": "Answer", "text": "Den er designet for CE-sertifisering i henhold til ISO 10218-1 og ISO 10218-2, standardene for industriroboter. Sikkerhetskonfigurasjonen ved utplassering — skjerming, hastighetsbegrensninger og forriglinger — defineres per anlegg under forberedelsene til piloten."}}, {"@type": "Question", "name": "Kan den integreres med vår eksisterende linje?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Stasjonen fungerer side om side med deres eksisterende stasjoner og arbeidsflyter — delene kommer til roboten, så linjen trenger ingen ombygging. Et enkelt REST API kobler den til linjestyringen deres."}}, {"@type": "Question", "name": "Hvordan lærer roboten en ny oppgave?", "acceptedAnswer": {"@type": "Answer", "text": "Operatører teleopererer roboten gjennom oppgaven for å ta opp demonstrasjoner, og policyer for visjon-språk-handling som Pi0 og ACT trenes på disse demonstrasjonene. Autonom drift trenes per oppgave under piloten."}}, {"@type": "Question", "name": "Hvor er roboten produsert?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus er designet og produsert i Den europeiske union, noe som er viktig for europeiske forskningslaboratorier og selskaper som bryr seg om forsyningskjedens opprinnelse, støtte og datasuverenitet."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1407,10 +1371,10 @@
             PROMETHEUS&nbsp;&nbsp;ROBOTICS
         </div>
         <ul class="nav-links">
-            <li><a onclick="showPage('home')">Prometheus Robotics</a></li>
+            <li><a href="/no/">Hjem</a></li>
+            <li><a href="/no/research/">Forskning</a></li>
             <li><a href="/blog/">Blog</a></li>
             <li><a onclick="showPage('contacts')">Kontakter</a></li>
-            <li><a href="https://www.linkedin.com/in/ilya-pavlenkov/recent-activity/all/" target="_blank">LinkedIn</a></li>
         </ul>
         <div class="lang-switcher">
             <button class="lang-toggle" id="langToggle" aria-haspopup="true" aria-expanded="false" aria-label="Change language">
@@ -1431,322 +1395,200 @@
             </video>
             <div class="hero-container">
                 <div class="hero-content">
+                    <div class="hero-badges">
                     <span class="hero-eu">
                         <svg viewBox="0 0 810 540" aria-hidden="true"><rect width="810" height="540" fill="#003399"/><g fill="#FFCC00"><circle cx="405" cy="105" r="15"/><circle cx="505" cy="140" r="15"/><circle cx="560" cy="220" r="15"/><circle cx="560" cy="320" r="15"/><circle cx="505" cy="400" r="15"/><circle cx="405" cy="435" r="15"/><circle cx="305" cy="400" r="15"/><circle cx="250" cy="320" r="15"/><circle cx="250" cy="220" r="15"/><circle cx="305" cy="140" r="15"/><circle cx="405" cy="175" r="15"/><circle cx="405" cy="365" r="15"/></g></svg>
                         Designed &amp; made in the EU
                     </span>
-                    <span class="hero-eyebrow">For forskningslaboratorier &amp; tekniske universiteter</span>
-                    <h1 class="hero-title">Humanoid plattform for robotikkforskning</h1>
+                    <span class="hero-eu">NVIDIA Inception</span>
+                    <span class="hero-eu">Gjennomslag hos tier-1 i bilindustrien</span>
+                    </div>
+                    <span class="hero-eyebrow">For produsenter &amp; automasjonsleverandører</span>
+                    <h1 class="hero-title">Toarmede roboter for oppgaver som er for fleksible for fast automasjon</h1>
                     <p class="hero-description">
-                        En modulær humanoid robot spesialbygget for forskning. Tren VLA-policyer, samle inn teleoperasjonsdata, valider i simulering, distribuer på maskinvare — alt klart rett ut av esken.
+                        En stasjonær toarmet robot som lærer industrielle oppgaver fra demonstrasjon. Første bruksområde: funksjonell sluttesting på linjen i bilproduksjon.
                     </p>
                     <div class="hero-audience">
-                        <span class="audience-tag primary">Forskningslaboratorier</span>
-                        <span class="audience-tag primary">Tekniske universiteter</span>
+                        <span class="audience-tag primary">Bilindustri</span>
+                        <span class="audience-tag primary">Elektronikk</span>
                         <span class="audience-tag primary">Produksjon</span>
-                        <span class="audience-tag primary">Underholdning</span>
                         <span class="audience-tag">Automasjonsleverandører</span>
-                        <span class="audience-tag">Oppstartsselskaper</span>
-                        <span class="audience-tag">DIY-utviklere</span>
+                        <span class="audience-tag">Forskningslaboratorier</span>
                     </div>
                     <div class="cta-group">
-                        <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
-                            Kjøp humanoid robot
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                            </svg>
-                        </a>
-                        <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
-                            Bestill samtale
+                        <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button">
+                            Bestill en samtale
                             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </a>
+                        <a href="/no/research/" class="cta-button secondary">
+                            For forskningslaboratorier
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                             </svg>
                         </a>
                     </div>
                 </div>
 
                 <div class="cta-button-container">
-                    <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
-                        Kjøp humanoid robot
-                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                        </svg>
-                    </a>
-                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
-                        Bestill samtale
+                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button">
+                        Bestill en samtale
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </a>
+                    <a href="/no/research/" class="cta-button secondary">
+                        For forskningslaboratorier
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                         </svg>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Bygget for moderne robotikkforskning -->
+        <!-- Traction -->
+        <section class="research-ready traction">
+            <div class="research-ready-container">
+                <h2 class="section-title">Samarbeid med industrien</h2>
+                <p class="section-subtitle">Hvor vi står i dag med våre industripartnere.</p>
+
+                <div class="research-grid traction-grid">
+                    <div class="research-card featured">
+                        <span class="research-icon">🤝</span>
+                        <h3>Intensjonsavtale (LOI) med tier-1-leverandør</h3>
+                        <p>Signert intensjonsavtale med en tier-1-leverandør i bilindustrien, inkludert en betalt pilot.</p>
+                    </div>
+                    <div class="research-card featured">
+                        <span class="research-icon">🏭</span>
+                        <h3>Utrullingsløp i gang</h3>
+                        <p>Utrullingsløp for sluttesting på linjen i gang ved en europeisk fabrikk.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem -->
         <section class="research-ready">
             <div class="research-ready-container">
-                <div class="use-case-tabs">
-                    <a class="use-case-tab active" data-tab="research" href="/no/" onclick="return showUseCase('research', this, event)">🔬 Forskningslaboratorier</a>
-                    <a class="use-case-tab" data-tab="manufacturing" href="/no/manufacturing/" onclick="return showUseCase('manufacturing', this, event)">🏭 Produksjon</a>
-                    <a class="use-case-tab" data-tab="entertainment" href="/no/entertainment/" onclick="return showUseCase('entertainment', this, event)">🎉 Underholdning</a>
-                </div>
+                <h2 class="section-title">Linjestillingene du ikke får bemannet</h2>
+                <p class="section-subtitle">Europeiske produsenter får ikke bemannet repetitive linjestillinger — og de eksisterende alternativene passer ikke for fleksible oppgaver.</p>
 
-                <div class="use-case-panel active" id="usecase-research">
-                <h2 class="section-title">Bygget for moderne robotikkforskning</h2>
-                <p class="section-subtitle">Alt laboratoriet ditt trenger for å begynne å samle inn data, trene policyer og kjøre eksperimenter — levert sammen med roboten.</p>
+                <div class="research-grid problem-grid">
+                    <div class="research-card">
+                        <span class="research-icon">👥</span>
+                        <h3>Tre skift, tre operatører</h3>
+                        <p>Én stasjon som kjører tre skift betyr tre operatører — €70–200k i årlige lønnskostnader avhengig av land. Og dette er rollene som er vanskeligst å rekruttere til og holde bemannet.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">🔩</span>
+                        <h3>Fast automasjon er ikke fleksibel</h3>
+                        <p>Skreddersydde celler takler ikke produktvariasjon uten kostbar omverktøying. Hver produktendring betyr engineering, nedetid og investeringer.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">🚶</span>
+                        <h3>Humanoider for generell bruk er ikke klare</h3>
+                        <p>Gående humanoider som skal kunne gjøre alt, er flere år unna og kostbare. Fleksible linjeoppgaver trenger en løsning som fungerer i dag.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution: Manipulasjonsstasjonen -->
+        <section class="research-ready">
+            <div class="research-ready-container">
+                <h2 class="section-title">Manipulasjonsstasjonen</h2>
+                <p class="section-subtitle">En toarmet robot på fast base eller motorisert lineærakse. Delene kommer til stasjonen — ingen ben, ingen navigasjon, helt bevisst: det holder roboten rimelig, pålitelig og sertifiserbar i dag.</p>
 
                 <div class="research-grid">
                     <div class="research-card featured">
-                        <span class="research-icon">📷</span>
-                        <h3>VLA-optimalisert syn</h3>
-                        <p>Håndleddskameraer med justerbar monteringsvinkel — ideelt for Pi0.5 og andre VLA-modeller. I tillegg hodemontert stereo for full scenepersepsjon.</p>
-                        <span class="vla-tag">Pi0.5 · SmolVLA · ACT</span>
+                        <span class="research-icon">🔧</span>
+                        <h3>Sluttesting på linjen</h3>
+                        <p>Innlasting av enheter, betjening av skuffer og sortering etter testresultat — funksjonell testing på slutten av produksjonslinjen.</p>
+                        <span class="vla-tag">Flaggskipapplikasjon</span>
                     </div>
+                    <div class="research-card">
+                        <span class="research-icon">📦</span>
+                        <h3>Kitting &amp; pakking</h3>
+                        <p>Sett sammen kit og pakk varierte produkter med to koordinerte armer — oppgavene enarmede celler sliter med.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">⚙️</span>
+                        <h3>Maskinbetjening</h3>
+                        <p>Last inn og ut av maskiner, presser og testfiksturer — stabilt, syklus etter syklus, skift etter skift.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">🗂️</span>
+                        <h3>Sortering</h3>
+                        <p>Sorter deler og produkter etter type, orientering eller inspeksjonsresultat — styrt av syn, ikke fiksturer.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="research-card featured">
+        <!-- How It Works -->
+        <section class="research-ready">
+            <div class="research-ready-container">
+                <h2 class="section-title">Trent gjennom demonstrasjon, ikke programmert</h2>
+                <p class="section-subtitle">Autonom drift trenes per oppgave under piloten — gjennom en data-pipeline, ikke måneder med spesialtilpasset programmering.</p>
+
+                <div class="research-grid how-grid">
+                    <div class="research-card">
+                        <span class="research-icon">🥽</span>
+                        <h3>1 · Demonstrer</h3>
+                        <p>Operatører teleopererer roboten gjennom oppgaven via VR — ingen robotikkekspertise kreves på deres side.</p>
+                    </div>
+                    <div class="research-card">
                         <span class="research-icon">🧠</span>
-                        <h3>Klar til å trenes</h3>
-                        <p>Forhåndskonfigurert for moderne ML-pipelines. Begynn å samle inn demonstrasjoner og trene policyer fra dag én — ingen integrasjonsarbeid kreves.</p>
+                        <h3>2 · Tren</h3>
+                        <p>Innspilte demonstrasjoner trener VLA-policyer (visjon-språk-handling) for den spesifikke oppgaven og stasjonen.</p>
                     </div>
-
-                    <div class="research-card featured">
-                        <span class="research-icon">🎮</span>
-                        <h3>Teleoperasjons-pipeline</h3>
-                        <p>Tele-op-støtte rett ut av esken for opptak av demonstrasjoner og fjernstyring. Koble den til imitasjonslæringsarbeidsflyten din umiddelbart.</p>
-                    </div>
-
-                    <div class="research-card featured">
-                        <span class="research-icon">📐</span>
-                        <h3>URDF for simulatorer</h3>
-                        <p>Komplett URDF-robotmodell inkludert. Drop-in-kompatibilitet med MuJoCo, Isaac Sim, PyBullet, Gazebo og resten av standard sim-stacken.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">🖥️</span>
-                        <h3>Simulator inkludert</h3>
-                        <p>Simulator følger med hver robot. Utvikle og valider i sim før du tar på maskinvaren.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">💻</span>
-                        <h3>SDK</h3>
-                        <p>Komplett SDK for styring, persepsjon og integrasjon. Python-først og godt dokumentert.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">🦾</span>
-                        <h3>Gripere inkludert</h3>
-                        <p>Manipulatorer leveres med plattformen. Ingen grunn til å skaffe endeeffektorer separat.</p>
-                    </div>
-
                     <div class="research-card">
                         <span class="research-icon">🤖</span>
-                        <h3>Modulær maskinvare</h3>
-                        <p>Bytt ut armer, gripere og basemoduler. Tilpass plattformen til forskningen din, ikke omvendt.</p>
+                        <h3>3 · Kjør</h3>
+                        <p>Den trente policyen utfører oppgaven på stasjonen og blir bedre for hver utrulling.</p>
                     </div>
-
                     <div class="research-card">
-                        <span class="research-icon">📼</span>
-                        <h3>Eksempelscenarioer</h3>
-                        <p>Forhåndsinnspilte bevegelser og eksempler på utførelsesscenarioer. Valider stacken på arbeidsbenken din på minutter.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">📚</span>
-                        <h3>Detaljert dokumentasjon</h3>
-                        <p>Omfattende dokumentasjon for maskinvare, programvare, kalibrering og integrasjonsarbeidsflyter.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">💬</span>
-                        <h3>Direkte ingeniørstøtte</h3>
-                        <p>Direkte linje til teamet vårt — fra utpakking gjennom distribusjon, eksperimenter og publisering.</p>
+                        <span class="research-icon">📈</span>
+                        <h3>4 · Akkumuler</h3>
+                        <p>Hver utrulling mater et proprietært manipulasjonsdatasett — hver ny oppgave starter lenger fremme.</p>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <h3 class="panel-why-title">Hvorfor laboratorier velger Prometheus</h3>
-                <p class="panel-why-subtitle">Det finnes ingen ferdig humanoid bygget for forskning. Team bruker måneder på å lime sammen maskinvare, kameraer, sim og ML-verktøy før de kan kjøre et eneste eksperiment. Prometheus leverer hele den stacken klar til bruk.</p>
+        <!-- Why Prometheus -->
+        <section class="research-ready">
+            <div class="research-ready-container">
+                <h2 class="section-title">Hvorfor produsenter velger Prometheus</h2>
+                <p class="section-subtitle">Linjejobbene som er vanskelige å bemanne, forblir dekket — uten at linjen må bygges om rundt en rigid celle.</p>
+
                 <div class="research-grid">
                     <div class="research-card featured">
-                        <span class="research-icon">🎓</span>
-                        <h3>Forskning først, ikke en demoenhet</h3>
-                        <p>Åpen arkitektur, komplett SDK, URDF og medfølgende simulator — utformet rundt hvordan robotikkforskning faktisk fungerer.</p>
+                        <span class="research-icon">👷</span>
+                        <h3>Fyller jobber som er vanskelige å bemanne</h3>
+                        <p>Dekk de repetitive oppgavene med høy gjennomtrekk som folk ikke vil ha — uten å øke bemanningen eller kjempe mot turnover.</p>
                     </div>
                     <div class="research-card featured">
-                        <span class="research-icon">⏱️</span>
-                        <h3>Hopp over måneder med integrasjon</h3>
-                        <p>Kameraer, teleop og ML-pipelines er forhåndskonfigurert. Begynn å samle inn demonstrasjoner og trene policyer fra dag én.</p>
+                        <span class="research-icon">💸</span>
+                        <h3>Billigere enn en skreddersydd celle</h3>
+                        <p>Én fleksibel humanoid erstatter spesialtilpasset fast automasjon som er kostbar å designe, bygge og vedlikeholde.</p>
                     </div>
                     <div class="research-card featured">
-                        <span class="research-icon">🧩</span>
-                        <h3>Hackbar &amp; modulær</h3>
-                        <p>Bytt ut armer, gripere og basemoduler, skriv dine egne kontrollere, utvid SDK-en. Tilpass plattformen til arbeidet ditt.</p>
+                        <span class="research-icon">♻️</span>
+                        <h3>Kan trenes om på tvers av oppgaver</h3>
+                        <p>Et nytt produkt eller en ny oppgave betyr nye demonstrasjoner, ikke ny verktøying. Det finnes ikke noe fast verktøyoppsett som må bygges om.</p>
                     </div>
                     <div class="research-card featured">
-                        <span class="research-icon">✨</span>
-                        <h3>Skreddersydde bygg</h3>
-                        <p>Spesialtilpassede sensorpakker, alternative gripere, tilpasset kinematikk og programvareintegrasjoner for spesialisert laboratoriearbeid.</p>
+                        <span class="research-icon">🇪🇺</span>
+                        <h3>EU-basert</h3>
+                        <p>Maskinvare, engineering, støtte og data forblir i Europa — ingen avhengighet av oversjøiske leverandører for produksjonslinjen din.</p>
                     </div>
-                </div>
-                </div>
-
-                <div class="use-case-panel" id="usecase-manufacturing">
-                    <h2 class="section-title">Sett en humanoid på linjen din</h2>
-                    <p class="section-subtitle">Sluttesting på linjen, pick-and-place og de repetitive linjeoppgavene du helst ikke vil bemanne — håndtert av en fleksibel humanoid som kan settes inn på nytt på minutter.</p>
-
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">🔧</span>
-                            <h3>Sluttesting på linjen</h3>
-                            <p>Kjør funksjons- og kvalitetskontroller på slutten av produksjonslinjen — konsekvent, repeterbart og utrettelig gjennom hvert skift.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">📦</span>
-                            <h3>Pick &amp; Place</h3>
-                            <p>Pålitelig pick-and-place for deler, emballasje og kitting. Håndter varierte objekter med de medfølgende griperne.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">🔁</span>
-                            <h3>Repetitive linjeoppgaver</h3>
-                            <p>Overta de kjedelige, repetitive jobbene — maskinbetjening, sortering, monteringsstøtte — og frigjør folkene dine til mer verdiskapende arbeid.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🧠</span>
-                            <h3>Lærer oppgaven</h3>
-                            <p>Drevet av Pi0 — en lett trenbar VLA-modell. Vis den oppgaven, så generaliserer den og tilpasser seg variasjon i stedet for å bryte sammen av den. Ingen rigid skripting.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🛠️</span>
-                            <h3>Rask omstilling</h3>
-                            <p>Rekonfigurer for en ny oppgave eller produktomstilling på minutter, ikke uker. Én robot, mange jobber.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">👁️</span>
-                            <h3>Synsstyrt</h3>
-                            <p>Stereo- og håndleddskameraer for deteksjon av deler, justering og visuell inspeksjon akkurat der arbeidet skjer.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🦾</span>
-                            <h3>Modulære gripere</h3>
-                            <p>Bytt endeeffektorer for å matche delen. Manipulatorer leveres med plattformen, klare for linjen din.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🔌</span>
-                            <h3>Enkel integrasjon</h3>
-                            <p>Et enkelt REST API kobles til din eksisterende linjestyring og arbeidsflyter — ingen proprietær innlåsing.</p>
-                        </div>
-                    </div>
-
-                    <h3 class="panel-why-title">Hvorfor produsenter velger Prometheus</h3>
-                    <p class="panel-why-subtitle">De kjedelige, repetitive linjejobbene er de vanskeligste å bemanne og holde bemannet — men oppgavespesifikke roboter tvinger deg til å bygge om linjen rundt seg. Prometheus integreres i stedet sømløst i din eksisterende prosess, jobber tre skift om dagen og melder seg aldri syk.</p>
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">👷</span>
-                            <h3>Fyller jobber som er vanskelige å bemanne</h3>
-                            <p>Dekk de repetitive oppgavene med høy gjennomtrekk som folk ikke vil ha — uten å øke bemanningen eller kjempe mot turnover.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">💸</span>
-                            <h3>Billigere enn en skreddersydd celle</h3>
-                            <p>Én fleksibel humanoid erstatter spesialtilpasset fast automasjon som er kostbar å designe, bygge og vedlikeholde.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">♻️</span>
-                            <h3>Rekonfigureres på minutter</h3>
-                            <p>Et nytt produkt eller en ny oppgave betyr ikke lenger uker med omverktøy. Tren opp på nytt og gjenbruk den samme roboten på tvers av linjen.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">📈</span>
-                            <h3>Skalerer med etterspørselen</h3>
-                            <p>Legg til enheter etter hvert som volumet vokser, og flytt dem til flaskehalsen. Ingen fast infrastruktur å rive ut og bygge om.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="use-case-panel" id="usecase-entertainment">
-                    <h2 class="section-title">En humanoid som stjeler showet</h2>
-                    <p class="section-subtitle">For fornøyelsesparker, hoteller, museer og arrangementer — kle den opp, styr den fra VR, spill av rutiner, og la den hilse på, presentere og forklare.</p>
-
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">👗</span>
-                            <h3>Kle den opp</h3>
-                            <p>Utstyr roboten med skreddersydde kostymer og merkevareklær som matcher arenaen, maskoten eller arrangementstemaet ditt.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">🥽</span>
-                            <h3>VR-teleoperasjon</h3>
-                            <p>Betjen roboten live fra VR med en Meta Quest 3S — vink, gestikuler og samhandle med gjestene i sanntid.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">🎬</span>
-                            <h3>Ta opp &amp; spill av</h3>
-                            <p>Fang opp en forestilling én gang og spill den av på forespørsel — hilsener, danser og skriptede rutiner, show etter show.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🗣️</span>
-                            <h3>Presenter &amp; forklar</h3>
-                            <p>La den være vert og forklare — guidede turer, produktdemoer og utstillinger som veileder de besøkende gjennom opplevelsen.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">👋</span>
-                            <h3>Hils på gjestene</h3>
-                            <p>En vennlig humanoid velkomst for parkinnganger, hotellobbyer og showgulv.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">📡</span>
-                            <h3>Fjernstyring</h3>
-                            <p>Styr den eksternt fra hvor som helst — kjør samhandlinger og forestillinger uten ansatte på gulvet.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🏨</span>
-                            <h3>Bygget for arenaer</h3>
-                            <p>Fornøyelsesparker, hoteller, museer og arrangementer — en oppsiktsvekkende attraksjon som holder folkemengdene engasjert.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🤖</span>
-                            <h3>Alltid tro mot merkevaren</h3>
-                            <p>Konsekvente, repeterbare forestillinger hver gang — din signaturfigur, levert pålitelig.</p>
-                        </div>
-                    </div>
-
-                    <h3 class="panel-why-title">Hvorfor arenaer velger Prometheus</h3>
-                    <p class="panel-why-subtitle">Attraksjoner står og faller på wow-faktoren. Gjestene har sett skjermer og animatronikk — en ekte, interaktiv humanoid er det de fotograferer, deler og kommer tilbake for. Det er et statement om at arenaen din er den mest avanserte der ute.</p>
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">⭐</span>
-                            <h3>En folkemagnet</h3>
-                            <p>En ekte humanoid trekker folkemengder, bilder og sosial buzz som en skjerm eller animatronikk rett og slett ikke kan matche.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">🏆</span>
-                            <h3>Umiddelbar prestisje</h3>
-                            <p>Vis alle at du driver den mest avanserte, fremtidsrettede arenaen i markedet — og sørg for at de alle ser det.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">🎭</span>
-                            <h3>Én utøver, hvert show</h3>
-                            <p>Ta opp rutiner én gang og spill dem av feilfritt hele dagen — ingen pauser, ingen planlegging, ingen bemanning av rollen.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">🌍</span>
-                            <h3>Betjen fra hvor som helst</h3>
-                            <p>Styr den live i VR med en Meta Quest 3S for å hilse på og samhandle med gjestene i sanntid — selv eksternt.</p>
-                        </div>
+                    <div class="research-card featured">
+                        <span class="research-icon">🛡️</span>
+                        <h3>Definert sertifiseringsløp</h3>
+                        <p>Designet for CE-sertifisering i henhold til ISO 10218-1 og ISO 10218-2, standardene for industriroboter.</p>
                     </div>
                 </div>
             </div>
@@ -1756,7 +1598,7 @@
         <section class="specifications">
             <div class="specs-container">
                 <h2 class="section-title">Tekniske spesifikasjoner</h2>
-                <p class="section-subtitle">Overkropp på stativ — egnet for benkebasert forskning</p>
+                <p class="section-subtitle">Toarmet overkropp — konfigurasjonen for manipulasjonsstasjonen</p>
                 
                 <div class="specs-content">
                     <div class="specs-table-wrapper">
@@ -1767,8 +1609,12 @@
                                     <td class="spec-value">120Nm</td>
                                 </tr>
                                 <tr>
+                                    <td class="spec-label">Utplasseringsalternativer</td>
+                                    <td class="spec-value">Fast base / motorisert lineærakse (skinne)</td>
+                                </tr>
+                                <tr>
                                     <td class="spec-label">Høyde</td>
-                                    <td class="spec-value">160cm on tripod (172cm on legs/wheels)</td>
+                                    <td class="spec-value">160 cm på stativ</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Bredde</td>
@@ -1780,7 +1626,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Frihetsgrader</td>
-                                    <td class="spec-value">19 (29 with legs; 43 with hands; 53 with legs and hands)</td>
+                                    <td class="spec-value">19 (43 med hender)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Kameraer</td>
@@ -1827,19 +1673,6 @@
                             <div class="robot-glow"></div>
                             <img src="/robot.png" alt="Prometheus Humanoid Robot" class="robot-img">
                         </div>
-                        <h3 class="modules-title">Tilgjengelige moduler</h3>
-                        <div class="modules-grid">
-                            <div class="module-card">
-                                <div class="module-icon">🦿</div>
-                                <h4>Beinmodul</h4>
-                                <p>Tobeint bevegelsessystem for forbedret mobilitet og menneskelignende bevegelsesevner.</p>
-                            </div>
-                            <div class="module-card">
-                                <div class="module-icon">🛞</div>
-                                <h4>Hjulmodul</h4>
-                                <p>Hjulbasert understell for effektiv navigasjon og en stabil plattform for ulike bruksområder.</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -1854,49 +1687,6 @@
             </div>
         </section>
 
-        <!-- Manipulators Section -->
-        <section class="manipulators">
-            <div class="manipulators-container">
-                <h2 class="section-title">Manipulatoralternativer</h2>
-                <p class="section-subtitle">Velg riktig endeeffektor for forskningen din</p>
-                
-                <div class="manipulators-grid">
-                    <div class="manipulator-card">
-                        <div class="manipulator-image">
-                            <img src="/claw.png" alt="Type A - 2-finger griper">
-                        </div>
-                        <div class="manipulator-content">
-                            <h3>Type A</h3>
-                            <h4>2-finger griper</h4>
-                            <p>Enkelt klyp / presis lukking. Ideell for skånsomme operasjoner og presise manipulasjonsoppgaver.</p>
-                        </div>
-                    </div>
-
-                    <div class="manipulator-card">
-                        <div class="manipulator-image">
-                            <img src="/for_totes.png" alt="Type B - 4-finger claw">
-                        </div>
-                        <div class="manipulator-content">
-                            <h3>Type B</h3>
-                            <h4>4-finger «klo» (parede fingre)</h4>
-                            <p>For robust gripping av kasser og transportbokser. Designet for lager- og logistikkbruk.</p>
-                        </div>
-                    </div>
-
-                    <div class="manipulator-card">
-                        <div class="manipulator-image">
-                            <img src="/hand.png" alt="Type X - Advanced manipulator">
-                        </div>
-                        <div class="manipulator-content">
-                            <h3>Type X</h3>
-                            <h4>Avanserte manipulatorer</h4>
-                            <p>Alternativene inkluderer håndleddskameraer med justerbar monteringsvinkel (optimalisert for Pi0.5 og andre VLA-modeller), 5-fingerhender og andre tilpassede varianter.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- FAQ Section -->
         <section class="faq">
             <div class="faq-container">
@@ -1904,24 +1694,16 @@
                 <p class="section-subtitle">Everything you need to know before getting started</p>
                 <div class="faq-list">
                     <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Hvilke AI-modeller støtter roboten?</button>
-                        <div class="faq-a"><p>Rett ut av esken støtter den moderne policyer for visjon-språk-handling og imitasjonslæring, inkludert Pi0, Pi0.5, ACT og SmolVLA. Samle inn teleoperasjonsdata, finjuster på en GPU for forbrukermarkedet, og distribuer via SDK.</p></div>
+                        <button class="faq-q" onclick="toggleFaq(this)">Er roboten trygg og sertifiserbar for bruk i fabrikk?</button>
+                        <div class="faq-a"><p>Den er designet for CE-sertifisering i henhold til ISO 10218-1 og ISO 10218-2, standardene for industriroboter. Sikkerhetskonfigurasjonen ved utplassering — skjerming, hastighetsbegrensninger og forriglinger — defineres per anlegg under forberedelsene til piloten.</p></div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Hva følger med roboten?</button>
-                        <div class="faq-a"><p>Hver enhet leveres med komplett SDK og et enkelt REST API, en URDF-modell, en medfølgende simulator, hodemonterte stereokameraer pluss håndleddskameraer, gripere og direkte ingeniørstøtte. Teleoperasjonsløypen fungerer fra dag én.</p></div>
+                        <button class="faq-q" onclick="toggleFaq(this)">Kan den integreres med vår eksisterende linje?</button>
+                        <div class="faq-a"><p>Ja. Stasjonen fungerer side om side med deres eksisterende stasjoner og arbeidsflyter — delene kommer til roboten, så linjen trenger ingen ombygging. Et enkelt REST API kobler den til linjestyringen deres.</p></div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Kan jeg samle inn teleoperasjonsdata og trene policyer selv?</button>
-                        <div class="faq-a"><p>Ja. Teleoperer via VR med en Meta Quest 3S eller en leder-følger-kontroller, ta opp demonstrasjoner i standard datasettformat, og tren ACT eller finjuster en visjon-språk-handling-modell på én enkelt GPU for forbrukermarkedet.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Hvilken beregningskraft kjører roboten på?</button>
-                        <div class="faq-a"><p>Beregningskraften om bord er en Raspberry Pi 5 eller en NVIDIA Jetson. Lette policyer kjører på enheten, mens tyngre visjon-språk-handling-modeller kan kjøre på en tilkoblet arbeidsstasjons-GPU og strømme kommandoer over REST API.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Er roboten modulær?</button>
-                        <div class="faq-a"><p>Ja. Du kan bytte ut armer, gripere (2-finger, 4-finger eller avanserte femfingerhender) og basismoduler som ben eller hjul, og tilpasse plattformen til oppgaven din i stedet for omvendt.</p></div>
+                        <button class="faq-q" onclick="toggleFaq(this)">Hvordan lærer roboten en ny oppgave?</button>
+                        <div class="faq-a"><p>Operatører teleopererer roboten gjennom oppgaven for å ta opp demonstrasjoner, og policyer for visjon-språk-handling som Pi0 og ACT trenes på disse demonstrasjonene. Autonom drift trenes per oppgave under piloten.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Hvor er roboten produsert?</button>
@@ -1934,17 +1716,11 @@
         <!-- Bottom CTA Section -->
         <section style="padding: 6rem 3rem; text-align: center; background: linear-gradient(180deg, #0f0f0f 0%, var(--color-bg) 100%); border-top: 1px solid var(--color-border);">
             <div style="max-width: 800px; margin: 0 auto;">
-                <h2 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.01em;">Klar til å sette Prometheus i arbeid?</h2>
-                <p style="color: var(--color-text-secondary); font-size: 1.2rem; margin-bottom: 3rem; line-height: 1.7;">Enten det er et forskningslaboratorium, en produksjonslinje eller et arenagulv — bestill en enhet eller book en samtale for å diskutere konfigurasjonen din.</p>
+                <h2 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.01em;">Sett Prometheus på linjen din</h2>
+                <p style="color: var(--color-text-secondary); font-size: 1.2rem; margin-bottom: 3rem; line-height: 1.7;">Bestill en samtale for å kartlegge en pilot for sluttesting på linjen ved fabrikken din — vi går gjennom stasjonene, oppgavene og integrasjonsbegrensningene deres.</p>
                 <div class="cta-group" style="justify-content: center;">
-                    <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
-                        Kjøp modulær plattform
-                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                        </svg>
-                    </a>
-                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
-                        Bestill samtale
+                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button">
+                        Bestill en samtale
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                         </svg>
@@ -1978,12 +1754,13 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h4>Prometheus Robotics</h4>
-                <p>En modulær humanoid plattform for forskning, industri og underholdning. Bygget for laboratoriene, fabrikkgulvene og arenaene som former neste generasjon intelligente roboter.</p>
+                <p>Toarmede roboter for industriell automasjon — sluttesting på linjen, kitting og maskinbetjening — og en modulær humanoid plattform for robotikkforskning. Designet og produsert i EU.</p>
             </div>
             <div class="footer-section">
                 <h4>Navigasjon</h4>
                 <ul class="footer-links">
-                    <li><a onclick="showPage('home')">Hjem</a></li>
+                    <li><a href="/no/">Hjem</a></li>
+                    <li><a href="/no/research/">Forskning</a></li>
                     <li><a href="/blog/">Blog</a></li>
                     <li><a onclick="showPage('contacts')">Kontakter</a></li>
                     <li><a href="https://www.linkedin.com/in/ilya-pavlenkov/recent-activity/all/" target="_blank">LinkedIn</a></li>
@@ -1992,13 +1769,13 @@
             <div class="footer-section">
                 <h4>Kom i gang</h4>
                 <ul class="footer-links">
-                    <li><a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank">Kjøp robot</a></li>
                     <li><a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer">Bestill samtale</a></li>
+                    <li><a href="/demo/">Demovideo</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Prometheus Engineering Kft. Med enerett. Made in EU <svg class="eu-flag-inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810 540" role="img" aria-label="European Union flag"><rect width="810" height="540" fill="#003399"/><g fill="#FFCC00"><circle cx="405" cy="105" r="15"/><circle cx="505" cy="140" r="15"/><circle cx="560" cy="220" r="15"/><circle cx="560" cy="320" r="15"/><circle cx="505" cy="400" r="15"/><circle cx="405" cy="435" r="15"/><circle cx="305" cy="400" r="15"/><circle cx="250" cy="320" r="15"/><circle cx="250" cy="220" r="15"/><circle cx="305" cy="140" r="15"/><circle cx="405" cy="175" r="15"/><circle cx="405" cy="365" r="15"/></g></svg></p>
+            <p>&copy; 2026 Prometheus Engineering Kft. Med enerett. Made in EU <svg class="eu-flag-inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810 540" role="img" aria-label="European Union flag"><rect width="810" height="540" fill="#003399"/><g fill="#FFCC00"><circle cx="405" cy="105" r="15"/><circle cx="505" cy="140" r="15"/><circle cx="560" cy="220" r="15"/><circle cx="560" cy="320" r="15"/><circle cx="505" cy="400" r="15"/><circle cx="405" cy="435" r="15"/><circle cx="305" cy="400" r="15"/><circle cx="250" cy="320" r="15"/><circle cx="250" cy="220" r="15"/><circle cx="305" cy="140" r="15"/><circle cx="405" cy="175" r="15"/><circle cx="405" cy="365" r="15"/></g></svg></p>
         </div>
     </footer>
 
@@ -2161,16 +1938,10 @@
             /* LANGS:END */
         ];
 
-        function currentTabPath() {
-            const p = location.pathname;
-            if (p.indexOf('manufacturing') !== -1) return 'manufacturing/';
-            if (p.indexOf('entertainment') !== -1) return 'entertainment/';
-            return '';
-        }
-
         function langHref(code) {
             const base = code === 'en' ? '' : '/' + code;
-            return (base + '/' + currentTabPath()) || '/';
+            const page = location.pathname.indexOf('/research') !== -1 ? 'research/' : '';
+            return (base + '/' + page) || '/';
         }
 
         function initLangSwitcher() {
@@ -2206,35 +1977,9 @@
         }
         initLangSwitcher();
 
-        function useCaseUrl(id) {
-            return window.LANG_BASE + (id === 'research' ? '/' : '/' + id + '/');
-        }
-
-        function showUseCase(id, btn, event) {
-            if (event) event.preventDefault();
-            document.querySelectorAll('.use-case-panel').forEach(p => p.classList.remove('active'));
-            document.querySelectorAll('.use-case-tab').forEach(t => t.classList.remove('active'));
-            const panel = document.getElementById('usecase-' + id);
-            if (panel) panel.classList.add('active');
-            if (!btn) btn = document.querySelector('.use-case-tab[data-tab="' + id + '"]');
-            if (btn) btn.classList.add('active');
-            if (event && window.history && history.pushState) {
-                history.pushState({ tab: id }, '', useCaseUrl(id));
-            }
-            return false;
-        }
-
         function toggleFaq(btn) {
             btn.parentElement.classList.toggle('open');
         }
-
-        window.addEventListener('popstate', function () {
-            const path = location.pathname;
-            let id = 'research';
-            if (path.indexOf('manufacturing') !== -1) id = 'manufacturing';
-            else if (path.indexOf('entertainment') !== -1) id = 'entertainment';
-            showUseCase(id, null, null);
-        });
 
         (function () {
             const navEl = document.querySelector('nav');

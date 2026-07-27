@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SEO:START -->
-    <title>Prometheus Robotics — Humanoïde platform voor onderzoekslabs</title>
-    <meta name="description" content="Een modulaire humanoïde robot gebouwd voor robotica-onderzoek: volledige SDK, stereo- + polscamera's, URDF, meegeleverde simulator en ondersteuning voor VLA-modellen zoals Pi0 en ACT.">
+    <title>Prometheus Robotics — Bimanuele robots voor industriële automatisering | EOL-testen</title>
+    <meta name="description" content="Een stationaire robot met twee armen die industriële taken leert uit demonstraties: functioneel end-of-line-testen, kitting en machinebediening. Ontworpen en gemaakt in de EU.">
     <link rel="canonical" href="https://meetprometheus.com/nl/">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://meetprometheus.com/nl/">
-    <meta property="og:title" content="Prometheus Robotics — Humanoïde platform voor onderzoekslabs">
-    <meta property="og:description" content="Een modulaire humanoïde robot gebouwd voor robotica-onderzoek: volledige SDK, stereo- + polscamera's, URDF, meegeleverde simulator en ondersteuning voor VLA-modellen zoals Pi0 en ACT.">
+    <meta property="og:title" content="Prometheus Robotics — Bimanuele robots voor industriële automatisering | EOL-testen">
+    <meta property="og:description" content="Een stationaire robot met twee armen die industriële taken leert uit demonstraties: functioneel end-of-line-testen, kitting en machinebediening. Ontworpen en gemaakt in de EU.">
     <meta property="og:locale" content="nl_NL">
     <!-- SEO:END -->
     <meta name="theme-color" content="#0a0a0a">
@@ -371,6 +371,13 @@
             flex-shrink: 0;
         }
 
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
         .hero-eyebrow {
             font-size: 0.85rem;
             font-weight: 600;
@@ -571,7 +578,7 @@
 
         .cta-button-container { display: none; }
 
-        /* Research Ready Section */
+        /* Onderzoek Ready Section */
         .research-ready {
             padding: 8rem 3rem;
             background: linear-gradient(180deg, var(--color-bg) 0%, #0f0f0f 100%);
@@ -583,47 +590,9 @@
             margin: 0 auto;
         }
 
-        .use-case-tabs {
-            display: flex;
+        .traction-grid {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 440px));
             justify-content: center;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-bottom: 3.5rem;
-        }
-
-        .use-case-tab {
-            font-family: var(--font-body);
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 0.01em;
-            color: var(--color-text-secondary);
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--color-border);
-            border-radius: 50px;
-            padding: 0.85rem 1.9rem;
-            cursor: pointer;
-            display: inline-block;
-            text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .use-case-tab:hover {
-            color: var(--color-text);
-            border-color: rgba(59, 130, 246, 0.4);
-        }
-
-        .use-case-tab.active {
-            color: #ffffff;
-            background: var(--color-accent);
-            border-color: var(--color-accent);
-            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3);
-        }
-
-        .use-case-panel { display: none; }
-
-        .use-case-panel.active {
-            display: block;
-            animation: tabFade 0.4s ease;
         }
 
         .panel-why-title {
@@ -642,11 +611,6 @@
             max-width: 720px;
             margin: 0 auto 2.5rem;
             line-height: 1.6;
-        }
-
-        @keyframes tabFade {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         .research-grid {
@@ -1394,7 +1358,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Welke AI-modellen ondersteunt de robot?", "acceptedAnswer": {"@type": "Answer", "text": "Standaard ondersteunt hij moderne vision-language-action- en imitatie-leerbeleid, waaronder Pi0, Pi0.5, ACT en SmolVLA. Verzamel teleoperatiegegevens, verfijn ze op een consumenten-GPU en zet ze in via de SDK."}}, {"@type": "Question", "name": "Wat wordt er bij de robot geleverd?", "acceptedAnswer": {"@type": "Answer", "text": "Elke eenheid wordt geleverd met de volledige SDK en een eenvoudige REST API, een URDF-model, een meegeleverde simulator, op het hoofd gemonteerde stereo- plus polscamera's, grijpers en directe technische ondersteuning. De teleoperatiepijplijn werkt vanaf de eerste dag."}}, {"@type": "Question", "name": "Kan ik zelf teleoperatiegegevens verzamelen en beleid trainen?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Bestuur op afstand via VR met een Meta Quest 3S of een leader-follower-controller, leg demonstraties vast in het standaard datasetformaat en train ACT of verfijn een vision-language-action-model op een enkele consumenten-GPU."}}, {"@type": "Question", "name": "Op welke rekenkracht draait de robot?", "acceptedAnswer": {"@type": "Answer", "text": "De ingebouwde rekenkracht is een Raspberry Pi 5 of een NVIDIA Jetson. Lichtgewicht beleid draait op het apparaat zelf, terwijl zwaardere vision-language-action-modellen op een aangesloten werkstation-GPU kunnen draaien en commando's via de REST API kunnen versturen."}}, {"@type": "Question", "name": "Is de robot modulair?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. U kunt armen, grijpers (2-vinger, 4-vinger of geavanceerde vijfvingerhanden) en basismodules zoals poten of wielen verwisselen, en het platform aanpassen aan uw taak in plaats van andersom."}}, {"@type": "Question", "name": "Waar wordt de robot gemaakt?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus wordt ontworpen en geproduceerd in de Europese Unie, wat van belang is voor Europese onderzoekslaboratoria en bedrijven die waarde hechten aan de herkomst van de toeleveringsketen, ondersteuning en datasoevereiniteit."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is de robot veilig en certificeerbaar voor gebruik in de fabriek?", "acceptedAnswer": {"@type": "Answer", "text": "Hij is ontworpen voor CE-certificering volgens ISO 10218-1 en ISO 10218-2, de normen voor industriële robots. De veiligheidsconfiguratie voor de uitrol — afscherming, snelheidsbegrenzingen en vergrendelingen — wordt per locatie vastgelegd tijdens de voorbereiding van de pilot."}}, {"@type": "Question", "name": "Integreert hij met onze bestaande lijn?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Het station werkt naast uw bestaande stations en workflows — onderdelen komen naar de robot, dus de lijn hoeft niet te worden omgebouwd. Een eenvoudige REST API koppelt hem aan uw lijnbesturing."}}, {"@type": "Question", "name": "Hoe leert de robot een nieuwe taak?", "acceptedAnswer": {"@type": "Answer", "text": "Operators teleopereren de robot door de taak heen om demonstraties op te nemen, en op basis van die demonstraties worden vision-language-action-policies zoals Pi0 en ACT getraind. Autonome werking wordt per taak getraind tijdens de pilot."}}, {"@type": "Question", "name": "Waar wordt de robot gemaakt?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus wordt ontworpen en geproduceerd in de Europese Unie, wat van belang is voor Europese onderzoekslaboratoria en bedrijven die waarde hechten aan de herkomst van de toeleveringsketen, ondersteuning en datasoevereiniteit."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1407,10 +1371,10 @@
             PROMETHEUS&nbsp;&nbsp;ROBOTICS
         </div>
         <ul class="nav-links">
-            <li><a onclick="showPage('home')">Prometheus Robotics</a></li>
+            <li><a href="/nl/">Home</a></li>
+            <li><a href="/nl/research/">Onderzoek</a></li>
             <li><a href="/blog/">Blog</a></li>
             <li><a onclick="showPage('contacts')">Contact</a></li>
-            <li><a href="https://www.linkedin.com/in/ilya-pavlenkov/recent-activity/all/" target="_blank">LinkedIn</a></li>
         </ul>
         <div class="lang-switcher">
             <button class="lang-toggle" id="langToggle" aria-haspopup="true" aria-expanded="false" aria-label="Change language">
@@ -1431,322 +1395,200 @@
             </video>
             <div class="hero-container">
                 <div class="hero-content">
+                    <div class="hero-badges">
                     <span class="hero-eu">
                         <svg viewBox="0 0 810 540" aria-hidden="true"><rect width="810" height="540" fill="#003399"/><g fill="#FFCC00"><circle cx="405" cy="105" r="15"/><circle cx="505" cy="140" r="15"/><circle cx="560" cy="220" r="15"/><circle cx="560" cy="320" r="15"/><circle cx="505" cy="400" r="15"/><circle cx="405" cy="435" r="15"/><circle cx="305" cy="400" r="15"/><circle cx="250" cy="320" r="15"/><circle cx="250" cy="220" r="15"/><circle cx="305" cy="140" r="15"/><circle cx="405" cy="175" r="15"/><circle cx="405" cy="365" r="15"/></g></svg>
                         Designed &amp; made in the EU
                     </span>
-                    <span class="hero-eyebrow">Voor onderzoekslabs &amp; technische universiteiten</span>
-                    <h1 class="hero-title">Humanoïde platform voor robotica-onderzoek</h1>
+                    <span class="hero-eu">NVIDIA Inception</span>
+                    <span class="hero-eu">Tractie bij tier-1-automotive</span>
+                    </div>
+                    <span class="hero-eyebrow">Voor fabrikanten &amp; automatiseringsleveranciers</span>
+                    <h1 class="hero-title">Bimanuele robots voor taken die te flexibel zijn voor vaste automatisering</h1>
                     <p class="hero-description">
-                        Een modulaire humanoïde robot speciaal gebouwd voor onderzoek. Train VLA-policies, verzamel teleoperatiegegevens, valideer in simulatie en zet uit op hardware — alles direct klaar voor gebruik.
+                        Een stationaire robot met twee armen die industriële taken leert uit demonstraties. Eerste toepassing: functioneel end-of-line-testen in de automobielproductie.
                     </p>
                     <div class="hero-audience">
-                        <span class="audience-tag primary">Onderzoekslabs</span>
-                        <span class="audience-tag primary">Technische universiteiten</span>
+                        <span class="audience-tag primary">Automotive</span>
+                        <span class="audience-tag primary">Elektronica</span>
                         <span class="audience-tag primary">Maakindustrie</span>
-                        <span class="audience-tag primary">Entertainment</span>
                         <span class="audience-tag">Automatiseringsleveranciers</span>
-                        <span class="audience-tag">Start-ups</span>
-                        <span class="audience-tag">DIY-ontwikkelaars</span>
+                        <span class="audience-tag">Onderzoekslabs</span>
                     </div>
                     <div class="cta-group">
-                        <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
-                            Humanoïde robot kopen
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                            </svg>
-                        </a>
-                        <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
+                        <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button">
                             Plan een gesprek
                             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </a>
+                        <a href="/nl/research/" class="cta-button secondary">
+                            Voor onderzoekslabs
+                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                             </svg>
                         </a>
                     </div>
                 </div>
 
                 <div class="cta-button-container">
-                    <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
-                        Humanoïde robot kopen
-                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                        </svg>
-                    </a>
-                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
+                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button">
                         Plan een gesprek
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </a>
+                    <a href="/nl/research/" class="cta-button secondary">
+                        Voor onderzoekslabs
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                         </svg>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Gebouwd voor modern robotica-onderzoek -->
+        <!-- Traction -->
+        <section class="research-ready traction">
+            <div class="research-ready-container">
+                <h2 class="section-title">Samenwerking met de industrie</h2>
+                <p class="section-subtitle">Waar we vandaag staan met onze industriële partners.</p>
+
+                <div class="research-grid traction-grid">
+                    <div class="research-card featured">
+                        <span class="research-icon">🤝</span>
+                        <h3>LOI met tier-1-automotive-toeleverancier</h3>
+                        <p>Ondertekende intentieverklaring (LOI) met een tier-1-toeleverancier in de automotive, inclusief een betaalde pilot.</p>
+                    </div>
+                    <div class="research-card featured">
+                        <span class="research-icon">🏭</span>
+                        <h3>Uitroltraject in uitvoering</h3>
+                        <p>Uitroltraject voor end-of-line-testen in uitvoering bij een Europese fabriek.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem -->
         <section class="research-ready">
             <div class="research-ready-container">
-                <div class="use-case-tabs">
-                    <a class="use-case-tab active" data-tab="research" href="/nl/" onclick="return showUseCase('research', this, event)">🔬 Onderzoekslabs</a>
-                    <a class="use-case-tab" data-tab="manufacturing" href="/nl/manufacturing/" onclick="return showUseCase('manufacturing', this, event)">🏭 Maakindustrie</a>
-                    <a class="use-case-tab" data-tab="entertainment" href="/nl/entertainment/" onclick="return showUseCase('entertainment', this, event)">🎉 Entertainment</a>
-                </div>
+                <h2 class="section-title">De lijnposities die u niet bemenst krijgt</h2>
+                <p class="section-subtitle">Europese fabrikanten krijgen repetitieve lijnposities niet bemenst — en de bestaande alternatieven passen niet bij flexibele taken.</p>
 
-                <div class="use-case-panel active" id="usecase-research">
-                <h2 class="section-title">Gebouwd voor modern robotica-onderzoek</h2>
-                <p class="section-subtitle">Alles wat uw lab nodig heeft om gegevens te verzamelen, policies te trainen en experimenten uit te voeren — meegeleverd met de robot.</p>
+                <div class="research-grid problem-grid">
+                    <div class="research-card">
+                        <span class="research-icon">👥</span>
+                        <h3>Drie ploegen, drie operators</h3>
+                        <p>Eén station dat drie ploegen draait betekent drie operators — €70–200k per jaar aan loonkosten, afhankelijk van het land. En dit zijn juist de moeilijkste functies om in te vullen en bemenst te houden.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">🔩</span>
+                        <h3>Vaste automatisering is niet flexibel</h3>
+                        <p>Maatwerkcellen kunnen productvariatie niet aan zonder kostbaar omstellen. Elke productwijziging betekent engineering, stilstand en capex.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">🚶</span>
+                        <h3>Universele humanoïden zijn nog niet klaar</h3>
+                        <p>Lopende alleskunner-humanoïden zijn nog jaren weg en duur. Flexibele lijntaken vragen om een oplossing die vandaag werkt.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution: Het manipulatiestation -->
+        <section class="research-ready">
+            <div class="research-ready-container">
+                <h2 class="section-title">Het manipulatiestation</h2>
+                <p class="section-subtitle">Een robot met twee armen op een vaste basis of een gemotoriseerde lineaire as. Onderdelen komen naar het station — geen benen, geen navigatie, en dat is bewust: zo blijft de robot vandaag betaalbaar, betrouwbaar en certificeerbaar.</p>
 
                 <div class="research-grid">
                     <div class="research-card featured">
-                        <span class="research-icon">📷</span>
-                        <h3>VLA-geoptimaliseerde visie</h3>
-                        <p>Polscamera's met instelbare montagehoek — ideaal voor Pi0.5 en andere VLA-modellen. Plus een op het hoofd gemonteerde stereocamera voor volledige scèneperceptie.</p>
-                        <span class="vla-tag">Pi0.5 · SmolVLA · ACT</span>
+                        <span class="research-icon">🔧</span>
+                        <h3>End-of-line-testen</h3>
+                        <p>Apparaten laden, lades bedienen en sorteren op testresultaat — functioneel testen aan het einde van de productielijn.</p>
+                        <span class="vla-tag">Vlaggenschiptoepassing</span>
                     </div>
+                    <div class="research-card">
+                        <span class="research-icon">📦</span>
+                        <h3>Kitting &amp; verpakken</h3>
+                        <p>Stel kits samen en verpak uiteenlopende producten met twee gecoördineerde armen — de taken waar cellen met één arm moeite mee hebben.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">⚙️</span>
+                        <h3>Machinebediening</h3>
+                        <p>Laad en ontlaad machines, persen en testopstellingen — constant, cyclus na cyclus, ploeg na ploeg.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">🗂️</span>
+                        <h3>Sorteren</h3>
+                        <p>Sorteer onderdelen en producten op type, oriëntatie of inspectieresultaat — gestuurd door visie, niet door mallen.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="research-card featured">
+        <!-- How It Works -->
+        <section class="research-ready">
+            <div class="research-ready-container">
+                <h2 class="section-title">Getraind via demonstratie, niet geprogrammeerd</h2>
+                <p class="section-subtitle">Autonome werking wordt per taak getraind tijdens de pilot — via een datapipeline, niet via maanden maatwerkprogrammering.</p>
+
+                <div class="research-grid how-grid">
+                    <div class="research-card">
+                        <span class="research-icon">🥽</span>
+                        <h3>1 · Demonstreren</h3>
+                        <p>Operators teleopereren de robot door de taak heen via VR — geen robotica-expertise nodig aan uw kant.</p>
+                    </div>
+                    <div class="research-card">
                         <span class="research-icon">🧠</span>
-                        <h3>Klaar om getraind te worden</h3>
-                        <p>Vooraf geconfigureerd voor moderne ML-pipelines. Verzamel vanaf dag één demonstraties en train policies — geen integratiewerk nodig.</p>
+                        <h3>2 · Trainen</h3>
+                        <p>Opgenomen demonstraties trainen VLA-policies (vision-language-action) voor die specifieke taak en dat specifieke station.</p>
                     </div>
-
-                    <div class="research-card featured">
-                        <span class="research-icon">🎮</span>
-                        <h3>Teleoperatie-pipeline</h3>
-                        <p>Teleoperatie-ondersteuning direct klaar voor gebruik voor het opnemen van demonstraties en bediening op afstand. Sluit meteen aan op uw imitation-learning-workflow.</p>
-                    </div>
-
-                    <div class="research-card featured">
-                        <span class="research-icon">📐</span>
-                        <h3>URDF voor simulatoren</h3>
-                        <p>Volledig URDF-robotmodel inbegrepen. Direct compatibel met MuJoCo, Isaac Sim, PyBullet, Gazebo en de rest van de standaard sim-stack.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">🖥️</span>
-                        <h3>Simulator meegeleverd</h3>
-                        <p>Bij elke robot wordt een simulator geleverd. Ontwikkel en valideer in sim voordat u de hardware aanraakt.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">💻</span>
-                        <h3>SDK</h3>
-                        <p>Volledige SDK voor besturing, perceptie en integratie. Python-first en goed gedocumenteerd.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">🦾</span>
-                        <h3>Grijpers inbegrepen</h3>
-                        <p>Manipulatoren worden met het platform geleverd. Geen noodzaak om end-effectors apart aan te schaffen.</p>
-                    </div>
-
                     <div class="research-card">
                         <span class="research-icon">🤖</span>
-                        <h3>Modulaire hardware</h3>
-                        <p>Verwissel armen, grijpers en basismodules. Pas het platform aan uw onderzoek aan, niet andersom.</p>
+                        <h3>3 · Uitvoeren</h3>
+                        <p>De getrainde policy voert de taak uit op het station en verbetert met elke uitrol.</p>
                     </div>
-
                     <div class="research-card">
-                        <span class="research-icon">📼</span>
-                        <h3>Voorbeeldscenario's</h3>
-                        <p>Vooraf opgenomen bewegingen en voorbeelden van uitvoeringsscenario's. Valideer de stack in enkele minuten op uw werkbank.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">📚</span>
-                        <h3>Gedetailleerde documentatie</h3>
-                        <p>Uitgebreide documentatie voor hardware, software, kalibratie en integratie-workflows.</p>
-                    </div>
-
-                    <div class="research-card">
-                        <span class="research-icon">💬</span>
-                        <h3>Directe technische ondersteuning</h3>
-                        <p>Een directe lijn naar ons team — van uitpakken tot uitrol, experimenten en publicatie.</p>
+                        <span class="research-icon">📈</span>
+                        <h3>4 · Opbouwen</h3>
+                        <p>Elke uitrol voedt een eigen manipulatiedataset — elke nieuwe taak start met een voorsprong.</p>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <h3 class="panel-why-title">Waarom labs voor Prometheus kiezen</h3>
-                <p class="panel-why-subtitle">Er bestaat geen kant-en-klare humanoïde die voor onderzoek is gebouwd. Teams verspillen maanden aan het aan elkaar knopen van hardware, camera's, sim en ML-tooling voordat ze één enkel experiment kunnen uitvoeren. Prometheus levert die hele stack kant-en-klaar.</p>
+        <!-- Why Prometheus -->
+        <section class="research-ready">
+            <div class="research-ready-container">
+                <h2 class="section-title">Waarom fabrikanten voor Prometheus kiezen</h2>
+                <p class="section-subtitle">De moeilijk te bemensen lijnfuncties blijven gedekt — zonder de lijn opnieuw op te bouwen rond een rigide cel.</p>
+
                 <div class="research-grid">
                     <div class="research-card featured">
-                        <span class="research-icon">🎓</span>
-                        <h3>Onderzoek voorop, geen demo-unit</h3>
-                        <p>Open architectuur, volledige SDK, URDF en meegeleverde simulator — ontworpen rond hoe robotica-onderzoek echt werkt.</p>
+                        <span class="research-icon">👷</span>
+                        <h3>Vult moeilijk te bemensen functies</h3>
+                        <p>Dek de repetitieve taken met hoog verloop die mensen niet willen doen — zonder uw personeelsbestand op te schalen of tegen verloop te vechten.</p>
                     </div>
                     <div class="research-card featured">
-                        <span class="research-icon">⏱️</span>
-                        <h3>Sla maanden integratie over</h3>
-                        <p>Camera's, teleoperatie en ML-pipelines zijn vooraf geconfigureerd. Verzamel vanaf dag één demonstraties en train policies.</p>
+                        <span class="research-icon">💸</span>
+                        <h3>Goedkoper dan een maatwerkcel</h3>
+                        <p>Eén flexibele humanoïde vervangt op maat gemaakte vaste automatisering die kostbaar is om te ontwerpen, bouwen en onderhouden.</p>
                     </div>
                     <div class="research-card featured">
-                        <span class="research-icon">🧩</span>
-                        <h3>Hackbaar &amp; modulair</h3>
-                        <p>Verwissel armen, grijpers en basismodules, schrijf uw eigen controllers, breid de SDK uit. Pas het platform aan uw werk aan.</p>
+                        <span class="research-icon">♻️</span>
+                        <h3>Hertrainbaar voor nieuwe taken</h3>
+                        <p>Een nieuw product of een nieuwe taak betekent nieuwe demonstraties, geen nieuwe tooling. Er is geen vaste tooling om om te bouwen.</p>
                     </div>
                     <div class="research-card featured">
-                        <span class="research-icon">✨</span>
-                        <h3>Maatwerkconfiguraties</h3>
-                        <p>Op maat gemaakte sensorpakketten, alternatieve grijpers, aangepaste kinematica en software-integraties voor gespecialiseerd labwerk.</p>
+                        <span class="research-icon">🇪🇺</span>
+                        <h3>Gevestigd in de EU</h3>
+                        <p>Hardware, engineering, ondersteuning en data blijven in Europa — geen overzeese afhankelijkheid voor uw productielijn.</p>
                     </div>
-                </div>
-                </div>
-
-                <div class="use-case-panel" id="usecase-manufacturing">
-                    <h2 class="section-title">Zet een humanoïde aan uw lijn</h2>
-                    <p class="section-subtitle">End-of-line-testen, pick-and-place en de repetitieve lijntaken waar u liever geen mensen op zet — uitgevoerd door een flexibele humanoïde die in enkele minuten opnieuw inzetbaar is.</p>
-
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">🔧</span>
-                            <h3>End-of-line-testen</h3>
-                            <p>Voer functionele en kwaliteitscontroles uit aan het einde van uw productielijn — consistent, herhaalbaar en onvermoeibaar tijdens elke ploeg.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">📦</span>
-                            <h3>Pick &amp; Place</h3>
-                            <p>Betrouwbare pick-and-place voor onderdelen, verpakkingen en kitting. Verwerk uiteenlopende objecten met de meegeleverde grijpers.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">🔁</span>
-                            <h3>Repetitieve lijntaken</h3>
-                            <p>Neem de saaie, repetitieve klussen over — machinebediening, sorteren, montageondersteuning — en maak uw mensen vrij voor werk met meer toegevoegde waarde.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🧠</span>
-                            <h3>Leert de taak</h3>
-                            <p>Aangedreven door Pi0 — een eenvoudig trainbaar VLA-model. Laat het de taak zien en het generaliseert, past zich aan variatie aan in plaats van eraan te bezwijken. Geen rigide scripting.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🛠️</span>
-                            <h3>Snelle omstelling</h3>
-                            <p>Herconfigureer voor een nieuwe taak of productwissel in minuten, niet weken. Eén robot, vele taken.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">👁️</span>
-                            <h3>Visiegestuurd</h3>
-                            <p>Stereo- en polscamera's voor detectie, uitlijning en visuele inspectie van onderdelen precies waar het werk plaatsvindt.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🦾</span>
-                            <h3>Modulaire grijpers</h3>
-                            <p>Verwissel end-effectors om bij het onderdeel te passen. Manipulatoren worden met het platform geleverd, klaar voor uw lijn.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🔌</span>
-                            <h3>Eenvoudige integratie</h3>
-                            <p>Een eenvoudige REST API sluit aan op uw bestaande lijnbesturing en workflows — geen proprietary lock-in.</p>
-                        </div>
-                    </div>
-
-                    <h3 class="panel-why-title">Waarom fabrikanten voor Prometheus kiezen</h3>
-                    <p class="panel-why-subtitle">De saaie, repetitieve lijnklussen zijn het moeilijkst te bemensen en bemenst te houden — maar taakspecifieke robots dwingen u de lijn eromheen opnieuw op te bouwen. Prometheus integreert daarentegen naadloos in uw bestaande proces, werkt drie ploegen per dag en meldt zich nooit ziek.</p>
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">👷</span>
-                            <h3>Vult moeilijk te bemensen functies</h3>
-                            <p>Dek de repetitieve taken met hoog verloop die mensen niet willen doen — zonder uw personeelsbestand op te schalen of tegen verloop te vechten.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">💸</span>
-                            <h3>Goedkoper dan een maatwerkcel</h3>
-                            <p>Eén flexibele humanoïde vervangt op maat gemaakte vaste automatisering die kostbaar is om te ontwerpen, bouwen en onderhouden.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">♻️</span>
-                            <h3>Herconfigureert in minuten</h3>
-                            <p>Een nieuw product of een nieuwe taak betekent niet langer wekenlang ombouwen. Hertrain en herbestem dezelfde robot over de hele lijn.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">📈</span>
-                            <h3>Schaalt mee met de vraag</h3>
-                            <p>Voeg units toe naarmate het volume groeit en verplaats ze naar de bottleneck. Geen vaste infrastructuur die u eruit moet slopen en opnieuw moet opbouwen.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="use-case-panel" id="usecase-entertainment">
-                    <h2 class="section-title">Een humanoïde die de show steelt</h2>
-                    <p class="section-subtitle">Voor pretparken, hotels, musea en evenementen — kleed hem aan, bestuur hem vanuit VR, speel routines af en laat hem verwelkomen, presenteren en uitleggen.</p>
-
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">👗</span>
-                            <h3>Kleed hem aan</h3>
-                            <p>Steek de robot in op maat gemaakte kostuums en gebrandde kleding die past bij uw locatie, mascotte of evenementthema.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">🥽</span>
-                            <h3>VR-teleoperatie</h3>
-                            <p>Bestuur de robot live vanuit VR met een Meta Quest 3S — zwaai, gebaar en interacteer in realtime met gasten.</p>
-                        </div>
-
-                        <div class="research-card featured">
-                            <span class="research-icon">🎬</span>
-                            <h3>Opnemen &amp; afspelen</h3>
-                            <p>Leg een optreden één keer vast en speel het op verzoek af — begroetingen, dansen en gescripte routines, show na show.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🗣️</span>
-                            <h3>Presenteren &amp; uitleggen</h3>
-                            <p>Laat hem optreden als host en uitleg geven — rondleidingen, productdemo's en exposities die bezoekers door de ervaring leiden.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">👋</span>
-                            <h3>Gasten verwelkomen</h3>
-                            <p>Een vriendelijk humanoïde welkom voor parkingangen, hotellobby's en beursvloeren.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">📡</span>
-                            <h3>Bediening op afstand</h3>
-                            <p>Bestuur hem op afstand vanaf elke locatie — voer interacties en optredens uit zonder personeel op de vloer.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🏨</span>
-                            <h3>Gebouwd voor venues</h3>
-                            <p>Pretparken, hotels, musea en evenementen — een opvallende attractie die het publiek geboeid houdt.</p>
-                        </div>
-
-                        <div class="research-card">
-                            <span class="research-icon">🤖</span>
-                            <h3>Altijd in lijn met uw merk</h3>
-                            <p>Consistente, herhaalbare optredens, elke keer — uw kenmerkende personage, betrouwbaar geleverd.</p>
-                        </div>
-                    </div>
-
-                    <h3 class="panel-why-title">Waarom venues voor Prometheus kiezen</h3>
-                    <p class="panel-why-subtitle">Attracties staan of vallen met de wow-factor. Gasten hebben schermen en animatronics gezien — een echte, interactieve humanoïde is wat ze fotograferen, posten en waarvoor ze terugkomen. Het is een statement dat uw locatie de meest geavanceerde is.</p>
-                    <div class="research-grid">
-                        <div class="research-card featured">
-                            <span class="research-icon">⭐</span>
-                            <h3>Een publiekstrekker</h3>
-                            <p>Een echte humanoïde trekt publiek, foto's en social buzz aan die een scherm of animatronic simpelweg niet kan evenaren.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">🏆</span>
-                            <h3>Direct prestige</h3>
-                            <p>Laat iedereen zien dat u de meest geavanceerde, toekomstgerichte locatie op de markt runt — en zorg dat ze het allemaal zien.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">🎭</span>
-                            <h3>Eén performer, elke show</h3>
-                            <p>Neem routines één keer op en speel ze de hele dag feilloos af — geen pauzes, geen planning, geen bemensing van de rol.</p>
-                        </div>
-                        <div class="research-card featured">
-                            <span class="research-icon">🌍</span>
-                            <h3>Bedien vanaf elke locatie</h3>
-                            <p>Bestuur hem live in VR met een Meta Quest 3S om gasten in realtime te verwelkomen en ermee te interacteren — zelfs op afstand.</p>
-                        </div>
+                    <div class="research-card featured">
+                        <span class="research-icon">🛡️</span>
+                        <h3>Certificeringstraject vastgelegd</h3>
+                        <p>Ontworpen voor CE-certificering volgens ISO 10218-1 en ISO 10218-2, de normen voor industriële robots.</p>
                     </div>
                 </div>
             </div>
@@ -1756,7 +1598,7 @@
         <section class="specifications">
             <div class="specs-container">
                 <h2 class="section-title">Technische specificaties</h2>
-                <p class="section-subtitle">Bovenlichaam op statief — geschikt voor onderzoek op de werkbank</p>
+                <p class="section-subtitle">Bovenlichaam met twee armen — de configuratie van het manipulatiestation</p>
                 
                 <div class="specs-content">
                     <div class="specs-table-wrapper">
@@ -1767,8 +1609,12 @@
                                     <td class="spec-value">120Nm</td>
                                 </tr>
                                 <tr>
+                                    <td class="spec-label">Opstellingsopties</td>
+                                    <td class="spec-value">Vaste basis / gemotoriseerde lineaire as (rail)</td>
+                                </tr>
+                                <tr>
                                     <td class="spec-label">Hoogte</td>
-                                    <td class="spec-value">160cm on tripod (172cm on legs/wheels)</td>
+                                    <td class="spec-value">160cm op statief</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Breedte</td>
@@ -1780,7 +1626,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Vrijheidsgraden</td>
-                                    <td class="spec-value">19 (29 with legs; 43 with hands; 53 with legs and hands)</td>
+                                    <td class="spec-value">19 (43 met handen)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Camera's</td>
@@ -1827,19 +1673,6 @@
                             <div class="robot-glow"></div>
                             <img src="/robot.png" alt="Prometheus Humanoid Robot" class="robot-img">
                         </div>
-                        <h3 class="modules-title">Beschikbare modules</h3>
-                        <div class="modules-grid">
-                            <div class="module-card">
-                                <div class="module-icon">🦿</div>
-                                <h4>Benenmodule</h4>
-                                <p>Tweebenig voortbewegingssysteem voor verbeterde mobiliteit en menselijke bewegingsmogelijkheden.</p>
-                            </div>
-                            <div class="module-card">
-                                <div class="module-icon">🛞</div>
-                                <h4>Wielenmodule</h4>
-                                <p>Onderstel op wielen voor efficiënte navigatie en een stabiel platform voor uiteenlopende toepassingen.</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -1854,49 +1687,6 @@
             </div>
         </section>
 
-        <!-- Manipulators Section -->
-        <section class="manipulators">
-            <div class="manipulators-container">
-                <h2 class="section-title">Manipulator-opties</h2>
-                <p class="section-subtitle">Kies de juiste end-effector voor uw onderzoek</p>
-                
-                <div class="manipulators-grid">
-                    <div class="manipulator-card">
-                        <div class="manipulator-image">
-                            <img src="/claw.png" alt="Type A - 2-vinger grijper">
-                        </div>
-                        <div class="manipulator-content">
-                            <h3>Type A</h3>
-                            <h4>2-vinger grijper</h4>
-                            <p>Eenvoudige knijpbeweging / nauwkeurig sluiten. Ideaal voor delicate handelingen en precieze manipulatietaken.</p>
-                        </div>
-                    </div>
-
-                    <div class="manipulator-card">
-                        <div class="manipulator-image">
-                            <img src="/for_totes.png" alt="Type B - 4-finger claw">
-                        </div>
-                        <div class="manipulator-content">
-                            <h3>Type B</h3>
-                            <h4>4-vinger "klauw" (gepaarde vingers)</h4>
-                            <p>Voor robuust grijpen van kratten en transportbakken. Ontworpen voor magazijn- en logistieke toepassingen.</p>
-                        </div>
-                    </div>
-
-                    <div class="manipulator-card">
-                        <div class="manipulator-image">
-                            <img src="/hand.png" alt="Type X - Advanced manipulator">
-                        </div>
-                        <div class="manipulator-content">
-                            <h3>Type X</h3>
-                            <h4>Geavanceerde manipulatoren</h4>
-                            <p>Opties omvatten polscamera's met instelbare montagehoek (geoptimaliseerd voor Pi0.5 en andere VLA-modellen), 5-vinger handen en andere maatwerkvarianten.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- FAQ Section -->
         <section class="faq">
             <div class="faq-container">
@@ -1904,24 +1694,16 @@
                 <p class="section-subtitle">Everything you need to know before getting started</p>
                 <div class="faq-list">
                     <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Welke AI-modellen ondersteunt de robot?</button>
-                        <div class="faq-a"><p>Standaard ondersteunt hij moderne vision-language-action- en imitatie-leerbeleid, waaronder Pi0, Pi0.5, ACT en SmolVLA. Verzamel teleoperatiegegevens, verfijn ze op een consumenten-GPU en zet ze in via de SDK.</p></div>
+                        <button class="faq-q" onclick="toggleFaq(this)">Is de robot veilig en certificeerbaar voor gebruik in de fabriek?</button>
+                        <div class="faq-a"><p>Hij is ontworpen voor CE-certificering volgens ISO 10218-1 en ISO 10218-2, de normen voor industriële robots. De veiligheidsconfiguratie voor de uitrol — afscherming, snelheidsbegrenzingen en vergrendelingen — wordt per locatie vastgelegd tijdens de voorbereiding van de pilot.</p></div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Wat wordt er bij de robot geleverd?</button>
-                        <div class="faq-a"><p>Elke eenheid wordt geleverd met de volledige SDK en een eenvoudige REST API, een URDF-model, een meegeleverde simulator, op het hoofd gemonteerde stereo- plus polscamera's, grijpers en directe technische ondersteuning. De teleoperatiepijplijn werkt vanaf de eerste dag.</p></div>
+                        <button class="faq-q" onclick="toggleFaq(this)">Integreert hij met onze bestaande lijn?</button>
+                        <div class="faq-a"><p>Ja. Het station werkt naast uw bestaande stations en workflows — onderdelen komen naar de robot, dus de lijn hoeft niet te worden omgebouwd. Een eenvoudige REST API koppelt hem aan uw lijnbesturing.</p></div>
                     </div>
                     <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Kan ik zelf teleoperatiegegevens verzamelen en beleid trainen?</button>
-                        <div class="faq-a"><p>Ja. Bestuur op afstand via VR met een Meta Quest 3S of een leader-follower-controller, leg demonstraties vast in het standaard datasetformaat en train ACT of verfijn een vision-language-action-model op een enkele consumenten-GPU.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Op welke rekenkracht draait de robot?</button>
-                        <div class="faq-a"><p>De ingebouwde rekenkracht is een Raspberry Pi 5 of een NVIDIA Jetson. Lichtgewicht beleid draait op het apparaat zelf, terwijl zwaardere vision-language-action-modellen op een aangesloten werkstation-GPU kunnen draaien en commando's via de REST API kunnen versturen.</p></div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-q" onclick="toggleFaq(this)">Is de robot modulair?</button>
-                        <div class="faq-a"><p>Ja. U kunt armen, grijpers (2-vinger, 4-vinger of geavanceerde vijfvingerhanden) en basismodules zoals poten of wielen verwisselen, en het platform aanpassen aan uw taak in plaats van andersom.</p></div>
+                        <button class="faq-q" onclick="toggleFaq(this)">Hoe leert de robot een nieuwe taak?</button>
+                        <div class="faq-a"><p>Operators teleopereren de robot door de taak heen om demonstraties op te nemen, en op basis van die demonstraties worden vision-language-action-policies zoals Pi0 en ACT getraind. Autonome werking wordt per taak getraind tijdens de pilot.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Waar wordt de robot gemaakt?</button>
@@ -1934,16 +1716,10 @@
         <!-- Bottom CTA Section -->
         <section style="padding: 6rem 3rem; text-align: center; background: linear-gradient(180deg, #0f0f0f 0%, var(--color-bg) 100%); border-top: 1px solid var(--color-border);">
             <div style="max-width: 800px; margin: 0 auto;">
-                <h2 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.01em;">Klaar om Prometheus aan het werk te zetten?</h2>
-                <p style="color: var(--color-text-secondary); font-size: 1.2rem; margin-bottom: 3rem; line-height: 1.7;">Of het nu gaat om een onderzoekslab, een productielijn of een venuevloer — bestel een unit of plan een gesprek om uw configuratie te bespreken.</p>
+                <h2 style="font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.01em;">Zet Prometheus aan uw lijn</h2>
+                <p style="color: var(--color-text-secondary); font-size: 1.2rem; margin-bottom: 3rem; line-height: 1.7;">Plan een gesprek om een end-of-line-pilot voor uw fabriek af te bakenen — we nemen samen uw stations, taken en integratierandvoorwaarden door.</p>
                 <div class="cta-group" style="justify-content: center;">
-                    <a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank" class="cta-button">
-                        Modulair platform kopen
-                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                        </svg>
-                    </a>
-                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button secondary">
+                    <a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer" class="cta-button">
                         Plan een gesprek
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
@@ -1978,12 +1754,13 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h4>Prometheus Robotics</h4>
-                <p>Een modulair humanoïde platform voor onderzoek, industrie en entertainment. Gebouwd voor de labs, fabrieksvloeren en venues die de volgende generatie intelligente robots vormgeven.</p>
+                <p>Bimanuele robots voor industriële automatisering — end-of-line-testen, kitting en machinebediening — en een modulair humanoïde platform voor robotica-onderzoek. Ontworpen en gemaakt in de EU.</p>
             </div>
             <div class="footer-section">
                 <h4>Navigatie</h4>
                 <ul class="footer-links">
-                    <li><a onclick="showPage('home')">Home</a></li>
+                    <li><a href="/nl/">Home</a></li>
+                    <li><a href="/nl/research/">Onderzoek</a></li>
                     <li><a href="/blog/">Blog</a></li>
                     <li><a onclick="showPage('contacts')">Contact</a></li>
                     <li><a href="https://www.linkedin.com/in/ilya-pavlenkov/recent-activity/all/" target="_blank">LinkedIn</a></li>
@@ -1992,13 +1769,13 @@
             <div class="footer-section">
                 <h4>Aan de slag</h4>
                 <ul class="footer-links">
-                    <li><a href="https://forms.gle/G5cSyxhieorj9oACA" target="_blank">Robot kopen</a></li>
                     <li><a href="https://calendar.app.google/SquetjZENQ37ZrCv6" target="_blank" rel="noopener noreferrer">Plan een gesprek</a></li>
+                    <li><a href="/demo/">Demovideo</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Prometheus Engineering Kft. Alle rechten voorbehouden. Made in EU <svg class="eu-flag-inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810 540" role="img" aria-label="European Union flag"><rect width="810" height="540" fill="#003399"/><g fill="#FFCC00"><circle cx="405" cy="105" r="15"/><circle cx="505" cy="140" r="15"/><circle cx="560" cy="220" r="15"/><circle cx="560" cy="320" r="15"/><circle cx="505" cy="400" r="15"/><circle cx="405" cy="435" r="15"/><circle cx="305" cy="400" r="15"/><circle cx="250" cy="320" r="15"/><circle cx="250" cy="220" r="15"/><circle cx="305" cy="140" r="15"/><circle cx="405" cy="175" r="15"/><circle cx="405" cy="365" r="15"/></g></svg></p>
+            <p>&copy; 2026 Prometheus Engineering Kft. Alle rechten voorbehouden. Made in EU <svg class="eu-flag-inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810 540" role="img" aria-label="European Union flag"><rect width="810" height="540" fill="#003399"/><g fill="#FFCC00"><circle cx="405" cy="105" r="15"/><circle cx="505" cy="140" r="15"/><circle cx="560" cy="220" r="15"/><circle cx="560" cy="320" r="15"/><circle cx="505" cy="400" r="15"/><circle cx="405" cy="435" r="15"/><circle cx="305" cy="400" r="15"/><circle cx="250" cy="320" r="15"/><circle cx="250" cy="220" r="15"/><circle cx="305" cy="140" r="15"/><circle cx="405" cy="175" r="15"/><circle cx="405" cy="365" r="15"/></g></svg></p>
         </div>
     </footer>
 
@@ -2161,16 +1938,10 @@
             /* LANGS:END */
         ];
 
-        function currentTabPath() {
-            const p = location.pathname;
-            if (p.indexOf('manufacturing') !== -1) return 'manufacturing/';
-            if (p.indexOf('entertainment') !== -1) return 'entertainment/';
-            return '';
-        }
-
         function langHref(code) {
             const base = code === 'en' ? '' : '/' + code;
-            return (base + '/' + currentTabPath()) || '/';
+            const page = location.pathname.indexOf('/research') !== -1 ? 'research/' : '';
+            return (base + '/' + page) || '/';
         }
 
         function initLangSwitcher() {
@@ -2206,35 +1977,9 @@
         }
         initLangSwitcher();
 
-        function useCaseUrl(id) {
-            return window.LANG_BASE + (id === 'research' ? '/' : '/' + id + '/');
-        }
-
-        function showUseCase(id, btn, event) {
-            if (event) event.preventDefault();
-            document.querySelectorAll('.use-case-panel').forEach(p => p.classList.remove('active'));
-            document.querySelectorAll('.use-case-tab').forEach(t => t.classList.remove('active'));
-            const panel = document.getElementById('usecase-' + id);
-            if (panel) panel.classList.add('active');
-            if (!btn) btn = document.querySelector('.use-case-tab[data-tab="' + id + '"]');
-            if (btn) btn.classList.add('active');
-            if (event && window.history && history.pushState) {
-                history.pushState({ tab: id }, '', useCaseUrl(id));
-            }
-            return false;
-        }
-
         function toggleFaq(btn) {
             btn.parentElement.classList.toggle('open');
         }
-
-        window.addEventListener('popstate', function () {
-            const path = location.pathname;
-            let id = 'research';
-            if (path.indexOf('manufacturing') !== -1) id = 'manufacturing';
-            else if (path.indexOf('entertainment') !== -1) id = 'entertainment';
-            showUseCase(id, null, null);
-        });
 
         (function () {
             const navEl = document.querySelector('nav');
