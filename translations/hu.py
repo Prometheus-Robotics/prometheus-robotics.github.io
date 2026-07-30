@@ -200,7 +200,7 @@ T = {
     "Trained by Demonstration, Not Programmed": "Demonstrációval betanítva, nem programozva",
     "Autonomous operation is trained per task during the pilot — through a data pipeline, not months of custom programming.": "Az autonóm működést a pilot során feladatonként tanítjuk be — adatpipeline-on keresztül, nem hónapokig tartó egyedi programozással.",
     "1 · Demonstrate": "1 · Demonstráció",
-    "Operators teleoperate the robot through the task via VR — no robotics expertise required on your side.": "Az operátorok VR segítségével teleoperálva vezetik végig a robotot a feladaton — az Ön oldalán nincs szükség robotikai szakértelemre.",
+    "An operator teleoperates the robot through the task via VR — no robotics expertise required on your side.": "Egy operátor VR segítségével teleoperálva vezeti végig a robotot a feladaton — az Ön oldalán nincs szükség robotikai szakértelemre.",
     "2 · Train": "2 · Betanítás",
     "Recorded demonstrations train VLA (vision-language-action) policies for that specific task and station.": "A rögzített demonstrációk VLA (vizuális-nyelvi-cselekvési) szabályzókat tanítanak be az adott feladatra és állomásra.",
     "3 · Run": "3 · Futtatás",
@@ -211,8 +211,8 @@ T = {
     "The hard-to-staff line jobs stay covered — without rebuilding the line around a rigid cell.": "A nehezen betölthető sormunkák lefedve maradnak — anélkül, hogy a sort egy merev cella köré kellene újraépíteni.",
     "Retrainable across tasks": "Feladatról feladatra újratanítható",
     "A new product or task means new demonstrations, not new tooling. There is no fixed tooling to rebuild.": "Egy új termék vagy feladat új demonstrációkat jelent, nem új szerszámozást. Nincs fix szerszámozás, amit újra kellene építeni.",
-    "EU-based": "EU-bázisú",
-    "Hardware, engineering, support, and data stay in Europe — no overseas dependency for your production line.": "A hardver, a mérnöki munka, a támogatás és az adatok Európában maradnak — nincs tengerentúli függőség a gyártósorán.",
+    "Made in Europe": "Európában készült",
+    "European engineering and manufacturing — hardware, support and spare parts close to your production line, with a clear CE path.": "Európai mérnöki munka és gyártás — hardver, támogatás és pótalkatrészek a gyártósora közelében, világos CE-tanúsítási úttal.",
     "Certification path defined": "Kijelölt tanúsítási út",
     "Designed for CE certification under ISO 10218-1 and ISO 10218-2, the standards for industrial robots.": "CE-tanúsításra tervezve az ipari robotokra vonatkozó ISO 10218-1 és ISO 10218-2 szabványok szerint.",
     "Dual-arm upper body — the manipulation station configuration": "Kétkarú felsőtest — a manipulációs állomás konfigurációja",
@@ -242,7 +242,7 @@ FAQ_RESEARCH = [
     ('Moduláris-e a robot?',
      'Igen. A megfogók és végeffektorok (2 ujjas, 4 ujjas, ötujjas kezek) a feladathoz igazítva cserélhetők. Az alap rögzített háromlábú állvány vagy motoros lineáris tengely (sín); a lábakon járás a fejlesztési tervben szerepel.'),
     ('Hol készül a robot?',
-     'A Prometheus tervezése valamint gyártása az Európai Unióban történik, ami fontos azon európai kutatólaboratóriumok és vállalatok számára, amelyeknek lényeges az ellátási lánc eredete, a támogatás, valamint az adatszuverenitás.'),
+     'A Prometheus tervezése valamint gyártása az Európai Unióban történik, ami fontos azon európai kutatólaboratóriumok és vállalatok számára, amelyeknek lényeges az ellátási lánc eredete, a támogatás, valamint az EU-n belüli adattárolás.'),
 ]
 
 # Home-page FAQ (visible accordion + JSON-LD), same order as faq_data.FAQ_HOME
@@ -252,7 +252,7 @@ FAQ_HOME = [
     ('Integrálható-e a meglévő gyártósorunkkal?',
      'Igen. Az állomás a meglévő állomásai és munkafolyamatai mellett dolgozik — az alkatrészek érkeznek a robothoz, így nincs szükség a sor átépítésére. Egy egyszerű REST API kapcsolja össze a sorvezérlésével.'),
     ('Hogyan tanul meg a robot egy új feladatot?',
-     'Az operátorok teleoperálva vezetik végig a robotot a feladaton, és így demonstrációkat rögzítenek, majd ezekből vizuális-nyelvi-cselekvési szabályzókat — például Pi0 és ACT modelleket — tanítunk be. Az autonóm működést a pilot során feladatonként tanítjuk be.'),
+     'Egy operátor teleoperálva vezeti végig a robotot a feladaton, és így demonstrációkat rögzít, majd ezekből vizuális-nyelvi-cselekvési szabályzókat — például Pi0 és ACT modelleket — tanítunk be. Az autonóm működést a pilot során feladatonként tanítjuk be.'),
     ('Hol készül a robot?',
-     'A Prometheus tervezése valamint gyártása az Európai Unióban történik, ami fontos azon európai kutatólaboratóriumok és vállalatok számára, amelyeknek lényeges az ellátási lánc eredete, a támogatás, valamint az adatszuverenitás.'),
+     'A Prometheus tervezése valamint gyártása az Európai Unióban történik, ami fontos azon európai kutatólaboratóriumok és vállalatok számára, amelyeknek lényeges az ellátási lánc eredete, a támogatás, valamint az EU-n belüli adattárolás.'),
 ]

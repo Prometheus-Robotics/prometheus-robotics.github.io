@@ -1045,6 +1045,13 @@
             margin: -1.5rem 0 1.5rem;
         }
 
+        .contact-info .contact-subnote {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            opacity: 0.75;
+            margin-top: 1rem;
+        }
+
         .contact-link {
             color: var(--color-accent);
             text-decoration: none;
@@ -1371,7 +1378,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Katere modele umetne inteligence robot podpira?", "acceptedAnswer": {"@type": "Answer", "text": "Že takoj po namestitvi podpira sodobne politike vida-jezika-akcije in posnemovalnega učenja, vključno s Pi0, Pi0.5, ACT in SmolVLA. Zbirajte podatke teleoperacije, izvedite fino prilagajanje na potrošniškem GPU in jih namestite prek SDK."}}, {"@type": "Question", "name": "Kaj je vključeno z robotom?", "acceptedAnswer": {"@type": "Answer", "text": "Vsaka enota je dobavljena s celotnim SDK in preprostim REST API, modelom URDF, priloženim simulatorjem, stereo kamerami na glavi ter kamerami na zapestju, prijemali in neposredno inženirsko podporo. Cevovod teleoperacije deluje že prvi dan."}}, {"@type": "Question", "name": "Ali lahko sam zbiram podatke teleoperacije in učim politike?", "acceptedAnswer": {"@type": "Answer", "text": "Da. Teleoperirajte prek VR z napravo Meta Quest 3S ali s krmilnikom vodja-sledilec, snemajte demonstracije v standardni obliki nabora podatkov ter učite ACT ali fino prilagodite model vida-jezika-akcije na enem samem potrošniškem GPU."}}, {"@type": "Question", "name": "Na kakšni računski opremi robot teče?", "acceptedAnswer": {"@type": "Answer", "text": "Vgrajena računska enota je Raspberry Pi 5 ali NVIDIA Jetson. Lahke politike tečejo na napravi sami, medtem ko lahko težji modeli vida-jezika-akcije tečejo na povezani delovni postaji z GPU in prenašajo ukaze prek REST API."}}, {"@type": "Question", "name": "Ali je robot modularen?", "acceptedAnswer": {"@type": "Answer", "text": "Da. Prijemala in končne efektorje (2-prstne, 4-prstne, petprstne roke) lahko zamenjate glede na nalogo. Osnova je fiksni stativ ali motorizirana linearna os (tirnica); premikanje na nogah je v načrtu razvoja."}}, {"@type": "Question", "name": "Kje je robot izdelan?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus je zasnovan in izdelan v Evropski uniji, kar je pomembno za evropske raziskovalne laboratorije in podjetja, ki jim je mar za izvor dobavne verige, podporo in suverenost podatkov."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Katere modele umetne inteligence robot podpira?", "acceptedAnswer": {"@type": "Answer", "text": "Že takoj po namestitvi podpira sodobne politike vida-jezika-akcije in posnemovalnega učenja, vključno s Pi0, Pi0.5, ACT in SmolVLA. Zbirajte podatke teleoperacije, izvedite fino prilagajanje na potrošniškem GPU in jih namestite prek SDK."}}, {"@type": "Question", "name": "Kaj je vključeno z robotom?", "acceptedAnswer": {"@type": "Answer", "text": "Vsaka enota je dobavljena s celotnim SDK in preprostim REST API, modelom URDF, priloženim simulatorjem, stereo kamerami na glavi ter kamerami na zapestju, prijemali in neposredno inženirsko podporo. Cevovod teleoperacije deluje že prvi dan."}}, {"@type": "Question", "name": "Ali lahko sam zbiram podatke teleoperacije in učim politike?", "acceptedAnswer": {"@type": "Answer", "text": "Da. Teleoperirajte prek VR z napravo Meta Quest 3S ali s krmilnikom vodja-sledilec, snemajte demonstracije v standardni obliki nabora podatkov ter učite ACT ali fino prilagodite model vida-jezika-akcije na enem samem potrošniškem GPU."}}, {"@type": "Question", "name": "Na kakšni računski opremi robot teče?", "acceptedAnswer": {"@type": "Answer", "text": "Vgrajena računska enota je Raspberry Pi 5 ali NVIDIA Jetson. Lahke politike tečejo na napravi sami, medtem ko lahko težji modeli vida-jezika-akcije tečejo na povezani delovni postaji z GPU in prenašajo ukaze prek REST API."}}, {"@type": "Question", "name": "Ali je robot modularen?", "acceptedAnswer": {"@type": "Answer", "text": "Da. Prijemala in končne efektorje (2-prstne, 4-prstne, petprstne roke) lahko zamenjate glede na nalogo. Osnova je fiksni stativ ali motorizirana linearna os (tirnica); premikanje na nogah je v načrtu razvoja."}}, {"@type": "Question", "name": "Kje je robot izdelan?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus je zasnovan in izdelan v Evropski uniji, kar je pomembno za evropske raziskovalne laboratorije in podjetja, ki jim je mar za izvor dobavne verige, podporo in rezidenčnost podatkov v EU."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1735,7 +1742,7 @@
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Kje je robot izdelan?</button>
-                        <div class="faq-a"><p>Prometheus je zasnovan in izdelan v Evropski uniji, kar je pomembno za evropske raziskovalne laboratorije in podjetja, ki jim je mar za izvor dobavne verige, podporo in suverenost podatkov.</p></div>
+                        <div class="faq-a"><p>Prometheus je zasnovan in izdelan v Evropski uniji, kar je pomembno za evropske raziskovalne laboratorije in podjetja, ki jim je mar za izvor dobavne verige, podporo in rezidenčnost podatkov v EU.</p></div>
                     </div>
                 </div>
             </div>
@@ -1789,6 +1796,7 @@
                 <p><strong>LinkedIn:</strong> <a class="contact-link" href="https://www.linkedin.com/in/ilya-pavlenkov/" target="_blank">linkedin.com/in/ilya-pavlenkov</a></p>
                 <p><strong>E-pošta:</strong> <a class="contact-link" onclick="openModal('email')">Kliknite za prikaz</a></p>
                 <p><strong>Telefon:</strong> <a class="contact-link" onclick="openModal('phoneHU')">Kliknite za prikaz</a></p>
+                <p class="contact-subnote">A subsidiary of Gedmond, Inc. (Delaware, USA)</p>
             </div>
         </section>
     </div>

@@ -1045,6 +1045,13 @@
             margin: -1.5rem 0 1.5rem;
         }
 
+        .contact-info .contact-subnote {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            opacity: 0.75;
+            margin-top: 1rem;
+        }
+
         .contact-link {
             color: var(--color-accent);
             text-decoration: none;
@@ -1371,7 +1378,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ar robotas yra saugus ir sertifikuojamas naudoti gamykloje?", "acceptedAnswer": {"@type": "Answer", "text": "Jis sukurtas CE sertifikavimui pagal ISO 10218-1 ir ISO 10218-2 — pramoninių robotų standartus. Diegimo saugos konfigūracija — apsaugos, greičio ribos ir blokuotės — apibrėžiama kiekvienai vietai atskirai rengiant pilotinį projektą."}}, {"@type": "Question", "name": "Ar jis integruojasi su mūsų esama linija?", "acceptedAnswer": {"@type": "Answer", "text": "Taip. Stotis veikia greta jūsų esamų stočių ir darbo srautų — dalys atkeliauja pas robotą, todėl linijos perstatyti nereikia. Paprasta REST API sujungia ją su jūsų linijos valdymu."}}, {"@type": "Question", "name": "Kaip robotas išmoksta naują užduotį?", "acceptedAnswer": {"@type": "Answer", "text": "Operatoriai teleoperuoja robotą atlikdami užduotį, kad įrašytų demonstracijas, o iš šių demonstracijų apmokomos regos kalbos veiksmo politikos, tokios kaip Pi0 ir ACT. Autonominis veikimas apmokomas kiekvienai užduočiai pilotinio projekto metu."}}, {"@type": "Question", "name": "Kur pagamintas robotas?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus yra suprojektuotas ir pagamintas Europos Sąjungoje, o tai svarbu Europos tyrimų laboratorijoms ir įmonėms, kurioms rūpi tiekimo grandinės kilmė, pagalba ir duomenų suverenumas."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ar robotas yra saugus ir sertifikuojamas naudoti gamykloje?", "acceptedAnswer": {"@type": "Answer", "text": "Jis sukurtas CE sertifikavimui pagal ISO 10218-1 ir ISO 10218-2 — pramoninių robotų standartus. Diegimo saugos konfigūracija — apsaugos, greičio ribos ir blokuotės — apibrėžiama kiekvienai vietai atskirai rengiant pilotinį projektą."}}, {"@type": "Question", "name": "Ar jis integruojasi su mūsų esama linija?", "acceptedAnswer": {"@type": "Answer", "text": "Taip. Stotis veikia greta jūsų esamų stočių ir darbo srautų — dalys atkeliauja pas robotą, todėl linijos perstatyti nereikia. Paprasta REST API sujungia ją su jūsų linijos valdymu."}}, {"@type": "Question", "name": "Kaip robotas išmoksta naują užduotį?", "acceptedAnswer": {"@type": "Answer", "text": "Operatorius teleoperuoja robotą atlikdamas užduotį, kad įrašytų demonstracijas, o iš šių demonstracijų apmokomos regos kalbos veiksmo politikos, tokios kaip Pi0 ir ACT. Autonominis veikimas apmokomas kiekvienai užduočiai pilotinio projekto metu."}}, {"@type": "Question", "name": "Kur pagamintas robotas?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus yra suprojektuotas ir pagamintas Europos Sąjungoje, o tai svarbu Europos tyrimų laboratorijoms ir įmonėms, kurioms rūpi tiekimo grandinės kilmė, pagalba ir duomenų saugojimas EU."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1527,14 +1534,14 @@
                         <p>Rinkite komplektus ir pakuokite įvairius produktus dviem koordinuotomis rankomis — tai užduotys, su kuriomis vienos rankos ląstelės sunkiai susidoroja.</p>
                     </div>
                     <div class="research-card">
-                        <span class="research-icon">⚙️</span>
-                        <h3>Staklių aptarnavimas</h3>
-                        <p>Pakraukite ir iškraukite stakles, presus ir testavimo įtaisus — stabiliai, ciklas po ciklo, pamaina po pamainos.</p>
-                    </div>
-                    <div class="research-card">
                         <span class="research-icon">🗂️</span>
                         <h3>Rūšiavimas</h3>
                         <p>Rūšiuokite dalis ir produktus pagal tipą, orientaciją ar patikros rezultatą — vadovaujantis regėjimu, o ne tvirtinimo įtaisais.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">⚙️</span>
+                        <h3>Staklių aptarnavimas</h3>
+                        <p>Pakraukite ir iškraukite stakles, presus ir testavimo įtaisus — stabiliai, ciklas po ciklo, pamaina po pamainos.</p>
                     </div>
                 </div>
             </div>
@@ -1550,7 +1557,7 @@
                     <div class="research-card">
                         <span class="research-icon">🥽</span>
                         <h3>1 · Demonstracija</h3>
-                        <p>Operatoriai per VR teleoperuoja robotą per visą užduotį — robotikos žinių iš jūsų pusės nereikia.</p>
+                        <p>Operatorius per VR teleoperuoja robotą per visą užduotį — robotikos žinių iš jūsų pusės nereikia.</p>
                     </div>
                     <div class="research-card">
                         <span class="research-icon">🧠</span>
@@ -1595,8 +1602,8 @@
                     </div>
                     <div class="research-card featured">
                         <span class="research-icon">🇪🇺</span>
-                        <h3>Įsikūrę ES</h3>
-                        <p>Aparatinė įranga, inžinerija, pagalba ir duomenys lieka Europoje — jūsų gamybos linija nepriklauso nuo užjūrio tiekėjų.</p>
+                        <h3>Pagaminta Europoje</h3>
+                        <p>Europietiška inžinerija ir gamyba — aparatinė įranga, pagalba ir atsarginės dalys arti jūsų gamybos linijos, su aiškiu CE sertifikavimo keliu.</p>
                     </div>
                     <div class="research-card featured">
                         <span class="research-icon">🛡️</span>
@@ -1716,11 +1723,11 @@
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Kaip robotas išmoksta naują užduotį?</button>
-                        <div class="faq-a"><p>Operatoriai teleoperuoja robotą atlikdami užduotį, kad įrašytų demonstracijas, o iš šių demonstracijų apmokomos regos kalbos veiksmo politikos, tokios kaip Pi0 ir ACT. Autonominis veikimas apmokomas kiekvienai užduočiai pilotinio projekto metu.</p></div>
+                        <div class="faq-a"><p>Operatorius teleoperuoja robotą atlikdamas užduotį, kad įrašytų demonstracijas, o iš šių demonstracijų apmokomos regos kalbos veiksmo politikos, tokios kaip Pi0 ir ACT. Autonominis veikimas apmokomas kiekvienai užduočiai pilotinio projekto metu.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Kur pagamintas robotas?</button>
-                        <div class="faq-a"><p>Prometheus yra suprojektuotas ir pagamintas Europos Sąjungoje, o tai svarbu Europos tyrimų laboratorijoms ir įmonėms, kurioms rūpi tiekimo grandinės kilmė, pagalba ir duomenų suverenumas.</p></div>
+                        <div class="faq-a"><p>Prometheus yra suprojektuotas ir pagamintas Europos Sąjungoje, o tai svarbu Europos tyrimų laboratorijoms ir įmonėms, kurioms rūpi tiekimo grandinės kilmė, pagalba ir duomenų saugojimas EU.</p></div>
                     </div>
                 </div>
             </div>
@@ -1768,6 +1775,7 @@
                 <p><strong>LinkedIn:</strong> <a class="contact-link" href="https://www.linkedin.com/in/ilya-pavlenkov/" target="_blank">linkedin.com/in/ilya-pavlenkov</a></p>
                 <p><strong>El. paštas:</strong> <a class="contact-link" onclick="openModal('email')">Spustelėkite, kad pamatytumėte</a></p>
                 <p><strong>Telefonas:</strong> <a class="contact-link" onclick="openModal('phoneHU')">Spustelėkite, kad pamatytumėte</a></p>
+                <p class="contact-subnote">A subsidiary of Gedmond, Inc. (Delaware, USA)</p>
             </div>
         </section>
     </div>

@@ -1045,6 +1045,13 @@
             margin: -1.5rem 0 1.5rem;
         }
 
+        .contact-info .contact-subnote {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            opacity: 0.75;
+            margin-top: 1rem;
+        }
+
         .contact-link {
             color: var(--color-accent);
             text-decoration: none;
@@ -1371,7 +1378,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Il robot è sicuro e certificabile per l'uso in fabbrica?", "acceptedAnswer": {"@type": "Answer", "text": "È progettato per la certificazione CE secondo le norme ISO 10218-1 e ISO 10218-2, gli standard per i robot industriali. La configurazione di sicurezza del deployment — protezioni, limiti di velocità e interblocchi — viene definita per ogni sito durante la preparazione del pilota."}}, {"@type": "Question", "name": "Si integra con la nostra linea esistente?", "acceptedAnswer": {"@type": "Answer", "text": "Sì. La stazione lavora accanto alle vostre postazioni e ai vostri flussi esistenti — i pezzi arrivano al robot, quindi non serve ricostruire la linea. Una semplice REST API la collega al vostro controllo di linea."}}, {"@type": "Question", "name": "In che modo il robot apprende un nuovo compito?", "acceptedAnswer": {"@type": "Answer", "text": "Gli operatori teleoperano il robot attraverso il compito per registrare le dimostrazioni, e da queste demo vengono addestrate policy visione-linguaggio-azione come Pi0 e ACT. Il funzionamento autonomo viene addestrato per ogni compito durante il pilota."}}, {"@type": "Question", "name": "Dove viene prodotto il robot?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus è progettato e fabbricato nell'Unione Europea, un aspetto importante per i laboratori di ricerca e le aziende europee che tengono alla provenienza della catena di approvvigionamento, al supporto e alla sovranità dei dati."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Il robot è sicuro e certificabile per l'uso in fabbrica?", "acceptedAnswer": {"@type": "Answer", "text": "È progettato per la certificazione CE secondo le norme ISO 10218-1 e ISO 10218-2, gli standard per i robot industriali. La configurazione di sicurezza del deployment — protezioni, limiti di velocità e interblocchi — viene definita per ogni sito durante la preparazione del pilota."}}, {"@type": "Question", "name": "Si integra con la nostra linea esistente?", "acceptedAnswer": {"@type": "Answer", "text": "Sì. La stazione lavora accanto alle vostre postazioni e ai vostri flussi esistenti — i pezzi arrivano al robot, quindi non serve ricostruire la linea. Una semplice REST API la collega al vostro controllo di linea."}}, {"@type": "Question", "name": "In che modo il robot apprende un nuovo compito?", "acceptedAnswer": {"@type": "Answer", "text": "Un operatore teleopera il robot attraverso il compito per registrare le dimostrazioni, e da queste demo vengono addestrate policy visione-linguaggio-azione come Pi0 e ACT. Il funzionamento autonomo viene addestrato per ogni compito durante il pilota."}}, {"@type": "Question", "name": "Dove viene prodotto il robot?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus è progettato e fabbricato nell'Unione Europea, un aspetto importante per i laboratori di ricerca e le aziende europee che tengono alla provenienza della catena di approvvigionamento, al supporto e alla residenza dei dati nell'EU."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1527,14 +1534,14 @@
                         <p>Componete kit e confezionate prodotti diversi con due bracci coordinati — le attività con cui le celle a braccio singolo faticano.</p>
                     </div>
                     <div class="research-card">
-                        <span class="research-icon">⚙️</span>
-                        <h3>Asservimento macchine</h3>
-                        <p>Caricate e scaricate macchine, presse e attrezzature di test — con costanza, ciclo dopo ciclo, turno dopo turno.</p>
-                    </div>
-                    <div class="research-card">
                         <span class="research-icon">🗂️</span>
                         <h3>Smistamento</h3>
                         <p>Smistate parti e prodotti per tipo, orientamento o esito dell'ispezione — guidati dalla visione, non da attrezzature dedicate.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">⚙️</span>
+                        <h3>Asservimento macchine</h3>
+                        <p>Caricate e scaricate macchine, presse e attrezzature di test — con costanza, ciclo dopo ciclo, turno dopo turno.</p>
                     </div>
                 </div>
             </div>
@@ -1550,7 +1557,7 @@
                     <div class="research-card">
                         <span class="research-icon">🥽</span>
                         <h3>1 · Dimostrazione</h3>
-                        <p>Gli operatori teleoperano il robot attraverso il compito tramite VR — nessuna competenza robotica richiesta da parte vostra.</p>
+                        <p>Un operatore teleopera il robot attraverso il compito tramite VR — nessuna competenza robotica richiesta da parte vostra.</p>
                     </div>
                     <div class="research-card">
                         <span class="research-icon">🧠</span>
@@ -1595,8 +1602,8 @@
                     </div>
                     <div class="research-card featured">
                         <span class="research-icon">🇪🇺</span>
-                        <h3>Con base nell'UE</h3>
-                        <p>Hardware, ingegneria, supporto e dati restano in Europa — nessuna dipendenza da oltreoceano per la vostra linea di produzione.</p>
+                        <h3>Prodotto in Europa</h3>
+                        <p>Ingegneria e produzione europee — hardware, supporto e ricambi vicini alla vostra linea di produzione, con un percorso CE chiaro.</p>
                     </div>
                     <div class="research-card featured">
                         <span class="research-icon">🛡️</span>
@@ -1716,11 +1723,11 @@
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">In che modo il robot apprende un nuovo compito?</button>
-                        <div class="faq-a"><p>Gli operatori teleoperano il robot attraverso il compito per registrare le dimostrazioni, e da queste demo vengono addestrate policy visione-linguaggio-azione come Pi0 e ACT. Il funzionamento autonomo viene addestrato per ogni compito durante il pilota.</p></div>
+                        <div class="faq-a"><p>Un operatore teleopera il robot attraverso il compito per registrare le dimostrazioni, e da queste demo vengono addestrate policy visione-linguaggio-azione come Pi0 e ACT. Il funzionamento autonomo viene addestrato per ogni compito durante il pilota.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Dove viene prodotto il robot?</button>
-                        <div class="faq-a"><p>Prometheus è progettato e fabbricato nell'Unione Europea, un aspetto importante per i laboratori di ricerca e le aziende europee che tengono alla provenienza della catena di approvvigionamento, al supporto e alla sovranità dei dati.</p></div>
+                        <div class="faq-a"><p>Prometheus è progettato e fabbricato nell'Unione Europea, un aspetto importante per i laboratori di ricerca e le aziende europee che tengono alla provenienza della catena di approvvigionamento, al supporto e alla residenza dei dati nell'EU.</p></div>
                     </div>
                 </div>
             </div>
@@ -1768,6 +1775,7 @@
                 <p><strong>LinkedIn:</strong> <a class="contact-link" href="https://www.linkedin.com/in/ilya-pavlenkov/" target="_blank">linkedin.com/in/ilya-pavlenkov</a></p>
                 <p><strong>Email:</strong> <a class="contact-link" onclick="openModal('email')">Clicca per rivelare</a></p>
                 <p><strong>Telefono:</strong> <a class="contact-link" onclick="openModal('phoneHU')">Clicca per rivelare</a></p>
+                <p class="contact-subnote">A subsidiary of Gedmond, Inc. (Delaware, USA)</p>
             </div>
         </section>
     </div>

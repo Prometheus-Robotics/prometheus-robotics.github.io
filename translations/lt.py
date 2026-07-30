@@ -199,7 +199,7 @@ T = {
     "Trained by Demonstration, Not Programmed": "Apmokomas demonstracijomis, o ne programuojamas",
     "Autonomous operation is trained per task during the pilot — through a data pipeline, not months of custom programming.": "Autonominis veikimas apmokomas kiekvienai užduočiai pilotinio projekto metu — per duomenų procesą, o ne mėnesius trunkantį individualų programavimą.",
     "1 · Demonstrate": "1 · Demonstracija",
-    "Operators teleoperate the robot through the task via VR — no robotics expertise required on your side.": "Operatoriai per VR teleoperuoja robotą per visą užduotį — robotikos žinių iš jūsų pusės nereikia.",
+    "An operator teleoperates the robot through the task via VR — no robotics expertise required on your side.": "Operatorius per VR teleoperuoja robotą per visą užduotį — robotikos žinių iš jūsų pusės nereikia.",
     "2 · Train": "2 · Apmokymas",
     "Recorded demonstrations train VLA (vision-language-action) policies for that specific task and station.": "Įrašytos demonstracijos apmoko VLA (regos kalbos veiksmo) politikas būtent tai užduočiai ir stočiai.",
     "3 · Run": "3 · Vykdymas",
@@ -210,8 +210,8 @@ T = {
     "The hard-to-staff line jobs stay covered — without rebuilding the line around a rigid cell.": "Sunkiai užpildomos linijos pozicijos lieka padengtos — neperstatant linijos aplink nelanksčią ląstelę.",
     "Retrainable across tasks": "Iš naujo apmokomas įvairioms užduotims",
     "A new product or task means new demonstrations, not new tooling. There is no fixed tooling to rebuild.": "Naujas produktas ar užduotis reiškia naujas demonstracijas, o ne naują technologinę įrangą. Nėra fiksuotos įrangos, kurią reikėtų perstatyti.",
-    "EU-based": "Įsikūrę ES",
-    "Hardware, engineering, support, and data stay in Europe — no overseas dependency for your production line.": "Aparatinė įranga, inžinerija, pagalba ir duomenys lieka Europoje — jūsų gamybos linija nepriklauso nuo užjūrio tiekėjų.",
+    "Made in Europe": "Pagaminta Europoje",
+    "European engineering and manufacturing — hardware, support and spare parts close to your production line, with a clear CE path.": "Europietiška inžinerija ir gamyba — aparatinė įranga, pagalba ir atsarginės dalys arti jūsų gamybos linijos, su aiškiu CE sertifikavimo keliu.",
     "Certification path defined": "Apibrėžtas sertifikavimo kelias",
     "Designed for CE certification under ISO 10218-1 and ISO 10218-2, the standards for industrial robots.": "Sukurta CE sertifikavimui pagal ISO 10218-1 ir ISO 10218-2 — pramoninių robotų standartus.",
     "Dual-arm upper body — the manipulation station configuration": "Dviejų rankų viršutinė kūno dalis — manipuliavimo stoties konfigūracija",
@@ -242,7 +242,7 @@ FAQ_RESEARCH = [
     ('Ar robotas yra modulinis?',
      'Taip. Griebtuvus ir galinius įtaisus (2 pirštų, 4 pirštų, penkiapirštės rankos) galima keisti pagal užduotį. Pagrindas — stacionarus trikojis arba motorizuota linijinė ašis (bėgis); judėjimas kojomis numatytas plėtros plane.'),
     ('Kur pagamintas robotas?',
-     'Prometheus yra suprojektuotas ir pagamintas Europos Sąjungoje, o tai svarbu Europos tyrimų laboratorijoms ir įmonėms, kurioms rūpi tiekimo grandinės kilmė, pagalba ir duomenų suverenumas.'),
+     'Prometheus yra suprojektuotas ir pagamintas Europos Sąjungoje, o tai svarbu Europos tyrimų laboratorijoms ir įmonėms, kurioms rūpi tiekimo grandinės kilmė, pagalba ir duomenų saugojimas EU.'),
 ]
 
 # Home-page FAQ (visible accordion + JSON-LD), same order as faq_data.FAQ_HOME
@@ -252,7 +252,7 @@ FAQ_HOME = [
     ('Ar jis integruojasi su mūsų esama linija?',
      'Taip. Stotis veikia greta jūsų esamų stočių ir darbo srautų — dalys atkeliauja pas robotą, todėl linijos perstatyti nereikia. Paprasta REST API sujungia ją su jūsų linijos valdymu.'),
     ('Kaip robotas išmoksta naują užduotį?',
-     'Operatoriai teleoperuoja robotą atlikdami užduotį, kad įrašytų demonstracijas, o iš šių demonstracijų apmokomos regos kalbos veiksmo politikos, tokios kaip Pi0 ir ACT. Autonominis veikimas apmokomas kiekvienai užduočiai pilotinio projekto metu.'),
+     'Operatorius teleoperuoja robotą atlikdamas užduotį, kad įrašytų demonstracijas, o iš šių demonstracijų apmokomos regos kalbos veiksmo politikos, tokios kaip Pi0 ir ACT. Autonominis veikimas apmokomas kiekvienai užduočiai pilotinio projekto metu.'),
     ('Kur pagamintas robotas?',
-     'Prometheus yra suprojektuotas ir pagamintas Europos Sąjungoje, o tai svarbu Europos tyrimų laboratorijoms ir įmonėms, kurioms rūpi tiekimo grandinės kilmė, pagalba ir duomenų suverenumas.'),
+     'Prometheus yra suprojektuotas ir pagamintas Europos Sąjungoje, o tai svarbu Europos tyrimų laboratorijoms ir įmonėms, kurioms rūpi tiekimo grandinės kilmė, pagalba ir duomenų saugojimas EU.'),
 ]

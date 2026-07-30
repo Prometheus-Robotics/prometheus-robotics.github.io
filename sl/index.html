@@ -1045,6 +1045,13 @@
             margin: -1.5rem 0 1.5rem;
         }
 
+        .contact-info .contact-subnote {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            opacity: 0.75;
+            margin-top: 1rem;
+        }
+
         .contact-link {
             color: var(--color-accent);
             text-decoration: none;
@@ -1371,7 +1378,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ali je robot varen in primeren za certificiranje za uporabo v tovarni?", "acceptedAnswer": {"@type": "Answer", "text": "Zasnovan je za CE certificiranje po standardih ISO 10218-1 in ISO 10218-2, ki veljata za industrijske robote. Varnostna konfiguracija ob uvedbi — zaščitne ograje, omejitve hitrosti in varnostne blokade — se določi za vsako lokacijo posebej med pripravo pilotnega projekta."}}, {"@type": "Question", "name": "Ali se vključi v našo obstoječo linijo?", "acceptedAnswer": {"@type": "Answer", "text": "Da. Postaja deluje ob vaših obstoječih postajah in potekih dela — deli pridejo do robota, zato preureditev linije ni potrebna. Preprost REST API jo poveže z vašim upravljanjem linije."}}, {"@type": "Question", "name": "Kako se robot nauči novega opravila?", "acceptedAnswer": {"@type": "Answer", "text": "Operaterji robota s teleoperacijo vodijo skozi opravilo in tako posnamejo demonstracije, iz katerih se naučijo politike vida-jezika-akcije, kot sta Pi0 in ACT. Avtonomno delovanje se nauči za vsako opravilo posebej med pilotnim projektom."}}, {"@type": "Question", "name": "Kje je robot izdelan?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus je zasnovan in izdelan v Evropski uniji, kar je pomembno za evropske raziskovalne laboratorije in podjetja, ki jim je mar za izvor dobavne verige, podporo in suverenost podatkov."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ali je robot varen in primeren za certificiranje za uporabo v tovarni?", "acceptedAnswer": {"@type": "Answer", "text": "Zasnovan je za CE certificiranje po standardih ISO 10218-1 in ISO 10218-2, ki veljata za industrijske robote. Varnostna konfiguracija ob uvedbi — zaščitne ograje, omejitve hitrosti in varnostne blokade — se določi za vsako lokacijo posebej med pripravo pilotnega projekta."}}, {"@type": "Question", "name": "Ali se vključi v našo obstoječo linijo?", "acceptedAnswer": {"@type": "Answer", "text": "Da. Postaja deluje ob vaših obstoječih postajah in potekih dela — deli pridejo do robota, zato preureditev linije ni potrebna. Preprost REST API jo poveže z vašim upravljanjem linije."}}, {"@type": "Question", "name": "Kako se robot nauči novega opravila?", "acceptedAnswer": {"@type": "Answer", "text": "Operater robota s teleoperacijo vodi skozi opravilo in tako posname demonstracije, iz katerih se naučijo politike vida-jezika-akcije, kot sta Pi0 in ACT. Avtonomno delovanje se nauči za vsako opravilo posebej med pilotnim projektom."}}, {"@type": "Question", "name": "Kje je robot izdelan?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus je zasnovan in izdelan v Evropski uniji, kar je pomembno za evropske raziskovalne laboratorije in podjetja, ki jim je mar za izvor dobavne verige, podporo in rezidenčnost podatkov v EU."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1527,14 +1534,14 @@
                         <p>Sestavljajte komplete in pakirajte raznolike izdelke z dvema usklajenima rokama — opravila, s katerimi imajo enoročne celice težave.</p>
                     </div>
                     <div class="research-card">
-                        <span class="research-icon">⚙️</span>
-                        <h3>Strežba strojev</h3>
-                        <p>Vlagajte in odvzemajte dele iz strojev, stiskalnic in testnih priprav — zanesljivo, cikel za ciklom, izmeno za izmeno.</p>
-                    </div>
-                    <div class="research-card">
                         <span class="research-icon">🗂️</span>
                         <h3>Sortiranje</h3>
                         <p>Sortirajte dele in izdelke po tipu, orientaciji ali rezultatu pregleda — vodeno z vidom, ne s pripravami.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">⚙️</span>
+                        <h3>Strežba strojev</h3>
+                        <p>Vlagajte in odvzemajte dele iz strojev, stiskalnic in testnih priprav — zanesljivo, cikel za ciklom, izmeno za izmeno.</p>
                     </div>
                 </div>
             </div>
@@ -1550,7 +1557,7 @@
                     <div class="research-card">
                         <span class="research-icon">🥽</span>
                         <h3>1 · Demonstracija</h3>
-                        <p>Operaterji robota skozi opravilo vodijo s teleoperacijo prek VR — na vaši strani ni potrebno nobeno robotsko znanje.</p>
+                        <p>Operater robota skozi opravilo vodi s teleoperacijo prek VR — na vaši strani ni potrebno nobeno robotsko znanje.</p>
                     </div>
                     <div class="research-card">
                         <span class="research-icon">🧠</span>
@@ -1595,8 +1602,8 @@
                     </div>
                     <div class="research-card featured">
                         <span class="research-icon">🇪🇺</span>
-                        <h3>S sedežem v EU</h3>
-                        <p>Strojna oprema, inženiring, podpora in podatki ostanejo v Evropi — brez čezmorske odvisnosti za vašo proizvodno linijo.</p>
+                        <h3>Izdelano v Evropi</h3>
+                        <p>Evropski inženiring in proizvodnja — strojna oprema, podpora in rezervni deli blizu vaše proizvodne linije, z jasno potjo do CE.</p>
                     </div>
                     <div class="research-card featured">
                         <span class="research-icon">🛡️</span>
@@ -1716,11 +1723,11 @@
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Kako se robot nauči novega opravila?</button>
-                        <div class="faq-a"><p>Operaterji robota s teleoperacijo vodijo skozi opravilo in tako posnamejo demonstracije, iz katerih se naučijo politike vida-jezika-akcije, kot sta Pi0 in ACT. Avtonomno delovanje se nauči za vsako opravilo posebej med pilotnim projektom.</p></div>
+                        <div class="faq-a"><p>Operater robota s teleoperacijo vodi skozi opravilo in tako posname demonstracije, iz katerih se naučijo politike vida-jezika-akcije, kot sta Pi0 in ACT. Avtonomno delovanje se nauči za vsako opravilo posebej med pilotnim projektom.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Kje je robot izdelan?</button>
-                        <div class="faq-a"><p>Prometheus je zasnovan in izdelan v Evropski uniji, kar je pomembno za evropske raziskovalne laboratorije in podjetja, ki jim je mar za izvor dobavne verige, podporo in suverenost podatkov.</p></div>
+                        <div class="faq-a"><p>Prometheus je zasnovan in izdelan v Evropski uniji, kar je pomembno za evropske raziskovalne laboratorije in podjetja, ki jim je mar za izvor dobavne verige, podporo in rezidenčnost podatkov v EU.</p></div>
                     </div>
                 </div>
             </div>
@@ -1768,6 +1775,7 @@
                 <p><strong>LinkedIn:</strong> <a class="contact-link" href="https://www.linkedin.com/in/ilya-pavlenkov/" target="_blank">linkedin.com/in/ilya-pavlenkov</a></p>
                 <p><strong>E-pošta:</strong> <a class="contact-link" onclick="openModal('email')">Kliknite za prikaz</a></p>
                 <p><strong>Telefon:</strong> <a class="contact-link" onclick="openModal('phoneHU')">Kliknite za prikaz</a></p>
+                <p class="contact-subnote">A subsidiary of Gedmond, Inc. (Delaware, USA)</p>
             </div>
         </section>
     </div>

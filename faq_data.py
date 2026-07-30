@@ -13,9 +13,9 @@ FAQ_HOME = [
     ("Does it integrate with our existing line?",
      "Yes. The station works alongside your existing stations and workflows — parts come to the robot, so there is no line rebuild. A simple REST API connects it to your line control."),
     ("How does the robot learn a new task?",
-     "Operators teleoperate the robot through the task to record demonstrations, and vision-language-action policies such as Pi0 and ACT are trained from those demos. Autonomous operation is trained per task during the pilot."),
+     "An operator teleoperates the robot through the task to record demonstrations, and vision-language-action policies such as Pi0 and ACT are trained from those demos. Autonomous operation is trained per task during the pilot."),
     ("Where is the robot made?",
-     "Prometheus is designed and manufactured in the European Union, which matters for European research labs and companies that care about supply-chain provenance, support, and data sovereignty."),
+     "Prometheus is designed and manufactured in the European Union, which matters for European research labs and companies that care about supply-chain provenance, support, and EU data residency."),
 ]
 
 FAQ_RESEARCH = [
@@ -30,5 +30,5 @@ FAQ_RESEARCH = [
     ("Is the robot modular?",
      "Yes. You can swap grippers and end-effectors (2-finger, 4-finger, five-finger hands) to match your task. The base is a fixed tripod or a motorized linear axis (rail); legged locomotion is on the roadmap."),
     ("Where is the robot made?",
-     "Prometheus is designed and manufactured in the European Union, which matters for European research labs and companies that care about supply-chain provenance, support, and data sovereignty."),
+     "Prometheus is designed and manufactured in the European Union, which matters for European research labs and companies that care about supply-chain provenance, support, and EU data residency."),
 ]

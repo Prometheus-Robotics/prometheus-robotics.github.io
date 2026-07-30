@@ -1045,6 +1045,13 @@
             margin: -1.5rem 0 1.5rem;
         }
 
+        .contact-info .contact-subnote {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            opacity: 0.75;
+            margin-top: 1rem;
+        }
+
         .contact-link {
             color: var(--color-accent);
             text-decoration: none;
@@ -1371,7 +1378,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Je robot bezpečný a certifikovateľný na nasadenie v továrni?", "acceptedAnswer": {"@type": "Answer", "text": "Je navrhnutý na certifikáciu CE podľa ISO 10218-1 a ISO 10218-2, noriem pre priemyselné roboty. Bezpečnostná konfigurácia nasadenia — oplotenie, rýchlostné limity a bezpečnostné blokovania — sa definuje pre každé pracovisko počas prípravy pilotného projektu."}}, {"@type": "Question", "name": "Integruje sa s našou existujúcou linkou?", "acceptedAnswer": {"@type": "Answer", "text": "Áno. Stanica funguje popri vašich existujúcich staniciach a workflow — diely prichádzajú k robotu, takže nie je potrebná žiadna prestavba linky. S riadením vašej linky ju prepojí jednoduché REST API."}}, {"@type": "Question", "name": "Ako sa robot naučí novú úlohu?", "acceptedAnswer": {"@type": "Answer", "text": "Operátori prevedú robota úlohou teleoperáciou a nahrajú demonštrácie, z ktorých sa trénujú politiky typu vízia-jazyk-akcia, ako sú Pi0 a ACT. Autonómna prevádzka sa trénuje pre každú úlohu počas pilotného projektu."}}, {"@type": "Question", "name": "Kde sa robot vyrába?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus je navrhnutý a vyrábaný v Európskej únii, čo má význam pre európske výskumné laboratóriá a spoločnosti, ktorým záleží na pôvode dodávateľského reťazca, podpore a suverenite údajov."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Je robot bezpečný a certifikovateľný na nasadenie v továrni?", "acceptedAnswer": {"@type": "Answer", "text": "Je navrhnutý na certifikáciu CE podľa ISO 10218-1 a ISO 10218-2, noriem pre priemyselné roboty. Bezpečnostná konfigurácia nasadenia — oplotenie, rýchlostné limity a bezpečnostné blokovania — sa definuje pre každé pracovisko počas prípravy pilotného projektu."}}, {"@type": "Question", "name": "Integruje sa s našou existujúcou linkou?", "acceptedAnswer": {"@type": "Answer", "text": "Áno. Stanica funguje popri vašich existujúcich staniciach a workflow — diely prichádzajú k robotu, takže nie je potrebná žiadna prestavba linky. S riadením vašej linky ju prepojí jednoduché REST API."}}, {"@type": "Question", "name": "Ako sa robot naučí novú úlohu?", "acceptedAnswer": {"@type": "Answer", "text": "Operátor prevedie robota úlohou teleoperáciou a nahrá demonštrácie, z ktorých sa trénujú politiky typu vízia-jazyk-akcia, ako sú Pi0 a ACT. Autonómna prevádzka sa trénuje pre každú úlohu počas pilotného projektu."}}, {"@type": "Question", "name": "Kde sa robot vyrába?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus je navrhnutý a vyrábaný v Európskej únii, čo má význam pre európske výskumné laboratóriá a spoločnosti, ktorým záleží na pôvode dodávateľského reťazca, podpore a rezidencii údajov v EÚ."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1527,14 +1534,14 @@
                         <p>Zostavujte kity a baľte rôznorodé produkty dvomi koordinovanými ramenami — úlohy, s ktorými jednoramenné bunky zápasia.</p>
                     </div>
                     <div class="research-card">
-                        <span class="research-icon">⚙️</span>
-                        <h3>Obsluha strojov</h3>
-                        <p>Zakladajte a vyberajte diely zo strojov, lisov a testovacích prípravkov — stabilne cyklus za cyklom, zmenu za zmenou.</p>
-                    </div>
-                    <div class="research-card">
                         <span class="research-icon">🗂️</span>
                         <h3>Triedenie</h3>
                         <p>Trieďte diely a produkty podľa typu, orientácie alebo výsledku inšpekcie — vedené víziou, nie prípravkami.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">⚙️</span>
+                        <h3>Obsluha strojov</h3>
+                        <p>Zakladajte a vyberajte diely zo strojov, lisov a testovacích prípravkov — stabilne cyklus za cyklom, zmenu za zmenou.</p>
                     </div>
                 </div>
             </div>
@@ -1550,7 +1557,7 @@
                     <div class="research-card">
                         <span class="research-icon">🥽</span>
                         <h3>1 · Demonštrujte</h3>
-                        <p>Operátori prevedú robota úlohou teleoperáciou cez VR — na vašej strane nie je potrebná žiadna robotická expertíza.</p>
+                        <p>Operátor prevedie robota úlohou teleoperáciou cez VR — na vašej strane nie je potrebná žiadna robotická expertíza.</p>
                     </div>
                     <div class="research-card">
                         <span class="research-icon">🧠</span>
@@ -1595,8 +1602,8 @@
                     </div>
                     <div class="research-card featured">
                         <span class="research-icon">🇪🇺</span>
-                        <h3>So sídlom v EÚ</h3>
-                        <p>Hardvér, inžiniering, podpora a dáta zostávajú v Európe — žiadna závislosť vašej výrobnej linky od zámoria.</p>
+                        <h3>Vyrobené v Európe</h3>
+                        <p>Európsky inžiniering a výroba — hardvér, podpora a náhradné diely blízko vašej výrobnej linky, s jasnou cestou k certifikácii CE.</p>
                     </div>
                     <div class="research-card featured">
                         <span class="research-icon">🛡️</span>
@@ -1716,11 +1723,11 @@
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Ako sa robot naučí novú úlohu?</button>
-                        <div class="faq-a"><p>Operátori prevedú robota úlohou teleoperáciou a nahrajú demonštrácie, z ktorých sa trénujú politiky typu vízia-jazyk-akcia, ako sú Pi0 a ACT. Autonómna prevádzka sa trénuje pre každú úlohu počas pilotného projektu.</p></div>
+                        <div class="faq-a"><p>Operátor prevedie robota úlohou teleoperáciou a nahrá demonštrácie, z ktorých sa trénujú politiky typu vízia-jazyk-akcia, ako sú Pi0 a ACT. Autonómna prevádzka sa trénuje pre každú úlohu počas pilotného projektu.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Kde sa robot vyrába?</button>
-                        <div class="faq-a"><p>Prometheus je navrhnutý a vyrábaný v Európskej únii, čo má význam pre európske výskumné laboratóriá a spoločnosti, ktorým záleží na pôvode dodávateľského reťazca, podpore a suverenite údajov.</p></div>
+                        <div class="faq-a"><p>Prometheus je navrhnutý a vyrábaný v Európskej únii, čo má význam pre európske výskumné laboratóriá a spoločnosti, ktorým záleží na pôvode dodávateľského reťazca, podpore a rezidencii údajov v EÚ.</p></div>
                     </div>
                 </div>
             </div>
@@ -1768,6 +1775,7 @@
                 <p><strong>LinkedIn:</strong> <a class="contact-link" href="https://www.linkedin.com/in/ilya-pavlenkov/" target="_blank">linkedin.com/in/ilya-pavlenkov</a></p>
                 <p><strong>E-mail:</strong> <a class="contact-link" onclick="openModal('email')">Kliknutím zobrazíte</a></p>
                 <p><strong>Telefón:</strong> <a class="contact-link" onclick="openModal('phoneHU')">Kliknutím zobrazíte</a></p>
+                <p class="contact-subnote">A subsidiary of Gedmond, Inc. (Delaware, USA)</p>
             </div>
         </section>
     </div>

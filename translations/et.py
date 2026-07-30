@@ -200,7 +200,7 @@ T = {
     "Trained by Demonstration, Not Programmed": "Treenitud demonstratsiooni teel, mitte programmeeritud",
     "Autonomous operation is trained per task during the pilot — through a data pipeline, not months of custom programming.": "Autonoomne töö treenitakse iga ülesande jaoks pilootprojekti käigus — andmekonveieri kaudu, mitte kuude pikkuse eriprogrammeerimisega.",
     "1 · Demonstrate": "1 · Demonstreerimine",
-    "Operators teleoperate the robot through the task via VR — no robotics expertise required on your side.": "Operaatorid teleopereerivad robotit läbi ülesande VR-i abil — teie poolelt pole robootikateadmisi vaja.",
+    "An operator teleoperates the robot through the task via VR — no robotics expertise required on your side.": "Operaator teleopereerib robotit läbi ülesande VR-i abil — teie poolelt pole robootikateadmisi vaja.",
     "2 · Train": "2 · Treenimine",
     "Recorded demonstrations train VLA (vision-language-action) policies for that specific task and station.": "Salvestatud demonstratsioonide põhjal treenitakse VLA (nägemis-keele-tegevuse) poliitikad just selle ülesande ja jaama jaoks.",
     "3 · Run": "3 · Käitamine",
@@ -211,8 +211,8 @@ T = {
     "The hard-to-staff line jobs stay covered — without rebuilding the line around a rigid cell.": "Raskesti mehitatavad liinitööd püsivad kaetud — ilma et peaksite liini jäiga raku ümber ümber ehitama.",
     "Retrainable across tasks": "Ümbertreenitav eri ülesanneteks",
     "A new product or task means new demonstrations, not new tooling. There is no fixed tooling to rebuild.": "Uus toode või ülesanne tähendab uusi demonstratsioone, mitte uusi rakiseid. Pole fikseeritud rakiseid, mida ümber ehitada.",
-    "EU-based": "EL-is paiknev",
-    "Hardware, engineering, support, and data stay in Europe — no overseas dependency for your production line.": "Riistvara, inseneritöö, tugi ja andmed jäävad Euroopasse — teie tootmisliinil pole sõltuvust ülemerest.",
+    "Made in Europe": "Valmistatud Euroopas",
+    "European engineering and manufacturing — hardware, support and spare parts close to your production line, with a clear CE path.": "Euroopa inseneritöö ja tootmine — riistvara, tugi ja varuosad teie tootmisliini lähedal, koos selge CE-teega.",
     "Certification path defined": "Sertifitseerimistee on paigas",
     "Designed for CE certification under ISO 10218-1 and ISO 10218-2, the standards for industrial robots.": "Projekteeritud CE-sertifitseerimiseks tööstusrobotite standardite ISO 10218-1 ja ISO 10218-2 järgi.",
     "Dual-arm upper body — the manipulation station configuration": "Kahe käsivarrega ülakeha — manipulatsioonijaama konfiguratsioon",
@@ -242,7 +242,7 @@ FAQ_RESEARCH = [
     ('Kas robot on moodulpõhine?',
      'Jah. Haaratseid ja otsaefektoreid (2 sõrmega, 4 sõrmega, viie sõrmega käed) saab ülesande järgi vahetada. Aluseks on fikseeritud statiiv või motoriseeritud lineaartelg (siin); jalgadel liikumine on arenguplaanis.'),
     ('Kus robot valmistatakse?',
-     'Prometheus on projekteeritud ja toodetud Euroopa Liidus, mis on oluline Euroopa uurimislaboritele ja ettevõtetele, kes hoolivad tarneahela päritolust, toest ja andmesuveräänsusest.'),
+     'Prometheus on projekteeritud ja toodetud Euroopa Liidus, mis on oluline Euroopa uurimislaboritele ja ettevõtetele, kes hoolivad tarneahela päritolust, toest ja EU andmeresidentsusest.'),
 ]
 
 # Home-page FAQ (visible accordion + JSON-LD), same order as faq_data.FAQ_HOME
@@ -252,7 +252,7 @@ FAQ_HOME = [
     ('Kas see integreerub meie olemasoleva liiniga?',
      'Jah. Jaam töötab teie olemasolevate jaamade ja töövoogude kõrval — osad tulevad roboti juurde, seega pole liini vaja ümber ehitada. Lihtne REST API ühendab selle teie liinijuhtimisega.'),
     ('Kuidas robot uue ülesande selgeks õpib?',
-     'Operaatorid teleopereerivad robotit läbi ülesande, et salvestada demonstratsioone, ning nende demode põhjal treenitakse nägemis-keele-tegevuse poliitikad nagu Pi0 ja ACT. Autonoomne töö treenitakse iga ülesande jaoks pilootprojekti käigus.'),
+     'Operaator teleopereerib robotit läbi ülesande, et salvestada demonstratsioone, ning nende demode põhjal treenitakse nägemis-keele-tegevuse poliitikad nagu Pi0 ja ACT. Autonoomne töö treenitakse iga ülesande jaoks pilootprojekti käigus.'),
     ('Kus robot valmistatakse?',
-     'Prometheus on projekteeritud ja toodetud Euroopa Liidus, mis on oluline Euroopa uurimislaboritele ja ettevõtetele, kes hoolivad tarneahela päritolust, toest ja andmesuveräänsusest.'),
+     'Prometheus on projekteeritud ja toodetud Euroopa Liidus, mis on oluline Euroopa uurimislaboritele ja ettevõtetele, kes hoolivad tarneahela päritolust, toest ja EU andmeresidentsusest.'),
 ]

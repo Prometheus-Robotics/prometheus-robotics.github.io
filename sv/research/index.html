@@ -1045,6 +1045,13 @@
             margin: -1.5rem 0 1.5rem;
         }
 
+        .contact-info .contact-subnote {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            opacity: 0.75;
+            margin-top: 1rem;
+        }
+
         .contact-link {
             color: var(--color-accent);
             text-decoration: none;
@@ -1371,7 +1378,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Vilka AI-modeller stödjer roboten?", "acceptedAnswer": {"@type": "Answer", "text": "Direkt ur lådan stödjer den moderna policyer för vision-language-action och imitationsinlärning, inklusive Pi0, Pi0.5, ACT och SmolVLA. Samla in teleoperationsdata, finjustera på en konsument-GPU och driftsätt via SDK."}}, {"@type": "Question", "name": "Vad ingår med roboten?", "acceptedAnswer": {"@type": "Answer", "text": "Varje enhet levereras med den fullständiga SDK och ett enkelt REST API, en URDF-modell, en medföljande simulator, huvudmonterade stereokameror samt handledskameror, gripdon och direkt teknisk support. Teleoperationsflödet fungerar från första dagen."}}, {"@type": "Question", "name": "Kan jag samla in teleoperationsdata och träna policyer själv?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Teleoperera via VR med en Meta Quest 3S eller en ledare-följare-styrenhet, spela in demonstrationer i standardformatet för dataset och träna ACT eller finjustera en vision-language-action-modell på en enda konsument-GPU."}}, {"@type": "Question", "name": "Vilken beräkningskraft körs roboten på?", "acceptedAnswer": {"@type": "Answer", "text": "Den inbyggda beräkningskraften är en Raspberry Pi 5 eller en NVIDIA Jetson. Lättviktiga policyer körs på enheten, medan tyngre vision-language-action-modeller kan köras på en ansluten arbetsstations-GPU och strömma kommandon via REST API."}}, {"@type": "Question", "name": "Är roboten modulär?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Gripdon och ändeffektorer (2-finger, 4-finger, femfingrade händer) kan bytas efter uppgiften. Basen är ett fast stativ eller en motoriserad linjäraxel (räls); förflyttning på ben finns på färdplanen."}}, {"@type": "Question", "name": "Var tillverkas roboten?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus är designad och tillverkad i Europeiska unionen, vilket är viktigt för europeiska forskningslaboratorier och företag som bryr sig om härkomst i leveranskedjan, support och datasuveränitet."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Vilka AI-modeller stödjer roboten?", "acceptedAnswer": {"@type": "Answer", "text": "Direkt ur lådan stödjer den moderna policyer för vision-language-action och imitationsinlärning, inklusive Pi0, Pi0.5, ACT och SmolVLA. Samla in teleoperationsdata, finjustera på en konsument-GPU och driftsätt via SDK."}}, {"@type": "Question", "name": "Vad ingår med roboten?", "acceptedAnswer": {"@type": "Answer", "text": "Varje enhet levereras med den fullständiga SDK och ett enkelt REST API, en URDF-modell, en medföljande simulator, huvudmonterade stereokameror samt handledskameror, gripdon och direkt teknisk support. Teleoperationsflödet fungerar från första dagen."}}, {"@type": "Question", "name": "Kan jag samla in teleoperationsdata och träna policyer själv?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Teleoperera via VR med en Meta Quest 3S eller en ledare-följare-styrenhet, spela in demonstrationer i standardformatet för dataset och träna ACT eller finjustera en vision-language-action-modell på en enda konsument-GPU."}}, {"@type": "Question", "name": "Vilken beräkningskraft körs roboten på?", "acceptedAnswer": {"@type": "Answer", "text": "Den inbyggda beräkningskraften är en Raspberry Pi 5 eller en NVIDIA Jetson. Lättviktiga policyer körs på enheten, medan tyngre vision-language-action-modeller kan köras på en ansluten arbetsstations-GPU och strömma kommandon via REST API."}}, {"@type": "Question", "name": "Är roboten modulär?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Gripdon och ändeffektorer (2-finger, 4-finger, femfingrade händer) kan bytas efter uppgiften. Basen är ett fast stativ eller en motoriserad linjäraxel (räls); förflyttning på ben finns på färdplanen."}}, {"@type": "Question", "name": "Var tillverkas roboten?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus är designad och tillverkad i Europeiska unionen, vilket är viktigt för europeiska forskningslaboratorier och företag som bryr sig om härkomst i leveranskedjan, support och datalagring inom EU."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1735,7 +1742,7 @@
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Var tillverkas roboten?</button>
-                        <div class="faq-a"><p>Prometheus är designad och tillverkad i Europeiska unionen, vilket är viktigt för europeiska forskningslaboratorier och företag som bryr sig om härkomst i leveranskedjan, support och datasuveränitet.</p></div>
+                        <div class="faq-a"><p>Prometheus är designad och tillverkad i Europeiska unionen, vilket är viktigt för europeiska forskningslaboratorier och företag som bryr sig om härkomst i leveranskedjan, support och datalagring inom EU.</p></div>
                     </div>
                 </div>
             </div>
@@ -1789,6 +1796,7 @@
                 <p><strong>LinkedIn:</strong> <a class="contact-link" href="https://www.linkedin.com/in/ilya-pavlenkov/" target="_blank">linkedin.com/in/ilya-pavlenkov</a></p>
                 <p><strong>E-post:</strong> <a class="contact-link" onclick="openModal('email')">Klicka för att visa</a></p>
                 <p><strong>Telefon:</strong> <a class="contact-link" onclick="openModal('phoneHU')">Klicka för att visa</a></p>
+                <p class="contact-subnote">A subsidiary of Gedmond, Inc. (Delaware, USA)</p>
             </div>
         </section>
     </div>

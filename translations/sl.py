@@ -200,7 +200,7 @@ T = {
     "Trained by Demonstration, Not Programmed": "Naučen z demonstracijami, ne programiran",
     "Autonomous operation is trained per task during the pilot — through a data pipeline, not months of custom programming.": "Avtonomno delovanje se nauči za vsako opravilo posebej med pilotnim projektom — prek podatkovnega cevovoda, ne z meseci programiranja po meri.",
     "1 · Demonstrate": "1 · Demonstracija",
-    "Operators teleoperate the robot through the task via VR — no robotics expertise required on your side.": "Operaterji robota skozi opravilo vodijo s teleoperacijo prek VR — na vaši strani ni potrebno nobeno robotsko znanje.",
+    "An operator teleoperates the robot through the task via VR — no robotics expertise required on your side.": "Operater robota skozi opravilo vodi s teleoperacijo prek VR — na vaši strani ni potrebno nobeno robotsko znanje.",
     "2 · Train": "2 · Učenje",
     "Recorded demonstrations train VLA (vision-language-action) policies for that specific task and station.": "Posnete demonstracije naučijo politike VLA (vid-jezik-akcija) za to specifično opravilo in postajo.",
     "3 · Run": "3 · Izvajanje",
@@ -211,8 +211,8 @@ T = {
     "The hard-to-staff line jobs stay covered — without rebuilding the line around a rigid cell.": "Težko zasedljiva delovna mesta na liniji ostanejo pokrita — brez preurejanja linije okoli toge celice.",
     "Retrainable across tasks": "Ponovno učljiv za različna opravila",
     "A new product or task means new demonstrations, not new tooling. There is no fixed tooling to rebuild.": "Nov izdelek ali opravilo pomeni nove demonstracije, ne novega orodja. Ni fiksnega orodja, ki bi ga bilo treba predelati.",
-    "EU-based": "S sedežem v EU",
-    "Hardware, engineering, support, and data stay in Europe — no overseas dependency for your production line.": "Strojna oprema, inženiring, podpora in podatki ostanejo v Evropi — brez čezmorske odvisnosti za vašo proizvodno linijo.",
+    "Made in Europe": "Izdelano v Evropi",
+    "European engineering and manufacturing — hardware, support and spare parts close to your production line, with a clear CE path.": "Evropski inženiring in proizvodnja — strojna oprema, podpora in rezervni deli blizu vaše proizvodne linije, z jasno potjo do CE.",
     "Certification path defined": "Začrtana pot do certificiranja",
     "Designed for CE certification under ISO 10218-1 and ISO 10218-2, the standards for industrial robots.": "Zasnovan za CE certificiranje po standardih ISO 10218-1 in ISO 10218-2, ki veljata za industrijske robote.",
     "Dual-arm upper body — the manipulation station configuration": "Dvoročni zgornji del telesa — konfiguracija manipulacijske postaje",
@@ -242,7 +242,7 @@ FAQ_RESEARCH = [
     ('Ali je robot modularen?',
      'Da. Prijemala in končne efektorje (2-prstne, 4-prstne, petprstne roke) lahko zamenjate glede na nalogo. Osnova je fiksni stativ ali motorizirana linearna os (tirnica); premikanje na nogah je v načrtu razvoja.'),
     ('Kje je robot izdelan?',
-     'Prometheus je zasnovan in izdelan v Evropski uniji, kar je pomembno za evropske raziskovalne laboratorije in podjetja, ki jim je mar za izvor dobavne verige, podporo in suverenost podatkov.'),
+     'Prometheus je zasnovan in izdelan v Evropski uniji, kar je pomembno za evropske raziskovalne laboratorije in podjetja, ki jim je mar za izvor dobavne verige, podporo in rezidenčnost podatkov v EU.'),
 ]
 
 # Home-page FAQ (visible accordion + JSON-LD), same order as faq_data.FAQ_HOME
@@ -252,7 +252,7 @@ FAQ_HOME = [
     ('Ali se vključi v našo obstoječo linijo?',
      'Da. Postaja deluje ob vaših obstoječih postajah in potekih dela — deli pridejo do robota, zato preureditev linije ni potrebna. Preprost REST API jo poveže z vašim upravljanjem linije.'),
     ('Kako se robot nauči novega opravila?',
-     'Operaterji robota s teleoperacijo vodijo skozi opravilo in tako posnamejo demonstracije, iz katerih se naučijo politike vida-jezika-akcije, kot sta Pi0 in ACT. Avtonomno delovanje se nauči za vsako opravilo posebej med pilotnim projektom.'),
+     'Operater robota s teleoperacijo vodi skozi opravilo in tako posname demonstracije, iz katerih se naučijo politike vida-jezika-akcije, kot sta Pi0 in ACT. Avtonomno delovanje se nauči za vsako opravilo posebej med pilotnim projektom.'),
     ('Kje je robot izdelan?',
-     'Prometheus je zasnovan in izdelan v Evropski uniji, kar je pomembno za evropske raziskovalne laboratorije in podjetja, ki jim je mar za izvor dobavne verige, podporo in suverenost podatkov.'),
+     'Prometheus je zasnovan in izdelan v Evropski uniji, kar je pomembno za evropske raziskovalne laboratorije in podjetja, ki jim je mar za izvor dobavne verige, podporo in rezidenčnost podatkov v EU.'),
 ]

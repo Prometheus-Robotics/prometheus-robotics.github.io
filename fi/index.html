@@ -1045,6 +1045,13 @@
             margin: -1.5rem 0 1.5rem;
         }
 
+        .contact-info .contact-subnote {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            opacity: 0.75;
+            margin-top: 1rem;
+        }
+
         .contact-link {
             color: var(--color-accent);
             text-decoration: none;
@@ -1371,7 +1378,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Onko robotti turvallinen ja sertifioitavissa tehdaskäyttöön?", "acceptedAnswer": {"@type": "Answer", "text": "Se on suunniteltu CE-sertifioitavaksi teollisuusrobottien standardien ISO 10218-1 ja ISO 10218-2 mukaisesti. Käyttöönoton turvallisuuskonfiguraatio — suojaukset, nopeusrajoitukset ja turvalukitukset — määritellään kohdekohtaisesti pilotin valmistelun aikana."}}, {"@type": "Question", "name": "Integroituuko se olemassa olevaan linjaamme?", "acceptedAnswer": {"@type": "Answer", "text": "Kyllä. Asema toimii nykyisten asemienne ja työnkulkujenne rinnalla — osat tulevat robotille, joten linjaa ei tarvitse rakentaa uudelleen. Yksinkertainen REST API yhdistää sen linjanohjaukseenne."}}, {"@type": "Question", "name": "Miten robotti oppii uuden tehtävän?", "acceptedAnswer": {"@type": "Answer", "text": "Operaattorit teleoperoivat robottia tehtävän läpi tallentaakseen demonstraatioita, ja näkö-kieli-toimintamallit kuten Pi0 ja ACT opetetaan näiden demonstraatioiden pohjalta. Autonominen toiminta opetetaan tehtäväkohtaisesti pilotin aikana."}}, {"@type": "Question", "name": "Missä robotti valmistetaan?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus on suunniteltu ja valmistettu Euroopan unionissa, mikä on merkityksellistä eurooppalaisille tutkimuslaboratorioille ja yrityksille, jotka välittävät toimitusketjun alkuperästä, tuesta ja datan suvereniteetista."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Onko robotti turvallinen ja sertifioitavissa tehdaskäyttöön?", "acceptedAnswer": {"@type": "Answer", "text": "Se on suunniteltu CE-sertifioitavaksi teollisuusrobottien standardien ISO 10218-1 ja ISO 10218-2 mukaisesti. Käyttöönoton turvallisuuskonfiguraatio — suojaukset, nopeusrajoitukset ja turvalukitukset — määritellään kohdekohtaisesti pilotin valmistelun aikana."}}, {"@type": "Question", "name": "Integroituuko se olemassa olevaan linjaamme?", "acceptedAnswer": {"@type": "Answer", "text": "Kyllä. Asema toimii nykyisten asemienne ja työnkulkujenne rinnalla — osat tulevat robotille, joten linjaa ei tarvitse rakentaa uudelleen. Yksinkertainen REST API yhdistää sen linjanohjaukseenne."}}, {"@type": "Question", "name": "Miten robotti oppii uuden tehtävän?", "acceptedAnswer": {"@type": "Answer", "text": "Operaattori teleoperoi robottia tehtävän läpi tallentaakseen demonstraatioita, ja näkö-kieli-toimintamallit kuten Pi0 ja ACT opetetaan näiden demonstraatioiden pohjalta. Autonominen toiminta opetetaan tehtäväkohtaisesti pilotin aikana."}}, {"@type": "Question", "name": "Missä robotti valmistetaan?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus on suunniteltu ja valmistettu Euroopan unionissa, mikä on merkityksellistä eurooppalaisille tutkimuslaboratorioille ja yrityksille, jotka välittävät toimitusketjun alkuperästä, tuesta ja datan säilyttämisestä EU:n alueella."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1527,14 +1534,14 @@
                         <p>Kokoa kittejä ja pakkaa vaihtelevia tuotteita kahdella koordinoidulla käsivarrella — tehtäviä, joista yksikäsivartiset solut eivät suoriudu.</p>
                     </div>
                     <div class="research-card">
-                        <span class="research-icon">⚙️</span>
-                        <h3>Koneiden palvelu</h3>
-                        <p>Panosta ja pura koneita, puristimia ja testauskiinnittimiä — tasaisesti sykli toisensa jälkeen, vuoro toisensa jälkeen.</p>
-                    </div>
-                    <div class="research-card">
                         <span class="research-icon">🗂️</span>
                         <h3>Lajittelu</h3>
                         <p>Lajittele osat ja tuotteet tyypin, asennon tai tarkastustuloksen mukaan — konenäön ohjaamana, ilman kiinnittimiä.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">⚙️</span>
+                        <h3>Koneiden palvelu</h3>
+                        <p>Panosta ja pura koneita, puristimia ja testauskiinnittimiä — tasaisesti sykli toisensa jälkeen, vuoro toisensa jälkeen.</p>
                     </div>
                 </div>
             </div>
@@ -1550,7 +1557,7 @@
                     <div class="research-card">
                         <span class="research-icon">🥽</span>
                         <h3>1 · Demonstroi</h3>
-                        <p>Operaattorit teleoperoivat robottia tehtävän läpi VR:n avulla — teiltä ei vaadita robotiikkaosaamista.</p>
+                        <p>Operaattori teleoperoi robottia tehtävän läpi VR:n avulla — teiltä ei vaadita robotiikkaosaamista.</p>
                     </div>
                     <div class="research-card">
                         <span class="research-icon">🧠</span>
@@ -1595,8 +1602,8 @@
                     </div>
                     <div class="research-card featured">
                         <span class="research-icon">🇪🇺</span>
-                        <h3>EU-pohjainen</h3>
-                        <p>Laitteisto, suunnittelu, tuki ja data pysyvät Euroopassa — ei riippuvuutta merentakaisista toimijoista tuotantolinjallesi.</p>
+                        <h3>Valmistettu Euroopassa</h3>
+                        <p>Eurooppalaista suunnittelua ja valmistusta — laitteisto, tuki ja varaosat lähellä tuotantolinjaasi sekä selkeä polku CE-merkintään.</p>
                     </div>
                     <div class="research-card featured">
                         <span class="research-icon">🛡️</span>
@@ -1716,11 +1723,11 @@
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Miten robotti oppii uuden tehtävän?</button>
-                        <div class="faq-a"><p>Operaattorit teleoperoivat robottia tehtävän läpi tallentaakseen demonstraatioita, ja näkö-kieli-toimintamallit kuten Pi0 ja ACT opetetaan näiden demonstraatioiden pohjalta. Autonominen toiminta opetetaan tehtäväkohtaisesti pilotin aikana.</p></div>
+                        <div class="faq-a"><p>Operaattori teleoperoi robottia tehtävän läpi tallentaakseen demonstraatioita, ja näkö-kieli-toimintamallit kuten Pi0 ja ACT opetetaan näiden demonstraatioiden pohjalta. Autonominen toiminta opetetaan tehtäväkohtaisesti pilotin aikana.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Missä robotti valmistetaan?</button>
-                        <div class="faq-a"><p>Prometheus on suunniteltu ja valmistettu Euroopan unionissa, mikä on merkityksellistä eurooppalaisille tutkimuslaboratorioille ja yrityksille, jotka välittävät toimitusketjun alkuperästä, tuesta ja datan suvereniteetista.</p></div>
+                        <div class="faq-a"><p>Prometheus on suunniteltu ja valmistettu Euroopan unionissa, mikä on merkityksellistä eurooppalaisille tutkimuslaboratorioille ja yrityksille, jotka välittävät toimitusketjun alkuperästä, tuesta ja datan säilyttämisestä EU:n alueella.</p></div>
                     </div>
                 </div>
             </div>
@@ -1768,6 +1775,7 @@
                 <p><strong>LinkedIn:</strong> <a class="contact-link" href="https://www.linkedin.com/in/ilya-pavlenkov/" target="_blank">linkedin.com/in/ilya-pavlenkov</a></p>
                 <p><strong>Sähköposti:</strong> <a class="contact-link" onclick="openModal('email')">Napsauta paljastaaksesi</a></p>
                 <p><strong>Puhelin:</strong> <a class="contact-link" onclick="openModal('phoneHU')">Napsauta paljastaaksesi</a></p>
+                <p class="contact-subnote">A subsidiary of Gedmond, Inc. (Delaware, USA)</p>
             </div>
         </section>
     </div>

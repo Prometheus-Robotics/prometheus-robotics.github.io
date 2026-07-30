@@ -200,7 +200,7 @@ T = {
     "Trained by Demonstration, Not Programmed": "Apmācīts ar demonstrācijām, nevis programmēts",
     "Autonomous operation is trained per task during the pilot — through a data pipeline, not months of custom programming.": "Autonomā darbība tiek apmācīta katram uzdevumam pilotprojekta laikā — ar datu cauruļvadu, nevis mēnešiem ilgu pielāgotu programmēšanu.",
     "1 · Demonstrate": "1 · Demonstrēšana",
-    "Operators teleoperate the robot through the task via VR — no robotics expertise required on your side.": "Operatori teleoperē robotu cauri uzdevumam, izmantojot VR — no jūsu puses nav nepieciešama robotikas ekspertīze.",
+    "An operator teleoperates the robot through the task via VR — no robotics expertise required on your side.": "Operators teleoperē robotu cauri uzdevumam, izmantojot VR — no jūsu puses nav nepieciešama robotikas ekspertīze.",
     "2 · Train": "2 · Apmācība",
     "Recorded demonstrations train VLA (vision-language-action) policies for that specific task and station.": "Ierakstītās demonstrācijas apmāca VLA (redzes-valodas-darbības) politikas konkrētajam uzdevumam un stacijai.",
     "3 · Run": "3 · Darbība",
@@ -211,8 +211,8 @@ T = {
     "The hard-to-staff line jobs stay covered — without rebuilding the line around a rigid cell.": "Grūti nokomplektējamie līnijas darbi paliek nosegti — bez līnijas pārbūvēšanas ap neelastīgu šūnu.",
     "Retrainable across tasks": "Pārapmācāms dažādiem uzdevumiem",
     "A new product or task means new demonstrations, not new tooling. There is no fixed tooling to rebuild.": "Jauns produkts vai uzdevums nozīmē jaunas demonstrācijas, nevis jaunu aprīkojumu. Nav fiksēta aprīkojuma, kas būtu jāpārbūvē.",
-    "EU-based": "Bāzēts ES",
-    "Hardware, engineering, support, and data stay in Europe — no overseas dependency for your production line.": "Aparatūra, inženierija, atbalsts un dati paliek Eiropā — jūsu ražošanas līnijai nav atkarības no aizjūras piegādātājiem.",
+    "Made in Europe": "Ražots Eiropā",
+    "European engineering and manufacturing — hardware, support and spare parts close to your production line, with a clear CE path.": "Eiropas inženierija un ražošana — aparatūra, atbalsts un rezerves daļas tuvu jūsu ražošanas līnijai, ar skaidru CE sertifikācijas ceļu.",
     "Certification path defined": "Definēts sertifikācijas ceļš",
     "Designed for CE certification under ISO 10218-1 and ISO 10218-2, the standards for industrial robots.": "Projektēts CE sertifikācijai saskaņā ar ISO 10218-1 un ISO 10218-2 — rūpniecisko robotu standartiem.",
     "Dual-arm upper body — the manipulation station configuration": "Divroku augšķermenis — manipulācijas stacijas konfigurācija",
@@ -243,7 +243,7 @@ FAQ_RESEARCH = [
     ('Vai robots ir modulārs?',
      'Jā. Satvērējus un gala efektorus (2 pirkstu, 4 pirkstu, piecu pirkstu rokas) var mainīt atbilstoši uzdevumam. Pamatne ir fiksēts statīvs vai motorizēta lineārā ass (sliede); pārvietošanās uz kājām ir attīstības plānā.'),
     ('Kur robots tiek ražots?',
-     'Prometheus tiek projektēts un ražots Eiropas Savienībā, kas ir svarīgi Eiropas pētniecības laboratorijām un uzņēmumiem, kuriem rūp piegādes ķēdes izcelsme, atbalsts un datu suverenitāte.'),
+     'Prometheus tiek projektēts un ražots Eiropas Savienībā, kas ir svarīgi Eiropas pētniecības laboratorijām un uzņēmumiem, kuriem rūp piegādes ķēdes izcelsme, atbalsts un EU datu rezidence.'),
 ]
 
 # Home-page FAQ (visible accordion + JSON-LD), same order as faq_data.FAQ_HOME
@@ -253,7 +253,7 @@ FAQ_HOME = [
     ('Vai tas integrējas ar mūsu esošo līniju?',
      'Jā. Stacija darbojas līdzās jūsu esošajām stacijām un darbplūsmām — detaļas nonāk pie robota, tāpēc līnijas pārbūve nav nepieciešama. Vienkāršs REST API savieno to ar jūsu līnijas vadību.'),
     ('Kā robots apgūst jaunu uzdevumu?',
-     'Operatori teleoperē robotu cauri uzdevumam, lai ierakstītu demonstrācijas, un no šīm demonstrācijām tiek apmācītas redzes-valodas-darbības politikas, piemēram, Pi0 un ACT. Autonomā darbība tiek apmācīta katram uzdevumam pilotprojekta laikā.'),
+     'Operators teleoperē robotu cauri uzdevumam, lai ierakstītu demonstrācijas, un no šīm demonstrācijām tiek apmācītas redzes-valodas-darbības politikas, piemēram, Pi0 un ACT. Autonomā darbība tiek apmācīta katram uzdevumam pilotprojekta laikā.'),
     ('Kur robots tiek ražots?',
-     'Prometheus tiek projektēts un ražots Eiropas Savienībā, kas ir svarīgi Eiropas pētniecības laboratorijām un uzņēmumiem, kuriem rūp piegādes ķēdes izcelsme, atbalsts un datu suverenitāte.'),
+     'Prometheus tiek projektēts un ražots Eiropas Savienībā, kas ir svarīgi Eiropas pētniecības laboratorijām un uzņēmumiem, kuriem rūp piegādes ķēdes izcelsme, atbalsts un EU datu rezidence.'),
 ]

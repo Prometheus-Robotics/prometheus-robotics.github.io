@@ -200,7 +200,7 @@ T = {
     "Trained by Demonstration, Not Programmed": "Trénováno ukázkami, ne programováním",
     "Autonomous operation is trained per task during the pilot — through a data pipeline, not months of custom programming.": "Autonomní provoz se trénuje pro každý úkol během pilotního projektu — pomocí datové pipeline, ne měsíců zakázkového programování.",
     "1 · Demonstrate": "1 · Předveďte",
-    "Operators teleoperate the robot through the task via VR — no robotics expertise required on your side.": "Operátoři provedou robota úkolem teleoperací přes VR — na vaší straně není potřeba žádná robotická expertiza.",
+    "An operator teleoperates the robot through the task via VR — no robotics expertise required on your side.": "Operátor provede robota úkolem teleoperací přes VR — na vaší straně není potřeba žádná robotická expertiza.",
     "2 · Train": "2 · Trénujte",
     "Recorded demonstrations train VLA (vision-language-action) policies for that specific task and station.": "Zaznamenané ukázky trénují VLA (vision-language-action) politiky pro daný konkrétní úkol a stanici.",
     "3 · Run": "3 · Spusťte",
@@ -211,8 +211,8 @@ T = {
     "The hard-to-staff line jobs stay covered — without rebuilding the line around a rigid cell.": "Těžko obsaditelné pozice na lince zůstávají pokryté — bez přestavby linky kolem rigidní buňky.",
     "Retrainable across tasks": "Přetrénovatelný napříč úkoly",
     "A new product or task means new demonstrations, not new tooling. There is no fixed tooling to rebuild.": "Nový produkt nebo úkol znamená nové ukázky, ne nové přípravky. Neexistují žádné fixní přípravky, které by bylo třeba přestavovat.",
-    "EU-based": "Zázemí v EU",
-    "Hardware, engineering, support, and data stay in Europe — no overseas dependency for your production line.": "Hardware, vývoj, podpora i data zůstávají v Evropě — žádná závislost vaší výrobní linky na zámoří.",
+    "Made in Europe": "Vyrobeno v Evropě",
+    "European engineering and manufacturing — hardware, support and spare parts close to your production line, with a clear CE path.": "Evropský vývoj a výroba — hardware, podpora a náhradní díly blízko vaší výrobní linky, s jasnou cestou k certifikaci CE.",
     "Certification path defined": "Definovaná cesta k certifikaci",
     "Designed for CE certification under ISO 10218-1 and ISO 10218-2, the standards for industrial robots.": "Navrženo pro certifikaci CE podle norem ISO 10218-1 a ISO 10218-2, standardů pro průmyslové roboty.",
     "Dual-arm upper body — the manipulation station configuration": "Dvouramenná horní část těla — konfigurace manipulační stanice",
@@ -242,7 +242,7 @@ FAQ_RESEARCH = [
     ('Je robot modulární?',
      'Ano. Chapadla a koncové efektory (2prsté, 4prsté, pětiprsté ruce) lze měnit podle úlohy. Základnou je pevná trojnožka nebo motorizovaná lineární osa (kolejnice); lokomoce po nohou je v plánu vývoje.'),
     ('Kde se robot vyrábí?',
-     'Prometheus je navržen a vyráběn v Evropské unii, což má význam pro evropské výzkumné laboratoře a společnosti, kterým záleží na původu dodavatelského řetězce, podpoře a datové suverenitě.'),
+     'Prometheus je navržen a vyráběn v Evropské unii, což má význam pro evropské výzkumné laboratoře a společnosti, kterým záleží na původu dodavatelského řetězce, podpoře a uložení dat v EU.'),
 ]
 
 # Home-page FAQ (visible accordion + JSON-LD), same order as faq_data.FAQ_HOME
@@ -252,7 +252,7 @@ FAQ_HOME = [
     ('Integruje se s naší stávající linkou?',
      'Ano. Stanice pracuje vedle vašich stávajících stanic a workflow — díly přicházejí k robotu, takže není nutná žádná přestavba linky. Jednoduché REST API ji propojí s vaším řízením linky.'),
     ('Jak se robot učí nový úkol?',
-     'Operátoři provedou robota úkolem teleoperací a zaznamenají ukázky, z nichž se trénují vision-language-action politiky, jako jsou Pi0 a ACT. Autonomní provoz se trénuje pro každý úkol během pilotního projektu.'),
+     'Operátor provede robota úkolem teleoperací a zaznamená ukázky, z nichž se trénují vision-language-action politiky, jako jsou Pi0 a ACT. Autonomní provoz se trénuje pro každý úkol během pilotního projektu.'),
     ('Kde se robot vyrábí?',
-     'Prometheus je navržen a vyráběn v Evropské unii, což má význam pro evropské výzkumné laboratoře a společnosti, kterým záleží na původu dodavatelského řetězce, podpoře a datové suverenitě.'),
+     'Prometheus je navržen a vyráběn v Evropské unii, což má význam pro evropské výzkumné laboratoře a společnosti, kterým záleží na původu dodavatelského řetězce, podpoře a uložení dat v EU.'),
 ]

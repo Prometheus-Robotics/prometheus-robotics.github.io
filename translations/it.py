@@ -200,7 +200,7 @@ T = {
     "Trained by Demonstration, Not Programmed": "Addestrato per dimostrazione, non programmato",
     "Autonomous operation is trained per task during the pilot — through a data pipeline, not months of custom programming.": "Il funzionamento autonomo viene addestrato per ogni compito durante il pilota — tramite una pipeline di dati, non mesi di programmazione su misura.",
     "1 · Demonstrate": "1 · Dimostrazione",
-    "Operators teleoperate the robot through the task via VR — no robotics expertise required on your side.": "Gli operatori teleoperano il robot attraverso il compito tramite VR — nessuna competenza robotica richiesta da parte vostra.",
+    "An operator teleoperates the robot through the task via VR — no robotics expertise required on your side.": "Un operatore teleopera il robot attraverso il compito tramite VR — nessuna competenza robotica richiesta da parte vostra.",
     "2 · Train": "2 · Addestramento",
     "Recorded demonstrations train VLA (vision-language-action) policies for that specific task and station.": "Le dimostrazioni registrate addestrano policy VLA (visione-linguaggio-azione) per quel compito e quella stazione specifici.",
     "3 · Run": "3 · Esecuzione",
@@ -211,8 +211,8 @@ T = {
     "The hard-to-staff line jobs stay covered — without rebuilding the line around a rigid cell.": "I lavori di linea difficili da coprire restano coperti — senza ricostruire la linea attorno a una cella rigida.",
     "Retrainable across tasks": "Riaddestrabile su più compiti",
     "A new product or task means new demonstrations, not new tooling. There is no fixed tooling to rebuild.": "Un nuovo prodotto o compito significa nuove dimostrazioni, non nuove attrezzature. Non ci sono attrezzature fisse da ricostruire.",
-    "EU-based": "Con base nell'UE",
-    "Hardware, engineering, support, and data stay in Europe — no overseas dependency for your production line.": "Hardware, ingegneria, supporto e dati restano in Europa — nessuna dipendenza da oltreoceano per la vostra linea di produzione.",
+    "Made in Europe": "Prodotto in Europa",
+    "European engineering and manufacturing — hardware, support and spare parts close to your production line, with a clear CE path.": "Ingegneria e produzione europee — hardware, supporto e ricambi vicini alla vostra linea di produzione, con un percorso CE chiaro.",
     "Certification path defined": "Percorso di certificazione definito",
     "Designed for CE certification under ISO 10218-1 and ISO 10218-2, the standards for industrial robots.": "Progettato per la certificazione CE secondo le norme ISO 10218-1 e ISO 10218-2, gli standard per i robot industriali.",
     "Dual-arm upper body — the manipulation station configuration": "Parte superiore del corpo a doppio braccio — la configurazione della stazione di manipolazione",
@@ -242,7 +242,7 @@ FAQ_RESEARCH = [
     ('Il robot è modulare?',
      'Sì. È possibile sostituire pinze ed effettori finali (2 dita, 4 dita, mani a cinque dita) in base al compito. La base è un treppiede fisso o un asse lineare motorizzato (binario); la locomozione su gambe è nella roadmap.'),
     ('Dove viene prodotto il robot?',
-     "Prometheus è progettato e fabbricato nell'Unione Europea, un aspetto importante per i laboratori di ricerca e le aziende europee che tengono alla provenienza della catena di approvvigionamento, al supporto e alla sovranità dei dati."),
+     "Prometheus è progettato e fabbricato nell'Unione Europea, un aspetto importante per i laboratori di ricerca e le aziende europee che tengono alla provenienza della catena di approvvigionamento, al supporto e alla residenza dei dati nell'EU."),
 ]
 
 # Home-page FAQ (visible accordion + JSON-LD), same order as faq_data.FAQ_HOME
@@ -252,7 +252,7 @@ FAQ_HOME = [
     ('Si integra con la nostra linea esistente?',
      'Sì. La stazione lavora accanto alle vostre postazioni e ai vostri flussi esistenti — i pezzi arrivano al robot, quindi non serve ricostruire la linea. Una semplice REST API la collega al vostro controllo di linea.'),
     ('In che modo il robot apprende un nuovo compito?',
-     'Gli operatori teleoperano il robot attraverso il compito per registrare le dimostrazioni, e da queste demo vengono addestrate policy visione-linguaggio-azione come Pi0 e ACT. Il funzionamento autonomo viene addestrato per ogni compito durante il pilota.'),
+     'Un operatore teleopera il robot attraverso il compito per registrare le dimostrazioni, e da queste demo vengono addestrate policy visione-linguaggio-azione come Pi0 e ACT. Il funzionamento autonomo viene addestrato per ogni compito durante il pilota.'),
     ('Dove viene prodotto il robot?',
-     "Prometheus è progettato e fabbricato nell'Unione Europea, un aspetto importante per i laboratori di ricerca e le aziende europee che tengono alla provenienza della catena di approvvigionamento, al supporto e alla sovranità dei dati."),
+     "Prometheus è progettato e fabbricato nell'Unione Europea, un aspetto importante per i laboratori di ricerca e le aziende europee che tengono alla provenienza della catena di approvvigionamento, al supporto e alla residenza dei dati nell'EU."),
 ]

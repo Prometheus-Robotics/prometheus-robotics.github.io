@@ -199,7 +199,7 @@ T = {
     "Trained by Demonstration, Not Programmed": "Antrenat prin demonstrație, nu programat",
     "Autonomous operation is trained per task during the pilot — through a data pipeline, not months of custom programming.": "Operarea autonomă este antrenată pentru fiecare sarcină în timpul proiectului-pilot — printr-un pipeline de date, nu prin luni de programare personalizată.",
     "1 · Demonstrate": "1 · Demonstrare",
-    "Operators teleoperate the robot through the task via VR — no robotics expertise required on your side.": "Operatorii teleoperează robotul prin sarcină folosind VR — fără a fi nevoie de expertiză în robotică din partea dumneavoastră.",
+    "An operator teleoperates the robot through the task via VR — no robotics expertise required on your side.": "Un operator teleoperează robotul prin sarcină folosind VR — fără a fi nevoie de expertiză în robotică din partea dumneavoastră.",
     "2 · Train": "2 · Antrenare",
     "Recorded demonstrations train VLA (vision-language-action) policies for that specific task and station.": "Demonstrațiile înregistrate antrenează politici VLA (vision-language-action) pentru acea sarcină și stație specifică.",
     "3 · Run": "3 · Rulare",
@@ -210,8 +210,8 @@ T = {
     "The hard-to-staff line jobs stay covered — without rebuilding the line around a rigid cell.": "Posturile de pe linie greu de ocupat rămân acoperite — fără a reconstrui linia în jurul unei celule rigide.",
     "Retrainable across tasks": "Reantrenabil pentru sarcini diverse",
     "A new product or task means new demonstrations, not new tooling. There is no fixed tooling to rebuild.": "Un produs sau o sarcină nouă înseamnă demonstrații noi, nu echipamente noi. Nu există scule fixe de reconstruit.",
-    "EU-based": "Cu sediul în UE",
-    "Hardware, engineering, support, and data stay in Europe — no overseas dependency for your production line.": "Hardware-ul, ingineria, suportul și datele rămân în Europa — fără dependențe de peste ocean pentru linia dumneavoastră de producție.",
+    "Made in Europe": "Fabricat în Europa",
+    "European engineering and manufacturing — hardware, support and spare parts close to your production line, with a clear CE path.": "Inginerie și producție europeană — hardware, suport și piese de schimb aproape de linia dumneavoastră de producție, cu un traseu CE clar.",
     "Certification path defined": "Traseu de certificare definit",
     "Designed for CE certification under ISO 10218-1 and ISO 10218-2, the standards for industrial robots.": "Proiectat pentru certificarea CE conform ISO 10218-1 și ISO 10218-2, standardele pentru roboții industriali.",
     "Dual-arm upper body — the manipulation station configuration": "Partea superioară a corpului cu două brațe — configurația stației de manipulare",
@@ -242,7 +242,7 @@ FAQ_RESEARCH = [
     ('Robotul este modular?',
      'Da. Graiferele și efectorii finali (2 degete, 4 degete, mâini cu cinci degete) pot fi schimbați în funcție de sarcină. Baza este un trepied fix sau o axă liniară motorizată (șină); locomoția pe picioare este în plan.'),
     ('Unde este fabricat robotul?',
-     'Prometheus este proiectat și fabricat în Uniunea Europeană, ceea ce contează pentru laboratoarele de cercetare și companiile europene preocupate de proveniența lanțului de aprovizionare, de asistență și de suveranitatea datelor.'),
+     'Prometheus este proiectat și fabricat în Uniunea Europeană, ceea ce contează pentru laboratoarele de cercetare și companiile europene preocupate de proveniența lanțului de aprovizionare, de asistență și de rezidența datelor în UE.'),
 ]
 
 # Home-page FAQ (industrial), same order as faq_data.FAQ_HOME
@@ -252,7 +252,7 @@ FAQ_HOME = [
     ('Se integrează cu linia noastră existentă?',
      'Da. Stația funcționează alături de stațiile și fluxurile dumneavoastră existente — piesele vin la robot, deci nu este nevoie de reconstruirea liniei. Un REST API simplu o conectează la controlul liniei dumneavoastră.'),
     ('Cum învață robotul o sarcină nouă?',
-     'Operatorii teleoperează robotul prin sarcină pentru a înregistra demonstrații, iar politicile vision-language-action, precum Pi0 și ACT, sunt antrenate pe baza acestor demonstrații. Operarea autonomă este antrenată pentru fiecare sarcină în timpul proiectului-pilot.'),
+     'Un operator teleoperează robotul prin sarcină pentru a înregistra demonstrații, iar politicile vision-language-action, precum Pi0 și ACT, sunt antrenate pe baza acestor demonstrații. Operarea autonomă este antrenată pentru fiecare sarcină în timpul proiectului-pilot.'),
     ('Unde este fabricat robotul?',
-     'Prometheus este proiectat și fabricat în Uniunea Europeană, ceea ce contează pentru laboratoarele de cercetare și companiile europene preocupate de proveniența lanțului de aprovizionare, de asistență și de suveranitatea datelor.'),
+     'Prometheus este proiectat și fabricat în Uniunea Europeană, ceea ce contează pentru laboratoarele de cercetare și companiile europene preocupate de proveniența lanțului de aprovizionare, de asistență și de rezidența datelor în UE.'),
 ]

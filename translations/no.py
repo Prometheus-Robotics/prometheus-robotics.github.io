@@ -200,7 +200,7 @@ T = {
     "Trained by Demonstration, Not Programmed": "Trent gjennom demonstrasjon, ikke programmert",
     "Autonomous operation is trained per task during the pilot — through a data pipeline, not months of custom programming.": "Autonom drift trenes per oppgave under piloten — gjennom en data-pipeline, ikke måneder med spesialtilpasset programmering.",
     "1 · Demonstrate": "1 · Demonstrer",
-    "Operators teleoperate the robot through the task via VR — no robotics expertise required on your side.": "Operatører teleopererer roboten gjennom oppgaven via VR — ingen robotikkekspertise kreves på deres side.",
+    "An operator teleoperates the robot through the task via VR — no robotics expertise required on your side.": "En operatør teleopererer roboten gjennom oppgaven via VR — ingen robotikkekspertise kreves på deres side.",
     "2 · Train": "2 · Tren",
     "Recorded demonstrations train VLA (vision-language-action) policies for that specific task and station.": "Innspilte demonstrasjoner trener VLA-policyer (visjon-språk-handling) for den spesifikke oppgaven og stasjonen.",
     "3 · Run": "3 · Kjør",
@@ -211,8 +211,8 @@ T = {
     "The hard-to-staff line jobs stay covered — without rebuilding the line around a rigid cell.": "Linjejobbene som er vanskelige å bemanne, forblir dekket — uten at linjen må bygges om rundt en rigid celle.",
     "Retrainable across tasks": "Kan trenes om på tvers av oppgaver",
     "A new product or task means new demonstrations, not new tooling. There is no fixed tooling to rebuild.": "Et nytt produkt eller en ny oppgave betyr nye demonstrasjoner, ikke ny verktøying. Det finnes ikke noe fast verktøyoppsett som må bygges om.",
-    "EU-based": "EU-basert",
-    "Hardware, engineering, support, and data stay in Europe — no overseas dependency for your production line.": "Maskinvare, engineering, støtte og data forblir i Europa — ingen avhengighet av oversjøiske leverandører for produksjonslinjen din.",
+    "Made in Europe": "Produsert i Europa",
+    "European engineering and manufacturing — hardware, support and spare parts close to your production line, with a clear CE path.": "Europeisk engineering og produksjon — maskinvare, støtte og reservedeler nær produksjonslinjen din, med et tydelig løp mot CE.",
     "Certification path defined": "Definert sertifiseringsløp",
     "Designed for CE certification under ISO 10218-1 and ISO 10218-2, the standards for industrial robots.": "Designet for CE-sertifisering i henhold til ISO 10218-1 og ISO 10218-2, standardene for industriroboter.",
     "Dual-arm upper body — the manipulation station configuration": "Toarmet overkropp — konfigurasjonen for manipulasjonsstasjonen",
@@ -242,7 +242,7 @@ FAQ_RESEARCH = [
     ('Er roboten modulær?',
      'Ja. Gripere og endeeffektorer (2-finger, 4-finger, femfingrede hender) kan byttes etter oppgaven. Basen er et fast stativ eller en motorisert lineærakse (skinne); bevegelse på bein står på veikartet.'),
     ('Hvor er roboten produsert?',
-     'Prometheus er designet og produsert i Den europeiske union, noe som er viktig for europeiske forskningslaboratorier og selskaper som bryr seg om forsyningskjedens opprinnelse, støtte og datasuverenitet.'),
+     'Prometheus er designet og produsert i Den europeiske union, noe som er viktig for europeiske forskningslaboratorier og selskaper som bryr seg om forsyningskjedens opprinnelse, støtte og datalagring i EU.'),
 ]
 
 # Home-page FAQ (visible accordion + JSON-LD), same order as faq_data.FAQ_HOME
@@ -252,7 +252,7 @@ FAQ_HOME = [
     ('Kan den integreres med vår eksisterende linje?',
      'Ja. Stasjonen fungerer side om side med deres eksisterende stasjoner og arbeidsflyter — delene kommer til roboten, så linjen trenger ingen ombygging. Et enkelt REST API kobler den til linjestyringen deres.'),
     ('Hvordan lærer roboten en ny oppgave?',
-     'Operatører teleopererer roboten gjennom oppgaven for å ta opp demonstrasjoner, og policyer for visjon-språk-handling som Pi0 og ACT trenes på disse demonstrasjonene. Autonom drift trenes per oppgave under piloten.'),
+     'En operatør teleopererer roboten gjennom oppgaven for å ta opp demonstrasjoner, og policyer for visjon-språk-handling som Pi0 og ACT trenes på disse demonstrasjonene. Autonom drift trenes per oppgave under piloten.'),
     ('Hvor er roboten produsert?',
-     'Prometheus er designet og produsert i Den europeiske union, noe som er viktig for europeiske forskningslaboratorier og selskaper som bryr seg om forsyningskjedens opprinnelse, støtte og datasuverenitet.'),
+     'Prometheus er designet og produsert i Den europeiske union, noe som er viktig for europeiske forskningslaboratorier og selskaper som bryr seg om forsyningskjedens opprinnelse, støtte og datalagring i EU.'),
 ]

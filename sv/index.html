@@ -1045,6 +1045,13 @@
             margin: -1.5rem 0 1.5rem;
         }
 
+        .contact-info .contact-subnote {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            opacity: 0.75;
+            margin-top: 1rem;
+        }
+
         .contact-link {
             color: var(--color-accent);
             text-decoration: none;
@@ -1371,7 +1378,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Är roboten säker och certifierbar för fabriksbruk?", "acceptedAnswer": {"@type": "Answer", "text": "Den är utformad för CE-certifiering enligt ISO 10218-1 och ISO 10218-2, standarderna för industrirobotar. Säkerhetskonfigurationen vid driftsättning — avskärmning, hastighetsbegränsningar och förreglingar — definieras per anläggning under pilotförberedelserna."}}, {"@type": "Question", "name": "Integreras den med vår befintliga linje?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Stationen arbetar tillsammans med era befintliga stationer och arbetsflöden — delarna kommer till roboten, så ingen ombyggnad av linjen krävs. Ett enkelt REST API ansluter den till er linjestyrning."}}, {"@type": "Question", "name": "Hur lär sig roboten en ny uppgift?", "acceptedAnswer": {"@type": "Answer", "text": "Operatörer teleopererar roboten genom uppgiften för att spela in demonstrationer, och vision-language-action-policyer som Pi0 och ACT tränas utifrån dessa demonstrationer. Autonom drift tränas per uppgift under piloten."}}, {"@type": "Question", "name": "Var tillverkas roboten?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus är designad och tillverkad i Europeiska unionen, vilket är viktigt för europeiska forskningslaboratorier och företag som bryr sig om härkomst i leveranskedjan, support och datasuveränitet."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Är roboten säker och certifierbar för fabriksbruk?", "acceptedAnswer": {"@type": "Answer", "text": "Den är utformad för CE-certifiering enligt ISO 10218-1 och ISO 10218-2, standarderna för industrirobotar. Säkerhetskonfigurationen vid driftsättning — avskärmning, hastighetsbegränsningar och förreglingar — definieras per anläggning under pilotförberedelserna."}}, {"@type": "Question", "name": "Integreras den med vår befintliga linje?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Stationen arbetar tillsammans med era befintliga stationer och arbetsflöden — delarna kommer till roboten, så ingen ombyggnad av linjen krävs. Ett enkelt REST API ansluter den till er linjestyrning."}}, {"@type": "Question", "name": "Hur lär sig roboten en ny uppgift?", "acceptedAnswer": {"@type": "Answer", "text": "En operatör teleopererar roboten genom uppgiften för att spela in demonstrationer, och vision-language-action-policyer som Pi0 och ACT tränas utifrån dessa demonstrationer. Autonom drift tränas per uppgift under piloten."}}, {"@type": "Question", "name": "Var tillverkas roboten?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus är designad och tillverkad i Europeiska unionen, vilket är viktigt för europeiska forskningslaboratorier och företag som bryr sig om härkomst i leveranskedjan, support och datalagring inom EU."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1527,14 +1534,14 @@
                         <p>Sätt samman kit och packa varierande produkter med två koordinerade armar — uppgifterna som enarmade celler har svårt för.</p>
                     </div>
                     <div class="research-card">
-                        <span class="research-icon">⚙️</span>
-                        <h3>Maskinpassning</h3>
-                        <p>Ladda och plocka ur maskiner, pressar och testfixturer — stabilt cykel efter cykel, skift efter skift.</p>
-                    </div>
-                    <div class="research-card">
                         <span class="research-icon">🗂️</span>
                         <h3>Sortering</h3>
                         <p>Sortera delar och produkter efter typ, orientering eller inspektionsresultat — styrt av vision, inte fixturer.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">⚙️</span>
+                        <h3>Maskinpassning</h3>
+                        <p>Ladda och plocka ur maskiner, pressar och testfixturer — stabilt cykel efter cykel, skift efter skift.</p>
                     </div>
                 </div>
             </div>
@@ -1550,7 +1557,7 @@
                     <div class="research-card">
                         <span class="research-icon">🥽</span>
                         <h3>1 · Demonstrera</h3>
-                        <p>Operatörer teleopererar roboten genom uppgiften via VR — ingen robotikexpertis krävs på er sida.</p>
+                        <p>En operatör teleopererar roboten genom uppgiften via VR — ingen robotikexpertis krävs på er sida.</p>
                     </div>
                     <div class="research-card">
                         <span class="research-icon">🧠</span>
@@ -1595,8 +1602,8 @@
                     </div>
                     <div class="research-card featured">
                         <span class="research-icon">🇪🇺</span>
-                        <h3>EU-baserad</h3>
-                        <p>Hårdvara, ingenjörsarbete, support och data stannar i Europa — inget beroende av utomeuropeiska leverantörer för er produktionslinje.</p>
+                        <h3>Tillverkad i Europa</h3>
+                        <p>Europeisk ingenjörskonst och tillverkning — hårdvara, support och reservdelar nära er produktionslinje, med en tydlig väg till CE.</p>
                     </div>
                     <div class="research-card featured">
                         <span class="research-icon">🛡️</span>
@@ -1716,11 +1723,11 @@
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Hur lär sig roboten en ny uppgift?</button>
-                        <div class="faq-a"><p>Operatörer teleopererar roboten genom uppgiften för att spela in demonstrationer, och vision-language-action-policyer som Pi0 och ACT tränas utifrån dessa demonstrationer. Autonom drift tränas per uppgift under piloten.</p></div>
+                        <div class="faq-a"><p>En operatör teleopererar roboten genom uppgiften för att spela in demonstrationer, och vision-language-action-policyer som Pi0 och ACT tränas utifrån dessa demonstrationer. Autonom drift tränas per uppgift under piloten.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Var tillverkas roboten?</button>
-                        <div class="faq-a"><p>Prometheus är designad och tillverkad i Europeiska unionen, vilket är viktigt för europeiska forskningslaboratorier och företag som bryr sig om härkomst i leveranskedjan, support och datasuveränitet.</p></div>
+                        <div class="faq-a"><p>Prometheus är designad och tillverkad i Europeiska unionen, vilket är viktigt för europeiska forskningslaboratorier och företag som bryr sig om härkomst i leveranskedjan, support och datalagring inom EU.</p></div>
                     </div>
                 </div>
             </div>
@@ -1768,6 +1775,7 @@
                 <p><strong>LinkedIn:</strong> <a class="contact-link" href="https://www.linkedin.com/in/ilya-pavlenkov/" target="_blank">linkedin.com/in/ilya-pavlenkov</a></p>
                 <p><strong>E-post:</strong> <a class="contact-link" onclick="openModal('email')">Klicka för att visa</a></p>
                 <p><strong>Telefon:</strong> <a class="contact-link" onclick="openModal('phoneHU')">Klicka för att visa</a></p>
+                <p class="contact-subnote">A subsidiary of Gedmond, Inc. (Delaware, USA)</p>
             </div>
         </section>
     </div>

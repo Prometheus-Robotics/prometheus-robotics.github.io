@@ -1045,6 +1045,13 @@
             margin: -1.5rem 0 1.5rem;
         }
 
+        .contact-info .contact-subnote {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            opacity: 0.75;
+            margin-top: 1rem;
+        }
+
         .contact-link {
             color: var(--color-accent);
             text-decoration: none;
@@ -1371,7 +1378,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ist der Roboter sicher und für den Fabrikeinsatz zertifizierbar?", "acceptedAnswer": {"@type": "Answer", "text": "Er ist auf die CE-Zertifizierung nach ISO 10218-1 und ISO 10218-2 ausgelegt, den Normen für Industrieroboter. Die Sicherheitskonfiguration am Einsatzort — Schutzeinrichtungen, Geschwindigkeitsbegrenzungen und Verriegelungen — wird während der Pilotvorbereitung pro Standort festgelegt."}}, {"@type": "Question", "name": "Lässt er sich in unsere bestehende Linie integrieren?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Die Station arbeitet neben Ihren bestehenden Stationen und Workflows — die Teile kommen zum Roboter, ein Umbau der Linie entfällt. Eine einfache REST-API verbindet sie mit Ihrer Liniensteuerung."}}, {"@type": "Question", "name": "Wie lernt der Roboter eine neue Aufgabe?", "acceptedAnswer": {"@type": "Answer", "text": "Bediener führen den Roboter per Teleoperation durch die Aufgabe, um Demonstrationen aufzuzeichnen; aus diesen Demos werden Vision-Language-Action-Policies wie Pi0 und ACT trainiert. Der autonome Betrieb wird während des Pilotprojekts pro Aufgabe trainiert."}}, {"@type": "Question", "name": "Wo wird der Roboter hergestellt?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus wird in der Europäischen Union entworfen und gefertigt, was für europäische Forschungslabore und Unternehmen wichtig ist, denen Lieferketten-Herkunft, Support und Datensouveränität am Herzen liegen."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ist der Roboter sicher und für den Fabrikeinsatz zertifizierbar?", "acceptedAnswer": {"@type": "Answer", "text": "Er ist auf die CE-Zertifizierung nach ISO 10218-1 und ISO 10218-2 ausgelegt, den Normen für Industrieroboter. Die Sicherheitskonfiguration am Einsatzort — Schutzeinrichtungen, Geschwindigkeitsbegrenzungen und Verriegelungen — wird während der Pilotvorbereitung pro Standort festgelegt."}}, {"@type": "Question", "name": "Lässt er sich in unsere bestehende Linie integrieren?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Die Station arbeitet neben Ihren bestehenden Stationen und Workflows — die Teile kommen zum Roboter, ein Umbau der Linie entfällt. Eine einfache REST-API verbindet sie mit Ihrer Liniensteuerung."}}, {"@type": "Question", "name": "Wie lernt der Roboter eine neue Aufgabe?", "acceptedAnswer": {"@type": "Answer", "text": "Ein Bediener führt den Roboter per Teleoperation durch die Aufgabe, um Demonstrationen aufzuzeichnen; aus diesen Demos werden Vision-Language-Action-Policies wie Pi0 und ACT trainiert. Der autonome Betrieb wird während des Pilotprojekts pro Aufgabe trainiert."}}, {"@type": "Question", "name": "Wo wird der Roboter hergestellt?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus wird in der Europäischen Union entworfen und gefertigt, was für europäische Forschungslabore und Unternehmen wichtig ist, denen Lieferketten-Herkunft, Support und EU-Datenresidenz am Herzen liegen."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1527,14 +1534,14 @@
                         <p>Stellen Sie Kits zusammen und verpacken Sie unterschiedliche Produkte mit zwei koordinierten Armen — genau die Aufgaben, an denen Einarm-Zellen scheitern.</p>
                     </div>
                     <div class="research-card">
-                        <span class="research-icon">⚙️</span>
-                        <h3>Maschinenbedienung</h3>
-                        <p>Be- und entladen Sie Maschinen, Pressen und Prüfvorrichtungen — zuverlässig, Zyklus für Zyklus, Schicht für Schicht.</p>
-                    </div>
-                    <div class="research-card">
                         <span class="research-icon">🗂️</span>
                         <h3>Sortieren</h3>
                         <p>Sortieren Sie Teile und Produkte nach Typ, Ausrichtung oder Prüfergebnis — bildgeführt statt vorrichtungsgebunden.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">⚙️</span>
+                        <h3>Maschinenbedienung</h3>
+                        <p>Be- und entladen Sie Maschinen, Pressen und Prüfvorrichtungen — zuverlässig, Zyklus für Zyklus, Schicht für Schicht.</p>
                     </div>
                 </div>
             </div>
@@ -1550,7 +1557,7 @@
                     <div class="research-card">
                         <span class="research-icon">🥽</span>
                         <h3>1 · Demonstrieren</h3>
-                        <p>Bediener führen den Roboter per VR-Teleoperation durch die Aufgabe — Robotik-Know-how ist auf Ihrer Seite nicht erforderlich.</p>
+                        <p>Ein Bediener führt den Roboter per VR-Teleoperation durch die Aufgabe — Robotik-Know-how ist auf Ihrer Seite nicht erforderlich.</p>
                     </div>
                     <div class="research-card">
                         <span class="research-icon">🧠</span>
@@ -1595,8 +1602,8 @@
                     </div>
                     <div class="research-card featured">
                         <span class="research-icon">🇪🇺</span>
-                        <h3>EU-basiert</h3>
-                        <p>Hardware, Engineering, Support und Daten bleiben in Europa — keine Übersee-Abhängigkeit für Ihre Produktionslinie.</p>
+                        <h3>In Europa gefertigt</h3>
+                        <p>Europäische Entwicklung und Fertigung — Hardware, Support und Ersatzteile nah an Ihrer Produktionslinie, mit einem klaren CE-Pfad.</p>
                     </div>
                     <div class="research-card featured">
                         <span class="research-icon">🛡️</span>
@@ -1716,11 +1723,11 @@
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Wie lernt der Roboter eine neue Aufgabe?</button>
-                        <div class="faq-a"><p>Bediener führen den Roboter per Teleoperation durch die Aufgabe, um Demonstrationen aufzuzeichnen; aus diesen Demos werden Vision-Language-Action-Policies wie Pi0 und ACT trainiert. Der autonome Betrieb wird während des Pilotprojekts pro Aufgabe trainiert.</p></div>
+                        <div class="faq-a"><p>Ein Bediener führt den Roboter per Teleoperation durch die Aufgabe, um Demonstrationen aufzuzeichnen; aus diesen Demos werden Vision-Language-Action-Policies wie Pi0 und ACT trainiert. Der autonome Betrieb wird während des Pilotprojekts pro Aufgabe trainiert.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Wo wird der Roboter hergestellt?</button>
-                        <div class="faq-a"><p>Prometheus wird in der Europäischen Union entworfen und gefertigt, was für europäische Forschungslabore und Unternehmen wichtig ist, denen Lieferketten-Herkunft, Support und Datensouveränität am Herzen liegen.</p></div>
+                        <div class="faq-a"><p>Prometheus wird in der Europäischen Union entworfen und gefertigt, was für europäische Forschungslabore und Unternehmen wichtig ist, denen Lieferketten-Herkunft, Support und EU-Datenresidenz am Herzen liegen.</p></div>
                     </div>
                 </div>
             </div>
@@ -1768,6 +1775,7 @@
                 <p><strong>LinkedIn:</strong> <a class="contact-link" href="https://www.linkedin.com/in/ilya-pavlenkov/" target="_blank">linkedin.com/in/ilya-pavlenkov</a></p>
                 <p><strong>E-Mail:</strong> <a class="contact-link" onclick="openModal('email')">Zum Anzeigen klicken</a></p>
                 <p><strong>Telefon:</strong> <a class="contact-link" onclick="openModal('phoneHU')">Zum Anzeigen klicken</a></p>
+                <p class="contact-subnote">A subsidiary of Gedmond, Inc. (Delaware, USA)</p>
             </div>
         </section>
     </div>

@@ -1045,6 +1045,13 @@
             margin: -1.5rem 0 1.5rem;
         }
 
+        .contact-info .contact-subnote {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            opacity: 0.75;
+            margin-top: 1rem;
+        }
+
         .contact-link {
             color: var(--color-accent);
             text-decoration: none;
@@ -1371,7 +1378,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Este robotul sigur și certificabil pentru utilizarea în fabrică?", "acceptedAnswer": {"@type": "Answer", "text": "Este proiectat pentru certificarea CE conform ISO 10218-1 și ISO 10218-2, standardele pentru roboții industriali. Configurația de siguranță a implementării — protecții, limite de viteză și interblocări — este definită pentru fiecare locație în timpul pregătirii proiectului-pilot."}}, {"@type": "Question", "name": "Se integrează cu linia noastră existentă?", "acceptedAnswer": {"@type": "Answer", "text": "Da. Stația funcționează alături de stațiile și fluxurile dumneavoastră existente — piesele vin la robot, deci nu este nevoie de reconstruirea liniei. Un REST API simplu o conectează la controlul liniei dumneavoastră."}}, {"@type": "Question", "name": "Cum învață robotul o sarcină nouă?", "acceptedAnswer": {"@type": "Answer", "text": "Operatorii teleoperează robotul prin sarcină pentru a înregistra demonstrații, iar politicile vision-language-action, precum Pi0 și ACT, sunt antrenate pe baza acestor demonstrații. Operarea autonomă este antrenată pentru fiecare sarcină în timpul proiectului-pilot."}}, {"@type": "Question", "name": "Unde este fabricat robotul?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus este proiectat și fabricat în Uniunea Europeană, ceea ce contează pentru laboratoarele de cercetare și companiile europene preocupate de proveniența lanțului de aprovizionare, de asistență și de suveranitatea datelor."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Este robotul sigur și certificabil pentru utilizarea în fabrică?", "acceptedAnswer": {"@type": "Answer", "text": "Este proiectat pentru certificarea CE conform ISO 10218-1 și ISO 10218-2, standardele pentru roboții industriali. Configurația de siguranță a implementării — protecții, limite de viteză și interblocări — este definită pentru fiecare locație în timpul pregătirii proiectului-pilot."}}, {"@type": "Question", "name": "Se integrează cu linia noastră existentă?", "acceptedAnswer": {"@type": "Answer", "text": "Da. Stația funcționează alături de stațiile și fluxurile dumneavoastră existente — piesele vin la robot, deci nu este nevoie de reconstruirea liniei. Un REST API simplu o conectează la controlul liniei dumneavoastră."}}, {"@type": "Question", "name": "Cum învață robotul o sarcină nouă?", "acceptedAnswer": {"@type": "Answer", "text": "Un operator teleoperează robotul prin sarcină pentru a înregistra demonstrații, iar politicile vision-language-action, precum Pi0 și ACT, sunt antrenate pe baza acestor demonstrații. Operarea autonomă este antrenată pentru fiecare sarcină în timpul proiectului-pilot."}}, {"@type": "Question", "name": "Unde este fabricat robotul?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus este proiectat și fabricat în Uniunea Europeană, ceea ce contează pentru laboratoarele de cercetare și companiile europene preocupate de proveniența lanțului de aprovizionare, de asistență și de rezidența datelor în UE."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1527,14 +1534,14 @@
                         <p>Asamblați kituri și ambalați produse variate cu două brațe coordonate — sarcinile cu care celulele cu un singur braț se descurcă greu.</p>
                     </div>
                     <div class="research-card">
-                        <span class="research-icon">⚙️</span>
-                        <h3>Alimentarea mașinilor</h3>
-                        <p>Încărcați și descărcați mașini, prese și dispozitive de testare — constant, ciclu după ciclu, tură după tură.</p>
-                    </div>
-                    <div class="research-card">
                         <span class="research-icon">🗂️</span>
                         <h3>Sortare</h3>
                         <p>Sortați piese și produse după tip, orientare sau rezultatul inspecției — ghidat de viziune, nu de dispozitive fixe.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">⚙️</span>
+                        <h3>Alimentarea mașinilor</h3>
+                        <p>Încărcați și descărcați mașini, prese și dispozitive de testare — constant, ciclu după ciclu, tură după tură.</p>
                     </div>
                 </div>
             </div>
@@ -1550,7 +1557,7 @@
                     <div class="research-card">
                         <span class="research-icon">🥽</span>
                         <h3>1 · Demonstrare</h3>
-                        <p>Operatorii teleoperează robotul prin sarcină folosind VR — fără a fi nevoie de expertiză în robotică din partea dumneavoastră.</p>
+                        <p>Un operator teleoperează robotul prin sarcină folosind VR — fără a fi nevoie de expertiză în robotică din partea dumneavoastră.</p>
                     </div>
                     <div class="research-card">
                         <span class="research-icon">🧠</span>
@@ -1595,8 +1602,8 @@
                     </div>
                     <div class="research-card featured">
                         <span class="research-icon">🇪🇺</span>
-                        <h3>Cu sediul în UE</h3>
-                        <p>Hardware-ul, ingineria, suportul și datele rămân în Europa — fără dependențe de peste ocean pentru linia dumneavoastră de producție.</p>
+                        <h3>Fabricat în Europa</h3>
+                        <p>Inginerie și producție europeană — hardware, suport și piese de schimb aproape de linia dumneavoastră de producție, cu un traseu CE clar.</p>
                     </div>
                     <div class="research-card featured">
                         <span class="research-icon">🛡️</span>
@@ -1716,11 +1723,11 @@
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Cum învață robotul o sarcină nouă?</button>
-                        <div class="faq-a"><p>Operatorii teleoperează robotul prin sarcină pentru a înregistra demonstrații, iar politicile vision-language-action, precum Pi0 și ACT, sunt antrenate pe baza acestor demonstrații. Operarea autonomă este antrenată pentru fiecare sarcină în timpul proiectului-pilot.</p></div>
+                        <div class="faq-a"><p>Un operator teleoperează robotul prin sarcină pentru a înregistra demonstrații, iar politicile vision-language-action, precum Pi0 și ACT, sunt antrenate pe baza acestor demonstrații. Operarea autonomă este antrenată pentru fiecare sarcină în timpul proiectului-pilot.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Unde este fabricat robotul?</button>
-                        <div class="faq-a"><p>Prometheus este proiectat și fabricat în Uniunea Europeană, ceea ce contează pentru laboratoarele de cercetare și companiile europene preocupate de proveniența lanțului de aprovizionare, de asistență și de suveranitatea datelor.</p></div>
+                        <div class="faq-a"><p>Prometheus este proiectat și fabricat în Uniunea Europeană, ceea ce contează pentru laboratoarele de cercetare și companiile europene preocupate de proveniența lanțului de aprovizionare, de asistență și de rezidența datelor în UE.</p></div>
                     </div>
                 </div>
             </div>
@@ -1768,6 +1775,7 @@
                 <p><strong>LinkedIn:</strong> <a class="contact-link" href="https://www.linkedin.com/in/ilya-pavlenkov/" target="_blank">linkedin.com/in/ilya-pavlenkov</a></p>
                 <p><strong>Email:</strong> <a class="contact-link" onclick="openModal('email')">Faceți clic pentru a dezvălui</a></p>
                 <p><strong>Telefon:</strong> <a class="contact-link" onclick="openModal('phoneHU')">Faceți clic pentru a dezvălui</a></p>
+                <p class="contact-subnote">A subsidiary of Gedmond, Inc. (Delaware, USA)</p>
             </div>
         </section>
     </div>

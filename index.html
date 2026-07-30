@@ -1045,6 +1045,13 @@
             margin: -1.5rem 0 1.5rem;
         }
 
+        .contact-info .contact-subnote {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            opacity: 0.75;
+            margin-top: 1rem;
+        }
+
         .contact-link {
             color: var(--color-accent);
             text-decoration: none;
@@ -1371,7 +1378,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is the robot safe and certifiable for factory use?", "acceptedAnswer": {"@type": "Answer", "text": "It is designed for CE certification under ISO 10218-1 and ISO 10218-2, the standards for industrial robots. The deployment safety configuration — guarding, speed limits, and interlocks — is defined per site during pilot preparation."}}, {"@type": "Question", "name": "Does it integrate with our existing line?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The station works alongside your existing stations and workflows — parts come to the robot, so there is no line rebuild. A simple REST API connects it to your line control."}}, {"@type": "Question", "name": "How does the robot learn a new task?", "acceptedAnswer": {"@type": "Answer", "text": "Operators teleoperate the robot through the task to record demonstrations, and vision-language-action policies such as Pi0 and ACT are trained from those demos. Autonomous operation is trained per task during the pilot."}}, {"@type": "Question", "name": "Where is the robot made?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus is designed and manufactured in the European Union, which matters for European research labs and companies that care about supply-chain provenance, support, and data sovereignty."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is the robot safe and certifiable for factory use?", "acceptedAnswer": {"@type": "Answer", "text": "It is designed for CE certification under ISO 10218-1 and ISO 10218-2, the standards for industrial robots. The deployment safety configuration — guarding, speed limits, and interlocks — is defined per site during pilot preparation."}}, {"@type": "Question", "name": "Does it integrate with our existing line?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The station works alongside your existing stations and workflows — parts come to the robot, so there is no line rebuild. A simple REST API connects it to your line control."}}, {"@type": "Question", "name": "How does the robot learn a new task?", "acceptedAnswer": {"@type": "Answer", "text": "An operator teleoperates the robot through the task to record demonstrations, and vision-language-action policies such as Pi0 and ACT are trained from those demos. Autonomous operation is trained per task during the pilot."}}, {"@type": "Question", "name": "Where is the robot made?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus is designed and manufactured in the European Union, which matters for European research labs and companies that care about supply-chain provenance, support, and EU data residency."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1527,14 +1534,14 @@
                         <p>Assemble kits and pack varied products with two coordinated arms — the tasks single-arm cells struggle with.</p>
                     </div>
                     <div class="research-card">
-                        <span class="research-icon">⚙️</span>
-                        <h3>Machine Tending</h3>
-                        <p>Load and unload machines, presses, and test fixtures — steady cycle after cycle, shift after shift.</p>
-                    </div>
-                    <div class="research-card">
                         <span class="research-icon">🗂️</span>
                         <h3>Sorting</h3>
                         <p>Sort parts and products by type, orientation, or inspection result — guided by vision, not fixtures.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">⚙️</span>
+                        <h3>Machine Tending</h3>
+                        <p>Load and unload machines, presses, and test fixtures — steady cycle after cycle, shift after shift.</p>
                     </div>
                 </div>
             </div>
@@ -1550,7 +1557,7 @@
                     <div class="research-card">
                         <span class="research-icon">🥽</span>
                         <h3>1 · Demonstrate</h3>
-                        <p>Operators teleoperate the robot through the task via VR — no robotics expertise required on your side.</p>
+                        <p>An operator teleoperates the robot through the task via VR — no robotics expertise required on your side.</p>
                     </div>
                     <div class="research-card">
                         <span class="research-icon">🧠</span>
@@ -1595,8 +1602,8 @@
                     </div>
                     <div class="research-card featured">
                         <span class="research-icon">🇪🇺</span>
-                        <h3>EU-based</h3>
-                        <p>Hardware, engineering, support, and data stay in Europe — no overseas dependency for your production line.</p>
+                        <h3>Made in Europe</h3>
+                        <p>European engineering and manufacturing — hardware, support and spare parts close to your production line, with a clear CE path.</p>
                     </div>
                     <div class="research-card featured">
                         <span class="research-icon">🛡️</span>
@@ -1716,11 +1723,11 @@
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">How does the robot learn a new task?</button>
-                        <div class="faq-a"><p>Operators teleoperate the robot through the task to record demonstrations, and vision-language-action policies such as Pi0 and ACT are trained from those demos. Autonomous operation is trained per task during the pilot.</p></div>
+                        <div class="faq-a"><p>An operator teleoperates the robot through the task to record demonstrations, and vision-language-action policies such as Pi0 and ACT are trained from those demos. Autonomous operation is trained per task during the pilot.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Where is the robot made?</button>
-                        <div class="faq-a"><p>Prometheus is designed and manufactured in the European Union, which matters for European research labs and companies that care about supply-chain provenance, support, and data sovereignty.</p></div>
+                        <div class="faq-a"><p>Prometheus is designed and manufactured in the European Union, which matters for European research labs and companies that care about supply-chain provenance, support, and EU data residency.</p></div>
                     </div>
                 </div>
             </div>
@@ -1768,6 +1775,7 @@
                 <p><strong>LinkedIn:</strong> <a class="contact-link" href="https://www.linkedin.com/in/ilya-pavlenkov/" target="_blank">linkedin.com/in/ilya-pavlenkov</a></p>
                 <p><strong>Email:</strong> <a class="contact-link" onclick="openModal('email')">Click to reveal</a></p>
                 <p><strong>Phone:</strong> <a class="contact-link" onclick="openModal('phoneHU')">Click to reveal</a></p>
+                <p class="contact-subnote">A subsidiary of Gedmond, Inc. (Delaware, USA)</p>
             </div>
         </section>
     </div>

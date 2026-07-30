@@ -38,7 +38,7 @@ Sort parts and products by type, orientation, or inspection result — guided by
 Trained by Demonstration, Not Programmed
 Autonomous operation is trained per task during the pilot — through a data pipeline, not months of custom programming.
 1 · Demonstrate
-Operators teleoperate the robot through the task via VR — no robotics expertise required on your side.
+An operator teleoperates the robot through the task via VR — no robotics expertise required on your side.
 2 · Train
 Recorded demonstrations train VLA (vision-language-action) policies for that specific task and station.
 3 · Run
@@ -49,8 +49,8 @@ Why Manufacturers Choose Prometheus
 The hard-to-staff line jobs stay covered — without rebuilding the line around a rigid cell.
 Retrainable across tasks
 A new product or task means new demonstrations, not new tooling. There is no fixed tooling to rebuild.
-EU-based
-Hardware, engineering, support, and data stay in Europe — no overseas dependency for your production line.
+Made in Europe
+European engineering and manufacturing — hardware, support and spare parts close to your production line, with a clear CE path.
 Certification path defined
 Designed for CE certification under ISO 10218-1 and ISO 10218-2, the standards for industrial robots.
 Dual-arm upper body — the manipulation station configuration
@@ -79,6 +79,6 @@ A1: It is designed for CE certification under ISO 10218-1 and ISO 10218-2, the s
 Q2: Does it integrate with our existing line?
 A2: Yes. The station works alongside your existing stations and workflows — parts come to the robot, so there is no line rebuild. A simple REST API connects it to your line control.
 Q3: How does the robot learn a new task?
-A3: Operators teleoperate the robot through the task to record demonstrations, and vision-language-action policies such as Pi0 and ACT are trained from those demos. Autonomous operation is trained per task during the pilot.
+A3: An operator teleoperates the robot through the task to record demonstrations, and vision-language-action policies such as Pi0 and ACT are trained from those demos. Autonomous operation is trained per task during the pilot.
 Q4: Where is the robot made?
-A4: Prometheus is designed and manufactured in the European Union, which matters for European research labs and companies that care about supply-chain provenance, support, and data sovereignty.
+A4: Prometheus is designed and manufactured in the European Union, which matters for European research labs and companies that care about supply-chain provenance, support, and EU data residency.

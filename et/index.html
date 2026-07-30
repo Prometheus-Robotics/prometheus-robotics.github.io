@@ -1045,6 +1045,13 @@
             margin: -1.5rem 0 1.5rem;
         }
 
+        .contact-info .contact-subnote {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            opacity: 0.75;
+            margin-top: 1rem;
+        }
+
         .contact-link {
             color: var(--color-accent);
             text-decoration: none;
@@ -1371,7 +1378,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Kas robot on tehases kasutamiseks ohutu ja sertifitseeritav?", "acceptedAnswer": {"@type": "Answer", "text": "See on projekteeritud CE-sertifitseerimiseks tööstusrobotite standardite ISO 10218-1 ja ISO 10218-2 järgi. Juurutuse ohutuskonfiguratsioon — piirded, kiiruspiirangud ja blokeeringud — määratletakse iga asukoha jaoks pilootprojekti ettevalmistamise käigus."}}, {"@type": "Question", "name": "Kas see integreerub meie olemasoleva liiniga?", "acceptedAnswer": {"@type": "Answer", "text": "Jah. Jaam töötab teie olemasolevate jaamade ja töövoogude kõrval — osad tulevad roboti juurde, seega pole liini vaja ümber ehitada. Lihtne REST API ühendab selle teie liinijuhtimisega."}}, {"@type": "Question", "name": "Kuidas robot uue ülesande selgeks õpib?", "acceptedAnswer": {"@type": "Answer", "text": "Operaatorid teleopereerivad robotit läbi ülesande, et salvestada demonstratsioone, ning nende demode põhjal treenitakse nägemis-keele-tegevuse poliitikad nagu Pi0 ja ACT. Autonoomne töö treenitakse iga ülesande jaoks pilootprojekti käigus."}}, {"@type": "Question", "name": "Kus robot valmistatakse?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus on projekteeritud ja toodetud Euroopa Liidus, mis on oluline Euroopa uurimislaboritele ja ettevõtetele, kes hoolivad tarneahela päritolust, toest ja andmesuveräänsusest."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Kas robot on tehases kasutamiseks ohutu ja sertifitseeritav?", "acceptedAnswer": {"@type": "Answer", "text": "See on projekteeritud CE-sertifitseerimiseks tööstusrobotite standardite ISO 10218-1 ja ISO 10218-2 järgi. Juurutuse ohutuskonfiguratsioon — piirded, kiiruspiirangud ja blokeeringud — määratletakse iga asukoha jaoks pilootprojekti ettevalmistamise käigus."}}, {"@type": "Question", "name": "Kas see integreerub meie olemasoleva liiniga?", "acceptedAnswer": {"@type": "Answer", "text": "Jah. Jaam töötab teie olemasolevate jaamade ja töövoogude kõrval — osad tulevad roboti juurde, seega pole liini vaja ümber ehitada. Lihtne REST API ühendab selle teie liinijuhtimisega."}}, {"@type": "Question", "name": "Kuidas robot uue ülesande selgeks õpib?", "acceptedAnswer": {"@type": "Answer", "text": "Operaator teleopereerib robotit läbi ülesande, et salvestada demonstratsioone, ning nende demode põhjal treenitakse nägemis-keele-tegevuse poliitikad nagu Pi0 ja ACT. Autonoomne töö treenitakse iga ülesande jaoks pilootprojekti käigus."}}, {"@type": "Question", "name": "Kus robot valmistatakse?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus on projekteeritud ja toodetud Euroopa Liidus, mis on oluline Euroopa uurimislaboritele ja ettevõtetele, kes hoolivad tarneahela päritolust, toest ja EU andmeresidentsusest."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1527,14 +1534,14 @@
                         <p>Pange kokku komplekte ja pakkige erinevaid tooteid kahe koordineeritud käsivarrega — ülesanded, millega ühe käsivarrega rakud hätta jäävad.</p>
                     </div>
                     <div class="research-card">
-                        <span class="research-icon">⚙️</span>
-                        <h3>Masinate teenindamine</h3>
-                        <p>Laadige ja tühjendage masinaid, presse ja testrakiseid — stabiilselt tsükkel tsükli järel, vahetus vahetuse järel.</p>
-                    </div>
-                    <div class="research-card">
                         <span class="research-icon">🗂️</span>
                         <h3>Sorteerimine</h3>
                         <p>Sorteerige osi ja tooteid tüübi, asendi või kontrollitulemuse järgi — juhituna masinnägemisest, mitte rakistest.</p>
+                    </div>
+                    <div class="research-card">
+                        <span class="research-icon">⚙️</span>
+                        <h3>Masinate teenindamine</h3>
+                        <p>Laadige ja tühjendage masinaid, presse ja testrakiseid — stabiilselt tsükkel tsükli järel, vahetus vahetuse järel.</p>
                     </div>
                 </div>
             </div>
@@ -1550,7 +1557,7 @@
                     <div class="research-card">
                         <span class="research-icon">🥽</span>
                         <h3>1 · Demonstreerimine</h3>
-                        <p>Operaatorid teleopereerivad robotit läbi ülesande VR-i abil — teie poolelt pole robootikateadmisi vaja.</p>
+                        <p>Operaator teleopereerib robotit läbi ülesande VR-i abil — teie poolelt pole robootikateadmisi vaja.</p>
                     </div>
                     <div class="research-card">
                         <span class="research-icon">🧠</span>
@@ -1595,8 +1602,8 @@
                     </div>
                     <div class="research-card featured">
                         <span class="research-icon">🇪🇺</span>
-                        <h3>EL-is paiknev</h3>
-                        <p>Riistvara, inseneritöö, tugi ja andmed jäävad Euroopasse — teie tootmisliinil pole sõltuvust ülemerest.</p>
+                        <h3>Valmistatud Euroopas</h3>
+                        <p>Euroopa inseneritöö ja tootmine — riistvara, tugi ja varuosad teie tootmisliini lähedal, koos selge CE-teega.</p>
                     </div>
                     <div class="research-card featured">
                         <span class="research-icon">🛡️</span>
@@ -1716,11 +1723,11 @@
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Kuidas robot uue ülesande selgeks õpib?</button>
-                        <div class="faq-a"><p>Operaatorid teleopereerivad robotit läbi ülesande, et salvestada demonstratsioone, ning nende demode põhjal treenitakse nägemis-keele-tegevuse poliitikad nagu Pi0 ja ACT. Autonoomne töö treenitakse iga ülesande jaoks pilootprojekti käigus.</p></div>
+                        <div class="faq-a"><p>Operaator teleopereerib robotit läbi ülesande, et salvestada demonstratsioone, ning nende demode põhjal treenitakse nägemis-keele-tegevuse poliitikad nagu Pi0 ja ACT. Autonoomne töö treenitakse iga ülesande jaoks pilootprojekti käigus.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Kus robot valmistatakse?</button>
-                        <div class="faq-a"><p>Prometheus on projekteeritud ja toodetud Euroopa Liidus, mis on oluline Euroopa uurimislaboritele ja ettevõtetele, kes hoolivad tarneahela päritolust, toest ja andmesuveräänsusest.</p></div>
+                        <div class="faq-a"><p>Prometheus on projekteeritud ja toodetud Euroopa Liidus, mis on oluline Euroopa uurimislaboritele ja ettevõtetele, kes hoolivad tarneahela päritolust, toest ja EU andmeresidentsusest.</p></div>
                     </div>
                 </div>
             </div>
@@ -1768,6 +1775,7 @@
                 <p><strong>LinkedIn:</strong> <a class="contact-link" href="https://www.linkedin.com/in/ilya-pavlenkov/" target="_blank">linkedin.com/in/ilya-pavlenkov</a></p>
                 <p><strong>E-post:</strong> <a class="contact-link" onclick="openModal('email')">Klõpsa avamiseks</a></p>
                 <p><strong>Telefon:</strong> <a class="contact-link" onclick="openModal('phoneHU')">Klõpsa avamiseks</a></p>
+                <p class="contact-subnote">A subsidiary of Gedmond, Inc. (Delaware, USA)</p>
             </div>
         </section>
     </div>
