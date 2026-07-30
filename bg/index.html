@@ -16,10 +16,10 @@
     <meta name="theme-color" content="#0a0a0a">
     <meta name="robots" content="index, follow">
     <meta property="og:site_name" content="Prometheus Robotics">
-    <meta property="og:image" content="https://meetprometheus.com/robot.png">
-    <meta property="og:image:alt" content="Prometheus humanoid robot">
+    <meta property="og:image" content="https://meetprometheus.com/og-cover.png">
+    <meta property="og:image:alt" content="Prometheus dual-arm robot on tripod">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://meetprometheus.com/robot.png">
+    <meta name="twitter:image" content="https://meetprometheus.com/og-cover.png">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -524,8 +524,12 @@
         .specs-robot .robot-img {
             position: relative;
             z-index: 2;
-            max-width: 140%;
+            max-width: 100%;
+            max-height: 620px;
+            width: auto;
             height: auto;
+            border-radius: 16px;
+            border: 1px solid var(--color-border);
         }
 
         .robot-container {
@@ -1680,7 +1684,7 @@
                     <div class="modules-section">
                         <div class="specs-robot">
                             <div class="robot-glow"></div>
-                            <img src="/robot.png" alt="Prometheus Humanoid Robot" class="robot-img">
+                            <img src="/robot.png" alt="Prometheus dual-arm robot on tripod" class="robot-img">
                         </div>
                     </div>
                 </div>

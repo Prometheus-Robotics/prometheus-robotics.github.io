@@ -524,8 +524,12 @@
         .specs-robot .robot-img {
             position: relative;
             z-index: 2;
-            max-width: 140%;
+            max-width: 100%;
+            max-height: 620px;
+            width: auto;
             height: auto;
+            border-radius: 16px;
+            border: 1px solid var(--color-border);
         }
 
         .robot-container {
@@ -1631,7 +1635,7 @@
                     <div class="modules-section">
                         <div class="specs-robot">
                             <div class="robot-glow"></div>
-                            <img src="/robot.png" alt="Prometheus Humanoid Robot" class="robot-img">
+                            <img src="/robot.png" alt="Prometheus dual-arm robot on tripod" class="robot-img">
                         </div>
                         <h3 class="modules-title">Future Modules</h3>
                         <div class="modules-grid">
