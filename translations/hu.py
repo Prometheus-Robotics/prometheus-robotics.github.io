@@ -248,7 +248,7 @@ FAQ_RESEARCH = [
 # Home-page FAQ (visible accordion + JSON-LD), same order as faq_data.FAQ_HOME
 FAQ_HOME = [
     ('Biztonságos és tanúsítható-e a robot gyári használatra?',
-     'A robotot CE-tanúsításra terveztük az ipari robotokra vonatkozó ISO 10218-1 és ISO 10218-2 szabványok szerint. A telepítés biztonsági konfigurációját — a védőburkolatokat, sebességkorlátokat és reteszeléseket — a pilot előkészítése során, telephelyenként határozzuk meg.'),
+     'A robotot CE-tanúsításra terveztük az ipari robotokra vonatkozó ISO 10218 szabvány szerint. A telepítés biztonsági konfigurációját — a védőburkolatokat, sebességkorlátokat és reteszeléseket — a pilot előkészítése során, telephelyenként határozzuk meg.'),
     ('Integrálható-e a meglévő gyártósorunkkal?',
      'Igen. Az állomás a meglévő állomásai és munkafolyamatai mellett dolgozik — az alkatrészek érkeznek a robothoz, így nincs szükség a sor átépítésére. Egy egyszerű REST API kapcsolja össze a sorvezérlésével.'),
     ('Hogyan tanul meg a robot egy új feladatot?',

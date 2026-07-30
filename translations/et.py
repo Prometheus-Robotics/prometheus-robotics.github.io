@@ -248,7 +248,7 @@ FAQ_RESEARCH = [
 # Home-page FAQ (visible accordion + JSON-LD), same order as faq_data.FAQ_HOME
 FAQ_HOME = [
     ('Kas robot on tehases kasutamiseks ohutu ja sertifitseeritav?',
-     'See on projekteeritud CE-sertifitseerimiseks tööstusrobotite standardite ISO 10218-1 ja ISO 10218-2 järgi. Juurutuse ohutuskonfiguratsioon — piirded, kiiruspiirangud ja blokeeringud — määratletakse iga asukoha jaoks pilootprojekti ettevalmistamise käigus.'),
+     'See on projekteeritud CE-sertifitseerimiseks tööstusrobotite standardi ISO 10218 järgi. Juurutuse ohutuskonfiguratsioon — piirded, kiiruspiirangud ja blokeeringud — määratletakse iga asukoha jaoks pilootprojekti ettevalmistamise käigus.'),
     ('Kas see integreerub meie olemasoleva liiniga?',
      'Jah. Jaam töötab teie olemasolevate jaamade ja töövoogude kõrval — osad tulevad roboti juurde, seega pole liini vaja ümber ehitada. Lihtne REST API ühendab selle teie liinijuhtimisega.'),
     ('Kuidas robot uue ülesande selgeks õpib?',

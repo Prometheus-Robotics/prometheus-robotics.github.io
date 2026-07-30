@@ -248,7 +248,7 @@ FAQ_RESEARCH = [
 # Home-page FAQ (visible accordion + JSON-LD), same order as faq_data.FAQ_HOME
 FAQ_HOME = [
     ('Je robot bezpečný a certifikovatelný pro provoz v továrně?',
-     'Je navržen pro certifikaci CE podle norem ISO 10218-1 a ISO 10218-2, standardů pro průmyslové roboty. Bezpečnostní konfigurace nasazení — ochranné kryty, omezení rychlosti a bezpečnostní blokády — se definuje pro každé pracoviště během přípravy pilotního projektu.'),
+     'Je navržen pro certifikaci CE podle normy ISO 10218, standardu pro průmyslové roboty. Bezpečnostní konfigurace nasazení — ochranné kryty, omezení rychlosti a bezpečnostní blokády — se definuje pro každé pracoviště během přípravy pilotního projektu.'),
     ('Integruje se s naší stávající linkou?',
      'Ano. Stanice pracuje vedle vašich stávajících stanic a workflow — díly přicházejí k robotu, takže není nutná žádná přestavba linky. Jednoduché REST API ji propojí s vaším řízením linky.'),
     ('Jak se robot učí nový úkol?',

@@ -75,7 +75,7 @@ Description: A stationary dual-arm robot that learns industrial tasks from demon
 ### FAQ_HOME (translate pairs 1-3; pair 4 must be COPIED verbatim from the last
 ### pair of the FAQ_RESEARCH list already present in your language file)
 Q1: Is the robot safe and certifiable for factory use?
-A1: It is designed for CE certification under ISO 10218-1 and ISO 10218-2, the standards for industrial robots. The deployment safety configuration — guarding, speed limits, and interlocks — is defined per site during pilot preparation.
+A1: It is designed for CE certification under ISO 10218, the standard for industrial robots. The deployment safety configuration — guarding, speed limits, and interlocks — is defined per site during pilot preparation.
 Q2: Does it integrate with our existing line?
 A2: Yes. The station works alongside your existing stations and workflows — parts come to the robot, so there is no line rebuild. A simple REST API connects it to your line control.
 Q3: How does the robot learn a new task?

@@ -248,7 +248,7 @@ FAQ_RESEARCH = [
 # Home-page FAQ (industrial), same order as faq_data.FAQ_HOME
 FAQ_HOME = [
     ('Este robotul sigur și certificabil pentru utilizarea în fabrică?',
-     'Este proiectat pentru certificarea CE conform ISO 10218-1 și ISO 10218-2, standardele pentru roboții industriali. Configurația de siguranță a implementării — protecții, limite de viteză și interblocări — este definită pentru fiecare locație în timpul pregătirii proiectului-pilot.'),
+     'Este proiectat pentru certificarea CE conform ISO 10218, standardul pentru roboții industriali. Configurația de siguranță a implementării — protecții, limite de viteză și interblocări — este definită pentru fiecare locație în timpul pregătirii proiectului-pilot.'),
     ('Se integrează cu linia noastră existentă?',
      'Da. Stația funcționează alături de stațiile și fluxurile dumneavoastră existente — piesele vin la robot, deci nu este nevoie de reconstruirea liniei. Un REST API simplu o conectează la controlul liniei dumneavoastră.'),
     ('Cum învață robotul o sarcină nouă?',

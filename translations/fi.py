@@ -248,7 +248,7 @@ FAQ_RESEARCH = [
 # Home-page FAQ (visible accordion + JSON-LD), same order as faq_data.FAQ_HOME
 FAQ_HOME = [
     ('Onko robotti turvallinen ja sertifioitavissa tehdaskäyttöön?',
-     'Se on suunniteltu CE-sertifioitavaksi teollisuusrobottien standardien ISO 10218-1 ja ISO 10218-2 mukaisesti. Käyttöönoton turvallisuuskonfiguraatio — suojaukset, nopeusrajoitukset ja turvalukitukset — määritellään kohdekohtaisesti pilotin valmistelun aikana.'),
+     'Se on suunniteltu CE-sertifioitavaksi teollisuusrobottien standardin ISO 10218 mukaisesti. Käyttöönoton turvallisuuskonfiguraatio — suojaukset, nopeusrajoitukset ja turvalukitukset — määritellään kohdekohtaisesti pilotin valmistelun aikana.'),
     ('Integroituuko se olemassa olevaan linjaamme?',
      'Kyllä. Asema toimii nykyisten asemienne ja työnkulkujenne rinnalla — osat tulevat robotille, joten linjaa ei tarvitse rakentaa uudelleen. Yksinkertainen REST API yhdistää sen linjanohjaukseenne.'),
     ('Miten robotti oppii uuden tehtävän?',

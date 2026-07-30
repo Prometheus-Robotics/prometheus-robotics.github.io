@@ -249,7 +249,7 @@ FAQ_RESEARCH = [
 # Home-page FAQ (visible accordion + JSON-LD), same order as faq_data.FAQ_HOME
 FAQ_HOME = [
     ('Vai robots ir drošs un sertificējams lietošanai rūpnīcā?',
-     'Tas ir projektēts CE sertifikācijai saskaņā ar ISO 10218-1 un ISO 10218-2 — rūpniecisko robotu standartiem. Ieviešanas drošības konfigurācija — norobežojumi, ātruma ierobežojumi un bloķēšanas mehānismi — tiek definēta katram objektam pilotprojekta sagatavošanas laikā.'),
+     'Tas ir projektēts CE sertifikācijai saskaņā ar ISO 10218 — rūpniecisko robotu standartu. Ieviešanas drošības konfigurācija — norobežojumi, ātruma ierobežojumi un bloķēšanas mehānismi — tiek definēta katram objektam pilotprojekta sagatavošanas laikā.'),
     ('Vai tas integrējas ar mūsu esošo līniju?',
      'Jā. Stacija darbojas līdzās jūsu esošajām stacijām un darbplūsmām — detaļas nonāk pie robota, tāpēc līnijas pārbūve nav nepieciešama. Vienkāršs REST API savieno to ar jūsu līnijas vadību.'),
     ('Kā robots apgūst jaunu uzdevumu?',

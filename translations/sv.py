@@ -248,7 +248,7 @@ FAQ_RESEARCH = [
 # Home-page FAQ (visible accordion + JSON-LD), same order as faq_data.FAQ_HOME
 FAQ_HOME = [
     ('Är roboten säker och certifierbar för fabriksbruk?',
-     'Den är utformad för CE-certifiering enligt ISO 10218-1 och ISO 10218-2, standarderna för industrirobotar. Säkerhetskonfigurationen vid driftsättning — avskärmning, hastighetsbegränsningar och förreglingar — definieras per anläggning under pilotförberedelserna.'),
+     'Den är utformad för CE-certifiering enligt ISO 10218, standarden för industrirobotar. Säkerhetskonfigurationen vid driftsättning — avskärmning, hastighetsbegränsningar och förreglingar — definieras per anläggning under pilotförberedelserna.'),
     ('Integreras den med vår befintliga linje?',
      'Ja. Stationen arbetar tillsammans med era befintliga stationer och arbetsflöden — delarna kommer till roboten, så ingen ombyggnad av linjen krävs. Ett enkelt REST API ansluter den till er linjestyrning.'),
     ('Hur lär sig roboten en ny uppgift?',

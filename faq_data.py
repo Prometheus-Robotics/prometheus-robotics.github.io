@@ -9,7 +9,7 @@ FAQ_RESEARCH -> /research/
 
 FAQ_HOME = [
     ("Is the robot safe and certifiable for factory use?",
-     "It is designed for CE certification under ISO 10218-1 and ISO 10218-2, the standards for industrial robots. The deployment safety configuration — guarding, speed limits, and interlocks — is defined per site during pilot preparation."),
+     "It is designed for CE certification under ISO 10218, the standard for industrial robots. The deployment safety configuration — guarding, speed limits, and interlocks — is defined per site during pilot preparation."),
     ("Does it integrate with our existing line?",
      "Yes. The station works alongside your existing stations and workflows — parts come to the robot, so there is no line rebuild. A simple REST API connects it to your line control."),
     ("How does the robot learn a new task?",
