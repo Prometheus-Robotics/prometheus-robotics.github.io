@@ -214,7 +214,7 @@ T = {
     "Made in Europe": "Európában készült",
     "European engineering and manufacturing — hardware, support and spare parts close to your production line, with a clear CE path.": "Európai mérnöki munka és gyártás — hardver, támogatás és pótalkatrészek a gyártósora közelében, világos CE-tanúsítási úttal.",
     "Certification path defined": "Kijelölt tanúsítási út",
-    "Designed for CE certification under ISO 10218-1 and ISO 10218-2, the standards for industrial robots.": "CE-tanúsításra tervezve az ipari robotokra vonatkozó ISO 10218-1 és ISO 10218-2 szabványok szerint.",
+    "Designed for CE certification under ISO 10218, the standard for industrial robots.": "CE-tanúsításra tervezve az ipari robotokra vonatkozó ISO 10218 szabvány szerint.",
     "Dual-arm upper body — the manipulation station configuration": "Kétkarú felsőtest — a manipulációs állomás konfigurációja",
     "Deployment Options": "Telepítési lehetőségek",
     "Fixed base / motorized linear axis (rail)": "Fix alapzat / motoros lineáris tengely (sín)",

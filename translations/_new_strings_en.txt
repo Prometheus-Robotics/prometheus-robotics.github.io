@@ -52,7 +52,7 @@ A new product or task means new demonstrations, not new tooling. There is no fix
 Made in Europe
 European engineering and manufacturing — hardware, support and spare parts close to your production line, with a clear CE path.
 Certification path defined
-Designed for CE certification under ISO 10218-1 and ISO 10218-2, the standards for industrial robots.
+Designed for CE certification under ISO 10218, the standard for industrial robots.
 Dual-arm upper body — the manipulation station configuration
 Deployment Options
 Fixed base / motorized linear axis (rail)

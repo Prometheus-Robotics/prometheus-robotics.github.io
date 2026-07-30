@@ -214,7 +214,7 @@ T = {
     "Made in Europe": "Ražots Eiropā",
     "European engineering and manufacturing — hardware, support and spare parts close to your production line, with a clear CE path.": "Eiropas inženierija un ražošana — aparatūra, atbalsts un rezerves daļas tuvu jūsu ražošanas līnijai, ar skaidru CE sertifikācijas ceļu.",
     "Certification path defined": "Definēts sertifikācijas ceļš",
-    "Designed for CE certification under ISO 10218-1 and ISO 10218-2, the standards for industrial robots.": "Projektēts CE sertifikācijai saskaņā ar ISO 10218-1 un ISO 10218-2 — rūpniecisko robotu standartiem.",
+    "Designed for CE certification under ISO 10218, the standard for industrial robots.": "Projektēts CE sertifikācijai saskaņā ar ISO 10218 — rūpniecisko robotu standartu.",
     "Dual-arm upper body — the manipulation station configuration": "Divroku augšķermenis — manipulācijas stacijas konfigurācija",
     "Deployment Options": "Uzstādīšanas iespējas",
     "Fixed base / motorized linear axis (rail)": "Fiksēta pamatne / motorizēta lineārā ass (sliede)",

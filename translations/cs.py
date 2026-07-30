@@ -214,7 +214,7 @@ T = {
     "Made in Europe": "Vyrobeno v Evropě",
     "European engineering and manufacturing — hardware, support and spare parts close to your production line, with a clear CE path.": "Evropský vývoj a výroba — hardware, podpora a náhradní díly blízko vaší výrobní linky, s jasnou cestou k certifikaci CE.",
     "Certification path defined": "Definovaná cesta k certifikaci",
-    "Designed for CE certification under ISO 10218-1 and ISO 10218-2, the standards for industrial robots.": "Navrženo pro certifikaci CE podle norem ISO 10218-1 a ISO 10218-2, standardů pro průmyslové roboty.",
+    "Designed for CE certification under ISO 10218, the standard for industrial robots.": "Navrženo pro certifikaci CE podle normy ISO 10218, standardu pro průmyslové roboty.",
     "Dual-arm upper body — the manipulation station configuration": "Dvouramenná horní část těla — konfigurace manipulační stanice",
     "Deployment Options": "Možnosti nasazení",
     "Fixed base / motorized linear axis (rail)": "Pevná základna / motorizovaná lineární osa (pojezd)",
