@@ -12,6 +12,9 @@ SEO = {
 }
 
 T = {
+    "Modules": "Moduler",
+    "Rail Module": "Rälsmodul",
+    "Motorized linear axis: the robot travels along a rail to serve multiple stations on the line.": "Motoriserad linjäraxel: roboten rör sig längs en räls och betjänar flera stationer på linjen.",
     "160cm on tripod (172cm on legs)": "160cm på stativ (172cm på ben)",
     "US headquarters": 'Huvudkontor i USA',
     "EU operations &amp; R&amp;D": 'Verksamhet och FoU i EU',

@@ -12,6 +12,9 @@ SEO = {
 }
 
 T = {
+    "Modules": "Moduulit",
+    "Rail Module": "Kiskomoduuli",
+    "Motorized linear axis: the robot travels along a rail to serve multiple stations on the line.": "Moottoroitu lineaariakseli: robotti liikkuu kiskoa pitkin ja palvelee useita linjan asemia.",
     "160cm on tripod (172cm on legs)": "160 cm kolmijalalla (172 cm jaloilla)",
     "US headquarters": 'Pääkonttori Yhdysvalloissa',
     "EU operations &amp; R&amp;D": 'Toiminnot ja tuotekehitys EU:ssa',

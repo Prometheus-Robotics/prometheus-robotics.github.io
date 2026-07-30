@@ -12,6 +12,9 @@ SEO = {
 }
 
 T = {
+    "Modules": "Moduliai",
+    "Rail Module": "Bėgio modulis",
+    "Motorized linear axis: the robot travels along a rail to serve multiple stations on the line.": "Motorizuota linijinė ašis: robotas juda bėgiu ir aptarnauja kelias linijos stotis.",
     "160cm on tripod (172cm on legs)": "160 cm ant trikojo (172 cm ant kojų)",
     "US headquarters": 'Būstinė JAV',
     "EU operations &amp; R&amp;D": 'Veikla ir MTEP ES',

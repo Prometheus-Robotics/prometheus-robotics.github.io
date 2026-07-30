@@ -12,6 +12,9 @@ SEO = {
 }
 
 T = {
+    "Modules": "Moduļi",
+    "Rail Module": "Sliedes modulis",
+    "Motorized linear axis: the robot travels along a rail to serve multiple stations on the line.": "Motorizēta lineārā ass: robots pārvietojas pa sliedi un apkalpo vairākas līnijas stacijas.",
     "160cm on tripod (172cm on legs)": "160cm uz statīva (172cm uz kājām)",
     "US headquarters": 'Galvenā mītne ASV',
     "EU operations &amp; R&amp;D": 'Darbība un izstrāde ES',

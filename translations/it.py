@@ -12,6 +12,9 @@ SEO = {
 }
 
 T = {
+    "Modules": "Moduli",
+    "Rail Module": "Modulo su rotaia",
+    "Motorized linear axis: the robot travels along a rail to serve multiple stations on the line.": "Asse lineare motorizzato: il robot si sposta lungo un binario e serve più stazioni della linea.",
     "160cm on tripod (172cm on legs)": "160cm su treppiede (172cm con gambe)",
     "US headquarters": 'Sede centrale negli USA',
     "EU operations &amp; R&amp;D": "Operazioni e R&amp;S nell'UE",

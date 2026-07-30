@@ -12,6 +12,9 @@ SEO = {
 }
 
 T = {
+    "Modules": "Moduly",
+    "Rail Module": "Koľajnicový modul",
+    "Motorized linear axis: the robot travels along a rail to serve multiple stations on the line.": "Motorizovaná lineárna os: robot sa pohybuje po koľajnici a obsluhuje viacero staníc na linke.",
     "160cm on tripod (172cm on legs)": "160cm na statíve (172cm na nohách)",
     "US headquarters": 'Ústredie v USA',
     "EU operations &amp; R&amp;D": 'Prevádzka a vývoj v EÚ',

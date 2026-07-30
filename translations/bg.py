@@ -12,6 +12,9 @@ SEO = {
 }
 
 T = {
+    "Modules": "Модули",
+    "Rail Module": "Релсов модул",
+    "Motorized linear axis: the robot travels along a rail to serve multiple stations on the line.": "Моторизирана линейна ос: роботът се движи по релса и обслужва няколко станции на линията.",
     "160cm on tripod (172cm on legs)": "160cm на статив (172cm на крака)",
     "US headquarters": 'Централа в САЩ',
     "EU operations &amp; R&amp;D": 'Операции и R&amp;D в ЕС',

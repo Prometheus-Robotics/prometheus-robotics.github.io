@@ -12,6 +12,9 @@ SEO = {
 }
 
 T = {
+    "Modules": "Moodulid",
+    "Rail Module": "Siinimoodul",
+    "Motorized linear axis: the robot travels along a rail to serve multiple stations on the line.": "Motoriseeritud lineaartelg: robot liigub mööda siini ja teenindab liini mitut jaama.",
     "160cm on tripod (172cm on legs)": "160 cm statiivil (172 cm jalgadel)",
     "US headquarters": 'USA peakorter',
     "EU operations &amp; R&amp;D": 'Tegevus ja arendus ELis',

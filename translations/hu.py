@@ -12,6 +12,9 @@ SEO = {
 }
 
 T = {
+    "Modules": "Modulok",
+    "Rail Module": "Sínmodul",
+    "Motorized linear axis: the robot travels along a rail to serve multiple stations on the line.": "Motoros lineáris tengely: a robot sínen mozogva több állomást szolgál ki a soron.",
     "160cm on tripod (172cm on legs)": "160 cm állványon (172 cm lábakkal)",
     "US headquarters": 'Amerikai székhely',
     "EU operations &amp; R&amp;D": 'EU-s működés és K+F',

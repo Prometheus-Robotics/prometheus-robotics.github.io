@@ -12,6 +12,9 @@ SEO = {
 }
 
 T = {
+    "Modules": "Moduler",
+    "Rail Module": "Skinnemodul",
+    "Motorized linear axis: the robot travels along a rail to serve multiple stations on the line.": "Motoriseret lineær akse: robotten kører langs en skinne og betjener flere stationer på linjen.",
     "160cm on tripod (172cm on legs)": "160 cm på trefod (172 cm på ben)",
     "US headquarters": 'Hovedkvarter i USA',
     "EU operations &amp; R&amp;D": 'Drift og udvikling i EU',
