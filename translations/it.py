@@ -12,6 +12,7 @@ SEO = {
 }
 
 T = {
+    "160cm on tripod (172cm on legs)": "160cm su treppiede (172cm con gambe)",
     "US headquarters": 'Sede centrale negli USA',
     "EU operations &amp; R&amp;D": "Operazioni e R&amp;S nell'UE",
     "Contacts": "Contatti",

@@ -12,6 +12,7 @@ SEO = {
 }
 
 T = {
+    "160cm on tripod (172cm on legs)": "160 cm kolmijalalla (172 cm jaloilla)",
     "US headquarters": 'Pääkonttori Yhdysvalloissa',
     "EU operations &amp; R&amp;D": 'Toiminnot ja tuotekehitys EU:ssa',
     "Contacts": "Yhteystiedot",

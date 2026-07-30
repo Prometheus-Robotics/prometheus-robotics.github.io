@@ -12,6 +12,7 @@ SEO = {
 }
 
 T = {
+    "160cm on tripod (172cm on legs)": "160 cm állványon (172 cm lábakkal)",
     "US headquarters": 'Amerikai székhely',
     "EU operations &amp; R&amp;D": 'EU-s működés és K+F',
     "Contacts": "Kapcsolat",

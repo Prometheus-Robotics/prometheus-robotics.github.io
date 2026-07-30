@@ -12,6 +12,7 @@ SEO = {
 }
 
 T = {
+    "160cm on tripod (172cm on legs)": "160 cm statiivil (172 cm jalgadel)",
     "US headquarters": 'USA peakorter',
     "EU operations &amp; R&amp;D": 'Tegevus ja arendus ELis',
     "Contacts": "Kontaktid",

@@ -12,6 +12,7 @@ SEO = {
 }
 
 T = {
+    "160cm on tripod (172cm on legs)": "160cm pe trepied (172cm pe picioare)",
     "US headquarters": 'Sediul central din SUA',
     "EU operations &amp; R&amp;D": 'Operațiuni și cercetare-dezvoltare în UE',
     "Contacts": "Contacte",

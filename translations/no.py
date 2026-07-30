@@ -12,6 +12,7 @@ SEO = {
 }
 
 T = {
+    "160cm on tripod (172cm on legs)": "160 cm på stativ (172 cm på bein)",
     "US headquarters": 'Hovedkontor i USA',
     "EU operations &amp; R&amp;D": 'Drift og FoU i EU',
     "Contacts": "Kontakter",

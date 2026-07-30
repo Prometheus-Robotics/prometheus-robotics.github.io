@@ -12,6 +12,7 @@ SEO = {
 }
 
 T = {
+    "160cm on tripod (172cm on legs)": "160cm uz statīva (172cm uz kājām)",
     "US headquarters": 'Galvenā mītne ASV',
     "EU operations &amp; R&amp;D": 'Darbība un izstrāde ES',
     "Contacts": "Kontakti",

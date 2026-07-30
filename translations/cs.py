@@ -12,6 +12,7 @@ SEO = {
 }
 
 T = {
+    "160cm on tripod (172cm on legs)": "160 cm na stativu (172 cm na nohou)",
     "US headquarters": 'Ústředí v USA',
     "EU operations &amp; R&amp;D": 'Provoz a vývoj v EU',
     "Contacts": "Kontakty",
