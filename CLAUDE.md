@@ -33,7 +33,7 @@ Honesty rules for copy: autonomy is described as *trained per task during the pi
   **generated noindex redirect stubs** → language home. GitHub Pages can't 301; the stubs
   use meta-refresh + canonical + JS `location.replace` (SEO-equivalent of a permanent
   redirect). Don't delete them — they keep old URLs from 404ing.
-- Assets at repo root, referenced with **root-absolute paths** (`/robot.png`, `/hero.mp4`)
+- Assets at repo root, referenced with **root-absolute paths** (`/prometheus-dual-arm-robot-tripod.png`, `/hero.mp4`)
   so they work from sub-directory pages. `hero.mp4` = hero background video (both masters).
 
 ## Languages (i18n)

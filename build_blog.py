@@ -141,7 +141,7 @@ def json_ld(post):
             '"author":{"@type":"Organization","name":"Prometheus Robotics"},'
             '"publisher":{"@type":"Organization","name":"Prometheus Robotics",'
             '"logo":{"@type":"ImageObject","url":"https://meetprometheus.com/logo.png"}},'
-            '"image":"https://meetprometheus.com/robot.png","mainEntityOfPage":"%s","inLanguage":"en"}'
+            '"image":"https://meetprometheus.com/prometheus-dual-arm-robot-tripod.png","mainEntityOfPage":"%s","inLanguage":"en"}'
             ) % (post["h1"].replace('"', "'"), post["description"].replace('"', "'"),
                  post["date"], post["date"], url)
 
@@ -177,10 +177,10 @@ def page(post, body):
         '    <meta property="og:url" content="%s">\n'
         '    <meta property="og:title" content="%s">\n'
         '    <meta property="og:description" content="%s">\n'
-        '    <meta property="og:image" content="https://meetprometheus.com/robot.png">\n'
+        '    <meta property="og:image" content="https://meetprometheus.com/prometheus-dual-arm-robot-tripod.png">\n'
         '    <meta property="og:site_name" content="Prometheus Robotics">\n'
         '    <meta name="twitter:card" content="summary_large_image">\n'
-        '    <meta name="twitter:image" content="https://meetprometheus.com/robot.png">\n'
+        '    <meta name="twitter:image" content="https://meetprometheus.com/prometheus-dual-arm-robot-tripod.png">\n'
         '    %s\n'
         '    <link rel="stylesheet" href="/blog/blog.css">\n'
         '    ' + ANALYTICS + '\n'
@@ -255,7 +255,7 @@ def index_page():
         '    <meta property="og:type" content="website">\n'
         '    <meta property="og:url" content="%s/blog/">\n'
         '    <meta property="og:title" content="Blog — Prometheus Robotics">\n'
-        '    <meta property="og:image" content="https://meetprometheus.com/robot.png">\n'
+        '    <meta property="og:image" content="https://meetprometheus.com/prometheus-dual-arm-robot-tripod.png">\n'
         '    <meta property="og:site_name" content="Prometheus Robotics">\n'
         '    %s\n'
         '    <link rel="stylesheet" href="/blog/blog.css">\n'
