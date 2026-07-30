@@ -216,10 +216,8 @@ def main():
         for rp in REDIRECT_PATHS:
             write_redirect(base + rp, target)
 
-    # sitemap (page/language pages + demo + blog)
+    # sitemap (page/language pages + blog; /demo/ is unlisted + noindex)
     urls = [url_for(lang, page) for lang in ["en"] + codes for page in PAGE_IDS]
-    if os.path.isfile(os.path.join(ROOT, "demo", "index.html")):
-        urls.append(BASE + "/demo/")
     blog_dir = os.path.join(ROOT, "blog")
     if os.path.isfile(os.path.join(blog_dir, "index.html")):
         urls.append(BASE + "/blog/")

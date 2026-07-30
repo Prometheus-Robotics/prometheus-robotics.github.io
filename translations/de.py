@@ -240,7 +240,7 @@ FAQ_RESEARCH = [
     ('Auf welcher Recheneinheit läuft der Roboter?',
      'Die Onboard-Recheneinheit ist ein Raspberry Pi 5 oder ein NVIDIA Jetson. Leichte Policies laufen auf dem Gerät, während größere Vision-Language-Action-Modelle auf einer angebundenen Workstation-GPU laufen und Befehle über die REST-API streamen können.'),
     ('Ist der Roboter modular?',
-     'Ja. Sie können Arme, Greifer (2-Finger, 4-Finger oder fortschrittliche Fünf-Finger-Hände) und Basismodule wie Beine oder Räder austauschen und die Plattform an Ihre Aufgabe anpassen statt umgekehrt.'),
+     'Ja. Greifer und Endeffektoren (2-Finger, 4-Finger, Fünf-Finger-Hände) lassen sich passend zur Aufgabe wechseln. Die Basis ist ein festes Stativ oder eine motorisierte Linearachse (Schiene); Fortbewegung auf Beinen steht auf der Roadmap.'),
     ('Wo wird der Roboter hergestellt?',
      'Prometheus wird in der Europäischen Union entworfen und gefertigt, was für europäische Forschungslabore und Unternehmen wichtig ist, denen Lieferketten-Herkunft, Support und Datensouveränität am Herzen liegen.'),
 ]

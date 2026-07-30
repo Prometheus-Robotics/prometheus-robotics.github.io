@@ -240,7 +240,7 @@ FAQ_RESEARCH = [
     ('Na kojem računalnom sklopu robot radi?',
      'Ugrađeno računalo je Raspberry Pi 5 ili NVIDIA Jetson. Lagane politike izvode se izravno na uređaju, dok zahtjevniji modeli vizija-jezik-akcija mogu raditi na povezanoj radnoj stanici s GPU i slati naredbe putem REST API.'),
     ('Je li robot modularan?',
-     'Da. Možete zamijeniti ruke, hvataljke (s dva prsta, s četiri prsta ili napredne šake s pet prstiju) te osnovne module poput nogu ili kotača, i prilagoditi platformu svojem zadatku, a ne obrnuto.'),
+     'Da. Hvataljke i završne efektore (s 2 prsta, s 4 prsta, petoprste šake) možete mijenjati prema zadatku. Baza je fiksni stativ ili motorizirana linearna os (tračnica); kretanje na nogama je u planu razvoja.'),
     ('Gdje se robot proizvodi?',
      'Prometheus je projektiran i proizveden u EU, što je važno za europske istraživačke laboratorije i tvrtke kojima je stalo do podrijetla opskrbnog lanca, podrške i suverenosti podataka.'),
 ]

@@ -239,7 +239,7 @@ FAQ_RESEARCH = [
     ('Op welke rekenkracht draait de robot?',
      "De ingebouwde rekenkracht is een Raspberry Pi 5 of een NVIDIA Jetson. Lichtgewicht beleid draait op het apparaat zelf, terwijl zwaardere vision-language-action-modellen op een aangesloten werkstation-GPU kunnen draaien en commando's via de REST API kunnen versturen."),
     ('Is de robot modulair?',
-     'Ja. U kunt armen, grijpers (2-vinger, 4-vinger of geavanceerde vijfvingerhanden) en basismodules zoals poten of wielen verwisselen, en het platform aanpassen aan uw taak in plaats van andersom.'),
+     'Ja. Grijpers en eindeffectoren (2-vinger, 4-vinger, vijfvingerige handen) zijn wisselbaar naargelang uw taak. De basis is een vast statief of een gemotoriseerde lineaire as (rail); voortbeweging op benen staat op de roadmap.'),
     ('Waar wordt de robot gemaakt?',
      'Prometheus wordt ontworpen en geproduceerd in de Europese Unie, wat van belang is voor Europese onderzoekslaboratoria en bedrijven die waarde hechten aan de herkomst van de toeleveringsketen, ondersteuning en datasoevereiniteit.'),
 ]

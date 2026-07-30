@@ -239,7 +239,7 @@ FAQ_RESEARCH = [
     ('¿Con qué cómputo funciona el robot?',
      'El cómputo a bordo es una Raspberry Pi 5 o una NVIDIA Jetson. Las políticas ligeras se ejecutan en el dispositivo, mientras que los modelos de visión-lenguaje-acción más pesados pueden ejecutarse en la GPU de una estación de trabajo conectada y transmitir comandos a través de la REST API.'),
     ('¿Es modular el robot?',
-     'Sí. Puede intercambiar brazos, pinzas (de 2 dedos, de 4 dedos o manos avanzadas de cinco dedos) y módulos de base como piernas o ruedas, y adaptar la plataforma a su tarea en lugar de lo contrario.'),
+     'Sí. Puede cambiar las pinzas y efectores finales (2 dedos, 4 dedos, manos de cinco dedos) según su tarea. La base es un trípode fijo o un eje lineal motorizado (raíl); la locomoción con piernas está en la hoja de ruta.'),
     ('¿Dónde se fabrica el robot?',
      'Prometheus se diseña y fabrica en la Unión Europea, lo cual es importante para los laboratorios de investigación y las empresas europeas que valoran la procedencia de la cadena de suministro, el soporte y la soberanía de los datos.'),
 ]

@@ -240,7 +240,7 @@ FAQ_RESEARCH = [
     ('Millisel arvutusvõimsusel robot töötab?',
      'Pardal olev arvutusvõimsus on Raspberry Pi 5 või NVIDIA Jetson. Kerged poliitikad töötavad seadmes endas, samas kui raskemad nägemis-keele-tegevuse mudelid saavad töötada ühendatud tööjaama GPU-l ja edastada käske REST API kaudu.'),
     ('Kas robot on moodulpõhine?',
-     'Jah. Saate vahetada käsivarsi, haaratseid (2-sõrmelisi, 4-sõrmelisi või täiustatud viiesõrmelisi käsi) ning baasmooduleid nagu jalad või rattad, ning kohandada platvormi oma ülesandele, mitte vastupidi.'),
+     'Jah. Haaratseid ja otsaefektoreid (2 sõrmega, 4 sõrmega, viie sõrmega käed) saab ülesande järgi vahetada. Aluseks on fikseeritud statiiv või motoriseeritud lineaartelg (siin); jalgadel liikumine on arenguplaanis.'),
     ('Kus robot valmistatakse?',
      'Prometheus on projekteeritud ja toodetud Euroopa Liidus, mis on oluline Euroopa uurimislaboritele ja ettevõtetele, kes hoolivad tarneahela päritolust, toest ja andmesuveräänsusest.'),
 ]

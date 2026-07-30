@@ -240,7 +240,7 @@ FAQ_RESEARCH = [
     ('Na jakém výpočetním hardwaru robot běží?',
      'Palubní výpočetní jednotkou je Raspberry Pi 5 nebo NVIDIA Jetson. Nenáročné postupy běží přímo na zařízení, zatímco náročnější modely vision-language-action mohou běžet na připojené pracovní stanici s GPU a přenášet příkazy přes REST API.'),
     ('Je robot modulární?',
-     'Ano. Můžete vyměnit ramena, chapadla (dvouprstá, čtyřprstá nebo pokročilé pětiprsté ruce) a základní moduly, jako jsou nohy či kola, a přizpůsobit platformu vašemu úkolu, nikoli naopak.'),
+     'Ano. Chapadla a koncové efektory (2prsté, 4prsté, pětiprsté ruce) lze měnit podle úlohy. Základnou je pevná trojnožka nebo motorizovaná lineární osa (kolejnice); lokomoce po nohou je v plánu vývoje.'),
     ('Kde se robot vyrábí?',
      'Prometheus je navržen a vyráběn v Evropské unii, což má význam pro evropské výzkumné laboratoře a společnosti, kterým záleží na původu dodavatelského řetězce, podpoře a datové suverenitě.'),
 ]

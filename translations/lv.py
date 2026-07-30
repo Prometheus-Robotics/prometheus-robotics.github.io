@@ -241,7 +241,7 @@ FAQ_RESEARCH = [
     ('Uz kāda skaitļošanas aprīkojuma robots darbojas?',
      'Iebūvētā skaitļošanas vienība ir Raspberry Pi 5 vai NVIDIA Jetson. Vieglās politikas darbojas ierīcē, savukārt smagākus redzes-valodas-darbības modeļus var palaist uz pievienotas darbstacijas GPU un straumēt komandas, izmantojot REST API.'),
     ('Vai robots ir modulārs?',
-     'Jā. Jūs varat nomainīt rokas, satvērējus (ar 2 pirkstiem, 4 pirkstiem vai uzlabotas piecu pirkstu plaukstas) un pamatnes moduļus, piemēram, kājas vai riteņus, kā arī pielāgot platformu savam uzdevumam, nevis otrādi.'),
+     'Jā. Satvērējus un gala efektorus (2 pirkstu, 4 pirkstu, piecu pirkstu rokas) var mainīt atbilstoši uzdevumam. Pamatne ir fiksēts statīvs vai motorizēta lineārā ass (sliede); pārvietošanās uz kājām ir attīstības plānā.'),
     ('Kur robots tiek ražots?',
      'Prometheus tiek projektēts un ražots Eiropas Savienībā, kas ir svarīgi Eiropas pētniecības laboratorijām un uzņēmumiem, kuriem rūp piegādes ķēdes izcelsme, atbalsts un datu suverenitāte.'),
 ]

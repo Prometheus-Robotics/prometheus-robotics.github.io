@@ -240,7 +240,7 @@ FAQ_RESEARCH = [
     ('Kokiu skaičiavimo įrenginiu veikia robotas?',
      'Įmontuotas skaičiavimo įrenginys yra Raspberry Pi 5 arba NVIDIA Jetson. Lengvi metodai veikia pačiame įrenginyje, o sudėtingesni regos kalbos veiksmo modeliai gali veikti prijungtos darbo stoties GPU ir perduoti komandas per REST API.'),
     ('Ar robotas yra modulinis?',
-     'Taip. Galite keisti rankas, griebtuvus (su 2 pirštais, 4 pirštais arba pažangias penkių pirštų plaštakas) ir bazinius modulius, tokius kaip kojos ar ratai, bei pritaikyti platformą savo užduočiai, o ne atvirkščiai.'),
+     'Taip. Griebtuvus ir galinius įtaisus (2 pirštų, 4 pirštų, penkiapirštės rankos) galima keisti pagal užduotį. Pagrindas — stacionarus trikojis arba motorizuota linijinė ašis (bėgis); judėjimas kojomis numatytas plėtros plane.'),
     ('Kur pagamintas robotas?',
      'Prometheus yra suprojektuotas ir pagamintas Europos Sąjungoje, o tai svarbu Europos tyrimų laboratorijoms ir įmonėms, kurioms rūpi tiekimo grandinės kilmė, pagalba ir duomenų suverenumas.'),
 ]

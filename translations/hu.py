@@ -240,7 +240,7 @@ FAQ_RESEARCH = [
     ('Milyen számítási egységen fut a robot?',
      'A fedélzeti számítási egység egy Raspberry Pi 5 vagy egy NVIDIA Jetson. A könnyűsúlyú szabályrendszerek az eszközön futnak, míg a nagyobb vizuális-nyelvi-cselekvési modellek egy kábellel csatlakoztatott munkaállomás GPU egységén futtathatók, és a parancsokat a REST API felületen keresztül továbbítják.'),
     ('Moduláris-e a robot?',
-     'Igen. Lecserélheti a karokat, a megfogókat (2 ujjas, 4 ujjas vagy fejlett ötujjas kezek), valamint az alapmodulokat, például lábakat vagy kerekeket, így a platformot a feladatához igazíthatja, nem pedig fordítva.'),
+     'Igen. A megfogók és végeffektorok (2 ujjas, 4 ujjas, ötujjas kezek) a feladathoz igazítva cserélhetők. Az alap rögzített háromlábú állvány vagy motoros lineáris tengely (sín); a lábakon járás a fejlesztési tervben szerepel.'),
     ('Hol készül a robot?',
      'A Prometheus tervezése valamint gyártása az Európai Unióban történik, ami fontos azon európai kutatólaboratóriumok és vállalatok számára, amelyeknek lényeges az ellátási lánc eredete, a támogatás, valamint az adatszuverenitás.'),
 ]

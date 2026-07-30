@@ -240,7 +240,7 @@ FAQ_RESEARCH = [
     ('Millä laskentateholla robotti toimii?',
      'Sisäänrakennettu laskentateho on Raspberry Pi 5 tai NVIDIA Jetson. Kevyet mallit toimivat laitteessa, kun taas raskaammat näkö-kieli-toimintamallit voivat toimia kytketyn työaseman GPU:lla ja välittää komennot REST API:n kautta.'),
     ('Onko robotti modulaarinen?',
-     'Kyllä. Voit vaihtaa käsivarsia, tarttujia (2-sormisia, 4-sormisia tai edistyneitä viisisormisia käsiä) sekä perusmoduuleja kuten jalkoja tai pyöriä, ja mukauttaa alustan tehtävääsi sopivaksi eikä toisin päin.'),
+     'Kyllä. Tarttujat ja työkalut (2-sormiset, 4-sormiset, viisisormiset kädet) voi vaihtaa tehtävän mukaan. Alustana on kiinteä kolmijalka tai moottoroitu lineaariakseli (kisko); jaloilla liikkuminen on kehityssuunnitelmassa.'),
     ('Missä robotti valmistetaan?',
      'Prometheus on suunniteltu ja valmistettu Euroopan unionissa, mikä on merkityksellistä eurooppalaisille tutkimuslaboratorioille ja yrityksille, jotka välittävät toimitusketjun alkuperästä, tuesta ja datan suvereniteetista.'),
 ]

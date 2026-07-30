@@ -240,7 +240,7 @@ FAQ_RESEARCH = [
     ('Hvilken beregningskraft kjører roboten på?',
      'Beregningskraften om bord er en Raspberry Pi 5 eller en NVIDIA Jetson. Lette policyer kjører på enheten, mens tyngre visjon-språk-handling-modeller kan kjøre på en tilkoblet arbeidsstasjons-GPU og strømme kommandoer over REST API.'),
     ('Er roboten modulær?',
-     'Ja. Du kan bytte ut armer, gripere (2-finger, 4-finger eller avanserte femfingerhender) og basismoduler som ben eller hjul, og tilpasse plattformen til oppgaven din i stedet for omvendt.'),
+     'Ja. Gripere og endeeffektorer (2-finger, 4-finger, femfingrede hender) kan byttes etter oppgaven. Basen er et fast stativ eller en motorisert lineærakse (skinne); bevegelse på bein står på veikartet.'),
     ('Hvor er roboten produsert?',
      'Prometheus er designet og produsert i Den europeiske union, noe som er viktig for europeiske forskningslaboratorier og selskaper som bryr seg om forsyningskjedens opprinnelse, støtte og datasuverenitet.'),
 ]

@@ -240,7 +240,7 @@ FAQ_RESEARCH = [
     ('Na akom výpočtovom výkone robot beží?',
      'Palubným výpočtovým výkonom je Raspberry Pi 5 alebo NVIDIA Jetson. Nenáročné politiky bežia priamo v zariadení, zatiaľ čo náročnejšie modely typu vízia-jazyk-akcia môžu bežať na pripojenej pracovnej stanici s GPU a posielať príkazy cez REST API.'),
     ('Je robot modulárny?',
-     'Áno. Môžete vymieňať ramená, chápadlá (dvojprstové, štvorprstové alebo pokročilé päťprstové ruky) a základné moduly, ako sú nohy alebo kolesá, a prispôsobiť platformu svojej úlohe namiesto opačného postupu.'),
+     'Áno. Uchopovače a koncové efektory (2-prstové, 4-prstové, päťprsté ruky) možno meniť podľa úlohy. Základňou je pevný statív alebo motorizovaná lineárna os (koľajnica); lokomócia na nohách je v pláne vývoja.'),
     ('Kde sa robot vyrába?',
      'Prometheus je navrhnutý a vyrábaný v Európskej únii, čo má význam pre európske výskumné laboratóriá a spoločnosti, ktorým záleží na pôvode dodávateľského reťazca, podpore a suverenite údajov.'),
 ]

@@ -240,7 +240,7 @@ FAQ_RESEARCH = [
     ('Pe ce capacitate de calcul rulează robotul?',
      'Capacitatea de calcul de la bord este un Raspberry Pi 5 sau un NVIDIA Jetson. Politicile ușoare rulează direct pe dispozitiv, în timp ce modelele vision-language-action mai solicitante pot rula pe GPU-ul unei stații de lucru conectate și pot transmite comenzi prin REST API.'),
     ('Robotul este modular?',
-     'Da. Puteți schimba brațele, dispozitivele de prindere (cu 2 degete, 4 degete sau mâini avansate cu cinci degete) și modulele de bază, precum picioare sau roți, adaptând platforma la sarcina dumneavoastră, și nu invers.'),
+     'Da. Graiferele și efectorii finali (2 degete, 4 degete, mâini cu cinci degete) pot fi schimbați în funcție de sarcină. Baza este un trepied fix sau o axă liniară motorizată (șină); locomoția pe picioare este în plan.'),
     ('Unde este fabricat robotul?',
      'Prometheus este proiectat și fabricat în Uniunea Europeană, ceea ce contează pentru laboratoarele de cercetare și companiile europene preocupate de proveniența lanțului de aprovizionare, de asistență și de suveranitatea datelor.'),
 ]

@@ -240,7 +240,7 @@ FAQ_RESEARCH = [
     ('Na jakim sprzęcie obliczeniowym działa robot?',
      'Pokładowa jednostka obliczeniowa to Raspberry Pi 5 lub NVIDIA Jetson. Lekkie polityki działają bezpośrednio na urządzeniu, natomiast cięższe modele wizja-język-działanie mogą działać na podłączonej stacji roboczej z GPU i przesyłać polecenia poprzez REST API.'),
     ('Czy robot jest modularny?',
-     'Tak. Możesz wymieniać ramiona, chwytaki (dwupalczaste, czteropalczaste lub zaawansowane pięciopalczaste dłonie) oraz moduły bazowe, takie jak nogi czy koła, i dostosowywać platformę do swojego zadania, a nie odwrotnie.'),
+     'Tak. Chwytaki i efektory końcowe (2-palcowe, 4-palcowe, pięciopalczaste dłonie) można wymieniać stosownie do zadania. Baza to stały statyw lub zmotoryzowana oś liniowa (szyna); lokomocja na nogach jest w planach rozwoju.'),
     ('Gdzie produkowany jest robot?',
      'Prometheus jest projektowany i produkowany w Unii Europejskiej, co ma znaczenie dla europejskich laboratoriów badawczych i firm, które dbają o pochodzenie łańcucha dostaw, wsparcie oraz suwerenność danych.'),
 ]

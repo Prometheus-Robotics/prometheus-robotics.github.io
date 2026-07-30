@@ -240,7 +240,7 @@ FAQ_RESEARCH = [
     ('Su quale potenza di calcolo opera il robot?',
      'Il calcolo a bordo è affidato a un Raspberry Pi 5 o a un NVIDIA Jetson. Le politiche leggere vengono eseguite sul dispositivo, mentre i modelli visione-linguaggio-azione più impegnativi possono essere eseguiti sulla GPU di una workstation collegata, trasmettendo i comandi tramite la REST API.'),
     ('Il robot è modulare?',
-     'Sì. Potete sostituire bracci, pinze di presa (a 2 dita, a 4 dita o mani avanzate a cinque dita) e moduli di base come gambe o ruote, adattando la piattaforma al vostro compito anziché il contrario.'),
+     'Sì. È possibile sostituire pinze ed effettori finali (2 dita, 4 dita, mani a cinque dita) in base al compito. La base è un treppiede fisso o un asse lineare motorizzato (binario); la locomozione su gambe è nella roadmap.'),
     ('Dove viene prodotto il robot?',
      "Prometheus è progettato e fabbricato nell'Unione Europea, un aspetto importante per i laboratori di ricerca e le aziende europee che tengono alla provenienza della catena di approvvigionamento, al supporto e alla sovranità dei dati."),
 ]

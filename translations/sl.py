@@ -240,7 +240,7 @@ FAQ_RESEARCH = [
     ('Na kakšni računski opremi robot teče?',
      'Vgrajena računska enota je Raspberry Pi 5 ali NVIDIA Jetson. Lahke politike tečejo na napravi sami, medtem ko lahko težji modeli vida-jezika-akcije tečejo na povezani delovni postaji z GPU in prenašajo ukaze prek REST API.'),
     ('Ali je robot modularen?',
-     'Da. Zamenjate lahko roke, prijemala (z dvema prstoma, štirimi prsti ali napredne roke s petimi prsti) ter osnovne module, kot so noge ali kolesa, in platformo prilagodite svoji nalogi, namesto da bi bilo obratno.'),
+     'Da. Prijemala in končne efektorje (2-prstne, 4-prstne, petprstne roke) lahko zamenjate glede na nalogo. Osnova je fiksni stativ ali motorizirana linearna os (tirnica); premikanje na nogah je v načrtu razvoja.'),
     ('Kje je robot izdelan?',
      'Prometheus je zasnovan in izdelan v Evropski uniji, kar je pomembno za evropske raziskovalne laboratorije in podjetja, ki jim je mar za izvor dobavne verige, podporo in suverenost podatkov.'),
 ]
