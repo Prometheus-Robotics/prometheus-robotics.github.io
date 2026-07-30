@@ -12,6 +12,8 @@ SEO = {
 }
 
 T = {
+    "US headquarters": 'Būstinė JAV',
+    "EU operations &amp; R&amp;D": 'Veikla ir MTEP ES',
     "Contacts": "Kontaktai",
     "For Research Labs &amp; Technical Universities": "Tyrimų laboratorijoms &amp; technikos universitetams",
     "Humanoid Platform for Robotics Research": "Humanoidų platforma robotikos tyrimams",

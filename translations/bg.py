@@ -12,6 +12,8 @@ SEO = {
 }
 
 T = {
+    "US headquarters": 'Централа в САЩ',
+    "EU operations &amp; R&amp;D": 'Операции и R&amp;D в ЕС',
     "Contacts": "Контакти",
     "For Research Labs &amp; Technical Universities": "За изследователски лаборатории &amp; технически университети",
     "Humanoid Platform for Robotics Research": "Хуманоидна платформа за роботизирани изследвания",

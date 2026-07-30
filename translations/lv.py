@@ -12,6 +12,8 @@ SEO = {
 }
 
 T = {
+    "US headquarters": 'Galvenā mītne ASV',
+    "EU operations &amp; R&amp;D": 'Darbība un izstrāde ES',
     "Contacts": "Kontakti",
     "For Research Labs &amp; Technical Universities": "Pētniecības laboratorijām &amp; tehniskajām universitātēm",
     "Humanoid Platform for Robotics Research": "Humanoīdā platforma robotikas pētniecībai",

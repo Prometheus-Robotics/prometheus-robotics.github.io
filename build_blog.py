@@ -116,7 +116,7 @@ HEADER = (
     '</header>'
 )
 
-FOOTER = '<footer class="blog-footer">© 2026 Prometheus Engineering Kft. · <a href="/">meetprometheus.com</a></footer>'
+FOOTER = '<footer class="blog-footer">© 2024–2026 Gedmond, Inc. · Prometheus Engineering Kft. · <a href="/">meetprometheus.com</a></footer>'
 
 CTA = (
     '<div class="article-cta">\n'

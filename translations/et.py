@@ -12,6 +12,8 @@ SEO = {
 }
 
 T = {
+    "US headquarters": 'USA peakorter',
+    "EU operations &amp; R&amp;D": 'Tegevus ja arendus ELis',
     "Contacts": "Kontaktid",
     "For Research Labs &amp; Technical Universities": "Uurimislaboritele &amp; tehnikaülikoolidele",
     "Humanoid Platform for Robotics Research": "Humanoidplatvorm robootikauuringuteks",

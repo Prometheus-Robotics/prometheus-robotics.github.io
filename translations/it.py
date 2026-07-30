@@ -12,6 +12,8 @@ SEO = {
 }
 
 T = {
+    "US headquarters": 'Sede centrale negli USA',
+    "EU operations &amp; R&amp;D": "Operazioni e R&amp;S nell'UE",
     "Contacts": "Contatti",
     "For Research Labs &amp; Technical Universities": "Per laboratori di ricerca &amp; università tecniche",
     "Humanoid Platform for Robotics Research": "Piattaforma umanoide per la ricerca robotica",

@@ -12,6 +12,8 @@ SEO = {
 }
 
 T = {
+    "US headquarters": 'Amerikai székhely',
+    "EU operations &amp; R&amp;D": 'EU-s működés és K+F',
     "Contacts": "Kapcsolat",
     "For Research Labs &amp; Technical Universities": "Kutatólaboroknak &amp; műszaki egyetemeknek",
     "Humanoid Platform for Robotics Research": "Humanoid platform robotikai kutatáshoz",

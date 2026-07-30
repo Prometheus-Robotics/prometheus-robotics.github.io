@@ -12,6 +12,8 @@ SEO = {
 }
 
 T = {
+    "US headquarters": 'Sjedište u SAD-u',
+    "EU operations &amp; R&amp;D": 'Poslovanje i razvoj u EU',
     "Contacts": "Kontakti",
     "For Research Labs &amp; Technical Universities": "Za istraživačke laboratorije &amp; tehnička sveučilišta",
     "Humanoid Platform for Robotics Research": "Humanoidna platforma za istraživanje robotike",

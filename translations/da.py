@@ -12,6 +12,8 @@ SEO = {
 }
 
 T = {
+    "US headquarters": 'Hovedkvarter i USA',
+    "EU operations &amp; R&amp;D": 'Drift og udvikling i EU',
     "Contacts": "Kontakt",
     "For Research Labs &amp; Technical Universities": "Til forskningslaboratorier &amp; tekniske universiteter",
     "Humanoid Platform for Robotics Research": "Humanoid platform til robotforskning",

@@ -12,6 +12,8 @@ SEO = {
 }
 
 T = {
+    "US headquarters": 'Sediul central din SUA',
+    "EU operations &amp; R&amp;D": 'Operațiuni și cercetare-dezvoltare în UE',
     "Contacts": "Contacte",
     "For Research Labs &amp; Technical Universities": "Pentru laboratoare de cercetare &amp; universități tehnice",
     "Humanoid Platform for Robotics Research": "Platformă umanoidă pentru cercetarea în robotică",

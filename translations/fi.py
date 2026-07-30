@@ -12,6 +12,8 @@ SEO = {
 }
 
 T = {
+    "US headquarters": 'Pääkonttori Yhdysvalloissa',
+    "EU operations &amp; R&amp;D": 'Toiminnot ja tuotekehitys EU:ssa',
     "Contacts": "Yhteystiedot",
     "For Research Labs &amp; Technical Universities": "Tutkimuslaboratorioille &amp; teknillisille yliopistoille",
     "Humanoid Platform for Robotics Research": "Humanoidialusta robotiikan tutkimukseen",
