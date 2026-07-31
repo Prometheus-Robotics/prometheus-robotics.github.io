@@ -517,7 +517,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 3rem;
             overflow: visible;
         }
 
@@ -810,7 +809,7 @@
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
             gap: 4rem;
-            align-items: start;
+            align-items: center;
         }
 
         .specs-table-wrapper {
@@ -845,8 +844,7 @@
         }
 
         .modules-section {
-            position: sticky;
-            top: 120px;
+            margin-top: 5rem;
         }
 
         .modules-title {
@@ -855,11 +853,12 @@
             font-weight: 700;
             margin-bottom: 2rem;
             letter-spacing: -0.01em;
+            text-align: center;
         }
 
         .modules-grid {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
         }
 
@@ -1302,7 +1301,7 @@
             .manipulator-content h4 { font-size: 1.1rem; }
             .manipulator-content p { font-size: 0.95rem; }
             .specs-content { grid-template-columns: 1fr; gap: 3rem; }
-            .modules-section { position: static; }
+            .modules-section { margin-top: 3rem; }
             .specs-table td { padding: 1.2rem 1.5rem; }
             .spec-label, .spec-value { font-size: 0.95rem; }
             .modules-title { font-size: 1.5rem; }
@@ -1378,7 +1377,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which AI models does the robot support?", "acceptedAnswer": {"@type": "Answer", "text": "Out of the box it supports modern vision-language-action and imitation-learning policies, including Pi0, Pi0.5, ACT, and SmolVLA. Collect teleoperation data, fine-tune on a consumer GPU, and deploy through the SDK."}}, {"@type": "Question", "name": "What is included with the robot?", "acceptedAnswer": {"@type": "Answer", "text": "Every unit ships with the full SDK and a simple REST API, a URDF model, a bundled simulator, head-mounted stereo plus wrist cameras, grippers, and direct engineering support. The teleoperation pipeline works on day one."}}, {"@type": "Question", "name": "Can I collect teleoperation data and train policies myself?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Teleoperate via VR with a Meta Quest 3S or a leader-follower controller, record demonstrations in the standard dataset format, and train ACT or fine-tune a vision-language-action model on a single consumer GPU."}}, {"@type": "Question", "name": "What compute does the robot run on?", "acceptedAnswer": {"@type": "Answer", "text": "Onboard compute is a Raspberry Pi 5 or an NVIDIA Jetson. Lightweight policies run on-device, while heavier vision-language-action models can run on a tethered workstation GPU and stream commands over the REST API."}}, {"@type": "Question", "name": "Is the robot modular?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You can swap grippers and end-effectors (2-finger, 4-finger, five-finger hands) to match your task. The base is a fixed tripod or a motorized linear axis (rail); legged locomotion is on the roadmap."}}, {"@type": "Question", "name": "Where is the robot made?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus is designed and manufactured in the European Union, which matters for European research labs and companies that care about supply-chain provenance, support, and EU data residency."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which AI models does the robot support?", "acceptedAnswer": {"@type": "Answer", "text": "Out of the box it supports modern vision-language-action and imitation-learning policies, including Pi0, Pi0.5, ACT, and SmolVLA. Collect teleoperation data, fine-tune on a consumer GPU, and deploy through the SDK."}}, {"@type": "Question", "name": "What is included with the robot?", "acceptedAnswer": {"@type": "Answer", "text": "Every unit ships with the full SDK and a simple REST API, a URDF model, a bundled simulator, head-mounted stereo plus wrist cameras, grippers, and direct engineering support. The teleoperation pipeline works on day one."}}, {"@type": "Question", "name": "Can I collect teleoperation data and train policies myself?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Teleoperate via VR with a Meta Quest 3S or a leader-follower controller, record demonstrations in the standard dataset format, and train ACT or fine-tune a vision-language-action model on a single consumer GPU."}}, {"@type": "Question", "name": "What compute does the robot run on?", "acceptedAnswer": {"@type": "Answer", "text": "Onboard compute is a Raspberry Pi 5 or an NVIDIA Jetson. Lightweight policies run on-device, while heavier vision-language-action models can run on a tethered workstation GPU and stream commands over the REST API."}}, {"@type": "Question", "name": "Is the robot modular?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You can swap grippers and end-effectors (2-finger, 4-finger, five-finger hands) to match your task. The base today is a fixed tripod; a motorized linear axis (rail) and legged locomotion are on the roadmap."}}, {"@type": "Question", "name": "Where is the robot made?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus is designed and manufactured in the European Union, which matters for European research labs and companies that care about supply-chain provenance, support, and EU data residency."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1585,7 +1584,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Height</td>
-                                    <td class="spec-value">160cm on tripod (172cm on legs)</td>
+                                    <td class="spec-value">160cm on tripod (172cm with future legs module)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Width</td>
@@ -1593,7 +1592,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Degrees of Freedom</td>
-                                    <td class="spec-value">19 (29 with legs; 43 with hands; 53 with legs and hands)</td>
+                                    <td class="spec-value">19 today (up to 53 with roadmap modules: legs, 5-finger hands)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Cameras</td>
@@ -1615,30 +1614,31 @@
                         </table>
                     </div>
 
-                    <div class="modules-section">
-                        <div class="specs-robot">
-                            <div class="robot-glow"></div>
-                            <img src="/prometheus-dual-arm-robot-tripod.png" alt="Prometheus dual-arm robot on tripod" class="robot-img">
+                    <div class="specs-robot">
+                        <div class="robot-glow"></div>
+                        <img src="/prometheus-dual-arm-robot-tripod.png" alt="Prometheus dual-arm robot on tripod" class="robot-img">
+                    </div>
+                </div>
+
+                <div class="modules-section">
+                    <h3 class="modules-title">Modules on Roadmap</h3>
+                    <div class="modules-grid">
+                        <div class="module-card">
+                            <div class="module-icon">🛤️</div>
+                            <h4>Rail Module</h4>
+                            <p>Motorized linear axis — in development. The robot will travel along a rail to serve multiple stations on the line.</p>
                         </div>
-                        <h3 class="modules-title">Modules</h3>
-                        <div class="modules-grid">
-                            <div class="module-card">
-                                <div class="module-icon">🛤️</div>
-                                <h4>Rail Module</h4>
-                                <p>Motorized linear axis: the robot travels along a rail to serve multiple stations on the line.</p>
-                            </div>
-                            <div class="module-card">
-                                <div class="module-icon">🦿</div>
-                                <h4>Legs Module</h4>
-                                <p>Bipedal locomotion system for enhanced mobility and human-like movement capabilities.</p>
-                            </div>
+                        <div class="module-card">
+                            <div class="module-icon">🦿</div>
+                            <h4>Legs Module</h4>
+                            <p>Bipedal locomotion — in development. Will extend the platform from stationary stations to mobile tasks.</p>
                         </div>
                     </div>
                 </div>
 
                 <div style="text-align: center; margin-top: 4rem;">
                     <a onclick="showPage('contacts')" class="cta-button" style="display: inline-flex; cursor: pointer;">
-                        Contact Sales
+                        Discuss roadmap options
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                         </svg>
@@ -1683,7 +1683,7 @@
                         <div class="manipulator-content">
                             <h3>Type X</h3>
                             <h4>Advanced manipulators</h4>
-                            <p>Options include wrist cameras with customizable mounting angle (optimized for Pi0.5 and other VLA models), 5-finger hands, and other custom variants.</p>
+                            <p>Options include wrist cameras with customizable mounting angle (optimized for Pi0.5 and other VLA models); 5-finger hands are in development, along with other custom variants.</p>
                         </div>
                     </div>
                 </div>
@@ -1714,7 +1714,7 @@
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Is the robot modular?</button>
-                        <div class="faq-a"><p>Yes. You can swap grippers and end-effectors (2-finger, 4-finger, five-finger hands) to match your task. The base is a fixed tripod or a motorized linear axis (rail); legged locomotion is on the roadmap.</p></div>
+                        <div class="faq-a"><p>Yes. You can swap grippers and end-effectors (2-finger, 4-finger, five-finger hands) to match your task. The base today is a fixed tripod; a motorized linear axis (rail) and legged locomotion are on the roadmap.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Where is the robot made?</button>

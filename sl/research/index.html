@@ -517,7 +517,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 3rem;
             overflow: visible;
         }
 
@@ -810,7 +809,7 @@
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
             gap: 4rem;
-            align-items: start;
+            align-items: center;
         }
 
         .specs-table-wrapper {
@@ -845,8 +844,7 @@
         }
 
         .modules-section {
-            position: sticky;
-            top: 120px;
+            margin-top: 5rem;
         }
 
         .modules-title {
@@ -855,11 +853,12 @@
             font-weight: 700;
             margin-bottom: 2rem;
             letter-spacing: -0.01em;
+            text-align: center;
         }
 
         .modules-grid {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
         }
 
@@ -1302,7 +1301,7 @@
             .manipulator-content h4 { font-size: 1.1rem; }
             .manipulator-content p { font-size: 0.95rem; }
             .specs-content { grid-template-columns: 1fr; gap: 3rem; }
-            .modules-section { position: static; }
+            .modules-section { margin-top: 3rem; }
             .specs-table td { padding: 1.2rem 1.5rem; }
             .spec-label, .spec-value { font-size: 0.95rem; }
             .modules-title { font-size: 1.5rem; }
@@ -1378,7 +1377,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Katere modele umetne inteligence robot podpira?", "acceptedAnswer": {"@type": "Answer", "text": "Že takoj po namestitvi podpira sodobne politike vida-jezika-akcije in posnemovalnega učenja, vključno s Pi0, Pi0.5, ACT in SmolVLA. Zbirajte podatke teleoperacije, izvedite fino prilagajanje na potrošniškem GPU in jih namestite prek SDK."}}, {"@type": "Question", "name": "Kaj je vključeno z robotom?", "acceptedAnswer": {"@type": "Answer", "text": "Vsaka enota je dobavljena s celotnim SDK in preprostim REST API, modelom URDF, priloženim simulatorjem, stereo kamerami na glavi ter kamerami na zapestju, prijemali in neposredno inženirsko podporo. Cevovod teleoperacije deluje že prvi dan."}}, {"@type": "Question", "name": "Ali lahko sam zbiram podatke teleoperacije in učim politike?", "acceptedAnswer": {"@type": "Answer", "text": "Da. Teleoperirajte prek VR z napravo Meta Quest 3S ali s krmilnikom vodja-sledilec, snemajte demonstracije v standardni obliki nabora podatkov ter učite ACT ali fino prilagodite model vida-jezika-akcije na enem samem potrošniškem GPU."}}, {"@type": "Question", "name": "Na kakšni računski opremi robot teče?", "acceptedAnswer": {"@type": "Answer", "text": "Vgrajena računska enota je Raspberry Pi 5 ali NVIDIA Jetson. Lahke politike tečejo na napravi sami, medtem ko lahko težji modeli vida-jezika-akcije tečejo na povezani delovni postaji z GPU in prenašajo ukaze prek REST API."}}, {"@type": "Question", "name": "Ali je robot modularen?", "acceptedAnswer": {"@type": "Answer", "text": "Da. Prijemala in končne efektorje (2-prstne, 4-prstne, petprstne roke) lahko zamenjate glede na nalogo. Osnova je fiksni stativ ali motorizirana linearna os (tirnica); premikanje na nogah je v načrtu razvoja."}}, {"@type": "Question", "name": "Kje je robot izdelan?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus je zasnovan in izdelan v Evropski uniji, kar je pomembno za evropske raziskovalne laboratorije in podjetja, ki jim je mar za izvor dobavne verige, podporo in rezidenčnost podatkov v EU."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Katere modele umetne inteligence robot podpira?", "acceptedAnswer": {"@type": "Answer", "text": "Že takoj po namestitvi podpira sodobne politike vida-jezika-akcije in posnemovalnega učenja, vključno s Pi0, Pi0.5, ACT in SmolVLA. Zbirajte podatke teleoperacije, izvedite fino prilagajanje na potrošniškem GPU in jih namestite prek SDK."}}, {"@type": "Question", "name": "Kaj je vključeno z robotom?", "acceptedAnswer": {"@type": "Answer", "text": "Vsaka enota je dobavljena s celotnim SDK in preprostim REST API, modelom URDF, priloženim simulatorjem, stereo kamerami na glavi ter kamerami na zapestju, prijemali in neposredno inženirsko podporo. Cevovod teleoperacije deluje že prvi dan."}}, {"@type": "Question", "name": "Ali lahko sam zbiram podatke teleoperacije in učim politike?", "acceptedAnswer": {"@type": "Answer", "text": "Da. Teleoperirajte prek VR z napravo Meta Quest 3S ali s krmilnikom vodja-sledilec, snemajte demonstracije v standardni obliki nabora podatkov ter učite ACT ali fino prilagodite model vida-jezika-akcije na enem samem potrošniškem GPU."}}, {"@type": "Question", "name": "Na kakšni računski opremi robot teče?", "acceptedAnswer": {"@type": "Answer", "text": "Vgrajena računska enota je Raspberry Pi 5 ali NVIDIA Jetson. Lahke politike tečejo na napravi sami, medtem ko lahko težji modeli vida-jezika-akcije tečejo na povezani delovni postaji z GPU in prenašajo ukaze prek REST API."}}, {"@type": "Question", "name": "Ali je robot modularen?", "acceptedAnswer": {"@type": "Answer", "text": "Da. Prijemala in končne efektorje (2-prstne, 4-prstne, petprstne roke) lahko zamenjate glede na nalogo. Osnova je danes fiksni stativ; motorizirana linearna os (tirnica) in premikanje na nogah sta v načrtu razvoja."}}, {"@type": "Question", "name": "Kje je robot izdelan?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus je zasnovan in izdelan v Evropski uniji, kar je pomembno za evropske raziskovalne laboratorije in podjetja, ki jim je mar za izvor dobavne verige, podporo in rezidenčnost podatkov v EU."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1585,7 +1584,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Višina</td>
-                                    <td class="spec-value">160 cm na stativu (172 cm na nogah)</td>
+                                    <td class="spec-value">160 cm na stativu (172 cm s prihodnjim modulom nog)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Širina</td>
@@ -1593,7 +1592,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Prostostne stopnje</td>
-                                    <td class="spec-value">19 (29 with legs; 43 with hands; 53 with legs and hands)</td>
+                                    <td class="spec-value">19 danes (do 53 z moduli iz načrta razvoja: noge, 5-prstne roke)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Kamere</td>
@@ -1615,30 +1614,31 @@
                         </table>
                     </div>
 
-                    <div class="modules-section">
-                        <div class="specs-robot">
-                            <div class="robot-glow"></div>
-                            <img src="/prometheus-dual-arm-robot-tripod.png" alt="Prometheus dual-arm robot on tripod" class="robot-img">
+                    <div class="specs-robot">
+                        <div class="robot-glow"></div>
+                        <img src="/prometheus-dual-arm-robot-tripod.png" alt="Prometheus dual-arm robot on tripod" class="robot-img">
+                    </div>
+                </div>
+
+                <div class="modules-section">
+                    <h3 class="modules-title">Moduli v načrtu razvoja</h3>
+                    <div class="modules-grid">
+                        <div class="module-card">
+                            <div class="module-icon">🛤️</div>
+                            <h4>Tirnični modul</h4>
+                            <p>Motorizirana linearna os — v razvoju. Robot se bo premikal po tirnici in stregel več postajam na liniji.</p>
                         </div>
-                        <h3 class="modules-title">Moduli</h3>
-                        <div class="modules-grid">
-                            <div class="module-card">
-                                <div class="module-icon">🛤️</div>
-                                <h4>Tirnični modul</h4>
-                                <p>Motorizirana linearna os: robot se premika po tirnici in streže več postajam na liniji.</p>
-                            </div>
-                            <div class="module-card">
-                                <div class="module-icon">🦿</div>
-                                <h4>Modul nog</h4>
-                                <p>Dvonožni sistem gibanja za večjo mobilnost in človeku podobne zmožnosti gibanja.</p>
-                            </div>
+                        <div class="module-card">
+                            <div class="module-icon">🦿</div>
+                            <h4>Modul nog</h4>
+                            <p>Dvonožno premikanje — v razvoju. Platformo bo razširilo s stacionarnih postaj na mobilna opravila.</p>
                         </div>
                     </div>
                 </div>
 
                 <div style="text-align: center; margin-top: 4rem;">
                     <a onclick="showPage('contacts')" class="cta-button" style="display: inline-flex; cursor: pointer;">
-                        Stik s prodajo
+                        Pogovor o načrtu razvoja
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                         </svg>
@@ -1683,7 +1683,7 @@
                         <div class="manipulator-content">
                             <h3>Type X</h3>
                             <h4>Napredni manipulatorji</h4>
-                            <p>Možnosti vključujejo zapestne kamere s prilagodljivim kotom namestitve (optimizirane za Pi0.5 in druge VLA modele), 5-prstne roke in druge različice po meri.</p>
+                            <p>Možnosti vključujejo zapestne kamere s prilagodljivim kotom namestitve (optimizirane za Pi0.5 in druge VLA modele); 5-prstne roke so v razvoju, prav tako druge različice po meri.</p>
                         </div>
                     </div>
                 </div>
@@ -1714,7 +1714,7 @@
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Ali je robot modularen?</button>
-                        <div class="faq-a"><p>Da. Prijemala in končne efektorje (2-prstne, 4-prstne, petprstne roke) lahko zamenjate glede na nalogo. Osnova je fiksni stativ ali motorizirana linearna os (tirnica); premikanje na nogah je v načrtu razvoja.</p></div>
+                        <div class="faq-a"><p>Da. Prijemala in končne efektorje (2-prstne, 4-prstne, petprstne roke) lahko zamenjate glede na nalogo. Osnova je danes fiksni stativ; motorizirana linearna os (tirnica) in premikanje na nogah sta v načrtu razvoja.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Kje je robot izdelan?</button>

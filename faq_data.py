@@ -28,7 +28,7 @@ FAQ_RESEARCH = [
     ("What compute does the robot run on?",
      "Onboard compute is a Raspberry Pi 5 or an NVIDIA Jetson. Lightweight policies run on-device, while heavier vision-language-action models can run on a tethered workstation GPU and stream commands over the REST API."),
     ("Is the robot modular?",
-     "Yes. You can swap grippers and end-effectors (2-finger, 4-finger, five-finger hands) to match your task. The base is a fixed tripod or a motorized linear axis (rail); legged locomotion is on the roadmap."),
+     "Yes. You can swap grippers and end-effectors (2-finger, 4-finger, five-finger hands) to match your task. The base today is a fixed tripod; a motorized linear axis (rail) and legged locomotion are on the roadmap."),
     ("Where is the robot made?",
      "Prometheus is designed and manufactured in the European Union, which matters for European research labs and companies that care about supply-chain provenance, support, and EU data residency."),
 ]

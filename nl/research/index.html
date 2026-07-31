@@ -517,7 +517,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 3rem;
             overflow: visible;
         }
 
@@ -810,7 +809,7 @@
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
             gap: 4rem;
-            align-items: start;
+            align-items: center;
         }
 
         .specs-table-wrapper {
@@ -845,8 +844,7 @@
         }
 
         .modules-section {
-            position: sticky;
-            top: 120px;
+            margin-top: 5rem;
         }
 
         .modules-title {
@@ -855,11 +853,12 @@
             font-weight: 700;
             margin-bottom: 2rem;
             letter-spacing: -0.01em;
+            text-align: center;
         }
 
         .modules-grid {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
         }
 
@@ -1302,7 +1301,7 @@
             .manipulator-content h4 { font-size: 1.1rem; }
             .manipulator-content p { font-size: 0.95rem; }
             .specs-content { grid-template-columns: 1fr; gap: 3rem; }
-            .modules-section { position: static; }
+            .modules-section { margin-top: 3rem; }
             .specs-table td { padding: 1.2rem 1.5rem; }
             .spec-label, .spec-value { font-size: 0.95rem; }
             .modules-title { font-size: 1.5rem; }
@@ -1378,7 +1377,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Welke AI-modellen ondersteunt de robot?", "acceptedAnswer": {"@type": "Answer", "text": "Standaard ondersteunt hij moderne vision-language-action- en imitatie-leerbeleid, waaronder Pi0, Pi0.5, ACT en SmolVLA. Verzamel teleoperatiegegevens, verfijn ze op een consumenten-GPU en zet ze in via de SDK."}}, {"@type": "Question", "name": "Wat wordt er bij de robot geleverd?", "acceptedAnswer": {"@type": "Answer", "text": "Elke eenheid wordt geleverd met de volledige SDK en een eenvoudige REST API, een URDF-model, een meegeleverde simulator, op het hoofd gemonteerde stereo- plus polscamera's, grijpers en directe technische ondersteuning. De teleoperatiepijplijn werkt vanaf de eerste dag."}}, {"@type": "Question", "name": "Kan ik zelf teleoperatiegegevens verzamelen en beleid trainen?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Bestuur op afstand via VR met een Meta Quest 3S of een leader-follower-controller, leg demonstraties vast in het standaard datasetformaat en train ACT of verfijn een vision-language-action-model op een enkele consumenten-GPU."}}, {"@type": "Question", "name": "Op welke rekenkracht draait de robot?", "acceptedAnswer": {"@type": "Answer", "text": "De ingebouwde rekenkracht is een Raspberry Pi 5 of een NVIDIA Jetson. Lichtgewicht beleid draait op het apparaat zelf, terwijl zwaardere vision-language-action-modellen op een aangesloten werkstation-GPU kunnen draaien en commando's via de REST API kunnen versturen."}}, {"@type": "Question", "name": "Is de robot modulair?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Grijpers en eindeffectoren (2-vinger, 4-vinger, vijfvingerige handen) zijn wisselbaar naargelang uw taak. De basis is een vast statief of een gemotoriseerde lineaire as (rail); voortbeweging op benen staat op de roadmap."}}, {"@type": "Question", "name": "Waar wordt de robot gemaakt?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus wordt ontworpen en geproduceerd in de Europese Unie, wat van belang is voor Europese onderzoekslaboratoria en bedrijven die waarde hechten aan de herkomst van de toeleveringsketen, ondersteuning en EU-dataresidentie."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Welke AI-modellen ondersteunt de robot?", "acceptedAnswer": {"@type": "Answer", "text": "Standaard ondersteunt hij moderne vision-language-action- en imitatie-leerbeleid, waaronder Pi0, Pi0.5, ACT en SmolVLA. Verzamel teleoperatiegegevens, verfijn ze op een consumenten-GPU en zet ze in via de SDK."}}, {"@type": "Question", "name": "Wat wordt er bij de robot geleverd?", "acceptedAnswer": {"@type": "Answer", "text": "Elke eenheid wordt geleverd met de volledige SDK en een eenvoudige REST API, een URDF-model, een meegeleverde simulator, op het hoofd gemonteerde stereo- plus polscamera's, grijpers en directe technische ondersteuning. De teleoperatiepijplijn werkt vanaf de eerste dag."}}, {"@type": "Question", "name": "Kan ik zelf teleoperatiegegevens verzamelen en beleid trainen?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Bestuur op afstand via VR met een Meta Quest 3S of een leader-follower-controller, leg demonstraties vast in het standaard datasetformaat en train ACT of verfijn een vision-language-action-model op een enkele consumenten-GPU."}}, {"@type": "Question", "name": "Op welke rekenkracht draait de robot?", "acceptedAnswer": {"@type": "Answer", "text": "De ingebouwde rekenkracht is een Raspberry Pi 5 of een NVIDIA Jetson. Lichtgewicht beleid draait op het apparaat zelf, terwijl zwaardere vision-language-action-modellen op een aangesloten werkstation-GPU kunnen draaien en commando's via de REST API kunnen versturen."}}, {"@type": "Question", "name": "Is de robot modulair?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Grijpers en eindeffectoren (2-vinger, 4-vinger, vijfvingerige handen) zijn wisselbaar naargelang uw taak. De basis is vandaag een vast statief; een gemotoriseerde lineaire as (rail) en voortbeweging op benen staan op de roadmap."}}, {"@type": "Question", "name": "Waar wordt de robot gemaakt?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus wordt ontworpen en geproduceerd in de Europese Unie, wat van belang is voor Europese onderzoekslaboratoria en bedrijven die waarde hechten aan de herkomst van de toeleveringsketen, ondersteuning en EU-dataresidentie."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1585,7 +1584,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Hoogte</td>
-                                    <td class="spec-value">160cm op statief (172cm op benen)</td>
+                                    <td class="spec-value">160cm op statief (172cm met toekomstige benenmodule)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Breedte</td>
@@ -1593,7 +1592,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Vrijheidsgraden</td>
-                                    <td class="spec-value">19 (29 with legs; 43 with hands; 53 with legs and hands)</td>
+                                    <td class="spec-value">19 vandaag (tot 53 met modules op de roadmap: benen, 5-vinger handen)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Camera's</td>
@@ -1615,30 +1614,31 @@
                         </table>
                     </div>
 
-                    <div class="modules-section">
-                        <div class="specs-robot">
-                            <div class="robot-glow"></div>
-                            <img src="/prometheus-dual-arm-robot-tripod.png" alt="Prometheus dual-arm robot on tripod" class="robot-img">
+                    <div class="specs-robot">
+                        <div class="robot-glow"></div>
+                        <img src="/prometheus-dual-arm-robot-tripod.png" alt="Prometheus dual-arm robot on tripod" class="robot-img">
+                    </div>
+                </div>
+
+                <div class="modules-section">
+                    <h3 class="modules-title">Modules op de roadmap</h3>
+                    <div class="modules-grid">
+                        <div class="module-card">
+                            <div class="module-icon">🛤️</div>
+                            <h4>Railmodule</h4>
+                            <p>Gemotoriseerde lineaire as — in ontwikkeling. De robot zal over een rail rijden om meerdere stations op de lijn te bedienen.</p>
                         </div>
-                        <h3 class="modules-title">Modules</h3>
-                        <div class="modules-grid">
-                            <div class="module-card">
-                                <div class="module-icon">🛤️</div>
-                                <h4>Railmodule</h4>
-                                <p>Gemotoriseerde lineaire as: de robot rijdt over een rail en bedient meerdere stations op de lijn.</p>
-                            </div>
-                            <div class="module-card">
-                                <div class="module-icon">🦿</div>
-                                <h4>Benenmodule</h4>
-                                <p>Tweebenig voortbewegingssysteem voor verbeterde mobiliteit en menselijke bewegingsmogelijkheden.</p>
-                            </div>
+                        <div class="module-card">
+                            <div class="module-icon">🦿</div>
+                            <h4>Benenmodule</h4>
+                            <p>Tweebenige voortbeweging — in ontwikkeling. Breidt het platform uit van stationaire stations naar mobiele taken.</p>
                         </div>
                     </div>
                 </div>
 
                 <div style="text-align: center; margin-top: 4rem;">
                     <a onclick="showPage('contacts')" class="cta-button" style="display: inline-flex; cursor: pointer;">
-                        Neem contact op met verkoop
+                        Roadmap-opties bespreken
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                         </svg>
@@ -1683,7 +1683,7 @@
                         <div class="manipulator-content">
                             <h3>Type X</h3>
                             <h4>Geavanceerde manipulatoren</h4>
-                            <p>Opties omvatten polscamera's met instelbare montagehoek (geoptimaliseerd voor Pi0.5 en andere VLA-modellen), 5-vinger handen en andere maatwerkvarianten.</p>
+                            <p>Opties omvatten polscamera's met instelbare montagehoek (geoptimaliseerd voor Pi0.5 en andere VLA-modellen); 5-vinger handen zijn in ontwikkeling, samen met andere maatwerkvarianten.</p>
                         </div>
                     </div>
                 </div>
@@ -1714,7 +1714,7 @@
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Is de robot modulair?</button>
-                        <div class="faq-a"><p>Ja. Grijpers en eindeffectoren (2-vinger, 4-vinger, vijfvingerige handen) zijn wisselbaar naargelang uw taak. De basis is een vast statief of een gemotoriseerde lineaire as (rail); voortbeweging op benen staat op de roadmap.</p></div>
+                        <div class="faq-a"><p>Ja. Grijpers en eindeffectoren (2-vinger, 4-vinger, vijfvingerige handen) zijn wisselbaar naargelang uw taak. De basis is vandaag een vast statief; een gemotoriseerde lineaire as (rail) en voortbeweging op benen staan op de roadmap.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Waar wordt de robot gemaakt?</button>

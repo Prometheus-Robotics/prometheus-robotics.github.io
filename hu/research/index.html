@@ -517,7 +517,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 3rem;
             overflow: visible;
         }
 
@@ -810,7 +809,7 @@
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
             gap: 4rem;
-            align-items: start;
+            align-items: center;
         }
 
         .specs-table-wrapper {
@@ -845,8 +844,7 @@
         }
 
         .modules-section {
-            position: sticky;
-            top: 120px;
+            margin-top: 5rem;
         }
 
         .modules-title {
@@ -855,11 +853,12 @@
             font-weight: 700;
             margin-bottom: 2rem;
             letter-spacing: -0.01em;
+            text-align: center;
         }
 
         .modules-grid {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
         }
 
@@ -1302,7 +1301,7 @@
             .manipulator-content h4 { font-size: 1.1rem; }
             .manipulator-content p { font-size: 0.95rem; }
             .specs-content { grid-template-columns: 1fr; gap: 3rem; }
-            .modules-section { position: static; }
+            .modules-section { margin-top: 3rem; }
             .specs-table td { padding: 1.2rem 1.5rem; }
             .spec-label, .spec-value { font-size: 0.95rem; }
             .modules-title { font-size: 1.5rem; }
@@ -1378,7 +1377,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Milyen MI-modelleket támogat a robot?", "acceptedAnswer": {"@type": "Answer", "text": "Alapból támogatja a modern vizuális-nyelvi-cselekvési (vision-language-action) és imitációs tanulási szabályrendszereket, köztük a Pi0, Pi0.5, ACT és SmolVLA modelleket. Gyűjtsön teleoperációs adatokat, finomhangoljon egy fogyasztói GPU segítségével, majd telepítsen az SDK révén."}}, {"@type": "Question", "name": "Mit tartalmaz a robot csomagja?", "acceptedAnswer": {"@type": "Answer", "text": "Minden egység a teljes SDK csomaggal és egy egyszerű REST API felülettel, egy URDF modellel, egy beépített szimulátorral, fejre szerelt sztereó- valamint csuklókamerákkal, megfogókkal és közvetlen mérnöki támogatással érkezik. A teleoperációs munkafolyamat már az első napon működik."}}, {"@type": "Question", "name": "Gyűjthetek-e magam teleoperációs adatokat, valamint betaníthatok-e szabályrendszereket?", "acceptedAnswer": {"@type": "Answer", "text": "Igen. Teleoperáljon VR segítségével egy Meta Quest 3S eszközzel vagy egy vezető-követő (leader-follower) vezérlővel, rögzítsen bemutatókat a szabványos adathalmaz-formátumban, majd tanítsa be az ACT modellt vagy finomhangoljon egy vizuális-nyelvi-cselekvési modellt egyetlen fogyasztói GPU segítségével."}}, {"@type": "Question", "name": "Milyen számítási egységen fut a robot?", "acceptedAnswer": {"@type": "Answer", "text": "A fedélzeti számítási egység egy Raspberry Pi 5 vagy egy NVIDIA Jetson. A könnyűsúlyú szabályrendszerek az eszközön futnak, míg a nagyobb vizuális-nyelvi-cselekvési modellek egy kábellel csatlakoztatott munkaállomás GPU egységén futtathatók, és a parancsokat a REST API felületen keresztül továbbítják."}}, {"@type": "Question", "name": "Moduláris-e a robot?", "acceptedAnswer": {"@type": "Answer", "text": "Igen. A megfogók és végeffektorok (2 ujjas, 4 ujjas, ötujjas kezek) a feladathoz igazítva cserélhetők. Az alap rögzített háromlábú állvány vagy motoros lineáris tengely (sín); a lábakon járás a fejlesztési tervben szerepel."}}, {"@type": "Question", "name": "Hol készül a robot?", "acceptedAnswer": {"@type": "Answer", "text": "A Prometheus tervezése valamint gyártása az Európai Unióban történik, ami fontos azon európai kutatólaboratóriumok és vállalatok számára, amelyeknek lényeges az ellátási lánc eredete, a támogatás, valamint az EU-n belüli adattárolás."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Milyen MI-modelleket támogat a robot?", "acceptedAnswer": {"@type": "Answer", "text": "Alapból támogatja a modern vizuális-nyelvi-cselekvési (vision-language-action) és imitációs tanulási szabályrendszereket, köztük a Pi0, Pi0.5, ACT és SmolVLA modelleket. Gyűjtsön teleoperációs adatokat, finomhangoljon egy fogyasztói GPU segítségével, majd telepítsen az SDK révén."}}, {"@type": "Question", "name": "Mit tartalmaz a robot csomagja?", "acceptedAnswer": {"@type": "Answer", "text": "Minden egység a teljes SDK csomaggal és egy egyszerű REST API felülettel, egy URDF modellel, egy beépített szimulátorral, fejre szerelt sztereó- valamint csuklókamerákkal, megfogókkal és közvetlen mérnöki támogatással érkezik. A teleoperációs munkafolyamat már az első napon működik."}}, {"@type": "Question", "name": "Gyűjthetek-e magam teleoperációs adatokat, valamint betaníthatok-e szabályrendszereket?", "acceptedAnswer": {"@type": "Answer", "text": "Igen. Teleoperáljon VR segítségével egy Meta Quest 3S eszközzel vagy egy vezető-követő (leader-follower) vezérlővel, rögzítsen bemutatókat a szabványos adathalmaz-formátumban, majd tanítsa be az ACT modellt vagy finomhangoljon egy vizuális-nyelvi-cselekvési modellt egyetlen fogyasztói GPU segítségével."}}, {"@type": "Question", "name": "Milyen számítási egységen fut a robot?", "acceptedAnswer": {"@type": "Answer", "text": "A fedélzeti számítási egység egy Raspberry Pi 5 vagy egy NVIDIA Jetson. A könnyűsúlyú szabályrendszerek az eszközön futnak, míg a nagyobb vizuális-nyelvi-cselekvési modellek egy kábellel csatlakoztatott munkaállomás GPU egységén futtathatók, és a parancsokat a REST API felületen keresztül továbbítják."}}, {"@type": "Question", "name": "Moduláris-e a robot?", "acceptedAnswer": {"@type": "Answer", "text": "Igen. A megfogók és végeffektorok (2 ujjas, 4 ujjas, ötujjas kezek) a feladathoz igazítva cserélhetők. Az alap ma rögzített háromlábú állvány; a motoros lineáris tengely (sín) és a lábakon járás a fejlesztési tervben szerepel."}}, {"@type": "Question", "name": "Hol készül a robot?", "acceptedAnswer": {"@type": "Answer", "text": "A Prometheus tervezése valamint gyártása az Európai Unióban történik, ami fontos azon európai kutatólaboratóriumok és vállalatok számára, amelyeknek lényeges az ellátási lánc eredete, a támogatás, valamint az EU-n belüli adattárolás."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1585,7 +1584,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Magasság</td>
-                                    <td class="spec-value">160 cm állványon (172 cm lábakkal)</td>
+                                    <td class="spec-value">160 cm állványon (172 cm a jövőbeli láb modullal)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Szélesség</td>
@@ -1593,7 +1592,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Szabadsági fokok</td>
-                                    <td class="spec-value">19 (29 with legs; 43 with hands; 53 with legs and hands)</td>
+                                    <td class="spec-value">Ma 19 (a fejlesztési tervben szereplő modulokkal együtt akár 53: lábak, 5-ujjas kezek)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Kamerák</td>
@@ -1615,30 +1614,31 @@
                         </table>
                     </div>
 
-                    <div class="modules-section">
-                        <div class="specs-robot">
-                            <div class="robot-glow"></div>
-                            <img src="/prometheus-dual-arm-robot-tripod.png" alt="Prometheus dual-arm robot on tripod" class="robot-img">
+                    <div class="specs-robot">
+                        <div class="robot-glow"></div>
+                        <img src="/prometheus-dual-arm-robot-tripod.png" alt="Prometheus dual-arm robot on tripod" class="robot-img">
+                    </div>
+                </div>
+
+                <div class="modules-section">
+                    <h3 class="modules-title">A fejlesztési tervben szereplő modulok</h3>
+                    <div class="modules-grid">
+                        <div class="module-card">
+                            <div class="module-icon">🛤️</div>
+                            <h4>Sínmodul</h4>
+                            <p>Motoros lineáris tengely — fejlesztés alatt. A robot sínen mozogva több állomást fog kiszolgálni a soron.</p>
                         </div>
-                        <h3 class="modules-title">Modulok</h3>
-                        <div class="modules-grid">
-                            <div class="module-card">
-                                <div class="module-icon">🛤️</div>
-                                <h4>Sínmodul</h4>
-                                <p>Motoros lineáris tengely: a robot sínen mozogva több állomást szolgál ki a soron.</p>
-                            </div>
-                            <div class="module-card">
-                                <div class="module-icon">🦿</div>
-                                <h4>Láb modul</h4>
-                                <p>Kétlábú mozgásrendszer a fokozott mobilitásért és az emberihez hasonló mozgásképességekért.</p>
-                            </div>
+                        <div class="module-card">
+                            <div class="module-icon">🦿</div>
+                            <h4>Láb modul</h4>
+                            <p>Kétlábú mozgásrendszer — fejlesztés alatt. A platformot a helyhez kötött állomásokról a mobil feladatok felé bővíti majd.</p>
                         </div>
                     </div>
                 </div>
 
                 <div style="text-align: center; margin-top: 4rem;">
                     <a onclick="showPage('contacts')" class="cta-button" style="display: inline-flex; cursor: pointer;">
-                        Kapcsolat az értékesítéssel
+                        Beszéljünk a tervezett modulokról
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                         </svg>
@@ -1683,7 +1683,7 @@
                         <div class="manipulator-content">
                             <h3>Type X</h3>
                             <h4>Fejlett manipulátorok</h4>
-                            <p>Az opciók közé tartoznak az állítható rögzítési szögű csukló kamerák (a Pi0.5-höz és más VLA modellekhez optimalizálva), 5-ujjas kezek és egyéb egyedi változatok.</p>
+                            <p>Az opciók közé tartoznak az állítható rögzítési szögű csukló kamerák (a Pi0.5-höz és más VLA modellekhez optimalizálva); az 5-ujjas kezek fejlesztés alatt állnak, egyéb egyedi változatokkal együtt.</p>
                         </div>
                     </div>
                 </div>
@@ -1714,7 +1714,7 @@
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Moduláris-e a robot?</button>
-                        <div class="faq-a"><p>Igen. A megfogók és végeffektorok (2 ujjas, 4 ujjas, ötujjas kezek) a feladathoz igazítva cserélhetők. Az alap rögzített háromlábú állvány vagy motoros lineáris tengely (sín); a lábakon járás a fejlesztési tervben szerepel.</p></div>
+                        <div class="faq-a"><p>Igen. A megfogók és végeffektorok (2 ujjas, 4 ujjas, ötujjas kezek) a feladathoz igazítva cserélhetők. Az alap ma rögzített háromlábú állvány; a motoros lineáris tengely (sín) és a lábakon járás a fejlesztési tervben szerepel.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Hol készül a robot?</button>

@@ -517,7 +517,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 3rem;
             overflow: visible;
         }
 
@@ -810,7 +809,7 @@
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
             gap: 4rem;
-            align-items: start;
+            align-items: center;
         }
 
         .specs-table-wrapper {
@@ -845,8 +844,7 @@
         }
 
         .modules-section {
-            position: sticky;
-            top: 120px;
+            margin-top: 5rem;
         }
 
         .modules-title {
@@ -855,11 +853,12 @@
             font-weight: 700;
             margin-bottom: 2rem;
             letter-spacing: -0.01em;
+            text-align: center;
         }
 
         .modules-grid {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
         }
 
@@ -1302,7 +1301,7 @@
             .manipulator-content h4 { font-size: 1.1rem; }
             .manipulator-content p { font-size: 0.95rem; }
             .specs-content { grid-template-columns: 1fr; gap: 3rem; }
-            .modules-section { position: static; }
+            .modules-section { margin-top: 3rem; }
             .specs-table td { padding: 1.2rem 1.5rem; }
             .spec-label, .spec-value { font-size: 0.95rem; }
             .modules-title { font-size: 1.5rem; }
@@ -1378,7 +1377,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Mitä tekoälymalleja robotti tukee?", "acceptedAnswer": {"@type": "Answer", "text": "Heti käyttövalmiina se tukee nykyaikaisia näkö-kieli-toiminta- ja imitaatio-oppimismalleja, mukaan lukien Pi0, Pi0.5, ACT ja SmolVLA. Kerää teleoperaatiodataa, hienosäädä kuluttajatason GPU:lla ja ota käyttöön SDK:n kautta."}}, {"@type": "Question", "name": "Mitä robotin mukana tulee?", "acceptedAnswer": {"@type": "Answer", "text": "Jokainen yksikkö toimitetaan täydellä SDK:lla ja yksinkertaisella REST API:lla, URDF-mallilla, mukana tulevalla simulaattorilla, päähän kiinnitettävillä stereo- sekä rannekameroilla, tarttujilla ja suoralla insinöörituella. Teleoperaatioputki toimii ensimmäisestä päivästä alkaen."}}, {"@type": "Question", "name": "Voinko kerätä teleoperaatiodataa ja kouluttaa malleja itse?", "acceptedAnswer": {"@type": "Answer", "text": "Kyllä. Teleoperoi VR-lasien avulla Meta Quest 3S -laitteella tai johtaja-seuraaja-ohjaimella, tallenna demonstraatiot standardissa datajoukkomuodossa ja kouluta ACT tai hienosäädä näkö-kieli-toimintamalli yhdellä kuluttajatason GPU:lla."}}, {"@type": "Question", "name": "Millä laskentateholla robotti toimii?", "acceptedAnswer": {"@type": "Answer", "text": "Sisäänrakennettu laskentateho on Raspberry Pi 5 tai NVIDIA Jetson. Kevyet mallit toimivat laitteessa, kun taas raskaammat näkö-kieli-toimintamallit voivat toimia kytketyn työaseman GPU:lla ja välittää komennot REST API:n kautta."}}, {"@type": "Question", "name": "Onko robotti modulaarinen?", "acceptedAnswer": {"@type": "Answer", "text": "Kyllä. Tarttujat ja työkalut (2-sormiset, 4-sormiset, viisisormiset kädet) voi vaihtaa tehtävän mukaan. Alustana on kiinteä kolmijalka tai moottoroitu lineaariakseli (kisko); jaloilla liikkuminen on kehityssuunnitelmassa."}}, {"@type": "Question", "name": "Missä robotti valmistetaan?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus on suunniteltu ja valmistettu Euroopan unionissa, mikä on merkityksellistä eurooppalaisille tutkimuslaboratorioille ja yrityksille, jotka välittävät toimitusketjun alkuperästä, tuesta ja datan säilyttämisestä EU:n alueella."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Mitä tekoälymalleja robotti tukee?", "acceptedAnswer": {"@type": "Answer", "text": "Heti käyttövalmiina se tukee nykyaikaisia näkö-kieli-toiminta- ja imitaatio-oppimismalleja, mukaan lukien Pi0, Pi0.5, ACT ja SmolVLA. Kerää teleoperaatiodataa, hienosäädä kuluttajatason GPU:lla ja ota käyttöön SDK:n kautta."}}, {"@type": "Question", "name": "Mitä robotin mukana tulee?", "acceptedAnswer": {"@type": "Answer", "text": "Jokainen yksikkö toimitetaan täydellä SDK:lla ja yksinkertaisella REST API:lla, URDF-mallilla, mukana tulevalla simulaattorilla, päähän kiinnitettävillä stereo- sekä rannekameroilla, tarttujilla ja suoralla insinöörituella. Teleoperaatioputki toimii ensimmäisestä päivästä alkaen."}}, {"@type": "Question", "name": "Voinko kerätä teleoperaatiodataa ja kouluttaa malleja itse?", "acceptedAnswer": {"@type": "Answer", "text": "Kyllä. Teleoperoi VR-lasien avulla Meta Quest 3S -laitteella tai johtaja-seuraaja-ohjaimella, tallenna demonstraatiot standardissa datajoukkomuodossa ja kouluta ACT tai hienosäädä näkö-kieli-toimintamalli yhdellä kuluttajatason GPU:lla."}}, {"@type": "Question", "name": "Millä laskentateholla robotti toimii?", "acceptedAnswer": {"@type": "Answer", "text": "Sisäänrakennettu laskentateho on Raspberry Pi 5 tai NVIDIA Jetson. Kevyet mallit toimivat laitteessa, kun taas raskaammat näkö-kieli-toimintamallit voivat toimia kytketyn työaseman GPU:lla ja välittää komennot REST API:n kautta."}}, {"@type": "Question", "name": "Onko robotti modulaarinen?", "acceptedAnswer": {"@type": "Answer", "text": "Kyllä. Tarttujat ja työkalut (2-sormiset, 4-sormiset, viisisormiset kädet) voi vaihtaa tehtävän mukaan. Alustana on tänään kiinteä kolmijalka; moottoroitu lineaariakseli (kisko) ja jaloilla liikkuminen ovat kehityssuunnitelmassa."}}, {"@type": "Question", "name": "Missä robotti valmistetaan?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus on suunniteltu ja valmistettu Euroopan unionissa, mikä on merkityksellistä eurooppalaisille tutkimuslaboratorioille ja yrityksille, jotka välittävät toimitusketjun alkuperästä, tuesta ja datan säilyttämisestä EU:n alueella."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1585,7 +1584,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Korkeus</td>
-                                    <td class="spec-value">160 cm kolmijalalla (172 cm jaloilla)</td>
+                                    <td class="spec-value">160 cm kolmijalalla (172 cm tulevalla jalkamoduulilla)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Leveys</td>
@@ -1593,7 +1592,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Vapausasteet</td>
-                                    <td class="spec-value">19 (29 with legs; 43 with hands; 53 with legs and hands)</td>
+                                    <td class="spec-value">19 tänään (jopa 53 kehityssuunnitelman moduuleilla: jalat, 5-sormiset kädet)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Kamerat</td>
@@ -1615,30 +1614,31 @@
                         </table>
                     </div>
 
-                    <div class="modules-section">
-                        <div class="specs-robot">
-                            <div class="robot-glow"></div>
-                            <img src="/prometheus-dual-arm-robot-tripod.png" alt="Prometheus dual-arm robot on tripod" class="robot-img">
+                    <div class="specs-robot">
+                        <div class="robot-glow"></div>
+                        <img src="/prometheus-dual-arm-robot-tripod.png" alt="Prometheus dual-arm robot on tripod" class="robot-img">
+                    </div>
+                </div>
+
+                <div class="modules-section">
+                    <h3 class="modules-title">Moduulit kehityssuunnitelmassa</h3>
+                    <div class="modules-grid">
+                        <div class="module-card">
+                            <div class="module-icon">🛤️</div>
+                            <h4>Kiskomoduuli</h4>
+                            <p>Moottoroitu lineaariakseli — kehitteillä. Robotti liikkuu kiskoa pitkin ja palvelee useita linjan asemia.</p>
                         </div>
-                        <h3 class="modules-title">Moduulit</h3>
-                        <div class="modules-grid">
-                            <div class="module-card">
-                                <div class="module-icon">🛤️</div>
-                                <h4>Kiskomoduuli</h4>
-                                <p>Moottoroitu lineaariakseli: robotti liikkuu kiskoa pitkin ja palvelee useita linjan asemia.</p>
-                            </div>
-                            <div class="module-card">
-                                <div class="module-icon">🦿</div>
-                                <h4>Jalkamoduuli</h4>
-                                <p>Kaksijalkainen liikkumisjärjestelmä parannettuun liikkuvuuteen ja ihmismäisiin liikekykyihin.</p>
-                            </div>
+                        <div class="module-card">
+                            <div class="module-icon">🦿</div>
+                            <h4>Jalkamoduuli</h4>
+                            <p>Kaksijalkainen liikkuminen — kehitteillä. Laajentaa alustan kiinteiltä asemilta liikkuviin tehtäviin.</p>
                         </div>
                     </div>
                 </div>
 
                 <div style="text-align: center; margin-top: 4rem;">
                     <a onclick="showPage('contacts')" class="cta-button" style="display: inline-flex; cursor: pointer;">
-                        Ota yhteyttä myyntiin
+                        Keskustele kehityssuunnitelmasta
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                         </svg>
@@ -1683,7 +1683,7 @@
                         <div class="manipulator-content">
                             <h3>Type X</h3>
                             <h4>Edistyneet manipulaattorit</h4>
-                            <p>Vaihtoehtoihin kuuluvat rannekamerat, joiden kiinnityskulma on muokattavissa (optimoitu Pi0.5:lle ja muille VLA-malleille), 5-sormiset kädet ja muut räätälöidyt variantit.</p>
+                            <p>Vaihtoehtoihin kuuluvat rannekamerat, joiden kiinnityskulma on muokattavissa (optimoitu Pi0.5:lle ja muille VLA-malleille); 5-sormiset kädet ovat kehitteillä, samoin muut räätälöidyt variantit.</p>
                         </div>
                     </div>
                 </div>
@@ -1714,7 +1714,7 @@
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Onko robotti modulaarinen?</button>
-                        <div class="faq-a"><p>Kyllä. Tarttujat ja työkalut (2-sormiset, 4-sormiset, viisisormiset kädet) voi vaihtaa tehtävän mukaan. Alustana on kiinteä kolmijalka tai moottoroitu lineaariakseli (kisko); jaloilla liikkuminen on kehityssuunnitelmassa.</p></div>
+                        <div class="faq-a"><p>Kyllä. Tarttujat ja työkalut (2-sormiset, 4-sormiset, viisisormiset kädet) voi vaihtaa tehtävän mukaan. Alustana on tänään kiinteä kolmijalka; moottoroitu lineaariakseli (kisko) ja jaloilla liikkuminen ovat kehityssuunnitelmassa.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Missä robotti valmistetaan?</button>

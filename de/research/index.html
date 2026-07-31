@@ -517,7 +517,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 3rem;
             overflow: visible;
         }
 
@@ -810,7 +809,7 @@
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
             gap: 4rem;
-            align-items: start;
+            align-items: center;
         }
 
         .specs-table-wrapper {
@@ -845,8 +844,7 @@
         }
 
         .modules-section {
-            position: sticky;
-            top: 120px;
+            margin-top: 5rem;
         }
 
         .modules-title {
@@ -855,11 +853,12 @@
             font-weight: 700;
             margin-bottom: 2rem;
             letter-spacing: -0.01em;
+            text-align: center;
         }
 
         .modules-grid {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
         }
 
@@ -1302,7 +1301,7 @@
             .manipulator-content h4 { font-size: 1.1rem; }
             .manipulator-content p { font-size: 0.95rem; }
             .specs-content { grid-template-columns: 1fr; gap: 3rem; }
-            .modules-section { position: static; }
+            .modules-section { margin-top: 3rem; }
             .specs-table td { padding: 1.2rem 1.5rem; }
             .spec-label, .spec-value { font-size: 0.95rem; }
             .modules-title { font-size: 1.5rem; }
@@ -1378,7 +1377,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Welche KI-Modelle unterstützt der Roboter?", "acceptedAnswer": {"@type": "Answer", "text": "Ab Werk unterstützt er moderne Vision-Language-Action- und Imitation-Learning-Policies, darunter Pi0, Pi0.5, ACT und SmolVLA. Sammeln Sie Teleoperationsdaten, feintunen Sie auf einer Consumer-GPU und deployen Sie über das SDK."}}, {"@type": "Question", "name": "Was ist im Lieferumfang des Roboters enthalten?", "acceptedAnswer": {"@type": "Answer", "text": "Jede Einheit wird mit dem vollständigen SDK und einer einfachen REST-API, einem URDF-Modell, einem mitgelieferten Simulator, kopfmontierter Stereokamera plus Handgelenkkameras, Greifern und direktem Engineering-Support geliefert. Die Teleoperation funktioniert ab dem ersten Tag."}}, {"@type": "Question", "name": "Kann ich selbst Teleoperationsdaten sammeln und Policies trainieren?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Teleoperieren Sie per VR mit einer Meta Quest 3S oder einem Leader-Follower-Controller, zeichnen Sie Demonstrationen im Standard-Datensatzformat auf und trainieren Sie ACT oder feintunen Sie ein Vision-Language-Action-Modell auf einer einzigen Consumer-GPU."}}, {"@type": "Question", "name": "Auf welcher Recheneinheit läuft der Roboter?", "acceptedAnswer": {"@type": "Answer", "text": "Die Onboard-Recheneinheit ist ein Raspberry Pi 5 oder ein NVIDIA Jetson. Leichte Policies laufen auf dem Gerät, während größere Vision-Language-Action-Modelle auf einer angebundenen Workstation-GPU laufen und Befehle über die REST-API streamen können."}}, {"@type": "Question", "name": "Ist der Roboter modular?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Greifer und Endeffektoren (2-Finger, 4-Finger, Fünf-Finger-Hände) lassen sich passend zur Aufgabe wechseln. Die Basis ist ein festes Stativ oder eine motorisierte Linearachse (Schiene); Fortbewegung auf Beinen steht auf der Roadmap."}}, {"@type": "Question", "name": "Wo wird der Roboter hergestellt?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus wird in der Europäischen Union entworfen und gefertigt, was für europäische Forschungslabore und Unternehmen wichtig ist, denen Lieferketten-Herkunft, Support und EU-Datenresidenz am Herzen liegen."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Welche KI-Modelle unterstützt der Roboter?", "acceptedAnswer": {"@type": "Answer", "text": "Ab Werk unterstützt er moderne Vision-Language-Action- und Imitation-Learning-Policies, darunter Pi0, Pi0.5, ACT und SmolVLA. Sammeln Sie Teleoperationsdaten, feintunen Sie auf einer Consumer-GPU und deployen Sie über das SDK."}}, {"@type": "Question", "name": "Was ist im Lieferumfang des Roboters enthalten?", "acceptedAnswer": {"@type": "Answer", "text": "Jede Einheit wird mit dem vollständigen SDK und einer einfachen REST-API, einem URDF-Modell, einem mitgelieferten Simulator, kopfmontierter Stereokamera plus Handgelenkkameras, Greifern und direktem Engineering-Support geliefert. Die Teleoperation funktioniert ab dem ersten Tag."}}, {"@type": "Question", "name": "Kann ich selbst Teleoperationsdaten sammeln und Policies trainieren?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Teleoperieren Sie per VR mit einer Meta Quest 3S oder einem Leader-Follower-Controller, zeichnen Sie Demonstrationen im Standard-Datensatzformat auf und trainieren Sie ACT oder feintunen Sie ein Vision-Language-Action-Modell auf einer einzigen Consumer-GPU."}}, {"@type": "Question", "name": "Auf welcher Recheneinheit läuft der Roboter?", "acceptedAnswer": {"@type": "Answer", "text": "Die Onboard-Recheneinheit ist ein Raspberry Pi 5 oder ein NVIDIA Jetson. Leichte Policies laufen auf dem Gerät, während größere Vision-Language-Action-Modelle auf einer angebundenen Workstation-GPU laufen und Befehle über die REST-API streamen können."}}, {"@type": "Question", "name": "Ist der Roboter modular?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Greifer und Endeffektoren (2-Finger, 4-Finger, Fünf-Finger-Hände) lassen sich passend zur Aufgabe wechseln. Die Basis ist heute ein festes Stativ; eine motorisierte Linearachse (Schiene) und Fortbewegung auf Beinen stehen auf der Roadmap."}}, {"@type": "Question", "name": "Wo wird der Roboter hergestellt?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus wird in der Europäischen Union entworfen und gefertigt, was für europäische Forschungslabore und Unternehmen wichtig ist, denen Lieferketten-Herkunft, Support und EU-Datenresidenz am Herzen liegen."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1585,7 +1584,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Höhe</td>
-                                    <td class="spec-value">160 cm auf Stativ (172 cm auf Beinen)</td>
+                                    <td class="spec-value">160 cm auf Stativ (172 cm mit künftigem Beinmodul)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Breite</td>
@@ -1593,7 +1592,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Freiheitsgrade</td>
-                                    <td class="spec-value">19 (29 with legs; 43 with hands; 53 with legs and hands)</td>
+                                    <td class="spec-value">19 heute (bis zu 53 mit Modulen auf der Roadmap: Beine, Fünf-Finger-Hände)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Kameras</td>
@@ -1615,30 +1614,31 @@
                         </table>
                     </div>
 
-                    <div class="modules-section">
-                        <div class="specs-robot">
-                            <div class="robot-glow"></div>
-                            <img src="/prometheus-dual-arm-robot-tripod.png" alt="Prometheus dual-arm robot on tripod" class="robot-img">
+                    <div class="specs-robot">
+                        <div class="robot-glow"></div>
+                        <img src="/prometheus-dual-arm-robot-tripod.png" alt="Prometheus dual-arm robot on tripod" class="robot-img">
+                    </div>
+                </div>
+
+                <div class="modules-section">
+                    <h3 class="modules-title">Module auf der Roadmap</h3>
+                    <div class="modules-grid">
+                        <div class="module-card">
+                            <div class="module-icon">🛤️</div>
+                            <h4>Schienenmodul</h4>
+                            <p>Motorisierte Linearachse — in Entwicklung. Der Roboter wird auf einer Schiene verfahren und mehrere Stationen der Linie bedienen.</p>
                         </div>
-                        <h3 class="modules-title">Module</h3>
-                        <div class="modules-grid">
-                            <div class="module-card">
-                                <div class="module-icon">🛤️</div>
-                                <h4>Schienenmodul</h4>
-                                <p>Motorisierte Linearachse: Der Roboter fährt auf einer Schiene und bedient mehrere Stationen der Linie.</p>
-                            </div>
-                            <div class="module-card">
-                                <div class="module-icon">🦿</div>
-                                <h4>Beinmodul</h4>
-                                <p>Zweibeiniges Fortbewegungssystem für mehr Mobilität und menschenähnliche Bewegungsfähigkeiten.</p>
-                            </div>
+                        <div class="module-card">
+                            <div class="module-icon">🦿</div>
+                            <h4>Beinmodul</h4>
+                            <p>Zweibeinige Fortbewegung — in Entwicklung. Sie wird die Plattform von stationären Stationen auf mobile Aufgaben erweitern.</p>
                         </div>
                     </div>
                 </div>
 
                 <div style="text-align: center; margin-top: 4rem;">
                     <a onclick="showPage('contacts')" class="cta-button" style="display: inline-flex; cursor: pointer;">
-                        Vertrieb kontaktieren
+                        Roadmap-Optionen besprechen
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                         </svg>
@@ -1683,7 +1683,7 @@
                         <div class="manipulator-content">
                             <h3>Type X</h3>
                             <h4>Fortschrittliche Manipulatoren</h4>
-                            <p>Zu den Optionen zählen Handgelenkkameras mit anpassbarem Montagewinkel (optimiert für Pi0.5 und andere VLA-Modelle), Fünf-Finger-Hände und weitere individuelle Varianten.</p>
+                            <p>Zu den Optionen zählen Handgelenkkameras mit anpassbarem Montagewinkel (optimiert für Pi0.5 und andere VLA-Modelle); Fünf-Finger-Hände befinden sich ebenso wie weitere individuelle Varianten in Entwicklung.</p>
                         </div>
                     </div>
                 </div>
@@ -1714,7 +1714,7 @@
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Ist der Roboter modular?</button>
-                        <div class="faq-a"><p>Ja. Greifer und Endeffektoren (2-Finger, 4-Finger, Fünf-Finger-Hände) lassen sich passend zur Aufgabe wechseln. Die Basis ist ein festes Stativ oder eine motorisierte Linearachse (Schiene); Fortbewegung auf Beinen steht auf der Roadmap.</p></div>
+                        <div class="faq-a"><p>Ja. Greifer und Endeffektoren (2-Finger, 4-Finger, Fünf-Finger-Hände) lassen sich passend zur Aufgabe wechseln. Die Basis ist heute ein festes Stativ; eine motorisierte Linearachse (Schiene) und Fortbewegung auf Beinen stehen auf der Roadmap.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Wo wird der Roboter hergestellt?</button>

@@ -517,7 +517,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 3rem;
             overflow: visible;
         }
 
@@ -810,7 +809,7 @@
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
             gap: 4rem;
-            align-items: start;
+            align-items: center;
         }
 
         .specs-table-wrapper {
@@ -845,8 +844,7 @@
         }
 
         .modules-section {
-            position: sticky;
-            top: 120px;
+            margin-top: 5rem;
         }
 
         .modules-title {
@@ -855,11 +853,12 @@
             font-weight: 700;
             margin-bottom: 2rem;
             letter-spacing: -0.01em;
+            text-align: center;
         }
 
         .modules-grid {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
         }
 
@@ -1302,7 +1301,7 @@
             .manipulator-content h4 { font-size: 1.1rem; }
             .manipulator-content p { font-size: 0.95rem; }
             .specs-content { grid-template-columns: 1fr; gap: 3rem; }
-            .modules-section { position: static; }
+            .modules-section { margin-top: 3rem; }
             .specs-table td { padding: 1.2rem 1.5rem; }
             .spec-label, .spec-value { font-size: 0.95rem; }
             .modules-title { font-size: 1.5rem; }
@@ -1378,7 +1377,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Kurus mākslīgā intelekta modeļus robots atbalsta?", "acceptedAnswer": {"@type": "Answer", "text": "Jau no paša sākuma tas atbalsta mūsdienu redzes-valodas-darbības un imitācijas mācīšanās politikas, tostarp Pi0, Pi0.5, ACT un SmolVLA. Vāciet teleoperācijas datus, precīzi pielāgojiet tos patērētāju GPU un izvietojiet, izmantojot SDK."}}, {"@type": "Question", "name": "Kas ir iekļauts robota komplektācijā?", "acceptedAnswer": {"@type": "Answer", "text": "Katra vienība tiek piegādāta ar pilnu SDK un vienkāršu REST API, URDF modeli, iekļautu simulatoru, galvā stiprināmām stereo kamerām un kamerām uz plaukstas locītavām, satvērējiem un tiešu inženieru atbalstu. Teleoperācijas plūsma darbojas jau pirmajā dienā."}}, {"@type": "Question", "name": "Vai es varu pats vākt teleoperācijas datus un apmācīt politikas?", "acceptedAnswer": {"@type": "Answer", "text": "Jā. Veiciet teleoperāciju, izmantojot VR ar Meta Quest 3S vai vadītāja-sekotāja kontrolieri, ierakstiet demonstrācijas standarta datu kopas formātā un apmāciet ACT vai precīzi pielāgojiet redzes-valodas-darbības modeli ar vienu patērētāju GPU."}}, {"@type": "Question", "name": "Uz kāda skaitļošanas aprīkojuma robots darbojas?", "acceptedAnswer": {"@type": "Answer", "text": "Iebūvētā skaitļošanas vienība ir Raspberry Pi 5 vai NVIDIA Jetson. Vieglās politikas darbojas ierīcē, savukārt smagākus redzes-valodas-darbības modeļus var palaist uz pievienotas darbstacijas GPU un straumēt komandas, izmantojot REST API."}}, {"@type": "Question", "name": "Vai robots ir modulārs?", "acceptedAnswer": {"@type": "Answer", "text": "Jā. Satvērējus un gala efektorus (2 pirkstu, 4 pirkstu, piecu pirkstu rokas) var mainīt atbilstoši uzdevumam. Pamatne ir fiksēts statīvs vai motorizēta lineārā ass (sliede); pārvietošanās uz kājām ir attīstības plānā."}}, {"@type": "Question", "name": "Kur robots tiek ražots?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus tiek projektēts un ražots Eiropas Savienībā, kas ir svarīgi Eiropas pētniecības laboratorijām un uzņēmumiem, kuriem rūp piegādes ķēdes izcelsme, atbalsts un EU datu rezidence."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Kurus mākslīgā intelekta modeļus robots atbalsta?", "acceptedAnswer": {"@type": "Answer", "text": "Jau no paša sākuma tas atbalsta mūsdienu redzes-valodas-darbības un imitācijas mācīšanās politikas, tostarp Pi0, Pi0.5, ACT un SmolVLA. Vāciet teleoperācijas datus, precīzi pielāgojiet tos patērētāju GPU un izvietojiet, izmantojot SDK."}}, {"@type": "Question", "name": "Kas ir iekļauts robota komplektācijā?", "acceptedAnswer": {"@type": "Answer", "text": "Katra vienība tiek piegādāta ar pilnu SDK un vienkāršu REST API, URDF modeli, iekļautu simulatoru, galvā stiprināmām stereo kamerām un kamerām uz plaukstas locītavām, satvērējiem un tiešu inženieru atbalstu. Teleoperācijas plūsma darbojas jau pirmajā dienā."}}, {"@type": "Question", "name": "Vai es varu pats vākt teleoperācijas datus un apmācīt politikas?", "acceptedAnswer": {"@type": "Answer", "text": "Jā. Veiciet teleoperāciju, izmantojot VR ar Meta Quest 3S vai vadītāja-sekotāja kontrolieri, ierakstiet demonstrācijas standarta datu kopas formātā un apmāciet ACT vai precīzi pielāgojiet redzes-valodas-darbības modeli ar vienu patērētāju GPU."}}, {"@type": "Question", "name": "Uz kāda skaitļošanas aprīkojuma robots darbojas?", "acceptedAnswer": {"@type": "Answer", "text": "Iebūvētā skaitļošanas vienība ir Raspberry Pi 5 vai NVIDIA Jetson. Vieglās politikas darbojas ierīcē, savukārt smagākus redzes-valodas-darbības modeļus var palaist uz pievienotas darbstacijas GPU un straumēt komandas, izmantojot REST API."}}, {"@type": "Question", "name": "Vai robots ir modulārs?", "acceptedAnswer": {"@type": "Answer", "text": "Jā. Satvērējus un gala efektorus (2 pirkstu, 4 pirkstu, piecu pirkstu rokas) var mainīt atbilstoši uzdevumam. Pamatne šobrīd ir fiksēts statīvs; motorizēta lineārā ass (sliede) un pārvietošanās uz kājām ir attīstības plānā."}}, {"@type": "Question", "name": "Kur robots tiek ražots?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus tiek projektēts un ražots Eiropas Savienībā, kas ir svarīgi Eiropas pētniecības laboratorijām un uzņēmumiem, kuriem rūp piegādes ķēdes izcelsme, atbalsts un EU datu rezidence."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1585,7 +1584,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Augstums</td>
-                                    <td class="spec-value">160cm uz statīva (172cm uz kājām)</td>
+                                    <td class="spec-value">160cm uz statīva (172cm ar nākotnes kāju moduli)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Platums</td>
@@ -1593,7 +1592,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Brīvības pakāpes</td>
-                                    <td class="spec-value">19 (29 with legs; 43 with hands; 53 with legs and hands)</td>
+                                    <td class="spec-value">19 šodien (līdz 53 ar attīstības plāna moduļiem: kājas, 5 pirkstu plaukstas)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Kameras</td>
@@ -1615,30 +1614,31 @@
                         </table>
                     </div>
 
-                    <div class="modules-section">
-                        <div class="specs-robot">
-                            <div class="robot-glow"></div>
-                            <img src="/prometheus-dual-arm-robot-tripod.png" alt="Prometheus dual-arm robot on tripod" class="robot-img">
+                    <div class="specs-robot">
+                        <div class="robot-glow"></div>
+                        <img src="/prometheus-dual-arm-robot-tripod.png" alt="Prometheus dual-arm robot on tripod" class="robot-img">
+                    </div>
+                </div>
+
+                <div class="modules-section">
+                    <h3 class="modules-title">Moduļi attīstības plānā</h3>
+                    <div class="modules-grid">
+                        <div class="module-card">
+                            <div class="module-icon">🛤️</div>
+                            <h4>Sliedes modulis</h4>
+                            <p>Motorizēta lineārā ass — izstrādes stadijā. Robots pārvietosies pa sliedi un apkalpos vairākas līnijas stacijas.</p>
                         </div>
-                        <h3 class="modules-title">Moduļi</h3>
-                        <div class="modules-grid">
-                            <div class="module-card">
-                                <div class="module-icon">🛤️</div>
-                                <h4>Sliedes modulis</h4>
-                                <p>Motorizēta lineārā ass: robots pārvietojas pa sliedi un apkalpo vairākas līnijas stacijas.</p>
-                            </div>
-                            <div class="module-card">
-                                <div class="module-icon">🦿</div>
-                                <h4>Kāju modulis</h4>
-                                <p>Divkāju pārvietošanās sistēma uzlabotai mobilitātei un cilvēkam līdzīgām kustību spējām.</p>
-                            </div>
+                        <div class="module-card">
+                            <div class="module-icon">🦿</div>
+                            <h4>Kāju modulis</h4>
+                            <p>Divkāju pārvietošanās — izstrādes stadijā. Paplašinās platformu no stacionārām stacijām uz mobiliem uzdevumiem.</p>
                         </div>
                     </div>
                 </div>
 
                 <div style="text-align: center; margin-top: 4rem;">
                     <a onclick="showPage('contacts')" class="cta-button" style="display: inline-flex; cursor: pointer;">
-                        Sazināties ar pārdošanu
+                        Pārrunāt attīstības plāna iespējas
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                         </svg>
@@ -1683,7 +1683,7 @@
                         <div class="manipulator-content">
                             <h3>Type X</h3>
                             <h4>Uzlaboti manipulatori</h4>
-                            <p>Iespējas ietver plaukstu kameras ar pielāgojamu montāžas leņķi (optimizētas Pi0.5 un citiem VLA modeļiem), 5 pirkstu plaukstas un citus pielāgotus variantus.</p>
+                            <p>Iespējas ietver plaukstu kameras ar pielāgojamu montāžas leņķi (optimizētas Pi0.5 un citiem VLA modeļiem); 5 pirkstu plaukstas ir izstrādes stadijā, tāpat kā citi pielāgoti varianti.</p>
                         </div>
                     </div>
                 </div>
@@ -1714,7 +1714,7 @@
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Vai robots ir modulārs?</button>
-                        <div class="faq-a"><p>Jā. Satvērējus un gala efektorus (2 pirkstu, 4 pirkstu, piecu pirkstu rokas) var mainīt atbilstoši uzdevumam. Pamatne ir fiksēts statīvs vai motorizēta lineārā ass (sliede); pārvietošanās uz kājām ir attīstības plānā.</p></div>
+                        <div class="faq-a"><p>Jā. Satvērējus un gala efektorus (2 pirkstu, 4 pirkstu, piecu pirkstu rokas) var mainīt atbilstoši uzdevumam. Pamatne šobrīd ir fiksēts statīvs; motorizēta lineārā ass (sliede) un pārvietošanās uz kājām ir attīstības plānā.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Kur robots tiek ražots?</button>

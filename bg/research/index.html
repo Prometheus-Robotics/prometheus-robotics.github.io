@@ -517,7 +517,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 3rem;
             overflow: visible;
         }
 
@@ -810,7 +809,7 @@
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
             gap: 4rem;
-            align-items: start;
+            align-items: center;
         }
 
         .specs-table-wrapper {
@@ -845,8 +844,7 @@
         }
 
         .modules-section {
-            position: sticky;
-            top: 120px;
+            margin-top: 5rem;
         }
 
         .modules-title {
@@ -855,11 +853,12 @@
             font-weight: 700;
             margin-bottom: 2rem;
             letter-spacing: -0.01em;
+            text-align: center;
         }
 
         .modules-grid {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
         }
 
@@ -1302,7 +1301,7 @@
             .manipulator-content h4 { font-size: 1.1rem; }
             .manipulator-content p { font-size: 0.95rem; }
             .specs-content { grid-template-columns: 1fr; gap: 3rem; }
-            .modules-section { position: static; }
+            .modules-section { margin-top: 3rem; }
             .specs-table td { padding: 1.2rem 1.5rem; }
             .spec-label, .spec-value { font-size: 0.95rem; }
             .modules-title { font-size: 1.5rem; }
@@ -1378,7 +1377,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Кои AI модели поддържа роботът?", "acceptedAnswer": {"@type": "Answer", "text": "В готов вид той поддържа съвременни политики от тип зрение-език-действие и имитационно обучение, включително Pi0, Pi0.5, ACT и SmolVLA. Събирайте данни от телеоперация, дообучавайте на потребителски GPU и внедрявайте чрез SDK."}}, {"@type": "Question", "name": "Какво е включено с робота?", "acceptedAnswer": {"@type": "Answer", "text": "Всяка единица се доставя с пълния SDK и опростен REST API, URDF модел, вграден симулатор, монтирани на главата стерео камери заедно с камери на китките, захвати и пряка инженерна поддръжка. Конвейерът за телеоперация работи още от първия ден."}}, {"@type": "Question", "name": "Мога ли сам да събирам данни от телеоперация и да обучавам политики?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Управлявайте дистанционно чрез VR с Meta Quest 3S или с контролер от тип водач-последовател, записвайте демонстрации в стандартния формат на набора от данни и обучавайте ACT или дообучавайте модел зрение-език-действие на един потребителски GPU."}}, {"@type": "Question", "name": "На какъв изчислителен ресурс работи роботът?", "acceptedAnswer": {"@type": "Answer", "text": "Бордовият изчислителен модул е Raspberry Pi 5 или NVIDIA Jetson. Леките политики се изпълняват на самото устройство, докато по-тежките модели зрение-език-действие могат да работят на GPU в свързана работна станция и да предават команди през REST API."}}, {"@type": "Question", "name": "Модулен ли е роботът?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Захватите и крайните ефектори (с 2 пръста, с 4 пръста, ръце с пет пръста) могат да се сменят според задачата. Основата е неподвижен статив или моторизирана линейна ос (релса); придвижването на крака е в плановете за развитие."}}, {"@type": "Question", "name": "Къде се произвежда роботът?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus е проектиран и произведен в Европейския съюз, което има значение за европейските изследователски лаборатории и компании, които държат на произхода на веригата за доставки, поддръжката и съхранението на данните в ЕС."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Кои AI модели поддържа роботът?", "acceptedAnswer": {"@type": "Answer", "text": "В готов вид той поддържа съвременни политики от тип зрение-език-действие и имитационно обучение, включително Pi0, Pi0.5, ACT и SmolVLA. Събирайте данни от телеоперация, дообучавайте на потребителски GPU и внедрявайте чрез SDK."}}, {"@type": "Question", "name": "Какво е включено с робота?", "acceptedAnswer": {"@type": "Answer", "text": "Всяка единица се доставя с пълния SDK и опростен REST API, URDF модел, вграден симулатор, монтирани на главата стерео камери заедно с камери на китките, захвати и пряка инженерна поддръжка. Конвейерът за телеоперация работи още от първия ден."}}, {"@type": "Question", "name": "Мога ли сам да събирам данни от телеоперация и да обучавам политики?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Управлявайте дистанционно чрез VR с Meta Quest 3S или с контролер от тип водач-последовател, записвайте демонстрации в стандартния формат на набора от данни и обучавайте ACT или дообучавайте модел зрение-език-действие на един потребителски GPU."}}, {"@type": "Question", "name": "На какъв изчислителен ресурс работи роботът?", "acceptedAnswer": {"@type": "Answer", "text": "Бордовият изчислителен модул е Raspberry Pi 5 или NVIDIA Jetson. Леките политики се изпълняват на самото устройство, докато по-тежките модели зрение-език-действие могат да работят на GPU в свързана работна станция и да предават команди през REST API."}}, {"@type": "Question", "name": "Модулен ли е роботът?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Захватите и крайните ефектори (с 2 пръста, с 4 пръста, ръце с пет пръста) могат да се сменят според задачата. Основата днес е неподвижен статив; моторизирана линейна ос (релса) и придвижването на крака са в плановете за развитие."}}, {"@type": "Question", "name": "Къде се произвежда роботът?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus е проектиран и произведен в Европейския съюз, което има значение за европейските изследователски лаборатории и компании, които държат на произхода на веригата за доставки, поддръжката и съхранението на данните в ЕС."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1585,7 +1584,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Височина</td>
-                                    <td class="spec-value">160cm на статив (172cm на крака)</td>
+                                    <td class="spec-value">160cm на статив (172cm с бъдещия модул крака)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Ширина</td>
@@ -1593,7 +1592,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Степени на свобода</td>
-                                    <td class="spec-value">19 (29 with legs; 43 with hands; 53 with legs and hands)</td>
+                                    <td class="spec-value">19 днес (до 53 с модулите от пътната карта: крака, 5-пръстови ръце)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Камери</td>
@@ -1615,30 +1614,31 @@
                         </table>
                     </div>
 
-                    <div class="modules-section">
-                        <div class="specs-robot">
-                            <div class="robot-glow"></div>
-                            <img src="/prometheus-dual-arm-robot-tripod.png" alt="Prometheus dual-arm robot on tripod" class="robot-img">
+                    <div class="specs-robot">
+                        <div class="robot-glow"></div>
+                        <img src="/prometheus-dual-arm-robot-tripod.png" alt="Prometheus dual-arm robot on tripod" class="robot-img">
+                    </div>
+                </div>
+
+                <div class="modules-section">
+                    <h3 class="modules-title">Модули в пътната карта</h3>
+                    <div class="modules-grid">
+                        <div class="module-card">
+                            <div class="module-icon">🛤️</div>
+                            <h4>Релсов модул</h4>
+                            <p>Моторизирана линейна ос — в разработка. Роботът ще се движи по релса, за да обслужва няколко станции на линията.</p>
                         </div>
-                        <h3 class="modules-title">Модули</h3>
-                        <div class="modules-grid">
-                            <div class="module-card">
-                                <div class="module-icon">🛤️</div>
-                                <h4>Релсов модул</h4>
-                                <p>Моторизирана линейна ос: роботът се движи по релса и обслужва няколко станции на линията.</p>
-                            </div>
-                            <div class="module-card">
-                                <div class="module-icon">🦿</div>
-                                <h4>Модул крака</h4>
-                                <p>Двукрака система за придвижване за подобрена мобилност и движения, подобни на човешките.</p>
-                            </div>
+                        <div class="module-card">
+                            <div class="module-icon">🦿</div>
+                            <h4>Модул крака</h4>
+                            <p>Двукрако придвижване — в разработка. Ще разшири платформата от стационарни станции към мобилни задачи.</p>
                         </div>
                     </div>
                 </div>
 
                 <div style="text-align: center; margin-top: 4rem;">
                     <a onclick="showPage('contacts')" class="cta-button" style="display: inline-flex; cursor: pointer;">
-                        Свържете се с отдел продажби
+                        Обсъдете опциите от пътната карта
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                         </svg>
@@ -1683,7 +1683,7 @@
                         <div class="manipulator-content">
                             <h3>Type X</h3>
                             <h4>Усъвършенствани манипулатори</h4>
-                            <p>Опциите включват киткови камери с регулируем ъгъл на монтаж (оптимизирани за Pi0.5 и други VLA модели), 5-пръстови ръце и други персонализирани варианти.</p>
+                            <p>Опциите включват киткови камери с регулируем ъгъл на монтаж (оптимизирани за Pi0.5 и други VLA модели); 5-пръстовите ръце са в разработка, както и други персонализирани варианти.</p>
                         </div>
                     </div>
                 </div>
@@ -1714,7 +1714,7 @@
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Модулен ли е роботът?</button>
-                        <div class="faq-a"><p>Да. Захватите и крайните ефектори (с 2 пръста, с 4 пръста, ръце с пет пръста) могат да се сменят според задачата. Основата е неподвижен статив или моторизирана линейна ос (релса); придвижването на крака е в плановете за развитие.</p></div>
+                        <div class="faq-a"><p>Да. Захватите и крайните ефектори (с 2 пръста, с 4 пръста, ръце с пет пръста) могат да се сменят според задачата. Основата днес е неподвижен статив; моторизирана линейна ос (релса) и придвижването на крака са в плановете за развитие.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Къде се произвежда роботът?</button>

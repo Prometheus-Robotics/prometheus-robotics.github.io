@@ -517,7 +517,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 3rem;
             overflow: visible;
         }
 
@@ -810,7 +809,7 @@
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
             gap: 4rem;
-            align-items: start;
+            align-items: center;
         }
 
         .specs-table-wrapper {
@@ -845,8 +844,7 @@
         }
 
         .modules-section {
-            position: sticky;
-            top: 120px;
+            margin-top: 5rem;
         }
 
         .modules-title {
@@ -855,11 +853,12 @@
             font-weight: 700;
             margin-bottom: 2rem;
             letter-spacing: -0.01em;
+            text-align: center;
         }
 
         .modules-grid {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
         }
 
@@ -1302,7 +1301,7 @@
             .manipulator-content h4 { font-size: 1.1rem; }
             .manipulator-content p { font-size: 0.95rem; }
             .specs-content { grid-template-columns: 1fr; gap: 3rem; }
-            .modules-section { position: static; }
+            .modules-section { margin-top: 3rem; }
             .specs-table td { padding: 1.2rem 1.5rem; }
             .spec-label, .spec-value { font-size: 0.95rem; }
             .modules-title { font-size: 1.5rem; }
@@ -1378,7 +1377,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Quali modelli di intelligenza artificiale supporta il robot?", "acceptedAnswer": {"@type": "Answer", "text": "Da subito supporta moderne politiche di tipo visione-linguaggio-azione e di apprendimento per imitazione, tra cui Pi0, Pi0.5, ACT e SmolVLA. Raccogliete dati di teleoperazione, eseguite il fine-tuning su una GPU consumer e procedete al deployment tramite l'SDK."}}, {"@type": "Question", "name": "Cosa è incluso con il robot?", "acceptedAnswer": {"@type": "Answer", "text": "Ogni unità viene fornita con l'SDK completo e una semplice REST API, un modello URDF, un simulatore integrato, telecamere stereo montate sulla testa più telecamere sui polsi, pinze di presa e supporto ingegneristico diretto. La pipeline di teleoperazione funziona fin dal primo giorno."}}, {"@type": "Question", "name": "Posso raccogliere dati di teleoperazione e addestrare le politiche autonomamente?", "acceptedAnswer": {"@type": "Answer", "text": "Sì. Eseguite la teleoperazione tramite VR con un Meta Quest 3S o un controller leader-follower, registrate le dimostrazioni nel formato dataset standard e addestrate ACT oppure eseguite il fine-tuning di un modello visione-linguaggio-azione su una singola GPU consumer."}}, {"@type": "Question", "name": "Su quale potenza di calcolo opera il robot?", "acceptedAnswer": {"@type": "Answer", "text": "Il calcolo a bordo è affidato a un Raspberry Pi 5 o a un NVIDIA Jetson. Le politiche leggere vengono eseguite sul dispositivo, mentre i modelli visione-linguaggio-azione più impegnativi possono essere eseguiti sulla GPU di una workstation collegata, trasmettendo i comandi tramite la REST API."}}, {"@type": "Question", "name": "Il robot è modulare?", "acceptedAnswer": {"@type": "Answer", "text": "Sì. È possibile sostituire pinze ed effettori finali (2 dita, 4 dita, mani a cinque dita) in base al compito. La base è un treppiede fisso o un asse lineare motorizzato (binario); la locomozione su gambe è nella roadmap."}}, {"@type": "Question", "name": "Dove viene prodotto il robot?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus è progettato e fabbricato nell'Unione Europea, un aspetto importante per i laboratori di ricerca e le aziende europee che tengono alla provenienza della catena di approvvigionamento, al supporto e alla residenza dei dati nell'EU."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Quali modelli di intelligenza artificiale supporta il robot?", "acceptedAnswer": {"@type": "Answer", "text": "Da subito supporta moderne politiche di tipo visione-linguaggio-azione e di apprendimento per imitazione, tra cui Pi0, Pi0.5, ACT e SmolVLA. Raccogliete dati di teleoperazione, eseguite il fine-tuning su una GPU consumer e procedete al deployment tramite l'SDK."}}, {"@type": "Question", "name": "Cosa è incluso con il robot?", "acceptedAnswer": {"@type": "Answer", "text": "Ogni unità viene fornita con l'SDK completo e una semplice REST API, un modello URDF, un simulatore integrato, telecamere stereo montate sulla testa più telecamere sui polsi, pinze di presa e supporto ingegneristico diretto. La pipeline di teleoperazione funziona fin dal primo giorno."}}, {"@type": "Question", "name": "Posso raccogliere dati di teleoperazione e addestrare le politiche autonomamente?", "acceptedAnswer": {"@type": "Answer", "text": "Sì. Eseguite la teleoperazione tramite VR con un Meta Quest 3S o un controller leader-follower, registrate le dimostrazioni nel formato dataset standard e addestrate ACT oppure eseguite il fine-tuning di un modello visione-linguaggio-azione su una singola GPU consumer."}}, {"@type": "Question", "name": "Su quale potenza di calcolo opera il robot?", "acceptedAnswer": {"@type": "Answer", "text": "Il calcolo a bordo è affidato a un Raspberry Pi 5 o a un NVIDIA Jetson. Le politiche leggere vengono eseguite sul dispositivo, mentre i modelli visione-linguaggio-azione più impegnativi possono essere eseguiti sulla GPU di una workstation collegata, trasmettendo i comandi tramite la REST API."}}, {"@type": "Question", "name": "Il robot è modulare?", "acceptedAnswer": {"@type": "Answer", "text": "Sì. È possibile sostituire pinze ed effettori finali (2 dita, 4 dita, mani a cinque dita) in base al compito. Oggi la base è un treppiede fisso; un asse lineare motorizzato (binario) e la locomozione su gambe sono nella roadmap."}}, {"@type": "Question", "name": "Dove viene prodotto il robot?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus è progettato e fabbricato nell'Unione Europea, un aspetto importante per i laboratori di ricerca e le aziende europee che tengono alla provenienza della catena di approvvigionamento, al supporto e alla residenza dei dati nell'EU."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1585,7 +1584,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Altezza</td>
-                                    <td class="spec-value">160cm su treppiede (172cm con gambe)</td>
+                                    <td class="spec-value">160cm su treppiede (172cm con il futuro modulo gambe)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Larghezza</td>
@@ -1593,7 +1592,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Gradi di libertà</td>
-                                    <td class="spec-value">19 (29 with legs; 43 with hands; 53 with legs and hands)</td>
+                                    <td class="spec-value">19 oggi (fino a 53 con i moduli in roadmap: gambe, mani a 5 dita)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Telecamere</td>
@@ -1615,30 +1614,31 @@
                         </table>
                     </div>
 
-                    <div class="modules-section">
-                        <div class="specs-robot">
-                            <div class="robot-glow"></div>
-                            <img src="/prometheus-dual-arm-robot-tripod.png" alt="Prometheus dual-arm robot on tripod" class="robot-img">
+                    <div class="specs-robot">
+                        <div class="robot-glow"></div>
+                        <img src="/prometheus-dual-arm-robot-tripod.png" alt="Prometheus dual-arm robot on tripod" class="robot-img">
+                    </div>
+                </div>
+
+                <div class="modules-section">
+                    <h3 class="modules-title">Moduli in roadmap</h3>
+                    <div class="modules-grid">
+                        <div class="module-card">
+                            <div class="module-icon">🛤️</div>
+                            <h4>Modulo su rotaia</h4>
+                            <p>Asse lineare motorizzato — in sviluppo. Il robot si sposterà lungo un binario per servire più stazioni della linea.</p>
                         </div>
-                        <h3 class="modules-title">Moduli</h3>
-                        <div class="modules-grid">
-                            <div class="module-card">
-                                <div class="module-icon">🛤️</div>
-                                <h4>Modulo su rotaia</h4>
-                                <p>Asse lineare motorizzato: il robot si sposta lungo un binario e serve più stazioni della linea.</p>
-                            </div>
-                            <div class="module-card">
-                                <div class="module-icon">🦿</div>
-                                <h4>Modulo gambe</h4>
-                                <p>Sistema di locomozione bipede per una mobilità migliorata e capacità di movimento simili a quelle umane.</p>
-                            </div>
+                        <div class="module-card">
+                            <div class="module-icon">🦿</div>
+                            <h4>Modulo gambe</h4>
+                            <p>Locomozione bipede — in sviluppo. Estenderà la piattaforma dalle stazioni fisse alle attività in mobilità.</p>
                         </div>
                     </div>
                 </div>
 
                 <div style="text-align: center; margin-top: 4rem;">
                     <a onclick="showPage('contacts')" class="cta-button" style="display: inline-flex; cursor: pointer;">
-                        Contatta il commerciale
+                        Parlaci delle opzioni in roadmap
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                         </svg>
@@ -1683,7 +1683,7 @@
                         <div class="manipulator-content">
                             <h3>Type X</h3>
                             <h4>Manipolatori avanzati</h4>
-                            <p>Le opzioni includono telecamere da polso con angolo di montaggio personalizzabile (ottimizzate per Pi0.5 e altri modelli VLA), mani a 5 dita e altre varianti personalizzate.</p>
+                            <p>Le opzioni includono telecamere da polso con angolo di montaggio personalizzabile (ottimizzate per Pi0.5 e altri modelli VLA); le mani a 5 dita sono in sviluppo, insieme ad altre varianti personalizzate.</p>
                         </div>
                     </div>
                 </div>
@@ -1714,7 +1714,7 @@
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Il robot è modulare?</button>
-                        <div class="faq-a"><p>Sì. È possibile sostituire pinze ed effettori finali (2 dita, 4 dita, mani a cinque dita) in base al compito. La base è un treppiede fisso o un asse lineare motorizzato (binario); la locomozione su gambe è nella roadmap.</p></div>
+                        <div class="faq-a"><p>Sì. È possibile sostituire pinze ed effettori finali (2 dita, 4 dita, mani a cinque dita) in base al compito. Oggi la base è un treppiede fisso; un asse lineare motorizzato (binario) e la locomozione su gambe sono nella roadmap.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Dove viene prodotto il robot?</button>

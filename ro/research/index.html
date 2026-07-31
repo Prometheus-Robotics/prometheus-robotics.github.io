@@ -517,7 +517,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 3rem;
             overflow: visible;
         }
 
@@ -810,7 +809,7 @@
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
             gap: 4rem;
-            align-items: start;
+            align-items: center;
         }
 
         .specs-table-wrapper {
@@ -845,8 +844,7 @@
         }
 
         .modules-section {
-            position: sticky;
-            top: 120px;
+            margin-top: 5rem;
         }
 
         .modules-title {
@@ -855,11 +853,12 @@
             font-weight: 700;
             margin-bottom: 2rem;
             letter-spacing: -0.01em;
+            text-align: center;
         }
 
         .modules-grid {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
         }
 
@@ -1302,7 +1301,7 @@
             .manipulator-content h4 { font-size: 1.1rem; }
             .manipulator-content p { font-size: 0.95rem; }
             .specs-content { grid-template-columns: 1fr; gap: 3rem; }
-            .modules-section { position: static; }
+            .modules-section { margin-top: 3rem; }
             .specs-table td { padding: 1.2rem 1.5rem; }
             .spec-label, .spec-value { font-size: 0.95rem; }
             .modules-title { font-size: 1.5rem; }
@@ -1378,7 +1377,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ce modele de inteligență artificială acceptă robotul?", "acceptedAnswer": {"@type": "Answer", "text": "Din configurația standard acceptă politici moderne de tip vision-language-action și de învățare prin imitație, inclusiv Pi0, Pi0.5, ACT și SmolVLA. Colectați date de teleoperare, efectuați ajustarea fină pe un GPU de consum și implementați prin SDK."}}, {"@type": "Question", "name": "Ce este inclus împreună cu robotul?", "acceptedAnswer": {"@type": "Answer", "text": "Fiecare unitate este livrată cu SDK-ul complet și un REST API simplu, un model URDF, un simulator inclus, camere stereo montate pe cap plus camere pe încheietură, dispozitive de prindere și asistență tehnică directă. Fluxul de teleoperare funcționează din prima zi."}}, {"@type": "Question", "name": "Pot să colectez date de teleoperare și să antrenez eu însumi politici?", "acceptedAnswer": {"@type": "Answer", "text": "Da. Teleoperați prin VR cu un Meta Quest 3S sau un controler de tip lider-urmăritor, înregistrați demonstrații în formatul standard al setului de date și antrenați ACT sau efectuați ajustarea fină a unui model vision-language-action pe un singur GPU de consum."}}, {"@type": "Question", "name": "Pe ce capacitate de calcul rulează robotul?", "acceptedAnswer": {"@type": "Answer", "text": "Capacitatea de calcul de la bord este un Raspberry Pi 5 sau un NVIDIA Jetson. Politicile ușoare rulează direct pe dispozitiv, în timp ce modelele vision-language-action mai solicitante pot rula pe GPU-ul unei stații de lucru conectate și pot transmite comenzi prin REST API."}}, {"@type": "Question", "name": "Robotul este modular?", "acceptedAnswer": {"@type": "Answer", "text": "Da. Graiferele și efectorii finali (2 degete, 4 degete, mâini cu cinci degete) pot fi schimbați în funcție de sarcină. Baza este un trepied fix sau o axă liniară motorizată (șină); locomoția pe picioare este în plan."}}, {"@type": "Question", "name": "Unde este fabricat robotul?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus este proiectat și fabricat în Uniunea Europeană, ceea ce contează pentru laboratoarele de cercetare și companiile europene preocupate de proveniența lanțului de aprovizionare, de asistență și de rezidența datelor în UE."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ce modele de inteligență artificială acceptă robotul?", "acceptedAnswer": {"@type": "Answer", "text": "Din configurația standard acceptă politici moderne de tip vision-language-action și de învățare prin imitație, inclusiv Pi0, Pi0.5, ACT și SmolVLA. Colectați date de teleoperare, efectuați ajustarea fină pe un GPU de consum și implementați prin SDK."}}, {"@type": "Question", "name": "Ce este inclus împreună cu robotul?", "acceptedAnswer": {"@type": "Answer", "text": "Fiecare unitate este livrată cu SDK-ul complet și un REST API simplu, un model URDF, un simulator inclus, camere stereo montate pe cap plus camere pe încheietură, dispozitive de prindere și asistență tehnică directă. Fluxul de teleoperare funcționează din prima zi."}}, {"@type": "Question", "name": "Pot să colectez date de teleoperare și să antrenez eu însumi politici?", "acceptedAnswer": {"@type": "Answer", "text": "Da. Teleoperați prin VR cu un Meta Quest 3S sau un controler de tip lider-urmăritor, înregistrați demonstrații în formatul standard al setului de date și antrenați ACT sau efectuați ajustarea fină a unui model vision-language-action pe un singur GPU de consum."}}, {"@type": "Question", "name": "Pe ce capacitate de calcul rulează robotul?", "acceptedAnswer": {"@type": "Answer", "text": "Capacitatea de calcul de la bord este un Raspberry Pi 5 sau un NVIDIA Jetson. Politicile ușoare rulează direct pe dispozitiv, în timp ce modelele vision-language-action mai solicitante pot rula pe GPU-ul unei stații de lucru conectate și pot transmite comenzi prin REST API."}}, {"@type": "Question", "name": "Robotul este modular?", "acceptedAnswer": {"@type": "Answer", "text": "Da. Graiferele și efectorii finali (2 degete, 4 degete, mâini cu cinci degete) pot fi schimbați în funcție de sarcină. Baza este în prezent un trepied fix; o axă liniară motorizată (șină) și locomoția pe picioare sunt în plan."}}, {"@type": "Question", "name": "Unde este fabricat robotul?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus este proiectat și fabricat în Uniunea Europeană, ceea ce contează pentru laboratoarele de cercetare și companiile europene preocupate de proveniența lanțului de aprovizionare, de asistență și de rezidența datelor în UE."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1585,7 +1584,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Înălțime</td>
-                                    <td class="spec-value">160cm pe trepied (172cm pe picioare)</td>
+                                    <td class="spec-value">160cm pe trepied (172cm cu viitorul modul de picioare)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Lățime</td>
@@ -1593,7 +1592,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Grade de libertate</td>
-                                    <td class="spec-value">19 (29 with legs; 43 with hands; 53 with legs and hands)</td>
+                                    <td class="spec-value">19 în prezent (până la 53 cu modulele din plan: picioare, mâini cu 5 degete)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Camere</td>
@@ -1615,30 +1614,31 @@
                         </table>
                     </div>
 
-                    <div class="modules-section">
-                        <div class="specs-robot">
-                            <div class="robot-glow"></div>
-                            <img src="/prometheus-dual-arm-robot-tripod.png" alt="Prometheus dual-arm robot on tripod" class="robot-img">
+                    <div class="specs-robot">
+                        <div class="robot-glow"></div>
+                        <img src="/prometheus-dual-arm-robot-tripod.png" alt="Prometheus dual-arm robot on tripod" class="robot-img">
+                    </div>
+                </div>
+
+                <div class="modules-section">
+                    <h3 class="modules-title">Module în plan</h3>
+                    <div class="modules-grid">
+                        <div class="module-card">
+                            <div class="module-icon">🛤️</div>
+                            <h4>Modul pe șină</h4>
+                            <p>Axă liniară motorizată — în dezvoltare. Robotul se va deplasa pe o șină pentru a deservi mai multe stații de pe linie.</p>
                         </div>
-                        <h3 class="modules-title">Module</h3>
-                        <div class="modules-grid">
-                            <div class="module-card">
-                                <div class="module-icon">🛤️</div>
-                                <h4>Modul pe șină</h4>
-                                <p>Axă liniară motorizată: robotul se deplasează pe o șină și deservește mai multe stații de pe linie.</p>
-                            </div>
-                            <div class="module-card">
-                                <div class="module-icon">🦿</div>
-                                <h4>Modul picioare</h4>
-                                <p>Sistem de locomoție bipedă pentru mobilitate sporită și capacități de mișcare asemănătoare omului.</p>
-                            </div>
+                        <div class="module-card">
+                            <div class="module-icon">🦿</div>
+                            <h4>Modul picioare</h4>
+                            <p>Locomoție bipedă — în dezvoltare. Va extinde platforma de la stații fixe la sarcini mobile.</p>
                         </div>
                     </div>
                 </div>
 
                 <div style="text-align: center; margin-top: 4rem;">
                     <a onclick="showPage('contacts')" class="cta-button" style="display: inline-flex; cursor: pointer;">
-                        Contactați vânzările
+                        Discutați opțiunile din plan
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                         </svg>
@@ -1683,7 +1683,7 @@
                         <div class="manipulator-content">
                             <h3>Type X</h3>
                             <h4>Manipulatoare avansate</h4>
-                            <p>Opțiunile includ camere de încheietură cu unghi de montare personalizabil (optimizate pentru Pi0.5 și alte modele VLA), mâini cu 5 degete și alte variante personalizate.</p>
+                            <p>Opțiunile includ camere de încheietură cu unghi de montare personalizabil (optimizate pentru Pi0.5 și alte modele VLA); mâinile cu 5 degete sunt în dezvoltare, alături de alte variante personalizate.</p>
                         </div>
                     </div>
                 </div>
@@ -1714,7 +1714,7 @@
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Robotul este modular?</button>
-                        <div class="faq-a"><p>Da. Graiferele și efectorii finali (2 degete, 4 degete, mâini cu cinci degete) pot fi schimbați în funcție de sarcină. Baza este un trepied fix sau o axă liniară motorizată (șină); locomoția pe picioare este în plan.</p></div>
+                        <div class="faq-a"><p>Da. Graiferele și efectorii finali (2 degete, 4 degete, mâini cu cinci degete) pot fi schimbați în funcție de sarcină. Baza este în prezent un trepied fix; o axă liniară motorizată (șină) și locomoția pe picioare sunt în plan.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Unde este fabricat robotul?</button>

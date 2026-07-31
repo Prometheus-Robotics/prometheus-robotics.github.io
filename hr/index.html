@@ -517,7 +517,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 3rem;
             overflow: visible;
         }
 
@@ -810,7 +809,7 @@
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
             gap: 4rem;
-            align-items: start;
+            align-items: center;
         }
 
         .specs-table-wrapper {
@@ -845,8 +844,7 @@
         }
 
         .modules-section {
-            position: sticky;
-            top: 120px;
+            margin-top: 5rem;
         }
 
         .modules-title {
@@ -855,11 +853,12 @@
             font-weight: 700;
             margin-bottom: 2rem;
             letter-spacing: -0.01em;
+            text-align: center;
         }
 
         .modules-grid {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
         }
 
@@ -1302,7 +1301,7 @@
             .manipulator-content h4 { font-size: 1.1rem; }
             .manipulator-content p { font-size: 0.95rem; }
             .specs-content { grid-template-columns: 1fr; gap: 3rem; }
-            .modules-section { position: static; }
+            .modules-section { margin-top: 3rem; }
             .specs-table td { padding: 1.2rem 1.5rem; }
             .spec-label, .spec-value { font-size: 0.95rem; }
             .modules-title { font-size: 1.5rem; }
@@ -1519,7 +1518,7 @@
         <section class="research-ready">
             <div class="research-ready-container">
                 <h2 class="section-title">Manipulacijska stanica</h2>
-                <p class="section-subtitle">Robot s dvije ruke na fiksnoj bazi ili motoriziranoj linearnoj osi. Dijelovi dolaze do stanice — bez nogu i bez navigacije, namjerno: tako robot već danas ostaje pristupačan, pouzdan i spreman za certifikaciju.</p>
+                <p class="section-subtitle">Robot s dvije ruke na fiksnoj bazi; motorizirana linearna os je u planu razvoja. Dijelovi dolaze do stanice — bez nogu i bez navigacije, namjerno: tako robot već danas ostaje pristupačan, pouzdan i spreman za certifikaciju.</p>
 
                 <div class="research-grid">
                     <div class="research-card featured">
@@ -1630,7 +1629,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Mogućnosti postavljanja</td>
-                                    <td class="spec-value">Fiksna baza / motorizirana linearna os (tračnica)</td>
+                                    <td class="spec-value">Fiksna baza (motorizirana linearna os u planu razvoja)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Visina</td>
@@ -1664,11 +1663,9 @@
                         </table>
                     </div>
 
-                    <div class="modules-section">
-                        <div class="specs-robot">
-                            <div class="robot-glow"></div>
-                            <img src="/prometheus-dual-arm-robot-tripod.png" alt="Prometheus dual-arm robot on tripod" class="robot-img">
-                        </div>
+                    <div class="specs-robot">
+                        <div class="robot-glow"></div>
+                        <img src="/prometheus-dual-arm-robot-tripod.png" alt="Prometheus dual-arm robot on tripod" class="robot-img">
                     </div>
                 </div>
 

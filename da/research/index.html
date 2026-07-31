@@ -517,7 +517,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 3rem;
             overflow: visible;
         }
 
@@ -810,7 +809,7 @@
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
             gap: 4rem;
-            align-items: start;
+            align-items: center;
         }
 
         .specs-table-wrapper {
@@ -845,8 +844,7 @@
         }
 
         .modules-section {
-            position: sticky;
-            top: 120px;
+            margin-top: 5rem;
         }
 
         .modules-title {
@@ -855,11 +853,12 @@
             font-weight: 700;
             margin-bottom: 2rem;
             letter-spacing: -0.01em;
+            text-align: center;
         }
 
         .modules-grid {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
         }
 
@@ -1302,7 +1301,7 @@
             .manipulator-content h4 { font-size: 1.1rem; }
             .manipulator-content p { font-size: 0.95rem; }
             .specs-content { grid-template-columns: 1fr; gap: 3rem; }
-            .modules-section { position: static; }
+            .modules-section { margin-top: 3rem; }
             .specs-table td { padding: 1.2rem 1.5rem; }
             .spec-label, .spec-value { font-size: 0.95rem; }
             .modules-title { font-size: 1.5rem; }
@@ -1378,7 +1377,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Hvilke AI-modeller understøtter robotten?", "acceptedAnswer": {"@type": "Answer", "text": "Lige ud af kassen understøtter den moderne vision-language-action- og imitationslæringspolitikker, herunder Pi0, Pi0.5, ACT og SmolVLA. Indsaml teleoperationsdata, finjuster på en forbruger-GPU, og udrul via SDK."}}, {"@type": "Question", "name": "Hvad er inkluderet med robotten?", "acceptedAnswer": {"@type": "Answer", "text": "Hver enhed leveres med det fulde SDK og et enkelt REST API, en URDF-model, en medfølgende simulator, hovedmonterede stereokameraer plus håndledskameraer, gribere og direkte teknisk support. Teleoperationspipelinen fungerer fra første dag."}}, {"@type": "Question", "name": "Kan jeg selv indsamle teleoperationsdata og træne politikker?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Teleoperer via VR med en Meta Quest 3S eller en leder-følger-controller, optag demonstrationer i standarddatasætformatet, og træn ACT eller finjuster en vision-language-action-model på en enkelt forbruger-GPU."}}, {"@type": "Question", "name": "Hvilken beregningskraft kører robotten på?", "acceptedAnswer": {"@type": "Answer", "text": "Den indbyggede beregningskraft er en Raspberry Pi 5 eller en NVIDIA Jetson. Lette politikker kører på enheden, mens tungere vision-language-action-modeller kan køre på en tilsluttet arbejdsstations-GPU og streame kommandoer via REST API."}}, {"@type": "Question", "name": "Er robotten modulær?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Gribere og endeeffektorer (2-finger, 4-finger, femfingrede hænder) kan skiftes efter opgaven. Basen er et fast stativ eller en motoriseret lineær akse (skinne); benbaseret bevægelse er på køreplanen."}}, {"@type": "Question", "name": "Hvor er robotten fremstillet?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus er designet og fremstillet i Den Europæiske Union, hvilket har betydning for europæiske forskningslaboratorier og virksomheder, der lægger vægt på forsyningskædens oprindelse, support og EU-dataresidens."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Hvilke AI-modeller understøtter robotten?", "acceptedAnswer": {"@type": "Answer", "text": "Lige ud af kassen understøtter den moderne vision-language-action- og imitationslæringspolitikker, herunder Pi0, Pi0.5, ACT og SmolVLA. Indsaml teleoperationsdata, finjuster på en forbruger-GPU, og udrul via SDK."}}, {"@type": "Question", "name": "Hvad er inkluderet med robotten?", "acceptedAnswer": {"@type": "Answer", "text": "Hver enhed leveres med det fulde SDK og et enkelt REST API, en URDF-model, en medfølgende simulator, hovedmonterede stereokameraer plus håndledskameraer, gribere og direkte teknisk support. Teleoperationspipelinen fungerer fra første dag."}}, {"@type": "Question", "name": "Kan jeg selv indsamle teleoperationsdata og træne politikker?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Teleoperer via VR med en Meta Quest 3S eller en leder-følger-controller, optag demonstrationer i standarddatasætformatet, og træn ACT eller finjuster en vision-language-action-model på en enkelt forbruger-GPU."}}, {"@type": "Question", "name": "Hvilken beregningskraft kører robotten på?", "acceptedAnswer": {"@type": "Answer", "text": "Den indbyggede beregningskraft er en Raspberry Pi 5 eller en NVIDIA Jetson. Lette politikker kører på enheden, mens tungere vision-language-action-modeller kan køre på en tilsluttet arbejdsstations-GPU og streame kommandoer via REST API."}}, {"@type": "Question", "name": "Er robotten modulær?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Gribere og endeeffektorer (2-finger, 4-finger, femfingrede hænder) kan skiftes efter opgaven. Basen er i dag et fast stativ; en motoriseret lineær akse (skinne) og benbaseret bevægelse er på køreplanen."}}, {"@type": "Question", "name": "Hvor er robotten fremstillet?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus er designet og fremstillet i Den Europæiske Union, hvilket har betydning for europæiske forskningslaboratorier og virksomheder, der lægger vægt på forsyningskædens oprindelse, support og EU-dataresidens."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1585,7 +1584,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Højde</td>
-                                    <td class="spec-value">160 cm på trefod (172 cm på ben)</td>
+                                    <td class="spec-value">160 cm på trefod (172 cm med fremtidigt benmodul)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Bredde</td>
@@ -1593,7 +1592,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Frihedsgrader</td>
-                                    <td class="spec-value">19 (29 with legs; 43 with hands; 53 with legs and hands)</td>
+                                    <td class="spec-value">19 i dag (op til 53 med moduler på køreplanen: ben, 5-finger-hænder)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Kameraer</td>
@@ -1615,30 +1614,31 @@
                         </table>
                     </div>
 
-                    <div class="modules-section">
-                        <div class="specs-robot">
-                            <div class="robot-glow"></div>
-                            <img src="/prometheus-dual-arm-robot-tripod.png" alt="Prometheus dual-arm robot on tripod" class="robot-img">
+                    <div class="specs-robot">
+                        <div class="robot-glow"></div>
+                        <img src="/prometheus-dual-arm-robot-tripod.png" alt="Prometheus dual-arm robot on tripod" class="robot-img">
+                    </div>
+                </div>
+
+                <div class="modules-section">
+                    <h3 class="modules-title">Moduler på køreplanen</h3>
+                    <div class="modules-grid">
+                        <div class="module-card">
+                            <div class="module-icon">🛤️</div>
+                            <h4>Skinnemodul</h4>
+                            <p>Motoriseret lineær akse — under udvikling. Robotten vil køre langs en skinne og betjene flere stationer på linjen.</p>
                         </div>
-                        <h3 class="modules-title">Moduler</h3>
-                        <div class="modules-grid">
-                            <div class="module-card">
-                                <div class="module-icon">🛤️</div>
-                                <h4>Skinnemodul</h4>
-                                <p>Motoriseret lineær akse: robotten kører langs en skinne og betjener flere stationer på linjen.</p>
-                            </div>
-                            <div class="module-card">
-                                <div class="module-icon">🦿</div>
-                                <h4>Benmodul</h4>
-                                <p>Tobenet bevægelsessystem til øget mobilitet og menneskelignende bevægelsesevner.</p>
-                            </div>
+                        <div class="module-card">
+                            <div class="module-icon">🦿</div>
+                            <h4>Benmodul</h4>
+                            <p>Tobenet bevægelse — under udvikling. Vil udvide platformen fra stationære stationer til mobile opgaver.</p>
                         </div>
                     </div>
                 </div>
 
                 <div style="text-align: center; margin-top: 4rem;">
                     <a onclick="showPage('contacts')" class="cta-button" style="display: inline-flex; cursor: pointer;">
-                        Kontakt salg
+                        Drøft muligheder på køreplanen
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                         </svg>
@@ -1683,7 +1683,7 @@
                         <div class="manipulator-content">
                             <h3>Type X</h3>
                             <h4>Avancerede manipulatorer</h4>
-                            <p>Mulighederne omfatter håndledskameraer med justerbar monteringsvinkel (optimeret til Pi0.5 og andre VLA-modeller), 5-finger-hænder og andre kundetilpassede varianter.</p>
+                            <p>Mulighederne omfatter håndledskameraer med justerbar monteringsvinkel (optimeret til Pi0.5 og andre VLA-modeller); 5-finger-hænder er under udvikling sammen med andre kundetilpassede varianter.</p>
                         </div>
                     </div>
                 </div>
@@ -1714,7 +1714,7 @@
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Er robotten modulær?</button>
-                        <div class="faq-a"><p>Ja. Gribere og endeeffektorer (2-finger, 4-finger, femfingrede hænder) kan skiftes efter opgaven. Basen er et fast stativ eller en motoriseret lineær akse (skinne); benbaseret bevægelse er på køreplanen.</p></div>
+                        <div class="faq-a"><p>Ja. Gribere og endeeffektorer (2-finger, 4-finger, femfingrede hænder) kan skiftes efter opgaven. Basen er i dag et fast stativ; en motoriseret lineær akse (skinne) og benbaseret bevægelse er på køreplanen.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Hvor er robotten fremstillet?</button>
