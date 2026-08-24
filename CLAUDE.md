@@ -97,7 +97,7 @@ the masters, so they propagate to all language pages.
 - Header (`nav`) is **transparent at top**, gains dark bg + blur on scroll (`nav.scrolled`).
 - Dark theme; colors via CSS vars in `:root` (`--color-accent` is `#3b82f6`).
 - No build framework / package.json — plain HTML/CSS/JS + the two Python generators.
-- Booking link everywhere: `https://calendar.app.google/SquetjZENQ37ZrCv6`. Buy form
+- Booking link everywhere: `https://calendly.com/prometheusroboticsco/call`. Buy form
   (`forms.gle/G5cSyxhieorj9oACA`) appears ONLY on `/research/` pages.
 - To verify a deploy: `curl -s "https://meetprometheus.com/?cb=$RANDOM" | grep <marker>`
   (cache-bust; WebFetch caches 15 min). No headless browser on this machine.
