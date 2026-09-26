@@ -20,7 +20,7 @@ Honesty rules for copy: autonomy is described as *trained per task during the pi
 ## Two master pages
 
 - `index.html` — **industrial homepage** (served at `/`). Sections: hero (badges: EU ·
-  NVIDIA Inception · Tier-1 traction; CTAs: Book a Call + For Research Labs) → Traction →
+  NVIDIA Inception · Tier-1 traction; CTA: Book a Call only — /research/ reachable via nav) → Traction →
   Problem → The Manipulation Station → How It Works (demonstrate/train/run/compound) →
   Why Manufacturers → specs (no legs/wheels, has "Deployment Options" row) → industrial
   FAQ → Book-a-Call CTA. Separate `#contacts-page` div toggled by `showPage()`.

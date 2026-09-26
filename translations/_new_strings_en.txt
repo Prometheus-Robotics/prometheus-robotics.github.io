@@ -15,8 +15,8 @@ Working with Industry
 Where we are today with industrial partners.
 Tier-1 automotive LOI
 Signed letter of intent with a tier-1 automotive supplier, including a paid pilot.
-Deployment track in progress
-End-of-line testing deployment track in progress at a European plant.
+End-of-line pilot in preparation
+Second LOI, for an end-of-line testing station, in legal review.
 The Line Positions You Cannot Staff
 European manufacturers cannot staff repetitive line positions — and the existing alternatives do not fit flexible tasks.
 Three shifts, three operators
@@ -57,12 +57,12 @@ Dual-arm upper body — the manipulation station configuration
 Deployment Options
 Fixed base (motorized linear axis on the roadmap)
 160cm on tripod
-19 (43 with hands)
+19 (5-finger hands in development)
 Put Prometheus on Your Line
 Book a call to scope an end-of-line pilot for your plant — we will walk through your stations, tasks, and integration constraints.
 Home
 Research
-Bimanual robots for industrial automation — end-of-line testing, kitting, and machine tending — and a modular humanoid platform for robotics research. Designed and made in the EU.
+Bimanual robots for industrial automation — end-of-line testing, kitting, and machine tending. Designed and made in the EU.
 Demo Video
 Modules on Roadmap
 Motorized linear axis — in development. The robot will travel along a rail to serve multiple stations on the line.

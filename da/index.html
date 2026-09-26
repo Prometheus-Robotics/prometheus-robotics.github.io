@@ -1370,7 +1370,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Er robotten sikker og certificerbar til brug på fabrikken?", "acceptedAnswer": {"@type": "Answer", "text": "Den er designet til CE-certificering i henhold til ISO 10218, standarden for industrirobotter. Sikkerhedskonfigurationen ved deployment — afskærmning, hastighedsgrænser og forriglinger — defineres pr. lokation under forberedelsen af pilotprojektet."}}, {"@type": "Question", "name": "Kan den integreres med vores eksisterende linje?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Stationen arbejder side om side med jeres eksisterende stationer og workflows — emnerne kommer til robotten, så linjen skal ikke bygges om. Et enkelt REST API forbinder den med jeres linjestyring."}}, {"@type": "Question", "name": "Hvordan lærer robotten en ny opgave?", "acceptedAnswer": {"@type": "Answer", "text": "En operatør teleopererer robotten gennem opgaven for at optage demonstrationer, og vision-language-action-politikker såsom Pi0 og ACT trænes ud fra disse demonstrationer. Autonom drift trænes pr. opgave under pilotprojektet."}}, {"@type": "Question", "name": "Hvor er robotten fremstillet?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus er designet og fremstillet i Den Europæiske Union, hvilket har betydning for europæiske forskningslaboratorier og virksomheder, der lægger vægt på forsyningskædens oprindelse, support og EU-dataresidens."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Er robotten sikker og certificerbar til brug på fabrikken?", "acceptedAnswer": {"@type": "Answer", "text": "Den er designet til CE-certificering i henhold til ISO 10218, standarden for industrirobotter. Sikkerhedskonfigurationen ved deployment — afskærmning, hastighedsgrænser og forriglinger — defineres pr. lokation under forberedelsen af pilotprojektet."}}, {"@type": "Question", "name": "Kan den integreres med vores eksisterende linje?", "acceptedAnswer": {"@type": "Answer", "text": "Ja. Stationen arbejder side om side med jeres eksisterende stationer og workflows — emnerne kommer til robotten, så linjen skal ikke bygges om. Integration med jeres linjestyring via API afgrænses for hver lokation under forberedelsen af piloten."}}, {"@type": "Question", "name": "Hvordan lærer robotten en ny opgave?", "acceptedAnswer": {"@type": "Answer", "text": "En operatør teleopererer robotten gennem opgaven for at optage demonstrationer, og vision-language-action-politikker såsom Pi0 og ACT trænes ud fra disse demonstrationer. Autonom drift trænes pr. opgave under pilotprojektet."}}, {"@type": "Question", "name": "Hvor er robotten fremstillet?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus er designet og fremstillet i Den Europæiske Union, hvilket har betydning for europæiske forskningslaboratorier og virksomheder, der lægger vægt på forsyningskædens oprindelse, support og EU-dataresidens."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1425,19 +1425,12 @@
                         <span class="audience-tag primary">Elektronik</span>
                         <span class="audience-tag primary">Produktion</span>
                         <span class="audience-tag">Automationsleverandører</span>
-                        <span class="audience-tag">Forskningslaboratorier</span>
                     </div>
                     <div class="cta-group">
                         <a href="https://calendly.com/prometheusroboticsco/call" target="_blank" rel="noopener noreferrer" class="cta-button">
                             Book et opkald
                             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                            </svg>
-                        </a>
-                        <a href="/da/research/" class="cta-button secondary">
-                            Til forskningslaboratorier
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                             </svg>
                         </a>
                     </div>
@@ -1448,12 +1441,6 @@
                         Book et opkald
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                        </svg>
-                    </a>
-                    <a href="/da/research/" class="cta-button secondary">
-                        Til forskningslaboratorier
-                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                         </svg>
                     </a>
                 </div>
@@ -1474,8 +1461,8 @@
                     </div>
                     <div class="research-card featured">
                         <span class="research-icon">🏭</span>
-                        <h3>Deployment-forløb i gang</h3>
-                        <p>Deployment-forløb for end-of-line-test i gang på en europæisk fabrik.</p>
+                        <h3>End-of-line-pilot under forberedelse</h3>
+                        <p>Andet LOI — for en end-of-line-teststation — er under juridisk gennemgang.</p>
                     </div>
                 </div>
             </div>
@@ -1585,7 +1572,7 @@
                     <div class="research-card featured">
                         <span class="research-icon">💸</span>
                         <h3>Billigere end en specialbygget celle</h3>
-                        <p>Én fleksibel humanoid erstatter skræddersyet fast automation, der er dyr at designe, bygge og vedligeholde.</p>
+                        <p>Én fleksibel robot erstatter skræddersyet fast automation, der er dyr at designe, bygge og vedligeholde.</p>
                     </div>
                     <div class="research-card featured">
                         <span class="research-icon">♻️</span>
@@ -1634,7 +1621,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Frihedsgrader</td>
-                                    <td class="spec-value">19 (43 med hænder)</td>
+                                    <td class="spec-value">19 (femfingrede hænder under udvikling)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Kameraer</td>
@@ -1685,7 +1672,7 @@
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Kan den integreres med vores eksisterende linje?</button>
-                        <div class="faq-a"><p>Ja. Stationen arbejder side om side med jeres eksisterende stationer og workflows — emnerne kommer til robotten, så linjen skal ikke bygges om. Et enkelt REST API forbinder den med jeres linjestyring.</p></div>
+                        <div class="faq-a"><p>Ja. Stationen arbejder side om side med jeres eksisterende stationer og workflows — emnerne kommer til robotten, så linjen skal ikke bygges om. Integration med jeres linjestyring via API afgrænses for hver lokation under forberedelsen af piloten.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Hvordan lærer robotten en ny opgave?</button>
@@ -1750,7 +1737,7 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h4>Prometheus Robotics</h4>
-                <p>Tohåndede robotter til industriel automation — end-of-line-test, kitting og maskinpasning — og en modulær humanoid platform til robotforskning. Designet og fremstillet i EU.</p>
+                <p>Tohåndede robotter til industriel automation — end-of-line-test, kitting og maskinpasning. Designet og fremstillet i EU.</p>
             </div>
             <div class="footer-section">
                 <h4>Navigation</h4>

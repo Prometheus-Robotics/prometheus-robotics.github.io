@@ -1370,7 +1370,7 @@
         .faq-a p { color: var(--color-text-secondary); line-height: 1.75; padding: 0 0 1.5rem; font-weight: 300; max-width: 720px; }
     </style>
     <!-- FAQ-LD:START -->
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Il robot è sicuro e certificabile per l'uso in fabbrica?", "acceptedAnswer": {"@type": "Answer", "text": "È progettato per la certificazione CE secondo la norma ISO 10218, lo standard per i robot industriali. La configurazione di sicurezza del deployment — protezioni, limiti di velocità e interblocchi — viene definita per ogni sito durante la preparazione del pilota."}}, {"@type": "Question", "name": "Si integra con la nostra linea esistente?", "acceptedAnswer": {"@type": "Answer", "text": "Sì. La stazione lavora accanto alle vostre postazioni e ai vostri flussi esistenti — i pezzi arrivano al robot, quindi non serve ricostruire la linea. Una semplice REST API la collega al vostro controllo di linea."}}, {"@type": "Question", "name": "In che modo il robot apprende un nuovo compito?", "acceptedAnswer": {"@type": "Answer", "text": "Un operatore teleopera il robot attraverso il compito per registrare le dimostrazioni, e da queste demo vengono addestrate policy visione-linguaggio-azione come Pi0 e ACT. Il funzionamento autonomo viene addestrato per ogni compito durante il pilota."}}, {"@type": "Question", "name": "Dove viene prodotto il robot?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus è progettato e fabbricato nell'Unione Europea, un aspetto importante per i laboratori di ricerca e le aziende europee che tengono alla provenienza della catena di approvvigionamento, al supporto e alla residenza dei dati nell'EU."}}]}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Il robot è sicuro e certificabile per l'uso in fabbrica?", "acceptedAnswer": {"@type": "Answer", "text": "È progettato per la certificazione CE secondo la norma ISO 10218, lo standard per i robot industriali. La configurazione di sicurezza del deployment — protezioni, limiti di velocità e interblocchi — viene definita per ogni sito durante la preparazione del pilota."}}, {"@type": "Question", "name": "Si integra con la nostra linea esistente?", "acceptedAnswer": {"@type": "Answer", "text": "Sì. La stazione lavora accanto alle vostre postazioni e ai vostri flussi esistenti — i pezzi arrivano al robot, quindi non serve ricostruire la linea. L'integrazione con il vostro controllo di linea tramite API viene definita per ogni sito durante la preparazione del pilota."}}, {"@type": "Question", "name": "In che modo il robot apprende un nuovo compito?", "acceptedAnswer": {"@type": "Answer", "text": "Un operatore teleopera il robot attraverso il compito per registrare le dimostrazioni, e da queste demo vengono addestrate policy visione-linguaggio-azione come Pi0 e ACT. Il funzionamento autonomo viene addestrato per ogni compito durante il pilota."}}, {"@type": "Question", "name": "Dove viene prodotto il robot?", "acceptedAnswer": {"@type": "Answer", "text": "Prometheus è progettato e fabbricato nell'Unione Europea, un aspetto importante per i laboratori di ricerca e le aziende europee che tengono alla provenienza della catena di approvvigionamento, al supporto e alla residenza dei dati nell'EU."}}]}</script>
     <!-- FAQ-LD:END -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="058c2d91-4fe2-4fa9-9f75-59b23567107e"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "75f868369d9e4374b5f00b5183380a1e"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1425,19 +1425,12 @@
                         <span class="audience-tag primary">Elettronica</span>
                         <span class="audience-tag primary">Produzione</span>
                         <span class="audience-tag">Fornitori di automazione</span>
-                        <span class="audience-tag">Laboratori di ricerca</span>
                     </div>
                     <div class="cta-group">
                         <a href="https://calendly.com/prometheusroboticsco/call" target="_blank" rel="noopener noreferrer" class="cta-button">
                             Prenota una call
                             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                            </svg>
-                        </a>
-                        <a href="/it/research/" class="cta-button secondary">
-                            Per laboratori di ricerca
-                            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                             </svg>
                         </a>
                     </div>
@@ -1448,12 +1441,6 @@
                         Prenota una call
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                        </svg>
-                    </a>
-                    <a href="/it/research/" class="cta-button secondary">
-                        Per laboratori di ricerca
-                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                         </svg>
                     </a>
                 </div>
@@ -1474,8 +1461,8 @@
                     </div>
                     <div class="research-card featured">
                         <span class="research-icon">🏭</span>
-                        <h3>Percorso di deployment in corso</h3>
-                        <p>Percorso di deployment per i test di fine linea in corso presso uno stabilimento europeo.</p>
+                        <h3>Pilota di fine linea in preparazione</h3>
+                        <p>Seconda LOI — per una stazione di test di fine linea — in revisione legale.</p>
                     </div>
                 </div>
             </div>
@@ -1585,7 +1572,7 @@
                     <div class="research-card featured">
                         <span class="research-icon">💸</span>
                         <h3>Più economico di una cella su misura</h3>
-                        <p>Un umanoide flessibile sostituisce l'automazione fissa su misura, costosa da progettare, costruire e mantenere.</p>
+                        <p>Un robot flessibile sostituisce l'automazione fissa su misura, costosa da progettare, costruire e mantenere.</p>
                     </div>
                     <div class="research-card featured">
                         <span class="research-icon">♻️</span>
@@ -1634,7 +1621,7 @@
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Gradi di libertà</td>
-                                    <td class="spec-value">19 (43 con le mani)</td>
+                                    <td class="spec-value">19 (mani a cinque dita in sviluppo)</td>
                                 </tr>
                                 <tr>
                                     <td class="spec-label">Telecamere</td>
@@ -1685,7 +1672,7 @@
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">Si integra con la nostra linea esistente?</button>
-                        <div class="faq-a"><p>Sì. La stazione lavora accanto alle vostre postazioni e ai vostri flussi esistenti — i pezzi arrivano al robot, quindi non serve ricostruire la linea. Una semplice REST API la collega al vostro controllo di linea.</p></div>
+                        <div class="faq-a"><p>Sì. La stazione lavora accanto alle vostre postazioni e ai vostri flussi esistenti — i pezzi arrivano al robot, quindi non serve ricostruire la linea. L'integrazione con il vostro controllo di linea tramite API viene definita per ogni sito durante la preparazione del pilota.</p></div>
                     </div>
                     <div class="faq-item">
                         <button class="faq-q" onclick="toggleFaq(this)">In che modo il robot apprende un nuovo compito?</button>
@@ -1750,7 +1737,7 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h4>Prometheus Robotics</h4>
-                <p>Robot bimanuali per l'automazione industriale — test di fine linea, kitting e asservimento macchine — e una piattaforma umanoide modulare per la ricerca robotica. Progettati e prodotti nell'UE.</p>
+                <p>Robot bimanuali per l'automazione industriale — test di fine linea, kitting e asservimento macchine. Progettati e prodotti nell'UE.</p>
             </div>
             <div class="footer-section">
                 <h4>Navigazione</h4>
