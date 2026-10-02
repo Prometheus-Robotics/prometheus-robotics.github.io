@@ -111,7 +111,7 @@ HEADER = (
     '    <div class="nav-right">\n'
     '        <a href="/blog/">Blog</a>\n'
     '        <a class="hide-sm" href="/">Platform</a>\n'
-    '        <a class="blog-cta" href="https://calendly.com/prometheusroboticsco/call" target="_blank" rel="noopener">Book Call</a>\n'
+    '        <a class="blog-cta" href="https://calendar.app.google/6woWwN3FGgAQom2n6" target="_blank" rel="noopener">Book Call</a>\n'
     '    </div>\n'
     '</header>'
 )
