@@ -694,6 +694,10 @@
             margin-top: 0.8rem;
         }
 
+        .linkedin-embed { max-width: 560px; margin: 0 auto; border-radius: 12px; overflow: hidden; background: #fff; }
+        .linkedin-embed iframe { display: block; width: 100%; height: 900px; border: 0; }
+        @media (max-width: 600px) { .linkedin-embed iframe { height: 760px; } }
+
         /* Features Section */
         .features {
             padding: 8rem 3rem;
@@ -1553,6 +1557,17 @@
                         <h3>4 · Võimendumine</h3>
                         <p>Iga juurutus täiendab meie enda manipulatsiooniandmestikku — iga uus ülesanne alustab järjest kaugemalt.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Robot Video (LinkedIn post) -->
+        <section class="research-ready">
+            <div class="research-ready-container">
+                <h2 class="section-title">See It in Action</h2>
+                <p class="section-subtitle">Ten attempts, uncut, in real time.</p>
+                <div class="linkedin-embed">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7505651366485393408" title="Prometheus robot video on LinkedIn" loading="lazy" allowfullscreen></iframe>
                 </div>
             </div>
         </section>
