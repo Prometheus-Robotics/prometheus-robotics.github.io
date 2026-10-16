@@ -703,6 +703,16 @@
         .linkedin-link a { color: inherit; }
         @media (max-width: 700px) { .demo-row { flex-direction: column; gap: 1.5rem; } .linkedin-embed { flex-basis: auto; width: 100%; max-width: 300px; } .demo-text { text-align: center; } }
 
+        .uc-case { display: grid; grid-template-columns: 1fr 2fr; gap: 2.5rem; align-items: center; margin-top: 3rem; }
+        .uc-text h3 { font-size: 1.4rem; margin-bottom: 1rem; }
+        .uc-text p { line-height: 1.6; opacity: .85; margin-bottom: 1rem; }
+        .uc-media a { display: block; border-radius: 12px; overflow: hidden; border: 1px solid var(--color-border); }
+        .uc-media img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #F6F5F1; }
+        .uc-tabs { display: inline-flex; gap: .25rem; padding: .25rem; border: 1px solid var(--color-border); border-radius: 999px; margin-top: .5rem; }
+        .uc-tab { background: none; border: 0; color: inherit; font: inherit; font-size: .9rem; padding: .45rem 1rem; border-radius: 999px; cursor: pointer; opacity: .7; }
+        .uc-tab.active { background: #fff; color: #000; opacity: 1; }
+        @media (max-width: 900px) { .uc-case { grid-template-columns: 1fr; gap: 1.25rem; margin-top: 2.5rem; } }
+
         /* Features Section */
         .features {
             padding: 8rem 3rem;
@@ -1554,6 +1564,50 @@
             </div>
         </section>
 
+        <!-- Use Cases -->
+        <section class="research-ready" id="use-cases">
+            <div class="research-ready-container">
+                <h2 class="section-title">Use Cases</h2>
+                <p class="section-subtitle">Stationary, repetitive handling work that has to be covered on every shift.</p>
+
+                <div class="uc-case">
+                    <div class="uc-text">
+                        <h3>End-of-line functional testing</h3>
+                        <p>Every device passes three testers in sequence. One operator per shift walks between six testers: pick, scan, load, wait, sort into pass or reject.</p>
+                        <p>The robot takes over loading the testers and sorting the results at the station.</p>
+                    </div>
+                    <div class="uc-media">
+                        <a href="/use-cases/eol-today.svg" target="_blank" rel="noopener"><img src="/use-cases/eol-today.svg" alt="End-of-line functional testing: the manual process today" loading="lazy"></a>
+                    </div>
+                </div>
+
+                <div class="uc-case">
+                    <div class="uc-text">
+                        <h3>Fill-level inspection &amp; sorting</h3>
+                        <p>On a bottling line an operator checks the fill level of every bottle by eye and pulls out bad fills by hand.</p>
+                        <p>Prometheus stands on its tripod next to the conveyor: cameras check every bottle, an arm takes the rejects off the line.</p>
+                        <div class="uc-tabs" role="tablist">
+                            <button class="uc-tab active" data-img="/use-cases/bottling-today.svg">Today</button>
+                            <button class="uc-tab" data-img="/use-cases/bottling-prometheus.svg">With Prometheus</button>
+                        </div>
+                    </div>
+                    <div class="uc-media">
+                        <a href="/use-cases/bottling-today.svg" target="_blank" rel="noopener"><img src="/use-cases/bottling-today.svg" alt="Fill-level inspection and sorting on a bottling line" loading="lazy"></a>
+                    </div>
+                </div>
+
+                <div class="uc-case">
+                    <div class="uc-text">
+                        <h3>One robot, many repetitive tasks</h3>
+                        <p>Pick, place, insert, rotate, sort, inspect. The end-effector and the base are chosen to fit the task: a two-finger gripper or custom tooling, on a tripod or a linear rail.</p>
+                    </div>
+                    <div class="uc-media">
+                        <a href="/use-cases/repetitive-tasks.svg" target="_blank" rel="noopener"><img src="/use-cases/repetitive-tasks.svg" alt="Repetitive tasks, end-effectors and bases" loading="lazy"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- How It Works -->
         <section class="research-ready">
             <div class="research-ready-container">
@@ -2003,6 +2057,17 @@
             window.addEventListener('scroll', onScroll, { passive: true });
             onScroll();
         })();
+    </script>
+    <script>
+        document.querySelectorAll('.uc-case').forEach(function (c) {
+            var a = c.querySelector('.uc-media a'), img = a && a.querySelector('img');
+            c.querySelectorAll('.uc-tab').forEach(function (b) {
+                b.addEventListener('click', function () {
+                    c.querySelectorAll('.uc-tab').forEach(function (x) { x.classList.toggle('active', x === b); });
+                    img.src = a.href = b.dataset.img;
+                });
+            });
+        });
     </script>
 </body>
 </html>
