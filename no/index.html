@@ -694,10 +694,14 @@
             margin-top: 0.8rem;
         }
 
-        .linkedin-embed { max-width: 900px; margin: 0 auto; border-radius: 12px; overflow: hidden; background: #000; }
-        .linkedin-embed video { display: block; width: 100%; height: auto; }
-        .linkedin-link { text-align: center; margin-top: 1rem; }
-        .linkedin-link a { color: inherit; opacity: .8; }
+        .demo-row { display: flex; gap: 3rem; align-items: center; justify-content: center; max-width: 900px; margin: 0 auto; }
+        .linkedin-embed { flex: 0 0 300px; border-radius: 12px; overflow: hidden; background: #000; }
+        .linkedin-embed video { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; }
+        .demo-text { flex: 1; max-width: 460px; }
+        .demo-text p { margin-bottom: 1rem; line-height: 1.6; opacity: .85; }
+        .demo-text .demo-stat { font-size: 3rem; font-weight: 700; line-height: 1; opacity: 1; margin-bottom: .75rem; }
+        .linkedin-link a { color: inherit; }
+        @media (max-width: 700px) { .demo-row { flex-direction: column; gap: 1.5rem; } .linkedin-embed { flex-basis: auto; width: 100%; max-width: 300px; } .demo-text { text-align: center; } }
 
         /* Features Section */
         .features {
@@ -1452,6 +1456,25 @@
             </div>
         </section>
 
+        <!-- Robot Video (LinkedIn post) -->
+        <section class="research-ready">
+            <div class="research-ready-container">
+                <h2 class="section-title">See It in Action</h2>
+                <p class="section-subtitle">Ten attempts, uncut, in real time.</p>
+                <div class="demo-row">
+                    <div class="linkedin-embed">
+                        <video src="/robot-10-of-10.mp4" poster="/robot-10-of-10-poster.jpg" controls muted playsinline preload="none"></video>
+                    </div>
+                    <div class="demo-text">
+                        <p class="demo-stat">10 / 10</p>
+                        <p>Successful placements in a row — fully autonomous, uncut, real time.</p>
+                        <p>From roughly 1 success in 10 to 10 in 10 in five weeks, with a π0.5 VLA policy trained on about 200 teleoperated demonstrations.</p>
+                        <p class="linkedin-link"><a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7505651366485393408/" target="_blank" rel="noopener">Read the full post on LinkedIn →</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Traction -->
         <section class="research-ready traction">
             <div class="research-ready-container">
@@ -1559,18 +1582,6 @@
                         <p>Hver utrulling mater et proprietært manipulasjonsdatasett — hver ny oppgave starter lenger fremme.</p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Robot Video (LinkedIn post) -->
-        <section class="research-ready">
-            <div class="research-ready-container">
-                <h2 class="section-title">See It in Action</h2>
-                <p class="section-subtitle">Ten attempts, uncut, in real time.</p>
-                <div class="linkedin-embed">
-                    <video src="/robot-10-of-10.mp4#t=0.1" controls muted playsinline preload="metadata"></video>
-                </div>
-                <p class="linkedin-link"><a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7505651366485393408/" target="_blank" rel="noopener">Read the full post on LinkedIn →</a></p>
             </div>
         </section>
 
