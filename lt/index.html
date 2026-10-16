@@ -706,9 +706,12 @@
         .uc-case { display: grid; grid-template-columns: 1fr 2fr; gap: 2.5rem; align-items: center; margin-top: 3rem; }
         .uc-text h3 { font-size: 1.4rem; margin-bottom: 1rem; }
         .uc-text p { line-height: 1.6; opacity: .85; margin-bottom: 1rem; }
-        .uc-media a { display: block; border-radius: 12px; overflow: hidden; border: 1px solid var(--color-border); }
-        .uc-media img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #F6F5F1; }
-        .uc-tabs { display: inline-flex; gap: .25rem; padding: .25rem; border: 1px solid var(--color-border); border-radius: 999px; margin-top: .5rem; }
+        .uc-zoom { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #F6F5F1; border-radius: 12px; border: 1px solid var(--color-border); cursor: zoom-in; }
+        .uc-wide { max-width: 1100px; margin: 0 auto; }
+        .uc-lightbox { position: fixed; inset: 0; z-index: 10000; background: rgba(0, 0, 0, .88); display: none; align-items: center; justify-content: center; padding: 2vmin; cursor: zoom-out; }
+        .uc-lightbox.open { display: flex; }
+        .uc-lightbox img { max-width: 100%; max-height: 100%; border-radius: 8px; background: #F6F5F1; }
+        .uc-tabs { display: inline-flex; gap: .25rem; padding: .25rem; border: 1px solid var(--color-border); border-radius: 999px; margin-bottom: .75rem; }
         .uc-tab { background: none; border: 0; color: inherit; font: inherit; font-size: .9rem; padding: .45rem 1rem; border-radius: 999px; cursor: pointer; opacity: .7; }
         .uc-tab.active { background: #fff; color: #000; opacity: 1; }
         @media (max-width: 900px) { .uc-case { grid-template-columns: 1fr; gap: 1.25rem; margin-top: 2.5rem; } }
@@ -1573,11 +1576,15 @@
                 <div class="uc-case">
                     <div class="uc-text">
                         <h3>End-of-line functional testing</h3>
-                        <p>Every device passes three testers in sequence. One operator per shift walks between six testers: pick, scan, load, wait, sort into pass or reject.</p>
-                        <p>The robot takes over loading the testers and sorting the results at the station.</p>
+                        <p>Every device passes three testers in sequence. Today one operator per shift walks between six testers: pick, scan, load, wait, sort into pass or reject.</p>
+                        <p>With Prometheus on a linear rail between the testers, the robot loads them in sequence and sorts the results.</p>
                     </div>
                     <div class="uc-media">
-                        <a href="/use-cases/eol-today.svg" target="_blank" rel="noopener"><img src="/use-cases/eol-today.svg" alt="End-of-line functional testing: the manual process today" loading="lazy"></a>
+                        <div class="uc-tabs" role="tablist">
+                            <button class="uc-tab active" data-img="/use-cases/eol-today.svg">Today</button>
+                            <button class="uc-tab" data-img="/use-cases/eol-prometheus.svg">With Prometheus</button>
+                        </div>
+                        <img class="uc-zoom" src="/use-cases/eol-today.svg" alt="End-of-line functional testing station" loading="lazy">
                     </div>
                 </div>
 
@@ -1586,24 +1593,25 @@
                         <h3>Fill-level inspection &amp; sorting</h3>
                         <p>On a bottling line an operator checks the fill level of every bottle by eye and pulls out bad fills by hand.</p>
                         <p>Prometheus stands on its tripod next to the conveyor: cameras check every bottle, an arm takes the rejects off the line.</p>
+                    </div>
+                    <div class="uc-media">
                         <div class="uc-tabs" role="tablist">
                             <button class="uc-tab active" data-img="/use-cases/bottling-today.svg">Today</button>
                             <button class="uc-tab" data-img="/use-cases/bottling-prometheus.svg">With Prometheus</button>
                         </div>
-                    </div>
-                    <div class="uc-media">
-                        <a href="/use-cases/bottling-today.svg" target="_blank" rel="noopener"><img src="/use-cases/bottling-today.svg" alt="Fill-level inspection and sorting on a bottling line" loading="lazy"></a>
+                        <img class="uc-zoom" src="/use-cases/bottling-today.svg" alt="Fill-level inspection and sorting on a bottling line" loading="lazy">
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="uc-case">
-                    <div class="uc-text">
-                        <h3>One robot, many repetitive tasks</h3>
-                        <p>Pick, place, insert, rotate, sort, inspect. The end-effector and the base are chosen to fit the task: a two-finger gripper or custom tooling, on a tripod or a linear rail.</p>
-                    </div>
-                    <div class="uc-media">
-                        <a href="/use-cases/repetitive-tasks.svg" target="_blank" rel="noopener"><img src="/use-cases/repetitive-tasks.svg" alt="Repetitive tasks, end-effectors and bases" loading="lazy"></a>
-                    </div>
+        <!-- One Robot, Many Tasks -->
+        <section class="research-ready">
+            <div class="research-ready-container">
+                <h2 class="section-title">One Robot, Many Repetitive Tasks</h2>
+                <p class="section-subtitle">Pick, place, insert, rotate, sort, inspect. The end-effector and the base are chosen to fit the task: a two-finger gripper or custom tooling, on a tripod or a linear rail.</p>
+                <div class="uc-wide">
+                    <img class="uc-zoom" src="/use-cases/repetitive-tasks.svg" alt="Repetitive tasks, end-effectors and bases" loading="lazy">
                 </div>
             </div>
         </section>
@@ -2058,16 +2066,25 @@
             onScroll();
         })();
     </script>
+    <div class="uc-lightbox" id="uc-lightbox"><img alt=""></div>
     <script>
-        document.querySelectorAll('.uc-case').forEach(function (c) {
-            var a = c.querySelector('.uc-media a'), img = a && a.querySelector('img');
-            c.querySelectorAll('.uc-tab').forEach(function (b) {
-                b.addEventListener('click', function () {
-                    c.querySelectorAll('.uc-tab').forEach(function (x) { x.classList.toggle('active', x === b); });
-                    img.src = a.href = b.dataset.img;
+        (function () {
+            document.querySelectorAll('.uc-case').forEach(function (c) {
+                var img = c.querySelector('.uc-zoom');
+                c.querySelectorAll('.uc-tab').forEach(function (b) {
+                    b.addEventListener('click', function () {
+                        c.querySelectorAll('.uc-tab').forEach(function (x) { x.classList.toggle('active', x === b); });
+                        img.src = b.dataset.img;
+                    });
                 });
             });
-        });
+            var lb = document.getElementById('uc-lightbox'), lbImg = lb.querySelector('img');
+            document.querySelectorAll('.uc-zoom').forEach(function (img) {
+                img.addEventListener('click', function () { lbImg.src = img.src; lbImg.alt = img.alt; lb.classList.add('open'); });
+            });
+            lb.addEventListener('click', function () { lb.classList.remove('open'); });
+            document.addEventListener('keydown', function (e) { if (e.key === 'Escape') lb.classList.remove('open'); });
+        })();
     </script>
 </body>
 </html>
