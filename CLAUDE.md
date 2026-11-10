@@ -78,7 +78,7 @@ regenerated files together. Markers: `<!-- SEO:START/END -->`, `<!-- HREFLANG:ST
 
 ## Demo page (English-only)
 
-`/demo/index.html` is a **hand-written** standalone page (YouTube teleop-demo embed +
+`/demo/index.html` is a **hand-written** standalone page (native `/robot-10-of-10.mp4` video +
 "Book a call" CTA) with its own inline CSS copied from the site theme — NOT generated
 (only its sitemap entry is). Edit it directly.
 
