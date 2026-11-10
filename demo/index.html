@@ -147,6 +147,21 @@
             border: 0;
         }
 
+        .video-frame video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-frame.portrait {
+            aspect-ratio: 3 / 4;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .demo-second-video { margin-top: 4rem; }
+
         .video-caption {
             margin: 1.5rem auto 0;
             max-width: 720px;
@@ -260,6 +275,15 @@
             </div>
             <figcaption class="video-caption">
                 Teleoperated demonstration — autonomous operation is trained per task during the pilot
+            </figcaption>
+        </figure>
+
+        <figure class="demo-second-video">
+            <div class="video-frame portrait">
+                <video src="/robot-10-of-10.mp4" poster="/robot-10-of-10-poster.jpg" controls muted playsinline preload="none" aria-label="Prometheus robot completing 10 of 10 autonomous placements"></video>
+            </div>
+            <figcaption class="video-caption">
+                10 successful placements out of 10 — an autonomous policy trained for this task. All ten attempts, uncut and in real time; only the scene resets between runs are sped up.
             </figcaption>
         </figure>
 
