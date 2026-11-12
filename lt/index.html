@@ -609,9 +609,23 @@
             50% { transform: translateY(8px); }
         }
         @media (prefers-reduced-motion: reduce) { .scroll-cue { animation: none; } }
-        @media (max-width: 768px) { .scroll-cue { display: none; } }
+        /* Phones: pinned bottom-left (the LinkedIn pill is bottom-right), hidden after the first scroll */
+        @media (max-width: 768px) {
+            .scroll-cue {
+                position: fixed;
+                top: auto;
+                bottom: 1.5rem;
+                left: 1.5rem;
+                margin-left: 0;
+                width: 48px;
+                height: 48px;
+                z-index: 100;
+                transition: opacity 0.3s ease, visibility 0.3s ease;
+            }
+            body.past-top .scroll-cue { opacity: 0; visibility: hidden; pointer-events: none; }
+        }
         /* Small laptops: the hero overflows the screen anyway (content is visibly cut), and the cue would sit on the CTAs */
-        @media (max-width: 1200px) and (max-height: 700px) { .scroll-cue { display: none; } }
+        @media (min-width: 769px) and (max-width: 1200px) and (max-height: 700px) { .scroll-cue { display: none; } }
 
         /* Laptop-height screens: keep the hero CTA and the scroll cue on the first screen */
         @media (min-width: 769px) and (max-height: 860px) {
@@ -2111,6 +2125,7 @@
                 } else {
                     navEl.classList.remove('scrolled');
                 }
+                document.body.classList.toggle('past-top', window.scrollY > 40);
             };
             window.addEventListener('scroll', onScroll, { passive: true });
             onScroll();
